@@ -1,0 +1,97 @@
+/**
+ * Display formatting. Kept out of components so every price, duration and date
+ * in the product reads the same way.
+ */
+
+const inr = new Intl.NumberFormat("en-IN", {
+  style: "currency",
+  currency: "INR",
+  maximumFractionDigits: 0,
+});
+
+const inrCompact = new Intl.NumberFormat("en-IN", {
+  style: "currency",
+  currency: "INR",
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+
+/** ₹27,500 */
+export function formatPrice(amount: number): string {
+  return inr.format(amount);
+}
+
+/** ₹27.5K — for dense surfaces such as map pins and compact cards. */
+export function formatPriceCompact(amount: number): string {
+  return inrCompact.format(amount);
+}
+
+/** 90 -> "1h 30m", 45 -> "45m", 120 -> "2h" */
+export function formatDuration(minutes: number): string {
+  if (minutes < 60) return `${minutes}m`;
+  const hours = Math.floor(minutes / 60);
+  const rest = minutes % 60;
+  return rest === 0 ? `${hours}h` : `${hours}h ${rest}m`;
+}
+
+/** "2026-03-14" -> "14 Mar 2026" */
+export function formatDate(iso: string): string {
+  const date = new Date(`${iso}T00:00:00`);
+  if (Number.isNaN(date.getTime())) return iso;
+  return new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  }).format(date);
+}
+
+/** "14 – 18 Mar 2026", collapsing the month and year when they match. */
+export function formatDateRange(startIso: string, endIso: string): string {
+  const start = new Date(`${startIso}T00:00:00`);
+  const end = new Date(`${endIso}T00:00:00`);
+  if (Number.isNaN(start.getTime()) || Number.isNaN(end.getTime())) {
+    return `${startIso} – ${endIso}`;
+  }
+  const sameMonth =
+    start.getMonth() === end.getMonth() && start.getFullYear() === end.getFullYear();
+  const startPart = new Intl.DateTimeFormat("en-IN", {
+    day: "numeric",
+    ...(sameMonth ? {} : { month: "short" }),
+  }).format(start);
+  return `${startPart} – ${formatDate(endIso)}`;
+}
+
+/** Adds days to an ISO date and returns an ISO date. */
+export function addDays(iso: string, days: number): string {
+  const date = new Date(`${iso}T00:00:00`);
+  date.setDate(date.getDate() + days);
+  return date.toISOString().slice(0, 10);
+}
+
+/** 4.75 -> "4.8" — ratings always show one decimal so cards stay aligned. */
+export function formatRating(rating: number): string {
+  return rating.toFixed(1);
+}
+
+/** 1240 -> "1.2k" for review counts. */
+export function formatCount(count: number): string {
+  if (count < 1000) return String(count);
+  return `${(count / 1000).toFixed(1).replace(/\.0$/, "")}k`;
+}
+
+/** 28.6129, 77.2295 -> "28.6129° N, 77.2295° E" */
+export function formatCoordinates(lat: number, lng: number): string {
+  const ns = lat >= 0 ? "N" : "S";
+  const ew = lng >= 0 ? "E" : "W";
+  return `${Math.abs(lat).toFixed(4)}° ${ns}, ${Math.abs(lng).toFixed(4)}° ${ew}`;
+}
+
+/** "09:30" -> "9:30 AM" */
+export function formatTime(time24: string): string {
+  const [hourPart, minutePart] = time24.split(":");
+  const hour = Number(hourPart);
+  if (Number.isNaN(hour)) return time24;
+  const suffix = hour >= 12 ? "PM" : "AM";
+  const hour12 = hour % 12 === 0 ? 12 : hour % 12;
+  return `${hour12}:${minutePart ?? "00"} ${suffix}`;
+}
