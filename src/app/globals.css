@@ -248,3 +248,70 @@
     color: inherit;
   }
 }
+
+/* =========================================================================
+   UTILITIES
+   ========================================================================= */
+
+@utility text-balance-heading {
+  text-wrap: balance;
+}
+
+/* Scroll-linked reveal. Elements start hidden and are released by the
+   Reveal component; without JS or with reduced motion they stay visible. */
+@utility reveal-hidden {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+@utility reveal-shown {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s var(--ease-out-soft),
+    transform 0.6s var(--ease-out-soft);
+}
+
+/* Horizontal card rails on mobile: snap, no visible scrollbar. */
+@utility scroll-rail {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility snap-card {
+  scroll-snap-align: start;
+}
+
+/* Image ken-burns on card hover — transform only, no layout thrash. */
+@utility media-zoom {
+  transition: transform 0.7s var(--ease-out-soft);
+  will-change: transform;
+}
+
+/* =========================================================================
+   REDUCED MOTION — honoured globally, not per component
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+}
