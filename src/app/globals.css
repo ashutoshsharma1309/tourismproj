@@ -108,6 +108,92 @@
   --text-price: clamp(1.5rem, 2.4vw, 2rem);
   --text-price--line-height: 1.1;
   --text-price--letter-spacing: -0.02em;
+
+  /* ---------------------------------------------------------------------
+     RADIUS — soft but not pill-shaped; travel cards read as printed tickets
+     --------------------------------------------------------------------- */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+
+  /* ---------------------------------------------------------------------
+     ELEVATION — low-spread, high-softness. No hard drop shadows.
+     --------------------------------------------------------------------- */
+  --shadow-soft: 0 1px 2px rgba(12, 31, 38, 0.04), 0 1px 3px rgba(12, 31, 38, 0.05);
+  --shadow-card: 0 2px 4px rgba(12, 31, 38, 0.03), 0 8px 24px -12px rgba(12, 31, 38, 0.14);
+  --shadow-lifted: 0 4px 8px rgba(12, 31, 38, 0.04), 0 20px 40px -16px rgba(12, 31, 38, 0.2);
+  --shadow-overlay: 0 24px 64px -20px rgba(12, 31, 38, 0.34);
+
+  /* ---------------------------------------------------------------------
+     MOTION — fast, subtle, purposeful
+     --------------------------------------------------------------------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-fade-up: fade-up 0.5s var(--ease-out-soft) both;
+  --animate-fade-in: fade-in 0.3s var(--ease-out-soft) both;
+  --animate-scale-in: scale-in 0.18s var(--ease-out-soft) both;
+  --animate-slide-up: slide-up 0.28s var(--ease-out-soft) both;
+  --animate-slide-in-right: slide-in-right 0.3s var(--ease-out-soft) both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: -180% 0;
+    }
+    to {
+      background-position: 180% 0;
+    }
+  }
 }
 
 /* =========================================================================
@@ -140,6 +226,7 @@
   :focus-visible {
     outline: 2px solid var(--color-primary);
     outline-offset: 2px;
+    border-radius: var(--radius-xs);
   }
 
   ::selection {
