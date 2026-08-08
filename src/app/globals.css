@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* =========================================================================
+   YATRA AI — DESIGN TOKENS
+   Single source of truth. Components must consume these tokens, never raw hex.
+   ========================================================================= */
+
+@theme {
+  /* ---------------------------------------------------------------------
+     COLOR
+     Palette derived from Indian natural-dye and stone materials:
+     petrol ink, morning mist, temple-tank jade, marigold, madder red.
+     --------------------------------------------------------------------- */
+
+  /* Surfaces */
+  --color-background: #f1f4f2; /* morning mist — page ground */
+  --color-surface: #ffffff; /* cards, sheets, inputs */
+  --color-surface-muted: #e7ecea; /* inset panels, track backgrounds */
+  --color-surface-inverse: #0c1f26; /* dark sections, footer */
+
+  /* Text */
+  --color-foreground: #0c1f26; /* primary text — petrol ink */
+  --color-muted: #4f645d; /* secondary text */
+  --color-subtle: #7d908a; /* captions, meta, placeholders */
+  --color-foreground-inverse: #f1f4f2;
+
+  /* Lines */
+  --color-border: #dbe3df;
+  --color-border-strong: #c2cfc9;
+  --color-border-inverse: #23404a;
+
+  /* Brand */
+  --color-primary: #0f6b62; /* temple-tank jade */
+  --color-primary-hover: #0a534c;
+  --color-primary-active: #084039;
+  --color-primary-soft: #e2efeb;
+  --color-primary-foreground: #ffffff;
+
+  --color-secondary: #0c1f26; /* ink — high-emphasis neutral action */
+  --color-secondary-hover: #16333d;
+  --color-secondary-foreground: #ffffff;
+
+  --color-accent: #e39b2c; /* marigold — used sparingly, never as a surface */
+  --color-accent-hover: #c98520;
+  --color-accent-soft: #fbf1de;
+  --color-accent-foreground: #3d2a08;
+
+  /* Status */
+  --color-success: #2f7d5b;
+  --color-success-soft: #e4f1eb;
+  --color-warning: #b57a12;
+  --color-warning-soft: #fbf0da;
+  --color-error: #b23a2b; /* madder root */
+  --color-error-soft: #f8e6e3;
+  --color-info: #2a6f97;
+  --color-info-soft: #e3eef5;
+}
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Guard against horizontal overflow from full-bleed decorative layers. */
+    overflow-x: hidden;
+  }
+
+  /* One visible focus treatment across the whole product. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  /* Inputs inherit the type system rather than the UA stylesheet. */
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
