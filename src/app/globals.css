@@ -54,6 +54,60 @@
   --color-error-soft: #f8e6e3;
   --color-info: #2a6f97;
   --color-info-soft: #e3eef5;
+
+  /* ---------------------------------------------------------------------
+     TYPOGRAPHY
+     Fraunces  — display only, used with restraint
+     Plus Jakarta Sans — all UI and body copy
+     IBM Plex Mono — eyebrows, departure times, coordinates
+     --------------------------------------------------------------------- */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+
+  --text-display: clamp(2.75rem, 6.2vw, 4.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.032em;
+
+  --text-h1: clamp(2.125rem, 4.2vw, 3.125rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.026em;
+
+  --text-h2: clamp(1.625rem, 3vw, 2.25rem);
+  --text-h2--line-height: 1.14;
+  --text-h2--letter-spacing: -0.022em;
+
+  --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+  --text-h3--line-height: 1.24;
+  --text-h3--letter-spacing: -0.016em;
+
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.36;
+  --text-h4--letter-spacing: -0.012em;
+
+  --text-body-lg: 1.0625rem;
+  --text-body-lg--line-height: 1.62;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.62;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.35;
+  --text-label--letter-spacing: 0.005em;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.16em;
+
+  --text-price: clamp(1.5rem, 2.4vw, 2rem);
+  --text-price--line-height: 1.1;
+  --text-price--letter-spacing: -0.02em;
 }
 
 /* =========================================================================
@@ -73,6 +127,9 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.62;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* Guard against horizontal overflow from full-bleed decorative layers. */
@@ -88,6 +145,11 @@
   ::selection {
     background-color: var(--color-primary);
     color: var(--color-primary-foreground);
+  }
+
+  /* Prices, times and counts must never shift width while animating. */
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
   }
 
   /* Inputs inherit the type system rather than the UA stylesheet. */
