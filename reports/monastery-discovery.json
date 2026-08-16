@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-08-16",
+  "agent": "Heritage Discovery Agent",
+  "seedCategories": [
+    "Category:Buddhist monasteries in Sikkim"
+  ],
+  "totals": {
+    "existingBefore": 15,
+    "candidatesFound": 35,
+    "newCandidates": 22,
+    "verified": 13,
+    "partiallyVerified": 9,
+    "needsReview": 13,
+    "rejected": 0,
+    "withCoordinates": 22,
+    "withImage": 19,
+    "withEstablishedYear": 11,
+    "withTradition": 19
+  },
+  "rejected": [],
+  "note": "Confidence reflects evidence found, not completeness of the page. Nothing here is published without passing the VERIFIED gate or explicit human review."
+}

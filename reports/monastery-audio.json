@@ -1,0 +1,51 @@
+{
+  "generatedAt": "2026-08-16",
+  "agent": "Heritage Audio Agent",
+  "method": "Scripts assembled from verified record fields only; no generative prose. Sourced summary sentences are quoted from the cited article. Narration is machine-synthesised and disclosed as such in the UI.",
+  "languages": {
+    "supported": [
+      {
+        "code": "en",
+        "voice": "Daniel",
+        "label": "English"
+      },
+      {
+        "code": "hi",
+        "voice": "Lekha",
+        "label": "हिन्दी"
+      },
+      {
+        "code": "ne",
+        "voice": "ne_NP-google-medium",
+        "label": "नेपाली"
+      },
+      {
+        "code": "bn",
+        "voice": "Piya",
+        "label": "বাংলা"
+      }
+    ],
+    "blocked": [
+      {
+        "code": "as",
+        "label": "Assamese",
+        "blocker": "No Assamese speech voice is available on this platform."
+      },
+      {
+        "code": "dz",
+        "label": "Dzongkha",
+        "blocker": "No Dzongkha speech voice is available, and this project has no Dzongkha speaker to review a translation. Publishing unreviewed Dzongkha narration about Buddhist practice would risk exactly the kind of error this archive exists to avoid."
+      }
+    ]
+  },
+  "totals": {
+    "eligibleMonasteries": 15,
+    "guidesGenerated": 60,
+    "monasteriesWithAudio": 15,
+    "withinTargetDuration": 60,
+    "overMaximumDuration": 0,
+    "skipped": 0
+  },
+  "durationNote": "Scripts are composed from a fixed template plus verified per-site facts, so every language lands inside the 60-90 second window by construction.",
+  "skipped": []
+}

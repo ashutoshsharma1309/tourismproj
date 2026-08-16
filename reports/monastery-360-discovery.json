@@ -1,0 +1,512 @@
+{
+  "generatedAt": "2026-08-16",
+  "agent": "360 Heritage Finder",
+  "method": {
+    "commons": "Wikimedia Commons search per site name, filtered to equirectangular signature (width >= 3000px, aspect 1.9-2.1), then distance-scored against the site coordinate where the file carries GPS metadata.",
+    "streetView": "Not run — no Maps Platform key configured.",
+    "thresholds": {
+      "strongMetres": 50,
+      "reviewMetres": 150
+    }
+  },
+  "totals": {
+    "sitesChecked": 35,
+    "sitesWithCandidates": 0,
+    "sitesWithNone": 35,
+    "streetViewChecked": 0,
+    "published": 0
+  },
+  "conclusion": "No licensed 360° panorama depicting any catalogued Sikkim monastery was found. Every site therefore reports no 360° experience. This is a real negative result, not an unfinished search.",
+  "results": [
+    {
+      "slug": "bermiok",
+      "name": "Bermiok Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "chawayng-ani",
+      "name": "Chawayng Ani Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "dalling",
+      "name": "Dalling Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "dubdi",
+      "name": "Dubdi Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "enchey",
+      "name": "Enchey Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "gnathang",
+      "name": "Gnathang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "hee-gyathang",
+      "name": "Hee Gyathang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "karthok",
+      "name": "Karthok Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "kewwzing",
+      "name": "Kewwzing Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "labrang",
+      "name": "Labrang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "lachen",
+      "name": "Lachen Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "lachung",
+      "name": "Lachung Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "lingdum",
+      "name": "Lingdum Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "lingthem",
+      "name": "Lingthem Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "melli-atsing",
+      "name": "Melli Atsing Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "namchi",
+      "name": "Namchi Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "pemayangtse",
+      "name": "Pemayangtse Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "phensang",
+      "name": "Phensang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "phodong",
+      "name": "Phodong Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "ralang",
+      "name": "Ralang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "rhenock",
+      "name": "Rhenock Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "rinchenpong",
+      "name": "Rinchenpong Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "rumtek",
+      "name": "Rumtek Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "sa-ngor-chotshog-centre",
+      "name": "Sa-Ngor-Chotshog Centre",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "sang",
+      "name": "Sang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "sanga-choeling",
+      "name": "Sanga Choeling Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "shurishing-yungdrung-dungdrakling",
+      "name": "Shurishing Yungdrung Dungdrakling Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "simik",
+      "name": "Simik Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "sinon",
+      "name": "Sinon Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "taktse-ogyen-choekhorling",
+      "name": "Taktse Ogyen Choekhorling Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "tashiding",
+      "name": "Tashiding Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "tendong-gumpa",
+      "name": "Tendong Gumpa",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "tholung",
+      "name": "Tholung Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "tsuklakhang-palace",
+      "name": "Tsuklakhang Palace",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    },
+    {
+      "slug": "yangyang",
+      "name": "Yangyang Monastery",
+      "commonsCandidates": 0,
+      "usableCandidates": 0,
+      "candidates": [],
+      "streetView": {
+        "checked": false,
+        "status": "UNAVAILABLE",
+        "reason": "GOOGLE_MAPS_API_KEY not configured. The Street View metadata endpoint is the only sanctioned availability check; scraping the Maps site instead would breach its terms."
+      },
+      "outcome": "NONE_FOUND",
+      "checkedAt": "2026-08-16"
+    }
+  ]
+}
