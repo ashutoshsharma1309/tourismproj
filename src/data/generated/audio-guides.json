@@ -1,0 +1,1682 @@
+[
+  {
+    "monasterySlug": "rumtek",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/rumtek/en.m4a",
+    "transcript": "Welcome to Rumtek Monastery. It stands in Gangtok district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1966, and belongs to the Karma Kagyu lineage. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Rumtek Monastery page.",
+    "words": 161,
+    "durationSeconds": 68,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.893,
+      "rms": 0.1093,
+      "silenceRatio": 0.191,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rumtek",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/rumtek/hi.m4a",
+    "transcript": "Rumtek Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के गंगटोक ज़िले में है। इसकी स्थापना 1966 में हुई थी, और यह कर्म काग्यू परंपरा से जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Rumtek Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 186,
+    "durationSeconds": 75.3,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.957,
+      "rms": 0.1193,
+      "silenceRatio": 0.243,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rumtek",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/rumtek/ne.m4a",
+    "transcript": "Rumtek Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको गान्तोक जिल्लामा अवस्थित छ। यसको स्थापना 1966 मा भएको थियो, र यो कर्म काग्यू परम्परासँग सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Rumtek Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 143,
+    "durationSeconds": 76.7,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1936,
+      "silenceRatio": 0.094,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rumtek",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/rumtek/bn.m4a",
+    "transcript": "Rumtek Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গ্যাংটক জেলায় অবস্থিত। এটি 1966 সালে প্রতিষ্ঠিত হয়েছিল, এবং কর্ম কাগ্যু ধারার সঙ্গে যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Rumtek Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 140,
+    "durationSeconds": 82.2,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1288,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "pemayangtse",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/pemayangtse/en.m4a",
+    "transcript": "Welcome to Pemayangtse Monastery. It stands in Gyalshing district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1705, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Pemayangtse Monastery page.",
+    "words": 167,
+    "durationSeconds": 70.1,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1098,
+      "silenceRatio": 0.189,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "pemayangtse",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/pemayangtse/hi.m4a",
+    "transcript": "Pemayangtse Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के ग्यालशिंग ज़िले में है। इसकी स्थापना 1705 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Pemayangtse Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 79.3,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.969,
+      "rms": 0.1197,
+      "silenceRatio": 0.24,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "pemayangtse",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/pemayangtse/ne.m4a",
+    "transcript": "Pemayangtse Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको ग्याल्शिङ जिल्लामा अवस्थित छ। यसको स्थापना 1705 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Pemayangtse Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 80.5,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1968,
+      "silenceRatio": 0.1,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "pemayangtse",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/pemayangtse/bn.m4a",
+    "transcript": "Pemayangtse Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গিয়ালশিং জেলায় অবস্থিত। এটি 1705 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Pemayangtse Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 86.4,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1289,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tashiding",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/tashiding/en.m4a",
+    "transcript": "Welcome to Tashiding Monastery. It stands in Gyalshing district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1717, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Tashiding Monastery page.",
+    "words": 167,
+    "durationSeconds": 70.3,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.89,
+      "rms": 0.1096,
+      "silenceRatio": 0.188,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tashiding",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/tashiding/hi.m4a",
+    "transcript": "Tashiding Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के ग्यालशिंग ज़िले में है। इसकी स्थापना 1717 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Tashiding Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 79.4,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.954,
+      "rms": 0.1196,
+      "silenceRatio": 0.238,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tashiding",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/tashiding/ne.m4a",
+    "transcript": "Tashiding Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको ग्याल्शिङ जिल्लामा अवस्थित छ। यसको स्थापना 1717 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Tashiding Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 81.2,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1919,
+      "silenceRatio": 0.101,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tashiding",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/tashiding/bn.m4a",
+    "transcript": "Tashiding Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গিয়ালশিং জেলায় অবস্থিত। এটি 1717 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Tashiding Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 86.5,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1293,
+      "silenceRatio": 0.142,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "enchey",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/enchey/en.m4a",
+    "transcript": "Welcome to Enchey Monastery. It stands in Gangtok district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1909, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Enchey Monastery page.",
+    "words": 167,
+    "durationSeconds": 69.1,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.983,
+      "rms": 0.1098,
+      "silenceRatio": 0.19,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "enchey",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/enchey/hi.m4a",
+    "transcript": "Enchey Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के गंगटोक ज़िले में है। इसकी स्थापना 1909 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Enchey Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 77.9,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.956,
+      "rms": 0.1199,
+      "silenceRatio": 0.24,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "enchey",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/enchey/ne.m4a",
+    "transcript": "Enchey Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको गान्तोक जिल्लामा अवस्थित छ। यसको स्थापना 1909 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Enchey Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 79.6,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.2022,
+      "silenceRatio": 0.095,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "enchey",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/enchey/bn.m4a",
+    "transcript": "Enchey Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গ্যাংটক জেলায় অবস্থিত। এটি 1909 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Enchey Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 84.5,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1293,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lingdum",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/lingdum/en.m4a",
+    "transcript": "Welcome to Lingdum (Ranka) Monastery. It stands in Gangtok district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1999, and belongs to the Zurmang Kagyu lineage. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Lingdum (Ranka) Monastery page.",
+    "words": 163,
+    "durationSeconds": 70,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1082,
+      "silenceRatio": 0.198,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lingdum",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/lingdum/hi.m4a",
+    "transcript": "Lingdum (Ranka) Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के गंगटोक ज़िले में है। इसकी स्थापना 1999 में हुई थी, और यह ज़ुरमंग काग्यू परंपरा से जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Lingdum (Ranka) Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 188,
+    "durationSeconds": 77,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.975,
+      "rms": 0.1202,
+      "silenceRatio": 0.246,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lingdum",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/lingdum/ne.m4a",
+    "transcript": "Lingdum (Ranka) Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको गान्तोक जिल्लामा अवस्थित छ। यसको स्थापना 1999 मा भएको थियो, र यो जुर्माङ काग्यू परम्परासँग सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Lingdum (Ranka) Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 145,
+    "durationSeconds": 77.9,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.2007,
+      "silenceRatio": 0.096,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lingdum",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/lingdum/bn.m4a",
+    "transcript": "Lingdum (Ranka) Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গ্যাংটক জেলায় অবস্থিত। এটি 1999 সালে প্রতিষ্ঠিত হয়েছিল, এবং জুরমাং কাগ্যু ধারার সঙ্গে যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Lingdum (Ranka) Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 142,
+    "durationSeconds": 84.5,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1293,
+      "silenceRatio": 0.15,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phodong",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/phodong/en.m4a",
+    "transcript": "Welcome to Phodong Monastery. It stands in Mangan district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1740, and belongs to the Karma Kagyu lineage. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Phodong Monastery page.",
+    "words": 161,
+    "durationSeconds": 67.3,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1098,
+      "silenceRatio": 0.19,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phodong",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/phodong/hi.m4a",
+    "transcript": "Phodong Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के मंगन ज़िले में है। इसकी स्थापना 1740 में हुई थी, और यह कर्म काग्यू परंपरा से जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Phodong Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 186,
+    "durationSeconds": 75.5,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.984,
+      "rms": 0.12,
+      "silenceRatio": 0.241,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phodong",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/phodong/ne.m4a",
+    "transcript": "Phodong Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको मंगन जिल्लामा अवस्थित छ। यसको स्थापना 1740 मा भएको थियो, र यो कर्म काग्यू परम्परासँग सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Phodong Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 143,
+    "durationSeconds": 76.4,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1845,
+      "silenceRatio": 0.102,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phodong",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/phodong/bn.m4a",
+    "transcript": "Phodong Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের মাঙ্গান জেলায় অবস্থিত। এটি 1740 সালে প্রতিষ্ঠিত হয়েছিল, এবং কর্ম কাগ্যু ধারার সঙ্গে যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Phodong Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 140,
+    "durationSeconds": 82.5,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.968,
+      "rms": 0.1291,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phensang",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/phensang/en.m4a",
+    "transcript": "Welcome to Phensang Monastery. It stands in Mangan district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1721, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Phensang Monastery page.",
+    "words": 167,
+    "durationSeconds": 69.8,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1094,
+      "silenceRatio": 0.189,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phensang",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/phensang/hi.m4a",
+    "transcript": "Phensang Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के मंगन ज़िले में है। इसकी स्थापना 1721 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Phensang Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 79.2,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.971,
+      "rms": 0.1201,
+      "silenceRatio": 0.239,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phensang",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/phensang/ne.m4a",
+    "transcript": "Phensang Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको मंगन जिल्लामा अवस्थित छ। यसको स्थापना 1721 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Phensang Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 81.5,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1956,
+      "silenceRatio": 0.106,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "phensang",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/phensang/bn.m4a",
+    "transcript": "Phensang Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের মাঙ্গান জেলায় অবস্থিত। এটি 1721 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Phensang Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 85.8,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1291,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachen",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/lachen/en.m4a",
+    "transcript": "Welcome to Lachen Monastery. It stands in Mangan district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1858, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Lachen Monastery page.",
+    "words": 167,
+    "durationSeconds": 69.2,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.889,
+      "rms": 0.1096,
+      "silenceRatio": 0.19,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachen",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/lachen/hi.m4a",
+    "transcript": "Lachen Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के मंगन ज़िले में है। इसकी स्थापना 1858 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Lachen Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 78.8,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.958,
+      "rms": 0.1203,
+      "silenceRatio": 0.237,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachen",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/lachen/ne.m4a",
+    "transcript": "Lachen Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको मंगन जिल्लामा अवस्थित छ। यसको स्थापना 1858 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Lachen Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 80.4,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1884,
+      "silenceRatio": 0.105,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachen",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/lachen/bn.m4a",
+    "transcript": "Lachen Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের মাঙ্গান জেলায় অবস্থিত। এটি 1858 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Lachen Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 85.7,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1298,
+      "silenceRatio": 0.142,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachung",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/lachung/en.m4a",
+    "transcript": "Welcome to Lachung Monastery. It stands in Mangan district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1880, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Lachung Monastery page.",
+    "words": 167,
+    "durationSeconds": 68.8,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1098,
+      "silenceRatio": 0.19,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachung",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/lachung/hi.m4a",
+    "transcript": "Lachung Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के मंगन ज़िले में है। इसकी स्थापना 1880 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Lachung Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 78.5,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.962,
+      "rms": 0.1202,
+      "silenceRatio": 0.238,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachung",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/lachung/ne.m4a",
+    "transcript": "Lachung Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको मंगन जिल्लामा अवस्थित छ। यसको स्थापना 1880 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Lachung Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 80.8,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1912,
+      "silenceRatio": 0.103,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "lachung",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/lachung/bn.m4a",
+    "transcript": "Lachung Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের মাঙ্গান জেলায় অবস্থিত। এটি 1880 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Lachung Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 85.4,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.964,
+      "rms": 0.1295,
+      "silenceRatio": 0.143,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "sanga-choeling",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/sanga-choeling/en.m4a",
+    "transcript": "Welcome to Sanga Choeling Monastery. It stands in Gyalshing district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1697, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Sanga Choeling Monastery page.",
+    "words": 169,
+    "durationSeconds": 70.7,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1099,
+      "silenceRatio": 0.188,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "sanga-choeling",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/sanga-choeling/hi.m4a",
+    "transcript": "Sanga Choeling Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के ग्यालशिंग ज़िले में है। इसकी स्थापना 1697 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Sanga Choeling Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 196,
+    "durationSeconds": 80,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.966,
+      "rms": 0.1197,
+      "silenceRatio": 0.237,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "sanga-choeling",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/sanga-choeling/ne.m4a",
+    "transcript": "Sanga Choeling Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको ग्याल्शिङ जिल्लामा अवस्थित छ। यसको स्थापना 1697 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Sanga Choeling Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 152,
+    "durationSeconds": 82,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1936,
+      "silenceRatio": 0.098,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "sanga-choeling",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/sanga-choeling/bn.m4a",
+    "transcript": "Sanga Choeling Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গিয়ালশিং জেলায় অবস্থিত। এটি 1697 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Sanga Choeling Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 146,
+    "durationSeconds": 87.3,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1293,
+      "silenceRatio": 0.141,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "dubdi",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/dubdi/en.m4a",
+    "transcript": "Welcome to Dubdi Monastery. It stands in Gyalshing district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1701, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Dubdi Monastery page.",
+    "words": 167,
+    "durationSeconds": 69.4,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.11,
+      "silenceRatio": 0.189,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "dubdi",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/dubdi/hi.m4a",
+    "transcript": "Dubdi Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के ग्यालशिंग ज़िले में है। इसकी स्थापना 1701 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Dubdi Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 78.7,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.96,
+      "rms": 0.1194,
+      "silenceRatio": 0.238,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "dubdi",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/dubdi/ne.m4a",
+    "transcript": "Dubdi Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको ग्याल्शिङ जिल्लामा अवस्थित छ। यसको स्थापना 1701 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Dubdi Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 80.8,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.201,
+      "silenceRatio": 0.096,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "dubdi",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/dubdi/bn.m4a",
+    "transcript": "Dubdi Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গিয়ালশিং জেলায় অবস্থিত। এটি 1701 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Dubdi Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 85.2,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1289,
+      "silenceRatio": 0.143,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "ralang",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/ralang/en.m4a",
+    "transcript": "Welcome to Ralang Monastery. It stands in Namchi district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1768, and belongs to the Kagyu order. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Ralang Monastery page.",
+    "words": 160,
+    "durationSeconds": 66.8,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1098,
+      "silenceRatio": 0.191,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "ralang",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/ralang/hi.m4a",
+    "transcript": "Ralang Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के नामची ज़िले में है। इसकी स्थापना 1768 में हुई थी, और यह काग्यू परंपरा से जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Ralang Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 185,
+    "durationSeconds": 75.2,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.96,
+      "rms": 0.1201,
+      "silenceRatio": 0.239,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "ralang",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/ralang/ne.m4a",
+    "transcript": "Ralang Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको नाम्ची जिल्लामा अवस्थित छ। यसको स्थापना 1768 मा भएको थियो, र यो काग्यू परम्परासँग सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Ralang Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 142,
+    "durationSeconds": 77.7,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1887,
+      "silenceRatio": 0.098,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "ralang",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/ralang/bn.m4a",
+    "transcript": "Ralang Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের নামচি জেলায় অবস্থিত। এটি 1768 সালে প্রতিষ্ঠিত হয়েছিল, এবং কাগ্যু ধারার সঙ্গে যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Ralang Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 139,
+    "durationSeconds": 82.2,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1294,
+      "silenceRatio": 0.144,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "kewzing",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/kewzing/en.m4a",
+    "transcript": "Welcome to Kewzing Monastery. It stands in Namchi district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1875, and belongs to the Kagyu order. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Kewzing Monastery page.",
+    "words": 160,
+    "durationSeconds": 66.9,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1098,
+      "silenceRatio": 0.191,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "kewzing",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/kewzing/hi.m4a",
+    "transcript": "Kewzing Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के नामची ज़िले में है। इसकी स्थापना 1875 में हुई थी, और यह काग्यू परंपरा से जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Kewzing Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 185,
+    "durationSeconds": 75.3,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.954,
+      "rms": 0.1196,
+      "silenceRatio": 0.241,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "kewzing",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/kewzing/ne.m4a",
+    "transcript": "Kewzing Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको नाम्ची जिल्लामा अवस्थित छ। यसको स्थापना 1875 मा भएको थियो, र यो काग्यू परम्परासँग सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Kewzing Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 142,
+    "durationSeconds": 76.4,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1951,
+      "silenceRatio": 0.094,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "kewzing",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/kewzing/bn.m4a",
+    "transcript": "Kewzing Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের নামচি জেলায় অবস্থিত। এটি 1875 সালে প্রতিষ্ঠিত হয়েছিল, এবং কাগ্যু ধারার সঙ্গে যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Kewzing Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 139,
+    "durationSeconds": 82.2,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1291,
+      "silenceRatio": 0.145,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rinchenpong",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/rinchenpong/en.m4a",
+    "transcript": "Welcome to Rinchenpong Monastery. It stands in Soreng district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1730, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Rinchenpong Monastery page.",
+    "words": 167,
+    "durationSeconds": 69.9,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1101,
+      "silenceRatio": 0.188,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rinchenpong",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/rinchenpong/hi.m4a",
+    "transcript": "Rinchenpong Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के सोरेंग ज़िले में है। इसकी स्थापना 1730 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Rinchenpong Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 194,
+    "durationSeconds": 79.3,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.965,
+      "rms": 0.12,
+      "silenceRatio": 0.239,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rinchenpong",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/rinchenpong/ne.m4a",
+    "transcript": "Rinchenpong Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको सोरेङ जिल्लामा अवस्थित छ। यसको स्थापना 1730 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Rinchenpong Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 150,
+    "durationSeconds": 80.9,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1966,
+      "silenceRatio": 0.1,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "rinchenpong",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/rinchenpong/bn.m4a",
+    "transcript": "Rinchenpong Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের সোরেং জেলায় অবস্থিত। এটি 1730 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Rinchenpong Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 144,
+    "durationSeconds": 86,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.129,
+      "silenceRatio": 0.143,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tsuklakhang",
+    "language": "en",
+    "label": "English",
+    "audioUrl": "/audio/tsuklakhang/en.m4a",
+    "transcript": "Welcome to Tsuklakhang Palace Monastery. It stands in Gangtok district, in the Indian state of Sikkim, in the eastern Himalaya. It was established in 1898, and belongs to the Nyingma order, the oldest of the Tibetan Buddhist schools. Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom. A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals. The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains. If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside. Everything in this guide comes from the sources listed on the Tsuklakhang Palace Monastery page.",
+    "words": 169,
+    "durationSeconds": 70.8,
+    "withinTargetDuration": true,
+    "voice": "Daniel",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1094,
+      "silenceRatio": 0.19,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": null,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tsuklakhang",
+    "language": "hi",
+    "label": "हिन्दी",
+    "audioUrl": "/audio/tsuklakhang/hi.m4a",
+    "transcript": "Tsuklakhang Palace Monastery में आपका स्वागत है। यह पूर्वी हिमालय में स्थित भारतीय राज्य सिक्किम के गंगटोक ज़िले में है। इसकी स्थापना 1898 में हुई थी, और यह न्यिंग्मा परंपरा से, जो तिब्बती बौद्ध धर्म की सबसे प्राचीन शाखा है जुड़ा हुआ है। सिक्किम 1975 में भारत का राज्य बनने से पहले एक हिमालयी राज्य था, और यहाँ के मठ उस राज्य के जीवन से गहराई से जुड़े रहे। सिक्किम का गोम्पा केवल एक स्मारक नहीं, बल्कि एक जीवित समुदाय है। इसके चित्रित द्वारों के पीछे प्रार्थना कक्ष हैं, छपे हुए ग्रंथों का पुस्तकालय है, और वे कक्ष हैं जहाँ भिक्षु अध्ययन करते हैं, शास्त्रार्थ करते हैं और वर्ष भर के अनुष्ठान निभाते हैं। इसकी वास्तुकला तिब्बती मठ परंपरा का अनुसरण करती है: मोटी दीवारों पर चमकीले चित्रित अग्रभाग, स्तंभों वाला सभा कक्ष, और स्वर्णिम अलंकरण से सजी छत, जिस पर पर्वतों की पहली किरण पड़ती है। यदि आप यहाँ आएँ, तो शालीन वस्त्र पहनें, मंदिरों और स्तूपों की परिक्रमा दक्षिणावर्त करें, प्रार्थना कक्ष में प्रवेश से पहले जूते उतारें, और भीतर चित्र लेने से पहले अनुमति लें। इस विवरण की सारी जानकारी Tsuklakhang Palace Monastery के पृष्ठ पर दिए गए स्रोतों से ली गई है।",
+    "words": 196,
+    "durationSeconds": 80.7,
+    "withinTargetDuration": true,
+    "voice": "Lekha",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.96,
+      "rms": 0.1196,
+      "silenceRatio": 0.239,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tsuklakhang",
+    "language": "ne",
+    "label": "नेपाली",
+    "audioUrl": "/audio/tsuklakhang/ne.m4a",
+    "transcript": "Tsuklakhang Palace Monastery मा तपाईंलाई स्वागत छ। यो पूर्वी हिमालयको भारतीय राज्य सिक्किमको गान्तोक जिल्लामा अवस्थित छ। यसको स्थापना 1898 मा भएको थियो, र यो न्यिङ्मा परम्परासँग, जुन तिब्बती बौद्ध धर्मको सबैभन्दा पुरानो शाखा हो सम्बन्धित छ। सन् १९७५ मा भारतको राज्य बन्नुअघि सिक्किम एउटा हिमाली राज्य थियो, र यहाँका गुम्बाहरू त्यस राज्यको जीवनसँग गहिरो रूपमा जोडिएका थिए। सिक्किमको गुम्बा केवल एउटा स्मारक होइन, बरु एउटा जीवित समुदाय हो। यसका रङ्गिन ढोकाहरूभित्र प्रार्थना कक्षहरू, छापिएका ग्रन्थहरूको पुस्तकालय, र भिक्षुहरूले अध्ययन गर्ने, शास्त्रार्थ गर्ने र वर्षभरिका अनुष्ठानहरू सम्पन्न गर्ने कोठाहरू छन्। यसको वास्तुकलाले तिब्बती गुम्बा परम्परालाई पछ्याउँछ: बाक्लो पर्खालमाथि चम्किलो रङ्गिएको अग्रभाग, स्तम्भयुक्त सभा कक्ष, र सुनौलो सजावटले सिँगारिएको छाना, जहाँ पहाडको पहिलो किरण पर्छ। तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्। यस विवरणका सबै जानकारी Tsuklakhang Palace Monastery को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।",
+    "words": 152,
+    "durationSeconds": 82.4,
+    "withinTargetDuration": true,
+    "voice": "ne_NP-google-medium",
+    "engine": "Piper (ONNX) → AAC via afconvert",
+    "attribution": "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 1,
+      "rms": 0.1925,
+      "silenceRatio": 0.1,
+      "clippedRatio": 0.00001
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  },
+  {
+    "monasterySlug": "tsuklakhang",
+    "language": "bn",
+    "label": "বাংলা",
+    "audioUrl": "/audio/tsuklakhang/bn.m4a",
+    "transcript": "Tsuklakhang Palace Monastery-এ আপনাকে স্বাগতম। এটি পূর্ব হিমালয়ের ভারতীয় রাজ্য সিকিমের গ্যাংটক জেলায় অবস্থিত। এটি 1898 সালে প্রতিষ্ঠিত হয়েছিল, এবং ন্যিংমা ধারার সঙ্গে, যা তিব্বতি বৌদ্ধধর্মের প্রাচীনতম শাখা যুক্ত। ১৯৭৫ সালে ভারতের রাজ্য হওয়ার আগে সিকিম ছিল একটি হিমালয় রাজ্য, এবং এখানকার মঠগুলি সেই রাজ্যের জীবনের সঙ্গে গভীরভাবে যুক্ত ছিল। সিকিমের একটি গোম্পা কেবল স্মারক নয়, একটি জীবন্ত সম্প্রদায়। এর চিত্রিত দরজার পিছনে রয়েছে প্রার্থনাকক্ষ, ছাপা পুঁথির গ্রন্থাগার, এবং সেই কক্ষগুলি যেখানে ভিক্ষুরা অধ্যয়ন করেন, তর্ক করেন এবং বছরের আচার পালন করেন। এর স্থাপত্য তিব্বতি মঠ ঐতিহ্য অনুসরণ করে: পুরু দেয়ালের উপর উজ্জ্বল চিত্রিত সম্মুখভাগ, স্তম্ভযুক্ত সভাকক্ষ, এবং সোনালি অলঙ্করণে শেষ হওয়া ছাদ, যেখানে পাহাড়ের প্রথম আলো এসে পড়ে। আপনি এলে শালীন পোশাক পরুন, মন্দির ও স্তূপ প্রদক্ষিণ করুন ঘড়ির কাঁটার দিকে, প্রার্থনাকক্ষে ঢোকার আগে জুতো খুলুন, এবং ভিতরে ছবি তোলার আগে অনুমতি নিন। এই বিবরণের সমস্ত তথ্য Tsuklakhang Palace Monastery পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।",
+    "words": 146,
+    "durationSeconds": 88.3,
+    "withinTargetDuration": true,
+    "voice": "Piya",
+    "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+    "attribution": null,
+    "machineGenerated": true,
+    "languagePurityCheck": "pass",
+    "signal": {
+      "peak": 0.888,
+      "rms": 0.1288,
+      "silenceRatio": 0.142,
+      "clippedRatio": 0
+    },
+    "qa": {
+      "technical": "pass",
+      "language": "pass",
+      "quality": "pass"
+    },
+    "translationReviewed": false,
+    "generatedAt": "2026-08-16"
+  }
+]

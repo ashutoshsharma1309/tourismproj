@@ -1,0 +1,122 @@
+[
+  {
+    "slug": "rumtek",
+    "name": "Rumtek Monastery",
+    "district": "Gangtok",
+    "tradition": "Karma Kagyu",
+    "establishedYear": 1966,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "pemayangtse",
+    "name": "Pemayangtse Monastery",
+    "district": "Gyalshing",
+    "tradition": "Nyingma",
+    "establishedYear": 1705,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "tashiding",
+    "name": "Tashiding Monastery",
+    "district": "Gyalshing",
+    "tradition": "Nyingma",
+    "establishedYear": 1717,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "enchey",
+    "name": "Enchey Monastery",
+    "district": "Gangtok",
+    "tradition": "Nyingma",
+    "establishedYear": 1909,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "lingdum",
+    "name": "Lingdum (Ranka) Monastery",
+    "district": "Gangtok",
+    "tradition": "Zurmang Kagyu",
+    "establishedYear": 1999,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "phodong",
+    "name": "Phodong Monastery",
+    "district": "Mangan",
+    "tradition": "Karma Kagyu",
+    "establishedYear": 1740,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "phensang",
+    "name": "Phensang Monastery",
+    "district": "Mangan",
+    "tradition": "Nyingma",
+    "establishedYear": 1721,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "lachen",
+    "name": "Lachen Monastery",
+    "district": "Mangan",
+    "tradition": "Nyingma",
+    "establishedYear": 1858,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "lachung",
+    "name": "Lachung Monastery",
+    "district": "Mangan",
+    "tradition": "Nyingma",
+    "establishedYear": 1880,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "sanga-choeling",
+    "name": "Sanga Choeling Monastery",
+    "district": "Gyalshing",
+    "tradition": "Nyingma",
+    "establishedYear": 1697,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "dubdi",
+    "name": "Dubdi Monastery",
+    "district": "Gyalshing",
+    "tradition": "Nyingma",
+    "establishedYear": 1701,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "ralang",
+    "name": "Ralang Monastery",
+    "district": "Namchi",
+    "tradition": "Kagyu",
+    "establishedYear": 1768,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "kewzing",
+    "name": "Kewzing Monastery",
+    "district": "Namchi",
+    "tradition": "Kagyu",
+    "establishedYear": 1875,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "rinchenpong",
+    "name": "Rinchenpong Monastery",
+    "district": "Soreng",
+    "tradition": "Nyingma",
+    "establishedYear": 1730,
+    "status": "VERIFIED"
+  },
+  {
+    "slug": "tsuklakhang",
+    "name": "Tsuklakhang Palace Monastery",
+    "district": "Gangtok",
+    "tradition": "Nyingma",
+    "establishedYear": 1898,
+    "status": "VERIFIED"
+  }
+]
