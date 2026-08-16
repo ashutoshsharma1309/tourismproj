@@ -1,0 +1,257 @@
+NEY HERITAGE — PROJECT SUMMARY
+Digitizing the Sacred Heritage of Sikkim
+Last updated: 2026-08-16 · branch: main · working tree: uncommitted
+
+================================================================================
+1 · WHAT THIS IS NOW
+================================================================================
+
+NEY Heritage (formerly "SikkimOS") is a digital cultural-heritage platform for
+Sikkim: a sourced archive of the state's monasteries, an interactive heritage
+map, a rule-based trip planner, a directory of registered stays, and a public
+preservation dashboard that reports the archive's own coverage and gaps.
+
+The defining change since the last summary is a DATA-INTEGRITY PASS. The
+earlier build shipped a large amount of invented content — hotel tariffs, star
+ratings, guest reviews, room inventories, 220 synthetic bookings, a TSD
+remittance ledger, invented festival dates, visitor timings, phone numbers and
+email addresses, plus European panoramas reused as Sikkim prayer halls. All of
+it has been deleted rather than relabelled.
+
+The operating rule is now: every factual claim rendered in the product points
+at an entry in src/data/sources.ts, or it does not ship. Where a fact is
+missing, the UI says so explicitly ("Data not available", "Not yet captured")
+instead of estimating. The gaps are published on purpose — /preservation exists
+to show them.
+
+Positioning shifted with it: from "SaaS platform for Sikkim tourism" to a
+heritage archive that is honest about what it holds. The revenue-dashboard
+framing of the old Phase 2 brief is gone.
+
+================================================================================
+2 · STACK
+================================================================================
+
+Next.js 16.3 (App Router, RSC) · React 19.2 · TypeScript 5.7 · Tailwind CSS 4
+Framer Motion 13 · Leaflet 1.9 + @types/leaflet · Pannellum 2.5 (dependency
+only — see §7) · Recharts 3.10 · lucide-react · @supabase/supabase-js 2.112
+class-variance-authority · clsx · tailwind-merge
+Dev: ESLint 9 + eslint-config-next · @axe-core/cli
+
+Design system: Fraunces (display), Plus Jakarta Sans (UI), IBM Plex Mono
+(numerics/data). Tokenised palette and utilities in src/app/globals.css
+(~420 lines): petrol/ink surfaces, temple-tank jade primary, marigold accent,
+glass and glass-dark, card-lift, media-zoom, text-glow, gradient-overlay.
+
+Package name in package.json is still "yatra-ai" (legacy, harmless).
+
+================================================================================
+3 · ROUTES SHIPPED
+================================================================================
+
+/                        Landing page (484 lines). Parallax hero over the
+                         Ravangla Buddha, live stat counters from
+                         src/lib/stats.ts, featured monasteries, interactive
+                         heritage map, virtual-tour teaser, "Stories of
+                         Sikkim" editorial section, planner CTA, digital-
+                         preservation pillars. revalidate = 3600.
+
+/monasteries             Explorer: debounced search, district filter,
+                         tradition filter, feature filter ("Sourced record",
+                         "Mapped location"), grid ⇄ Leaflet map toggle with
+                         tradition-coloured markers. Map is dynamically
+                         imported (ssr: false) with a skeleton.
+
+/monasteries/[slug]      Detail page, statically generated for all 15 sites.
+                         Hero, history paragraphs, significance, architecture,
+                         provenance/verification badges, honest availability
+                         panel, Google Maps link, Commons photo credit.
+
+/hotels                  "Stays" — a directory, not a booking surface. Real
+                         named properties grouped by district, each linking to
+                         Google Maps. No price, rating or review is shown
+                         because no licensed feed supplies them. Sidebar
+                         carries the TSD breakdown and states the limitation.
+
+/planner                 Preference form: interests, budget slider, duration,
+                         travel style, start date, special requests. Parallax
+                         Tsomgo Lake hero.
+
+/planner/result          Generated itinerary from URL search params: day-by-day
+                         accordion timeline, collapsed route stops, Leaflet
+                         route map, and a cost panel quoting only the statutory
+                         ₹50 TSD fee.
+
+/preservation            Public preservation dashboard. Archive coverage bars
+                         (sourced / mapped / 360° captured / narrated), a
+                         per-site register table, verified tourism statistics,
+                         and the full source registry. This page REPLACED the
+                         hotel-owner and monastery-admin dashboards, whose
+                         revenue, occupancy and remittance figures were
+                         fabricated.
+
+/not-found, /error       Custom 404 and error boundary.
+
+Global chrome: Navbar (scroll-condensing glass, mobile drawer, role switcher),
+Footer, ⌘K CommandPalette indexing monasteries + places + stays, muted-by-
+default AmbientAudio (two Commons-licensed layers; a chant layer is
+deliberately absent — no suitably licensed recording exists), Toaster.
+
+================================================================================
+4 · DATA LAYER
+================================================================================
+
+src/data/sources.ts      Central source registry. 6 sources (Sikkim Tourist
+                         Trade Rules 2025 press coverage, UNI corroboration,
+                         2025 arrivals reporting, Wikipedia, Wikimedia
+                         Commons, OpenStreetMap), each with what may legitimately
+                         be cited from it. Provenance type: sourceId, sourceUrl,
+                         verifiedAt, confidence (high/medium/unverified),
+                         optional caveat.
+
+src/data/monasteries.ts  15 monasteries: rumtek, pemayangtse, tashiding,
+                         enchey, lingdum, phodong, phensang, lachen, lachung,
+                         sanga-choeling, dubdi, ralang, kewzing, rinchenpong,
+                         tsuklakhang. Names, districts, lineages, founding
+                         years and history from cited Wikipedia articles.
+                         Coordinates only where the article publishes one;
+                         sites with disputed coordinates are marked unverified
+                         and are NOT plotted rather than given a guessed pin
+                         (mappableMonasteries is the map's only input).
+                         Every record reports tour: { available: false } and
+                         audio: { available: false }.
+
+src/data/places.ts       9 non-monastery heritage/natural sites, each with a
+                         Wikipedia article and its published coordinate. No
+                         "coming soon" padding. Permit notes where documented.
+
+src/data/hotels.ts       20-entry stay directory: slug, name, district,
+                         indicative tier, Google Maps search URL, provenance
+                         marked "unverified" with an explicit caveat. Nothing
+                         commercial.
+
+src/data/images.ts       Keyed image registry (hero/, mon/, pano/, place/,
+                         arch/, fest/, attr/) resolved through img().
+
+src/lib/stats.ts         Verified tourism metrics: 2025 arrivals 17,12,360
+                         total / 16,35,650 domestic / 61,710 foreign with 2024
+                         comparisons. TSD Fund collected is value: null —
+                         the fund exists but no collection total is published,
+                         so it renders "Data not available" instead of an
+                         estimate. (The old build reported 21,47,892 arrivals
+                         and ₹12.5 Cr TSD; both were invented.)
+
+================================================================================
+5 · TSD — CORRECTED
+================================================================================
+
+src/lib/booking.ts now models the Tourism Sustainability Development Fund as
+the Government of Sikkim actually defines it:
+
+  • Flat ₹50 per person, one-time, valid one month
+  • Collected by hotels at check-in, deposited to the TSD Fund
+  • Children under 5 and government-work visitors exempt
+  • Re-entry within the same month is charged again
+  • Source: Sikkim Registration of Tourist Trade Rules, 2025
+
+The previous implementation charged 2–4% of room tariff. That was invented and
+misstated live public policy; it has been removed. GST is applied at 12% and
+labelled an estimate, not a quoted rate. computeTariff(), nightsBetween() and
+makeBookingId() ("NEY-HTL-####", deterministic) remain.
+
+================================================================================
+6 · TRIP PLANNER
+================================================================================
+
+src/lib/generate-itinerary.ts is a rule-based generator over real geography.
+Four anchors — Gangtok, Pelling, Lachung, Ravangla — each with interest-tagged
+day templates (Monasteries, Culture, Lakes, Food, Adventure, Trekking, Nature).
+routePlan() chooses the anchor sequence and night allocation from trip length
+and interests, keeping drive times sane; arrival days are always sequenced
+first. Duration is clamped to 3–14 days.
+
+Cost output deliberately contains ONE line: the statutory TSD fee.
+Accommodation, transport and activity totals are not estimated, since no rates
+feed is licensed. The return shape (GeneratedItinerary) is the contract a model
+would fill in a later phase.
+
+================================================================================
+7 · BUILT BUT NOT LIVE
+================================================================================
+
+360° tours      Pannellum is installed and src/types/pannellum.d.ts exists, but
+                there is NO viewer component in the tree and no monastery has a
+                verified capture. The detail page renders an explicit
+                "360° experience not yet available" notice instead. Restoring
+                tours requires a genuine capture programme in Sikkim.
+
+Audio guides    src/components/monasteries/AudioGuidePlayer.tsx (161 lines) is
+                written but imported nowhere. No narration has been recorded or
+                translation-reviewed, so every monastery reports audio
+                unavailable.
+
+Supabase        supabase/schema.sql defines only `monasteries` and `stays`,
+                both with RLS enabled and a public SELECT-only policy;
+                provenance columns travel with each row. bookings,
+                tsd_transactions and tourism_stats were dropped along with the
+                synthetic data they held. supabase/seed.sql upserts on slug.
+                src/lib/supabase.ts returns null when unconfigured and the app
+                renders fully without a database — Supabase is an optional
+                overlay, never a hard dependency.
+
+================================================================================
+8 · TOOLING
+================================================================================
+
+scripts/heritage-discovery.mjs (290 lines) — a heritage discovery agent that
+walks Wikipedia categories and Wikimedia Commons, cross-checks fields, scores
+confidence, and stores evidence. It writes no prose of its own: every field is
+copied from a named source with its URL and read date. Records that cannot be
+corroborated are emitted as candidates for human review, not published.
+Outputs: src/data/generated/monasteries.discovered.json,
+reports/monastery-discovery.json.
+
+================================================================================
+9 · BUILD STATUS
+================================================================================
+
+  npx tsc --noEmit ............ PASSES, 0 errors
+  npx eslint . ................ 1 error
+      scripts/heritage-discovery.mjs:27 — 'SIKKIM_DISTRICTS' assigned but
+      never used (@typescript-eslint/no-unused-vars)
+
+~6,500 lines across 50 source files. All work is uncommitted on main; the last
+commit (008ec05) predates the data-integrity pass.
+
+================================================================================
+10 · KNOWN GAPS / NEXT UP
+================================================================================
+
+1. Dead routes. The Navbar role switcher (src/components/layout/Navbar.tsx:15-16)
+   and the Footer (src/components/layout/Footer.tsx:30-31) still link to
+   /dashboard/hotel-owner and /dashboard/monastery. Both routes were deleted —
+   all four links currently 404. Either remove the role switcher or point it at
+   /preservation.
+
+2. Lint error in scripts/heritage-discovery.mjs (see §9).
+
+3. .env.example still refers to "SikkimOS" and to hardcoded fallback stats that
+   no longer live where it says.
+
+4. Unused image keys. images.ts still carries attr/* (Alleppey, Beatles Ashram,
+   Elephanta, Jantar Mantar), fest/* and arch/* entries from the pan-India
+   build; only pano/hall and place/tsomgo are referenced. Prune or use.
+
+5. Orphaned AudioGuidePlayer component (§7).
+
+6. Source hardening. Two registry entries carry TODOs: swap the press coverage
+   of the 2025 Rules for the gazetted PDF, and the arrivals reporting for the
+   departmental statistical handbook, once stable public URLs are confirmed.
+
+7. Restoring commercial detail on /hotels needs a licensed Places or booking
+   integration — not more mock data.
+
+8. prompts.txt is empty.
+
+9. No test suite, and Lighthouse/axe have not been run against the current
+   build.
