@@ -1,45 +1,48 @@
-import type {
-  AccommodationTier,
-  DestinationCategory,
-  Interest,
-  TravelStyle,
-} from "@/types";
+import type { AccommodationTier } from "@/types";
 
 export const SITE = {
-  name: "Yatra AI",
-  tagline: "Travel smarter. Experience more.",
+  name: "Ney Heritage",
+  tagline: "Digitizing the Sacred Heritage of Sikkim",
+  motto: "Explore. Experience. Preserve.",
   description:
-    "Plan a trip across India in minutes. Yatra AI turns your dates, budget and interests into a day-by-day itinerary you can actually follow.",
+    "A digital cultural heritage platform for Sikkim — walk centuries-old monasteries in 360°, read their stories, plan a heritage journey and help preserve what the mountains hold.",
 } as const;
 
 export const NAV_LINKS = [
-  { href: "/destinations", label: "Destinations" },
-  { href: "/planner", label: "Plan a trip" },
-  { href: "/explore", label: "Explore in 3D" },
+  { href: "/monasteries", label: "Monasteries" },
+  { href: "/stories", label: "Stories" },
+  { href: "/#map", label: "Map" },
+  { href: "/hotels", label: "Stays" },
+  { href: "/planner", label: "Plan Journey" },
+  { href: "/preservation", label: "Preservation" },
 ] as const;
 
-export const DESTINATION_CATEGORIES: readonly DestinationCategory[] = [
-  "Heritage",
-  "Beach",
-  "Mountains",
-  "Adventure",
-  "Food",
-  "Culture",
-  "Nature",
-  "Spiritual",
-];
+/* =========================================================================
+   LANDING PAGE — stats fallback, testimonials, ambience
+   ========================================================================= */
 
-export const INTERESTS: readonly Interest[] = [
-  "History",
-  "Food",
-  "Culture",
-  "Nature",
-  "Shopping",
-  "Architecture",
-  "Adventure",
-  "Nightlife",
-  "Photography",
-];
+
+
+/**
+ * Ambient sound layers — freely licensed recordings on Wikimedia Commons,
+ * muted by default. A Buddhist chant layer is intentionally absent: Commons
+ * has no suitably licensed recording, and substituting unrelated audio would
+ * be worse than silence.
+ */
+export const AMBIENT_SOUNDS = [
+  {
+    id: "bowl",
+    name: "Singing bowl",
+    url: "https://upload.wikimedia.org/wikipedia/commons/7/70/The_sound_of_a_singing_bowl.wav",
+    defaultVolume: 0.5,
+  },
+  {
+    id: "wind",
+    name: "Mountain wind",
+    url: "https://upload.wikimedia.org/wikipedia/commons/1/11/20221229_-_Abisko_Turiststation_at_night_-_Wind_and_snow.wav",
+    defaultVolume: 0.3,
+  },
+] as const;
 
 interface OptionMeta<T> {
   value: T;
@@ -67,34 +70,6 @@ export const ACCOMMODATION_TIERS: readonly OptionMeta<AccommodationTier>[] = [
     value: "5-star",
     label: "5 Star",
     description: "Heritage and luxury properties, ₹12,000+ a night",
-  },
-];
-
-export const TRAVEL_STYLES: readonly OptionMeta<TravelStyle>[] = [
-  {
-    value: "relaxed",
-    label: "Relaxed",
-    description: "Two stops a day, long lunches, no alarms",
-  },
-  {
-    value: "balanced",
-    label: "Balanced",
-    description: "Three or four stops with breathing room between them",
-  },
-  {
-    value: "fast-paced",
-    label: "Fast-paced",
-    description: "Early starts and five or more stops a day",
-  },
-  {
-    value: "luxury",
-    label: "Luxury",
-    description: "Private transport, premium stays, skip-the-line entry",
-  },
-  {
-    value: "budget",
-    label: "Budget",
-    description: "Public transport, street food, free-entry sights first",
   },
 ];
 

@@ -86,6 +86,23 @@ export function formatCoordinates(lat: number, lng: number): string {
   return `${Math.abs(lat).toFixed(4)}° ${ns}, ${Math.abs(lng).toFixed(4)}° ${ew}`;
 }
 
+/** 2147892 -> "21,47,892" — Indian grouping for headline counters. */
+export function formatStatNumber(value: number): string {
+  return new Intl.NumberFormat("en-IN", { maximumFractionDigits: 0 }).format(value);
+}
+
+/**
+ * 125000000 -> "₹12.5 Cr", 350000 -> "₹3.5 L".
+ * Hand-rolled rather than Intl compact notation so lakh/crore labels are
+ * identical across ICU versions.
+ */
+export function formatCurrencyCompact(amount: number): string {
+  const scaled = (value: number) => value.toFixed(1).replace(/\.0$/, "");
+  if (amount >= 1_00_00_000) return `₹${scaled(amount / 1_00_00_000)} Cr`;
+  if (amount >= 1_00_000) return `₹${scaled(amount / 1_00_000)} L`;
+  return formatPrice(amount);
+}
+
 /** "09:30" -> "9:30 AM" */
 export function formatTime(time24: string): string {
   const [hourPart, minutePart] = time24.split(":");
