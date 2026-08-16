@@ -1,59 +1,61 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   YATRA AI — DESIGN TOKENS
+   Ney Heritage — design tokens
    Single source of truth. Components must consume these tokens, never raw hex.
    ========================================================================= */
 
 @theme {
   /* ---------------------------------------------------------------------
-     COLOR
-     Palette derived from Indian natural-dye and stone materials:
-     petrol ink, morning mist, temple-tank jade, marigold, madder red.
+     COLOR — Ney Heritage
+     Drawn from monastery material culture: warm ivory plaster, aged wood
+     and deep charcoal shadow, forest ridge, bronze/gilt, Tibetan red.
      --------------------------------------------------------------------- */
 
   /* Surfaces */
-  --color-background: #f1f4f2; /* morning mist — page ground */
-  --color-surface: #ffffff; /* cards, sheets, inputs */
-  --color-surface-muted: #e7ecea; /* inset panels, track backgrounds */
-  --color-surface-inverse: #0c1f26; /* dark sections, footer */
+  --color-background: #f6f2e9; /* warm ivory — page ground */
+  --color-surface: #fffcf5; /* cards, sheets, inputs */
+  --color-surface-muted: #ece4d4; /* inset panels, track backgrounds */
+  --color-surface-inverse: #221c15; /* dark sections, footer — warm charcoal */
 
   /* Text */
-  --color-foreground: #0c1f26; /* primary text — petrol ink */
-  --color-muted: #4f645d; /* secondary text */
-  --color-subtle: #7d908a; /* captions, meta, placeholders */
-  --color-foreground-inverse: #f1f4f2;
+  --color-foreground: #221c15; /* primary text — lamp-black */
+  --color-muted: #5d5647; /* secondary text */
+  --color-subtle: #6b6352; /* captions and meta — AA on page (5.3:1), card (5.8:1) and inset panel (4.7:1) */
+  --color-foreground-inverse: #f6f2e9;
 
   /* Lines */
-  --color-border: #dbe3df;
-  --color-border-strong: #c2cfc9;
-  --color-border-inverse: #23404a;
+  --color-border: #e3dac7;
+  --color-border-strong: #cfc3a9;
+  --color-border-inverse: #3d3527;
 
   /* Brand */
-  --color-primary: #0f6b62; /* temple-tank jade */
-  --color-primary-hover: #0a534c;
-  --color-primary-active: #084039;
-  --color-primary-soft: #e2efeb;
-  --color-primary-foreground: #ffffff;
+  --color-primary: #43614d; /* forest ridge */
+  --color-primary-hover: #37513f;
+  --color-primary-active: #2c4233;
+  --color-primary-soft: #e5ebe1;
+  --color-primary-foreground: #fffcf5;
 
-  --color-secondary: #0c1f26; /* ink — high-emphasis neutral action */
-  --color-secondary-hover: #16333d;
-  --color-secondary-foreground: #ffffff;
+  --color-secondary: #221c15; /* charcoal — high-emphasis neutral action */
+  --color-secondary-hover: #383023;
+  --color-secondary-foreground: #fffcf5;
 
-  --color-accent: #e39b2c; /* marigold — used sparingly, never as a surface */
-  --color-accent-hover: #c98520;
-  --color-accent-soft: #fbf1de;
-  --color-accent-foreground: #3d2a08;
+  --color-accent: #c08a2d; /* bronze/gilt — fills and marks, and text on dark only */
+  /* Text-safe bronze for light surfaces; the display gilt is 2.96:1 and fails AA. */
+  --color-accent-ink: #8a6110;
+  --color-accent-hover: #a37423;
+  --color-accent-soft: #f5ead3;
+  --color-accent-foreground: #37280b;
 
   /* Status */
-  --color-success: #2f7d5b;
-  --color-success-soft: #e4f1eb;
-  --color-warning: #b57a12;
-  --color-warning-soft: #fbf0da;
-  --color-error: #b23a2b; /* madder root */
-  --color-error-soft: #f8e6e3;
-  --color-info: #2a6f97;
-  --color-info-soft: #e3eef5;
+  --color-success: #2f6340; /* 4.9:1 on success-soft, 6.9:1 on surface */
+  --color-success-soft: #e2efe5;
+  --color-warning: #8a6110; /* 5.4:1 on surface, 4.8:1 on warning-soft */
+  --color-warning-soft: #f7edd6;
+  --color-error: #a63a2a; /* Tibetan red */
+  --color-error-soft: #f6e5e0;
+  --color-info: #4c6e8f;
+  --color-info-soft: #e5edf4;
 
   /* ---------------------------------------------------------------------
      TYPOGRAPHY
@@ -122,10 +124,10 @@
   /* ---------------------------------------------------------------------
      ELEVATION — low-spread, high-softness. No hard drop shadows.
      --------------------------------------------------------------------- */
-  --shadow-soft: 0 1px 2px rgba(12, 31, 38, 0.04), 0 1px 3px rgba(12, 31, 38, 0.05);
-  --shadow-card: 0 2px 4px rgba(12, 31, 38, 0.03), 0 8px 24px -12px rgba(12, 31, 38, 0.14);
-  --shadow-lifted: 0 4px 8px rgba(12, 31, 38, 0.04), 0 20px 40px -16px rgba(12, 31, 38, 0.2);
-  --shadow-overlay: 0 24px 64px -20px rgba(12, 31, 38, 0.34);
+  --shadow-soft: 0 1px 2px rgba(34, 28, 21, 0.05), 0 1px 3px rgba(34, 28, 21, 0.06);
+  --shadow-card: 0 2px 4px rgba(34, 28, 21, 0.04), 0 8px 24px -12px rgba(34, 28, 21, 0.16);
+  --shadow-lifted: 0 4px 8px rgba(34, 28, 21, 0.05), 0 20px 40px -16px rgba(34, 28, 21, 0.22);
+  --shadow-overlay: 0 24px 64px -20px rgba(34, 28, 21, 0.36);
 
   /* ---------------------------------------------------------------------
      MOTION — fast, subtle, purposeful
@@ -134,12 +136,31 @@
   --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
 
   --animate-fade-up: fade-up 0.5s var(--ease-out-soft) both;
+  --animate-bounce-soft: bounce-soft 2s var(--ease-in-out-soft) infinite;
+  --animate-kenburns: kenburns 36s var(--ease-in-out-soft) alternate infinite;
   --animate-fade-in: fade-in 0.3s var(--ease-out-soft) both;
   --animate-scale-in: scale-in 0.18s var(--ease-out-soft) both;
   --animate-slide-up: slide-up 0.28s var(--ease-out-soft) both;
   --animate-slide-in-right: slide-in-right 0.3s var(--ease-out-soft) both;
   --animate-shimmer: shimmer 1.6s linear infinite;
 
+  @keyframes kenburns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  @keyframes bounce-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
   @keyframes fade-up {
     from {
       opacity: 0;
@@ -239,6 +260,13 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /* Links sitting inside a paragraph are underlined, so they are
+     distinguishable without relying on colour. */
+  p > a:not([class*="rounded"]):not([class*="inline-flex"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
   /* Inputs inherit the type system rather than the UA stylesheet. */
   input,
   select,
@@ -290,6 +318,82 @@
 @utility media-zoom {
   transition: transform 0.7s var(--ease-out-soft);
   will-change: transform;
+}
+
+/* =========================================================================
+   IMMERSIVE UTILITIES — parallax hero, stat counters, lifted cards
+   ========================================================================= */
+
+/* Base class for parallax image/art layers. Transform-only movement. */
+@utility parallax-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+/* Warm charcoal scrim so hero copy stays readable over photography — kept
+   light at the top so the image itself stays dominant. */
+@utility gradient-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(24, 19, 13, 0.85) 0%,
+    rgba(24, 19, 13, 0.4) 42%,
+    rgba(24, 19, 13, 0.14) 68%,
+    rgba(24, 19, 13, 0.04) 100%
+  );
+}
+
+/* Soft halo for display type sitting on imagery. */
+@utility text-glow {
+  text-shadow:
+    0 1px 2px rgba(24, 19, 13, 0.5),
+    0 6px 32px rgba(24, 19, 13, 0.55);
+}
+
+/* Denser halo for gold type that may land on gold subject matter. */
+@utility text-glow-strong {
+  text-shadow:
+    0 1px 3px rgba(24, 19, 13, 0.92),
+    0 2px 10px rgba(24, 19, 13, 0.85),
+    0 8px 28px rgba(24, 19, 13, 0.6);
+}
+
+/* Architectural glass — used selectively: navbar, hero chips, map panels. */
+@utility glass {
+  background: rgba(255, 252, 245, 0.6);
+  border: 1px solid rgba(255, 252, 245, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@utility glass-dark {
+  background: rgba(34, 28, 21, 0.72);
+  border: 1px solid rgba(246, 242, 233, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Hoverable card: lift, deepen shadow, warm the border to marigold. */
+@utility card-lift {
+  transition:
+    transform 0.3s var(--ease-out-soft),
+    box-shadow 0.3s var(--ease-out-soft),
+    border-color 0.3s var(--ease-out-soft);
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lifted);
+    border-color: var(--color-accent);
+  }
+}
+
+/* Entrance animation for hero copy; stagger with [animation-delay:*]. */
+@utility fade-in-up {
+  animation: fade-up 0.6s var(--ease-out-soft) both;
+}
+
+/* Stat counters must not shift width while animating digits. */
+@utility number-counter {
+  font-variant-numeric: tabular-nums;
 }
 
 /* =========================================================================
