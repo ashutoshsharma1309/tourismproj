@@ -1,196 +1,162 @@
+import type { Provenance } from "@/data/sources";
+
 /**
- * Domain model for Yatra AI.
+ * Domain model for Ney Heritage.
  *
- * These types are the contract between the UI and the data layer. Phase 1 fills
- * them from `src/data`; later phases will fill the same shapes from the API or
- * database without touching component code.
+ * Only shapes with verified data behind them remain. Types for hotel tariffs,
+ * room inventories, guest reviews, bookings and the TSD ledger were removed
+ * with the fabricated data they described.
  */
 
-export type DestinationCategory =
-  | "Heritage"
-  | "Beach"
-  | "Mountains"
-  | "Adventure"
-  | "Food"
-  | "Culture"
-  | "Nature"
-  | "Spiritual";
-
-export type AttractionCategory =
-  | "Monument"
-  | "Museum"
-  | "Market"
-  | "Temple"
-  | "Park"
-  | "Viewpoint"
-  | "Neighbourhood"
-  | "Beach";
-
-export type ExperienceCategory =
-  | "Food"
-  | "Culture"
-  | "Heritage"
-  | "Shopping"
-  | "Adventure"
-  | "Nature"
-  | "Nightlife";
-
 export type AccommodationTier = "budget" | "3-star" | "4-star" | "5-star";
-
-export type TravelStyle = "relaxed" | "balanced" | "fast-paced" | "luxury" | "budget";
-
-export type Interest =
-  | "History"
-  | "Food"
-  | "Culture"
-  | "Nature"
-  | "Shopping"
-  | "Architecture"
-  | "Adventure"
-  | "Nightlife"
-  | "Photography";
-
-/** Crowd pressure is displayed in Phase 1 and predicted by a model in Phase 4. */
-export type CrowdLevel = "low" | "moderate" | "high";
 
 export interface Coordinates {
   lat: number;
   lng: number;
 }
 
-export interface Destination {
+/* =========================================================================
+   SIKKIM DOMAIN — Ney Heritage
+   Shapes mirror the Supabase tables in /supabase; the landing page reads
+   `tourism_stats` live and falls back to constants when no client exists.
+   ========================================================================= */
+
+/** Sikkim's six districts (post-2021 names). */
+export type SikkimDistrict =
+  | "Gangtok"
+  | "Mangan"
+  | "Namchi"
+  | "Gyalshing"
+  | "Pakyong"
+  | "Soreng";
+
+export type MonasteryTradition = "Nyingma" | "Kagyu" | "Karma Kagyu" | "Zurmang Kagyu";
+
+export interface Monastery {
   id: string;
   slug: string;
   name: string;
-  state: string;
-  country: string;
-  /** One line, used on cards and in search results. */
-  tagline: string;
-  /** Two to three sentences, used on the detail page. */
+  district: SikkimDistrict;
+  tradition: MonasteryTradition;
+  establishedYear: number;
   description: string;
   image: string;
-  /** Extra photography for the detail-page gallery. */
-  gallery: string[];
-  rating: number;
-  reviewCount: number;
-  categories: DestinationCategory[];
-  coordinates: Coordinates;
-  /** Indicative per-person daily spend in INR, mid-tier. */
-  averageDailyCost: number;
-  bestSeason: string;
-  idealDays: number;
-  featured: boolean;
-  popularityRank: number;
 }
 
-export interface Attraction {
-  id: string;
-  slug: string;
-  destinationSlug: string;
-  name: string;
-  category: AttractionCategory;
-  description: string;
-  image: string;
-  rating: number;
-  reviewCount: number;
-  /** Typical visit length in minutes. */
-  durationMinutes: number;
-  /** Entry fee per person in INR. 0 means free. */
-  entryFee: number;
-  coordinates: Coordinates;
-  crowdLevel: CrowdLevel;
-  bestTimeToVisit: string;
-}
+/* =========================================================================
+   PHASE 2 — hotels & booking
+   ========================================================================= */
 
-export interface Hotel {
-  id: string;
-  slug: string;
-  destinationSlug: string;
-  name: string;
-  tier: AccommodationTier;
-  area: string;
-  description: string;
-  image: string;
-  rating: number;
-  reviewCount: number;
-  /** Per night, per room, in INR. */
-  pricePerNight: number;
-  amenities: string[];
-  distanceFromCentreKm: number;
-}
+/* =========================================================================
+   PHASE 2 — monastery experience
+   ========================================================================= */
 
-export interface Experience {
-  id: string;
-  slug: string;
-  destinationSlug: string;
+/** 360 tour availability. Never assumed — see src/data/monasteries.ts. */
+export type TourAvailability =
+  | { available: false }
+  | { available: true; provider: string; sourceUrl: string; verifiedAt: string; scenes: TourScene[] };
+
+export interface TourHotspot {
+  pitch: number;
+  yaw: number;
   title: string;
-  category: ExperienceCategory;
+  description: string;
+}
+
+export interface TourScene {
+  id: string;
+  title: string;
+  /** Equirectangular (2:1) image genuinely captured at this site. */
+  image: string;
+  hotspots: TourHotspot[];
+}
+
+/** Audio guide availability, per language. */
+export type AudioAvailability =
+  | { available: false }
+  | { available: true; languages: string[]; transcriptUrl?: string };
+
+/** A monastery record. Only fields backed by a cited source are present. */
+/**
+ * Visiting hours. Sikkim Tourism publishes none, and aggregator reports
+ * contradict each other, so the model distinguishes an official schedule from
+ * an unverified report and can also say plainly that nothing is known.
+ */
+export type VisitingHours =
+  | { status: "official"; summary: string; provenance: Provenance }
+  | { status: "reported"; summary: string; provenance: Provenance }
+  | { status: "unpublished"; provenance: Provenance };
+
+export interface MonasteryDetails {
+  id: string;
+  slug: string;
+  name: string;
+  district: SikkimDistrict;
+  tradition: MonasteryTradition;
+  establishedYear: number;
   description: string;
   image: string;
-  rating: number;
-  reviewCount: number;
-  durationMinutes: number;
-  /** Per person, in INR. */
-  price: number;
-  host: string;
+  imageSource: string;
+  /** Paragraphs. */
+  history: string[];
+  significance: string;
+  architecture: string;
+  /** Absent when no authoritative coordinate exists — the site is then unplotted. */
+  coordinates?: Coordinates;
+  googleMapsUrl: string;
+  provenance: Provenance;
+  tour: TourAvailability;
+  audio: AudioAvailability;
+  visitingHours: VisitingHours;
 }
 
-export interface ItineraryItem {
-  id: string;
-  /** 24-hour clock, e.g. "09:30". Rendered on the timetable rail. */
-  time: string;
-  title: string;
-  /** What kind of stop this is — shown as a badge. */
-  category: AttractionCategory | ExperienceCategory | "Travel" | "Meal" | "Rest";
-  description: string;
-  durationMinutes: number;
-  /** Estimated cost for the whole party, in INR. */
-  cost: number;
-  attractionSlug?: string;
-  crowdLevel?: CrowdLevel;
+/* =========================================================================
+   PHASE 2 — trip planner
+   ========================================================================= */
+
+export type PlannerInterest =
+  | "Monasteries"
+  | "Trekking"
+  | "Lakes"
+  | "Culture"
+  | "Food"
+  | "Adventure";
+
+export type PlannerStyle = "Solo" | "Couple" | "Family" | "Group" | "Luxury" | "Budget";
+
+export interface PlannerPreferences {
+  interests: PlannerInterest[];
+  /** Whole-trip budget per person, INR. */
+  budget: number;
+  /** Days, 3–14. */
+  duration: number;
+  travelStyle: PlannerStyle;
+  startDate?: string;
+  specialRequests?: string;
 }
 
-export interface ItineraryDay {
+export interface ItineraryDayPlan {
   day: number;
-  /** Short editorial title, e.g. "Old Delhi, on foot". */
   title: string;
-  summary: string;
-  items: ItineraryItem[];
+  morning: string;
+  afternoon: string;
+  evening: string;
+  location: string;
+  coordinates: Coordinates;
 }
 
-export interface CostBreakdown {
-  stay: number;
-  activities: number;
-  food: number;
-  transport: number;
+export interface ItineraryCostBreakdown {
+  /** The statutory TSD entry fee — the only cost this project can state exactly. */
+  tsd: number;
 }
 
-export interface Trip {
-  id: string;
-  destinationSlug: string;
-  destinationName: string;
-  startDate: string;
-  endDate: string;
+export interface GeneratedItinerary {
+  name: string;
   days: number;
-  travellers: number;
-  accommodationTier: AccommodationTier;
-  travelStyle: TravelStyle;
-  interests: Interest[];
-  /** Total for the whole party, in INR. */
-  estimatedCost: number;
-  costBreakdown: CostBreakdown;
-  itinerary: ItineraryDay[];
-  coverImage: string;
+  nights: number;
+  travelStyle: PlannerStyle;
+  interests: PlannerInterest[];
+  dayPlans: ItineraryDayPlan[];
+  cost: ItineraryCostBreakdown;
 }
 
-/** Everything the planner collects before a trip is generated. */
-export interface TripDraft {
-  destinationSlug: string | null;
-  startDate: string;
-  days: number;
-  travellers: number;
-  accommodationTier: AccommodationTier;
-  travelStyle: TravelStyle;
-  budgetPerPerson: number;
-  interests: Interest[];
-}
