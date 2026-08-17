@@ -1,0 +1,237 @@
+{
+  "base": "http://localhost:3100",
+  "passed": 46,
+  "total": 46,
+  "results": [
+    {
+      "name": "/stories loads on a cold context",
+      "ok": true,
+      "detail": "A cultural archive you can check"
+    },
+    {
+      "name": "archive header reports its own counts",
+      "ok": true,
+      "detail": "70 stories, 19 categories"
+    },
+    {
+      "name": "story cards render with images",
+      "ok": true,
+      "detail": "70 cards, 0 broken images"
+    },
+    {
+      "name": "search narrows the archive",
+      "ok": true,
+      "detail": "7 of 70 stories matching “Losar”"
+    },
+    {
+      "name": "a community filter composes with search",
+      "ok": true,
+      "detail": "2 Lepcha stories"
+    },
+    {
+      "name": "FIRST-CLICK: 'Read story' opens that story, once",
+      "ok": true,
+      "detail": "/stories/the-throne-of-stone-at-norbugang → “The throne of stone at Norbugang”"
+    },
+    {
+      "name": "story page carries claim label, key facts and sources",
+      "ok": true,
+      "detail": "4 source links"
+    },
+    {
+      "name": "image credit names an author and licence",
+      "ok": true,
+      "detail": "The stone coronation throne at Norbugang, Yuksom, where the first Chogyal was co"
+    },
+    {
+      "name": "prev / next navigation works in one click",
+      "ok": true,
+      "detail": "→ /stories/the-treaty-sworn-at-kabi"
+    },
+    {
+      "name": "related story card opens the right story",
+      "ok": true,
+      "detail": "/stories/the-throne-of-stone-at-norbugang"
+    },
+    {
+      "name": "STORY → MAP: a place link deep-links the explore map",
+      "ok": true,
+      "detail": "/explore?place=yuksom → panel open"
+    },
+    {
+      "name": "back button returns to the story",
+      "ok": true,
+      "detail": "/stories/the-throne-of-stone-at-norbugang"
+    },
+    {
+      "name": "/explore loads with markers on first paint",
+      "ok": true,
+      "detail": "46 markers, 16 tiles"
+    },
+    {
+      "name": "clicking a marker opens its detail card",
+      "ok": true,
+      "detail": "detail card open"
+    },
+    {
+      "name": "Google Maps link is a real maps URL",
+      "ok": true,
+      "detail": "https://www.google.com/maps/search/?api=1&query=Rumtek%20Monastery%2C%"
+    },
+    {
+      "name": "layer toggle filters the markers",
+      "ok": true,
+      "detail": "46 → 8 markers"
+    },
+    {
+      "name": "natural-language search: 'lakes near Gangtok'",
+      "ok": true,
+      "detail": "3 markers within 40 km"
+    },
+    {
+      "name": "MAP → STORY: a marker's story link opens the story",
+      "ok": true,
+      "detail": "/stories/the-throne-of-stone-at-norbugang"
+    },
+    {
+      "name": "no console errors during the desktop run",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "no failed requests during the desktop run",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "stories filter drawer opens and applies",
+      "ok": true,
+      "detail": "14 of 70 stories"
+    },
+    {
+      "name": "mobile: first tap opens the story",
+      "ok": true,
+      "detail": "/stories/why-a-mountain-commands-an-army"
+    },
+    {
+      "name": "mobile: no horizontal overflow on a story page",
+      "ok": true,
+      "detail": "no overflow"
+    },
+    {
+      "name": "mobile: marker tap reveals the sheet below the map",
+      "ok": true,
+      "detail": "sheet open, no overflow"
+    },
+    {
+      "name": "no console errors during the mobile run",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "375px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "375px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "375px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /stories — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /stories/the-throne-of-stone-at-norbugang — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /explore — no horizontal overflow",
+      "ok": true,
+      "detail": "0px"
+    }
+  ]
+}

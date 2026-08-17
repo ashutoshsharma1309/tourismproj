@@ -1,0 +1,690 @@
+[
+  {
+    "route": "/",
+    "title": "Ney Heritage — Digitizing the Sacred Heritage of Sikkim",
+    "loadMs": 4109,
+    "navError": null,
+    "imageCount": 25,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "https://tile.openstreetmap.org/9/381/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/381/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/381/216.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/216.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/380/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/383/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/380/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/383/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/380/216.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/383/216.png",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/monasteries",
+    "title": "Monasteries · Ney Heritage",
+    "loadMs": 1263,
+    "navError": null,
+    "imageCount": 15,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://localhost:3001/monasteries?_rsc=Hwm290C7jJURDYB5",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/monasteries/rumtek",
+    "title": "Rumtek Monastery · Ney Heritage",
+    "loadMs": 5616,
+    "navError": null,
+    "imageCount": 0,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 500 (Internal Server Error)",
+      "%o\n\n%s ReferenceError: renditionUrl is not defined\n    at HeritagePanoramaViewer (http://localhost:3001/_next/static/chunks/src_1ehycpp._.js:330:34)\n    at Object.react_stack_bottom_frame (http://localhost:3001/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:14894:24)\n    at renderWithHooks (http://localhost:3001/_next/static/chunks/node_modules_next_dist_compiled_react-",
+      "ReferenceError: renditionUrl is not defined\n    at HeritagePanoramaViewer (http://localhost:3001/_next/static/chunks/src_1ehycpp._.js:330:34)\n    at Object.react_stack_bottom_frame (http://localhost:3001/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096_9a-._.js:14894:24)\n    at renderWithHooks (http://localhost:3001/_next/static/chunks/node_modules_next_dist_compiled_react-dom_096"
+    ],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://localhost:3001/monasteries/rumtek?_rsc=18WCZiMTlwpaDBxQ",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "http4xx5xx": [
+      {
+        "url": "http://localhost:3001/monasteries/rumtek",
+        "status": 500,
+        "type": "document"
+      }
+    ],
+    "overflow": null
+  },
+  {
+    "route": "/stories",
+    "title": "Stories of Sikkim · Ney Heritage",
+    "loadMs": 1556,
+    "navError": null,
+    "imageCount": 70,
+    "broken": [
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg%2F1920px-Premise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg&w=384&q=75",
+        "alt": "Chortens in the grounds of Tingvong Monastery, Upper Dzongu, the Lepcha reserve in north Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F8%2F89%2FSakela_Silli_dance_in_Dharan.jpg&w=384&q=75",
+        "alt": "Kirat Rai dancers performing the Sakela sili in traditional dress",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2d%2FChariot_of_Indra_Jatra.jpg%2F1920px-Chariot_of_Indra_Jatra.jpg&w=384&q=75",
+        "alt": "The chariot of Indra Jatra being drawn through a durbar square",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fce%2FView_of_Rangeet_meeting_with_Teesta_river_taken_from_Lovers_Meet_View_Point%252C_Peshok_Road%252C_Tukdah.jpg%2F1920px-View_of_Rangeet_meeting_with_Teesta_river_taken_from_Lovers_Meet_View_Point%252C_Peshok_Road%252C_Tukdah.jpg&w=384&q=75",
+        "alt": "The Rangeet meeting the Teesta, seen from a viewpoint above the confluence",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F84%2FNepali_Topi.JPG%2F1920px-Nepali_Topi.JPG&w=384&q=75",
+        "alt": "A young man wearing a Dhaka topi, the patterned Nepali cap",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FLocal_traditional_rai_limbu_culture.jpg%2F1920px-Local_traditional_rai_limbu_culture.jpg&w=384&q=75",
+        "alt": "Rai and Limbu dancers performing with the chyabrung drum",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F07%2FMaruni_Dance_Sikkim.jpg&w=384&q=75",
+        "alt": "Dancers in traditional dress performing a Nepali folk dance in Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FLocal_traditional_rai_limbu_culture.jpg%2F1920px-Local_traditional_rai_limbu_culture.jpg&w=384&q=75",
+        "alt": "Rai and Limbu dancers performing with the chyabrung, a large barrel drum worn on a rope",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg%2F1920px-Premise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg&w=384&q=75",
+        "alt": "Chortens in the grounds of Tingvong Monastery, Upper Dzongu, north Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F07%2FMaruni_Dance_Sikkim.jpg&w=384&q=75",
+        "alt": "Dancers performing the Maruni, a Nepali folk dance, in Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F54%2FLimboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg%2F1920px-Limboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg&w=384&q=75",
+        "alt": "A traditional Limbu house at Hee-Kengbari village in west Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3b%2FStatues_of_Banjhakri_and_a_Boy.jpg%2F1920px-Statues_of_Banjhakri_and_a_Boy.jpg&w=384&q=75",
+        "alt": "Statues of Banjhakri and an initiate boy near the Banjhakri Falls in Gangtok",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd2%2FMomo_2.jpg%2F1920px-Momo_2.jpg&w=384&q=75",
+        "alt": "A plate of steamed momos with chilli sauce",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F49%2FChhurpi.jpg&w=384&q=75",
+        "alt": "Cubes of hard chhurpi, the dried smoked cheese of the eastern Himalayas",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FTongba_-_Millet_Brew_from_Sikkim.jpg%2F1920px-Tongba_-_Millet_Brew_from_Sikkim.jpg&w=384&q=75",
+        "alt": "A tongba — a bamboo vessel of fermented millet, drunk through a bamboo straw",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F15%2FTemi_Tea_Garden_Sikkim_India_October_2013.jpg%2F1920px-Temi_Tea_Garden_Sikkim_India_October_2013.jpg&w=384&q=75",
+        "alt": "The Temi tea garden in south Sikkim, planted in rows down a long slope",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F46%2FLarge_Cardamom_clicked_by_Somya.jpg%2F1920px-Large_Cardamom_clicked_by_Somya.jpg&w=384&q=75",
+        "alt": "Large cardamom in flower, the eastern Himalayan spice grown across Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F5%2F50%2FPrayer_flags_at_Khecheolpalri_Lake.jpg&w=384&q=75",
+        "alt": "Prayer flags strung above the path at Khecheopalri Lake",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F54%2FLimboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg%2F1920px-Limboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg&w=384&q=75",
+        "alt": "A traditional Limbu house at Hee-Kengbari village, west Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F11%2FDhyangro_Using_In_Rai_Shaman_by_allies_of_Rai_Mangpa.jpg&w=384&q=75",
+        "alt": "A Rai mangpa with a dhyangro, the double-sided frame drum used in shamanic ritual",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "alt": "M.G. Marg, the pedestrian main street of Gangtok",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F0b%2FStep_farming_in_sikkim_%25286052932505%2529.jpg&w=384&q=75",
+        "alt": "Terraced fields stepping down a hillside in Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2FYak_near_Tsomgo_Lake%252C_Sikkim.jpg%2F1920px-Yak_near_Tsomgo_Lake%252C_Sikkim.jpg&w=384&q=75",
+        "alt": "A yak beside Tsomgo Lake in eastern Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "alt": "M.G. Marg, the pedestrianised main street of Gangtok",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbc%2FGuru_Padmasambhava_statue_in_Samdruptse_Hill%252C_Namchi%252C_district_of_South_Sikkim_13.jpg%2F1920px-Guru_Padmasambhava_statue_in_Samdruptse_Hill%252C_Namchi%252C_district_of_South_Sikkim_13.jpg&w=384&q=75",
+        "alt": "The Guru Padmasambhava statue on Samdruptse Hill above Namchi",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg%2F1920px-Premise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.jpg&w=384&q=75",
+        "alt": "The path to Tingvong Monastery in Upper Dzongu, north Sikkim",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "alt": "Shops and pedestrians on M.G. Marg, Gangtok's main street",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      },
+      {
+        "src": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F5%2F50%2FPrayer_flags_at_Khecheolpalri_Lake.jpg&w=384&q=75",
+        "alt": "Prayer flags above the approach to Khecheopalri Lake",
+        "complete": true,
+        "naturalWidth": 0,
+        "naturalHeight": 0,
+        "loading": "lazy",
+        "width": 348,
+        "height": 218,
+        "inViewport": false,
+        "hidden": false
+      }
+    ],
+    "pending": [],
+    "consoleErrors": [
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
+      "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+    ],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F2%2F2d%2FChariot_of_Indra_Jatra.jpg%2F1920px-Chariot_of_Indra_Jatra.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F8%2F89%2FSakela_Silli_dance_in_Dharan.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F8%2F84%2FNepali_Topi.JPG%2F1920px-Nepali_Topi.JPG&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fc%2Fce%2FView_of_Rangeet_meeting_with_Teesta_river_taken_from_Lovers_Meet_View_Point%252C_Pesho",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FLocal_traditional_rai_limbu_culture.jpg%2F1920px-Local_traditional_rai_limbu_culture.j",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F07%2FMaruni_Dance_Sikkim.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F96%2FLocal_traditional_rai_limbu_culture.jpg%2F1920px-Local_traditional_rai_limbu_culture.j",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F07%2FMaruni_Dance_Sikkim.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F3%2F3b%2FStatues_of_Banjhakri_and_a_Boy.jpg%2F1920px-Statues_of_Banjhakri_and_a_Boy.jpg&w=384&q",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F54%2FLimboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg%2F1920",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fd%2Fd2%2FMomo_2.jpg%2F1920px-Momo_2.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F4%2F49%2FChhurpi.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F1%2F15%2FTemi_Tea_Garden_Sikkim_India_October_2013.jpg%2F1920px-Temi_Tea_Garden_Sikkim_India_Oc",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F99%2FTongba_-_Millet_Brew_from_Sikkim.jpg%2F1920px-Tongba_-_Millet_Brew_from_Sikkim.jpg&w=3",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F4%2F46%2FLarge_Cardamom_clicked_by_Somya.jpg%2F1920px-Large_Cardamom_clicked_by_Somya.jpg&w=384",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F5%2F50%2FPrayer_flags_at_Khecheolpalri_Lake.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F5%2F54%2FLimboo_house_in_Hee-_kengbari_village_in_West_Sikkim%252C_Sikkim%252C_India.jpg%2F1920",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F1%2F11%2FDhyangro_Using_In_Rai_Shaman_by_allies_of_Rai_Mangpa.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F0%2F0b%2FStep_farming_in_sikkim_%25286052932505%2529.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F7%2F70%2FYak_near_Tsomgo_Lake%252C_Sikkim.jpg%2F1920px-Yak_near_Tsomgo_Lake%252C_Sikkim.jpg&w=3",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fb%2Fbc%2FGuru_Padmasambhava_statue_in_Samdruptse_Hill%252C_Namchi%252C_district_of_South_Sikkim",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fe%2Fe0%2FPremise_of_Tingvong_Monastery_located_in_Upper_Dzongu%252C_North_Sikkim%252C_India_05.",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F97%2FM.G._Marg%252C_Gangtok_01.jpg%2F1920px-M.G._Marg%252C_Gangtok_01.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      },
+      {
+        "url": "http://localhost:3001/_next/image?url=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2F5%2F50%2FPrayer_flags_at_Khecheolpalri_Lake.jpg&w=384&q=75",
+        "status": 429,
+        "type": "image"
+      }
+    ],
+    "overflow": null
+  },
+  {
+    "route": "/hotels",
+    "title": "Stays · Ney Heritage",
+    "loadMs": 1543,
+    "navError": null,
+    "imageCount": 0,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/planner",
+    "title": "Trip Planner · Ney Heritage",
+    "loadMs": 1038,
+    "navError": null,
+    "imageCount": 1,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/preservation",
+    "title": "Digital preservation · Ney Heritage",
+    "loadMs": 1290,
+    "navError": null,
+    "imageCount": 0,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/preservation/review",
+    "title": "Heritage review queue · Ney Heritage",
+    "loadMs": 1227,
+    "navError": null,
+    "imageCount": 0,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [],
+    "overflow": null
+  }
+]

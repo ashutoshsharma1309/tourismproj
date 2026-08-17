@@ -1,0 +1,2781 @@
+{
+  "generatedAt": "2026-08-16",
+  "agent": "Heritage Video Agent",
+  "method": {
+    "discovery": "Recorded research queries per site; only /watch?v= results carried forward, so Shorts and vertical clips never enter the pool.",
+    "verification": "YouTube public oEmbed endpoint (no API key, no scraping). A 404 drops the candidate as private, removed or blocked.",
+    "quality": "Thumbnail CDN rendition probe. maxresdefault.jpg exists only for uploads of 1280x720 or better.",
+    "scoring": "relevance 30 / visual 20 / identification 20 / credibility 15 / licence-embed 5 / HD bonus 5. Recency and audio quality are withheld, not guessed.",
+    "gate": "A candidate must name the monastery in its own title, describe it as the religious site rather than the village of the same name, not name a confusable neighbouring institution, carry no disqualifying region token, and score at least 0.7.",
+    "embedding": "youtube-nocookie.com embed, click-to-load, never autoplayed with sound, never downloaded or re-hosted."
+  },
+  "totals": {
+    "sitesChecked": 15,
+    "selected": 13,
+    "noneEligible": 2,
+    "belowThreshold": 0,
+    "duplicateSelections": 0
+  },
+  "duplicates": [],
+  "results": [
+    {
+      "slug": "rumtek",
+      "discoveryQuery": "Rumtek Monastery Sikkim tour video",
+      "candidatesChecked": 7,
+      "eligible": 7,
+      "selected": {
+        "videoId": "lIjEBfNz7pw",
+        "provider": "youtube",
+        "title": "Rumtek Monastery and Cable Car Ride In Gangtok, Sikkim | Sikkim Tour | Episode 3",
+        "channel": "TravelWithAnib",
+        "channelUrl": "https://www.youtube.com/@TravelWithAnib",
+        "thumbnail": "https://i.ytimg.com/vi/lIjEBfNz7pw/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=lIjEBfNz7pw",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/lIjEBfNz7pw",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "lIjEBfNz7pw",
+          "status": "OK",
+          "title": "Rumtek Monastery and Cable Car Ride In Gangtok, Sikkim | Sikkim Tour | Episode 3",
+          "channel": "TravelWithAnib",
+          "channelUrl": "https://www.youtube.com/@TravelWithAnib",
+          "thumbnail": "https://i.ytimg.com/vi/lIjEBfNz7pw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=lIjEBfNz7pw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/lIjEBfNz7pw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "3f-7Gxsg7s8",
+          "status": "OK",
+          "title": "Rumtek Monastery at Gangtok | Gangtok Tourist Attraction",
+          "channel": "Somjit Bhattacharyya",
+          "channelUrl": "https://www.youtube.com/@SomjitBhattacharyya",
+          "thumbnail": "https://i.ytimg.com/vi/3f-7Gxsg7s8/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=3f-7Gxsg7s8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/3f-7Gxsg7s8",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "zcGG-bamp-4",
+          "status": "OK",
+          "title": "Rumtek Monastery | Sikkim | #OnTheRoadsWithOnir and #TeamPineCone | Episode 82",
+          "channel": "Anticlock Films",
+          "channelUrl": "https://www.youtube.com/@AnticlockFilms",
+          "thumbnail": "https://i.ytimg.com/vi/zcGG-bamp-4/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=zcGG-bamp-4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/zcGG-bamp-4",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "lZRocWgnyOo",
+          "status": "OK",
+          "title": "Rumtek Monastery in Sikkim | Tibetan Buddhist Monastery | Sikkim Himalayas India",
+          "channel": "Allan Wilson",
+          "channelUrl": "https://www.youtube.com/@allanwilson",
+          "thumbnail": "https://i.ytimg.com/vi/lZRocWgnyOo/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=lZRocWgnyOo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/lZRocWgnyOo",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "g2_wzr-YjNA",
+          "status": "OK",
+          "title": "Biggest Monastery of Sikkim Ft. Rumtek Monastery | Ranka Monastery Sikkim | Sikkim Tour Guide 2025",
+          "channel": "Rini's Wonder",
+          "channelUrl": "https://www.youtube.com/@riniswonder",
+          "thumbnail": "https://i.ytimg.com/vi/g2_wzr-YjNA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=g2_wzr-YjNA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/g2_wzr-YjNA",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "N5Ahh18xsIs",
+          "status": "OK",
+          "title": "EP15 Gangtok to Rumtek by road | Largest monastery in Sikkim | Sikkim Travel guide",
+          "channel": "TravelReporter",
+          "channelUrl": "https://www.youtube.com/@TravelReporterChannel",
+          "thumbnail": "https://i.ytimg.com/vi/N5Ahh18xsIs/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=N5Ahh18xsIs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/N5Ahh18xsIs",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "v049M0jNrAU",
+          "status": "OK",
+          "title": "Rumtek Monastery Gangtok, Sikkim|One Of Ancient Monastery at Gangtok",
+          "channel": "Hashtag Ritu's Cookiepedia",
+          "channelUrl": "https://www.youtube.com/@HashtagRitusCookiepedia",
+          "thumbnail": "https://i.ytimg.com/vi/v049M0jNrAU/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=v049M0jNrAU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/v049M0jNrAU",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pemayangtse",
+      "discoveryQuery": "Pemayangtse Monastery Pelling Sikkim video tour",
+      "candidatesChecked": 7,
+      "eligible": 6,
+      "selected": {
+        "videoId": "R8jPsruUGjo",
+        "provider": "youtube",
+        "title": "The Pemayangtse Monastery | Monastery of Sikkim | How to Reach | What to See",
+        "channel": "WildIndiaTravels",
+        "channelUrl": "https://www.youtube.com/@WildIndiaTravels",
+        "thumbnail": "https://i.ytimg.com/vi/R8jPsruUGjo/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=R8jPsruUGjo",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/R8jPsruUGjo",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "WaNxOolNi54",
+          "status": "OK",
+          "title": "Pemayangtse Monastery | Good Start in Pelling | West Sikkim - E10",
+          "channel": "Ashis Living Life",
+          "channelUrl": "https://www.youtube.com/@AshisLivingLife",
+          "thumbnail": "https://i.ytimg.com/vi/WaNxOolNi54/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=WaNxOolNi54",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/WaNxOolNi54",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "MLANSiri0y4",
+          "status": "OK",
+          "title": "Pemayangtse Monastery, Pelling, Sikkim - Biggest Buddhist Monastery in Pelling",
+          "channel": "Traveler Andy",
+          "channelUrl": "https://www.youtube.com/@TravelerAndy",
+          "thumbnail": "https://i.ytimg.com/vi/MLANSiri0y4/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=MLANSiri0y4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MLANSiri0y4",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.74,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "R8jPsruUGjo",
+          "status": "OK",
+          "title": "The Pemayangtse Monastery | Monastery of Sikkim | How to Reach | What to See",
+          "channel": "WildIndiaTravels",
+          "channelUrl": "https://www.youtube.com/@WildIndiaTravels",
+          "thumbnail": "https://i.ytimg.com/vi/R8jPsruUGjo/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=R8jPsruUGjo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/R8jPsruUGjo",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "V9CYJQ-fjCk",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "H70ujcC5ZEQ",
+          "status": "OK",
+          "title": "PEMAYANGTSE MONASTERY | PELLING | SIKKIM TOURISM | पेमायंगत्से मठ | पेलिंग | सिक्किम",
+          "channel": "PARTH PIXELS",
+          "channelUrl": "https://www.youtube.com/@parthpixels4586",
+          "thumbnail": "https://i.ytimg.com/vi/H70ujcC5ZEQ/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=H70ujcC5ZEQ",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/H70ujcC5ZEQ",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "t2LkxK_HXQc",
+          "status": "OK",
+          "title": "A Beautiful Pemayangtse Monastery in Pelling Sikkim",
+          "channel": "UNIQUE INDIA",
+          "channelUrl": "https://www.youtube.com/@uniqueindia",
+          "thumbnail": "https://i.ytimg.com/vi/t2LkxK_HXQc/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=t2LkxK_HXQc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/t2LkxK_HXQc",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "j7Lullq_R10",
+          "status": "OK",
+          "title": "Rabdentse Ruins | Pemayangtse Monastery | Sikkim Old Capital | Pelling | Sikkim tour guide | Part 8",
+          "channel": "The Creative COP",
+          "channelUrl": "https://www.youtube.com/@dilipsablania",
+          "thumbnail": "https://i.ytimg.com/vi/j7Lullq_R10/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=j7Lullq_R10",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/j7Lullq_R10",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "tashiding",
+      "discoveryQuery": "Tashiding Monastery Sikkim Bhumchu video",
+      "candidatesChecked": 7,
+      "eligible": 7,
+      "selected": {
+        "videoId": "VIGwqAcVmVw",
+        "provider": "youtube",
+        "title": "The Magic Vase & Bumchu festival at Tashiding Monastery , West Sikkim",
+        "channel": "OurGuest",
+        "channelUrl": "https://www.youtube.com/@OurGuest",
+        "thumbnail": "https://i.ytimg.com/vi/VIGwqAcVmVw/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=VIGwqAcVmVw",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/VIGwqAcVmVw",
+        "quality": "hd1080-or-better",
+        "score": 0.853,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "VIGwqAcVmVw",
+          "status": "OK",
+          "title": "The Magic Vase & Bumchu festival at Tashiding Monastery , West Sikkim",
+          "channel": "OurGuest",
+          "channelUrl": "https://www.youtube.com/@OurGuest",
+          "thumbnail": "https://i.ytimg.com/vi/VIGwqAcVmVw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=VIGwqAcVmVw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/VIGwqAcVmVw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "ODWC83su5Lw",
+          "status": "OK",
+          "title": "Tashiding Monastery | Bhumchu 2020 | Sikkimdiaries",
+          "channel": "Sikkimdiaries",
+          "channelUrl": "https://www.youtube.com/@sikkimdiariescom",
+          "thumbnail": "https://i.ytimg.com/vi/ODWC83su5Lw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=ODWC83su5Lw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ODWC83su5Lw",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.703,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "wE9_Lcm1L0Y",
+          "status": "OK",
+          "title": "Bhumchu celebrated at Tashiding Monastery after a gap of 2 years",
+          "channel": "The Voice Of Sikkim",
+          "channelUrl": "https://www.youtube.com/@TheVoiceofSikkim",
+          "thumbnail": "https://i.ytimg.com/vi/wE9_Lcm1L0Y/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=wE9_Lcm1L0Y",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/wE9_Lcm1L0Y",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.703,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "_6SOS-u6xVw",
+          "status": "OK",
+          "title": "Bhumchu Festival 2023 Being Celebrated At Tashiding Monastery.",
+          "channel": "Sikkim Sentinel",
+          "channelUrl": "https://www.youtube.com/@SikkimSentinel",
+          "thumbnail": "https://i.ytimg.com/vi/_6SOS-u6xVw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=_6SOS-u6xVw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/_6SOS-u6xVw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "pJ6A_IEJfFA",
+          "status": "OK",
+          "title": "Tashiding Monastery, #Tour Guide #Holy Land Bhumchu",
+          "channel": "Denjongki Lhokay. འབྲས་ལྗོངས་ཀྱི་ ལྷོ་སྐད།",
+          "channelUrl": "https://www.youtube.com/@palzangbhutia2011",
+          "thumbnail": "https://i.ytimg.com/vi/pJ6A_IEJfFA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=pJ6A_IEJfFA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/pJ6A_IEJfFA",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.778,
+            "parts": {
+              "relevance": 0.75,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": false,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "gesLZXRKhGY",
+          "status": "OK",
+          "title": "Tashiding Monastery in Sikkim | Peaceful Himalayan Meditation Retreat",
+          "channel": "Adventure Sindbad",
+          "channelUrl": "https://www.youtube.com/@adventuresindbad9477",
+          "thumbnail": "https://i.ytimg.com/vi/gesLZXRKhGY/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=gesLZXRKhGY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/gesLZXRKhGY",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "VZudl-CWz6g",
+          "status": "OK",
+          "title": "BHUMCHU FESTIVAL AT TASHIDING MONASTERY.",
+          "channel": "DD Gangtok",
+          "channelUrl": "https://www.youtube.com/@ddgangtok",
+          "thumbnail": "https://i.ytimg.com/vi/VZudl-CWz6g/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=VZudl-CWz6g",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/VZudl-CWz6g",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "enchey",
+      "discoveryQuery": "Enchey Monastery Gangtok Sikkim video",
+      "candidatesChecked": 8,
+      "eligible": 7,
+      "selected": {
+        "videoId": "IA-Mns55BpI",
+        "provider": "youtube",
+        "title": "Spiritual Heart of Gangtok |Enchey Monastery Tour | Gangtok,Sikkim",
+        "channel": "Nomadic Bharat",
+        "channelUrl": "https://www.youtube.com/@NomadicBharat",
+        "thumbnail": "https://i.ytimg.com/vi/IA-Mns55BpI/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=IA-Mns55BpI",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/IA-Mns55BpI",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "IA-Mns55BpI",
+          "status": "OK",
+          "title": "Spiritual Heart of Gangtok |Enchey Monastery Tour | Gangtok,Sikkim",
+          "channel": "Nomadic Bharat",
+          "channelUrl": "https://www.youtube.com/@NomadicBharat",
+          "thumbnail": "https://i.ytimg.com/vi/IA-Mns55BpI/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=IA-Mns55BpI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/IA-Mns55BpI",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "t-oeY7LTRKM",
+          "status": "OK",
+          "title": "Enchey Monastery | Gangtok local sightseeing Part 2 | Sikkim Complete Tour | 4K",
+          "channel": "Madhuvidya Vlogs",
+          "channelUrl": "https://www.youtube.com/@madhuvidyavlogs",
+          "thumbnail": "https://i.ytimg.com/vi/t-oeY7LTRKM/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=t-oeY7LTRKM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/t-oeY7LTRKM",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "7pCnLsHzmsk",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "546NbtchwaQ",
+          "status": "OK",
+          "title": "Gangtok Tour - Enchey Monastery",
+          "channel": "Somjit Bhattacharyya",
+          "channelUrl": "https://www.youtube.com/@SomjitBhattacharyya",
+          "thumbnail": "https://i.ytimg.com/vi/546NbtchwaQ/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=546NbtchwaQ",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/546NbtchwaQ",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "LN4oyoCkmBw",
+          "status": "OK",
+          "title": "Enchey Monastery - Monastery on the TOP OF GANGTOK || NORTH EAST INDIA - ep.3",
+          "channel": "Paidaishi Passenger",
+          "channelUrl": "https://www.youtube.com/@Paidaishi_Passenger",
+          "thumbnail": "https://i.ytimg.com/vi/LN4oyoCkmBw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=LN4oyoCkmBw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/LN4oyoCkmBw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "vUHB2oani2g",
+          "status": "OK",
+          "title": "Enchey Monastery in Gangtok | Best Places to Visit in Sikkim | Tourist Places in India | Hungry Monk",
+          "channel": "Hungry Monk",
+          "channelUrl": "https://www.youtube.com/@hungrymonkstories",
+          "thumbnail": "https://i.ytimg.com/vi/vUHB2oani2g/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=vUHB2oani2g",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/vUHB2oani2g",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "c4O4YWhimaA",
+          "status": "OK",
+          "title": "Enchey Monastery in Gangtok | Tibetan Buddhist Monastery | Sikkim Himalayas, India",
+          "channel": "Allan Wilson",
+          "channelUrl": "https://www.youtube.com/@allanwilson",
+          "thumbnail": "https://i.ytimg.com/vi/c4O4YWhimaA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=c4O4YWhimaA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/c4O4YWhimaA",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "h77Xr8fawOw",
+          "status": "OK",
+          "title": "Enchey Monastery Buddhism Gangtok",
+          "channel": "indiavideodotorg",
+          "channelUrl": "https://www.youtube.com/@indiavideodotorg",
+          "thumbnail": "https://i.ytimg.com/vi/h77Xr8fawOw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=h77Xr8fawOw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/h77Xr8fawOw",
+          "quality": "hq360",
+          "thumbnailRendition": "hqdefault.jpg",
+          "score": {
+            "total": 0.643,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.2,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "lingdum",
+      "discoveryQuery": "Lingdum Ranka Monastery Sikkim video tour",
+      "candidatesChecked": 8,
+      "eligible": 7,
+      "selected": {
+        "videoId": "wfzgYoWeh88",
+        "provider": "youtube",
+        "title": "Lingdum Monastery Tour|Ranka Monastery|Nearest Monastery From Gangtok|East Sikkim Tour|Gangtok Tour",
+        "channel": "Hashtag Ritu's Cookiepedia",
+        "channelUrl": "https://www.youtube.com/@HashtagRitusCookiepedia",
+        "thumbnail": "https://i.ytimg.com/vi/wfzgYoWeh88/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=wfzgYoWeh88",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/wfzgYoWeh88",
+        "quality": "hd1080-or-better",
+        "score": 0.853,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "wfzgYoWeh88",
+          "status": "OK",
+          "title": "Lingdum Monastery Tour|Ranka Monastery|Nearest Monastery From Gangtok|East Sikkim Tour|Gangtok Tour",
+          "channel": "Hashtag Ritu's Cookiepedia",
+          "channelUrl": "https://www.youtube.com/@HashtagRitusCookiepedia",
+          "thumbnail": "https://i.ytimg.com/vi/wfzgYoWeh88/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=wfzgYoWeh88",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/wfzgYoWeh88",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "cCSLnc2JBF4",
+          "status": "OK",
+          "title": "Ranka or Lingdum Monastery | Sikkim | #OnTheRoadsWithOnir | Episode 83",
+          "channel": "Anticlock Films",
+          "channelUrl": "https://www.youtube.com/@AnticlockFilms",
+          "thumbnail": "https://i.ytimg.com/vi/cCSLnc2JBF4/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=cCSLnc2JBF4",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/cCSLnc2JBF4",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "ikHwqYdSbcM",
+          "status": "OK",
+          "title": "Ranka monastery | Lingdum Monastery | Gangtok | Sikkim",
+          "channel": "Travel Vibes",
+          "channelUrl": "https://www.youtube.com/@Travl_Vibs",
+          "thumbnail": "https://i.ytimg.com/vi/ikHwqYdSbcM/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=ikHwqYdSbcM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/ikHwqYdSbcM",
+          "quality": "hq360",
+          "thumbnailRendition": "hqdefault.jpg",
+          "score": {
+            "total": 0.68,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.2,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "OA2LycfIKjo",
+          "status": "OK",
+          "title": "Visit to Lingdum Monastery (Ranka) |SIKKIM |North East India",
+          "channel": "Rakhi N Amar",
+          "channelUrl": "https://www.youtube.com/@rakhinamar",
+          "thumbnail": "https://i.ytimg.com/vi/OA2LycfIKjo/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=OA2LycfIKjo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/OA2LycfIKjo",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "MBZ1uILf88s",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "G9FpheADKWI",
+          "status": "OK",
+          "title": "Ranka Monastery Gangtok Sikkim | Lingdum Monastery  2022",
+          "channel": "Rajesh Prasad",
+          "channelUrl": "https://www.youtube.com/@RajeshPrasad",
+          "thumbnail": "https://i.ytimg.com/vi/G9FpheADKWI/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=G9FpheADKWI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/G9FpheADKWI",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "XLb8NjUh-CU",
+          "status": "OK",
+          "title": "VISIT TO RANKA MONASTERY|| LINGDUM MONASTERY|| Ranka MONASTERY.",
+          "channel": "Knamdak Vlog ",
+          "channelUrl": "https://www.youtube.com/@Knamdakvlog.",
+          "thumbnail": "https://i.ytimg.com/vi/XLb8NjUh-CU/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=XLb8NjUh-CU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/XLb8NjUh-CU",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.665,
+            "parts": {
+              "relevance": 0.75,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": false,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "eLAP4IXyew0",
+          "status": "OK",
+          "title": "A Day at Ranka Monastery | GoPro Hero 7 Black | TimeLapse",
+          "channel": "Bijit Sharma",
+          "channelUrl": "https://www.youtube.com/@BijitSharma",
+          "thumbnail": "https://i.ytimg.com/vi/eLAP4IXyew0/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=eLAP4IXyew0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/eLAP4IXyew0",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.778,
+            "parts": {
+              "relevance": 0.75,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": false,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "phodong",
+      "discoveryQuery": "Phodong Monastery North Sikkim video",
+      "candidatesChecked": 3,
+      "eligible": 1,
+      "selected": {
+        "videoId": "iCiZ8aJOOAA",
+        "provider": "youtube",
+        "title": "Visit to PHODONG MONASTERY| Phodong Monastery gangtok.",
+        "channel": "Knamdak Vlog ",
+        "channelUrl": "https://www.youtube.com/@Knamdakvlog.",
+        "thumbnail": "https://i.ytimg.com/vi/iCiZ8aJOOAA/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=iCiZ8aJOOAA",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/iCiZ8aJOOAA",
+        "quality": "sd480",
+        "score": 0.74,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "iCiZ8aJOOAA",
+          "status": "OK",
+          "title": "Visit to PHODONG MONASTERY| Phodong Monastery gangtok.",
+          "channel": "Knamdak Vlog ",
+          "channelUrl": "https://www.youtube.com/@Knamdakvlog.",
+          "thumbnail": "https://i.ytimg.com/vi/iCiZ8aJOOAA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=iCiZ8aJOOAA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/iCiZ8aJOOAA",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.74,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "d6jRfTty4sw",
+          "status": "OK",
+          "title": "A day trip to Phodong, North Sikkim",
+          "channel": "Sangay Vlogs",
+          "channelUrl": "https://www.youtube.com/@Sangay_Vlogs",
+          "thumbnail": "https://i.ytimg.com/vi/d6jRfTty4sw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=d6jRfTty4sw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/d6jRfTty4sw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.81,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "cjQk8l9kyQo",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        }
+      ]
+    },
+    {
+      "slug": "phensang",
+      "discoveryQuery": "\"Phensang Monastery\" Sikkim video",
+      "candidatesChecked": 1,
+      "eligible": 1,
+      "selected": {
+        "videoId": "NuXNaXV1X0o",
+        "provider": "youtube",
+        "title": "Phensang Monastery. North sikkim ཕན་བཟང་དགོན་པ།",
+        "channel": "Samdopa",
+        "channelUrl": "https://www.youtube.com/@DawaSamdopa",
+        "thumbnail": "https://i.ytimg.com/vi/NuXNaXV1X0o/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=NuXNaXV1X0o",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/NuXNaXV1X0o",
+        "quality": "hd1080-or-better",
+        "score": 0.853,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "NuXNaXV1X0o",
+          "status": "OK",
+          "title": "Phensang Monastery. North sikkim ཕན་བཟང་དགོན་པ།",
+          "channel": "Samdopa",
+          "channelUrl": "https://www.youtube.com/@DawaSamdopa",
+          "thumbnail": "https://i.ytimg.com/vi/NuXNaXV1X0o/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=NuXNaXV1X0o",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/NuXNaXV1X0o",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "lachen",
+      "discoveryQuery": "\"Lachen Monastery\" Sikkim video",
+      "candidatesChecked": 4,
+      "eligible": 4,
+      "selected": {
+        "videoId": "HLr1RcT2Z_I",
+        "provider": "youtube",
+        "title": "LACHEN SIKKIM | LACHEN MONASTERY | NORTH SIKKIM VLOG | SIKKIM MONASTERY I LACHEN VLOG #Lachen",
+        "channel": "Swati Semwal Vlogs",
+        "channelUrl": "https://www.youtube.com/@Swatisemwalvlogs",
+        "thumbnail": "https://i.ytimg.com/vi/HLr1RcT2Z_I/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=HLr1RcT2Z_I",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/HLr1RcT2Z_I",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "HLr1RcT2Z_I",
+          "status": "OK",
+          "title": "LACHEN SIKKIM | LACHEN MONASTERY | NORTH SIKKIM VLOG | SIKKIM MONASTERY I LACHEN VLOG #Lachen",
+          "channel": "Swati Semwal Vlogs",
+          "channelUrl": "https://www.youtube.com/@Swatisemwalvlogs",
+          "thumbnail": "https://i.ytimg.com/vi/HLr1RcT2Z_I/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=HLr1RcT2Z_I",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/HLr1RcT2Z_I",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "fEU5BMRs0fk",
+          "status": "OK",
+          "title": "LACHEN NORTH SIKKIM | LACHEN SIGHTSEEING & LACHEN MONASTERY | LACHEN SIGHTSEEING",
+          "channel": "Gypsy Soul Sukanya",
+          "channelUrl": "https://www.youtube.com/@GypsySoulSukanya",
+          "thumbnail": "https://i.ytimg.com/vi/fEU5BMRs0fk/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=fEU5BMRs0fk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/fEU5BMRs0fk",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "apE8-k3lImg",
+          "status": "OK",
+          "title": "Sikkim Buddhist Monks Warrier Dance at Lachen Monastery North Sikkim",
+          "channel": "The Times of Sikkim",
+          "channelUrl": "https://www.youtube.com/@The_Times_of_Sikkim",
+          "thumbnail": "https://i.ytimg.com/vi/apE8-k3lImg/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=apE8-k3lImg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/apE8-k3lImg",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "Nd876UpICgw",
+          "status": "OK",
+          "title": "TONGBA - TRADITIONAL Drink in SIKKIM 🙏 Lachen Monastery | North Sikkim Series",
+          "channel": "UnboundTraveller",
+          "channelUrl": "https://www.youtube.com/@UnboundTraveller",
+          "thumbnail": "https://i.ytimg.com/vi/Nd876UpICgw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=Nd876UpICgw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Nd876UpICgw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "lachung",
+      "discoveryQuery": "Lachung Monastery Sikkim video gompa",
+      "candidatesChecked": 3,
+      "eligible": 0,
+      "selected": null,
+      "outcome": "NONE_ELIGIBLE",
+      "candidates": [
+        {
+          "videoId": "LfBfuxzX6Y0",
+          "status": "OK",
+          "title": "Lachung Beyond the Map | A Hidden Side of Sikkim",
+          "channel": "Ronnie & Barty",
+          "channelUrl": "https://www.youtube.com/@RonnieandBarty",
+          "thumbnail": "https://i.ytimg.com/vi/LfBfuxzX6Y0/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=LfBfuxzX6Y0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/LfBfuxzX6Y0",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.773,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "M3qH0fCZCiw",
+          "status": "OK",
+          "title": "Lachung Sikkim | Gangtok to North Sikkim Tour Plan 2026 | Lachung Hotel | Lachung Tourist Places |",
+          "channel": "Sayel's Stories",
+          "channelUrl": "https://www.youtube.com/@SayelsStories",
+          "thumbnail": "https://i.ytimg.com/vi/M3qH0fCZCiw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=M3qH0fCZCiw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/M3qH0fCZCiw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.773,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "NS-8RM2zoDY",
+          "status": "OK",
+          "title": "LACHEN TO LACHUNG || North Sikkim || Yumthang Valley of Flowers || Complete Tour Guide",
+          "channel": "Vlogon With Prashant",
+          "channelUrl": "https://www.youtube.com/@vlogonwithprashant",
+          "thumbnail": "https://i.ytimg.com/vi/NS-8RM2zoDY/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=NS-8RM2zoDY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/NS-8RM2zoDY",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.81,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "sanga-choeling",
+      "discoveryQuery": "Sanga Choeling Monastery Pelling Sikkim video",
+      "candidatesChecked": 7,
+      "eligible": 6,
+      "selected": {
+        "videoId": "9NCBYkdS15M",
+        "provider": "youtube",
+        "title": "Sanga Choeling Monastery || Pelling || West sikkim",
+        "channel": "Madventure",
+        "channelUrl": "https://www.youtube.com/@indiographica6615",
+        "thumbnail": "https://i.ytimg.com/vi/9NCBYkdS15M/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=9NCBYkdS15M",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/9NCBYkdS15M",
+        "quality": "hd1080-or-better",
+        "score": 0.853,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "9NCBYkdS15M",
+          "status": "OK",
+          "title": "Sanga Choeling Monastery || Pelling || West sikkim",
+          "channel": "Madventure",
+          "channelUrl": "https://www.youtube.com/@indiographica6615",
+          "thumbnail": "https://i.ytimg.com/vi/9NCBYkdS15M/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=9NCBYkdS15M",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/9NCBYkdS15M",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "L3A214ZNhuw",
+          "status": "OK",
+          "title": "Sanga Choeling Monastery, Pelling",
+          "channel": "Ramu Datta",
+          "channelUrl": "https://www.youtube.com/@RamuDatta",
+          "thumbnail": "https://i.ytimg.com/vi/L3A214ZNhuw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=L3A214ZNhuw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/L3A214ZNhuw",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.703,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "kasw_3Wpg8w",
+          "status": "OK",
+          "title": "Sanga Choeling Monastery #pelling #travel #monastery #skywalker",
+          "channel": "Sarita Surana Adhikary",
+          "channelUrl": "https://www.youtube.com/@saritasuranaadhikary",
+          "thumbnail": "https://i.ytimg.com/vi/kasw_3Wpg8w/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=kasw_3Wpg8w",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/kasw_3Wpg8w",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "arZmJnABsyw",
+          "status": "OK",
+          "title": "Sanga Choeling Monastery, widely believed the oldest monastery in Sikkim-Gangtok",
+          "channel": "PRITAM BANERJEE",
+          "channelUrl": "https://www.youtube.com/@pritambanerjee8712",
+          "thumbnail": "https://i.ytimg.com/vi/arZmJnABsyw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=arZmJnABsyw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/arZmJnABsyw",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.703,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "MhKE8ee138o",
+          "status": "OK",
+          "title": "Pelling || Sikkim || Chenrezig Statue Cum Skywalk and Sanghak Choeling Monastery",
+          "channel": "ঘরকন্না / Gharkanna",
+          "channelUrl": "https://www.youtube.com/@gharkanna1",
+          "thumbnail": "https://i.ytimg.com/vi/MhKE8ee138o/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=MhKE8ee138o",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MhKE8ee138o",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "en5Mq9H0NNA",
+          "status": "OK",
+          "title": "Sikkim Travel | Sanghak Choeling Monastery | Pelling West Sikkim #travel #monastery #sikkim",
+          "channel": "Tapas Roy",
+          "channelUrl": "https://www.youtube.com/@TapasRoy04",
+          "thumbnail": "https://i.ytimg.com/vi/en5Mq9H0NNA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=en5Mq9H0NNA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/en5Mq9H0NNA",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "9oepDOYa0Xo",
+          "status": "OK",
+          "title": "Pelling -  Pemayangtse and Sangachoeling (West Sikkim) - India 2009 [HD]",
+          "channel": "PaulSbkk",
+          "channelUrl": "https://www.youtube.com/@PaulSbkk",
+          "thumbnail": "https://i.ytimg.com/vi/9oepDOYa0Xo/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=9oepDOYa0Xo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/9oepDOYa0Xo",
+          "quality": "hq360",
+          "thumbnailRendition": "hqdefault.jpg",
+          "score": {
+            "total": 0.563,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.2,
+              "identification": 0.6,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "dubdi",
+      "discoveryQuery": "Dubdi Monastery Yuksom oldest monastery Sikkim video",
+      "candidatesChecked": 7,
+      "eligible": 7,
+      "selected": {
+        "videoId": "vpRfQAAN0XI",
+        "provider": "youtube",
+        "title": "DUBDI Yuksom - Oldest Monastery Of Sikkim |  Kathok Lake |",
+        "channel": "The Traveller’s Tale",
+        "channelUrl": "https://www.youtube.com/@TheTravellersTale2021",
+        "thumbnail": "https://i.ytimg.com/vi/vpRfQAAN0XI/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=vpRfQAAN0XI",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/vpRfQAAN0XI",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "vpRfQAAN0XI",
+          "status": "OK",
+          "title": "DUBDI Yuksom - Oldest Monastery Of Sikkim |  Kathok Lake |",
+          "channel": "The Traveller’s Tale",
+          "channelUrl": "https://www.youtube.com/@TheTravellersTale2021",
+          "thumbnail": "https://i.ytimg.com/vi/vpRfQAAN0XI/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=vpRfQAAN0XI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/vpRfQAAN0XI",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "i_10dWY9B_c",
+          "status": "OK",
+          "title": "Visiting the oldest Monastery in Sikkim | Dubdi Monastery West Sikkim Yuksom",
+          "channel": "Darshan Vlogs",
+          "channelUrl": "https://www.youtube.com/@darshanvlogs6402",
+          "thumbnail": "https://i.ytimg.com/vi/i_10dWY9B_c/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=i_10dWY9B_c",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/i_10dWY9B_c",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "HAawS9U9VEg",
+          "status": "OK",
+          "title": "DUBDI Monastery SIKKIM | Oldest Monastery Of Sikkim | Exploring Sikkim After Lockdown",
+          "channel": "travellq",
+          "channelUrl": "https://www.youtube.com/@travellq5066",
+          "thumbnail": "https://i.ytimg.com/vi/HAawS9U9VEg/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=HAawS9U9VEg",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/HAawS9U9VEg",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "OPkUfFaDNRw",
+          "status": "OK",
+          "title": "Dubdi Monastery, Yuksom: The oldest Monastery of Sikkim",
+          "channel": "Tirthahikes",
+          "channelUrl": "https://www.youtube.com/@Tirthahikes",
+          "thumbnail": "https://i.ytimg.com/vi/OPkUfFaDNRw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=OPkUfFaDNRw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/OPkUfFaDNRw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "MoTmmN7Up9Q",
+          "status": "OK",
+          "title": "Dubdi Monastery of Yuksom, Sikkim | Oldest Monastery and First Capital of Sikkim",
+          "channel": "Ashis Rai",
+          "channelUrl": "https://www.youtube.com/@ashisrai07",
+          "thumbnail": "https://i.ytimg.com/vi/MoTmmN7Up9Q/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=MoTmmN7Up9Q",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MoTmmN7Up9Q",
+          "quality": "sd480",
+          "thumbnailRendition": "sddefault.jpg",
+          "score": {
+            "total": 0.703,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.5,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "LmRU3BndJbI",
+          "status": "OK",
+          "title": "Dubdi Monastery - Yuksom - West Sikkim - Small but Beautiful - Destination East - Incredible India",
+          "channel": "Rajib Das",
+          "channelUrl": "https://www.youtube.com/@rajibdas4u",
+          "thumbnail": "https://i.ytimg.com/vi/LmRU3BndJbI/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=LmRU3BndJbI",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/LmRU3BndJbI",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "s4L44KpXW9Y",
+          "status": "OK",
+          "title": "Dubdi Monastery | Yuksom Tashiding | West Sikkim Tour | Pravesh vlog",
+          "channel": "Pravesh Chhetri",
+          "channelUrl": "https://www.youtube.com/@PraveshChhetri",
+          "thumbnail": "https://i.ytimg.com/vi/s4L44KpXW9Y/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=s4L44KpXW9Y",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/s4L44KpXW9Y",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ralang",
+      "discoveryQuery": "Ralang Monastery Ravangla Sikkim Palchen Choeling video",
+      "candidatesChecked": 9,
+      "eligible": 8,
+      "selected": {
+        "videoId": "_Chu7hEex4M",
+        "provider": "youtube",
+        "title": "New Ralang (Ralong) monastery in Sikkim / Ralong Palchen Choling, Ravangla, Sikkim {INDIA}",
+        "channel": "LOVE TO TRAVEL INDIA",
+        "channelUrl": "https://www.youtube.com/@LOVETOTRAVELINDIARDT",
+        "thumbnail": "https://i.ytimg.com/vi/_Chu7hEex4M/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=_Chu7hEex4M",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/_Chu7hEex4M",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "Y5P5hmR-FNw",
+          "status": "OK",
+          "title": "Ralang Monastery Ravangla | RALONG OLD Monastery | PALCHEN CHOELING MONASTERY | Sikkim Tour",
+          "channel": "bhromonesha",
+          "channelUrl": "https://www.youtube.com/@bhromonesha",
+          "thumbnail": "https://i.ytimg.com/vi/Y5P5hmR-FNw/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=Y5P5hmR-FNw",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/Y5P5hmR-FNw",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "_Chu7hEex4M",
+          "status": "OK",
+          "title": "New Ralang (Ralong) monastery in Sikkim / Ralong Palchen Choling, Ravangla, Sikkim {INDIA}",
+          "channel": "LOVE TO TRAVEL INDIA",
+          "channelUrl": "https://www.youtube.com/@LOVETOTRAVELINDIARDT",
+          "thumbnail": "https://i.ytimg.com/vi/_Chu7hEex4M/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=_Chu7hEex4M",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/_Chu7hEex4M",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "CcR6KNKeVEc",
+          "status": "OK",
+          "title": "Densa Palchen Chosling Monastery, Ralong, Ravangla",
+          "channel": "easthimalaya",
+          "channelUrl": "https://www.youtube.com/@easthimalaya",
+          "thumbnail": "https://i.ytimg.com/vi/CcR6KNKeVEc/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=CcR6KNKeVEc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/CcR6KNKeVEc",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "e2dW1SUbkMg",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "dERuxgRwS_k",
+          "status": "OK",
+          "title": "New Ralang Monastery in West Sikkim's Ravangla / Maenam region",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/dERuxgRwS_k/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=dERuxgRwS_k",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/dERuxgRwS_k",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "uK6V5hqdhVM",
+          "status": "OK",
+          "title": "Old Ralang (Ralong) monastery in Sikkim , Ravangla, Sikkim {INDIA}",
+          "channel": "LOVE TO TRAVEL INDIA",
+          "channelUrl": "https://www.youtube.com/@LOVETOTRAVELINDIARDT",
+          "thumbnail": "https://i.ytimg.com/vi/uK6V5hqdhVM/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=uK6V5hqdhVM",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/uK6V5hqdhVM",
+          "quality": "hq360",
+          "thumbnailRendition": "hqdefault.jpg",
+          "score": {
+            "total": 0.68,
+            "parts": {
+              "relevance": 1,
+              "visual": 0.2,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "6eTCPWIaRKc",
+          "status": "OK",
+          "title": "Ralang Monastery in Sikkim",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/6eTCPWIaRKc/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=6eTCPWIaRKc",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/6eTCPWIaRKc",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "uMX0NxWB4YU",
+          "status": "OK",
+          "title": "Sikkim Ralang Monastery",
+          "channel": "Adrian Pakhrin",
+          "channelUrl": "https://www.youtube.com/@yakadventures",
+          "thumbnail": "https://i.ytimg.com/vi/uMX0NxWB4YU/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=uMX0NxWB4YU",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/uMX0NxWB4YU",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "KC8X9YVG2q8",
+          "status": "OK",
+          "title": "Old Ralang Monastery in West Sikkim gets a facelift and repair",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/KC8X9YVG2q8/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=KC8X9YVG2q8",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/KC8X9YVG2q8",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "kewzing",
+      "discoveryQuery": "Kewzing monastery Sikkim video",
+      "candidatesChecked": 4,
+      "eligible": 2,
+      "selected": {
+        "videoId": "OeburlxloSo",
+        "provider": "youtube",
+        "title": "Driving in Sikkim : Kewzing Monastery to Namchi Part 2",
+        "channel": "WildFilmsIndia",
+        "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+        "thumbnail": "https://i.ytimg.com/vi/OeburlxloSo/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=OeburlxloSo",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/OeburlxloSo",
+        "quality": "hd1080-or-better",
+        "score": 0.853,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "8ESdXhXefgs",
+          "status": "OK",
+          "title": "Holiday in Sikkim - (Bon Monastery, Kewzing, Sikkim) | Rural Bioscope",
+          "channel": "Rural Bioscope",
+          "channelUrl": "https://www.youtube.com/@ruralbioscope5738",
+          "thumbnail": "https://i.ytimg.com/vi/8ESdXhXefgs/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=8ESdXhXefgs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/8ESdXhXefgs",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [
+              "/bon monastery/i"
+            ],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "bFX_ethO1FA",
+          "status": "OK",
+          "title": "Mambru monastery in Kewzing, West Sikkim",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/bFX_ethO1FA/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=bFX_ethO1FA",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/bFX_ethO1FA",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [
+              "/mambru/i"
+            ],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "OeburlxloSo",
+          "status": "OK",
+          "title": "Driving in Sikkim : Kewzing Monastery to Namchi Part 2",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/OeburlxloSo/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=OeburlxloSo",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/OeburlxloSo",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "TmVeEbKll80",
+          "status": "OK",
+          "title": "Driving in Sikkim : Kewzing Monastery to Namchi  Part 1",
+          "channel": "WildFilmsIndia",
+          "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+          "thumbnail": "https://i.ytimg.com/vi/TmVeEbKll80/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=TmVeEbKll80",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/TmVeEbKll80",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "rinchenpong",
+      "discoveryQuery": "Rinchenpong Monastery West Sikkim video",
+      "candidatesChecked": 7,
+      "eligible": 0,
+      "selected": null,
+      "outcome": "NONE_ELIGIBLE",
+      "candidates": [
+        {
+          "videoId": "x5d9hh4ZhZQ",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "TzLaJ3P1EfY",
+          "status": "OK",
+          "title": "Exploring Rinchingpong - Poison Lake | Reesum Monastery| Rinchenpong Monastery | Sikkim Travel Video",
+          "channel": "Rahul Nanda",
+          "channelUrl": "https://www.youtube.com/@rahulnanda86",
+          "thumbnail": "https://i.ytimg.com/vi/TzLaJ3P1EfY/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=TzLaJ3P1EfY",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/TzLaJ3P1EfY",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [
+              "/^(?!.*rinchenpong).*resum|reesum|ressum/i"
+            ],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "mHBdTJuW1_E",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "nbrCtrv1TAQ",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "OsQq1GAtRtQ",
+          "status": "UNAVAILABLE",
+          "reason": "oEmbed 404 — private, removed or region-blocked"
+        },
+        {
+          "videoId": "lkaTG-niLco",
+          "status": "OK",
+          "title": "Rinchenpong | West Sikkim Vlog | West Sikkim Tour Guide",
+          "channel": "Tour Planner Blog",
+          "channelUrl": "https://www.youtube.com/@TourPlannerBlog",
+          "thumbnail": "https://i.ytimg.com/vi/lkaTG-niLco/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=lkaTG-niLco",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/lkaTG-niLco",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.81,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "MpXr08rpLhs",
+          "status": "OK",
+          "title": "Ressum Monastery Rinchenpong west sikkim #sikkim #oneplusnord #youtube #new",
+          "channel": "RINCHENPONG BROTHERS",
+          "channelUrl": "https://www.youtube.com/@rinchenpongbrothers",
+          "thumbnail": "https://i.ytimg.com/vi/MpXr08rpLhs/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=MpXr08rpLhs",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/MpXr08rpLhs",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [
+              "/^(?!.*rinchenpong).*resum|reesum|ressum/i"
+            ],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "slug": "tsuklakhang",
+      "discoveryQuery": "Tsuklakhang Royal Chapel Palace Gangtok Sikkim video",
+      "candidatesChecked": 4,
+      "eligible": 3,
+      "selected": {
+        "videoId": "SJiAk72RU7o",
+        "provider": "youtube",
+        "title": "Tsuklakhang Palace Monastery at Gangtok | Gangtok, Sikkim Sightseeing",
+        "channel": "Travels to Earth",
+        "channelUrl": "https://www.youtube.com/@TravelstoEarth",
+        "thumbnail": "https://i.ytimg.com/vi/SJiAk72RU7o/hqdefault.jpg",
+        "sourceUrl": "https://www.youtube.com/watch?v=SJiAk72RU7o",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/SJiAk72RU7o",
+        "quality": "hd1080-or-better",
+        "score": 0.89,
+        "usageNote": "Played through YouTube's own embedded player. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+        "verifiedAt": "2026-08-16"
+      },
+      "outcome": "SELECTED",
+      "candidates": [
+        {
+          "videoId": "mAL5bCtH3Lk",
+          "status": "OK",
+          "title": "FESTIVALS OF SIKKIM | PANG LHABSOL | WARRIOR DANCE | PANGTOED CHAAM AT TSUKLAKHANG | GANGTOK |",
+          "channel": "SikkimTube",
+          "channelUrl": "https://www.youtube.com/@SikkimTube",
+          "thumbnail": "https://i.ytimg.com/vi/mAL5bCtH3Lk/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=mAL5bCtH3Lk",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/mAL5bCtH3Lk",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.853,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "q0I-GcQ9F8c",
+          "status": "OK",
+          "title": "A short tour of Sikkim's Royal Palace || Tsuklakhang Complex, Gangtok",
+          "channel": "Sangay Vlogs",
+          "channelUrl": "https://www.youtube.com/@Sangay_Vlogs",
+          "thumbnail": "https://i.ytimg.com/vi/q0I-GcQ9F8c/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=q0I-GcQ9F8c",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/q0I-GcQ9F8c",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.81,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 0.6,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": false,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "SJiAk72RU7o",
+          "status": "OK",
+          "title": "Tsuklakhang Palace Monastery at Gangtok | Gangtok, Sikkim Sightseeing",
+          "channel": "Travels to Earth",
+          "channelUrl": "https://www.youtube.com/@TravelstoEarth",
+          "thumbnail": "https://i.ytimg.com/vi/SJiAk72RU7o/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=SJiAk72RU7o",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/SJiAk72RU7o",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.89,
+            "parts": {
+              "relevance": 1,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.6
+            },
+            "channelKind": "travel creator",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": true,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        },
+        {
+          "videoId": "wtiJ26nHZP0",
+          "status": "OK",
+          "title": "Visit to the Tsuklakhang monastery",
+          "channel": "evo India",
+          "channelUrl": "https://www.youtube.com/@Evoindia",
+          "thumbnail": "https://i.ytimg.com/vi/wtiJ26nHZP0/hqdefault.jpg",
+          "sourceUrl": "https://www.youtube.com/watch?v=wtiJ26nHZP0",
+          "embedUrl": "https://www.youtube-nocookie.com/embed/wtiJ26nHZP0",
+          "quality": "hd1080-or-better",
+          "thumbnailRendition": "maxresdefault.jpg",
+          "score": {
+            "total": 0.778,
+            "parts": {
+              "relevance": 0.75,
+              "visual": 1,
+              "identification": 1,
+              "credibility": 0.35
+            },
+            "channelKind": "unclassified channel",
+            "namesSite": true,
+            "identifiesSite": true,
+            "namesRegion": false,
+            "confusedWith": [],
+            "negativeTokens": [],
+            "withheld": [
+              "recency (needs YouTube Data API)",
+              "audio quality (not machine-checkable)"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

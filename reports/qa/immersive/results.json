@@ -1,0 +1,259 @@
+{
+  "generatedAt": "2026-08-17T08:08:30.376Z",
+  "baseUrl": "http://localhost:3001",
+  "total": 50,
+  "passed": 50,
+  "failed": 0,
+  "results": [
+    {
+      "name": "panorama section is present",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "idle poster offers an entry control",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "full panorama is not fetched on load",
+      "pass": true,
+      "detail": "0 early requests"
+    },
+    {
+      "name": "interactive stage mounts",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "panorama image is fetched on demand",
+      "pass": true,
+      "detail": "1 requests"
+    },
+    {
+      "name": "dragging pans the panorama",
+      "pass": true,
+      "detail": "matrix(1, 0, 0, 1, -491.398, -249.711) -> matrix(1, 0, 0, 1, -631.798, -249.711)"
+    },
+    {
+      "name": "zoom in enlarges the panorama beyond its frame",
+      "pass": true,
+      "detail": "image 1474px vs frame 702px"
+    },
+    {
+      "name": "reset returns the view",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "arrow keys pan the panorama",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fullscreen engages",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "fullscreen exits",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no console errors on the panorama page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no panorama viewer is offered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "video poster with a play control",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no YouTube iframe before play",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "video is not presented as 360°",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "visitor stays on Ney Heritage",
+      "pass": true,
+      "detail": "http://localhost:3001/monasteries/pemayangtse"
+    },
+    {
+      "name": "embedded player mounts in-page",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "embedded video is live and public",
+      "pass": true,
+      "detail": "oembed 200"
+    },
+    {
+      "name": "honest unavailable state is shown",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no broken iframe is rendered",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "a map link is offered instead",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "voices section renders",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "sourced quotes are shown",
+      "pass": true,
+      "detail": "2 quotes"
+    },
+    {
+      "name": "every quote carries a source link",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "no invented star rating",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "absence of ratings is explained",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "empty state where nothing is sourced",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "touch drag pans the panorama",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "375px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "375px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "375px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "390px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "430px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "768px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1024px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1280px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /monasteries/rumtek — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /monasteries/pemayangtse — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    },
+    {
+      "name": "1440px /monasteries/rinchenpong — no horizontal scroll",
+      "pass": true,
+      "detail": "0px"
+    }
+  ]
+}

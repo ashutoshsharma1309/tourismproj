@@ -1,0 +1,226 @@
+[
+  {
+    "route": "/",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 97
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/monasteries",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 52
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/monasteries/rumtek",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 74
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/stories",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 133
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/stories/the-crowning-at-yuksom",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": ".text-accent",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 15
+    },
+    "firstFocus": {
+      "tag": "nextjs-portal",
+      "text": "",
+      "outline": false
+    }
+  },
+  {
+    "route": "/hotels",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 47
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/planner",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 43
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 33
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/preservation",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 71
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  },
+  {
+    "route": "/preservation/review",
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "count": 1,
+        "sample": [
+          {
+            "target": "a[aria-current=\"page\"]",
+            "summary": "Fix any of the following:   Element has insufficient color contrast of 2.32 (foreground color: #c08a2d, background color: #5d5850, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+          }
+        ]
+      }
+    ],
+    "keyboard": {
+      "focusableCount": 55
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Ney Heritage",
+      "outline": true
+    }
+  }
+]

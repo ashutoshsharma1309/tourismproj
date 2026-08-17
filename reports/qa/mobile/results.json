@@ -1,0 +1,82 @@
+[
+  {
+    "route": "/stories",
+    "title": "Loading http://localhost:3001/stories",
+    "loadMs": 7932,
+    "navError": null,
+    "imageCount": 70,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "http://localhost:3001/stories",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://localhost:3001/stories",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "http://localhost:3001/stories",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/",
+    "title": "Ney Heritage — Digitizing the Sacred Heritage of Sikkim",
+    "loadMs": 12950,
+    "navError": null,
+    "imageCount": 21,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [
+      {
+        "url": "https://tile.openstreetmap.org/9/381/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/215.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/381/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/214.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/381/216.png",
+        "reason": "net::ERR_ABORTED"
+      },
+      {
+        "url": "https://tile.openstreetmap.org/9/382/216.png",
+        "reason": "net::ERR_ABORTED"
+      }
+    ],
+    "http4xx5xx": [],
+    "overflow": null
+  },
+  {
+    "route": "/monasteries",
+    "title": "Monasteries · Ney Heritage",
+    "loadMs": 17920,
+    "navError": null,
+    "imageCount": 15,
+    "broken": [],
+    "pending": [],
+    "consoleErrors": [],
+    "pageErrors": [],
+    "failed": [],
+    "http4xx5xx": [],
+    "overflow": null
+  }
+]
