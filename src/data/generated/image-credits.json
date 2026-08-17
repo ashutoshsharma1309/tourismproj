@@ -1,0 +1,176 @@
+[
+  {
+    "key": "arch/canon",
+    "localPath": "/images/arch/canon.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tibetan_Dragon_Buddhist_Canon.jpg/1920px-Tibetan_Dragon_Buddhist_Canon.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_Dragon_Buddhist_Canon.jpg"
+  },
+  {
+    "key": "arch/manuscript",
+    "localPath": "/images/arch/manuscript.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tibetan_plant_Manuscript_Wellcome_L0041693.jpg/1920px-Tibetan_plant_Manuscript_Wellcome_L0041693.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_plant_Manuscript_Wellcome_L0041693.jpg"
+  },
+  {
+    "key": "arch/prayer-wheel",
+    "localPath": "/images/arch/prayer-wheel.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg/1920px-Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg"
+  },
+  {
+    "key": "arch/thangka",
+    "localPath": "/images/arch/thangka.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg/1920px-Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg"
+  },
+  {
+    "key": "fest/cham",
+    "localPath": "/images/fest/cham.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ham_dance_at_Deskit_Monastery.jpg/1920px-Ham_dance_at_Deskit_Monastery.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ham_dance_at_Deskit_Monastery.jpg"
+  },
+  {
+    "key": "fest/hemis",
+    "localPath": "/images/fest/hemis.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hemis_monastery_festival_II.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Hemis_monastery_festival_II.jpg"
+  },
+  {
+    "key": "hero/buddha-park",
+    "localPath": "/images/hero/buddha-park.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg/1920px-Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg"
+  },
+  {
+    "key": "hero/gurudongmar",
+    "localPath": "/images/hero/gurudongmar.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg/1920px-Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Gurudongmar_Lake_Sikkim%2C_India_(edit).jpg"
+  },
+  {
+    "key": "hero/kanchenjunga",
+    "localPath": "/images/hero/kanchenjunga.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg/1920px-Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg"
+  },
+  {
+    "key": "hero/yumthang",
+    "localPath": "/images/hero/yumthang.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg/1920px-Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg"
+  },
+  {
+    "key": "int/thiksey",
+    "localPath": "/images/int/thiksey.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg/1920px-Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg"
+  },
+  {
+    "key": "mon/dubdi",
+    "localPath": "/images/mon/dubdi.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Yuksom_Dubdi_Gompa4.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Yuksom_Dubdi_Gompa4.jpg"
+  },
+  {
+    "key": "mon/enchey",
+    "localPath": "/images/mon/enchey.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Enchey_Monastery_02.jpg/1920px-Enchey_Monastery_02.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Enchey_Monastery_02.jpg"
+  },
+  {
+    "key": "mon/kewzing",
+    "localPath": "/images/mon/kewzing.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg/1920px-Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg"
+  },
+  {
+    "key": "mon/lachen",
+    "localPath": "/images/mon/lachen.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lachen_Monastery_Gompa.jpg/1920px-Lachen_Monastery_Gompa.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachen_Monastery_Gompa.jpg"
+  },
+  {
+    "key": "mon/lachung",
+    "localPath": "/images/mon/lachung.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg/1920px-Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg"
+  },
+  {
+    "key": "mon/lingdum",
+    "localPath": "/images/mon/lingdum.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg/1920px-Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lingdum_Monastery_(also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery).jpg"
+  },
+  {
+    "key": "mon/pemayangtse",
+    "localPath": "/images/mon/pemayangtse.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Pemayangtse_Monastery_Sikkim_India.jpg/1920px-Pemayangtse_Monastery_Sikkim_India.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Pemayangtse_Monastery_Sikkim_India.jpg"
+  },
+  {
+    "key": "mon/phensang",
+    "localPath": "/images/mon/phensang.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phensong_Monastery.jpg/1920px-Phensong_Monastery.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phensong_Monastery.jpg"
+  },
+  {
+    "key": "mon/phodong",
+    "localPath": "/images/mon/phodong.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Phodong_monastery_-_north_sikkim.jpg/1920px-Phodong_monastery_-_north_sikkim.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phodong_monastery_-_north_sikkim.jpg"
+  },
+  {
+    "key": "mon/ralang",
+    "localPath": "/images/mon/ralang.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ralang_monastery_sikkim_1.jpg/1920px-Ralang_monastery_sikkim_1.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ralang_monastery_sikkim_1.jpg"
+  },
+  {
+    "key": "mon/rinchenpong",
+    "localPath": "/images/mon/rinchenpong.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/View_of_rinchenpong_monastery_entry.JPG/1920px-View_of_rinchenpong_monastery_entry.JPG",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:View_of_rinchenpong_monastery_entry.JPG"
+  },
+  {
+    "key": "mon/rumtek",
+    "localPath": "/images/mon/rumtek.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Rumtek_Monastery_04.jpg/1920px-Rumtek_Monastery_04.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_04.jpg"
+  },
+  {
+    "key": "mon/sanga-choeling",
+    "localPath": "/images/mon/sanga-choeling.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Full_view_of_Sanga-Choeling_Monastery.jpg/1920px-Full_view_of_Sanga-Choeling_Monastery.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg"
+  },
+  {
+    "key": "mon/tashiding",
+    "localPath": "/images/mon/tashiding.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mani_stone_slabs_outside_Tashiding_Monastery.jpg/1920px-Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Mani_stone_slabs_outside_Tashiding_Monastery.jpg"
+  },
+  {
+    "key": "mon/tsuklakhang",
+    "localPath": "/images/mon/tsuklakhang.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Tsuklakhang_Monastery.jpg/1920px-Tsuklakhang_Monastery.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tsuklakhang_Monastery.jpg"
+  },
+  {
+    "key": "place/khecheopalri",
+    "localPath": "/images/place/khecheopalri.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg/1920px-Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg"
+  },
+  {
+    "key": "place/nathula",
+    "localPath": "/images/place/nathula.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg/1920px-Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg"
+  },
+  {
+    "key": "place/tsomgo",
+    "localPath": "/images/place/tsomgo.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Changu_%28Tsomgo%29_Lake.jpg/1920px-Changu_%28Tsomgo%29_Lake.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Changu_(Tsomgo)_Lake.jpg"
+  }
+]

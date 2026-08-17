@@ -38,6 +38,38 @@ export function getAudioGuides(slug: string): AudioGuide[] {
  * specific blocker. Surfaced in the UI so the gap is visible, not hidden.
  */
 export const BLOCKED_AUDIO_LANGUAGES = [
-  { code: "as", label: "Assamese", blocker: "No Assamese speech voice available." },
-  { code: "dz", label: "Dzongkha", blocker: "No Dzongkha voice, and no Dzongkha speaker to review a translation about Buddhist practice." },
+  {
+    code: "bh",
+    label: "Bhutia (Sikkimese)",
+    blocker:
+      "An official language of Sikkim with no speech voice in any engine available to this project.",
+  },
+  {
+    code: "lep",
+    label: "Lepcha",
+    blocker:
+      "The language of Sikkim's earliest inhabitants. No TTS engine supports it, and its script has no synthesis support.",
+  },
+  {
+    code: "as",
+    label: "Assamese",
+    blocker:
+      "No Assamese voice exists in macOS speech or in Piper's 50 languages. Reaching it needs a multi-gigabyte model this 8 GB machine cannot run.",
+  },
+  {
+    code: "dz",
+    label: "Dzongkha",
+    blocker:
+      "No voice available, and no Dzongkha speaker to review a translation about Buddhist practice.",
+  },
 ] as const;
+
+/**
+ * Bengali is offered for visitors, not as a language of Sikkim.
+ *
+ * Sikkim's own languages are Nepali, Bhutia, Lepcha and Limbu. Bengali is
+ * spoken in neighbouring West Bengal, through which most domestic visitors
+ * arrive. Labelling it a "local" language would be wrong, so the UI says
+ * plainly what it is.
+ */
+export const VISITOR_LANGUAGES = ["bn"] as const;

@@ -1,11 +1,13 @@
 import { getAudioGuides } from "@/data/audio";
 import { img } from "@/data/images";
+import { getPanorama } from "@/data/panoramas";
 import { SOURCES } from "@/data/sources";
 import type { Provenance } from "@/data/sources";
 import type {
   MonasteryDetails,
   MonasteryTradition,
   SikkimDistrict,
+  TourAvailability,
   VisitingHours,
 } from "@/types";
 
@@ -363,6 +365,35 @@ const REPORTED_HOURS: Record<string, string> = {
     "Commonly reported as roughly 8am–5pm, though published times range from 6am to 6pm and vary with rituals and season",
 };
 
+/**
+ * Immersive availability, read off the panorama registry rather than declared
+ * here.
+ *
+ * This used to be a hardcoded `{ available: false }` on every record, written
+ * when the 360° sweep came back empty. That was true on the day it was
+ * written and became false the moment a capture was verified: Rumtek's
+ * courtyard panorama rendered on its detail page while the coverage dashboard
+ * still reported zero sites captured. A dashboard that contradicts the page it
+ * describes is the same failure as an invented fact, so the flag is now
+ * derived and there is exactly one place to publish a capture —
+ * `src/data/panoramas.ts`.
+ *
+ * The projection is carried through so callers can tell a true 360° sphere
+ * from a wide stitched frame. Nothing may print "360°" without checking it.
+ */
+function tourFor(slug: string): TourAvailability {
+  const panorama = getPanorama(slug);
+  if (!panorama) return { available: false };
+
+  return {
+    available: true,
+    projection: panorama.projection,
+    provider: panorama.provider,
+    sourceUrl: panorama.sourceUrl,
+    verifiedAt: panorama.provenance.verifiedAt,
+  };
+}
+
 function visitingHoursFor(slug: string): VisitingHours {
   const summary = REPORTED_HOURS[slug];
   if (summary) {
@@ -411,13 +442,8 @@ export const monasteries: MonasteryDetails[] = SEEDS.map((seed) => {
     coordinates: coords,
     googleMapsUrl: googleMapsSearchUrl(seed.name, seed.district),
     provenance: provenanceFor(seed.slug),
-    /**
-     * No verified 360 capture exists for any Sikkim monastery in the freely
-     * licensed corpus, so every site reports none (§23, §63). The earlier
-     * build reused two European panoramas across five sites.
-     */
     visitingHours: visitingHoursFor(seed.slug),
-    tour: { available: false as const },
+    tour: tourFor(seed.slug),
     /**
      * Narration produced by the Heritage Audio Agent. Present only where the
      * cited sources contained enough material to say something true.

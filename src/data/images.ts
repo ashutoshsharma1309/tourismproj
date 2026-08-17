@@ -1,50 +1,74 @@
 /**
- * Photography for Phase 1 mock data.
+ * Photography registry.
  *
- * Images are freely licensed files hosted on Wikimedia Commons, resolved once at
- * authoring time so the app never calls an image search API at runtime. Phase 2
- * replaces this map with CDN assets referenced from the database.
+ * These are freely licensed Wikimedia Commons files, VENDORED into public/images
+ * by scripts/vendor-images.mjs rather than hotlinked at runtime.
  *
- * Generated file — edit the entity data, not this map.
+ * Why local: upload.wikimedia.org rate-limits hotlinking. Serving these through
+ * the Next image optimizer meant a cold first visit fired ~30 upstream fetches
+ * at once, Wikimedia answered a share of them with 429, and those photographs
+ * rendered broken. They only appeared once a later reload found them in
+ * .next/cache/images — the "works after refresh" bug. Local files remove the
+ * runtime dependency: no rate limit, no upstream latency, no cold-cache stall.
+ *
+ * The licence obligation is unchanged. Each file's Commons source URL and File:
+ * page are recorded in src/data/generated/image-credits.json, and the credit is
+ * rendered next to the photograph.
+ *
+ * To add or refresh an image: add its Commons URL to scripts/vendor-images.mjs's
+ * registry input, run `npm run images:vendor`, then reference the key here.
  */
 
 const IMAGES: Record<string, string> = {
-  "hero/buddha-park": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg/1920px-Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg",
-  "int/thiksey": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg/1920px-Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg",
-  "hero/kanchenjunga": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg/1920px-Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg",
-  "hero/gurudongmar": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg/1920px-Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg",
-  "hero/yumthang": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg/1920px-Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg",
-  "mon/rumtek": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Rumtek_Monastery_04.jpg/1920px-Rumtek_Monastery_04.jpg",
-  "mon/pemayangtse": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Pemayangtse_Monastery_Sikkim_India.jpg/1920px-Pemayangtse_Monastery_Sikkim_India.jpg",
-  "mon/tashiding": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mani_stone_slabs_outside_Tashiding_Monastery.jpg/1920px-Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
-  "mon/enchey": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Enchey_Monastery_02.jpg/1920px-Enchey_Monastery_02.jpg",
-  "mon/phodong": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Phodong_monastery_-_north_sikkim.jpg/1920px-Phodong_monastery_-_north_sikkim.jpg",
-  "mon/ralang": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ralang_monastery_sikkim_1.jpg/1920px-Ralang_monastery_sikkim_1.jpg",
-  "mon/dubdi": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Yuksom_Dubdi_Gompa4.jpg",
-  "mon/sanga-choeling": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Full_view_of_Sanga-Choeling_Monastery.jpg/1920px-Full_view_of_Sanga-Choeling_Monastery.jpg",
-  "mon/lingdum": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg/1920px-Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg",
-  "mon/phensang": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phensong_Monastery.jpg/1920px-Phensong_Monastery.jpg",
-  "mon/lachen": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lachen_Monastery_Gompa.jpg/1920px-Lachen_Monastery_Gompa.jpg",
-  "mon/lachung": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg/1920px-Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg",
-  "mon/rinchenpong": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/View_of_rinchenpong_monastery_entry.JPG/1920px-View_of_rinchenpong_monastery_entry.JPG",
-  "mon/tsuklakhang": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Tsuklakhang_Monastery.jpg/1920px-Tsuklakhang_Monastery.jpg",
-  "mon/kewzing": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg/1920px-Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg",
-  "place/tsomgo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Changu_%28Tsomgo%29_Lake.jpg/1920px-Changu_%28Tsomgo%29_Lake.jpg",
-  "place/nathula": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg/1920px-Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg",
-  "place/khecheopalri": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg/1920px-Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg",
-  "arch/manuscript": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tibetan_plant_Manuscript_Wellcome_L0041693.jpg/1920px-Tibetan_plant_Manuscript_Wellcome_L0041693.jpg",
-  "arch/thangka": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg/1920px-Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg",
-  "arch/prayer-wheel": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg/1920px-Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg",
-  "arch/canon": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tibetan_Dragon_Buddhist_Canon.jpg/1920px-Tibetan_Dragon_Buddhist_Canon.jpg",
-  "fest/cham": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ham_dance_at_Deskit_Monastery.jpg/1920px-Ham_dance_at_Deskit_Monastery.jpg",
-  "fest/hemis": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hemis_monastery_festival_II.jpg",
-  "editorial/map": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Topographic_map_of_Rajasthan_state%2C_India_showing_district_boundaries.jpg/1920px-Topographic_map_of_Rajasthan_state%2C_India_showing_district_boundaries.jpg",
+  "hero/buddha-park": "/images/hero/buddha-park.jpg",
+  "hero/kanchenjunga": "/images/hero/kanchenjunga.jpg",
+  "hero/gurudongmar": "/images/hero/gurudongmar.jpg",
+  "hero/yumthang": "/images/hero/yumthang.jpg",
+
+  "mon/rumtek": "/images/mon/rumtek.jpg",
+  "mon/pemayangtse": "/images/mon/pemayangtse.jpg",
+  "mon/tashiding": "/images/mon/tashiding.jpg",
+  "mon/enchey": "/images/mon/enchey.jpg",
+  "mon/phodong": "/images/mon/phodong.jpg",
+  "mon/ralang": "/images/mon/ralang.jpg",
+  "mon/dubdi": "/images/mon/dubdi.jpg",
+  "mon/sanga-choeling": "/images/mon/sanga-choeling.jpg",
+  "mon/lingdum": "/images/mon/lingdum.jpg",
+  "mon/phensang": "/images/mon/phensang.jpg",
+  "mon/lachen": "/images/mon/lachen.jpg",
+  "mon/lachung": "/images/mon/lachung.jpg",
+  "mon/rinchenpong": "/images/mon/rinchenpong.jpg",
+  "mon/tsuklakhang": "/images/mon/tsuklakhang.jpg",
+  "mon/kewzing": "/images/mon/kewzing.jpg",
+
+  "place/tsomgo": "/images/place/tsomgo.jpg",
+  "place/nathula": "/images/place/nathula.jpg",
+  "place/khecheopalri": "/images/place/khecheopalri.jpg",
+
+  /* Regional Vajrayana subjects photographed elsewhere in the Himalaya. Used to
+     illustrate thematic stories (cham, thangka, canon), never to depict a named
+     Sikkim site — the alt text states where each was taken. */
+  "int/thiksey": "/images/int/thiksey.jpg",
+  "arch/manuscript": "/images/arch/manuscript.jpg",
+  "arch/thangka": "/images/arch/thangka.jpg",
+  "arch/prayer-wheel": "/images/arch/prayer-wheel.jpg",
+  "arch/canon": "/images/arch/canon.jpg",
+  "fest/cham": "/images/fest/cham.jpg",
+  "fest/hemis": "/images/fest/hemis.jpg",
 };
 
-/** Neutral fallback so a missing key never renders a broken image. */
-const FALLBACK = IMAGES["editorial/map"] ?? "";
+/**
+ * Designed fallback for an unknown key — a drawn ridgeline, not a photograph.
+ * The previous fallback was a topographic map of RAJASTHAN, which would have
+ * misrepresented an unrelated state as Sikkim heritage the moment any key
+ * missed. A drawing that says "not available" cannot be mistaken for evidence.
+ */
+export const IMAGE_FALLBACK = "/images/placeholder.svg";
 
-/** Resolve an image key to a URL. */
+/** Resolve an image key to a URL served from this origin. */
 export function img(key: string): string {
-  return IMAGES[key] ?? FALLBACK;
+  return IMAGES[key] ?? IMAGE_FALLBACK;
 }
+
+/** Every key in the registry — used by the asset audit. */
+export const IMAGE_KEYS = Object.keys(IMAGES);

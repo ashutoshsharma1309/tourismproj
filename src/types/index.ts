@@ -1,3 +1,4 @@
+import type { PanoramaProjection } from "@/data/panoramas";
 import type { Provenance } from "@/data/sources";
 
 /**
@@ -51,25 +52,25 @@ export interface Monastery {
    PHASE 2 — monastery experience
    ========================================================================= */
 
-/** 360 tour availability. Never assumed — see src/data/monasteries.ts. */
+/**
+ * Immersive capture availability. Never assumed, and never hand-set on a
+ * record: `src/data/monasteries.ts` derives this from `src/data/panoramas.ts`,
+ * so publishing a capture is a one-record change and the coverage dashboard
+ * cannot drift from what a visitor is actually shown.
+ *
+ * The projection travels with the flag on purpose. A record being available
+ * does not license the word "360°" — only an `equirectangular` or
+ * `street-view` capture does, and a `flat-panorama` must be called a panorama.
+ */
 export type TourAvailability =
   | { available: false }
-  | { available: true; provider: string; sourceUrl: string; verifiedAt: string; scenes: TourScene[] };
-
-export interface TourHotspot {
-  pitch: number;
-  yaw: number;
-  title: string;
-  description: string;
-}
-
-export interface TourScene {
-  id: string;
-  title: string;
-  /** Equirectangular (2:1) image genuinely captured at this site. */
-  image: string;
-  hotspots: TourHotspot[];
-}
+  | {
+      available: true;
+      projection: PanoramaProjection;
+      provider: string;
+      sourceUrl: string;
+      verifiedAt: string;
+    };
 
 /** Audio guide availability, per language. */
 export type AudioAvailability =
