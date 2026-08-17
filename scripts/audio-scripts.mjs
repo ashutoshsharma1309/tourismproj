@@ -70,11 +70,11 @@ export const TEMPLATES = {
     kingdom:
       "Sikkim was a Himalayan kingdom until it became an Indian state in 1975, and its monasteries were closely tied to the life of that kingdom.",
     context:
-      "A Sikkimese gompa is a working community as much as a monument. Behind its painted doors are prayer halls, a library of block-printed texts, and quarters where monks study, debate and keep the year's rituals.",
+      "A Sikkimese gompa is a working community, as much as it is a monument. Behind its painted doors are prayer halls, and a library of block-printed texts. Monks live here. They study, they debate, and they keep the rituals of the year.",
     architecture:
-      "The architecture follows Tibetan monastic tradition: thick walls carrying a bright painted façade, a pillared assembly hall, and a roofline finished in gilded ornament that catches the first light off the mountains.",
+      "The architecture follows Tibetan monastic tradition. Thick walls carry a bright, painted façade. Inside stands a pillared assembly hall. Above it, a roofline finished in gilded ornament catches the first light off the mountains.",
     etiquette:
-      "If you visit, dress modestly, walk clockwise around shrines and stupas, remove your shoes before entering a prayer hall, and ask before photographing inside.",
+      "If you visit, please dress modestly. Walk clockwise around shrines and stupas. Remove your shoes before entering a prayer hall, and ask before photographing inside.",
     closing: (n) => `Everything in this guide comes from the sources listed on the ${n} page.`,
   },
   hi: {

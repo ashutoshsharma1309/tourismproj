@@ -43,7 +43,7 @@ const VOICES = {
   en: { engine: "say", voice: "Daniel", rate: 128, label: TEMPLATES.en.label },
   hi: { engine: "say", voice: "Lekha", rate: 136, label: TEMPLATES.hi.label },
   ne: { engine: "piper", voice: "ne_NP-google-medium", label: TEMPLATES.ne.label },
-  bn: { engine: "say", voice: "Piya", rate: 136, label: TEMPLATES.bn.label },
+  bn: { engine: "say", voice: "Piya", rate: 136, label: TEMPLATES.bn.label, visitorLanguage: true },
 };
 
 
@@ -75,6 +75,70 @@ function checkLanguagePurity(lang, script, properNouns) {
 
 const words = (s) => s.trim().split(/\s+/).filter(Boolean).length;
 
+/**
+ * Loudness targets.
+ *
+ * Peak-matching is not enough: a peak-aligned Bengali render still sounded
+ * ~4 dB louder than the English one, because peak says nothing about how loud
+ * speech *feels*. Match RMS instead — that is roughly perceived loudness for
+ * speech — and keep a peak ceiling so AAC never clips.
+ */
+const TARGET_RMS = 0.11;
+const PEAK_CEILING = 0.89;
+
+/**
+ * Locate the PCM payload in a RIFF/WAVE file.
+ *
+ * The canonical header is 44 bytes, but afconvert emits extra chunks, so
+ * assuming that offset silently corrupts the samples. Walk the chunk list.
+ */
+function findDataChunk(buf) {
+  if (buf.toString("ascii", 0, 4) !== "RIFF" || buf.toString("ascii", 8, 12) !== "WAVE") {
+    throw new Error("not a RIFF/WAVE file");
+  }
+  let pos = 12;
+  let sampleRate = 22050;
+  while (pos + 8 <= buf.length) {
+    const id = buf.toString("ascii", pos, pos + 4);
+    const size = buf.readUInt32LE(pos + 4);
+    if (id === "fmt ") sampleRate = buf.readUInt32LE(pos + 12);
+    if (id === "data") return { offset: pos + 8, length: Math.min(size, buf.length - pos - 8), sampleRate };
+    pos += 8 + size + (size % 2); // chunks are word-aligned
+  }
+  throw new Error("no data chunk");
+}
+
+/**
+ * Scale a 16-bit PCM WAV so its loudest sample sits at `target`.
+ * Pure gain, applied in place.
+ */
+function normaliseLoudness(wavPath) {
+  const buf = readFileSync(wavPath);
+  const { offset, length } = findDataChunk(buf);
+  const n = Math.floor(length / 2);
+  let peak = 0;
+  let sumSq = 0;
+  for (let i = 0; i < n; i++) {
+    const v = buf.readInt16LE(offset + i * 2);
+    const a = Math.abs(v);
+    if (a > peak) peak = a;
+    sumSq += (v / 32768) ** 2;
+  }
+  if (peak === 0 || n === 0) return;
+  const rms = Math.sqrt(sumSq / n);
+  // Gain for perceived loudness, then pull back if it would breach the ceiling.
+  let gain = TARGET_RMS / rms;
+  const peakAfter = (peak / 32768) * gain;
+  if (peakAfter > PEAK_CEILING) gain *= PEAK_CEILING / peakAfter;
+  if (gain > 8 || !Number.isFinite(gain)) return;
+  for (let i = 0; i < n; i++) {
+    const off = offset + i * 2;
+    const v = Math.max(-32768, Math.min(32767, Math.round(buf.readInt16LE(off) * gain)));
+    buf.writeInt16LE(v, off);
+  }
+  writeFileSync(wavPath, buf);
+}
+
 /** Render with whichever engine covers this language, then encode to AAC. */
 function synthesise(script, lang, outPath) {
   const cfg = VOICES[lang];
@@ -89,10 +153,15 @@ function synthesise(script, lang, outPath) {
       stdio: "pipe",
     });
   }
-  execFileSync("afconvert", ["-f", "m4af", "-d", "aac@44100", "-b", "96000", raw, outPath], {
-    stdio: "pipe",
-  });
+  // Normalise to a common peak so the player does not lurch in level when the
+  // listener switches language. Gain only — no compression, no EQ; heavy
+  // processing is what makes synthetic speech sound worse, not better.
+  const wav = `${outPath}.norm.wav`;
+  execFileSync("afconvert", ["-f", "WAVE", "-d", "LEI16@22050", "-c", "1", raw, wav], { stdio: "pipe" });
+  normaliseLoudness(wav);
+  execFileSync("afconvert", ["-f", "m4af", "-d", "aac@44100", "-b", "96000", wav, outPath], { stdio: "pipe" });
   rmSync(raw, { force: true });
+  rmSync(wav, { force: true });
 }
 
 /**
@@ -106,14 +175,14 @@ function analyseAudio(file) {
   });
   const buf = readFileSync(wav);
   rmSync(wav, { force: true });
-  // Walk the 16-bit PCM payload past the 44-byte canonical header.
+  const { offset, length } = findDataChunk(buf);
   let peak = 0;
   let sumSquares = 0;
   let silentSamples = 0;
   let clipped = 0;
-  const total = Math.floor((buf.length - 44) / 2);
+  const total = Math.floor(length / 2);
   for (let i = 0; i < total; i++) {
-    const v = buf.readInt16LE(44 + i * 2) / 32768;
+    const v = buf.readInt16LE(offset + i * 2) / 32768;
     const a = Math.abs(v);
     if (a > peak) peak = a;
     sumSquares += v * v;
