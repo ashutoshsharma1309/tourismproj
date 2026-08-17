@@ -11,7 +11,9 @@ export const SITE = {
 export const NAV_LINKS = [
   { href: "/monasteries", label: "Monasteries" },
   { href: "/stories", label: "Stories" },
-  { href: "/#map", label: "Map" },
+  { href: "/history", label: "History" },
+  { href: "/archive", label: "Archive" },
+  { href: "/explore", label: "Explore" },
   { href: "/hotels", label: "Stays" },
   { href: "/planner", label: "Plan Journey" },
   { href: "/preservation", label: "Preservation" },

@@ -9,12 +9,20 @@ const inr = new Intl.NumberFormat("en-IN", {
   maximumFractionDigits: 0,
 });
 
-const inrCompact = new Intl.NumberFormat("en-IN", {
-  style: "currency",
-  currency: "INR",
-  notation: "compact",
-  maximumFractionDigits: 1,
-});
+/**
+ * Indian short scale, computed rather than delegated to Intl.
+ *
+ * `notation: "compact"` is NOT portable: Node's ICU emits "₹5.0K" where
+ * Chrome's emits "₹5K" for the same input and locale. Rendering that on a
+ * server component and hydrating it in the browser produced a React #418
+ * text mismatch on /planner, which threw away the client tree on every visit.
+ * Doing the arithmetic here makes the string identical in both runtimes.
+ */
+const CompactUnits = [
+  { limit: 10_000_000, suffix: "Cr" },
+  { limit: 100_000, suffix: "L" },
+  { limit: 1_000, suffix: "K" },
+] as const;
 
 /** ₹27,500 */
 export function formatPrice(amount: number): string {
@@ -23,7 +31,17 @@ export function formatPrice(amount: number): string {
 
 /** ₹27.5K — for dense surfaces such as map pins and compact cards. */
 export function formatPriceCompact(amount: number): string {
-  return inrCompact.format(amount);
+  const sign = amount < 0 ? "-" : "";
+  const value = Math.abs(amount);
+  for (const { limit, suffix } of CompactUnits) {
+    if (value >= limit) {
+      const scaled = value / limit;
+      // One decimal, but never a trailing ".0" — ₹5K, not ₹5.0K.
+      const text = scaled.toFixed(1).replace(/\.0$/, "");
+      return `${sign}₹${text}${suffix}`;
+    }
+  }
+  return `${sign}₹${value}`;
 }
 
 /** 90 -> "1h 30m", 45 -> "45m", 120 -> "2h" */
