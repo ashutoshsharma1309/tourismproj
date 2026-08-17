@@ -11,7 +11,17 @@
     "agent:discover": "node scripts/heritage-discovery.mjs",
     "agent:360": "node scripts/heritage-360-finder.mjs",
     "agent:audio": "node scripts/heritage-audio-agent.mjs",
-    "agent:report": "node scripts/data-quality-report.mjs"
+    "agent:video": "node scripts/heritage-video-agent.mjs",
+    "agent:reviews": "node scripts/heritage-review-agent.mjs",
+    "agent:archive": "node scripts/heritage-archive-agent.mjs",
+    "agent:report": "node scripts/data-quality-report.mjs",
+    "agent:research": "node scripts/sikkim-cultural-research.mjs",
+    "images:vendor": "node scripts/vendor-images.mjs",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "qa:audit": "node scripts/qa/audit.mjs",
+    "qa:flows": "node scripts/qa/flows.mjs",
+    "qa:a11y": "node scripts/qa/a11y.mjs",
+    "qa:heritage": "node scripts/qa/heritage-integrity.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",
@@ -37,6 +47,7 @@
     "@types/react-dom": "^19.0.2",
     "eslint": "^9.17.0",
     "eslint-config-next": "^16.3.0",
+    "playwright": "1.62.1",
     "tailwindcss": "^4.0.0",
     "typescript": "^5.7.2"
   }

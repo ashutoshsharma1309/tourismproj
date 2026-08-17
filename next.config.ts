@@ -10,6 +10,13 @@ const nextConfig: NextConfig = {
         hostname: "upload.wikimedia.org",
         pathname: "/wikipedia/commons/**",
       },
+      // Poster frames for the embedded monastery videos. Only the thumbnail is
+      // fetched from here; playback stays inside YouTube's own iframe player.
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+        pathname: "/vi/**",
+      },
     ],
   },
 };

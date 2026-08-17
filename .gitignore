@@ -15,3 +15,7 @@ next-env.d.ts
 chromedriver/
 .venv-tts/
 .tts-models/
+# Community submissions awaiting curator review, and their uploaded media.
+# Runtime state, not source — never committed.
+.data/
+voice-benchmark/
