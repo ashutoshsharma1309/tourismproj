@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
-import { BLOCKED_AUDIO_LANGUAGES } from "@/data/audio";
+import { BLOCKED_AUDIO_LANGUAGES, VISITOR_LANGUAGES } from "@/data/audio";
 import type { AudioGuide } from "@/data/audio";
 
 function clock(seconds: number): string {
@@ -25,7 +25,16 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
   const [showTranscript, setShowTranscript] = useState(false);
 
   // Switching language restarts the track rather than seeking into a different one.
+  //
+  // This must not run on mount. calling load() while preload="none" starts a
+  // fetch the browser then cancels, which showed up as a net::ERR_ABORTED on
+  // every monastery page — a failed request for audio nobody had asked to hear.
+  const mounted = useRef(false);
   useEffect(() => {
+    if (!mounted.current) {
+      mounted.current = true;
+      return;
+    }
     const audio = audioRef.current;
     if (!audio) return;
     audio.pause();
@@ -165,10 +174,16 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
       {guide.attribution ? (
         <p className="mt-1 text-caption text-subtle">{guide.attribution}</p>
       ) : null}
+      {(VISITOR_LANGUAGES as readonly string[]).includes(guide.language) ? (
+        <p className="mt-1 text-caption text-subtle">
+          Bengali is offered for visitors arriving through West Bengal. Sikkim&apos;s
+          own languages are Nepali, Bhutia, Lepcha and Limbu.
+        </p>
+      ) : null}
       <p className="mt-1 text-caption text-subtle">
-        Not offered yet: {BLOCKED_AUDIO_LANGUAGES.map((l) => l.label).join(", ")} —
-        no speech voice is available for these, and narration in the wrong
-        phonology would serve nobody.
+        Narration under development:{" "}
+        {BLOCKED_AUDIO_LANGUAGES.map((l) => l.label).join(", ")} — including two
+        official languages of Sikkim, for which no speech engine exists.
       </p>
     </div>
   );

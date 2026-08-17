@@ -19,6 +19,7 @@ import { useEffect, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { isFullSphere } from "@/data/panoramas";
 import { cn } from "@/lib/cn";
 import { formatCoordinates } from "@/lib/format";
 import type { MonasteryDetails, MonasteryTradition, SikkimDistrict } from "@/types";
@@ -336,7 +337,11 @@ export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExpl
                       </Badge>
                       <Badge tone={monastery.tour.available ? "success" : "neutral"}>
                         <Rotate3d className="size-3" aria-hidden />
-                        {monastery.tour.available ? "360°" : "No 360°"}
+                        {!monastery.tour.available
+                          ? "No panorama"
+                          : isFullSphere(monastery.tour.projection)
+                            ? "360°"
+                            : "Panorama"}
                       </Badge>
                       <Badge tone="neutral">est. {monastery.establishedYear}</Badge>
                       {monastery.provenance.confidence !== "unverified" ? (
