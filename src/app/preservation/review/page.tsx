@@ -2,6 +2,7 @@ import { ExternalLink, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 
 import { Footer } from "@/components/layout/Footer";
+import { SubmissionQueue } from "@/components/archive/SubmissionQueue";
 import { Badge } from "@/components/ui/Badge";
 import discovered from "@/data/generated/monasteries.discovered.json";
 import { monasteries } from "@/data/monasteries";
@@ -35,6 +36,12 @@ const TONE: Record<string, "success" | "warning" | "neutral"> = {
 };
 
 /**
+ * Community submissions arrive at runtime, so this page is never prerendered —
+ * a queue baked at build time would always read as empty.
+ */
+export const dynamic = "force-dynamic";
+
+/**
  * The review queue (§16). The agent proposes; a person disposes. Nothing here
  * reaches the public catalogue until someone approves it, which is the
  * difference between an agentic pipeline and an automated rumour mill.
@@ -50,7 +57,7 @@ export default function ReviewQueuePage() {
           Heritage review queue
         </p>
         <h1 className="mt-3 max-w-3xl font-display text-h1 text-balance-heading">
-          {candidates.length} candidates awaiting review
+          {candidates.length} monastery candidates awaiting review
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted">
           The Heritage Discovery Agent found these sites by enumerating a
@@ -125,6 +132,9 @@ export default function ReviewQueuePage() {
             </li>
           ))}
         </ul>
+
+        {/* The other half of the queue: what the public sends in. */}
+        <SubmissionQueue />
       </main>
       <Footer />
     </>

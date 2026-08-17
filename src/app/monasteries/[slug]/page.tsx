@@ -1,6 +1,7 @@
-import { Clock3, ExternalLink, Headphones, MapPin, Rotate3d } from "lucide-react";
+import { ArrowRight, Clock3, ExternalLink, Headphones, MapPin, Rotate3d } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/layout/Footer";
@@ -15,6 +16,13 @@ import { getStoriesForMonastery } from "@/data/stories";
 import { StoryCard } from "@/components/stories/StoryCard";
 import { getMonasteryBySlug, monasteries } from "@/data/monasteries";
 import { HeritageAudioPlayer } from "@/components/monasteries/HeritageAudioPlayer";
+import { ExperienceSection } from "@/components/monasteries/ExperienceSection";
+import { VisitorVoices } from "@/components/monasteries/VisitorVoices";
+import { MonasteryTimeline } from "@/components/history/MonasteryTimeline";
+import { ArchiveCard } from "@/components/archive/ArchiveCard";
+import { getArchiveForMonastery } from "@/data/archive";
+import { getPanorama } from "@/data/panoramas";
+import { getVideo } from "@/data/videos";
 import { formatCoordinates } from "@/lib/format";
 
 interface PageProps {
@@ -38,6 +46,9 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
   if (!monastery) notFound();
   const guides = getAudioGuides(monastery.slug);
   const relatedStories = getStoriesForMonastery(monastery.slug);
+  const archive = getArchiveForMonastery(monastery.slug);
+  const panorama = getPanorama(monastery.slug);
+  const video = getVideo(monastery.slug);
 
   return (
     <>
@@ -109,26 +120,13 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
               <SourceNote provenance={monastery.provenance} />
             </div>
 
-            {/* Digital experiences — honest availability, never assumed. */}
-            <h2 className="mt-12 font-display text-h2">Digital experiences</h2>
+            {/* Immersive experience — panorama where one is verified, film
+                where it is not, and an honest empty state where neither. */}
+            <ExperienceSection monastery={monastery} />
+
+            {/* Listen */}
+            <h2 className="mt-14 font-display text-h2">Listen</h2>
             <div className="mt-5 grid min-w-0 gap-4">
-              {monastery.tour.available ? null : (
-                <NotAvailable
-                  title="360° experience not yet available"
-                  body={`No verified 360° capture of ${monastery.name} exists in the open-licensed record yet. This site is on the digitisation roster — we would rather show nothing than show somewhere else's prayer hall.`}
-                  action={
-                    <a
-                      href={monastery.googleMapsUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="inline-flex h-11 items-center gap-2 rounded-full border border-border-strong px-6 text-small font-medium transition-colors hover:border-primary hover:text-primary"
-                    >
-                      <MapPin className="size-4" aria-hidden />
-                      View location on Google Maps
-                    </a>
-                  }
-                />
-              )}
               {guides.length > 0 ? (
                 <HeritageAudioPlayer guides={guides} />
               ) : (
@@ -175,10 +173,14 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
                 </div>
                 <div className="flex gap-3">
                   <dt className="flex w-28 shrink-0 items-center gap-1.5 text-subtle">
-                    <Rotate3d className="size-3.5" aria-hidden /> 360° tour
+                    <Rotate3d className="size-3.5" aria-hidden /> Immersive
                   </dt>
                   <dd className="text-muted">
-                    {monastery.tour.available ? "Available" : "Not yet captured"}
+                    {panorama
+                      ? "Panoramic capture — pan and zoom"
+                      : video
+                        ? "Video — no panorama captured yet"
+                        : "Not yet captured"}
                   </dd>
                 </div>
                 <div className="flex gap-3">
@@ -213,12 +215,42 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
             </div>
           </aside>
         </div>
+
+        <VisitorVoices monasterySlug={monastery.slug} monasteryName={monastery.name} />
+
+        <MonasteryTimeline slug={monastery.slug} monasteryName={monastery.name} />
+
         {relatedStories.length > 0 ? (
           <section className="mt-16" aria-label="Related stories">
             <h2 className="font-display text-h2">Stories from here</h2>
             <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {relatedStories.map((story) => (
                 <StoryCard key={story.slug} story={story} />
+              ))}
+            </div>
+          </section>
+        ) : null}
+
+        {/* What the Digital Heritage Archive holds for this site. */}
+        {archive.length > 0 ? (
+          <section className="mt-16" aria-label="Archive objects from this monastery">
+            <div className="flex flex-wrap items-baseline justify-between gap-4">
+              <h2 className="font-display text-h2">In the heritage archive</h2>
+              <Link
+                href="/archive"
+                className="flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
+              >
+                The whole archive
+                <ArrowRight className="size-4" aria-hidden />
+              </Link>
+            </div>
+            <p className="mt-2 max-w-2xl text-body text-muted">
+              Catalogued objects connected to {monastery.name} — each with its
+              creator, its licence and its source.
+            </p>
+            <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {archive.map((item) => (
+                <ArchiveCard key={item.id} item={item} />
               ))}
             </div>
           </section>

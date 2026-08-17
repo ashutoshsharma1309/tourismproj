@@ -22,6 +22,8 @@ import { ScrollReveal } from "@/components/immersive/ScrollReveal";
 import { StatCounter } from "@/components/immersive/StatCounter";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
+import { ARCHIVE_COVERAGE } from "@/data/archive";
+import { HISTORY_COVERAGE } from "@/data/history";
 import { img } from "@/data/images";
 import { monasteries } from "@/data/monasteries";
 import { SITE } from "@/lib/constants";
@@ -272,7 +274,7 @@ export default async function HomePage() {
             </h2>
           </ScrollReveal>
           <div className="mt-8">
-            <HeritageMapSection monasteries={monasteries} />
+            <HeritageMapSection />
           </div>
         </section>
 
@@ -365,7 +367,90 @@ export default async function HomePage() {
           </div>
         </section>
 
-        
+        {/* ------------------------------- 7 · History & archive entry points */}
+        <section
+          className="mx-auto max-w-6xl px-6 pb-20 md:pb-28"
+          aria-label="History and archive"
+        >
+          <div className="grid gap-6 md:grid-cols-2">
+            <ScrollReveal>
+              <Link
+                href="/history"
+                className="card-lift group relative flex h-full flex-col justify-end overflow-hidden rounded-xl border bg-surface-inverse p-7 md:p-9"
+              >
+                <Image
+                  src={img("hero/kanchenjunga")}
+                  alt=""
+                  aria-hidden
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="media-zoom object-cover opacity-45 group-hover:scale-[1.04]"
+                />
+                <div aria-hidden className="gradient-overlay absolute inset-0" />
+                <div className="relative">
+                  <p className="font-mono text-eyebrow tracking-widest text-accent uppercase">
+                    Interactive timeline
+                  </p>
+                  <h2 className="mt-3 font-display text-h2 text-foreground-inverse text-glow">
+                    Discover Sikkim&apos;s history
+                  </h2>
+                  <p className="mt-3 max-w-md text-body leading-relaxed text-foreground-inverse/85">
+                    {HISTORY_COVERAGE.total} documented events across{" "}
+                    {HISTORY_COVERAGE.eras} eras — from the crowning at Yuksom in
+                    1642 to the referendum that ended the kingdom. Every one of
+                    them sourced.
+                  </p>
+                  <span className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-accent px-6 text-small font-semibold text-accent-foreground">
+                    Explore history
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+
+            <ScrollReveal delay={0.12}>
+              <Link
+                href="/archive"
+                className="card-lift group relative flex h-full flex-col justify-end overflow-hidden rounded-xl border bg-surface-inverse p-7 md:p-9"
+              >
+                <Image
+                  src={img("arch/manuscript")}
+                  alt=""
+                  aria-hidden
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="media-zoom object-cover opacity-45 group-hover:scale-[1.04]"
+                />
+                <div aria-hidden className="gradient-overlay absolute inset-0" />
+                <div className="relative">
+                  <p className="font-mono text-eyebrow tracking-widest text-accent uppercase">
+                    Digital heritage archive
+                  </p>
+                  <h2 className="mt-3 font-display text-h2 text-foreground-inverse text-glow">
+                    Preserve Sikkim&apos;s heritage
+                  </h2>
+                  <p className="mt-3 max-w-md text-body leading-relaxed text-foreground-inverse/85">
+                    {ARCHIVE_COVERAGE.total} catalogued objects across{" "}
+                    {ARCHIVE_COVERAGE.categories} categories — every one with its
+                    creator, its licence and its source. Contribute what the
+                    record is missing.
+                  </p>
+                  <span className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-accent px-6 text-small font-semibold text-accent-foreground">
+                    Enter the archive
+                    <ArrowRight
+                      className="size-4 transition-transform group-hover:translate-x-1"
+                      aria-hidden
+                    />
+                  </span>
+                </div>
+              </Link>
+            </ScrollReveal>
+          </div>
+        </section>
+
         {/* ------------------------------------------------ 8 · Plan journey */}
         <section className="bg-primary-soft/60">
           <div className="mx-auto max-w-6xl px-6 py-20 md:py-24">

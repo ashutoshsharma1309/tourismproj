@@ -1,10 +1,14 @@
-import { BookOpen, Camera, Check, Clock3, Headphones, Languages, MapPin, Minus, ShieldCheck } from "lucide-react";
+import { BookOpen, Camera, Check, Clock3, Headphones, Languages, MapPin, Minus, Rotate3d, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
+import { VerificationChip } from "@/components/ui/VerificationChip";
+import { ARCHIVE_COMMUNITIES, ARCHIVE_COVERAGE } from "@/data/archive";
+import { HISTORY_COVERAGE } from "@/data/history";
 import { monasteries } from "@/data/monasteries";
+import { isFullSphere } from "@/data/panoramas";
 import { STORY_CATEGORIES, stories } from "@/data/stories";
 import { SOURCES } from "@/data/sources";
 import { getTourismMetrics } from "@/lib/stats";
@@ -27,7 +31,13 @@ export default function PreservationPage() {
   const total = monasteries.length;
   const sourced = monasteries.filter((m) => m.provenance.confidence !== "unverified").length;
   const mapped = monasteries.filter((m) => m.coordinates).length;
-  const toured = monasteries.filter((m) => m.tour.available).length;
+  /* Two separate counts, because they are two separate claims. A capture
+     exists for Rumtek; a full 360° sphere still exists for nobody, and one row
+     must not be allowed to imply the other. */
+  const captured = monasteries.filter((m) => m.tour.available).length;
+  const spheres = monasteries.filter(
+    (m) => m.tour.available && isFullSphere(m.tour.projection),
+  ).length;
   const narrated = monasteries.filter((m) => m.audio.available).length;
   const withHours = monasteries.filter((m) => m.visitingHours.status !== "unpublished").length;
   const withStory = monasteries.filter(
@@ -38,7 +48,8 @@ export default function PreservationPage() {
   const coverage = [
     { label: "Records with a cited source", done: sourced, icon: ShieldCheck },
     { label: "Sites with an authoritative coordinate", done: mapped, icon: MapPin },
-    { label: "Sites with a verified 360° capture", done: toured, icon: Camera },
+    { label: "Sites with a verified panoramic capture", done: captured, icon: Camera },
+    { label: "Sites with a true 360° sphere", done: spheres, icon: Rotate3d },
     { label: "Sites with a published audio guide", done: narrated, icon: Headphones },
     { label: "Sites with any reported visiting hours", done: withHours, icon: Clock3 },
     { label: "Sites appearing in a written story", done: withStory, icon: BookOpen },
@@ -61,9 +72,117 @@ export default function PreservationPage() {
           missing. The gaps are published on purpose.
         </p>
 
+        {/* Headline counts. Every number here is computed from the records —
+            none of it is typed in, and none of it is rounded up. */}
+        <section className="mt-10" aria-label="Preservation at a glance">
+          <h2 className="font-display text-h2">Sikkim heritage preservation</h2>
+          <p className="mt-2 max-w-2xl text-body text-muted">
+            Counted from this archive&apos;s own records at build time. If the
+            archive holds {ARCHIVE_COVERAGE.total} objects, this page says{" "}
+            {ARCHIVE_COVERAGE.total}.
+          </p>
+          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { label: "Monasteries digitised", value: monasteries.length, href: "/monasteries" },
+              { label: "Historical events documented", value: HISTORY_COVERAGE.total, href: "/history" },
+              { label: "Archive objects catalogued", value: ARCHIVE_COVERAGE.total, href: "/archive" },
+              { label: "Cultural stories written", value: stories.length, href: "/stories" },
+              { label: "Communities represented", value: ARCHIVE_COMMUNITIES.length, href: "/archive" },
+              { label: "Districts covered", value: ARCHIVE_COVERAGE.districts, href: "/archive" },
+              {
+                label: "Sources cited across the timeline",
+                value: HISTORY_COVERAGE.citations,
+                href: "/history",
+              },
+              { label: "Audio guides published", value: narrated, href: "/monasteries" },
+            ].map((stat) => (
+              <li key={stat.label}>
+                <Link
+                  href={stat.href}
+                  className="card-lift flex h-full flex-col rounded-xl border bg-surface p-5"
+                >
+                  <span data-numeric className="font-display text-price text-primary">
+                    {stat.value}
+                  </span>
+                  <span className="mt-1 text-small font-medium">{stat.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-4 text-caption leading-relaxed text-subtle">
+            Deliberately absent: a visitor counter, a &ldquo;heritage saved&rdquo;
+            percentage, and any figure describing material this project has not
+            actually catalogued.
+          </p>
+        </section>
+
+        {/* How firmly the two new collections stand. */}
+        <section className="mt-14" aria-label="Verification of history and archive">
+          <h2 className="font-display text-h2">How firmly it stands</h2>
+          <p className="mt-2 max-w-2xl text-body text-muted">
+            A record count means nothing without the confidence behind it. Both
+            new collections are broken down by verification state.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            {[
+              {
+                title: "Historical timeline",
+                href: "/history",
+                total: HISTORY_COVERAGE.total,
+                rows: [
+                  { status: "verified" as const, value: HISTORY_COVERAGE.verified },
+                  { status: "source-backed" as const, value: HISTORY_COVERAGE.sourceBacked },
+                  { status: "oral tradition" as const, value: HISTORY_COVERAGE.oralTradition },
+                ],
+                note: `${HISTORY_COVERAGE.withImage} of ${HISTORY_COVERAGE.total} events have a legitimately sourced photograph. The rest say so.`,
+              },
+              {
+                title: "Digital heritage archive",
+                href: "/archive",
+                total: ARCHIVE_COVERAGE.total,
+                rows: [
+                  { status: "verified" as const, value: ARCHIVE_COVERAGE.verified },
+                  { status: "source-backed" as const, value: ARCHIVE_COVERAGE.sourceBacked },
+                  { status: "oral tradition" as const, value: ARCHIVE_COVERAGE.oralTradition },
+                ],
+                note: `${ARCHIVE_COVERAGE.photographedInSikkim} of ${ARCHIVE_COVERAGE.total} objects were photographed in Sikkim; the remainder illustrate shared Himalayan traditions and say where they were taken.`,
+              },
+            ].map((block) => (
+              <div key={block.title} className="rounded-xl border bg-surface p-5">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-h4 font-semibold">{block.title}</h3>
+                  <Link href={block.href} className="text-caption text-primary hover:underline">
+                    Open
+                  </Link>
+                </div>
+                <ul className="mt-4 flex flex-col gap-2.5">
+                  {block.rows.map((row) => (
+                    <li key={row.status} className="flex items-center gap-3">
+                      <VerificationChip status={row.status} />
+                      <span
+                        aria-hidden
+                        className="h-1.5 flex-1 overflow-hidden rounded-full bg-surface-muted"
+                      >
+                        <span
+                          className="block h-full rounded-full bg-primary"
+                          style={{ width: `${Math.round((row.value / block.total) * 100)}%` }}
+                        />
+                      </span>
+                      <span data-numeric className="font-mono text-caption text-subtle">
+                        {row.value}/{block.total}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-3 text-caption leading-relaxed text-subtle">{block.note}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         {/* Coverage */}
-        <section className="mt-12" aria-label="Archive coverage">
-          <h2 className="font-display text-h2">Archive coverage</h2>
+        <section className="mt-14" aria-label="Archive coverage">
+          <h2 className="font-display text-h2">Monastery coverage</h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
             {coverage.map((row) => {
               const pct = Math.round((row.done / total) * 100);
@@ -109,10 +228,10 @@ export default function PreservationPage() {
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
             {[
               {
-                capability: "360° viewer",
+                capability: "Panorama viewer",
                 built: true,
-                content: `${toured} of ${total} sites have a verified capture`,
-                note: "No licensed 360° panorama of any Sikkim monastery was found, so the viewer ships unused rather than filled with a stand-in.",
+                content: `${captured} of ${total} sites have a verified capture · ${spheres} are full 360°`,
+                note: "The sweep for a licensed 360° sphere of a Sikkim monastery returned nothing. One genuine wide capture of Rumtek's courtyard survived inspection and is published as the 180° photograph it is. The viewer takes whatever a record declares and never upgrades a panorama into a sphere.",
               },
               {
                 capability: "Story archive",
@@ -124,7 +243,7 @@ export default function PreservationPage() {
                 capability: "Audio guide player",
                 built: true,
                 content: `${narrated} of ${total} sites have narration`,
-                note: "Scripts are composed per language from verified facts; English, Hindi and Bengali have voices. Nepali, Assamese and Dzongkha do not.",
+                note: "Scripts are composed per language from verified facts, never translated across them. English, Hindi and Bengali use macOS voices and Nepali uses Piper. Bhutia, Lepcha, Assamese and Dzongkha have no voice on any engine available here.",
               },
             ].map((row) => (
               <li key={row.capability} className="rounded-xl border bg-surface p-5">
@@ -156,7 +275,7 @@ export default function PreservationPage() {
                   <th scope="col" className="px-3 py-2.5 font-medium">District</th>
                   <th scope="col" className="px-3 py-2.5 font-medium">Record</th>
                   <th scope="col" className="px-3 py-2.5 font-medium">Mapped</th>
-                  <th scope="col" className="px-3 py-2.5 font-medium">360°</th>
+                  <th scope="col" className="px-3 py-2.5 font-medium">Panorama</th>
                   <th scope="col" className="px-3 py-2.5 font-medium">Audio</th>
                   <th scope="col" className="px-3 py-2.5 font-medium">Hours</th>
                 </tr>
