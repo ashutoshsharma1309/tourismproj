@@ -1,71 +1,114 @@
+import generated from "@/data/generated/registered-hotels.json";
 import { googleMapsSearchUrl } from "@/data/monasteries";
 import type { Provenance } from "@/data/sources";
-import type { AccommodationTier, SikkimDistrict } from "@/types";
+import type { SikkimDistrict } from "@/types";
 
 /**
- * Registered stays — DIRECTORY ONLY (§17, §64).
+ * Registered stays, from the state register.
  *
- * These are real, named Sikkim properties, but this project has no licensed
- * feed for their tariffs, ratings, review counts, room inventories or precise
- * coordinates. Everything that was previously shown for them — prices, star
- * ratings, review counts, guest reviews, room types, amenity lists, gallery
- * photographs of unrelated hotels abroad — was invented and has been removed.
+ * WHAT CHANGED AND WHY
+ * --------------------
+ * This file used to hold twenty properties typed in by hand, each carrying a
+ * star tier and a provenance of `sourceId: "internal"` with
+ * `confidence: "unverified"` — meaning the directory asserted a commercial
+ * grade for every property while pointing at no source at all.
  *
- * What remains is what can be stated honestly: the property exists, it is in
- * this district, and here is a Google Maps search that resolves to it.
- * Restoring commercial detail requires a licensed Places/booking integration.
+ * The Tourism & Civil Aviation Department publishes the actual register of
+ * hotels licensed to operate in Sikkim. Reading it changed the picture twice
+ * over:
+ *
+ *   - It holds 907 entries, 905 of them named. The hand-typed list was 20.
+ *   - It records a star category for only 22 of those 905. The hand-typed list
+ *     assigned a tier to all 20 of its properties, and where both could be
+ *     compared the two disagreed on twelve of fourteen.
+ *
+ * So the tier is gone. What ships instead is what the department actually
+ * publishes: the property is on the register, here is its registration number,
+ * its district, and its licence validity. A star rating the state does not
+ * record is not this project's to invent — which is the same rule that removed
+ * the tariffs and guest reviews from this page in the first place.
+ *
+ * Refresh with `npm run ingest:tourism`.
  */
 
 export interface StayDirectoryEntry {
   slug: string;
   name: string;
   district: SikkimDistrict;
-  /** Star tier as commonly advertised — indicative only, not an audited grade. */
-  tier: AccommodationTier;
+  /** Street address as the register records it. Null where it records none. */
+  address: string | null;
+  /**
+   * Star category, only where the department records one — 22 of 905. Null is
+   * the normal case and means "the register states no category", not "unrated".
+   */
+  category: string | null;
+  /** Departmental registration number. Every entry on the register has one. */
+  registrationNo: string | null;
+  /** Licence validity as printed. Null where the register leaves it blank. */
+  validUpto: string | null;
   googleMapsUrl: string;
   provenance: Provenance;
 }
 
-const UNVERIFIED: Provenance = {
-  sourceId: "internal",
-  verifiedAt: "2026-08-14",
-  confidence: "unverified",
-  caveat:
-    "Property name and district only. Tariffs, ratings and availability are not sourced and are deliberately not shown.",
-};
+interface GeneratedHotel {
+  slug: string;
+  name: string;
+  district: string;
+  address: string | null;
+  category: string | null;
+  registrationNo: string | null;
+  contact: string | null;
+  validUpto: string | null;
+}
 
-const DIRECTORY: Array<[string, string, SikkimDistrict, AccommodationTier]> = [
-  ["mayfair-spa-resort", "Mayfair Spa Resort & Casino", "Gangtok", "5-star"],
-  ["elgin-nor-khill", "The Elgin Nor-Khill", "Gangtok", "5-star"],
-  ["denzong-regency", "Denzong Regency", "Gangtok", "4-star"],
-  ["lemon-tree-gangtok", "Lemon Tree Hotel Gangtok", "Gangtok", "4-star"],
-  ["summit-golden-crescent", "Summit Golden Crescent Resort", "Gangtok", "3-star"],
-  ["hotel-tashi-delek", "Hotel Tashi Delek", "Gangtok", "3-star"],
-  ["udaan-woodberry", "Udaan Woodberry Hotel & Spa", "Gangtok", "3-star"],
-  ["hotel-sonam-delek", "Hotel Sonam Delek", "Gangtok", "budget"],
-  ["mintokling-guest-house", "Mintokling Guest House", "Gangtok", "budget"],
-  ["zostel-gangtok", "Zostel Gangtok", "Gangtok", "budget"],
-  ["elgin-mount-pandim", "The Elgin Mount Pandim", "Gyalshing", "4-star"],
-  ["summit-newa-regency", "Summit Newa Regency & Spa", "Gyalshing", "3-star"],
-  ["hotel-garuda-pelling", "Hotel Garuda", "Gyalshing", "budget"],
-  ["norbu-ghang-resort", "Norbu Ghang Resort", "Gyalshing", "3-star"],
-  ["mount-narsing-resort", "Mount Narsing Village Resort", "Namchi", "budget"],
-  ["summit-sobralia", "Summit Sobralia Resort & Spa", "Namchi", "4-star"],
-  ["yarlam-resort", "Yarlam Resort", "Mangan", "4-star"],
-  ["summit-alpine-lachung", "Summit Alpine Resort", "Mangan", "3-star"],
-  ["apple-orchard-lachen", "The Apple Orchard Resort", "Mangan", "3-star"],
-  ["bamboo-retreat-rumtek", "Bamboo Retreat", "Gangtok", "3-star"],
+const DISTRICTS: SikkimDistrict[] = [
+  "Gangtok",
+  "Mangan",
+  "Namchi",
+  "Gyalshing",
+  "Pakyong",
+  "Soreng",
 ];
 
-export const hotels: StayDirectoryEntry[] = DIRECTORY.map(([slug, name, district, tier]) => ({
-  slug,
-  name,
-  district,
-  tier,
-  googleMapsUrl: googleMapsSearchUrl(name, district),
-  provenance: UNVERIFIED,
-}));
-
-export function getHotelBySlug(slug: string): StayDirectoryEntry | undefined {
-  return hotels.find((hotel) => hotel.slug === slug);
+/** The register uses the six current district names; anything else is dropped. */
+function asDistrict(value: string): SikkimDistrict | null {
+  return DISTRICTS.find((d) => d.toLowerCase() === value.trim().toLowerCase()) ?? null;
 }
+
+const REGISTER = generated.hotels as GeneratedHotel[];
+
+export const hotels: StayDirectoryEntry[] = REGISTER.flatMap((entry) => {
+  const district = asDistrict(entry.district);
+  if (!district) return [];
+  return [
+    {
+      slug: entry.slug,
+      name: entry.name,
+      district,
+      address: entry.address,
+      category: entry.category,
+      registrationNo: entry.registrationNo,
+      validUpto: entry.validUpto,
+      googleMapsUrl: googleMapsSearchUrl(entry.name, district),
+      provenance: {
+        sourceId: "sikkim-tourism-registered-hotels",
+        sourceUrl: generated.source.url,
+        verifiedAt: generated.retrievedAt,
+        confidence: "high",
+        caveat:
+          entry.category === null
+            ? "On the state register of hotels. The department records no star category for this property, so none is shown."
+            : "On the state register of hotels, with the star category the department records.",
+      },
+    },
+  ];
+});
+
+/** What the department itself reported as the register's size, for the UI. */
+export const REGISTER_STATS = {
+  published: hotels.length,
+  reportedTotal: generated.reportedTotal ?? null,
+  withCategory: hotels.filter((h) => h.category !== null).length,
+  retrievedAt: generated.retrievedAt,
+  sourceUrl: generated.source.url,
+} as const;

@@ -210,6 +210,17 @@ export const SOURCES: Record<string, Source> = {
     covers:
       "Existence, title, channel and thumbnail of every embedded monastery video, resolved through YouTube's own keyless oEmbed endpoint. Playback happens in YouTube's embedded player; nothing is downloaded, re-encoded or re-hosted.",
   },
+  "sikkim-tourism-registered-hotels": {
+    id: "sikkim-tourism-registered-hotels",
+    name: "Registered Hotels — Tourism & Civil Aviation Department, Government of Sikkim",
+    type: "government",
+    url: "https://sikkimtourism.gov.in/registered-establishments/hotels",
+    retrievedAt: "2026-08-18",
+    covers:
+      "Name, proprietor, address, district, star category where one is recorded, departmental registration number, contact and licence validity for every hotel on the state register. 905 named entries of 907 reported; the remaining two carry no publishable name.",
+    notes:
+      "Read by `npm run ingest:tourism`. The department publishes this as a paginated table inside an Angular bundle with no JSON API, so it is rendered and read rather than fetched. Note that the register states a star category for only 22 of the 905 entries — the previous directory here asserted a tier for all 20 of its properties, which the register does not support.",
+  },
   "google-places": {
     id: "google-places",
     name: "Google Places API — visitor ratings and reviews",

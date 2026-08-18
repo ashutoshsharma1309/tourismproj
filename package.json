@@ -24,7 +24,10 @@
     "qa:a11y": "node scripts/qa/a11y.mjs",
     "qa:heritage": "node scripts/qa/heritage-integrity.mjs",
     "qa:gallery": "node scripts/qa/gallery-integrity.mjs",
-    "images:credits": "node scripts/enrich-image-credits.mjs"
+    "qa:immersive": "node scripts/qa/immersive.mjs",
+    "qa:stories-map": "node scripts/qa/stories-map-flows.mjs",
+    "images:credits": "node scripts/enrich-image-credits.mjs",
+    "ingest:tourism": "node scripts/ingest-sikkim-tourism.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",
