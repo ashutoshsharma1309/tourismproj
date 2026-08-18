@@ -427,7 +427,9 @@ export const historyEvents: HistoryEvent[] = [
       "Bhutanese forces occupied the kingdom for roughly six years, to about 1706.",
       "The Chogyal spent the occupation in exile in Tibet and was restored with Tibetan help.",
     ],
-    imageKey: null,
+    imageKey: "history/punakha-dzong",
+    imageNote:
+      "A Bhutanese dzong of the period, photographed in Bhutan. It shows the fortress-monastery form of the occupying power, not the occupation itself.",
     sources: [
       wiki("History_of_Sikkim", "The Bhutanese occupation of 1700–1706 during Chakdor Namgyal's minority."),
     ],
@@ -486,7 +488,9 @@ export const historyEvents: HistoryEvent[] = [
       "The capital moved from Rabdentse to Tumlong in 1793.",
       "Territory lost to Nepal in this period was the subject of the Treaty of Titalia in 1817.",
     ],
-    imageKey: null,
+    imageKey: "history/anglo-nepalese-war",
+    imageNote:
+      "A contemporary illustration of the war against the Gorkha kingdom. Illustrative of the adversary and era; it does not depict fighting in Sikkim.",
     sources: [
       wiki("History_of_Sikkim", "The 1788 Gorkha invasion and the 1793 move of the capital to Tumlong."),
     ],
@@ -517,7 +521,9 @@ export const historyEvents: HistoryEvent[] = [
       "Restored the land between the Mechi and Teesta rivers, ceded by Nepal under the 1816 Treaty of Sugauli.",
       "In return Sikkim accepted British arbitration, supplied troops on request, and granted duty-free transit.",
     ],
-    imageKey: null,
+    imageKey: "history/kingdom-of-sikkim",
+    imageNote:
+      "A historical map of the kingdom whose territory the treaty restored.",
     sources: [
       wiki(
         "Treaty_of_Titalia",
@@ -547,7 +553,9 @@ export const historyEvents: HistoryEvent[] = [
       "Darjeeling was ceded in 1835.",
       "The territory was never returned; it remains part of West Bengal.",
     ],
-    imageKey: null,
+    imageKey: "history/darjeeling",
+    imageNote:
+      "Darjeeling today — the hill tract ceded in 1835 and never returned. Photographed in West Bengal, outside Sikkim.",
     sources: [
       wiki("History_of_Sikkim", "The 1825 disturbance and the 1835 cession of Darjeeling."),
     ],
@@ -575,7 +583,9 @@ export const historyEvents: HistoryEvent[] = [
       "The detention was attributed to a pro-Tibetan minister known to the British as the 'mad Dewan'.",
       "A punitive British expedition and the annexation of further territory followed.",
     ],
-    imageKey: null,
+    imageKey: "history/joseph-hooker",
+    imageNote:
+      "Joseph Dalton Hooker, the botanist detained. A portrait of the man; no photograph of the detention exists.",
     sources: [
       wiki(
         "History_of_Sikkim",
@@ -606,7 +616,9 @@ export const historyEvents: HistoryEvent[] = [
       "Sikkim paid an indemnity of 7,000 rupees.",
       "Britain gained the right to intervene internally, free trade, unrestricted travel and road-building rights.",
     ],
-    imageKey: null,
+    imageKey: "history/tumlong",
+    imageNote:
+      "Tumlong, where the treaty was signed and the court sat for a century.",
     sources: [
       wiki(
         "Treaty_of_Tumlong",
@@ -636,7 +648,9 @@ export const historyEvents: HistoryEvent[] = [
       "Northern Sikkim came under the rule of British India as a result.",
       "The settlement was formalised in the Convention of Calcutta in 1890.",
     ],
-    imageKey: null,
+    imageKey: "history/sikkim-expedition",
+    imageNote:
+      "A map compiled by the Intelligence Branch during the 1888 expedition.",
     sources: [
       wiki("History_of_Sikkim", "The 1888 defeat of Tibetan forces and northern Sikkim passing under British India."),
     ],
@@ -757,7 +771,9 @@ export const historyEvents: HistoryEvent[] = [
       "India assumed responsibility for defence, external affairs and communications.",
       "The Chogyal continued to rule internally until 1975.",
     ],
-    imageKey: null,
+    imageKey: "history/palden-thondup-namgyal",
+    imageNote:
+      "Palden Thondup Namgyal, who reigned through the protectorate years.",
     sources: [
       wiki("Sikkim", "The 1950 treaty giving Sikkim the status of an Indian protectorate."),
       wiki("History_of_Sikkim", "The December 1950 India–Sikkim Peace Treaty and the 1948 standstill agreement."),
@@ -843,7 +859,9 @@ export const historyEvents: HistoryEvent[] = [
       "Indian security forces were used to restore order.",
       "The agitation began the constitutional process that ended the monarchy two years later.",
     ],
-    imageKey: null,
+    imageKey: "history/tsuklakhang-palace",
+    imageNote:
+      "The royal chapel in the palace compound at Gangtok, before which the agitation gathered. Not a photograph of the protests.",
     sources: [
       wiki("Sikkim", "The 1973 anti-royalist agitations and the use of Indian security forces."),
     ],
@@ -874,7 +892,9 @@ export const historyEvents: HistoryEvent[] = [
       "Sikkim became the 22nd state of the Indian Union; Kazi Lhendup Dorji became its first Chief Minister.",
       "Palden Thondup Namgyal was the twelfth and last Chogyal, ending a dynasty founded in 1642.",
     ],
-    imageKey: null,
+    imageKey: "history/chogyal",
+    imageNote:
+      "The Chogyal and Gyalmo with their daughter in Gangtok. The monarchy shown here ended with the referendum.",
     sources: [
       govSikkim(
         "Sikkim becoming the 22nd state of India in 1975 following a political transition, and Kazi Lhendup Dorji as its first Chief Minister.",

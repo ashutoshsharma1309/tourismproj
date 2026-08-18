@@ -32,7 +32,7 @@ export default function HistoryPage() {
 
   return (
     <>
-      <main>
+      <main id="main">
         {/* ------------------------------------------------------------ hero */}
         <section className="relative overflow-hidden bg-surface-inverse">
           <Image
@@ -93,9 +93,11 @@ export default function HistoryPage() {
                   the 9th — the disagreement is written into the record.
                 </p>
                 <p className="mt-2 text-small leading-relaxed text-muted">
-                  {withImage} of {total} events carry a photograph. The rest say
-                  &ldquo;documentation currently unavailable&rdquo;, which is
-                  true, and better than a stock picture of a mountain.
+                  {withImage} of {total} events carry a photograph, each one a
+                  licensed archive item with its author and licence recorded.
+                  {withImage < total
+                    ? " The rest say “documentation currently unavailable”, which is true, and better than a stock picture of a mountain."
+                    : " Several are older than photography, so they carry a period map, portrait or document instead — every one captioned with what it actually shows, never captioned as the event itself."}
                 </p>
               </div>
               <ul className="grid gap-2 sm:grid-cols-2">

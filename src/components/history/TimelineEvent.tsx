@@ -1,5 +1,7 @@
 import { ArrowRight, FileQuestion } from "lucide-react";
 import Image from "next/image";
+
+import { cn } from "@/lib/cn";
 import Link from "next/link";
 
 import { VerificationChip } from "@/components/ui/VerificationChip";
@@ -44,7 +46,7 @@ export function TimelineEvent({ event, priority = false }: { event: HistoryEvent
 
       {/* The card. */}
       <div className="col-start-2 mt-3 min-w-0 md:col-start-3 md:mt-0">
-        <article className="card-lift group relative overflow-hidden rounded-xl border bg-surface shadow-soft">
+        <article className="card-focus card-lift group relative overflow-hidden rounded-xl border bg-surface shadow-soft">
           <div className="flex flex-col sm:flex-row">
             {media ? (
               <div className="relative aspect-16/10 shrink-0 overflow-hidden bg-surface-muted sm:aspect-auto sm:w-52 md:w-60">
@@ -54,7 +56,10 @@ export function TimelineEvent({ event, priority = false }: { event: HistoryEvent
                   fill
                   priority={priority}
                   sizes="(min-width: 768px) 15rem, 100vw"
-                  className="media-zoom object-cover group-hover:scale-[1.04]"
+                  className={cn(
+                    "media-zoom object-cover group-hover:scale-[1.04]",
+                    media.height > media.width ? "object-[50%_18%]" : "object-center",
+                  )}
                 />
               </div>
             ) : (

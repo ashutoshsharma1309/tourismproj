@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
+
+import { cn } from "@/lib/cn";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -29,6 +31,7 @@ import { getMonasteryBySlug } from "@/data/monasteries";
 import { places } from "@/data/places";
 import { getStoryBySlug } from "@/data/stories";
 import { formatDate } from "@/lib/format";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -42,9 +45,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const event = getHistoryEvent(slug);
   if (!event) return {};
+  /* An event's photograph is an archive object, reached through its imageKey —
+     the same resolution the page body uses. Events without one fall back to the
+     site card rather than naming a file that does not exist. */
+  const media = event.imageKey ? getArchiveItemByKey(event.imageKey) : undefined;
   return {
     title: `${event.title} · ${event.yearLabel}`,
     description: event.shortDescription,
+    alternates: { canonical: `/history/${event.slug}` },
+    openGraph: {
+      title: `${event.title} — ${event.yearLabel}`,
+      description: event.shortDescription,
+      ...(media ? { images: [{ url: media.mediaUrl, alt: media.title }] } : {}),
+      type: "article",
+    },
   };
 }
 
@@ -75,7 +89,22 @@ export default async function HistoryEventPage({ params }: PageProps) {
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
+      <JsonLd
+        data={[
+          articleSchema({
+            title: event.title,
+            description: event.shortDescription,
+            url: `/history/${event.slug}`,
+            image: media?.mediaUrl,
+            section: event.era,
+          }),
+          breadcrumbSchema([
+            { name: "History", url: "/history" },
+            { name: event.title, url: `/history/${event.slug}` },
+          ]),
+        ]}
+      />
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
         <Link
           href="/history"
           className="inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
@@ -116,7 +145,11 @@ export default async function HistoryEventPage({ params }: PageProps) {
                   fill
                   priority
                   sizes="(min-width: 1152px) 1152px, 100vw"
-                  className="object-cover"
+                  className={cn(
+                    "object-cover",
+                    // Portrait sources crop from the top so faces survive.
+                    media.height > media.width ? "object-[50%_18%]" : "object-center",
+                  )}
                 />
               </div>
               <figcaption className="mt-2 flex flex-wrap items-baseline gap-x-2 gap-y-1 text-caption text-subtle">
@@ -329,8 +362,21 @@ export default async function HistoryEventPage({ params }: PageProps) {
                     <li key={monastery.slug}>
                       <Link
                         href={`/monasteries/${monastery.slug}`}
-                        className="card-lift flex h-full flex-col gap-1.5 rounded-xl border bg-surface p-4"
+                        className="card-lift group flex h-full flex-col gap-1.5 overflow-hidden rounded-xl border bg-surface p-4"
                       >
+                        {/* The site as it stands today — deliberately NOT
+                            offered as a depiction of the event itself, which
+                            is why it sits down here with the cross-links
+                            rather than in the media slot at the top. */}
+                        <span className="relative -mx-4 -mt-4 mb-1 block h-28 overflow-hidden bg-surface-muted">
+                          <Image
+                            src={monastery.image}
+                            alt={`${monastery.name} today`}
+                            fill
+                            sizes="(min-width: 1024px) 20rem, (min-width: 640px) 45vw, 92vw"
+                            className="media-zoom object-cover group-hover:scale-[1.05]"
+                          />
+                        </span>
                         <span className="text-body font-semibold">{monastery.name}</span>
                         <span className="font-mono text-caption text-subtle">
                           {monastery.district} district · est. {monastery.establishedYear}
