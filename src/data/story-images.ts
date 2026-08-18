@@ -18,7 +18,12 @@ export interface ImageCredit {
   descriptionUrl: string;
   license: string;
   attribution: string;
-  resolvedAt: string;
+  /**
+   * When the research agent last confirmed this credit. Absent for credits that
+   * come from the Phase 1 registry (src/data/images.ts), which is enriched from
+   * Commons in a separate pass and records no per-file resolution date.
+   */
+  resolvedAt?: string;
 }
 
 interface GeneratedImage extends ImageCredit {

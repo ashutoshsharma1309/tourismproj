@@ -1,4 +1,4 @@
-import { img } from "@/data/images";
+import { img, imageCredit } from "@/data/images";
 import { SOURCES } from "@/data/sources";
 import type { SourceType } from "@/data/sources";
 import { storyImage } from "@/data/story-images";
@@ -207,12 +207,18 @@ function readingMinutes(content: string[], summary: string): number {
  * source's name and type cannot drift from the registry entry it points at.
  */
 export function defineStory(draft: StoryDraft): Story {
-  const credit = draft.imageKey ? storyImage(draft.imageKey) : undefined;
-  if (draft.imageKey && !credit) {
+  const researched = draft.imageKey ? storyImage(draft.imageKey) : undefined;
+  if (draft.imageKey && !researched) {
     throw new Error(
       `Story "${draft.slug}" names image key "${draft.imageKey}", which the research agent has not resolved. Run: npm run agent:research`,
     );
   }
+
+  /* A story illustrated from the Phase 1 registry (`legacyImageKey`) has a
+     credit too — it is in image-credits.json, keyed by that same key. Reading
+     only story-images.json left 23 of 70 stories rendering a CC BY-SA
+     photograph with no attribution line, which the licence does not permit. */
+  const credit = researched ?? (draft.legacyImageKey ? imageCredit(draft.legacyImageKey) : undefined);
 
   const sources = draft.sources.map((source) => {
     const registered = source.sourceId ? SOURCES[source.sourceId] : undefined;

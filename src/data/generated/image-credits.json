@@ -3,174 +3,351 @@
     "key": "arch/canon",
     "localPath": "/images/arch/canon.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Tibetan_Dragon_Buddhist_Canon.jpg/1920px-Tibetan_Dragon_Buddhist_Canon.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_Dragon_Buddhist_Canon.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_Dragon_Buddhist_Canon.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "anonymous"
   },
   {
     "key": "arch/manuscript",
     "localPath": "/images/arch/manuscript.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Tibetan_plant_Manuscript_Wellcome_L0041693.jpg/1920px-Tibetan_plant_Manuscript_Wellcome_L0041693.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_plant_Manuscript_Wellcome_L0041693.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tibetan_plant_Manuscript_Wellcome_L0041693.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": null
   },
   {
     "key": "arch/prayer-wheel",
     "localPath": "/images/arch/prayer-wheel.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg/1920px-Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bardan_Gompa_%E2%80%93_Prayer_Wheel.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Ingo Mehling"
   },
   {
     "key": "arch/thangka",
     "localPath": "/images/arch/thangka.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg/1920px-Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Painting_Thangka_Lhasa_Tibet_Luca_Galuzzi_2006.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "attribution": "Luca Galuzzi ( Lucag )"
   },
   {
     "key": "fest/cham",
     "localPath": "/images/fest/cham.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Ham_dance_at_Deskit_Monastery.jpg/1920px-Ham_dance_at_Deskit_Monastery.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ham_dance_at_Deskit_Monastery.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ham_dance_at_Deskit_Monastery.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "WikClick"
   },
   {
     "key": "fest/hemis",
     "localPath": "/images/fest/hemis.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Hemis_monastery_festival_II.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Hemis_monastery_festival_II.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Hemis_monastery_festival_II.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "MaryOfPrag"
   },
   {
     "key": "hero/buddha-park",
     "localPath": "/images/hero/buddha-park.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg/1920px-Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Large_Gautama_Buddha_statue_in_Buddha_Park_of_Ravangla%2C_Sikkim.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Subhrajyoti07"
   },
   {
     "key": "hero/gurudongmar",
     "localPath": "/images/hero/gurudongmar.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg/1920px-Gurudongmar_Lake_Sikkim%2C_India_%28edit%29.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Gurudongmar_Lake_Sikkim%2C_India_(edit).jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Gurudongmar_Lake_Sikkim%2C_India_(edit).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Original: Yoghya Derivative work: UnpetitproleX"
   },
   {
     "key": "hero/kanchenjunga",
     "localPath": "/images/hero/kanchenjunga.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg/1920px-Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Sunrise_on_Mount_Kangchenjunga%2C_From_Jalpaiguri.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Tsen2006"
   },
   {
     "key": "hero/yumthang",
     "localPath": "/images/hero/yumthang.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg/1920px-Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Bridge_over_the_river_in_Yumthang_Valley%2C_North_Sikkim%2C_India.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Mananjpatel1996"
+  },
+  {
+    "key": "history/anglo-nepalese-war",
+    "localPath": "/images/history/anglo-nepalese-war.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/8/85/Death_of_Rollo_Gillespie_%28Cassell%27s_illustrated_history_of_India%29.png",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Death_of_Rollo_Gillespie_(Cassell's_illustrated_history_of_India).png",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "attribution": "George Henry Thompson"
+  },
+  {
+    "key": "history/chogyal",
+    "localPath": "/images/history/chogyal.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/King_and_Queen_of_Sikkim_and_their_daughter_watch_birthday_celebrations%2C_Gangtok%2C_Sikkim_%28LOC_ppmsca.30171%29.jpg/1920px-King_and_Queen_of_Sikkim_and_their_daughter_watch_birthday_celebrations%2C_Gangtok%2C_Sikkim_%28LOC_ppmsca.30171%29.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:King_and_Queen_of_Sikkim_and_their_daughter_watch_birthday_celebrations%2C_Gangtok%2C_Sikkim_(LOC_ppmsca.30171).jpg",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "attribution": "Alice S. Kandell"
+  },
+  {
+    "key": "history/darjeeling",
+    "localPath": "/images/history/darjeeling.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/9/96/DarjeelingTrainFruitshop_%282%29.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:DarjeelingTrainFruitshop_(2).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Arne Hückelheim 2010-09-21 12:41:53 This is a cropped in which the glare has been lessened"
+  },
+  {
+    "key": "history/joseph-hooker",
+    "localPath": "/images/history/joseph-hooker.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/32/Joseph_Dalton_Hooker_NLM3.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Joseph_Dalton_Hooker_NLM3.jpg",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "attribution": "Unknown author Unknown author"
+  },
+  {
+    "key": "history/kingdom-of-sikkim",
+    "localPath": "/images/history/kingdom-of-sikkim.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Kingdom_of_Sikkim_map.png",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Kingdom_of_Sikkim_map.png",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Squeaks 41"
+  },
+  {
+    "key": "history/palden-thondup-namgyal",
+    "localPath": "/images/history/palden-thondup-namgyal.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Palden_Thondup_Namgyal.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Palden_Thondup_Namgyal.jpg",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "attribution": "Alice S. Kandell"
+  },
+  {
+    "key": "history/punakha-dzong",
+    "localPath": "/images/history/punakha-dzong.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Punakha_Dzong%2C_Bhutan_02.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Punakha_Dzong%2C_Bhutan_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Bernard Gagnon"
+  },
+  {
+    "key": "history/sikkim-expedition",
+    "localPath": "/images/history/sikkim-expedition.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Sikkim_map_expedition.JPG",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Sikkim_map_expedition.JPG",
+    "license": "Public domain",
+    "licenseUrl": null,
+    "attribution": "compiled by the Intelligence Branch, Division of Army Chief of Staff, Army Headquarters, India"
+  },
+  {
+    "key": "history/tsuklakhang-palace",
+    "localPath": "/images/history/tsuklakhang-palace.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Tsuklakhang.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tsuklakhang.jpg",
+    "license": "CC BY-SA 2.5",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+    "attribution": "No machine-readable author provided. Bogman assumed (based on copyright claims)."
+  },
+  {
+    "key": "history/tumlong",
+    "localPath": "/images/history/tumlong.jpg",
+    "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/2/23/Tumlong_Palace%2C_Tumlong_village%2C_North_Sikkim%2C_India_37.jpg",
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tumlong_Palace%2C_Tumlong_village%2C_North_Sikkim%2C_India_37.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Amitabha Gupta"
   },
   {
     "key": "int/thiksey",
     "localPath": "/images/int/thiksey.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg/1920px-Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Thiksey_Monastery%2C_Interior%2C_Ladakh%2C_North_India.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Vyacheslav Argenberg"
   },
   {
     "key": "mon/dubdi",
     "localPath": "/images/mon/dubdi.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Yuksom_Dubdi_Gompa4.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Yuksom_Dubdi_Gompa4.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Yuksom_Dubdi_Gompa4.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "Kothanda Srinivasan"
   },
   {
     "key": "mon/enchey",
     "localPath": "/images/mon/enchey.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Enchey_Monastery_02.jpg/1920px-Enchey_Monastery_02.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Enchey_Monastery_02.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Enchey_Monastery_02.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Bernard Gagnon"
   },
   {
     "key": "mon/kewzing",
     "localPath": "/images/mon/kewzing.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg/1920px-Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Kewzing_Monastery_at_Kewzing_Village%2C_South_Sikkim_01.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Amitabha Gupta"
   },
   {
     "key": "mon/lachen",
     "localPath": "/images/mon/lachen.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Lachen_Monastery_Gompa.jpg/1920px-Lachen_Monastery_Gompa.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachen_Monastery_Gompa.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachen_Monastery_Gompa.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Prof Ranga Sai"
   },
   {
     "key": "mon/lachung",
     "localPath": "/images/mon/lachung.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg/1920px-Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_02.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Amitabha Gupta"
   },
   {
     "key": "mon/lingdum",
     "localPath": "/images/mon/lingdum.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg/1920px-Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lingdum_Monastery_(also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery).jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Lingdum_Monastery_(also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery).jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Subhrajyoti07"
   },
   {
     "key": "mon/pemayangtse",
     "localPath": "/images/mon/pemayangtse.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Pemayangtse_Monastery_Sikkim_India.jpg/1920px-Pemayangtse_Monastery_Sikkim_India.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Pemayangtse_Monastery_Sikkim_India.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Pemayangtse_Monastery_Sikkim_India.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Prof Ranga Sai"
   },
   {
     "key": "mon/phensang",
     "localPath": "/images/mon/phensang.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Phensong_Monastery.jpg/1920px-Phensong_Monastery.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phensong_Monastery.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phensong_Monastery.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "walter callens"
   },
   {
     "key": "mon/phodong",
     "localPath": "/images/mon/phodong.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Phodong_monastery_-_north_sikkim.jpg/1920px-Phodong_monastery_-_north_sikkim.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phodong_monastery_-_north_sikkim.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Phodong_monastery_-_north_sikkim.jpg",
+    "license": "CC BY-SA 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+    "attribution": "dhillan chandramowli"
   },
   {
     "key": "mon/ralang",
     "localPath": "/images/mon/ralang.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Ralang_monastery_sikkim_1.jpg/1920px-Ralang_monastery_sikkim_1.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ralang_monastery_sikkim_1.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Ralang_monastery_sikkim_1.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Joydeep"
   },
   {
     "key": "mon/rinchenpong",
     "localPath": "/images/mon/rinchenpong.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/View_of_rinchenpong_monastery_entry.JPG/1920px-View_of_rinchenpong_monastery_entry.JPG",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:View_of_rinchenpong_monastery_entry.JPG"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:View_of_rinchenpong_monastery_entry.JPG",
+    "license": "CC BY-SA 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+    "attribution": "Alakananda.s"
   },
   {
     "key": "mon/rumtek",
     "localPath": "/images/mon/rumtek.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Rumtek_Monastery_04.jpg/1920px-Rumtek_Monastery_04.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_04.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_04.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Bernard Gagnon"
   },
   {
     "key": "mon/sanga-choeling",
     "localPath": "/images/mon/sanga-choeling.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Full_view_of_Sanga-Choeling_Monastery.jpg/1920px-Full_view_of_Sanga-Choeling_Monastery.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "walter callens"
   },
   {
     "key": "mon/tashiding",
     "localPath": "/images/mon/tashiding.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Mani_stone_slabs_outside_Tashiding_Monastery.jpg/1920px-Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Mani_stone_slabs_outside_Tashiding_Monastery.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
+    "license": "CC BY 2.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+    "attribution": "walter callens"
   },
   {
     "key": "mon/tsuklakhang",
     "localPath": "/images/mon/tsuklakhang.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Tsuklakhang_Monastery.jpg/1920px-Tsuklakhang_Monastery.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tsuklakhang_Monastery.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Tsuklakhang_Monastery.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Mahabalaindia"
   },
   {
     "key": "place/khecheopalri",
     "localPath": "/images/place/khecheopalri.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg/1920px-Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Khecheopalri_Lake_from_the_view_point%2C_West_Sikkim_01.jpg",
+    "license": "CC BY 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+    "attribution": "Anjan Kumar Kundu"
   },
   {
     "key": "place/nathula",
     "localPath": "/images/place/nathula.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg/1920px-Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Arduous_Nathu_La_Pass%2C_Sikkim%2C_India.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Mr. Debapriya Hore"
   },
   {
     "key": "place/tsomgo",
     "localPath": "/images/place/tsomgo.jpg",
     "sourceUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Changu_%28Tsomgo%29_Lake.jpg/1920px-Changu_%28Tsomgo%29_Lake.jpg",
-    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Changu_(Tsomgo)_Lake.jpg"
+    "commonsFilePage": "https://commons.wikimedia.org/wiki/File:Changu_(Tsomgo)_Lake.jpg",
+    "license": "CC BY-SA 4.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+    "attribution": "Kuldeepburjbhalaike"
   }
 ]
