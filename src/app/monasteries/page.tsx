@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/layout/Footer";
 import { MonasteriesExplorer } from "@/components/monasteries/MonasteriesExplorer";
+import { monasteryGallery } from "@/data/galleries";
 import { MONASTERY_TRADITIONS, monasteries } from "@/data/monasteries";
 
 export const metadata: Metadata = {
@@ -11,9 +12,16 @@ export const metadata: Metadata = {
 };
 
 export default function MonasteriesPage() {
+  /* Counted here rather than inside the explorer: the explorer is a client
+     component, and importing the gallery JSON there would ship every credit
+     line for every photograph to the browser to render one number. */
+  const photoCounts = Object.fromEntries(
+    monasteries.map((m) => [m.slug, monasteryGallery(m.slug).length]),
+  );
+
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Living heritage
         </p>
@@ -30,6 +38,7 @@ export default function MonasteriesPage() {
           <MonasteriesExplorer
             monasteries={monasteries}
             traditions={MONASTERY_TRADITIONS}
+            photoCounts={photoCounts}
           />
         </div>
       </main>

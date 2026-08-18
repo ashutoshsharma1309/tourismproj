@@ -12,6 +12,8 @@ import {
   VerificationBadge,
 } from "@/components/ui/Provenance";
 import { getAudioGuides } from "@/data/audio";
+import { monasteryGallery } from "@/data/galleries";
+import { PhotoGallery } from "@/components/media/PhotoGallery";
 import { getStoriesForMonastery } from "@/data/stories";
 import { StoryCard } from "@/components/stories/StoryCard";
 import { getMonasteryBySlug, monasteries } from "@/data/monasteries";
@@ -24,6 +26,7 @@ import { getArchiveForMonastery } from "@/data/archive";
 import { getPanorama } from "@/data/panoramas";
 import { getVideo } from "@/data/videos";
 import { formatCoordinates } from "@/lib/format";
+import { JsonLd, breadcrumbSchema, monasterySchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -37,7 +40,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { slug } = await params;
   const monastery = getMonasteryBySlug(slug);
   if (!monastery) return {};
-  return { title: monastery.name, description: monastery.description };
+  /* Without an `openGraph` block here the root layout's own block wins, so
+     every monastery shared the site-level title and the same photograph. 118
+     of the 201 prerendered pages were emitting one identical social card. */
+  return {
+    title: monastery.name,
+    description: monastery.description,
+    alternates: { canonical: `/monasteries/${monastery.slug}` },
+    openGraph: {
+      title: `${monastery.name}, ${monastery.district}`,
+      description: monastery.description,
+      images: [{ url: monastery.image, alt: `${monastery.name}, ${monastery.district}, Sikkim` }],
+      type: "article",
+    },
+  };
 }
 
 export default async function MonasteryDetailPage({ params }: PageProps) {
@@ -49,10 +65,20 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
   const archive = getArchiveForMonastery(monastery.slug);
   const panorama = getPanorama(monastery.slug);
   const video = getVideo(monastery.slug);
+  const photos = monasteryGallery(monastery.slug);
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
+      <JsonLd
+        data={[
+          monasterySchema(monastery),
+          breadcrumbSchema([
+            { name: "Monasteries", url: "/monasteries" },
+            { name: monastery.name, url: `/monasteries/${monastery.slug}` },
+          ]),
+        ]}
+      />
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
         {/* Hero */}
         <div className="relative h-72 overflow-hidden rounded-xl border bg-surface-inverse md:h-105">
           <Image
@@ -94,6 +120,27 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
             </p>
           </div>
         </div>
+
+        {/* Photographs — the strongest argument for going. It sits directly
+            under the hero because a visitor decides whether a place is worth
+            the road to it long before they read the founding date. */}
+        {photos.length > 0 ? (
+          <section className="mt-10" aria-labelledby="photographs">
+            <div className="flex flex-wrap items-baseline justify-between gap-3">
+              <h2 id="photographs" className="font-display text-h2">
+                Photographs
+              </h2>
+              <p className="font-mono text-caption text-subtle">
+                {photos.length} frames · freely licensed · every one credited
+              </p>
+            </div>
+            <PhotoGallery
+              photos={photos}
+              subject={monastery.name}
+              className="mt-5"
+            />
+          </section>
+        ) : null}
 
         <div className="mt-10 grid min-w-0 gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
           {/* History */}
@@ -199,10 +246,21 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
             </div>
 
             <div className="rounded-xl border bg-surface p-5">
-              <h3 className="text-h4 font-semibold">Photograph</h3>
+              <h3 className="text-h4 font-semibold">Photography</h3>
               <p className="mt-2 text-caption leading-relaxed text-muted">
-                Image located by the site&apos;s own name on Wikimedia Commons and
-                checked reachable.{" "}
+                {photos.length > 0 ? (
+                  <>
+                    {photos.length + 1} freely licensed photographs, each one
+                    admitted only on evidence that it shows this site — its own
+                    Commons category, its description, or a coordinate on the
+                    grounds. Author and licence are printed with every frame.{" "}
+                  </>
+                ) : (
+                  <>
+                    Image located by the site&apos;s own name on Wikimedia Commons
+                    and checked reachable.{" "}
+                  </>
+                )}
                 <a
                   href={monastery.imageSource}
                   target="_blank"

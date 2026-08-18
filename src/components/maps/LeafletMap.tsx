@@ -117,6 +117,9 @@ export default function LeafletMap({
   useEffect(() => {
     const container = containerRef.current;
     if (!container || mapRef.current) return;
+    /* Captured now so the cleanup clears the Map this effect owned, not
+       whatever markerRefs.current happens to point at when it runs. */
+    const ownedMarkers = markerRefs.current;
 
     const map = L.map(container, {
       center: center
@@ -154,7 +157,7 @@ export default function LeafletMap({
       map.remove();
       mapRef.current = null;
       layerRef.current = null;
-      markerRefs.current.clear();
+      ownedMarkers.clear();
       routeRef.current = null;
     };
     // Created once; subsequent prop changes are handled by the effects below.

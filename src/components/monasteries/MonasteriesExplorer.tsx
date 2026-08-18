@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  Camera,
   Headphones,
   LayoutGrid,
   ListFilter,
@@ -61,9 +62,15 @@ function hasFeature(monastery: MonasteryDetails, feature: Feature): boolean {
 interface MonasteriesExplorerProps {
   monasteries: MonasteryDetails[];
   traditions: MonasteryTradition[];
+  /** slug → how many gallery photographs that site has. Counted on the server. */
+  photoCounts?: Record<string, number>;
 }
 
-export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExplorerProps) {
+export function MonasteriesExplorer({
+  monasteries,
+  traditions,
+  photoCounts = {},
+}: MonasteriesExplorerProps) {
   const [rawQuery, setRawQuery] = useState("");
   const [query, setQuery] = useState("");
   const [district, setDistrict] = useState<SikkimDistrict | "All">("All");
@@ -94,6 +101,24 @@ export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExpl
       return true;
     });
   }, [monasteries, query, district, picked, features]);
+
+  /* Built here rather than inline in the JSX so the array keeps its identity
+     between renders. LeafletMap diffs `markers` in an effect; a fresh array on
+     every parent render made it tear down and rebuild every marker whenever any
+     unrelated state changed. */
+  const markers = useMemo(
+    () =>
+      filtered
+        .filter((monastery) => monastery.coordinates)
+        .map((monastery) => ({
+          position: monastery.coordinates!,
+          title: monastery.name,
+          subtitle: `${monastery.tradition} · est. ${monastery.establishedYear}`,
+          href: `/monasteries/${monastery.slug}`,
+          color: TRADITION_COLOURS[monastery.tradition],
+        })),
+    [filtered],
+  );
 
   const clearAll = () => {
     setRawQuery("");
@@ -257,17 +282,15 @@ export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExpl
 
           {view === "map" ? (
             <div className="mt-4">
-              <LeafletMap
-                key={filtered.map((m) => m.slug).join(",")}
-                className="h-120"
-                markers={filtered.filter((m) => m.coordinates).map((monastery) => ({
-                  position: monastery.coordinates!,
-                  title: monastery.name,
-                  subtitle: `${monastery.tradition} · est. ${monastery.establishedYear}`,
-                  href: `/monasteries/${monastery.slug}`,
-                  color: TRADITION_COLOURS[monastery.tradition],
-                }))}
-              />
+              {/*
+                No `key` here. It used to be the joined slug list, which made
+                React unmount and remount the map on every debounced keystroke:
+                LeafletMap.remove(), a fresh L.map(), a fresh tile layer
+                re-requesting every OpenStreetMap tile, and a new ResizeObserver.
+                LeafletMap already syncs its markers in place — that is what it
+                documents itself as doing.
+              */}
+              <LeafletMap className="h-120" markers={markers} />
               <p className="mt-3 flex flex-wrap gap-4 text-caption text-subtle">
                 {traditions.map((tradition) => (
                   <span key={tradition} className="inline-flex items-center gap-1.5">
@@ -294,7 +317,7 @@ export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExpl
               {filtered.map((monastery) => (
                 <article
                   key={monastery.slug}
-                  className="card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border bg-surface shadow-soft"
+                  className="card-focus card-lift group relative flex h-full flex-col overflow-hidden rounded-xl border bg-surface shadow-soft"
                 >
                   <div className="relative aspect-[4/3] overflow-hidden bg-surface-muted">
                     <Image
@@ -307,6 +330,14 @@ export function MonasteriesExplorer({ monasteries, traditions }: MonasteriesExpl
                     <div className="absolute top-3 left-3 flex gap-1.5">
                       <Badge tone="jade">{monastery.tradition}</Badge>
                     </div>
+                    {(photoCounts[monastery.slug] ?? 0) > 1 ? (
+                      <span className="absolute right-3 bottom-3">
+                        <Badge tone="inverse">
+                          <Camera className="size-3" aria-hidden />
+                          {photoCounts[monastery.slug]! + 1} photos
+                        </Badge>
+                      </span>
+                    ) : null}
                   </div>
                   <div className="flex flex-1 flex-col gap-2 p-5">
                     <h3 className="font-display text-h4 font-bold">
