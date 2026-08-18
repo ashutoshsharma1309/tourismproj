@@ -32,6 +32,7 @@ import {
   stories,
 } from "@/data/stories";
 import { formatDate } from "@/lib/format";
+import { JsonLd, articleSchema, breadcrumbSchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -75,7 +76,22 @@ export default async function StoryDetailPage({ params }: PageProps) {
 
   return (
     <>
-      <main className="pt-24 pb-20">
+      <JsonLd
+        data={[
+          articleSchema({
+            title: story.title,
+            description: story.summary,
+            url: `/stories/${story.slug}`,
+            image: story.heroImage,
+            section: story.category,
+          }),
+          breadcrumbSchema([
+            { name: "Stories", url: "/stories" },
+            { name: story.title, url: `/stories/${story.slug}` },
+          ]),
+        ]}
+      />
+      <main id="main" className="pt-24 pb-20">
         <div className="mx-auto max-w-3xl px-4 md:px-6">
           <Link
             href="/stories"

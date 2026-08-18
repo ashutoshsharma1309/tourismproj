@@ -15,7 +15,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { HeritageMapSection } from "@/components/home/HeritageMapSection";
+import { PhotoShowcase } from "@/components/media/PhotoGallery";
 import { StoryCard } from "@/components/stories/StoryCard";
+import { GALLERY_PHOTO_COUNT, showcasePhotos } from "@/data/galleries";
 import { stories } from "@/data/stories";
 import { ParallaxHero } from "@/components/immersive/ParallaxHero";
 import { ScrollReveal } from "@/components/immersive/ScrollReveal";
@@ -28,6 +30,7 @@ import { img } from "@/data/images";
 import { monasteries } from "@/data/monasteries";
 import { SITE } from "@/lib/constants";
 import { getTourismMetrics } from "@/lib/stats";
+import { JsonLd, websiteSchema } from "@/components/seo/JsonLd";
 
 /** Refresh live stats hourly; the page stays static between revalidations. */
 export const revalidate = 3600;
@@ -66,10 +69,20 @@ export default async function HomePage() {
     .map((slug) => monasteries.find((m) => m.slug === slug))
     .filter((m) => m !== undefined);
   const mapped = monasteries.filter((m) => m.coordinates).length;
+  /* One frame per subject, best-assessed first, so the rail reads as Sikkim
+     rather than as one photographer's afternoon at one monastery. */
+  const showcase = showcasePhotos(18).map((photo) => ({
+    ...photo,
+    href:
+      photo.scope === "monastery"
+        ? `/monasteries/${photo.slug}`
+        : `/explore?place=${photo.slug}`,
+  }));
 
   return (
     <>
-      <main>
+      <JsonLd data={websiteSchema()} />
+      <main id="main">
         {/* ------------------------------------------------------- 1 · Hero */}
         <ParallaxHero
           background={{
@@ -219,7 +232,7 @@ export default async function HomePage() {
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             {featured.map((monastery, index) => (
               <ScrollReveal key={monastery.slug} delay={(index % 2) * 0.12}>
-                <article className="card-lift group relative overflow-hidden rounded-xl border bg-surface shadow-soft">
+                <article className="card-focus card-lift group relative overflow-hidden rounded-xl border bg-surface shadow-soft">
                   <div className="relative aspect-16/10 overflow-hidden bg-surface-muted">
                     <Image
                       src={monastery.image}
@@ -262,6 +275,53 @@ export default async function HomePage() {
             ))}
           </div>
         </section>
+
+        {/* -------------------------------------------- 3b · Photograph rail */}
+        {showcase.length > 0 ? (
+          <section
+            className="border-y bg-surface-muted/60 py-16 md:py-20"
+            aria-labelledby="photographs"
+          >
+            <div className="mx-auto max-w-6xl px-6">
+              <ScrollReveal>
+                <div className="flex flex-wrap items-end justify-between gap-4">
+                  <div>
+                    <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
+                      Sikkim, photographed
+                    </p>
+                    <h2
+                      id="photographs"
+                      className="mt-3 max-w-xl font-display text-h2 text-balance-heading"
+                    >
+                      What you would actually be standing in front of
+                    </h2>
+                  </div>
+                  <Link
+                    href="/explore"
+                    className="flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
+                  >
+                    Find them on the map
+                    <ArrowRight className="size-4" aria-hidden />
+                  </Link>
+                </div>
+              </ScrollReveal>
+            </div>
+
+            {/* Full-bleed rail: the strip runs past the edge of the page, which
+                is what tells a reader there is more to drag towards. */}
+            <div className="mt-8 pl-6 md:pl-[max(1.5rem,calc((100vw-72rem)/2))]">
+              <PhotoShowcase photos={showcase} />
+            </div>
+
+            <div className="mx-auto max-w-6xl px-6">
+              <p className="text-caption text-subtle">
+                {GALLERY_PHOTO_COUNT} freely licensed photographs across the
+                archive. Every frame names its photographer and its licence, and
+                none is used to stand in for a place it was not taken at.
+              </p>
+            </div>
+          </section>
+        ) : null}
 
         {/* -------------------------------------------------- 4 · Heritage map */}
         <section id="map" className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-20 md:pb-28">

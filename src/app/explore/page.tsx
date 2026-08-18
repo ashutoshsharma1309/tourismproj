@@ -5,8 +5,10 @@ import { Suspense } from "react";
 
 import { ExploreMap } from "@/components/explore/ExploreMap";
 import { Footer } from "@/components/layout/Footer";
+import { PhotoShowcase } from "@/components/media/PhotoGallery";
 import { buttonClasses } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
+import { showcasePhotos } from "@/data/galleries";
 import { MAP_DISTRICTS, MAP_STATS, mapSites } from "@/data/map-sites";
 import { stories } from "@/data/stories";
 
@@ -25,9 +27,16 @@ const STORY_INDEX = Object.fromEntries(
 );
 
 export default function ExplorePage() {
+  /* Places only. The monastery rail lives on the home page; here the point is
+     the landscape a marker on the map cannot convey — the lake, the pass, the
+     valley floor at 3,700 m. */
+  const placePhotos = showcasePhotos(20, (photo) => photo.scope === "place").map(
+    (photo) => ({ ...photo, href: `/explore?place=${photo.slug}` }),
+  );
+
   return (
     <>
-      <main className="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Explore Sikkim
         </p>
@@ -64,6 +73,20 @@ export default function ExplorePage() {
             />
           </Suspense>
         </div>
+
+        {placePhotos.length > 0 ? (
+          <section aria-labelledby="place-photographs" className="mt-14">
+            <h2 id="place-photographs" className="font-display text-h2">
+              What the pins look like
+            </h2>
+            <p className="mt-2 max-w-2xl text-body text-muted">
+              Freely licensed photography of the places on this map, each frame
+              credited to the photographer who released it. Open one to read its
+              caption, or follow it back to its marker.
+            </p>
+            <PhotoShowcase photos={placePhotos} className="mt-6" />
+          </section>
+        ) : null}
 
         <section aria-labelledby="map-integrity" className="mt-14 rounded-xl border bg-surface p-6">
           <h2 id="map-integrity" className="font-display text-h3">
