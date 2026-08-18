@@ -68,7 +68,7 @@ async function fetchMetadata(titles) {
   url.searchParams.set("format", "json");
 
   const res = await fetch(url, {
-    headers: { "User-Agent": "NeyHeritage/1.0 (heritage archive; contact via repository)" },
+    headers: { "User-Agent": "SikkimDarshan/1.0 (heritage archive; contact via repository)" },
   });
   if (!res.ok) throw new Error(`Commons API ${res.status} for ${titles.join(", ")}`);
   const json = await res.json();

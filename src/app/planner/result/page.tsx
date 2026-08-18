@@ -205,7 +205,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
               </div>
               <p className="mt-3 text-caption leading-relaxed text-subtle">
                 Accommodation, transport and activity costs are not estimated —
-                Ney Heritage has no licensed rates feed, and a guessed total
+                Sikkim Darshan has no licensed rates feed, and a guessed total
                 would be worse than none. The ₹50 per-person TSD entry fee is
                 statutory and is quoted exactly.
               </p>

@@ -1,5 +1,5 @@
 /**
- * User-journey tests — Ney Heritage.
+ * User-journey tests — Sikkim Darshan.
  *
  * Walks the site the way a first-time visitor would: clicking real links,
  * following CTAs, opening detail pages and going back. Asserts that what the

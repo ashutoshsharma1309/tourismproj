@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Review Agent — Ney Heritage
+ * Heritage Review Agent — Sikkim Darshan
  *
  * Collects visitor-perspective material about each monastery from sources that
  * may legitimately be reused, and refuses to invent the rest.

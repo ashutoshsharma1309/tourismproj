@@ -1,9 +1,14 @@
 import type { AccommodationTier } from "@/types";
 
 export const SITE = {
-  name: "Ney Heritage",
+  name: "Sikkim Darshan",
+  /*
+   * `tagline` is the hero headline, so it has to carry the proposition, not the
+   * slogan. `motto` is the slogan. Keeping them separate is what lets the first
+   * viewport say what the product does while the brand line still appears.
+   */
   tagline: "Digitizing the Sacred Heritage of Sikkim",
-  motto: "Explore. Experience. Preserve.",
+  motto: "Discover. Experience. Preserve.",
   /*
    * This described the product as somewhere you could "walk centuries-old
    * monasteries in 360°". No 360° sphere of any Sikkim monastery exists in any
@@ -20,7 +25,7 @@ export const SITE = {
  * The origin this deployment serves from.
  *
  * Absolute URLs in metadata — Open Graph images, canonicals, the sitemap — have
- * to name a host. The placeholder that stood here (`neyheritage.example.com`)
+ * to name a host. The placeholder that stood here (`sikkimdarshan.example.com`)
  * meant every social preview pointed at a domain that does not resolve, so
  * every shared link rendered without its image.
  */

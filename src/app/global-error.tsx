@@ -44,7 +44,7 @@ export default function GlobalError({
               margin: 0,
             }}
           >
-            Ney Heritage
+            Sikkim Darshan
           </p>
           <h1 style={{ fontSize: "1.75rem", margin: "0.75rem 0 0", lineHeight: 1.2 }}>
             Something went wrong at the root of the application

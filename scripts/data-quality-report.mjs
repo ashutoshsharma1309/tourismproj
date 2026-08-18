@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Data quality report — Ney Heritage
+ * Data quality report — Sikkim Darshan
  * Aggregates the agent outputs into one auditable file (§15).
  * Usage: node scripts/data-quality-report.mjs
  */

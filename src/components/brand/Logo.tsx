@@ -1,7 +1,15 @@
 import { cn } from "@/lib/cn";
 
 /**
- * Ney Heritage mark.
+ * Sikkim Darshan mark.
+ *
+ * The geometry is unchanged from the mark this project already had, because it
+ * already met every requirement a wordmark change would have been asked to
+ * meet: it is drawn from the fabric of a Sikkim gompa rather than from generic
+ * tourism iconography, it is flat geometry in `currentColor` so it holds on
+ * both light and dark grounds, and it survives being scaled to a favicon.
+ * Replacing a mark that works, purely because the name beside it changed, would
+ * have thrown away the strongest piece of the existing identity.
  *
  * Geometry borrowed from the things a Sikkim gompa is actually built from: the
  * pointed torana arch over a shrine door, the stepped tiers of a chorten, and
@@ -15,7 +23,7 @@ export function LogoMark({ className }: { className?: string }) {
       viewBox="0 0 40 40"
       className={cn("size-9", className)}
       role="img"
-      aria-label="Ney Heritage"
+      aria-label="Sikkim Darshan"
       fill="none"
     >
       {/* Torana arch — the doorway you walk through */}
@@ -51,7 +59,7 @@ export function Logo({ className, compact = false }: LogoProps) {
       <LogoMark className="size-8 shrink-0" />
       {compact ? null : (
         <span className="font-display text-xl leading-none tracking-tight">
-          <span className="font-semibold">Ney</span> Heritage
+          <span className="font-semibold">Sikkim</span> Darshan
         </span>
       )}
     </span>

@@ -1,4 +1,4 @@
-# Voice Quality Report — Ney Heritage
+# Voice Quality Report — Sikkim Darshan
 
 Generated 2026-08-17. Every number here was measured on this machine. Where a
 quantity was not measured, this report says so instead of printing a figure.

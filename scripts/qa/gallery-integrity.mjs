@@ -1,5 +1,5 @@
 /**
- * Gallery integrity audit — Ney Heritage.
+ * Gallery integrity audit — Sikkim Darshan.
  *
  * The photograph galleries are the one part of this archive where a mistake is
  * invisible to the reader: a wrong picture still looks like a picture. These

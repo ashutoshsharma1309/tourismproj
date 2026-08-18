@@ -18,7 +18,7 @@ import { formatStatNumber } from "@/lib/format";
 export const metadata: Metadata = {
   title: "Digital preservation",
   description:
-    "What Ney Heritage has documented, what it has not, and where every claim comes from.",
+    "What Sikkim Darshan has documented, what it has not, and where every claim comes from.",
 };
 
 /**

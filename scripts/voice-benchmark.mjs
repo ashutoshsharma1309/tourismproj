@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Voice Benchmark Harness — Ney Heritage
+ * Voice Benchmark Harness — Sikkim Darshan
  *
  * Renders one standard narration per candidate voice, then scores each render
  * on measurements rather than opinion:

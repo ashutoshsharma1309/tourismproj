@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Immersive QA — Ney Heritage
+ * Immersive QA — Sikkim Darshan
  *
  * Drives the real site in a real browser. The brief this was built to is blunt
  * about why: the code, the database and the terminal are not the product. The
@@ -190,7 +190,7 @@ async function main() {
     await play.click();
     await page.waitForTimeout(3000);
 
-    record("visitor stays on Ney Heritage", page.url() === urlBefore, page.url());
+    record("visitor stays on Sikkim Darshan", page.url() === urlBefore, page.url());
 
     const frame = page.locator('iframe[src*="youtube-nocookie.com/embed"]');
     record("embedded player mounts in-page", (await frame.count()) === 1);

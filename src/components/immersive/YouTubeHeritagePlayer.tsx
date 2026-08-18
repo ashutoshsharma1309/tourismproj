@@ -9,7 +9,7 @@ import type { MonasteryVideo } from "@/data/videos";
 /**
  * Embedded monastery video.
  *
- * The visitor stays on Ney Heritage: playback happens in YouTube's own iframe
+ * The visitor stays on Sikkim Darshan: playback happens in YouTube's own iframe
  * player, which is the only way to show this footage without downloading and
  * re-hosting someone else's copyrighted work. The link out to YouTube is
  * secondary, offered for attribution rather than as the way to watch.

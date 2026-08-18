@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Discovery Agent — Ney Heritage
+ * Heritage Discovery Agent — Sikkim Darshan
  *
  * Discovers and verifies Sikkim monastery records. It never writes prose of
  * its own: every field it emits is copied from a named source together with

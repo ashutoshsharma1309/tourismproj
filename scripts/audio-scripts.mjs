@@ -1,5 +1,5 @@
 /**
- * Master script templates — Ney Heritage audio guides.
+ * Master script templates — Sikkim Darshan audio guides.
  *
  * Each language is composed IN that language from verified structured facts.
  * Nothing is spliced across languages, which is what caused the Hindi guide to

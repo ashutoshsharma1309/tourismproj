@@ -334,7 +334,7 @@ export default async function HistoryEventPage({ params }: PageProps) {
           <section id="related-heritage" className="mt-16 scroll-mt-24" aria-label="Related heritage">
             <h2 className="font-display text-h2">Related heritage</h2>
             <p className="mt-2 max-w-2xl text-body text-muted">
-              Everything else in Ney Heritage that this event touches.
+              Everything else in Sikkim Darshan that this event touches.
             </p>
 
             {archive.length > 0 ? (

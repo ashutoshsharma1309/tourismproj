@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * 360 Heritage Finder — Ney Heritage
+ * 360 Heritage Finder — Sikkim Darshan
  *
  * Looks for a legitimate 360° panorama that genuinely depicts a given
  * monastery. It publishes nothing on its own: it returns candidates with the

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Video Agent — Ney Heritage
+ * Heritage Video Agent — Sikkim Darshan
  *
  * Finds and verifies a monastery-specific video to stand in where no verified
  * 360° capture exists. It publishes nothing it cannot check.

@@ -1,5 +1,5 @@
 /**
- * Accessibility audit — Ney Heritage.
+ * Accessibility audit — Sikkim Darshan.
  *
  * Runs axe-core against every route in a real browser and reports violations
  * grouped by impact. Also does a keyboard pass: tabs through the page and

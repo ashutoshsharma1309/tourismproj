@@ -1,5 +1,5 @@
 /**
- * Frontend audit harness — Ney Heritage.
+ * Frontend audit harness — Sikkim Darshan.
  *
  * Loads every route in a FRESH browser context with a cold HTTP cache, so what
  * it measures is the first-visit experience, not a warmed one. For each route

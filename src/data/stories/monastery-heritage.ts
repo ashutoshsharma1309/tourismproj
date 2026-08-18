@@ -403,7 +403,7 @@ export const monasteryStories: Story[] = [
     sources: [
       {
         sourceId: "internal",
-        name: "Ney Heritage — coverage audit",
+        name: "Sikkim Darshan — coverage audit",
         url: "https://en.wikipedia.org/wiki/Sikkim",
         type: "internal",
         retrievedAt: "2026-08-17",

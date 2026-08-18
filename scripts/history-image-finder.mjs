@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * History Image Finder — Ney Heritage
+ * History Image Finder — Sikkim Darshan
  *
  * Finds genuinely licensed Wikimedia Commons photographs for timeline events
  * that currently render an empty state.

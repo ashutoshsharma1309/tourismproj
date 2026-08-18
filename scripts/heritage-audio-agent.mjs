@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Audio Agent — Ney Heritage
+ * Heritage Audio Agent — Sikkim Darshan
  *
  * Produces 60–90 second narrated guides for verified monasteries.
  *

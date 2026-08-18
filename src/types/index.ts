@@ -2,7 +2,7 @@ import type { PanoramaProjection } from "@/data/panoramas";
 import type { Provenance } from "@/data/sources";
 
 /**
- * Domain model for Ney Heritage.
+ * Domain model for Sikkim Darshan.
  *
  * Only shapes with verified data behind them remain. Types for hotel tariffs,
  * room inventories, guest reviews, bookings and the TSD ledger were removed
@@ -17,7 +17,7 @@ export interface Coordinates {
 }
 
 /* =========================================================================
-   SIKKIM DOMAIN — Ney Heritage
+   SIKKIM DOMAIN — Sikkim Darshan
    Shapes mirror the Supabase tables in /supabase; the landing page reads
    `tourism_stats` live and falls back to constants when no client exists.
    ========================================================================= */

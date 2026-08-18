@@ -123,7 +123,7 @@ export function creativeWorkSchema(item: {
     ...(item.period ? { temporalCoverage: item.period } : {}),
     isPartOf: {
       "@type": "Collection",
-      name: "Ney Heritage Digital Archive",
+      name: "Sikkim Darshan Digital Archive",
       url: `${SITE_URL}/archive`,
     },
   };

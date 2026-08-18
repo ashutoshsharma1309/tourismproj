@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   /* Set NEXT_PUBLIC_SITE_URL in the deployment environment. See SITE_URL. */
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Ney Heritage — Digitizing the Sacred Heritage of Sikkim",
-    template: "%s · Ney Heritage",
+    default: "Sikkim Darshan — Digitizing the Sacred Heritage of Sikkim",
+    template: "%s · Sikkim Darshan",
   },
   description: SITE.description,
   alternates: { canonical: "/" },
   openGraph: {
     siteName: SITE.name,
-    title: "Ney Heritage — Digitizing the Sacred Heritage of Sikkim",
+    title: "Sikkim Darshan — Digitizing the Sacred Heritage of Sikkim",
     description: SITE.description,
     type: "website",
     /*

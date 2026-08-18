@@ -31,7 +31,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const UA =
-  "NeyHeritage-cultural-research/1.0 (https://github.com/ashutoshsharma1309/tourismproj; heritage documentation)";
+  "SikkimDarshan-cultural-research/1.0 (https://github.com/ashutoshsharma1309/tourismproj; heritage documentation)";
 const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
 
 /* -------------------------------------------------------------------------

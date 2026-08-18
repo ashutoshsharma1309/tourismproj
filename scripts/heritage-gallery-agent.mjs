@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Gallery Agent — Ney Heritage
+ * Heritage Gallery Agent — Sikkim Darshan
  *
  * Every monastery and every place on this site had exactly ONE photograph. One
  * frame cannot carry a place: it shows a facade and hides the courtyard, the
@@ -42,7 +42,7 @@ import sharp from "sharp";
 
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
 const UA =
-  "NeyHeritage/0.1 (SIH 2026 cultural heritage archive; https://github.com/ashutoshsharma1309/tourismproj) node-fetch";
+  "SikkimDarshan/0.1 (SIH 2026 cultural heritage archive; https://github.com/ashutoshsharma1309/tourismproj) node-fetch";
 const RETRIEVED_AT = new Date().toISOString().slice(0, 10);
 
 const FORCE = process.argv.includes("--force");

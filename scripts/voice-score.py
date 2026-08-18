@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Voice Scoring Agent — Ney Heritage
+Voice Scoring Agent — Sikkim Darshan
 
 Transcribes every benchmark render with Whisper and compares the transcript to
 the script the voice was asked to read. Word and character error rate are the

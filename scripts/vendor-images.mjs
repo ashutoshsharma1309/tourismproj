@@ -1,5 +1,5 @@
 /**
- * Vendors the Commons photography into public/images/ — Ney Heritage.
+ * Vendors the Commons photography into public/images/ — Sikkim Darshan.
  *
  * The app previously hotlinked every photograph from upload.wikimedia.org and
  * ran it through the Next image optimizer at request time. Wikimedia rate-limits
@@ -31,7 +31,7 @@ const CREDITS = "src/data/generated/image-credits.json";
 // Wikimedia requires a descriptive User-Agent that identifies the client and a
 // contact. Anonymous or browser-spoofing agents get blocked outright.
 const UA =
-  "NeyHeritage/0.1 (SIH 2026 cultural heritage archive; https://github.com/ashutoshsharma1309/tourismproj) node-fetch";
+  "SikkimDarshan/0.1 (SIH 2026 cultural heritage archive; https://github.com/ashutoshsharma1309/tourismproj) node-fetch";
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 

@@ -1,5 +1,5 @@
 /**
- * Recompresses the vendored photography — Ney Heritage.
+ * Recompresses the vendored photography — Sikkim Darshan.
  *
  * The Commons originals arrive at up to 1.4 MB each. Next optimizes them per
  * request and caches the result, so the FIRST visitor pays the decode-resize

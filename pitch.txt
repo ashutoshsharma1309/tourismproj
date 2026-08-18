@@ -1,5 +1,5 @@
 ═══════════════════════════════════════════════════════════════════════════════
-Ney Heritage
+Sikkim Darshan
 Digitizing the Sacred Heritage of Sikkim
 Explore. Experience. Preserve.
 
@@ -52,7 +52,7 @@ exist in retrievable form — and the vacuum is being filled with guesses.
 PART 2 · THE MVP — WHAT IS ACTUALLY BUILT AND RUNNING
 ───────────────────────────────────────────────────────────────────────────────
 
-One sentence: Ney Heritage is a digital cultural archive of Sikkim, built on a
+One sentence: Sikkim Darshan is a digital cultural archive of Sikkim, built on a
 rule the data model enforces —
 
     Every claim on the site is traceable to a named source,
@@ -541,7 +541,7 @@ thirty-five sites to be sure.
 
 This heritage isn't undigitised. It's undocumented.
 
-We're Team All In. This is Ney Heritage."
+We're Team All In. This is Sikkim Darshan."
 
 [ ] Homepage. Let the hero hold for one beat.
 
@@ -602,7 +602,7 @@ other claim you make becomes suspect.
 We'd rather hand Sikkim fifteen monasteries they can stake their name on, than
 two hundred they'd have to fact-check.
 
-Ney Heritage. Explore, Experience, Preserve. Thank you."
+Sikkim Darshan. Explore, Experience, Preserve. Thank you."
 
 
 ─── PRONUNCIATION AND FALLBACK NOTES ──────────────────────────────────
@@ -626,7 +626,7 @@ PART 10 · SHORTER CUTS
 "Sikkim has two hundred monasteries and almost no usable public record — its
 own tourism portal doesn't publish a single monastery's opening hours.
 
-Ney Heritage is a digital cultural archive where every claim is traceable to a
+Sikkim Darshan is a digital cultural archive where every claim is traceable to a
 named source, or the site says it doesn't know. That's not a promise, it's the
 data model.
 
@@ -649,7 +649,7 @@ hundred they'd have to fact-check."
 ─── 30-SECOND VERSION ─────────────────────────────────────────────────
 
 "Sikkim's own tourism portal publishes opening hours for zero of its two hundred
-monasteries. Ney Heritage is a heritage archive where every fact carries its
+monasteries. Sikkim Darshan is a heritage archive where every fact carries its
 source, its verification date and its confidence grade — enforced by the data
 model, not by good intentions.
 

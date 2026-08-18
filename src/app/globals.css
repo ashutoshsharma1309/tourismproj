@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 /* =========================================================================
-   Ney Heritage — design tokens
+   Sikkim Darshan — design tokens
    Single source of truth. Components must consume these tokens, never raw hex.
    ========================================================================= */
 
 @theme {
   /* ---------------------------------------------------------------------
-     COLOR — Ney Heritage
+     COLOR — Sikkim Darshan
      Drawn from monastery material culture: warm ivory plaster, aged wood
      and deep charcoal shadow, forest ridge, bronze/gilt, Tibetan red.
      --------------------------------------------------------------------- */
