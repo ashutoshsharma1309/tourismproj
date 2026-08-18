@@ -399,6 +399,49 @@
   );
 }
 
+/*
+ * Mobile hero scrim.
+ *
+ * There is no room for a copy column on a 390px screen, so the copy sits over
+ * the subject and the only thing separating them is this. The default
+ * `gradient-overlay` tops out at 0.14 across the upper two thirds, which left
+ * the eyebrow and headline reading against the lit face of the Buddha. This is
+ * the same warm charcoal, carried much further up the frame.
+ */
+@utility gradient-overlay-hero {
+  background: linear-gradient(
+    to top,
+    rgba(24, 19, 13, 0.9) 0%,
+    rgba(24, 19, 13, 0.74) 36%,
+    rgba(24, 19, 13, 0.46) 62%,
+    rgba(24, 19, 13, 0.2) 82%,
+    rgba(24, 19, 13, 0.06) 100%
+  );
+}
+
+/*
+ * Directional scrim for a hero that puts its copy in a left-hand column.
+ *
+ * The bottom-up `gradient-overlay` sits at 0.04-0.14 alpha across the top two
+ * thirds of the frame, so hero copy anchored anywhere but the very bottom is
+ * reading against raw photograph — measured at 2.18:1 over the lit chest of the
+ * Buddha on the home page, against a 4.5:1 requirement. This lays a real ground
+ * under the copy column and leaves the right of the frame, where the subject
+ * sits, almost untouched.
+ */
+@utility gradient-overlay-left {
+  background:
+    linear-gradient(
+      to right,
+      rgba(24, 19, 13, 0.93) 0%,
+      rgba(24, 19, 13, 0.82) 30%,
+      rgba(24, 19, 13, 0.46) 56%,
+      rgba(24, 19, 13, 0.1) 80%,
+      rgba(24, 19, 13, 0.02) 100%
+    ),
+    linear-gradient(to top, rgba(24, 19, 13, 0.55) 0%, rgba(24, 19, 13, 0) 38%);
+}
+
 /* Soft halo for display type sitting on imagery. */
 @utility text-glow {
   text-shadow:

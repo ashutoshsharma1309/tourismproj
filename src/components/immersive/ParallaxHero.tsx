@@ -28,6 +28,14 @@ interface ParallaxHeroProps {
   };
   /** Decorative art layers stacked above the photo, below the copy. */
   layers?: ParallaxLayer[];
+  /**
+   * Overrides the scrim. The default bottom-up gradient is near-transparent
+   * across the middle of the frame, which is fine for a hero whose copy sits
+   * in the bottom eighth and useless for one whose copy sits over the subject.
+   * A hero that places its copy in a column should pass a directional gradient
+   * so that column has a real ground.
+   */
+  scrimClassName?: string;
   /** Hero copy and CTAs, rendered above the gradient scrim. */
   children: ReactNode;
 }
@@ -38,7 +46,12 @@ interface ParallaxHeroProps {
  * `md` (mobile GPUs, address-bar resize jank) and under reduced motion —
  * the section then renders as a static composition.
  */
-export function ParallaxHero({ background, layers = [], children }: ParallaxHeroProps) {
+export function ParallaxHero({
+  background,
+  layers = [],
+  scrimClassName = "gradient-overlay",
+  children,
+}: ParallaxHeroProps) {
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -62,8 +75,19 @@ export function ParallaxHero({ background, layers = [], children }: ParallaxHero
       {/* Photo — farthest layer. Oversized downward and pinned to the top so the
           subject stays framed; the layer only ever drifts down by less than one
           section height, so its top edge never enters the visible window. */}
-      <Layer progress={scrollYProgress} speed={0.55} enabled={parallaxEnabled}>
-        <div className="absolute inset-x-0 top-0 h-[140%]">
+      {/*
+        Overscan and drift are deliberately small.
+        
+        This was a 140%-tall layer drifting at speed 0.55. Overscan is a zoom:
+        a 1.5 landscape photograph in a 1440×900 hero became a 1440×1260 box —
+        aspect 1.14 — so two fifths of the frame's width was cropped away before
+        object-position was even considered, and the hero read as a close-up of
+        whatever happened to be centred. 118% with a gentler drift keeps the
+        parallax legible while showing the photograph much closer to its own
+        proportions.
+      */}
+      <Layer progress={scrollYProgress} speed={0.28} enabled={parallaxEnabled}>
+        <div className="absolute inset-x-0 top-0 h-[118%]">
           <Image
             src={background.src}
             alt={background.alt}
@@ -88,7 +112,7 @@ export function ParallaxHero({ background, layers = [], children }: ParallaxHero
       ))}
 
       {/* Scrim keeps copy readable regardless of the photo underneath. */}
-      <div aria-hidden className="gradient-overlay absolute inset-0" />
+      <div aria-hidden className={cn("absolute inset-0", scrimClassName)} />
 
       <div className="relative z-10 flex min-h-svh flex-col">{children}</div>
     </section>

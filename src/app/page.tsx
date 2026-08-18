@@ -6,7 +6,6 @@ import {
   ChevronDown,
   Headphones,
   Landmark,
-  MousePointerClick,
   Rotate3d,
   ScrollText,
   Users,
@@ -18,6 +17,7 @@ import { HeritageMapSection } from "@/components/home/HeritageMapSection";
 import { PhotoShowcase } from "@/components/media/PhotoGallery";
 import { StoryCard } from "@/components/stories/StoryCard";
 import { GALLERY_PHOTO_COUNT, showcasePhotos } from "@/data/galleries";
+import { MAP_STATS } from "@/data/map-sites";
 import { stories } from "@/data/stories";
 import { ParallaxHero } from "@/components/immersive/ParallaxHero";
 import { ScrollReveal } from "@/components/immersive/ScrollReveal";
@@ -68,7 +68,6 @@ export default async function HomePage() {
   const featured = ["rumtek", "pemayangtse", "tashiding", "dubdi"]
     .map((slug) => monasteries.find((m) => m.slug === slug))
     .filter((m) => m !== undefined);
-  const mapped = monasteries.filter((m) => m.coordinates).length;
   /* One frame per subject, best-assessed first, so the rail reads as Sikkim
      rather than as one photographer's afternoon at one monastery. */
   const showcase = showcasePhotos(18).map((photo) => ({
@@ -84,29 +83,71 @@ export default async function HomePage() {
       <JsonLd data={websiteSchema()} />
       <main id="main">
         {/* ------------------------------------------------------- 1 · Hero */}
+        {/*
+          The photograph was being zoomed three times over: the parallax layer
+          is 140% tall, the class added `-translate-y-[13%]` on top of an
+          already-tight `object-[50%_30%]`, and `animate-kenburns` scaled it
+          1 → 1.08 on a 36-second loop that never stopped. The compounded result
+          put the statue's face and hands dead centre — precisely where the
+          headline and the sub-line sit — and the copy had no ground under it.
+
+          Now the subject is framed into the right of the frame and the copy
+          takes the left, which is what the directional scrim is for. Ken Burns
+          is gone: it bought nothing at that speed and cost a permanently
+          composited layer behind the largest text on the site.
+        */}
         <ParallaxHero
+          scrimClassName="gradient-overlay-hero md:gradient-overlay-left"
           background={{
-            src: img("hero/buddha-park"),
-            alt: "The great Buddha of Ravangla seated above forested Sikkim hills",
-            className: "animate-kenburns origin-top object-[50%_30%] -translate-y-[13%] sm:translate-y-0",
+            src: img("mon/rumtek"),
+            alt:
+              "The main temple at Rumtek Monastery, its courtyard wet with rain, " +
+              "monks crossing beneath the gilded roof frieze",
+            /* 1920×1280 landscape, so the desktop hero box crops ~60px of height
+               rather than upscaling a portrait file by 1.9×, which is what the
+               Buddha Park photograph (1362×2048) was doing at 2560. Mobile pulls
+               the crop onto the temple facade itself. */
+            className: "object-[46%_42%] md:object-[50%_46%]",
           }}
         >
-          <div className="flex flex-1 flex-col items-center justify-end px-6 pt-24 pb-20 text-center sm:pb-32">
-            <p className="fade-in-up font-mono text-eyebrow tracking-[0.24em] text-foreground-inverse/80 uppercase">
-              Sikkim · Himalayas — digital cultural heritage platform
+          <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center justify-end px-6 pt-24 pb-20 text-center sm:pb-28 md:items-start md:justify-center md:pb-24 md:text-left">
+            {/*
+              Four stacked text blocks in three font families used to sit here
+              before the reader reached a button: a mono eyebrow, the serif
+              wordmark, the tagline set again in serif and gold, and then a
+              sans paragraph restating the tagline in more words. Nothing was
+              subordinate to anything, and the gold serif line — the third
+              treatment in 200px of vertical space — measured poorly against the
+              pale sky it sat on.
+
+              One name, one line beneath it, then the action. The eyebrow keeps
+              its place because "Sikkim" is the single word the first viewport
+              most needs to deliver.
+            */}
+            {/*
+              The 76px headline used to read "Ney Heritage" — a brand name a
+              first-time visitor has never heard, stated at the largest size on
+              the page, while what the product actually does sat beneath it at
+              17px. The proposition is now the headline and the wordmark has
+              stepped back into the eyebrow, where it still reads and where it
+              is anyway repeated by the navbar.
+            */}
+            <p className="fade-in-up font-mono text-eyebrow tracking-[0.24em] text-muted-inverse text-glow uppercase">
+              {/* The wordmark is already in the navbar 40px above this line, and
+                  at 390px the full string wrapped onto two lines across the
+                  statue's face. Dropped on small screens; the place stays. */}
+              <span className="hidden sm:inline">{SITE.name} · </span>
+              Sikkim, Eastern Himalaya
             </p>
-            <h1 className="fade-in-up mt-6 font-display text-display text-foreground-inverse text-glow [animation-delay:120ms]">
-              {SITE.name}
-            </h1>
-            <p className="fade-in-up mt-3 font-display text-h3 text-accent text-glow-strong [animation-delay:200ms]">
+            <h1 className="fade-in-up mt-5 max-w-xl font-display text-display text-balance-heading text-foreground-inverse text-glow [animation-delay:120ms]">
               {SITE.tagline}
-            </p>
-            <p className="fade-in-up mt-4 max-w-xl text-body-lg leading-relaxed text-foreground-inverse/85 sm:mt-6 [animation-delay:300ms]">
-              Explore centuries-old monasteries, stories, traditions and sacred
-              spaces through a digital cultural experience.
+            </h1>
+            <p className="fade-in-up mt-5 max-w-xl text-body-lg leading-relaxed text-muted-inverse [animation-delay:220ms]">
+              Fifteen monasteries catalogued, narrated in four languages, and
+              every claim traced to a named source — or marked as missing.
             </p>
 
-            <div className="fade-in-up mt-7 flex flex-col items-center gap-3 sm:mt-9 sm:flex-row [animation-delay:420ms]">
+            <div className="fade-in-up mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row [animation-delay:420ms]">
               <Link
                 href="/monasteries"
                 className="flex h-12 min-w-56 items-center justify-center gap-2 rounded-full bg-accent px-8 text-small font-semibold text-accent-foreground shadow-card transition-all hover:bg-accent-hover hover:shadow-lifted sm:min-w-0"
@@ -123,18 +164,31 @@ export default async function HomePage() {
             </div>
 
             {/* Micro-information, in glass. */}
-            <div className="fade-in-up mt-7 flex flex-wrap items-center justify-center gap-2 sm:mt-12 sm:gap-2.5 [animation-delay:540ms]">
+            <div className="fade-in-up mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 md:justify-start [animation-delay:540ms]">
+              {/*
+                "8 mapped locations" sat here, which is the count of catalogued
+                monasteries carrying a coordinate. Two sections further down the
+                same page the map is captioned "46 sites with a published
+                coordinate", and /monasteries says fifteen catalogued sites — so
+                the first viewport opened with the smallest and least flattering
+                of three true numbers, and looked like it contradicted itself.
+
+                The last chip is a link: "every claim sourced" is the whole
+                argument of this project, and /preservation — where the gaps are
+                published — was reachable only from the eighth item in the nav.
+              */}
               {[
-                `${monasteries.length} monasteries digitised`,
-                `${mapped} mapped locations`,
-                "Every claim sourced",
+                { label: `${monasteries.length} monasteries catalogued`, href: "/monasteries" },
+                { label: `${MAP_STATS.sites} sites on the heritage map`, href: "#map" },
+                { label: "Every claim sourced — see the gaps", href: "/preservation" },
               ].map((chip) => (
-                <span
-                  key={chip}
-                  className="glass-dark rounded-full px-4 py-2 text-caption font-medium text-foreground-inverse/90"
+                <Link
+                  key={chip.label}
+                  href={chip.href}
+                  className="glass-dark rounded-full px-4 py-2 text-caption font-medium text-foreground-inverse/90 transition-colors hover:text-foreground-inverse hover:bg-foreground-inverse/15"
                 >
-                  {chip}
-                </span>
+                  {chip.label}
+                </Link>
               ))}
             </div>
           </div>
@@ -355,29 +409,42 @@ export default async function HomePage() {
           <div className="relative mx-auto max-w-6xl px-6 py-24 md:py-32">
             <div className="max-w-xl">
               <ScrollReveal>
-                <p className="font-mono text-eyebrow tracking-widest text-accent uppercase">
-                  Virtual monastery experience
+                {/*
+                  This section used to promise "scene-by-scene 360° exploration
+                  with information hotspots and an audio guide in five
+                  languages", over a CTA reading "Enter Virtual Tour". None of
+                  that existed: there is one panorama in the archive, it is a
+                  flat stitched photograph rather than a sphere, there are no
+                  hotspots, and the audio is in four languages. It also carried
+                  a disclaimer about "prototype captures" that contradicted the
+                  rest of the site, where every photograph is Commons-sourced
+                  and credited. It was the last of the pre-integrity-pass
+                  marketing copy, and the easiest claim on the site to disprove
+                  by clicking the button underneath it.
+                */}
+                <p className="font-mono text-eyebrow tracking-widest text-accent-soft uppercase">
+                  Inside the monasteries
                 </p>
                 <h2 className="mt-3 font-display text-h1 text-foreground-inverse">
-                  Enter the monastery
+                  See it, and hear it explained
                 </h2>
                 <p className="mt-5 text-body-lg leading-relaxed text-foreground-inverse/80">
-                  Stand in the courtyard, turn to the prayer hall, and tap the
-                  murals to hear what they mean. Scene-by-scene 360° exploration
-                  with information hotspots and an audio guide in five
-                  languages.
+                  Every catalogued gompa opens with credited photography and a
+                  narrated guide you can read along with — recorded in English,
+                  Hindi, Nepali and Bengali, because the visitor and the
+                  heritage do not always share a language.
                 </p>
                 <ul className="mt-6 flex flex-wrap gap-2.5">
                   {[
-                    { icon: Rotate3d, label: "Multi-scene 360°" },
-                    { icon: MousePointerClick, label: "Story hotspots" },
-                    { icon: Headphones, label: "Audio narration" },
+                    { icon: Camera, label: `${GALLERY_PHOTO_COUNT} credited photographs` },
+                    { icon: Headphones, label: "Audio guides in 4 languages" },
+                    { icon: Rotate3d, label: "Rumtek courtyard panorama" },
                   ].map((item) => (
                     <li
                       key={item.label}
                       className="glass-dark flex items-center gap-2 rounded-full px-4 py-2 text-caption font-medium text-foreground-inverse/90"
                     >
-                      <item.icon className="size-3.5 text-accent" aria-hidden />
+                      <item.icon className="size-3.5 text-accent-soft" aria-hidden />
                       {item.label}
                     </li>
                   ))}
@@ -386,12 +453,17 @@ export default async function HomePage() {
                   href="/monasteries/rumtek"
                   className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-accent px-8 text-small font-semibold text-accent-foreground shadow-card transition-all hover:bg-accent-hover hover:shadow-lifted"
                 >
-                  Enter Virtual Tour
+                  Open Rumtek Monastery
                   <ArrowRight className="size-4" aria-hidden />
                 </Link>
-                <p className="mt-3 text-caption text-foreground-inverse/60">
-                  Current scenes are prototype captures; Sikkim photography
-                  arrives with the capture programme.
+                <p className="mt-3 max-w-md text-caption leading-relaxed text-foreground-inverse/60">
+                  No 360° sphere of any Sikkim monastery exists in an openly
+                  licensed collection — we swept 35 sites to establish that. The
+                  gap is published on{" "}
+                  <Link href="/preservation" className="underline underline-offset-2 hover:text-foreground-inverse">
+                    Preservation
+                  </Link>{" "}
+                  rather than papered over.
                 </p>
               </ScrollReveal>
             </div>
