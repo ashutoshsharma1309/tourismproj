@@ -4,9 +4,28 @@ export const SITE = {
   name: "Ney Heritage",
   tagline: "Digitizing the Sacred Heritage of Sikkim",
   motto: "Explore. Experience. Preserve.",
+  /*
+   * This described the product as somewhere you could "walk centuries-old
+   * monasteries in 360°". No 360° sphere of any Sikkim monastery exists in any
+   * openly licensed collection — 35 sites were swept to establish that, and the
+   * negative is published on /preservation. The site's own meta description was
+   * the last place still making the claim, and it was the first thing a search
+   * result or a shared link showed. It now describes what the archive holds.
+   */
   description:
-    "A digital cultural heritage platform for Sikkim — walk centuries-old monasteries in 360°, read their stories, plan a heritage journey and help preserve what the mountains hold.",
+    "A sourced digital archive of Sikkim's monasteries — 15 catalogued gompas with audio guides in four languages, 70 cultural stories, an interactive heritage map and a trip planner. Every claim traces to a named source.",
 } as const;
+
+/**
+ * The origin this deployment serves from.
+ *
+ * Absolute URLs in metadata — Open Graph images, canonicals, the sitemap — have
+ * to name a host. The placeholder that stood here (`neyheritage.example.com`)
+ * meant every social preview pointed at a domain that does not resolve, so
+ * every shared link rendered without its image.
+ */
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
 
 export const NAV_LINKS = [
   { href: "/monasteries", label: "Monasteries" },
