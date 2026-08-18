@@ -11,10 +11,34 @@
 import { chromium } from "playwright";
 
 const arg = (n, d) => {
-  const h = process.argv.find((a) => a.startsWith(`--${n}=`));
-  return h ? h.split("=").slice(1).join("=") : d;
+  /* Accepts --base=URL and --base URL. Only the "=" form used to be read, so
+     `npm run qa:audit -- --base http://localhost:3100` silently fell back to
+     :3000 and every route failed with ERR_CONNECTION_REFUSED — nine red lines
+     that looked like application failures rather than a mistyped flag. */
+  const eq = process.argv.find((a) => a.startsWith(`--${n}=`));
+  if (eq) return eq.split("=").slice(1).join("=");
+  const at = process.argv.indexOf(`--${n}`);
+  if (at !== -1 && process.argv[at + 1] && !process.argv[at + 1].startsWith("--")) {
+    return process.argv[at + 1];
+  }
+  return d;
 };
 const BASE = arg("base", "http://localhost:3000");
+
+/* Fail fast and clearly when nothing is serving, instead of attributing the
+   connection error to every route under test. */
+try {
+  const probe = await fetch(BASE, { method: "GET" });
+  if (!probe.ok && probe.status >= 500) throw new Error(`HTTP ${probe.status}`);
+} catch (error) {
+  console.error(
+    `\nCannot reach ${BASE} — ${error instanceof Error ? error.message : error}\n` +
+      `Start the dev server, or pass the right port:\n` +
+      `  npm run ${process.env.npm_lifecycle_event ?? "qa:audit"} -- --base=http://localhost:3100\n`,
+  );
+  process.exit(1);
+}
+
 
 const results = [];
 const check = (name, pass, detail = "") => {
@@ -36,13 +60,31 @@ const storyLinks = await page.$$eval("a[href^='/stories/']", (as) =>
 check("stories index lists story links", storyLinks.length > 0, `${storyLinks.length} links`);
 
 for (const href of storyLinks) {
-  await page.goto(`${BASE}/stories`, { waitUntil: "networkidle" });
+  /*
+   * "networkidle" here meant waiting for every image on a 70-card index to
+   * settle, 70 times over — minutes of wall clock, and a timeout whenever the
+   * dev server was busy compiling. Waiting for the specific card this iteration
+   * is about to click is both faster and a stricter precondition.
+   */
+  await page.goto(`${BASE}/stories`, { waitUntil: "domcontentloaded" });
   const card = page.locator(`a[href='${href}']`).first();
+  await card.waitFor({ state: "visible", timeout: 15_000 });
   const cardTitle = (await card.innerText().catch(() => "")).split("\n").filter(Boolean);
   await card.click();
-  await page.waitForLoadState("networkidle");
+  /*
+   * waitForLoadState("networkidle") was here, and it made this suite report 70
+   * failures that were not failures. A Next soft navigation resolves that state
+   * immediately — the network was already idle — so page.url() was read before
+   * the client-side transition had committed, and every story "landed on
+   * /stories". Waiting for the URL itself waits for the thing being asserted.
+   */
+  await page.waitForURL(`**${href}`, { timeout: 10_000 }).catch(() => {});
   const url = page.url();
-  const h1 = await page.locator("h1").first().innerText().catch(() => "");
+  /* And wait for the heading to actually render before reading it — the URL
+     commits before the new page paints, so reading straight away returns "". */
+  const heading = page.locator("h1").first();
+  await heading.waitFor({ state: "visible", timeout: 10_000 }).catch(() => {});
+  const h1 = await heading.innerText().catch(() => "");
   const landedRight = url.includes(href);
   // Does the story page actually show the story the card advertised?
   const titleMatch = cardTitle.some(

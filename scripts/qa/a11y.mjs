@@ -16,10 +16,34 @@ const require = createRequire(import.meta.url);
 const axePath = require.resolve("axe-core/axe.min.js");
 
 const arg = (n, d) => {
-  const h = process.argv.find((a) => a.startsWith(`--${n}=`));
-  return h ? h.split("=").slice(1).join("=") : d;
+  /* Accepts --base=URL and --base URL. Only the "=" form used to be read, so
+     `npm run qa:audit -- --base http://localhost:3100` silently fell back to
+     :3000 and every route failed with ERR_CONNECTION_REFUSED — nine red lines
+     that looked like application failures rather than a mistyped flag. */
+  const eq = process.argv.find((a) => a.startsWith(`--${n}=`));
+  if (eq) return eq.split("=").slice(1).join("=");
+  const at = process.argv.indexOf(`--${n}`);
+  if (at !== -1 && process.argv[at + 1] && !process.argv[at + 1].startsWith("--")) {
+    return process.argv[at + 1];
+  }
+  return d;
 };
 const BASE = arg("base", "http://localhost:3000");
+
+/* Fail fast and clearly when nothing is serving, instead of attributing the
+   connection error to every route under test. */
+try {
+  const probe = await fetch(BASE, { method: "GET" });
+  if (!probe.ok && probe.status >= 500) throw new Error(`HTTP ${probe.status}`);
+} catch (error) {
+  console.error(
+    `\nCannot reach ${BASE} — ${error instanceof Error ? error.message : error}\n` +
+      `Start the dev server, or pass the right port:\n` +
+      `  npm run ${process.env.npm_lifecycle_event ?? "qa:audit"} -- --base=http://localhost:3100\n`,
+  );
+  process.exit(1);
+}
+
 const VP = arg("viewport", "desktop") === "mobile"
   ? { width: 390, height: 844 }
   : { width: 1440, height: 900 };
@@ -29,7 +53,10 @@ const ROUTES = [
   "/monasteries",
   "/monasteries/rumtek",
   "/stories",
-  "/stories/the-crowning-at-yuksom",
+  /* Was /stories/the-crowning-at-yuksom, which is a 404 — no story has that
+     slug. One of the ten audited routes was therefore auditing the not-found
+     page (and, in dev, the error overlay) rather than a story. */
+  "/stories/the-throne-of-stone-at-norbugang",
   "/hotels",
   "/planner",
   "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",

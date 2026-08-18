@@ -14,11 +14,35 @@ import { chromium } from "playwright";
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const arg = (name, fallback) => {
-  const hit = process.argv.find((a) => a.startsWith(`--${name}=`));
-  return hit ? hit.split("=").slice(1).join("=") : fallback;
+  /* Accepts --base=URL and --base URL. Only the "=" form used to be read, so
+     `npm run qa:audit -- --base http://localhost:3100` silently fell back to
+     :3000 and every route failed with ERR_CONNECTION_REFUSED — nine red lines
+     that looked like application failures rather than a mistyped flag. */
+  const eq = process.argv.find((a) => a.startsWith(`--${name}=`));
+  if (eq) return eq.split("=").slice(1).join("=");
+  const at = process.argv.indexOf(`--${name}`);
+  if (at !== -1 && process.argv[at + 1] && !process.argv[at + 1].startsWith("--")) {
+    return process.argv[at + 1];
+  }
+  return fallback;
 };
 
 const BASE = arg("base", "http://localhost:3000");
+
+/* Fail fast and clearly when nothing is serving, instead of attributing the
+   connection error to every route under test. */
+try {
+  const probe = await fetch(BASE, { method: "GET" });
+  if (!probe.ok && probe.status >= 500) throw new Error(`HTTP ${probe.status}`);
+} catch (error) {
+  console.error(
+    `\nCannot reach ${BASE} — ${error instanceof Error ? error.message : error}\n` +
+      `Start the dev server, or pass the right port:\n` +
+      `  npm run ${process.env.npm_lifecycle_event ?? "qa:audit"} -- --base=http://localhost:3100\n`,
+  );
+  process.exit(1);
+}
+
 const VIEWPORT_NAME = arg("viewport", "desktop");
 const ONLY = arg("only", null);
 
