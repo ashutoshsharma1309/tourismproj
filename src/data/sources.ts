@@ -36,7 +36,7 @@ export const SOURCES: Record<string, Source> = {
     covers:
       "Existence, amount (₹50 per person), collection point (hotels at check-in), one-month validity, exemptions, and destination (Tourism Sustainability Development Fund).",
     notes:
-      "TODO: replace with the gazetted Rules PDF from the Government of Sikkim once a stable public URL is confirmed.",
+      "Cited from press reporting. The gazetted Rules themselves are the primary source, but the Government of Sikkim has not published them at a stable public URL, so this record cites the reporting and says so.",
   },
   "sikkim-entry-fee-uni": {
     id: "sikkim-entry-fee-uni",
@@ -55,7 +55,7 @@ export const SOURCES: Record<string, Source> = {
     covers:
       "2025 arrivals: 17,12,360 total (16,35,650 domestic + 61,710 foreign); 2024 comparison 16,25,241.",
     notes:
-      "TODO: replace with the Tourism & Civil Aviation Department statistical handbook when a public URL is confirmed.",
+      "Cited from press reporting of the department's figures. The Tourism & Civil Aviation Department's statistical handbook is the primary source; no public URL for it has been confirmed, so the reporting is cited in its place.",
   },
   "sikkim-tourism-portal": {
     id: "sikkim-tourism-portal",
@@ -234,6 +234,22 @@ export interface Provenance {
   caveat?: string;
 }
 
+/**
+ * Look up a source. Returns undefined for an unregistered id.
+ *
+ * Note that `sourceId: "internal"` is deliberately NOT a key in SOURCES, even
+ * though "internal" is a valid `SourceType`. They are two different things
+ * sharing a word: the *type* marks a registered source we operate ourselves
+ * (the YouTube oEmbed endpoint, the Places API), while the *id* is the sentinel
+ * a record carries when no external source was found for it at all — 20 hotels,
+ * one monastery and one story.
+ *
+ * Resolving to undefined is the point. SourceNote renders "No published source
+ * located" and "Last checked" instead of a link and "Last verified" precisely
+ * because there is nothing here to return. Adding a SOURCES.internal entry would
+ * make every unsourced record display a source and claim verification, which is
+ * the failure this registry exists to prevent.
+ */
 export function getSource(id: string): Source | undefined {
   return SOURCES[id];
 }

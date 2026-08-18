@@ -41,10 +41,13 @@ export function SourceNote({ provenance }: { provenance: ProvenanceData }) {
             <ExternalLink className="size-3" aria-hidden />
           </a>
         ) : (
-          <span>Not available</span>
+          <span>No published source located</span>
         )}
         <span aria-hidden>·</span>
-        <span>Last verified {formatDate(provenance.verifiedAt)}</span>
+        {/* "Last verified" is a false claim on a record nothing was found for. */}
+        <span>
+          {href ? "Last verified" : "Last checked"} {formatDate(provenance.verifiedAt)}
+        </span>
         <span aria-hidden>·</span>
         <span className="capitalize">{provenance.confidence} confidence</span>
       </p>

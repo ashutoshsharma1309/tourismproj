@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: "Heritage review queue",
   description:
     "Monastery candidates found by the Heritage Discovery Agent, with the evidence behind each one, awaiting human review.",
+  /*
+   * This page lists people who sent things in: their names, and until now the
+   * address they sent from. It is linked from the navbar and footer on every
+   * page and this build has no curator authentication, so it was an indexable
+   * directory of volunteers' contact details. Excluded from search here and in
+   * robots.ts; the contact addresses themselves are no longer rendered.
+   *
+   * Neither of those is the real fix. The route needs an authentication gate.
+   */
+  robots: { index: false, follow: false },
 };
 
 interface Candidate {
@@ -52,7 +62,7 @@ export default function ReviewQueuePage() {
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Heritage review queue
         </p>

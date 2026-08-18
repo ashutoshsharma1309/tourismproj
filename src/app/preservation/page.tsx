@@ -1,4 +1,4 @@
-import { BookOpen, Camera, Check, Clock3, Headphones, Languages, MapPin, Minus, Rotate3d, ShieldCheck } from "lucide-react";
+import { BookOpen, Camera, Check, Clock3, Headphones, Images, Languages, MapPin, Minus, Rotate3d, ShieldCheck } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -6,6 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
 import { VerificationChip } from "@/components/ui/VerificationChip";
 import { ARCHIVE_COMMUNITIES, ARCHIVE_COVERAGE } from "@/data/archive";
+import { GALLERY_PHOTO_COUNT, monasteryGallery } from "@/data/galleries";
 import { HISTORY_COVERAGE } from "@/data/history";
 import { monasteries } from "@/data/monasteries";
 import { isFullSphere } from "@/data/panoramas";
@@ -43,6 +44,7 @@ export default function PreservationPage() {
   const withStory = monasteries.filter(
     (m) => stories.some((s) => s.relatedMonasteries.includes(m.slug)),
   ).length;
+  const withGallery = monasteries.filter((m) => monasteryGallery(m.slug).length > 0).length;
   const documented = stories.filter((s) => s.claimType === "documented history").length;
 
   const coverage = [
@@ -51,6 +53,7 @@ export default function PreservationPage() {
     { label: "Sites with a verified panoramic capture", done: captured, icon: Camera },
     { label: "Sites with a true 360° sphere", done: spheres, icon: Rotate3d },
     { label: "Sites with a published audio guide", done: narrated, icon: Headphones },
+    { label: "Sites with a photographic gallery", done: withGallery, icon: Images },
     { label: "Sites with any reported visiting hours", done: withHours, icon: Clock3 },
     { label: "Sites appearing in a written story", done: withStory, icon: BookOpen },
   ];
@@ -59,7 +62,7 @@ export default function PreservationPage() {
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Digital preservation
         </p>
@@ -95,6 +98,11 @@ export default function PreservationPage() {
                 href: "/history",
               },
               { label: "Audio guides published", value: narrated, href: "/monasteries" },
+              {
+                label: "Photographs credited to their photographer",
+                value: GALLERY_PHOTO_COUNT,
+                href: "/explore",
+              },
             ].map((stat) => (
               <li key={stat.label}>
                 <Link
