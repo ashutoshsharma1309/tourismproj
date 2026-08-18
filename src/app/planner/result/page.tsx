@@ -1,10 +1,12 @@
 import { CalendarRange, Route, Users, Wallet } from "lucide-react";
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Footer } from "@/components/layout/Footer";
 import { ItineraryMap } from "@/components/planner/ItineraryExtras";
 import { Badge } from "@/components/ui/Badge";
+import { representativePhoto } from "@/data/galleries";
 import { generateItinerary } from "@/lib/generate-itinerary";
 import { formatPrice, formatPriceCompact } from "@/lib/format";
 import type { PlannerInterest, PlannerStyle } from "@/types";
@@ -79,9 +81,18 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
 
   const cost = itinerary.cost;
 
+  /* A route reads as a list of place names until you see the places. Each base
+     the itinerary sleeps in is also a mapped place in this archive, so its own
+     photography is already here — no separate stock imagery needed. */
+  const routePhotos = stops
+    .map((stop) => ({ stop, photo: representativePhoto("place", stop.location.toLowerCase()) }))
+    .filter((entry): entry is { stop: (typeof stops)[number]; photo: NonNullable<typeof entry.photo> } =>
+      entry.photo !== undefined,
+    );
+
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Your itinerary
         </p>
@@ -101,6 +112,40 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             </Badge>
           ))}
         </div>
+
+        {routePhotos.length > 0 ? (
+          <section className="mt-8" aria-label="The bases on this route">
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {routePhotos.map(({ stop, photo }) => (
+                <li key={stop.location}>
+                  <figure>
+                    <div className="relative h-40 overflow-hidden rounded-xl border bg-surface-muted">
+                      <Image
+                        src={photo.localPath}
+                        alt={photo.caption ?? `${stop.location}, Sikkim`}
+                        fill
+                        sizes="(min-width: 1024px) 18rem, (min-width: 640px) 45vw, 92vw"
+                        className="object-cover"
+                      />
+                      <div className="gradient-overlay absolute inset-0" aria-hidden />
+                      <figcaption className="absolute inset-x-0 bottom-0 p-3">
+                        <span className="block font-display text-h4 text-foreground-inverse text-glow">
+                          {stop.location}
+                        </span>
+                        <span className="font-mono text-caption text-foreground-inverse/80">
+                          {stop.days}
+                        </span>
+                      </figcaption>
+                    </div>
+                    <p className="mt-1.5 text-caption text-subtle">
+                      © {photo.attribution} · {photo.license}
+                    </p>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ) : null}
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px]">
           {/* Day by day */}
