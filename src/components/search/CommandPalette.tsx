@@ -12,20 +12,20 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 
 import { cn } from "@/lib/cn";
-import { archiveItems } from "@/data/archive";
-import { historyTimeline } from "@/data/history";
-import { hotels } from "@/data/hotels";
-import { monasteries } from "@/data/monasteries";
-import { places } from "@/data/places";
-import { stories } from "@/data/stories";
+import type { SearchGroup, SearchIcon, SearchItem } from "@/lib/search-index";
 
 /**
  * Global ⌘K search over everything the platform knows: monasteries, stays,
- * festivals and destinations within the app. Pure client-side filtering over
- * the local catalogue — instant, keyboard-first.
+ * festivals and destinations within the app.
+ *
+ * The index arrives as a prop, built on the server by
+ * `buildSearchIndex()` (src/lib/search-index.ts). This component deliberately
+ * imports no data module: when it did, the whole story and archive corpus was
+ * pulled into the client bundle of every route in the application, because the
+ * palette is mounted once in the root layout.
  *
  * `openSearch()` may be called from anywhere (navbar, hero) — the palette
  * itself is mounted once in the root layout.
@@ -38,87 +38,17 @@ export function openSearch() {
   for (const listener of listeners) listener();
 }
 
-interface SearchItem {
-  label: string;
-  sublabel: string;
-  href: string;
-  group: "Monasteries" | "Stories" | "History" | "Archive" | "Places" | "Stays" | "Go to";
-  icon: LucideIcon;
-}
+const ICONS: Record<SearchIcon, LucideIcon> = {
+  landmark: Landmark,
+  book: BookOpen,
+  scroll: ScrollText,
+  image: ImageIcon,
+  mountain: Mountain,
+  bed: BedDouble,
+  compass: Compass,
+};
 
-function buildIndex(): SearchItem[] {
-  const items: SearchItem[] = [];
-  for (const monastery of monasteries) {
-    items.push({
-      label: monastery.name,
-      sublabel: `${monastery.tradition} · ${monastery.district} · est. ${monastery.establishedYear}`,
-      href: `/monasteries/${monastery.slug}`,
-      group: "Monasteries",
-      icon: Landmark,
-    });
-  }
-  /* Stories were missing from this index, which is why searching a story
-     title used to surface a monastery instead — the single most confusing
-     thing about the old search. */
-  for (const story of stories) {
-    items.push({
-      label: story.title,
-      sublabel: `${story.category} · ${story.communities.join(", ")}`,
-      href: `/stories/${story.slug}`,
-      group: "Stories",
-      icon: BookOpen,
-    });
-  }
-  for (const event of historyTimeline) {
-    items.push({
-      label: event.title,
-      sublabel: `${event.yearLabel} · ${event.era}`,
-      href: `/history/${event.slug}`,
-      group: "History",
-      icon: ScrollText,
-    });
-  }
-  for (const item of archiveItems) {
-    items.push({
-      label: item.title,
-      sublabel: [item.category, item.community, item.location].filter(Boolean).join(" · "),
-      href: `/archive/${item.id}`,
-      group: "Archive",
-      icon: ImageIcon,
-    });
-  }
-  for (const place of places) {
-    items.push({
-      label: place.name,
-      sublabel: `${place.category} · ${place.district} district`,
-      href: `/explore?place=${place.slug}`,
-      group: "Places",
-      icon: Mountain,
-    });
-  }
-  for (const hotel of hotels) {
-    items.push({
-      label: hotel.name,
-      sublabel: `${hotel.district} district · registered stay`,
-      href: hotel.googleMapsUrl,
-      group: "Stays",
-      icon: BedDouble,
-    });
-  }
-  items.push(
-    { label: "Explore monasteries", sublabel: "Search, filter, map", href: "/monasteries", group: "Go to", icon: Compass },
-    { label: "Stories of Sikkim", sublabel: "The cultural archive, searchable", href: "/stories", group: "Go to", icon: BookOpen },
-    { label: "The Story of Sikkim", sublabel: "The interactive historical timeline", href: "/history", group: "Go to", icon: ScrollText },
-    { label: "Digital Heritage Archive", sublabel: "Search the catalogued collection", href: "/archive", group: "Go to", icon: ImageIcon },
-    { label: "Contribute to the archive", sublabel: "Submit a photograph, document or practice", href: "/archive/contribute", group: "Go to", icon: Compass },
-    { label: "Explore Sikkim", sublabel: "Every sourced coordinate on one map", href: "/explore", group: "Go to", icon: Compass },
-    { label: "Book a stay", sublabel: "Directory of registered properties", href: "/hotels", group: "Go to", icon: Compass },
-    { label: "Plan a heritage journey", sublabel: "Day-by-day itinerary", href: "/planner", group: "Go to", icon: Compass },
-  );
-  return items;
-}
-
-const GROUP_ORDER: SearchItem["group"][] = [
+const GROUP_ORDER: SearchGroup[] = [
   "Monasteries",
   "Stories",
   "History",
@@ -128,17 +58,22 @@ const GROUP_ORDER: SearchItem["group"][] = [
   "Go to",
 ];
 
-export function CommandPalette() {
+export function CommandPalette({ items }: { items: SearchItem[] }) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [active, setActive] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const index = useMemo(() => buildIndex(), []);
+  const restoreRef = useRef<HTMLElement | null>(null);
+  const listboxId = useId();
 
   /* Open via navbar button or ⌘K / Ctrl+K. */
   useEffect(() => {
     const show: Listener = () => {
+      /* Remember what had focus so it can be given back on close — without
+         this, dismissing the palette drops the caret to <body> and a keyboard
+         visitor restarts from the top of the document. */
+      restoreRef.current = document.activeElement as HTMLElement | null;
       setOpen(true);
       setQuery("");
       setActive(0);
@@ -159,18 +94,26 @@ export function CommandPalette() {
   }, []);
 
   useEffect(() => {
-    if (open) inputRef.current?.focus();
+    if (open) {
+      inputRef.current?.focus();
+      /* The page behind a modal must not scroll under it. */
+      const previous = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = previous;
+      };
+    }
+    restoreRef.current?.focus();
+    return undefined;
   }, [open]);
 
   const results = useMemo(() => {
     const needle = query.trim().toLowerCase();
     const matches = needle
-      ? index.filter((item) =>
-          `${item.label} ${item.sublabel}`.toLowerCase().includes(needle),
-        )
-      : index.filter((item) => item.group === "Go to");
+      ? items.filter((item) => `${item.label} ${item.sublabel}`.toLowerCase().includes(needle))
+      : items.filter((item) => item.group === "Go to");
     return GROUP_ORDER.flatMap((group) => matches.filter((m) => m.group === group)).slice(0, 12);
-  }, [index, query]);
+  }, [items, query]);
 
   const go = (item: SearchItem) => {
     setOpen(false);
@@ -178,6 +121,8 @@ export function CommandPalette() {
   };
 
   if (!open) return null;
+
+  const optionId = (i: number) => `${listboxId}-option-${i}`;
 
   return (
     <div
@@ -188,7 +133,7 @@ export function CommandPalette() {
     >
       <button
         type="button"
-        aria-label="Close search"
+        aria-hidden="true"
         onClick={() => setOpen(false)}
         className="absolute inset-0 cursor-default bg-secondary/50 backdrop-blur-sm"
         tabIndex={-1}
@@ -196,9 +141,19 @@ export function CommandPalette() {
       <div className="animate-scale-in relative w-full max-w-xl overflow-hidden rounded-xl border bg-surface shadow-overlay">
         <div className="flex items-center gap-3 border-b px-4">
           <Search className="size-4 shrink-0 text-subtle" aria-hidden />
+          {/*
+            Declared as a combobox so a screen reader announces the highlighted
+            result as the arrow keys move through them. Previously this was a
+            bare <input>, so arrowing down the list announced nothing at all.
+          */}
           <input
             ref={inputRef}
             value={query}
+            role="combobox"
+            aria-expanded="true"
+            aria-controls={listboxId}
+            aria-activedescendant={results[active] ? optionId(active) : undefined}
+            aria-autocomplete="list"
             onChange={(e) => {
               setQuery(e.target.value);
               setActive(0);
@@ -222,33 +177,48 @@ export function CommandPalette() {
           <kbd className="rounded border px-1.5 py-0.5 font-mono text-[10px] text-subtle">esc</kbd>
         </div>
 
-        <ul className="max-h-[50vh] overflow-y-auto p-2" role="listbox" aria-label="Results">
+        {/*
+          A listbox may only own options. This was a <ul role="listbox"> whose
+          <li> children each wrapped a button carrying role="option", which
+          breaks the ownership relationship the role depends on. Group headings
+          are marked presentational so they do not read as results.
+        */}
+        <div
+          id={listboxId}
+          role="listbox"
+          aria-label="Results"
+          className="max-h-[50vh] overflow-y-auto p-2"
+        >
           {results.length === 0 ? (
-            <li className="px-4 py-8 text-center text-small text-muted">
+            <p className="px-4 py-8 text-center text-small text-muted">
               Nothing matches “{query}”. Try a monastery or hotel name.
-            </li>
+            </p>
           ) : (
             results.map((item, i) => {
               const showHeading = i === 0 || results[i - 1]?.group !== item.group;
+              const Icon = ICONS[item.icon];
               return (
-                <li key={`${item.group}:${item.label}`}>
+                <div key={`${item.group}:${item.label}`}>
                   {showHeading ? (
-                    <p className="px-3 pt-3 pb-1 font-mono text-eyebrow tracking-widest text-subtle uppercase">
+                    <p
+                      role="presentation"
+                      className="px-3 pt-3 pb-1 font-mono text-eyebrow tracking-widest text-subtle uppercase"
+                    >
                       {item.group}
                     </p>
                   ) : null}
-                  <button
-                    type="button"
+                  <div
+                    id={optionId(i)}
                     role="option"
                     aria-selected={i === active}
                     onClick={() => go(item)}
                     onMouseEnter={() => setActive(i)}
                     className={cn(
-                      "flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
+                      "flex w-full cursor-pointer items-center gap-3 rounded-lg px-3 py-2.5 text-left transition-colors",
                       i === active ? "bg-primary-soft text-primary" : "text-foreground",
                     )}
                   >
-                    <item.icon
+                    <Icon
                       className={cn("size-4 shrink-0", i === active ? "text-primary" : "text-subtle")}
                       aria-hidden
                     />
@@ -258,12 +228,12 @@ export function CommandPalette() {
                         {item.sublabel}
                       </span>
                     </span>
-                  </button>
-                </li>
+                  </div>
+                </div>
               );
             })
           )}
-        </ul>
+        </div>
       </div>
     </div>
   );
