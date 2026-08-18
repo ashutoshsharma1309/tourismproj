@@ -75,7 +75,9 @@ or plan to run the discovery agents.
 | `npm run agent:discover` | Heritage discovery agent → sourced monastery records |
 | `npm run agent:360` | 360° panorama finder → availability evidence |
 | `npm run agent:audio` | Audio guide agent → narrated `.m4a` guides |
+| `npm run agent:gallery` | Gallery agent → evidenced Commons photography per site |
 | `npm run agent:report` | Aggregates agent output into one auditable report |
+| `npm run qa:gallery` | Audits the galleries — licence, files, and no photograph reused across places |
 
 ---
 
