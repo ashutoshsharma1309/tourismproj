@@ -75,10 +75,25 @@ const GALLERIES: Record<string, Gallery> = Object.fromEntries(
  * wildlife sanctuary's fauna is part of what it is — but it must never be the
  * one frame chosen to represent a town on /hotels or in an itinerary.
  */
-const SPECIMEN = /\b(close wing|open wing|nectaring|basking|puddling|pudding|wing position|butterfly|moth|caterpillar|sunbird|laughingthrush|thrush|orchid|beetle|spider|specimen|sub-species|subspecies)\b/i;
+const SPECIMEN =
+  /\b(close wing|open wing|nectaring|basking|puddling|pudding|wing position|butterfly|moth|caterpillar|sunbird|laughingthrush|thrush|orchid|beetle|spider|specimen|sub-species|subspecies|street dog|stray dog|montessori|tent pitched)\b/i;
 
 export function depictsPlace(photo: GalleryPhoto): boolean {
   return !SPECIMEN.test(`${photo.file} ${photo.caption ?? ""}`);
+}
+
+/**
+ * Whether the camera itself stood in Sikkim.
+ *
+ * Kangchenjunga is Sikkim's mountain and a photograph of it depicts Sikkim's
+ * subject, so these frames stay in their galleries. But a caption that places
+ * the photographer at a viewpoint outside Darjeeling cannot illustrate "what
+ * you would be standing in front of" on a page about visiting Sikkim.
+ */
+const FOREIGN_VANTAGE = /\b(west bengal|darjeeling|kalimpong|peshok|tukdah|nilphamari|bangladesh|nepal|bhutan)\b/i;
+
+export function photographedInSikkim(photo: GalleryPhoto): boolean {
+  return !FOREIGN_VANTAGE.test(`${photo.file} ${photo.caption ?? ""}`);
 }
 
 /**
@@ -150,6 +165,20 @@ export function showcasePhotos(
 ): Array<GalleryPhoto & { subject: string; scope: string; slug: string }> {
   const bySubject = new Map<string, Array<GalleryPhoto & { subject: string; scope: string; slug: string }>>();
   for (const photo of allGalleryPhotos()) {
+    /*
+     * A showcase makes a stronger claim than a gallery does. The home page rail
+     * is captioned "what you would actually be standing in front of", and it was
+     * showing two butterfly macros, a street dog on M.G. Marg, and views of
+     * Kangchenjunga and the Teesta confluence whose own captions place the
+     * camera in West Bengal.
+     *
+     * Those frames are fine where they are — a butterfly photographed inside a
+     * wildlife sanctuary belongs in that sanctuary's gallery — but none of them
+     * is a picture of somewhere in Sikkim you can go and stand. On the home page
+     * of a project whose whole argument is provenance, they are the first thing
+     * a sceptical judge would pull on.
+     */
+    if (!depictsPlace(photo) || !photographedInSikkim(photo)) continue;
     if (filter && !filter(photo)) continue;
     const list = bySubject.get(photo.subject) ?? [];
     list.push(photo);

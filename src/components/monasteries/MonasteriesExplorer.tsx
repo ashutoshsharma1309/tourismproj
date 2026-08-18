@@ -6,7 +6,6 @@ import {
   LayoutGrid,
   ListFilter,
   Map as MapIcon,
-  MapPin,
   Rotate3d,
   Search,
   ShieldCheck,
@@ -22,7 +21,6 @@ import { Button } from "@/components/ui/Button";
 import { Skeleton } from "@/components/ui/Skeleton";
 import { isFullSphere } from "@/data/panoramas";
 import { cn } from "@/lib/cn";
-import { formatCoordinates } from "@/lib/format";
 import type { MonasteryDetails, MonasteryTradition, SikkimDistrict } from "@/types";
 
 const LeafletMap = dynamic(() => import("@/components/maps/LeafletMap"), {
@@ -349,32 +347,37 @@ export function MonasteriesExplorer({
                         {monastery.name}
                       </Link>
                     </h3>
+                    {/*
+                      The card carried a wrapping decimal coordinate and five
+                      chips of equal weight — Mapped, Audio, No panorama, est.
+                      YYYY, Sourced — so nothing was emphasised and the grid read
+                      as a wall of pills. Worse, absence was being badged: most
+                      cards said "No panorama", and fourteen of those in a grid
+                      make a rigorous archive look like an unfinished one. The
+                      gaps still belong on the site — they are published in full
+                      on /preservation and on each detail page — but a browse
+                      grid is for deciding where to go.
+
+                      District and founding year now read as prose; the chips are
+                      capabilities only, and each one is something the site has.
+                    */}
                     <p className="font-mono text-caption text-subtle">
-                      {monastery.district} ·{" "}
-                      {monastery.coordinates ? formatCoordinates(monastery.coordinates.lat, monastery.coordinates.lng) : "Location pending verification"}
+                      {monastery.district} · est. {monastery.establishedYear}
+                      {monastery.coordinates ? null : " · location unverified"}
                     </p>
                     <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                      
-                      {monastery.coordinates ? (
-                        <Badge tone="neutral">
-                          <MapPin className="size-3" aria-hidden /> Mapped
-                        </Badge>
-                      ) : null}
                       <Badge tone={monastery.audio.available ? "success" : "neutral"}>
                         <Headphones className="size-3" aria-hidden />
                         {monastery.audio.available
                           ? `Audio · ${monastery.audio.languages.length}`
                           : "No audio"}
                       </Badge>
-                      <Badge tone={monastery.tour.available ? "success" : "neutral"}>
-                        <Rotate3d className="size-3" aria-hidden />
-                        {!monastery.tour.available
-                          ? "No panorama"
-                          : isFullSphere(monastery.tour.projection)
-                            ? "360°"
-                            : "Panorama"}
-                      </Badge>
-                      <Badge tone="neutral">est. {monastery.establishedYear}</Badge>
+                      {monastery.tour.available ? (
+                        <Badge tone="success">
+                          <Rotate3d className="size-3" aria-hidden />
+                          {isFullSphere(monastery.tour.projection) ? "360°" : "Panorama"}
+                        </Badge>
+                      ) : null}
                       {monastery.provenance.confidence !== "unverified" ? (
                         <Badge tone="success">
                           <ShieldCheck className="size-3" aria-hidden /> Sourced
