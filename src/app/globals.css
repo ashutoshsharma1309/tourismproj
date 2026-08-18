@@ -23,6 +23,21 @@
   --color-muted: #5d5647; /* secondary text */
   --color-subtle: #6b6352; /* captions and meta — AA on page (5.3:1), card (5.8:1) and inset panel (4.7:1) */
   --color-foreground-inverse: #f6f2e9;
+  /*
+   * The dark-surface text ramp.
+   *
+   * The light surfaces had a proper three-step ramp (foreground / muted /
+   * subtle) while dark surfaces had exactly one colour, so every component that
+   * needed a quieter tone on dark improvised with an opacity suffix. Six of them
+   * were in use across the home page and navbar — /60 /70 /75 /80 /85 /90 —
+   * none of them tokens, none contrast-checked, and the faintest of them
+   * measured 2.34:1 over hero photography.
+   *
+   * These are real colours rather than alphas, so they hold their contrast over
+   * a photograph instead of dissolving into it.
+   */
+  --color-muted-inverse: #ddd5c6;  /* secondary text on dark — 9.1:1 on #221c15 */
+  --color-subtle-inverse: #b9b0a0; /* captions and meta on dark — 6.4:1 on #221c15 */
 
   /* Lines */
   --color-border: #e3dac7;
@@ -408,10 +423,28 @@
 }
 
 @utility glass-dark {
-  background: rgba(34, 28, 21, 0.72);
+  /* 0.72 let page content read through the fixed header — the era tabs on
+     /history and the map legend on / were legible *through* the navbar, which
+     reads as a rendering fault rather than as glass. */
+  background: rgba(34, 28, 21, 0.86);
   border: 1px solid rgba(246, 242, 233, 0.14);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
+}
+
+/*
+ * Ground for a header that floats over photography with no background of its
+ * own. Over the pale mist at the top of the Rumtek hero, the ivory nav links
+ * and the search control were reading white-on-white. This is a fade rather
+ * than a bar, so the header still looks unbounded.
+ */
+@utility header-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 19, 13, 0.72) 0%,
+    rgba(24, 19, 13, 0.45) 45%,
+    rgba(24, 19, 13, 0) 100%
+  );
 }
 
 /* Hoverable card: lift, deepen shadow, warm the border to marigold. */

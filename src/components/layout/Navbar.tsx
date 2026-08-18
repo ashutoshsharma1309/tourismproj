@@ -80,7 +80,12 @@ export function Navbar() {
         onGlass ? "glass-dark border-x-0 border-t-0 border-b" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+      {/* Only when the bar has no background of its own. */}
+      {!onGlass ? (
+        <div aria-hidden className="header-scrim pointer-events-none absolute inset-x-0 top-0 h-24" />
+      ) : null}
+
+      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="text-glow" aria-label={`${SITE.name} — home`}>
           <Logo />
         </Link>
