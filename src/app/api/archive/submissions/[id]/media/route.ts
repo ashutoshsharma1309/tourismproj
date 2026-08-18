@@ -29,6 +29,15 @@ export async function GET(
       "Content-Length": String(media.bytes.byteLength),
       "Cache-Control": "no-store, private",
       "X-Robots-Tag": "noindex, nofollow",
+      /*
+       * The Content-Type above is the uploader's own `file.type`. Upload
+       * validation allowlists it, but nothing inspects the bytes — so a file
+       * whose contents are HTML can be stored while declaring image/png. Without
+       * nosniff a browser is free to disregard the declared type, sniff the
+       * markup and render it as a document on this origin. The sandboxed CSP
+       * already neuters scripts; nosniff is what stops the sniff itself.
+       */
+      "X-Content-Type-Options": "nosniff",
       "Content-Security-Policy": "default-src 'none'; img-src 'self'; sandbox",
     },
   });

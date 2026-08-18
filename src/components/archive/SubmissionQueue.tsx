@@ -105,14 +105,17 @@ export async function SubmissionQueue() {
                         {submission.contributorName}
                       </span>
                     </span>
+                    {/* The address itself is deliberately not rendered. This
+                        page has no authentication and is linked from every
+                        page's navbar, so printing a mailto: published the
+                        contact details of everyone who has contributed. The
+                        curator needs to know whether they can reply, not what
+                        the address is — that is in the submission store. */}
                     {submission.contributorContact ? (
-                      <a
-                        href={`mailto:${submission.contributorContact}`}
-                        className="inline-flex items-center gap-1 text-primary hover:underline"
-                      >
+                      <span className="inline-flex items-center gap-1">
                         <Mail className="size-3" aria-hidden />
-                        {submission.contributorContact}
-                      </a>
+                        Contact on file
+                      </span>
                     ) : (
                       <span>No contact given</span>
                     )}
