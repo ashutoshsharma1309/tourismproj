@@ -27,6 +27,7 @@ import { getHistoryEvent } from "@/data/history";
 import { getMonasteryBySlug } from "@/data/monasteries";
 import { getStoryBySlug } from "@/data/stories";
 import { formatDate } from "@/lib/format";
+import { JsonLd, breadcrumbSchema, creativeWorkSchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -40,9 +41,17 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const { id } = await params;
   const item = getArchiveItem(id);
   if (!item) return {};
+  const description = item.summary ?? item.context.slice(0, 160);
   return {
     title: item.title,
-    description: item.summary ?? item.context.slice(0, 160),
+    description,
+    alternates: { canonical: `/archive/${item.id}` },
+    openGraph: {
+      title: item.title,
+      description,
+      images: [{ url: item.mediaUrl, alt: item.title }],
+      type: "article",
+    },
   };
 }
 
@@ -74,7 +83,24 @@ export default async function ArchiveItemPage({ params }: PageProps) {
 
   return (
     <>
-      <main className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
+      <JsonLd
+        data={[
+          creativeWorkSchema({
+            title: item.title,
+            description: item.summary ?? item.context.slice(0, 200),
+            id: item.id,
+            mediaUrl: item.mediaUrl,
+            license: item.license,
+            creator: item.creator,
+            period: item.period,
+          }),
+          breadcrumbSchema([
+            { name: "Archive", url: "/archive" },
+            { name: item.title, url: `/archive/${item.id}` },
+          ]),
+        ]}
+      />
+      <main id="main" className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
         <Link
           href="/archive"
           className="inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
@@ -94,9 +120,19 @@ export default async function ArchiveItemPage({ params }: PageProps) {
               credit={credit}
             />
 
-            {!item.sikkimSubject && item.captureNote ? (
+            {/*
+              The disclaimer used to require a hand-written captureNote, so an
+              item photographed outside Sikkim with no note rendered no warning
+              at all — the reader saw Punakha Dzong, in Bhutan, presented like
+              any Sikkim record. Four of the 21 out-of-state items were in that
+              state. Every such item already records where it was taken, so the
+              notice now always appears and falls back to that.
+            */}
+            {!item.sikkimSubject ? (
               <p className="mt-5 rounded-lg border-l-4 border-warning bg-warning-soft p-4 text-small leading-relaxed">
-                <strong>Not photographed in Sikkim.</strong> {item.captureNote}
+                <strong>Not photographed in Sikkim.</strong>{" "}
+                {item.captureNote ??
+                  `This photograph was taken at ${item.location ?? "a location outside Sikkim"}. It illustrates a subject connected to Sikkim's history without depicting a place inside the state.`}
               </p>
             ) : null}
 
