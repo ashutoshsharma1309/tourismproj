@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Heritage Archive Agent — Ney Heritage
+ * Heritage Archive Agent — Sikkim Darshan
  * =====================================
  *
  * Builds the media registry behind the NEY Digital Heritage Archive.
@@ -38,7 +38,7 @@ import { fileURLToPath } from "node:url";
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
 const UA =
-  "NeyHeritage-archive-agent/1.0 (https://github.com/ashutoshsharma1309/tourismproj; cultural heritage documentation)";
+  "SikkimDarshan-archive-agent/1.0 (https://github.com/ashutoshsharma1309/tourismproj; cultural heritage documentation)";
 const COMMONS_API = "https://commons.wikimedia.org/w/api.php";
 const WIKI_API = "https://en.wikipedia.org/w/api.php";
 const OUT_IMAGES = join(ROOT, "public/images");
@@ -928,6 +928,8 @@ const ITEMS = [
     period: "Founded 1637",
     mediaType: "image",
     sikkimSubject: false,
+    captureNote:
+      "Photographed at Punakha Dzong in Bhutan. It shows the fortress-monastery form of the power that occupied eastern Sikkim, not the occupation itself.",
     monasteries: [],
     events: ["bhutanese-occupation-1700"],
     stories: [],
@@ -943,6 +945,8 @@ const ITEMS = [
     period: "1814 – 1816",
     mediaType: "image",
     sikkimSubject: false,
+    captureNote:
+      "Not a photograph at all — a contemporary engraving of the war against the Gorkha kingdom, published in Cassell's illustrated history of India. It does not depict fighting in Sikkim.",
     monasteries: [],
     events: ["gorkha-invasions-1788"],
     stories: [],
@@ -972,6 +976,8 @@ const ITEMS = [
     period: "Ceded 1835",
     mediaType: "image",
     sikkimSubject: false,
+    captureNote:
+      "Photographed in Darjeeling, West Bengal — the hill tract ceded by Sikkim in 1835, never returned, and outside the state today.",
     monasteries: [],
     events: ["darjeeling-cession-1835"],
     stories: [],
@@ -987,6 +993,8 @@ const ITEMS = [
     period: "1817 – 1911",
     mediaType: "image",
     sikkimSubject: false,
+    captureNote:
+      "A studio portrait made in Britain. No photograph of Hooker's 1849 detention alongside Archibald Campbell exists.",
     monasteries: [],
     events: ["campbell-hooker-1849"],
     stories: [],
