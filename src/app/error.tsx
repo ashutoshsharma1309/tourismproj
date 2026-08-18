@@ -16,7 +16,7 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
   }, [error]);
 
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center gap-6 px-6 text-center">
+    <main id="main" className="flex min-h-svh flex-col items-center justify-center gap-6 px-6 text-center">
       <p className="font-mono text-eyebrow tracking-widest text-subtle uppercase">
         Something went wrong
       </p>

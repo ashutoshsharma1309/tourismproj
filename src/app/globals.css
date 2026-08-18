@@ -250,6 +250,47 @@
     border-radius: var(--radius-xs);
   }
 
+  /*
+   * The green focus ring is ~2.45:1 against the dark surfaces and the glass
+   * navbar — below the 3:1 that WCAG 1.4.11 requires for a non-text indicator.
+   * On those surfaces the ring switches to the inverse foreground, which is
+   * what the panorama viewer already did locally.
+   */
+  .bg-surface-inverse :focus-visible,
+  .glass-dark :focus-visible {
+    outline-color: var(--color-foreground-inverse);
+  }
+
+  /*
+   * The skip link's target. The header is fixed, so scrolling #main to the very
+   * top of the viewport puts the first heading underneath it.
+   */
+  [id="main"] {
+    scroll-margin-top: 6rem;
+  }
+
+  /*
+   * Focus for a "stretched link" card.
+   *
+   * These cards put the real <a> inside the heading and blow it up to cover the
+   * card with an absolutely positioned span. The link therefore sets
+   * focus-visible:outline-none — a ring drawn around a zero-height heading link
+   * would trace the text, not the card. Nothing was drawing a ring around the
+   * card instead, so tabbing through the monastery grid, the archive grid, the
+   * history timeline and the featured cards on the home page showed no focus at
+   * all: four of the product's primary navigation surfaces.
+   *
+   * :has() lets the card style itself from its own descendant's focus.
+   */
+  .card-focus:has(a:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .bg-surface-inverse .card-focus:has(a:focus-visible) {
+    outline-color: var(--color-foreground-inverse);
+  }
+
   ::selection {
     background-color: var(--color-primary);
     color: var(--color-primary-foreground);

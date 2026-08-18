@@ -80,13 +80,13 @@ export function Navbar() {
         onGlass ? "glass-dark border-x-0 border-t-0 border-b" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 md:px-6">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="text-glow" aria-label={`${SITE.name} — home`}>
           <Logo />
         </Link>
 
         <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center gap-4 xl:gap-6">
             {NAV_LINKS.map((link) => {
               const base = link.href.split("#")[0] || "/";
               const active = base !== "/" && pathname.startsWith(base);
@@ -96,9 +96,13 @@ export function Navbar() {
                     href={link.href}
                     aria-current={active ? "page" : undefined}
                     className={cn(
-                      "text-small font-medium transition-colors",
+                      "whitespace-nowrap text-small font-medium transition-colors",
                       active
-                        ? "text-accent"
+                        /* Was text-accent (#c08a2d), which measures 2.32:1
+                           against the glass navbar — axe flagged it as a
+                           serious contrast failure on 8 of 10 audited routes.
+                           accent-soft is the same gilt hue at 5.91:1. */
+                        ? "text-accent-soft"
                         : "text-foreground-inverse/80 hover:text-foreground-inverse",
                     )}
                   >
@@ -115,7 +119,7 @@ export function Navbar() {
             type="button"
             onClick={openSearch}
             aria-label="Search (Command K)"
-            className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
+            className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label whitespace-nowrap text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
           >
             <Search className="size-3.5" aria-hidden />
             <span className="hidden md:inline">Search</span>
@@ -131,7 +135,7 @@ export function Navbar() {
               onClick={() => setRoleOpen(!roleOpen)}
               aria-expanded={roleOpen}
               aria-haspopup="menu"
-              className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
+              className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label whitespace-nowrap text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
             >
               <UserRound className="size-3.5" aria-hidden />
               <span className="hidden xl:inline">View as:</span> {activeRole.label}
@@ -153,7 +157,7 @@ export function Navbar() {
                     className={cn(
                       "block rounded-md px-3 py-2 text-small transition-colors",
                       role.label === activeRole.label
-                        ? "bg-foreground-inverse/10 text-accent"
+                        ? "bg-foreground-inverse/10 text-accent-soft"
                         : "text-foreground-inverse/80 hover:bg-foreground-inverse/10 hover:text-foreground-inverse",
                     )}
                   >

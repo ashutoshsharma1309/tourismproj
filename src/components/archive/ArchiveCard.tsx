@@ -21,7 +21,7 @@ export function ArchiveCard({
   priority?: boolean;
 }) {
   return (
-    <article className="card-lift group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border bg-surface shadow-soft">
+    <article className="card-focus card-lift group relative flex h-full min-w-0 flex-col overflow-hidden rounded-xl border bg-surface shadow-soft">
       <div className="relative aspect-4/3 overflow-hidden bg-surface-muted">
         <Image
           src={item.mediaUrl}

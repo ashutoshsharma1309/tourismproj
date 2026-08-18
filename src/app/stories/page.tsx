@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function StoriesPage() {
   return (
     <>
-      <main className="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-7xl px-4 pt-28 pb-20 md:px-6">
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Stories of Sikkim
         </p>

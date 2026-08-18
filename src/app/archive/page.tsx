@@ -58,7 +58,7 @@ export default async function ArchivePage() {
 
   return (
     <>
-      <main>
+      <main id="main">
         {/* ------------------------------------------------------------ hero */}
         <section className="relative overflow-hidden bg-surface-inverse">
           {featured[0] ? (

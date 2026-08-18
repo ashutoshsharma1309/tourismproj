@@ -30,7 +30,7 @@ const WORKFLOW = [
 export default function ContributePage() {
   return (
     <>
-      <main className="mx-auto max-w-5xl px-4 pt-24 pb-20 md:px-6">
+      <main id="main" className="mx-auto max-w-5xl px-4 pt-24 pb-20 md:px-6">
         <Link
           href="/archive"
           className="inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"

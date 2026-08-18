@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function PlannerPage() {
   return (
     <>
-      <main className="pb-20">
+      <main id="main" className="pb-20">
         {/* Hero */}
         <div className="relative flex min-h-105 items-end overflow-hidden bg-surface-inverse">
           <Image
