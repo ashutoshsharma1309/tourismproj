@@ -1,4 +1,3 @@
-import { Instagram, Twitter, Youtube } from "lucide-react";
 import Link from "next/link";
 
 import { LogoMark } from "@/components/brand/Logo";
@@ -32,11 +31,18 @@ const COLUMNS = [
   },
 ] as const;
 
-const SOCIALS = [
-  { href: "https://instagram.com", label: "Instagram", icon: Instagram },
-  { href: "https://twitter.com", label: "Twitter", icon: Twitter },
-  { href: "https://youtube.com", label: "YouTube", icon: Youtube },
-] as const;
+/*
+ * There is no SOCIALS list here any more.
+ *
+ * Three icons linked to instagram.com, twitter.com and youtube.com — the
+ * platforms' own front doors, not accounts belonging to this project, because
+ * this project has none. A row of social icons is read as "we are on these
+ * platforms", so the row was a claim, and it was false. On a site whose whole
+ * argument is that an unsourced claim does not ship, it was also the only
+ * assertion in the chrome that no source backed.
+ *
+ * Restore this when real accounts exist, with their real handles.
+ */
 
 export function Footer() {
   return (
@@ -59,19 +65,6 @@ export function Footer() {
             <p className="mt-1 font-mono text-caption tracking-widest text-accent uppercase">
               {SITE.motto}
             </p>
-            <ul className="mt-6 flex gap-3">
-              {SOCIALS.map((social) => (
-                <li key={social.label}>
-                  <a
-                    href={social.href}
-                    aria-label={social.label}
-                    className="flex size-10 items-center justify-center rounded-full border border-border-inverse text-foreground-inverse/70 transition-colors hover:border-accent hover:text-accent"
-                  >
-                    <social.icon className="size-4" aria-hidden />
-                  </a>
-                </li>
-              ))}
-            </ul>
           </div>
 
           {COLUMNS.map((column) => (

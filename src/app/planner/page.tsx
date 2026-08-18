@@ -7,8 +7,14 @@ import { img } from "@/data/images";
 
 export const metadata: Metadata = {
   title: "Trip Planner",
+  /*
+   * This promised "real hotels and transparent costs". The planner places
+   * neither: it has no licensed rates feed, so it names no property and its
+   * cost panel carries exactly one line, the statutory ₹50 TSD fee. Saying
+   * what it does quote is more transparent than the word "transparent".
+   */
   description:
-    "Tell Ney Heritage your interests, budget and pace — get a day-by-day Sikkim heritage journey with real hotels and transparent costs.",
+    "Tell Sikkim Darshan your interests, budget and pace — get a day-by-day Sikkim heritage journey routed over real geography, costed at the one fee the state actually publishes.",
 };
 
 export default function PlannerPage() {

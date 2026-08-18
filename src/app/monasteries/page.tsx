@@ -7,8 +7,15 @@ import { MONASTERY_TRADITIONS, monasteries } from "@/data/monasteries";
 
 export const metadata: Metadata = {
   title: "Monasteries",
+  /*
+   * This promised "360° tours ... and festival calendars". No 360° tour
+   * exists anywhere in the archive, and this page carries no calendar. A
+   * meta description is the first thing a search result or a shared link
+   * shows, which makes it the worst place to keep a claim the page cannot
+   * honour.
+   */
   description:
-    "Explore Sikkim's living monasteries — 360° tours, audio guides, digital archives and festival calendars.",
+    "All 15 catalogued gompas of Sikkim — searchable by district and tradition, mapped where a source publishes a coordinate, with credited photography and narrated guides in four languages.",
 };
 
 export default function MonasteriesPage() {

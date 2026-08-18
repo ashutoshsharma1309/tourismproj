@@ -43,8 +43,17 @@ const PRESERVATION_PILLARS = [
   },
   {
     icon: Camera,
-    title: "Virtual documentation",
-    text: "360° captures of prayer halls and courtyards, scene by scene, hotspot by hotspot.",
+    /*
+      This promised "360° captures of prayer halls and courtyards, scene by
+      scene, hotspot by hotspot". None of it exists. The sweep for a licensed
+      360° sphere of a Sikkim monastery covered 35 sites and returned nothing;
+      what survived inspection is one wide stitched photograph of Rumtek's
+      courtyard, published as the flat panorama it is. There are no scenes and
+      no hotspots to step between. The pillar now names the photography the
+      archive actually holds.
+    */
+    title: "Visual documentation",
+    text: "Evidenced Commons photography for every site a licensed source could supply, and one verified panorama of Rumtek's courtyard.",
   },
   {
     icon: ScrollText,
@@ -53,8 +62,16 @@ const PRESERVATION_PILLARS = [
   },
   {
     icon: Users,
+    /*
+      This claimed monastery admins "curate their own scenes, stories and
+      archives through the platform". There is no such role: the operator
+      dashboards were removed along with the fabricated data they displayed.
+      What the platform does offer is /archive/contribute, where a submission
+      is created pending-review and no code path in the application can
+      publish it.
+    */
     title: "Community knowledge",
-    text: "Monastery admins curate their own scenes, stories and archives through the platform.",
+    text: "Anyone can contribute an object to the archive. Nothing publishes until a curator has reviewed it.",
   },
   {
     icon: Accessibility,
@@ -125,7 +142,7 @@ export default async function HomePage() {
               most needs to deliver.
             */}
             {/*
-              The 76px headline used to read "Ney Heritage" — a brand name a
+              The 76px headline used to read "Sikkim Darshan" — a brand name a
               first-time visitor has never heard, stated at the largest size on
               the page, while what the product actually does sat beneath it at
               17px. The proposition is now the headline and the wordmark has
@@ -216,11 +233,20 @@ export default async function HomePage() {
                 A kingdom&apos;s memory, kept in wood, stone and story
               </h2>
               <p className="mt-5 text-body-lg leading-relaxed text-muted">
+                {/*
+                  This read "walkable in 360°, readable in its own words, and
+                  bookable when you're ready to stand there yourself". Two of
+                  those three were untrue: nothing here is walkable in 360°,
+                  and nothing is bookable — /hotels is a directory that
+                  resolves to Google Maps precisely because no licensed
+                  booking feed exists. Both claims had already been struck
+                  from the site's meta description; this paragraph was where
+                  they survived.
+                */}
                 For three centuries the monasteries of Sikkim have held the
                 state&apos;s art, its festivals and its histories. {SITE.name}{" "}
-                documents that living heritage — walkable in 360°, readable in
-                its own words, and bookable when you&apos;re ready to stand
-                there yourself.
+                documents that living heritage — traced to named sources,
+                readable in its own words, and narrated in four languages.
               </p>
               <p className="mt-4 font-mono text-small tracking-widest text-accent uppercase">
                 {SITE.motto}
@@ -231,14 +257,18 @@ export default async function HomePage() {
                 <div className="relative aspect-4/3 overflow-hidden rounded-xl border shadow-card">
                   <Image
                     src={img("int/thiksey")}
-                    alt="Butter lamps and offering bowls inside a Himalayan monastery"
+                    alt="Butter lamps and offering bowls inside the prayer hall at Thiksey Monastery, Ladakh"
                     fill
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
                   />
                 </div>
+                {/* Not Sikkim. The archive warns wherever an object was
+                    photographed elsewhere in the Himalaya, and this figure was
+                    the one place on the home page still leaving that unsaid. */}
                 <figcaption className="mt-2 text-caption text-subtle">
-                  Offering bowls and silk khata inside a Himalayan gompa.
+                  Offering bowls and silk khata inside a Himalayan gompa —
+                  photographed at Thiksey, Ladakh, not in Sikkim.
                 </figcaption>
               </figure>
             </ScrollReveal>
