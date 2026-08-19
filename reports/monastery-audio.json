@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-17",
+  "generatedAt": "2026-08-19",
   "agent": "Heritage Audio Agent",
   "method": "Scripts assembled from verified record fields only; no generative prose. Sourced summary sentences are quoted from the cited article. Narration is machine-synthesised and disclosed as such in the UI.",
   "languages": {
     "supported": [
       {
         "code": "en",
-        "voice": "Daniel",
+        "voice": "en_US-ryan-high",
         "label": "English"
       },
       {
@@ -15,14 +15,19 @@
         "label": "हिन्दी"
       },
       {
-        "code": "ne",
-        "voice": "ne_NP-google-medium",
-        "label": "नेपाली"
+        "code": "de",
+        "voice": "de_DE-thorsten-high",
+        "label": "Deutsch"
       },
       {
-        "code": "bn",
-        "voice": "Piya",
-        "label": "বাংলা"
+        "code": "fr",
+        "voice": "fr_FR-tom-medium",
+        "label": "Français"
+      },
+      {
+        "code": "es",
+        "voice": "es_MX-claude-high",
+        "label": "Español"
       }
     ],
     "blocked": [
@@ -40,9 +45,9 @@
   },
   "totals": {
     "eligibleMonasteries": 15,
-    "guidesGenerated": 60,
+    "guidesGenerated": 75,
     "monasteriesWithAudio": 15,
-    "withinTargetDuration": 60,
+    "withinTargetDuration": 71,
     "overMaximumDuration": 0,
     "skipped": 0
   },

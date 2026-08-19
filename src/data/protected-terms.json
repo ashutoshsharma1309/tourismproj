@@ -1,0 +1,65 @@
+{
+  "_comment": "Terms that must survive translation intact. A monastery is not a 'Kloster Rumtek' in the sense that Rumtek can be translated — Rumtek is the name, and only the common noun around it changes. This file separates the two so a translation pipeline can localise the noun and leave the name alone.",
+  "_rule": "canonical = never translated, never transliterated. commonNoun = translated per language. The generic word is the ONLY part that moves.",
+  "_verifiedAt": "2026-08-19",
+  "_sources": ["src/data/monasteries.ts", "src/data/places.ts", "src/data/stories/festivals.ts"],
+
+  "commonNoun": {
+    "monastery": { "en": "Monastery", "hi": "मठ", "de": "Kloster", "fr": "monastère", "es": "monasterio" },
+    "lake":      { "en": "Lake",      "hi": "झील",  "de": "See",     "fr": "lac",       "es": "lago" },
+    "pass":      { "en": "Pass",      "hi": "दर्रा", "de": "Pass",    "fr": "col",       "es": "paso" },
+    "valley":    { "en": "Valley",    "hi": "घाटी", "de": "Tal",     "fr": "vallée",    "es": "valle" },
+    "district":  { "en": "district",  "hi": "जिला", "de": "Distrikt","fr": "district",  "es": "distrito" },
+    "festival":  { "en": "festival",  "hi": "उत्सव","de": "Fest",    "fr": "fête",      "es": "fiesta" }
+  },
+
+  "canonical": {
+    "Rumtek":            { "kind": "monastery", "note": "Seat of the Karma Kagyu lineage." },
+    "Pemayangtse":       { "kind": "monastery" },
+    "Tashiding":         { "kind": "monastery" },
+    "Enchey":            { "kind": "monastery" },
+    "Lingdum":           { "kind": "monastery", "alias": "Ranka" },
+    "Phodong":           { "kind": "monastery" },
+    "Phensang":          { "kind": "monastery" },
+    "Lachen":            { "kind": "monastery" },
+    "Lachung":           { "kind": "monastery" },
+    "Sanga Choeling":    { "kind": "monastery" },
+    "Dubdi":             { "kind": "monastery", "note": "The kingdom's first gompa." },
+    "Ralang":            { "kind": "monastery" },
+    "Kewzing":           { "kind": "monastery" },
+    "Rinchenpong":       { "kind": "monastery" },
+    "Tsuklakhang":       { "kind": "monastery", "note": "The royal chapel." },
+
+    "Sikkim":            { "kind": "state" },
+    "Gangtok":           { "kind": "town" },
+    "Namchi":            { "kind": "town" },
+    "Gyalshing":         { "kind": "town" },
+    "Mangan":            { "kind": "town" },
+    "Pelling":           { "kind": "town" },
+    "Yuksom":            { "kind": "town", "note": "Site of the 1642 crowning." },
+
+    "Khangchendzonga":   { "kind": "mountain", "note": "Guardian deity as well as a peak. Never rendered as the anglicised 'Kanchenjunga' in narration." },
+    "Tsomgo":            { "kind": "lake" },
+    "Gurudongmar":       { "kind": "lake" },
+    "Khecheopalri":      { "kind": "lake" },
+    "Yumthang":          { "kind": "valley" },
+    "Nathu La":          { "kind": "pass", "note": "'La' already means pass; never write 'Nathu La Pass'." },
+
+    "Pang Lhabsol":      { "kind": "festival", "note": "Honours Khangchendzonga." },
+    "Losar":             { "kind": "festival" },
+    "Saga Dawa":         { "kind": "festival" },
+    "Bumchu":            { "kind": "festival", "note": "The water ceremony at Tashiding." },
+
+    "Chogyal":           { "kind": "title", "note": "The kings of Sikkim. A title, not a name — but not translated." },
+    "gompa":             { "kind": "term", "note": "Keep as a loan word; gloss on first use." },
+    "chorten":           { "kind": "term" },
+    "thangka":           { "kind": "term" },
+    "cham":              { "kind": "term", "note": "The masked dance." },
+    "Karma Kagyu":       { "kind": "lineage" },
+    "Nyingma":           { "kind": "lineage" },
+    "Zurmang Kagyu":     { "kind": "lineage" },
+    "Lepcha":            { "kind": "community" },
+    "Bhutia":            { "kind": "community" },
+    "Limbu":             { "kind": "community" }
+  }
+}

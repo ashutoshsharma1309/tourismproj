@@ -19,7 +19,7 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { BLOCKED_LANGUAGES, TEMPLATES, composeScript } from "./audio-scripts.mjs";
+import { BLOCKED_LANGUAGES, TEMPLATES, composeScript, localiseName } from "./audio-scripts.mjs";
 import { existsSync, mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 
 const RETRIEVED_AT = new Date().toISOString().slice(0, 10);
@@ -34,16 +34,56 @@ const TARGET_MAX_SECONDS = 90;
 /** Piper (CC-BY-SA voice models) covers languages macOS has no voice for. */
 const PIPER = {
   python: ".venv-tts/bin/python",
-  models: { ne: ".tts-models/ne_NP-google-medium.onnx" },
+  models: {
+    en: ".tts-models/en_US-ryan-high.onnx",
+    de: ".tts-models/de_DE-thorsten-high.onnx",
+    fr: ".tts-models/fr_FR-tom-medium.onnx",
+    es: ".tts-models/es_MX-claude-high.onnx",
+  },
   attribution:
-    "Nepali narration uses the Piper ne_NP-google-medium voice, trained on OpenSLR-43 (CC-BY-SA-4.0).",
+    "Narration uses Piper (MIT) with voices from the rhasspy/piper-voices catalogue. No voice here imitates an identifiable person.",
 };
 
+/**
+ * The published voices.
+ *
+ * Every one was chosen by rendering the same pronunciation stress test —
+ * Pemayangtse, Khangchendzonga, Pang Lhabsol, three founding dates — and
+ * measuring character error rate through faster-whisper `medium`. The workings
+ * are in voice-benchmark/v2/ and the blind clips in voice-benchmark/v2/blind/.
+ *
+ * Two results were not what I expected, and both are recorded because they
+ * changed the decision:
+ *
+ *   ENGLISH moved off macOS Daniel to Piper ryan. Both score WER 20.3% on this
+ *   script, but Daniel's character error rate is 7.0% against ryan's 4.7% — the
+ *   difference is in how much of each mangled proper noun survives.
+ *
+ *   HINDI STAYS on macOS Lekha, and it is not close: 41.4% WER against 55.7%
+ *   for the best Piper Hindi voice, 15.9% CER against 27.8%. Three Piper Hindi
+ *   models were downloaded and all three lost. Swapping Hindi to Piper for the
+ *   sake of a uniform engine would have made the Hindi guide measurably harder
+ *   to understand.
+ *
+ * CER is an intelligibility proxy, not a verdict on how human a voice sounds.
+ * That judgement needs ears and is left to the blind test.
+ */
 const VOICES = {
-  en: { engine: "say", voice: "Daniel", rate: 128, label: TEMPLATES.en.label },
+  en: { engine: "piper", voice: "en_US-ryan-high", label: TEMPLATES.en.label },
   hi: { engine: "say", voice: "Lekha", rate: 136, label: TEMPLATES.hi.label },
+  de: { engine: "piper", voice: "de_DE-thorsten-high", label: TEMPLATES.de.label },
+  fr: { engine: "piper", voice: "fr_FR-tom-medium", label: TEMPLATES.fr.label },
+  es: { engine: "piper", voice: "es_MX-claude-high", label: TEMPLATES.es.label },
+};
+
+/**
+ * Retired from the public selector, kept here so the archive can still be
+ * regenerated and the old assets rebuilt if the decision is revisited.
+ * Nepali and Bengali audio is NOT deleted — see reports/audio-archive/.
+ */
+export const RETIRED_VOICES = {
   ne: { engine: "piper", voice: "ne_NP-google-medium", label: TEMPLATES.ne.label },
-  bn: { engine: "say", voice: "Piya", rate: 136, label: TEMPLATES.bn.label, visitorLanguage: true },
+  bn: { engine: "say", voice: "Piya", rate: 136, label: TEMPLATES.bn.label },
 };
 
 
@@ -126,15 +166,38 @@ function normaliseLoudness(wavPath) {
   }
   if (peak === 0 || n === 0) return;
   const rms = Math.sqrt(sumSq / n);
-  // Gain for perceived loudness, then pull back if it would breach the ceiling.
+  /*
+   * Match perceived loudness, then control the peaks — in that order.
+   *
+   * The previous version did the reverse: it computed the RMS gain and then
+   * scaled the WHOLE FILE down if the loudest sample would breach the ceiling.
+   * That makes a peaky voice quiet. fr_FR-tom has a crest factor of 21.3 dB
+   * against 14.6–18.1 dB for the other four, so French landed 3 dB below every
+   * other language and the player audibly dipped when a listener switched to it.
+   *
+   * Instead the gain is applied in full and only the handful of samples above
+   * the knee are curved down, with a smooth tanh shoulder so nothing is
+   * hard-clipped. Below the knee — which is the overwhelming majority of any
+   * speech waveform — samples are untouched, so this is not compression in any
+   * audible sense: it is peak control, and it is what lets every language sit
+   * at the same loudness.
+   */
   let gain = TARGET_RMS / rms;
-  const peakAfter = (peak / 32768) * gain;
-  if (peakAfter > PEAK_CEILING) gain *= PEAK_CEILING / peakAfter;
   if (gain > 8 || !Number.isFinite(gain)) return;
+
+  const KNEE = 0.70; // below this, entirely linear
+  const softLimit = (x) => {
+    const a = Math.abs(x);
+    if (a <= KNEE) return x;
+    const over = (a - KNEE) / (1 - KNEE);
+    const curved = KNEE + (PEAK_CEILING - KNEE) * Math.tanh(over);
+    return Math.sign(x) * curved;
+  };
+
   for (let i = 0; i < n; i++) {
     const off = offset + i * 2;
-    const v = Math.max(-32768, Math.min(32767, Math.round(buf.readInt16LE(off) * gain)));
-    buf.writeInt16LE(v, off);
+    const v = softLimit((buf.readInt16LE(off) / 32768) * gain);
+    buf.writeInt16LE(Math.max(-32768, Math.min(32767, Math.round(v * 32768))), off);
   }
   writeFileSync(wavPath, buf);
 }
@@ -208,6 +271,9 @@ function main() {
   const only = process.argv.includes("--slug")
     ? process.argv[process.argv.indexOf("--slug") + 1]
     : null;
+  const onlyLang = process.argv.includes("--lang")
+    ? process.argv[process.argv.indexOf("--lang") + 1]
+    : null;
 
   // Narrate the records the site publishes: curated and human-reviewed, with
   // verified founding years and lineages. Discovery output is a research feed,
@@ -224,9 +290,13 @@ function main() {
     const dir = `${OUT_DIR}/${m.slug}`;
     mkdirSync(dir, { recursive: true });
 
+    /* --lang=fr regenerates one language without touching the other four. */
     for (const lang of Object.keys(VOICES)) {
+      if (onlyLang && lang !== onlyLang) continue;
       const script = composeScript(lang, {
-        name: m.name,
+        /* "Rumtek Monastery" → "Kloster Rumtek" / "monastère de Rumtek". Only
+           the common noun moves; the name itself never does. */
+        name: localiseName(m.name, lang),
         district: m.district,
         establishedYear: m.establishedYear,
         tradition: m.tradition,
@@ -234,7 +304,7 @@ function main() {
       if (!script) continue;
 
       // QA round 2 runs before synthesis: never voice a script that drifted.
-      const purity = checkLanguagePurity(lang, script, [m.name, m.district ?? ""]);
+      const purity = checkLanguagePurity(lang, script, [m.name, localiseName(m.name, lang), m.district ?? ""]);
       if (!purity.pass) {
         skipped.push({ slug: m.slug, lang, reason: `language purity failed: ${purity.foreignRun}` });
         continue;
@@ -313,7 +383,37 @@ function main() {
     skipped,
   };
 
-  writeFileSync("src/data/generated/audio-guides.json", JSON.stringify(guides, null, 2) + "\n");
+  /*
+   * A partial run must not destroy the record of the languages it did not touch.
+   *
+   * `--lang fr` rendered fifteen French guides and then wrote a fifteen-row
+   * file, silently deleting the sixty rows for the other four languages while
+   * their audio sat perfectly intact on disk. The site would have shown French
+   * only. Merge on (monastery, language) instead: rows regenerated in this run
+   * replace their predecessors, and rows that were not regenerated survive.
+   */
+  const JSON_PATH = "src/data/generated/audio-guides.json";
+  let merged = guides;
+  if (only || onlyLang) {
+    let previous = [];
+    try {
+      const raw = JSON.parse(readFileSync(JSON_PATH, "utf8"));
+      previous = Array.isArray(raw) ? raw : [];
+    } catch {
+      previous = [];
+    }
+    const replaced = new Set(guides.map((g) => `${g.monasterySlug}/${g.language}`));
+    merged = [
+      ...previous.filter((g) => !replaced.has(`${g.monasterySlug}/${g.language}`)),
+      ...guides,
+    ].sort((a, b) =>
+      a.monasterySlug.localeCompare(b.monasterySlug) || a.language.localeCompare(b.language),
+    );
+    process.stdout.write(
+      `\n  partial run: ${guides.length} regenerated, ${merged.length - guides.length} preserved\n`,
+    );
+  }
+  writeFileSync(JSON_PATH, JSON.stringify(merged, null, 2) + "\n");
   writeFileSync("reports/monastery-audio.json", JSON.stringify(report, null, 2) + "\n");
   console.log("\n" + JSON.stringify(report.totals, null, 2));
 }

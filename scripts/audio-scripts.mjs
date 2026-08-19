@@ -22,6 +22,11 @@ export const DISTRICTS = {
   hi: { Gangtok: "गंगटोक", Mangan: "मंगन", Namchi: "नामची", Gyalshing: "ग्यालशिंग", Pakyong: "पाक्योंग", Soreng: "सोरेंग" },
   ne: { Gangtok: "गान्तोक", Mangan: "मंगन", Namchi: "नाम्ची", Gyalshing: "ग्याल्शिङ", Pakyong: "पाक्योङ", Soreng: "सोरेङ" },
   bn: { Gangtok: "গ্যাংটক", Mangan: "মাঙ্গান", Namchi: "নামচি", Gyalshing: "গিয়ালশিং", Pakyong: "পাক্যং", Soreng: "সোরেং" },
+  /* Latin-script languages keep the district names exactly as Sikkim writes
+     them. They are proper nouns; there is nothing to translate. */
+  de: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  fr: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  es: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
 };
 
 /** Lineage glosses, written per language rather than translated at runtime. */
@@ -49,6 +54,27 @@ export const TRADITIONS = {
     Kagyu: "কাগ্যু ধারার সঙ্গে",
     "Karma Kagyu": "কর্ম কাগ্যু ধারার সঙ্গে",
     "Zurmang Kagyu": "জুরমাং কাগ্যু ধারার সঙ্গে",
+  },
+  /* Lineage names stay as they are — Nyingma and Kagyu are not German, French
+     or Spanish words and have no translation. Only the gloss around them is
+     written in each language. */
+  de: {
+    Nyingma: "der Nyingma-Schule an, der ältesten der tibetisch-buddhistischen Traditionen",
+    Kagyu: "der Kagyü-Schule an",
+    "Karma Kagyu": "der Karma-Kagyü-Linie an",
+    "Zurmang Kagyu": "der Zurmang-Kagyü-Linie an",
+  },
+  fr: {
+    Nyingma: "à l'école Nyingma, la plus ancienne des traditions du bouddhisme tibétain",
+    Kagyu: "à l'école Kagyu",
+    "Karma Kagyu": "à la lignée Karma Kagyu",
+    "Zurmang Kagyu": "à la lignée Zurmang Kagyu",
+  },
+  es: {
+    Nyingma: "a la escuela Nyingma, la más antigua de las tradiciones del budismo tibetano",
+    Kagyu: "a la escuela Kagyu",
+    "Karma Kagyu": "al linaje Karma Kagyu",
+    "Zurmang Kagyu": "al linaje Zurmang Kagyu",
   },
 };
 
@@ -115,6 +141,77 @@ export const TEMPLATES = {
       "तपाईं आउनुभयो भने शालीन पोशाक लगाउनुहोस्, मन्दिर र चैत्यहरूको परिक्रमा घडीको दिशामा गर्नुहोस्, प्रार्थना कक्ष प्रवेश गर्नुअघि जुत्ता खोल्नुहोस्, र भित्र फोटो खिच्नुअघि अनुमति लिनुहोस्।",
     closing: (n) => `यस विवरणका सबै जानकारी ${n} को पृष्ठमा उल्लेखित स्रोतहरूबाट लिइएका हुन्।`,
   },
+  /*
+   * German, French and Spanish.
+   *
+   * Written per language rather than machine-translated from the English, for
+   * the same reason the Hindi and Bengali blocks were: a translator that does
+   * not know the subject renders "Kagyu order" as an order of monks, "gompa"
+   * as a generic temple, and "Chogyal" as a surname. The proper nouns held in
+   * src/data/protected-terms.json never move; only the common noun beside them
+   * does — "Rumtek Monastery" is "Kloster Rumtek", never "Kloster Rumtekkloster".
+   *
+   * Sentences are kept short on purpose. Punctuation is where a TTS engine
+   * takes breath, and long clauses are the main cause of the flat, rushed
+   * delivery that reads as synthetic.
+   */
+  de: {
+    label: "Deutsch",
+    welcome: (n) => `Willkommen im ${n}.`,
+    place: (d) => (d ? `Es liegt im Distrikt ${d}, im indischen Bundesstaat Sikkim, im östlichen Himalaya.` : `Es liegt im indischen Bundesstaat Sikkim, im östlichen Himalaya.`),
+    founded: (y, t) =>
+      y && t ? `Es wurde ${y} gegründet und gehört ${t}.`
+      : y ? `Es wurde ${y} gegründet.`
+      : t ? `Es gehört ${t}.`
+      : null,
+    kingdom:
+      "Sikkim war ein Himalaya-Königreich, bis es 1975 ein indischer Bundesstaat wurde. Seine Klöster waren eng mit dem Leben dieses Königreichs verbunden.",
+    context:
+      "Ein Gompa in Sikkim ist ebenso eine lebendige Gemeinschaft wie ein Denkmal. Hinter den bemalten Türen liegen Gebetshallen und eine Bibliothek gedruckter Schriften. Hier leben Mönche. Sie studieren, sie debattieren, und sie halten die Rituale des Jahres.",
+    architecture:
+      "Die Bauweise folgt tibetischer Klostertradition. Dicke Mauern tragen eine leuchtend bemalte Fassade. Im Inneren steht eine Versammlungshalle mit Säulen. Darüber fängt ein vergoldetes Dach das erste Licht der Berge.",
+    etiquette:
+      "Wenn Sie zu Besuch kommen, kleiden Sie sich bitte zurückhaltend. Umrunden Sie Schreine und Stupas im Uhrzeigersinn. Ziehen Sie vor dem Betreten einer Gebetshalle die Schuhe aus, und fragen Sie, bevor Sie drinnen fotografieren.",
+    closing: (n) => `Alle Angaben dieses Führers stammen aus den Quellen, die auf der Seite zu ${n} aufgeführt sind.`,
+  },
+  fr: {
+    label: "Français",
+    welcome: (n) => `Bienvenue au ${n}.`,
+    place: (d) => (d ? `Il se trouve dans le district de ${d}, dans l'État indien du Sikkim, dans l'Himalaya oriental.` : `Il se trouve dans l'État indien du Sikkim, dans l'Himalaya oriental.`),
+    founded: (y, t) =>
+      y && t ? `Il fut fondé en ${y} et appartient ${t}.`
+      : y ? `Il fut fondé en ${y}.`
+      : t ? `Il appartient ${t}.`
+      : null,
+    kingdom:
+      "Le Sikkim fut un royaume himalayen jusqu'à devenir un État indien en 1975. Ses monastères étaient étroitement liés à la vie de ce royaume.",
+    context:
+      "Un gompa du Sikkim est une communauté vivante autant qu'un monument. Derrière ses portes peintes se trouvent des salles de prière et une bibliothèque de textes imprimés. Des moines y vivent. Ils étudient, ils débattent, et ils perpétuent les rituels de l'année.",
+    architecture:
+      "L'architecture suit la tradition monastique tibétaine. Des murs épais portent une façade aux couleurs vives. À l'intérieur s'ouvre une salle d'assemblée à colonnes. Au-dessus, un toit orné de dorures capte la première lumière des montagnes.",
+    etiquette:
+      "Si vous venez, habillez-vous sobrement. Contournez les sanctuaires et les stupas dans le sens des aiguilles d'une montre. Retirez vos chaussures avant d'entrer dans une salle de prière, et demandez avant de photographier à l'intérieur.",
+    closing: (n) => `Toutes les informations de ce guide proviennent des sources indiquées sur la page consacrée à ${n}.`,
+  },
+  es: {
+    label: "Español",
+    welcome: (n) => `Bienvenido al ${n}.`,
+    place: (d) => (d ? `Se encuentra en el distrito de ${d}, en el estado indio de Sikkim, en el Himalaya oriental.` : `Se encuentra en el estado indio de Sikkim, en el Himalaya oriental.`),
+    founded: (y, t) =>
+      y && t ? `Fue fundado en ${y} y pertenece ${t}.`
+      : y ? `Fue fundado en ${y}.`
+      : t ? `Pertenece ${t}.`
+      : null,
+    kingdom:
+      "Sikkim fue un reino del Himalaya hasta convertirse en estado indio en 1975. Sus monasterios estuvieron estrechamente ligados a la vida de aquel reino.",
+    context:
+      "Un gompa de Sikkim es una comunidad viva tanto como un monumento. Tras sus puertas pintadas hay salas de oración y una biblioteca de textos impresos. Aquí viven monjes. Estudian, debaten y mantienen los rituales del año.",
+    architecture:
+      "La arquitectura sigue la tradición monástica tibetana. Muros gruesos sostienen una fachada de colores intensos. Dentro se abre una sala de asambleas con columnas. Sobre ella, un tejado rematado en dorado recoge la primera luz de las montañas.",
+    etiquette:
+      "Si viene de visita, vista con discreción. Rodee los santuarios y las estupas en el sentido de las agujas del reloj. Descálcese antes de entrar en una sala de oración, y pida permiso antes de fotografiar el interior.",
+    closing: (n) => `Toda la información de esta guía procede de las fuentes indicadas en la página de ${n}.`,
+  },
   bn: {
     label: "বাংলা",
     welcome: (n) => `${n}-এ আপনাকে স্বাগতম।`,
@@ -135,6 +232,48 @@ export const TEMPLATES = {
     closing: (n) => `এই বিবরণের সমস্ত তথ্য ${n} পৃষ্ঠায় তালিকাভুক্ত উৎস থেকে নেওয়া।`,
   },
 };
+
+/**
+ * Render a monastery's name in the target language.
+ *
+ * Only the common noun moves. "Rumtek Monastery" is "Kloster Rumtek" in German
+ * and "monastère de Rumtek" in French — Rumtek itself is a name and is never
+ * translated, transliterated or inflected. Anything not recognised is returned
+ * untouched, because passing a name through unchanged is always safer than
+ * guessing at it.
+ *
+ * The article forms in the templates were written to agree with these: German
+ * `Kloster` is neuter ("im Kloster"), French `monastère` and Spanish
+ * `monasterio` are masculine ("au monastère", "al monasterio").
+ */
+const NAME_FORMS = {
+  en: (core, noun) => `${core} ${noun}`,
+  hi: (core) => core,
+  ne: (core) => core,
+  bn: (core) => core,
+  de: (core, noun) => `${noun} ${core}`,
+  fr: (core, noun) => `${noun} de ${core}`,
+  es: (core, noun) => `${noun} de ${core}`,
+};
+
+const COMMON_NOUN = {
+  en: { monastery: "Monastery" },
+  de: { monastery: "Kloster" },
+  fr: { monastery: "monastère" },
+  es: { monastery: "monasterio" },
+};
+
+export function localiseName(name, lang) {
+  const form = NAME_FORMS[lang];
+  if (!form) return name;
+  /* Strip the English common noun(s) to recover the bare proper name. Palace is
+     handled because one record is "Tsuklakhang Palace Monastery"; the name the
+     narration wants there is simply Tsuklakhang. */
+  const core = name.replace(/\s+(Monastery|Palace)\b/g, "").trim();
+  const noun = COMMON_NOUN[lang]?.monastery;
+  if (!noun) return core; // Devanagari/Bengali scripts take the bare name
+  return form(core, noun);
+}
 
 /** Compose one language's full script from verified fields only. */
 export function composeScript(lang, { name, district, establishedYear, tradition }) {
