@@ -6,19 +6,23 @@ import { SubmissionQueue } from "@/components/archive/SubmissionQueue";
 import { Badge } from "@/components/ui/Badge";
 import discovered from "@/data/generated/monasteries.discovered.json";
 import { monasteries } from "@/data/monasteries";
+import { currentRole } from "@/lib/auth";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Heritage review queue",
   description:
     "Monastery candidates found by the Heritage Discovery Agent, with the evidence behind each one, awaiting human review.",
   /*
-   * This page lists people who sent things in: their names, and until now the
-   * address they sent from. It is linked from the navbar and footer on every
-   * page and this build has no curator authentication, so it was an indexable
-   * directory of volunteers' contact details. Excluded from search here and in
-   * robots.ts; the contact addresses themselves are no longer rendered.
+   * This page lists people who sent things in: their names, and at one point
+   * the address they sent from. It was linked from the navbar and footer on
+   * every page with no authentication at all — an indexable directory of
+   * volunteers' contact details.
    *
-   * Neither of those is the real fix. The route needs an authentication gate.
+   * It now requires a curator session (see the gate below and src/lib/auth.ts),
+   * the contact addresses are no longer rendered, and it is out of the public
+   * navigation. noindex and the robots.ts disallow stay as belt and braces:
+   * they are not access control, but there is no reason to court a crawler.
    */
   robots: { index: false, follow: false },
 };
@@ -56,7 +60,15 @@ export const dynamic = "force-dynamic";
  * reaches the public catalogue until someone approves it, which is the
  * difference between an agentic pipeline and an automated rumour mill.
  */
-export default function ReviewQueuePage() {
+export default async function ReviewQueuePage() {
+  /*
+   * The gate. This page renders unreviewed contributions together with the
+   * names and contact details of the people who sent them, and it was reachable
+   * by anyone who followed a link in the navbar. robots.txt and a noindex kept
+   * it out of search results, which is containment, not access control.
+   */
+  if ((await currentRole()) !== "curator") redirect("/curator/login");
+
   const candidates = (discovered as Candidate[]).filter((c) => c.isNew);
   const published = new Set(monasteries.map((m) => m.slug));
 

@@ -18,7 +18,7 @@ import { NAV_LINKS, SITE } from "@/lib/constants";
  */
 const ROLES = [
   { href: "/", label: "Visitor" },
-  { href: "/preservation/review", label: "Curator" },
+  { href: "/curator/login", label: "Curator" },
 ] as const;
 
 /**
