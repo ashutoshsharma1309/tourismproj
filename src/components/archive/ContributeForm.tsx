@@ -4,7 +4,8 @@ import { AlertTriangle, CheckCircle2, Info, Loader2, Upload, X } from "lucide-re
 import Link from "next/link";
 import { useActionState, useRef, useState } from "react";
 
-import { CONTRIBUTE_INITIAL, submitContribution } from "@/app/archive/contribute/actions";
+import { submitContribution } from "@/app/archive/contribute/actions";
+import { CONTRIBUTE_INITIAL } from "@/app/archive/contribute/state";
 import { PendingReviewChip } from "@/components/ui/VerificationChip";
 import { ARCHIVE_CATEGORY_ORDER } from "@/data/archive";
 import { cn } from "@/lib/cn";

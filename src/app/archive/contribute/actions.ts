@@ -3,7 +3,8 @@
 import { revalidatePath } from "next/cache";
 
 import { createSubmission, SubmissionError } from "@/lib/archive-submissions";
-import type { ArchiveSubmission } from "@/lib/archive-submissions";
+import { consumeSubmissionQuota, SUBMISSION_LIMIT } from "@/lib/rate-limit";
+import type { ContributeState } from "./state";
 
 /**
  * The contribution Server Action.
@@ -15,15 +16,6 @@ import type { ArchiveSubmission } from "@/lib/archive-submissions";
  * The blast radius of an abusive POST is one row in a queue a curator reads.
  */
 
-export interface ContributeState {
-  status: "idle" | "success" | "error";
-  message?: string;
-  field?: string;
-  submission?: ArchiveSubmission;
-}
-
-export const CONTRIBUTE_INITIAL: ContributeState = { status: "idle" };
-
 const text = (form: FormData, key: string): string => {
   const value = form.get(key);
   return typeof value === "string" ? value : "";
@@ -33,6 +25,19 @@ export async function submitContribution(
   _previous: ContributeState,
   formData: FormData,
 ): Promise<ContributeState> {
+  /* Before any parsing or disk work — see src/lib/rate-limit.ts for what this
+     does and does not guarantee. */
+  const quota = await consumeSubmissionQuota();
+  if (!quota.ok) {
+    const minutes = Math.ceil(quota.retryAfterSeconds / 60);
+    return {
+      status: "error",
+      message:
+        `That is ${SUBMISSION_LIMIT} contributions in a short span — the queue is reviewed by people. ` +
+        `Please try again in ${minutes} minute${minutes === 1 ? "" : "s"}.`,
+    };
+  }
+
   try {
     const media = formData.get("media");
     const submission = await createSubmission({

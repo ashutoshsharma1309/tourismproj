@@ -1,4 +1,4 @@
-import { createHash } from "node:crypto";
+import { createHash, randomBytes } from "node:crypto";
 import { existsSync } from "node:fs";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
@@ -117,6 +117,28 @@ export async function readSubmissions(): Promise<ArchiveSubmission[]> {
 async function writeSubmissions(rows: ArchiveSubmission[]) {
   await ensureDirs();
   await writeFile(STORE, `${JSON.stringify(rows, null, 2)}\n`, "utf8");
+}
+
+/**
+ * Serialises store mutations within this process.
+ *
+ * createSubmission reads the whole store, prepends one row and writes it back.
+ * Two submissions arriving together both read the same array and the second
+ * write erases the first — a contributor's upload disappears with no error
+ * anywhere. Chaining every mutation onto one promise makes the read and the
+ * write atomic with respect to each other.
+ *
+ * Scope worth stating: this is a single-process guarantee. It is correct for a
+ * single Node server and it is NOT correct across multiple instances or a
+ * serverless deployment, where the flat-file store is the wrong primitive
+ * anyway and this should become a database insert.
+ */
+let storeQueue: Promise<unknown> = Promise.resolve();
+
+function withStoreLock<T>(work: () => Promise<T>): Promise<T> {
+  const run = storeQueue.then(work, work);
+  storeQueue = run.catch(() => undefined);
+  return run;
 }
 
 export function submissionMediaPath(submission: ArchiveSubmission): string | null {
@@ -273,6 +295,37 @@ export function prescreen(
   return flags;
 }
 
+/**
+ * Identify an image from its magic bytes.
+ *
+ * Deliberately covers only the four formats this archive accepts, and returns
+ * null for everything else — including formats that are perfectly valid images
+ * but are not on the list. Returning null is a refusal, not a fallback.
+ */
+function sniffImageType(buffer: Buffer): string | null {
+  if (buffer.length < 12) return null;
+
+  // JPEG: FF D8 FF
+  if (buffer[0] === 0xff && buffer[1] === 0xd8 && buffer[2] === 0xff) return "image/jpeg";
+
+  // PNG: 89 50 4E 47 0D 0A 1A 0A
+  if (buffer.subarray(0, 8).equals(Buffer.from([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a])))
+    return "image/png";
+
+  // RIFF....WEBP
+  if (buffer.subarray(0, 4).toString("ascii") === "RIFF" &&
+      buffer.subarray(8, 12).toString("ascii") === "WEBP")
+    return "image/webp";
+
+  // ISO-BMFF box "ftyp" with an AVIF brand
+  if (buffer.subarray(4, 8).toString("ascii") === "ftyp") {
+    const brand = buffer.subarray(8, 12).toString("ascii");
+    if (brand === "avif" || brand === "avis") return "image/avif";
+  }
+
+  return null;
+}
+
 /* ------------------------------------------------------------------ create */
 
 function slugId(title: string): string {
@@ -282,8 +335,14 @@ function slugId(title: string): string {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "")
       .slice(0, 40) || "submission";
-  /* Randomness keeps two identical titles from colliding; it is not a secret. */
-  return `${base}-${Math.random().toString(36).slice(2, 8)}`;
+  /*
+   * This suffix IS load-bearing. The id is the URL of
+   * /api/archive/submissions/<id>/media, which serves an unreviewed upload —
+   * so a predictable suffix means unreviewed contributions can be enumerated.
+   * Math.random() is seeded from a shared PRNG and is not suitable; six bytes
+   * from the CSPRNG are.
+   */
+  return `${base}-${randomBytes(6).toString("base64url")}`;
 }
 
 const isCategory = (value: string): value is ArchiveCategory =>
@@ -330,10 +389,25 @@ export async function createSubmission(input: SubmissionInput): Promise<ArchiveS
     if (!ACCEPTED_UPLOAD_TYPES.includes(file.type))
       throw new SubmissionError("media", "Upload a JPEG, PNG, WebP or AVIF image.");
     const buffer = Buffer.from(await file.arrayBuffer());
+    /*
+     * `file.type` is whatever the client said it was. Allowlisting it proves
+     * nothing about the bytes, so an HTML document declaring image/png was
+     * accepted, stored, and later served back under that declared type. The
+     * media route sets nosniff and a sandbox CSP, but the actual fix is to
+     * refuse the file here — a stored payload is a stored payload.
+     */
+    const sniffed = sniffImageType(buffer);
+    if (!sniffed)
+      throw new SubmissionError("media", "That file is not a JPEG, PNG, WebP or AVIF image.");
+    if (sniffed !== file.type)
+      throw new SubmissionError(
+        "media",
+        `That file is declared as ${file.type} but its contents are ${sniffed}.`,
+      );
     mediaHash = createHash("sha256").update(buffer).digest("hex");
-    mediaType = file.type;
+    mediaType = sniffed; // the sniffed type, never the claimed one
     mediaBytes = buffer.byteLength;
-    const extension = file.type.split("/")[1]?.replace("jpeg", "jpg") ?? "bin";
+    const extension = sniffed.split("/")[1]?.replace("jpeg", "jpg") ?? "bin";
     mediaFilename = `${mediaHash.slice(0, 24)}.${extension}`;
     await writeFile(join(UPLOADS, mediaFilename), buffer);
   }
@@ -377,7 +451,12 @@ export async function createSubmission(input: SubmissionInput): Promise<ArchiveS
     submittedAt: new Date().toISOString(),
   };
 
-  await writeSubmissions([submission, ...existing]);
+  await withStoreLock(async () => {
+    /* Re-read inside the lock: `existing` was read before validation and the
+       file may have moved on since. */
+    const current = await readSubmissions();
+    await writeSubmissions([submission, ...current]);
+  });
   return submission;
 }
 
