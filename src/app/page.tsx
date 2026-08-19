@@ -16,6 +16,7 @@ import Link from "next/link";
 import { HeritageMapSection } from "@/components/home/HeritageMapSection";
 import { PhotoShowcase } from "@/components/media/PhotoGallery";
 import { StoryCard } from "@/components/stories/StoryCard";
+import { ContinueExploring } from "@/components/discovery/ContinueExploring";
 import { GALLERY_PHOTO_COUNT, showcasePhotos } from "@/data/galleries";
 import { MAP_STATS } from "@/data/map-sites";
 import { stories } from "@/data/stories";
@@ -24,6 +25,8 @@ import { ScrollReveal } from "@/components/immersive/ScrollReveal";
 import { StatCounter } from "@/components/immersive/StatCounter";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
+import { buttonClasses } from "@/components/ui/Button";
+import { cn } from "@/lib/cn";
 import { ARCHIVE_COVERAGE } from "@/data/archive";
 import { HISTORY_COVERAGE } from "@/data/history";
 import { img } from "@/data/images";
@@ -167,14 +170,14 @@ export default async function HomePage() {
             <div className="fade-in-up mt-8 flex w-full flex-col items-center gap-3 sm:w-auto sm:flex-row [animation-delay:420ms]">
               <Link
                 href="/monasteries"
-                className="flex h-12 min-w-56 items-center justify-center gap-2 rounded-full bg-accent px-8 text-small font-semibold text-accent-foreground shadow-card transition-all hover:bg-accent-hover hover:shadow-lifted sm:min-w-0"
+                className={cn(buttonClasses({ variant: "accent", size: "lg" }), "min-w-56 hover:shadow-lifted sm:min-w-0")}
               >
                 Explore Monasteries
                 <ArrowRight className="size-4" aria-hidden />
               </Link>
               <a
                 href="#discover"
-                className="flex h-12 min-w-56 items-center justify-center rounded-full border border-foreground-inverse/40 px-8 text-small font-semibold text-foreground-inverse transition-colors hover:border-foreground-inverse hover:bg-foreground-inverse/10 sm:min-w-0"
+                className={cn(buttonClasses({ variant: "ghost-inverse", size: "lg" }), "min-w-56 sm:min-w-0")}
               >
                 Discover Heritage
               </a>
@@ -302,6 +305,14 @@ export default async function HomePage() {
             </p>
           </div>
         </section>
+
+        {/*
+          Renders nothing at all on a first visit — see ContinueExploring. It
+          sits after the introduction rather than above it so the page still
+          leads with what this project is, and picks up the visitor's own thread
+          second.
+        */}
+        <ContinueExploring className="mx-auto max-w-6xl scroll-mt-20 px-6 pb-20 md:pb-28" />
 
         {/* ---------------------------------------- 3 · Featured monasteries */}
         <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28">
@@ -481,7 +492,7 @@ export default async function HomePage() {
                 </ul>
                 <Link
                   href="/monasteries/rumtek"
-                  className="mt-8 inline-flex h-12 items-center gap-2 rounded-full bg-accent px-8 text-small font-semibold text-accent-foreground shadow-card transition-all hover:bg-accent-hover hover:shadow-lifted"
+                  className={cn(buttonClasses({ variant: "accent", size: "lg" }), "mt-8 hover:shadow-lifted")}
                 >
                   Open Rumtek Monastery
                   <ArrowRight className="size-4" aria-hidden />
@@ -562,7 +573,7 @@ export default async function HomePage() {
                     1642 to the referendum that ended the kingdom. Every one of
                     them sourced.
                   </p>
-                  <span className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-accent px-6 text-small font-semibold text-accent-foreground">
+                  <span className={cn(buttonClasses({ variant: "accent", size: "md" }), "mt-6 font-semibold")}>
                     Explore history
                     <ArrowRight
                       className="size-4 transition-transform group-hover:translate-x-1"
@@ -600,7 +611,7 @@ export default async function HomePage() {
                     creator, its licence and its source. Contribute what the
                     record is missing.
                   </p>
-                  <span className="mt-6 inline-flex h-11 items-center gap-2 rounded-full bg-accent px-6 text-small font-semibold text-accent-foreground">
+                  <span className={cn(buttonClasses({ variant: "accent", size: "md" }), "mt-6 font-semibold")}>
                     Enter the archive
                     <ArrowRight
                       className="size-4 transition-transform group-hover:translate-x-1"
@@ -632,7 +643,7 @@ export default async function HomePage() {
               </ScrollReveal>
               <Link
                 href="/planner"
-                className="flex h-12 shrink-0 items-center gap-2 rounded-full bg-primary px-8 text-small font-semibold text-primary-foreground shadow-card transition-all hover:bg-primary-hover hover:shadow-lifted"
+                className={cn(buttonClasses({ variant: "primary", size: "lg" }), "shrink-0 shadow-card hover:shadow-lifted")}
               >
                 Plan Your Journey
                 <ArrowRight className="size-4" aria-hidden />

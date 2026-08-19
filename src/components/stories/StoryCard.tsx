@@ -7,6 +7,7 @@ import Link, { useLinkStatus } from "next/link";
 import { Badge } from "@/components/ui/Badge";
 import { CLAIM_LABEL } from "@/data/stories";
 import type { ClaimType, Story } from "@/data/stories";
+import { buttonClasses } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 
 /**
@@ -40,10 +41,14 @@ function ReadStoryCta() {
   return (
     <span
       className={cn(
-        "mt-4 inline-flex h-10 items-center gap-1.5 self-start rounded-full border px-4 text-label font-semibold transition-colors",
+        /* Was a bespoke h-10/px-4 pill — a fifth button geometry for the same
+           "open this thing" job. The outline variant at sm is the same shape the
+           rest of the product already uses for a card-level action. */
+        buttonClasses({ variant: "outline", size: "sm" }),
+        "mt-4 self-start font-semibold transition-colors",
         pending
           ? "border-primary bg-primary text-primary-foreground"
-          : "border-border-strong bg-surface text-primary group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground",
+          : "text-primary group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground",
       )}
     >
       {pending ? (

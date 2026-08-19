@@ -15,6 +15,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { VisitRecorder } from "@/components/discovery/VisitRecorder";
 import { Footer } from "@/components/layout/Footer";
 import { ClaimBadge } from "@/components/stories/StoryCard";
 import { StorySources } from "@/components/stories/StorySources";
@@ -89,6 +90,34 @@ export default async function StoryDetailPage({ params }: PageProps) {
             { name: "Stories", url: "/stories" },
             { name: story.title, url: `/stories/${story.slug}` },
           ]),
+        ]}
+      />
+      <VisitRecorder
+        kind="story"
+        name={story.title}
+        href={`/stories/${story.slug}`}
+        neighbours={[
+          /* Real record names, not names rebuilt from slugs: title-casing
+             "sanga-choeling" gives "Sanga Choeling", while the record is
+             "Sanga Choeling Monastery". The lookup is server-side and free. */
+          ...story.relatedMonasteries
+            .map((slug) => getMonasteryBySlug(slug))
+            .filter((entry) => entry !== undefined)
+            .slice(0, 2)
+            .map((entry) => ({
+              kind: "monastery" as const,
+              name: entry.name,
+              href: `/monasteries/${entry.slug}`,
+            })),
+          ...story.relatedPlaces
+            .map((slug) => getPlaceBySlug(slug))
+            .filter((entry) => entry !== undefined)
+            .slice(0, 2)
+            .map((entry) => ({
+              kind: "place" as const,
+              name: entry.name,
+              href: `/places/${entry.slug}`,
+            })),
         ]}
       />
       <main id="main" className="pt-24 pb-20">
