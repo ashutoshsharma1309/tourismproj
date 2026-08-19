@@ -141,16 +141,17 @@ function withStoreLock<T>(work: () => Promise<T>): Promise<T> {
   return run;
 }
 
+/**
+ * Where an upload sits on disk.
+ *
+ * Uploads are deliberately outside public/, so nothing serves them. The route
+ * that used to read them back — for the curator queue — has been removed along
+ * with the queue itself, which means an uploaded file is now written and never
+ * served to anyone by this application. That is the intended state: the archive
+ * still accepts a contribution, and a person reads it off disk.
+ */
 export function submissionMediaPath(submission: ArchiveSubmission): string | null {
   return submission.mediaFilename ? join(UPLOADS, submission.mediaFilename) : null;
-}
-
-export async function readSubmissionMedia(id: string): Promise<{ bytes: Buffer; type: string } | null> {
-  const rows = await readSubmissions();
-  const row = rows.find((r) => r.id === id);
-  const path = row ? submissionMediaPath(row) : null;
-  if (!row || !path || !existsSync(path)) return null;
-  return { bytes: await readFile(path), type: row.mediaType ?? "application/octet-stream" };
 }
 
 /* --------------------------------------------------------- pre-screening */

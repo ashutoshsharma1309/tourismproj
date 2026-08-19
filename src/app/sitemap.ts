@@ -15,8 +15,7 @@ import { SITE_URL } from "@/lib/constants";
  * discover all of them by traversal, and the archive — the largest single body
  * of work here — is the deepest and least linked.
  *
- * /preservation/review is deliberately absent: it lists contributor names and
- * contact addresses, and src/app/robots.ts disallows it.
+ * Every published route is here. There are no private pages to leave out.
  */
 
 const STATIC_ROUTES = [

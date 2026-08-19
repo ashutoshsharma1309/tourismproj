@@ -61,7 +61,13 @@ const ROUTES = [
   "/planner",
   "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
   "/preservation",
-  "/preservation/review",
+  /* The curator review queue used to sit here. It has been removed from the
+     product, and this list kept auditing it — which meant the suite was
+     scoring the 404 page and reporting it as a pass. Replaced with the routes
+     that shipped since and had no coverage. */
+  "/permits",
+  "/responsible",
+  "/places/tsomgo-lake",
 ];
 
 const browser = await chromium.launch({ channel: "chrome" });

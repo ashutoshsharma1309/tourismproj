@@ -365,14 +365,10 @@ export default function PreservationPage() {
           <p className="mt-2 max-w-2xl text-body text-muted">
             The Heritage Discovery Agent enumerates monastery articles, extracts
             each record with its source, and scores it on evidence. Candidates
-            wait for a person before they reach the catalogue.
+            wait for a person before they reach the catalogue — that review
+            happens against the agent&apos;s output in the repository, not in a
+            page on this site.
           </p>
-          <Link
-            href="/preservation/review"
-            className="mt-4 inline-flex h-11 items-center gap-2 rounded-full bg-primary px-6 text-small font-medium text-primary-foreground transition-colors hover:bg-primary-hover"
-          >
-            Open the review queue
-          </Link>
         </section>
 
         <section className="mt-14" aria-label="Source registry">

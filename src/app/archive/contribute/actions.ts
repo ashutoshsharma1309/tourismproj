@@ -13,7 +13,7 @@ import type { ContributeState } from "./state";
  * archive taking public contributions — which is exactly why the action can do
  * only one thing: write a record whose status is "pending-review". It cannot
  * publish, cannot verify, and cannot modify anything already in the archive.
- * The blast radius of an abusive POST is one row in a queue a curator reads.
+ * The blast radius of an abusive POST is one row in a store a person reads.
  */
 
 const text = (form: FormData, key: string): string => {
@@ -54,8 +54,6 @@ export async function submitContribution(
       media: media instanceof File ? media : null,
     });
 
-    /* The curator queue shows the new row on its next visit. */
-    revalidatePath("/preservation/review");
     revalidatePath("/archive");
 
     return {

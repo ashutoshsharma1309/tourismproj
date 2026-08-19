@@ -13,7 +13,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 
 const WP = "https://en.wikipedia.org/w/api.php";
-const UA = "Ney-Heritage-Research/1.0 (SIH cultural heritage project)";
+const UA = "SikkimDarshan-Research/1.0 (SIH cultural heritage project)";
 const CREDITS = "src/data/generated/image-credits.json";
 
 /** key → Wikipedia article whose lead image illustrates the subject. */

@@ -9,7 +9,7 @@ import { ARCHIVE_COVERAGE } from "@/data/archive";
 export const metadata: Metadata = {
   title: "Contribute to Sikkim's heritage",
   description:
-    "Contribute a photograph, a document, an oral history or a cultural practice to the Ney Digital Heritage Archive. Every contribution is reviewed by a curator before it is published.",
+    "Contribute a photograph, a document, an oral history or a cultural practice to the Sikkim Darshan Digital Heritage Archive. Every contribution is reviewed by a curator before it is published.",
 };
 
 /**

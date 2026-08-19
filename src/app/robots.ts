@@ -5,17 +5,10 @@ import { SITE_URL } from "@/lib/constants";
 /**
  * robots.txt.
  *
- * The disallow list is the point of this file. /preservation/review is the
- * curator queue: it renders every pending contribution together with the
- * contributor's name and a mailto: link to the address they submitted it from,
- * and this build has no curator authentication. It is linked from the global
- * navbar and footer, so it was fully crawlable — an indexed page of volunteers'
- * email addresses.
- *
- * Excluding it from search is the containment step, not the fix. The route
- * still needs an authentication gate; until it has one it also carries
- * `robots: { index: false }` in its own metadata, because a robots.txt entry is
- * a request that well-behaved crawlers honour and nothing else does.
+ * The curator review queue used to be disallowed here — it published
+ * contributors' names and had no authentication. Both the queue and its
+ * sign-in have been removed from the product entirely, so there is nothing
+ * left to hide from a crawler and the disallow list is empty.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -23,7 +16,6 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/preservation/review", "/api/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

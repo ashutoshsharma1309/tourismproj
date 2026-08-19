@@ -30,7 +30,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 
 const OEMBED = "https://www.youtube.com/oembed";
 const THUMB = (id, name) => `https://i.ytimg.com/vi/${id}/${name}`;
-const UA = "Ney-Heritage-Research/1.0 (SIH cultural heritage project)";
+const UA = "SikkimDarshan-Research/1.0 (SIH cultural heritage project)";
 const RETRIEVED_AT = process.env.RETRIEVED_AT ?? new Date().toISOString().slice(0, 10);
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));

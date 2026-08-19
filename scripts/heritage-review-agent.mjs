@@ -35,7 +35,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 
 const VOYAGE = "https://en.wikivoyage.org/w/api.php";
-const UA = "Ney-Heritage-Research/1.0 (SIH cultural heritage project)";
+const UA = "SikkimDarshan-Research/1.0 (SIH cultural heritage project)";
 const RETRIEVED_AT = process.env.RETRIEVED_AT ?? new Date().toISOString().slice(0, 10);
 const PLACES_KEY = process.env.GOOGLE_PLACES_API_KEY ?? null;
 

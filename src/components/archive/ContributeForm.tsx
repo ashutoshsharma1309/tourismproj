@@ -112,12 +112,6 @@ export function ContributeForm() {
           >
             Back to the archive
           </Link>
-          <Link
-            href="/preservation/review"
-            className="flex h-11 items-center rounded-full border border-border-strong px-6 text-small font-medium transition-colors hover:border-primary hover:text-primary"
-          >
-            See the review queue
-          </Link>
         </div>
       </div>
     );
@@ -286,7 +280,7 @@ export function ContributeForm() {
           <span className="text-small leading-relaxed">
             <strong>Rights declaration.</strong> I confirm that I hold the rights
             to this material, or that it is free to share, and that I am willing
-            for it to be published in the Ney Digital Heritage Archive with
+            for it to be published in the Sikkim Darshan Digital Heritage Archive with
             attribution. Where the material concerns a community&apos;s sacred or
             restricted practice, I confirm it is appropriate to share publicly.
             <span className="text-error"> *</span>

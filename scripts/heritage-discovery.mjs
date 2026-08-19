@@ -18,7 +18,7 @@ import { writeFileSync, readFileSync } from "node:fs";
 
 const WP = "https://en.wikipedia.org/w/api.php";
 const COMMONS = "https://commons.wikimedia.org/w/api.php";
-const UA = "Ney-Heritage-Research/1.0 (SIH cultural heritage project; contact: maintainer)";
+const UA = "SikkimDarshan-Research/1.0 (SIH cultural heritage project; contact: maintainer)";
 const RETRIEVED_AT = process.env.RETRIEVED_AT ?? new Date().toISOString().slice(0, 10);
 
 /** Categories that enumerate the subject. Discovery starts here, not from a guessed list. */

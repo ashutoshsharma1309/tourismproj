@@ -1,4 +1,4 @@
-import { ArrowRight, Camera, FileText, MapPin, Scale, Upload, Users } from "lucide-react";
+import { ArrowRight, Camera, MapPin, Scale, Upload, Users } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +19,6 @@ import {
   getArchiveByCategory,
   getArchiveItemByKey,
 } from "@/data/archive";
-import { getPendingSubmissions } from "@/lib/archive-submissions";
 
 export const metadata: Metadata = {
   title: "Digital Heritage Archive",
@@ -27,8 +26,14 @@ export const metadata: Metadata = {
     "Sikkim's cultural heritage, catalogued: photographs, documents, crafts, music, food, festivals and sacred landscapes — every object with its source, its licence and its creator.",
 };
 
-/** The archive changes only when the agent re-runs, but submissions arrive live. */
-export const dynamic = "force-dynamic";
+/*
+ * Static again.
+ *
+ * This page was `force-dynamic` because it read the pending-submission store on
+ * every request, to label a link to the curator queue. That queue has been
+ * removed, so the last live read is gone and the archive can be prerendered
+ * with the rest of the catalogue.
+ */
 
 const FEATURED_KEYS = [
   "story/coronation-throne",
@@ -54,7 +59,6 @@ export default async function ArchivePage() {
     ...getArchiveByCategory("Historical documents"),
     ...getArchiveByCategory("Historic sites"),
   ].slice(0, 3);
-  const submissions = await getPendingSubmissions();
 
   return (
     <>
@@ -75,7 +79,7 @@ export default async function ArchivePage() {
           <div aria-hidden className="gradient-overlay absolute inset-0" />
           <div className="relative mx-auto max-w-6xl px-4 pt-32 pb-16 md:px-6 md:pt-40 md:pb-20">
             <p className="font-mono text-eyebrow tracking-[0.24em] text-accent uppercase">
-              Ney Digital Heritage Archive
+              Sikkim Darshan Digital Heritage Archive
             </p>
             <h1 className="mt-4 max-w-3xl font-display text-display text-foreground-inverse text-glow">
               Explore Sikkim&apos;s heritage
@@ -323,15 +327,6 @@ export default async function ArchivePage() {
                   >
                     <Upload className="size-4" aria-hidden />
                     Contribute to the archive
-                  </Link>
-                  <Link
-                    href="/preservation/review"
-                    className="flex h-12 items-center gap-2 rounded-full border border-border-strong px-7 text-small font-semibold transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <FileText className="size-4" aria-hidden />
-                    {submissions.length > 0
-                      ? `Review queue (${submissions.length})`
-                      : "Open the review queue"}
                   </Link>
                 </div>
               </div>

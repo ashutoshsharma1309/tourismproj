@@ -54,11 +54,11 @@ export function nightsBetween(checkIn: string, checkOut: string): number {
   return Math.round(ms / 86_400_000);
 }
 
-/** "Ney-HTL-2847" — deterministic per booking payload. */
+/** "SD-HTL-2847" — deterministic per booking payload. */
 export function makeBookingId(seedText: string): string {
   let hash = 0;
   for (let i = 0; i < seedText.length; i++) {
     hash = (hash * 31 + seedText.charCodeAt(i)) % 9000;
   }
-  return `Ney-HTL-${1000 + hash}`;
+  return `SD-HTL-${1000 + hash}`;
 }

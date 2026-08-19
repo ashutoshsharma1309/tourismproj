@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ExternalLink, Landmark, Library, Newspaper, ShieldCheck } from "lucide-react";
 
 import { Badge } from "@/components/ui/Badge";
@@ -86,9 +87,9 @@ export function StorySources({
         Where a claim could not be traced to a source, this archive does not publish it. Where
         sources disagree, the story says so. If you can correct or extend anything here — a
         monastery&apos;s own record, a festival date, a photograph with a licence — the{" "}
-        <a href="/preservation/review" className="text-primary hover:underline">
-          curator&apos;s review queue
-        </a>{" "}
+        <Link href="/archive/contribute" className="text-primary hover:underline">
+          contribution form
+        </Link>{" "}
         is where it goes.
       </p>
     </section>

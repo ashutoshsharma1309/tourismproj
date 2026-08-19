@@ -68,7 +68,8 @@ async function discoverRoutes(page) {
     "/hotels",
     "/planner",
     "/preservation",
-    "/preservation/review",
+    "/permits",
+    "/responsible",
     "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
     "/this-route-does-not-exist",
   ]);

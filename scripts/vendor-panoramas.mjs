@@ -19,7 +19,7 @@
 
 import { mkdirSync, writeFileSync, existsSync } from "node:fs";
 
-const UA = "Ney-Heritage-Research/1.0 (SIH cultural heritage project)";
+const UA = "SikkimDarshan-Research/1.0 (SIH cultural heritage project)";
 const OUT = "public/panoramas";
 
 /** Mirrors src/data/panoramas.ts. Widths here are ones Commons actually holds. */

@@ -1,9 +1,9 @@
 "use client";
 
-import { ChevronDown, Menu, Search, UserRound, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { openSearch } from "@/components/search/CommandPalette";
 import { cn } from "@/lib/cn";
@@ -11,33 +11,18 @@ import { Logo } from "@/components/brand/Logo";
 import { NAV_LINKS, SITE } from "@/lib/constants";
 
 /**
- * The two views that actually exist: the public catalogue, and the curator's
- * review queue where discovered candidates wait for approval. The former
- * hotel-owner and monastery-admin dashboards were removed with the fabricated
- * data they displayed.
- */
-const ROLES = [
-  { href: "/", label: "Visitor" },
-  { href: "/curator/login", label: "Curator" },
-] as const;
-
-/**
  * Global navigation. Transparent while it overlays the hero, condensing into
- * architectural glass once the page scrolls. The role switcher stands in for
- * auth until Phase 3 — it routes to each persona's surface.
+ * architectural glass once the page scrolls.
  */
 export function Navbar() {
   const pathname = usePathname();
-  const roleRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
 
-  /* Overlays remember the path they opened on, so navigation closes them
-     by derivation — no synchronising effect needed. */
-  const [overlays, setOverlays] = useState({ path: pathname, menu: false, role: false });
-  const menuOpen = overlays.menu && overlays.path === pathname;
-  const roleOpen = overlays.role && overlays.path === pathname;
-  const setMenuOpen = (menu: boolean) => setOverlays({ path: pathname, menu, role: false });
-  const setRoleOpen = (role: boolean) => setOverlays({ path: pathname, menu: false, role });
+  /* The drawer remembers the path it opened on, so navigation closes it by
+     derivation — no synchronising effect needed. */
+  const [overlay, setOverlay] = useState({ path: pathname, menu: false });
+  const menuOpen = overlay.menu && overlay.path === pathname;
+  const setMenuOpen = (menu: boolean) => setOverlay({ path: pathname, menu });
 
   /* Condense onto glass after the first few pixels of scroll. */
   useEffect(() => {
@@ -55,19 +40,7 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  /* Close the role menu on outside click. */
-  useEffect(() => {
-    if (!roleOpen) return;
-    const onPointer = (e: MouseEvent) => {
-      if (!roleRef.current?.contains(e.target as Node))
-        setOverlays((current) => ({ ...current, role: false }));
-    };
-    document.addEventListener("mousedown", onPointer);
-    return () => document.removeEventListener("mousedown", onPointer);
-  }, [roleOpen]);
 
-  const activeRole =
-    ROLES.find((role) => role.href !== "/" && pathname.startsWith(role.href)) ?? ROLES[0];
 
   /* Transparent only while overlaying the homepage hero; everywhere else the
      bar sits on glass so ivory text never lands on an ivory page. */
@@ -135,49 +108,6 @@ export function Navbar() {
           </button>
 
           {/* Role switcher — mock personas until real auth lands. */}
-          {/* Ten primary links plus search plus this control needs ~1310px, so below
-          1400 the role switcher moves into the drawer, where a duplicate of it
-          already lives. It is a secondary affordance — a viewing mode, not a
-          destination — and it was the element being pushed outside the header's
-          own container and clipped. */}
-        <div ref={roleRef} className="relative hidden min-[1400px]:block">
-            <button
-              type="button"
-              onClick={() => setRoleOpen(!roleOpen)}
-              aria-expanded={roleOpen}
-              aria-haspopup="menu"
-              className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 bg-header px-3.5 text-label whitespace-nowrap text-muted-inverse transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
-            >
-              <UserRound className="size-3.5" aria-hidden />
-              <span className="hidden xl:inline">View as:</span> {activeRole.label}
-              <ChevronDown
-                className={cn("size-3.5 transition-transform", roleOpen && "rotate-180")}
-                aria-hidden
-              />
-            </button>
-            {roleOpen ? (
-              <div
-                role="menu"
-                className="animate-scale-in absolute right-0 mt-2 w-52 rounded-lg border border-border-inverse bg-surface-inverse p-1.5 shadow-overlay"
-              >
-                {ROLES.map((role) => (
-                  <Link
-                    key={role.label}
-                    role="menuitem"
-                    href={role.href}
-                    className={cn(
-                      "block rounded-md px-3 py-2 text-small transition-colors",
-                      role.label === activeRole.label
-                        ? "bg-foreground-inverse/10 text-accent-soft"
-                        : "text-muted-inverse hover:bg-foreground-inverse/10 hover:text-foreground-inverse",
-                    )}
-                  >
-                    {role.label}
-                  </Link>
-                ))}
-              </div>
-            ) : null}
-          </div>
 
           <button
             type="button"
@@ -228,22 +158,6 @@ export function Navbar() {
                 ))}
               </ul>
             </nav>
-            <p className="mt-8 font-mono text-eyebrow tracking-widest text-foreground-inverse/50 uppercase">
-              View as
-            </p>
-            <ul className="mt-2 flex flex-col gap-1">
-              {ROLES.map((role) => (
-                <li key={role.label}>
-                  <Link
-                    href={role.href}
-                    onClick={() => setMenuOpen(false)}
-                    className="block rounded-lg px-3 py-2.5 text-small text-foreground-inverse/75 transition-colors hover:bg-foreground-inverse/10"
-                  >
-                    {role.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
       ) : null}
