@@ -3,7 +3,7 @@
     "route": "/",
     "violations": [],
     "keyboard": {
-      "focusableCount": 120
+      "focusableCount": 119
     },
     "firstFocus": {
       "tag": "a",
@@ -15,7 +15,7 @@
     "route": "/monasteries",
     "violations": [],
     "keyboard": {
-      "focusableCount": 51
+      "focusableCount": 50
     },
     "firstFocus": {
       "tag": "a",
@@ -27,7 +27,7 @@
     "route": "/monasteries/rumtek",
     "violations": [],
     "keyboard": {
-      "focusableCount": 81
+      "focusableCount": 80
     },
     "firstFocus": {
       "tag": "a",
@@ -39,7 +39,7 @@
     "route": "/stories",
     "violations": [],
     "keyboard": {
-      "focusableCount": 132
+      "focusableCount": 131
     },
     "firstFocus": {
       "tag": "a",
@@ -51,7 +51,7 @@
     "route": "/stories/the-throne-of-stone-at-norbugang",
     "violations": [],
     "keyboard": {
-      "focusableCount": 43
+      "focusableCount": 42
     },
     "firstFocus": {
       "tag": "a",
@@ -63,7 +63,7 @@
     "route": "/hotels",
     "violations": [],
     "keyboard": {
-      "focusableCount": 106
+      "focusableCount": 105
     },
     "firstFocus": {
       "tag": "a",
@@ -75,7 +75,7 @@
     "route": "/planner",
     "violations": [],
     "keyboard": {
-      "focusableCount": 42
+      "focusableCount": 41
     },
     "firstFocus": {
       "tag": "a",
@@ -87,7 +87,7 @@
     "route": "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
     "violations": [],
     "keyboard": {
-      "focusableCount": 34
+      "focusableCount": 33
     },
     "firstFocus": {
       "tag": "a",
@@ -99,7 +99,7 @@
     "route": "/preservation",
     "violations": [],
     "keyboard": {
-      "focusableCount": 74
+      "focusableCount": 72
     },
     "firstFocus": {
       "tag": "a",
@@ -108,10 +108,34 @@
     }
   },
   {
-    "route": "/preservation/review",
+    "route": "/permits",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 26
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Skip to content",
+      "outline": true
+    }
+  },
+  {
+    "route": "/responsible",
     "violations": [],
     "keyboard": {
       "focusableCount": 25
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Skip to content",
+      "outline": true
+    }
+  },
+  {
+    "route": "/places/tsomgo-lake",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 45
     },
     "firstFocus": {
       "tag": "a",
