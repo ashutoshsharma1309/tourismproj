@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { archiveItems } from "@/data/archive";
 import { historyTimeline } from "@/data/history";
 import { monasteries } from "@/data/monasteries";
+import { places } from "@/data/places";
 import { stories } from "@/data/stories";
 import { SITE_URL } from "@/lib/constants";
 
@@ -25,6 +26,8 @@ const STATIC_ROUTES = [
   { path: "/explore", priority: 0.8 },
   { path: "/history", priority: 0.8 },
   { path: "/archive", priority: 0.8 },
+  { path: "/permits", priority: 0.8 },
+  { path: "/responsible", priority: 0.8 },
   { path: "/planner", priority: 0.7 },
   { path: "/hotels", priority: 0.6 },
   { path: "/preservation", priority: 0.6 },
@@ -48,6 +51,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/monasteries/${monastery.slug}`,
       changeFrequency: "yearly" as const,
       priority: 0.8,
+    })),
+    ...places.map((place) => ({
+      url: `${SITE_URL}/places/${place.slug}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.7,
     })),
     ...stories.map((story) => ({
       url: `${SITE_URL}/stories/${story.slug}`,

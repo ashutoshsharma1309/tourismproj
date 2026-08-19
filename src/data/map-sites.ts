@@ -140,6 +140,10 @@ const placeSites: MapSite[] = places.map((place) => {
     image: place.image,
     imageAlt: place.imageAlt,
     googleMapsUrl: place.googleMapsUrl,
+    /* Places had no detailHref because they had no detail page: a pin could
+       tell you where something was and never what it was. /places/[slug] now
+       exists, so every marker on the map leads somewhere. */
+    detailHref: `/places/${place.slug}`,
     sourceUrl: place.provenance.sourceUrl,
     verified: place.provenance.confidence !== "unverified",
     ...(place.permitNote ? { permitNote: place.permitNote } : {}),

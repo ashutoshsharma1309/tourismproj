@@ -72,6 +72,42 @@ export function monasterySchema(monastery: {
   };
 }
 
+/**
+ * A place in the archive — a lake, pass, sanctuary, town or heritage site.
+ *
+ * Typed TouristAttraction rather than PlaceOfWorship: these are the 38 records
+ * that are not monasteries. Elevation ships only where the source publishes one.
+ */
+export function placeSchema(place: {
+  name: string;
+  description: string;
+  url: string;
+  latitude: number;
+  longitude: number;
+  image: string;
+  elevation?: number;
+}): Record<string, unknown> {
+  return {
+    "@context": "https://schema.org",
+    "@type": "TouristAttraction",
+    name: place.name,
+    description: place.description,
+    url: `${SITE_URL}${place.url}`,
+    image: `${SITE_URL}${place.image}`,
+    address: {
+      "@type": "PostalAddress",
+      addressRegion: "Sikkim",
+      addressCountry: "IN",
+    },
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: place.latitude,
+      longitude: place.longitude,
+      ...(place.elevation ? { elevation: `${place.elevation} m` } : {}),
+    },
+  };
+}
+
 /** A story or a historical event, as a piece of writing with sources. */
 export function articleSchema(article: {
   title: string;
