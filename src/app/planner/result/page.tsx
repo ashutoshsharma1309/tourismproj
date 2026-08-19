@@ -1,4 +1,4 @@
-import { CalendarRange, Route, Users, Wallet } from "lucide-react";
+import { ArrowRight, CalendarRange, FileCheck2, Route, Users, Wallet } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,6 +7,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ItineraryMap } from "@/components/planner/ItineraryExtras";
 import { Badge } from "@/components/ui/Badge";
 import { representativePhoto } from "@/data/galleries";
+import { permitsMentionedIn } from "@/data/permits";
 import { generateItinerary } from "@/lib/generate-itinerary";
 import { formatPrice, formatPriceCompact } from "@/lib/format";
 import type { PlannerInterest, PlannerStyle } from "@/types";
@@ -84,6 +85,11 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
   /* A route reads as a list of place names until you see the places. Each base
      the itinerary sleeps in is also a mapped place in this archive, so its own
      photography is already here — no separate stock imagery needed. */
+  /* Read the day plans, not the sleeping bases — see permitsMentionedIn. */
+  const permitsNeeded = permitsMentionedIn(
+    itinerary.dayPlans.flatMap((day) => [day.title, day.morning, day.afternoon, day.evening]),
+  );
+
   const routePhotos = stops
     .map((stop) => ({ stop, photo: representativePhoto("place", stop.location.toLowerCase()) }))
     .filter((entry): entry is { stop: (typeof stops)[number]; photo: NonNullable<typeof entry.photo> } =>
@@ -112,6 +118,41 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             </Badge>
           ))}
         </div>
+
+        {/*
+          An itinerary that routes through Tsomgo, Yumthang, Gurudongmar or
+          Nathu La needs a Protected Area Permit arranged before departure. The
+          planner used to hand over a day-by-day route with no mention of it,
+          which is the one omission capable of ending the trip at a check post.
+        */}
+        {permitsNeeded.length > 0 ? (
+          <section
+            className="mt-8 rounded-xl border-l-4 border-warning bg-warning-soft p-5"
+            aria-labelledby="permits-needed"
+          >
+            <h2
+              id="permits-needed"
+              className="flex items-center gap-2 font-display text-h4"
+            >
+              <FileCheck2 className="size-4 shrink-0" aria-hidden />
+              This route needs a permit
+            </h2>
+            <ul className="mt-3 flex flex-col gap-2.5">
+              {permitsNeeded.map((permit) => (
+                <li key={permit.slug} className="text-small leading-relaxed">
+                  <strong>{permit.name}</strong> — {permit.authority}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href="/permits"
+              className="mt-4 inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
+            >
+              What to carry, and who issues it
+              <ArrowRight className="size-3.5" aria-hidden />
+            </Link>
+          </section>
+        ) : null}
 
         {routePhotos.length > 0 ? (
           <section className="mt-8" aria-label="The bases on this route">
