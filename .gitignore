@@ -19,3 +19,9 @@ chromedriver/
 # Runtime state, not source — never committed.
 .data/
 voice-benchmark/
+
+# Retired audio kept on disk for recovery, and the agent's own generation logs.
+# The retirement decision is documented in src/data/audio.ts; the bytes are not
+# source, and 54 MB of superseded narration does not belong in every clone.
+reports/audio-archive/
+reports/audio-*.log
