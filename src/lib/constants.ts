@@ -39,8 +39,10 @@ export const NAV_LINKS = [
   { href: "/archive", label: "Archive" },
   { href: "/explore", label: "Explore" },
   { href: "/hotels", label: "Stays" },
-  { href: "/planner", label: "Plan Journey" },
-  { href: "/preservation", label: "Preservation" },
+  { href: "/planner", label: "Plan" },
+  { href: "/permits", label: "Permits" },
+  { href: "/responsible", label: "Responsible" },
+  { href: "/preservation", label: "Preserve" },
 ] as const;
 
 /* =========================================================================

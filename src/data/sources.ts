@@ -210,6 +210,28 @@ export const SOURCES: Record<string, Source> = {
     covers:
       "Existence, title, channel and thumbnail of every embedded monastery video, resolved through YouTube's own keyless oEmbed endpoint. Playback happens in YouTube's embedded player; nothing is downloaded, re-encoded or re-hosted.",
   },
+  "sikkim-tourism-permits": {
+    id: "sikkim-tourism-permits",
+    name: "Protected & Restricted Area Permits — Tourism & Civil Aviation Department, Government of Sikkim",
+    type: "government",
+    url: "https://sikkimtourism.gov.in/pap",
+    retrievedAt: "2026-08-18",
+    covers:
+      "Which Sikkim destinations require a Protected Area Permit, the issuing authority for each and how it differs for foreign nationals, documents required at Nathula, Gurudongmar and Zuluk, the two-wheeler permit conditions, and the Restricted Area Permit rules for foreign nationals.",
+    notes:
+      "The RAP issuing-office list on the same source is deliberately not reproduced — its markup pairs each office name with the following office's address, and a wrong address for a permit office is worse than a link out.",
+  },
+  "sikkim-tourism-do-and-do-not": {
+    id: "sikkim-tourism-do-and-do-not",
+    name: "Do and Do Not — Tourism & Civil Aviation Department, Government of Sikkim",
+    type: "government",
+    url: "https://sikkimtourism.gov.in/do-and-do-not",
+    retrievedAt: "2026-08-18",
+    covers:
+      "Responsible-tourism guidance for visitors to Sikkim: environment and waste, wildlife, single-use plastic restrictions, permits and identity documents, road and high-altitude safety, conduct at religious sites, photography etiquette, adventure tourism, smoking and alcohol, emergency cooperation and community tourism. 64 guidelines across 14 sections.",
+    notes:
+      "Each guideline is ticked or crossed on the department's page and that marking is preserved as the item's polarity. It is load-bearing: several crossed items are phrased as bare noun phrases which, flattened, read as instructions to do the opposite of what is intended.",
+  },
   "sikkim-tourism-registered-hotels": {
     id: "sikkim-tourism-registered-hotels",
     name: "Registered Hotels — Tourism & Civil Aviation Department, Government of Sikkim",

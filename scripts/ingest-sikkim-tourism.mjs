@@ -42,8 +42,8 @@ const SOURCE_NAME = "Tourism & Civil Aviation Department, Government of Sikkim";
  */
 const ROUTES = [
   { path: "/do-and-do-not", category: "RESPONSIBLE_TOURISM", extract: "guidelines" },
-  { path: "/pap", category: "TRAVEL", extract: "prose" },
-  { path: "/rap", category: "TRAVEL", extract: "prose" },
+  { path: "/pap", category: "TRAVEL", extract: "permits" },
+  { path: "/rap", category: "TRAVEL", extract: "permits" },
   { path: "/registered-establishments/hotels", category: "TOURISM", extract: "table" },
   { path: "/registered-establishments/travel-agents", category: "TOURISM", extract: "table" },
   { path: "/tic", category: "TRAVEL", extract: "prose" },
@@ -175,6 +175,53 @@ for (const route of ROUTES) {
     rows: [...document.querySelectorAll("table tr")].map((tr) =>
       [...tr.cells].map((c) => c.textContent.replace(/\s+/g, " ").trim()),
     ),
+    /* Walk the document in order so each list item keeps the heading above it. */
+    sections: (() => {
+      const out = [];
+      let current = null;
+      const walk = document.createTreeWalker(document.body, NodeFilter.SHOW_ELEMENT);
+      for (let n = walk.nextNode(); n; n = walk.nextNode()) {
+        const tag = n.tagName;
+        if (/^H[1-4]$/.test(tag)) {
+          const h = n.textContent.replace(/\s+/g, " ").trim();
+          if (h) { current = { heading: h, items: [] }; out.push(current); }
+        } else if (tag === "LI" && current && !n.querySelector("li")) {
+          const t = n.textContent.replace(/\s+/g, " ").trim();
+          /*
+           * The department marks each guideline itself with a tick or a cross.
+           * That is its own classification and it is the only trustworthy one:
+           * section headings like "Smoking & Alcohol" carry no polarity at all,
+           * and inferring one from the wording would have published "Smoking
+           * near monasteries, temples and sacred places" as advice.
+           */
+          const svg = n.querySelector("svg");
+          const icon = svg
+            ? (String(svg.getAttribute("class") || "").match(/lucide-([a-z-]+)/) || [])[1] || null
+            : null;
+          /*
+           * The permit pages render each entry as two sibling paragraphs — the
+           * destination, then who issues its permit — which collapse into one
+           * run-on string under textContent ("Tsomgo – Baba Mandir Permits are
+           * issued by the Police Check Post…"). Keeping the pair split is what
+           * makes the entry usable as data rather than as a sentence.
+           */
+          const ps = [...n.children].filter((c) => c.tagName === "P");
+          const pair =
+            ps.length >= 2
+              ? {
+                  label: ps[0].textContent.replace(/\s+/g, " ").trim(),
+                  detail: ps
+                    .slice(1)
+                    .map((c) => c.textContent.replace(/\s+/g, " ").trim())
+                    .join(" ")
+                    .trim(),
+                }
+              : null;
+          if (t) current.items.push({ text: t, icon, pair });
+        }
+      }
+      return out;
+    })(),
   }));
 
   const base = {
@@ -221,10 +268,62 @@ for (const { route, base, payload, paginated } of raw) {
     process.stdout.write(
       `  ${route.path} … ${body.length} named of ${paginated?.reported ?? "?"} reported (${paginated?.pages ?? 1} pages)\n`,
     );
+  } else if (route.extract === "permits") {
+    const sections = (payload.sections ?? [])
+      .map((sec) => ({
+        heading: sec.heading,
+        entries: sec.items
+          .filter((it) => it.pair && it.pair.label && it.pair.detail)
+          .map((it) => ({ label: it.pair.label, detail: it.pair.detail })),
+        notes: sec.items
+          .filter((it) => !it.pair && it.text.length > 30 && !isChrome(it.text) && !isFurniture(it.text))
+          .map((it) => it.text),
+      }))
+      .filter(
+        (sec) =>
+          (sec.entries.length > 0 || sec.notes.length > 0) &&
+          !/important links|information|contact us/i.test(sec.heading),
+      );
+    const paras = payload.paras.filter((t) => t.length > 60 && !isChrome(t) && !isFurniture(t));
+    const total = sections.reduce((n, sec) => n + sec.entries.length + sec.notes.length, 0);
+    records.push({ ...base, kind: "permits", title: payload.title, intro: paras, sections, count: total });
+    process.stdout.write(`  ${route.path} … ${total} permit entries in ${sections.length} sections\n`);
   } else if (route.extract === "guidelines") {
-    const items = payload.items.filter((t) => t.length > 25 && t.length < 400 && !isChrome(t) && !isFurniture(t));
-    records.push({ ...base, kind: "guidelines", title: payload.title, headings: payload.headings, items, count: items.length });
-    process.stdout.write(`  ${route.path} … ${items.length} guidelines\n`);
+    /*
+     * Sections, not a flat list.
+     *
+     * A first pass flattened every list item on the page, which silently
+     * stripped the thing that gives them meaning: the department groups them
+     * under "Please Do" and "Please Don't". Read flat, "Throw garbage into
+     * rivers, lakes or valleys" stops being a prohibition and becomes an
+     * instruction. Each item now keeps the heading it sat under, and the
+     * heading decides its polarity.
+     */
+    const headingSaysAvoid = /don'?t|avoid|never|restriction|prohibit/i;
+    const sections = (payload.sections ?? [])
+      .map((sec) => ({
+        heading: sec.heading,
+        items: sec.items
+          .filter(
+            (it) =>
+              it.text.length > 15 &&
+              it.text.length < 400 &&
+              !isChrome(it.text) &&
+              !isFurniture(it.text) &&
+              /* Only items the department actually ticked or crossed. Anything
+                 unmarked is navigation or a link, not guidance. */
+              (it.icon === "check" || it.icon === "x"),
+          )
+          .map((it) => ({
+            text: it.text,
+            polarity:
+              it.icon === "x" || headingSaysAvoid.test(sec.heading) ? "avoid" : "do",
+          })),
+      }))
+      .filter((sec) => sec.items.length > 0 && !/important links|information|contact us/i.test(sec.heading));
+    const total = sections.reduce((n, sec) => n + sec.items.length, 0);
+    records.push({ ...base, kind: "guidelines", title: payload.title, sections, count: total });
+    process.stdout.write(`  ${route.path} … ${total} guidelines in ${sections.length} sections\n`);
   } else {
     const paras = payload.paras.filter((t) => t.length > 60 && !isChrome(t) && !isFurniture(t));
     const items = payload.items.filter((t) => t.length > 25 && t.length < 400 && !isChrome(t) && !isFurniture(t));

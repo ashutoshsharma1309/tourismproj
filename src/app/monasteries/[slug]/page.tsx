@@ -1,9 +1,10 @@
-import { ArrowRight, Clock3, ExternalLink, Headphones, MapPin, Rotate3d } from "lucide-react";
+import { ArrowRight, Check, Clock3, ExternalLink, Headphones, MapPin, Rotate3d, X } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { VisitRecorder } from "@/components/discovery/VisitRecorder";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
 import {
@@ -26,6 +27,8 @@ import { getArchiveForMonastery } from "@/data/archive";
 import { getPanorama } from "@/data/panoramas";
 import { getVideo } from "@/data/videos";
 import { formatCoordinates } from "@/lib/format";
+import { cn } from "@/lib/cn";
+import { GUIDELINE_PROVENANCE, siteGuidelines } from "@/data/responsible-tourism";
 import { JsonLd, breadcrumbSchema, monasterySchema } from "@/components/seo/JsonLd";
 
 interface PageProps {
@@ -77,6 +80,16 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
             { name: monastery.name, url: `/monasteries/${monastery.slug}` },
           ]),
         ]}
+      />
+      <VisitRecorder
+        kind="monastery"
+        name={monastery.name}
+        href={`/monasteries/${monastery.slug}`}
+        neighbours={relatedStories.slice(0, 4).map((story) => ({
+          kind: "story" as const,
+          name: story.title,
+          href: `/stories/${story.slug}`,
+        }))}
       />
       <main id="main" className="mx-auto max-w-6xl px-4 pt-24 pb-20 md:px-6">
         {/* Hero */}
@@ -273,6 +286,60 @@ export default async function MonasteryDetailPage({ params }: PageProps) {
             </div>
           </aside>
         </div>
+
+        {/*
+          A working monastery is a religious community that happens to admit
+          visitors. The archive told people where to go and what they were
+          looking at, and stopped there — so this is the missing half, placed
+          before the onward links rather than after them because it is only
+          useful to someone who has not left yet.
+        */}
+        <section className="mt-14" aria-labelledby="visiting-conduct">
+          <h2 id="visiting-conduct" className="font-display text-h2">
+            Visiting {monastery.name}
+          </h2>
+          <p className="mt-3 max-w-2xl text-body text-muted">
+            Guidance issued by the Tourism &amp; Civil Aviation Department for
+            visitors to Sikkim&apos;s religious sites and protected areas.
+          </p>
+          <div className="mt-6 grid gap-x-8 gap-y-7 sm:grid-cols-2">
+            {siteGuidelines.map((section) => (
+              <div key={section.slug}>
+                <h3 className="font-mono text-eyebrow tracking-widest text-subtle uppercase">
+                  {section.heading}
+                </h3>
+                <ul className="mt-3 flex flex-col gap-2">
+                  {section.items.map((item) => {
+                    const avoid = item.polarity === "avoid";
+                    return (
+                      <li key={item.text} className="flex items-start gap-2.5">
+                        <span
+                          className={cn(
+                            "mt-0.5 flex size-4.5 shrink-0 items-center justify-center rounded-full",
+                            avoid ? "bg-error-soft text-error" : "bg-success-soft text-success",
+                          )}
+                        >
+                          {avoid ? (
+                            <X className="size-2.5" aria-hidden />
+                          ) : (
+                            <Check className="size-2.5" aria-hidden />
+                          )}
+                        </span>
+                        <span className="text-small leading-relaxed">
+                          <span className="sr-only">{avoid ? "Do not: " : "Do: "}</span>
+                          {item.text}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6">
+            <SourceNote provenance={GUIDELINE_PROVENANCE} />
+          </div>
+        </section>
 
         <VisitorVoices monasterySlug={monastery.slug} monasteryName={monastery.name} />
 

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-18T07:32:10.745Z",
+  "generatedAt": "2026-08-18T16:17:20.768Z",
   "source": {
     "name": "Tourism & Civil Aviation Department, Government of Sikkim",
     "origin": "https://sikkimtourism.gov.in",
@@ -43,91 +43,335 @@
       "verificationStatus": "PENDING_REVIEW",
       "kind": "guidelines",
       "title": "Tourism & Civil Aviation Department",
-      "headings": [
-        "Respect Nature & Environment",
-        "Protect Wildlife",
-        "Waste Management",
-        "Please Do",
-        "Please Don't",
-        "Single-Use Plastic Restrictions",
-        "Avoid carrying",
-        "Permits & Identity Documents",
-        "Travel Responsibly",
-        "High Altitude Safety",
-        "Respect Local Culture & Religious Sites",
-        "Photography Etiquette",
-        "Adventure Tourism",
-        "Smoking & Alcohol",
-        "Emergency Cooperation",
-        "Responsible Community Tourism",
-        "Travel responsibly. Leave no trace.",
-        "Important Links",
-        "Information",
-        "Contact Us"
+      "sections": [
+        {
+          "heading": "Respect Nature & Environment",
+          "items": [
+            {
+              "text": "Keep Sikkim clean by using designated dustbins.",
+              "polarity": "do"
+            },
+            {
+              "text": "Carry reusable water bottles and shopping bags whenever possible.",
+              "polarity": "do"
+            },
+            {
+              "text": "Protect forests, alpine meadows, rivers, waterfalls and lakes.",
+              "polarity": "do"
+            },
+            {
+              "text": "Stay only on designated trekking trails and tourist routes.",
+              "polarity": "do"
+            },
+            {
+              "text": "Report forest fires, landslides or environmental hazards to local authorities.",
+              "polarity": "do"
+            },
+            {
+              "text": "Leave every destination cleaner than you found it.",
+              "polarity": "do"
+            },
+            {
+              "text": "Support eco-friendly tourism initiatives and sustainable travel practices.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Protect Wildlife",
+          "items": [
+            {
+              "text": "Do not feed wild animals or birds.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Never disturb wildlife or their habitats.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Do not collect plants, flowers, medicinal herbs or rare species.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Avoid loud music inside forests and protected areas.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Never purchase products made from endangered wildlife.",
+              "polarity": "avoid"
+            }
+          ]
+        },
+        {
+          "heading": "Please Do",
+          "items": [
+            {
+              "text": "Carry your waste back whenever bins are unavailable.",
+              "polarity": "do"
+            },
+            {
+              "text": "Separate biodegradable and plastic waste wherever facilities exist.",
+              "polarity": "do"
+            },
+            {
+              "text": "Use refillable bottles instead of disposable plastics.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Please Don't",
+          "items": [
+            {
+              "text": "Throw garbage into rivers, lakes or valleys.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Burn plastic or other waste.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Leave food wrappers along trekking routes.",
+              "polarity": "avoid"
+            }
+          ]
+        },
+        {
+          "heading": "Avoid carrying",
+          "items": [
+            {
+              "text": "Plastic carry bags",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Plastic cups and plates",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Disposable cutlery",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Certain PET bottles and other banned plastic products",
+              "polarity": "avoid"
+            }
+          ]
+        },
+        {
+          "heading": "Permits & Identity Documents",
+          "items": [
+            {
+              "text": "Carry a valid government-issued photo ID.",
+              "polarity": "do"
+            },
+            {
+              "text": "Keep digital and printed copies of permits.",
+              "polarity": "do"
+            },
+            {
+              "text": "Follow all instructions issued by permit authorities.",
+              "polarity": "do"
+            },
+            {
+              "text": "Travel only to destinations covered by your permit.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Travel Responsibly",
+          "items": [
+            {
+              "text": "Hire only registered travel agencies and licensed taxi operators.",
+              "polarity": "do"
+            },
+            {
+              "text": "Follow speed limits on mountain roads.",
+              "polarity": "do"
+            },
+            {
+              "text": "Wear seat belts at all times.",
+              "polarity": "do"
+            },
+            {
+              "text": "Wear helmets while riding motorcycles.",
+              "polarity": "do"
+            },
+            {
+              "text": "Avoid driving during heavy rainfall, snowfall or landslides unless advised safe.",
+              "polarity": "do"
+            },
+            {
+              "text": "Follow police and traffic advisories.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "High Altitude Safety",
+          "items": [
+            {
+              "text": "Avoid excessive alcohol.",
+              "polarity": "do"
+            },
+            {
+              "text": "Ascend gradually whenever possible.",
+              "polarity": "do"
+            },
+            {
+              "text": "Rest if you experience altitude sickness.",
+              "polarity": "do"
+            },
+            {
+              "text": "Follow medical advice immediately if symptoms worsen.",
+              "polarity": "do"
+            },
+            {
+              "text": "Carry prescribed medicines if required.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Respect Local Culture & Religious Sites",
+          "items": [
+            {
+              "text": "Remove footwear where required.",
+              "polarity": "do"
+            },
+            {
+              "text": "Maintain silence inside monasteries.",
+              "polarity": "do"
+            },
+            {
+              "text": "Ask permission before photographing monks, ceremonies or local residents.",
+              "polarity": "do"
+            },
+            {
+              "text": "Respect prayer flags, prayer wheels and sacred monuments.",
+              "polarity": "do"
+            },
+            {
+              "text": "Walk clockwise around stupas and religious structures where customary.",
+              "polarity": "do"
+            },
+            {
+              "text": "Consider making voluntary donations only through authorised donation boxes.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Photography Etiquette",
+          "items": [
+            {
+              "text": "Ask permission before photographing individuals.",
+              "polarity": "do"
+            },
+            {
+              "text": "Respect photography restrictions in religious and military areas.",
+              "polarity": "do"
+            },
+            {
+              "text": "Never fly drones in restricted or protected zones without official approval.",
+              "polarity": "do"
+            },
+            {
+              "text": "Avoid disturbing wildlife for photographs.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Adventure Tourism",
+          "items": [
+            {
+              "text": "Choose authorised operators.",
+              "polarity": "do"
+            },
+            {
+              "text": "Wear certified safety equipment.",
+              "polarity": "do"
+            },
+            {
+              "text": "Follow guide instructions.",
+              "polarity": "do"
+            },
+            {
+              "text": "Inform someone about your itinerary.",
+              "polarity": "do"
+            },
+            {
+              "text": "Check weather conditions before departure.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Smoking & Alcohol",
+          "items": [
+            {
+              "text": "Smoking near monasteries, temples and sacred places.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Consuming alcohol in religious or culturally sensitive locations.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Littering cigarette butts.",
+              "polarity": "avoid"
+            },
+            {
+              "text": "Drinking and driving under any circumstances.",
+              "polarity": "avoid"
+            }
+          ]
+        },
+        {
+          "heading": "Emergency Cooperation",
+          "items": [
+            {
+              "text": "Follow directions issued by Police, Tourism Officials, Forest Officials and Disaster Management Authorities.",
+              "polarity": "do"
+            },
+            {
+              "text": "Cooperate during landslides, road closures or weather-related restrictions.",
+              "polarity": "do"
+            },
+            {
+              "text": "Do not cross road barricades or restricted areas.",
+              "polarity": "do"
+            }
+          ]
+        },
+        {
+          "heading": "Responsible Community Tourism",
+          "items": [
+            {
+              "text": "Buying authentic local handicrafts.",
+              "polarity": "do"
+            },
+            {
+              "text": "Staying in registered hotels and homestays.",
+              "polarity": "do"
+            },
+            {
+              "text": "Respecting local traditions and festivals.",
+              "polarity": "do"
+            },
+            {
+              "text": "Supporting local guides and businesses.",
+              "polarity": "do"
+            },
+            {
+              "text": "Avoiding bargaining that may unfairly impact small vendors.",
+              "polarity": "do"
+            }
+          ]
+        }
       ],
-      "items": [
-        "Keep Sikkim clean by using designated dustbins.",
-        "Carry reusable water bottles and shopping bags whenever possible.",
-        "Protect forests, alpine meadows, rivers, waterfalls and lakes.",
-        "Stay only on designated trekking trails and tourist routes.",
-        "Report forest fires, landslides or environmental hazards to local authorities.",
-        "Leave every destination cleaner than you found it.",
-        "Support eco-friendly tourism initiatives and sustainable travel practices.",
-        "Do not feed wild animals or birds.",
-        "Never disturb wildlife or their habitats.",
-        "Do not collect plants, flowers, medicinal herbs or rare species.",
-        "Avoid loud music inside forests and protected areas.",
-        "Never purchase products made from endangered wildlife.",
-        "Carry your waste back whenever bins are unavailable.",
-        "Separate biodegradable and plastic waste wherever facilities exist.",
-        "Use refillable bottles instead of disposable plastics.",
-        "Throw garbage into rivers, lakes or valleys.",
-        "Burn plastic or other waste.",
-        "Leave food wrappers along trekking routes.",
-        "Certain PET bottles and other banned plastic products",
-        "Carry a valid government-issued photo ID.",
-        "Keep digital and printed copies of permits.",
-        "Follow all instructions issued by permit authorities.",
-        "Travel only to destinations covered by your permit.",
-        "Hire only registered travel agencies and licensed taxi operators.",
-        "Follow speed limits on mountain roads.",
-        "Wear seat belts at all times.",
-        "Wear helmets while riding motorcycles.",
-        "Avoid driving during heavy rainfall, snowfall or landslides unless advised safe.",
-        "Follow police and traffic advisories.",
-        "Ascend gradually whenever possible.",
-        "Rest if you experience altitude sickness.",
-        "Follow medical advice immediately if symptoms worsen.",
-        "Carry prescribed medicines if required.",
-        "Remove footwear where required.",
-        "Maintain silence inside monasteries.",
-        "Ask permission before photographing monks, ceremonies or local residents.",
-        "Respect prayer flags, prayer wheels and sacred monuments.",
-        "Walk clockwise around stupas and religious structures where customary.",
-        "Consider making voluntary donations only through authorised donation boxes.",
-        "Ask permission before photographing individuals.",
-        "Respect photography restrictions in religious and military areas.",
-        "Never fly drones in restricted or protected zones without official approval.",
-        "Avoid disturbing wildlife for photographs.",
-        "Choose authorised operators.",
-        "Wear certified safety equipment.",
-        "Follow guide instructions.",
-        "Inform someone about your itinerary.",
-        "Check weather conditions before departure.",
-        "Smoking near monasteries, temples and sacred places.",
-        "Consuming alcohol in religious or culturally sensitive locations.",
-        "Littering cigarette butts.",
-        "Drinking and driving under any circumstances.",
-        "Follow directions issued by Police, Tourism Officials, Forest Officials and Disaster Management Authorities.",
-        "Cooperate during landslides, road closures or weather-related restrictions.",
-        "Do not cross road barricades or restricted areas.",
-        "Buying authentic local handicrafts.",
-        "Staying in registered hotels and homestays.",
-        "Respecting local traditions and festivals.",
-        "Supporting local guides and businesses.",
-        "Avoiding bargaining that may unfairly impact small vendors."
-      ],
-      "count": 60
+      "count": 64
     },
     {
       "sourceName": "Tourism & Civil Aviation Department, Government of Sikkim",
@@ -137,28 +381,9 @@
       "retrievedAt": "2026-08-18",
       "lastVerifiedAt": "2026-08-18",
       "verificationStatus": "PENDING_REVIEW",
-      "kind": "prose",
+      "kind": "permits",
       "title": "Tourism & Civil Aviation Department",
-      "headings": [
-        "Who Can Apply",
-        "Domestic Tourists & Locals",
-        "Foreign Tourists",
-        "Two-Wheelers / Motorbikes",
-        "Permits by District",
-        "East District",
-        "West District",
-        "North District",
-        "South District",
-        "Documents Required",
-        "Nathula",
-        "Gurudongmar",
-        "Zuluk",
-        "Two-Wheeler / Motorbike Permit",
-        "Important Links",
-        "Information",
-        "Contact Us"
-      ],
-      "paragraphs": [
+      "intro": [
         "For domestic and foreign tourists visiting the protected areas of Sikkim — issued by the Tourism & Civil Aviation Department, Police Check Posts and authorised offices through registered Travel Agencies.",
         "Protected Area Permits are issued to domestic tourists and locals for the protected areas across Sikkim.",
         "Foreign tourists are permitted for Tsomgo Lake in East Sikkim and the Lachen–Lachung–Yumthang–Thangu Valley in North Sikkim.",
@@ -177,40 +402,118 @@
         "Entry permits are issued by the Forest Department at Gangtok.",
         "Most protected areas require applications through a Sikkim Tourism registered Travel Agency. Foreign tourists must travel in groups of two or more for restricted North Sikkim valleys, and motorbikes must be 150 cc or higher to enter PAP areas."
       ],
-      "items": [
-        "Tsomgo – Baba Mandir Permits are issued by the Police Check Post for domestic tourists. Foreign tourists are allowed till Tsomgo Lake — the permit is issued by the Tourism & Civil Aviation Department and the vehicle permit by the Police Check Post, applied through a registered Travel Agency.",
-        "Nathula Pass Permit is issued by the Tourism Department and the vehicle permit by the Police Check Post for domestic tourists, issued through a registered Travel Agency.",
-        "Dzongri Trek Permit is issued by TIC Pelling and TIC Gangtok.",
-        "Singalila Trek Permit is issued by TIC Pelling after clearance from the Home Department, Forest Department and Army, through registered Travel Agencies.",
-        "Yumthang Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit from the Police Check Post.",
-        "Yumesamdong Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle pass from the Police Check Post.",
-        "Thangu – Chopta Valley Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit by the Police Check Post. Foreigners must apply through a Sikkim Tourism registered Travel Agent in groups of two or more.",
-        "Gurudongmar Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Permit Cell, Tourism Department only till Thangu.",
-        "Green Lake Trek Permit is issued by the Adventure Cell of the Tourism Department after clearance from the Forest Department, Home Department and Army, applied through a registered Travel Agency.",
-        "Maenam Trekking Trekking permits are issued from TIC Pelling and TIC Gangtok through a registered Travel Agency after clearance is obtained from Home / Army / Forest and Police.",
-        "Alpine Mountaineering Expedition Permit is issued by the Tourism Department after clearance from the Home Department, Forest, Army and Police, for the notified peaks as per Home Department Notification No. 25/Home/2006 dated 20/03/2006.",
-        "National Park & Wildlife Sanctuary Entry permits are issued by the Forest Department at Gangtok.",
-        "Tinchen Khang 5,603 m · West Sikkim",
-        "Jopuno 5,935 m · West Sikkim",
-        "Frey's Peak 5,830 m · West Sikkim",
-        "Lama Angden 5,868 m · North Sikkim",
-        "Brum Khangse 5,433 m · North Sikkim",
-        "Voter ID / Driving License",
-        "2 passport-size photographs",
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
-        "Voter ID / Driving License",
-        "2 passport-size photographs",
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
-        "Not allowed to Gurudongmar, but may visit Lachen & Yumthang.",
-        "For Lachen & Yumthang: photocopy of valid passport, Indian visa, 2 passport-size photos with original documents & ILP.",
-        "Voter ID / Driving License",
-        "2 passport-size photographs",
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
-        "1Registration certificate of the bike",
-        "5Passport-size photographs (2 nos.)",
-        "6Identity proof of rider and co-rider"
+      "sections": [
+        {
+          "heading": "East District",
+          "entries": [
+            {
+              "label": "Tsomgo – Baba Mandir",
+              "detail": "Permits are issued by the Police Check Post for domestic tourists. Foreign tourists are allowed till Tsomgo Lake — the permit is issued by the Tourism & Civil Aviation Department and the vehicle permit by the Police Check Post, applied through a registered Travel Agency."
+            },
+            {
+              "label": "Nathula Pass",
+              "detail": "Permit is issued by the Tourism Department and the vehicle permit by the Police Check Post for domestic tourists, issued through a registered Travel Agency."
+            }
+          ],
+          "notes": []
+        },
+        {
+          "heading": "West District",
+          "entries": [
+            {
+              "label": "Dzongri Trek",
+              "detail": "Permit is issued by TIC Pelling and TIC Gangtok."
+            },
+            {
+              "label": "Singalila Trek",
+              "detail": "Permit is issued by TIC Pelling after clearance from the Home Department, Forest Department and Army, through registered Travel Agencies."
+            }
+          ],
+          "notes": []
+        },
+        {
+          "heading": "North District",
+          "entries": [
+            {
+              "label": "Yumthang",
+              "detail": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit from the Police Check Post."
+            },
+            {
+              "label": "Yumesamdong",
+              "detail": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle pass from the Police Check Post."
+            },
+            {
+              "label": "Thangu – Chopta Valley",
+              "detail": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit by the Police Check Post. Foreigners must apply through a Sikkim Tourism registered Travel Agent in groups of two or more."
+            },
+            {
+              "label": "Gurudongmar",
+              "detail": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Permit Cell, Tourism Department only till Thangu."
+            },
+            {
+              "label": "Green Lake Trek",
+              "detail": "Permit is issued by the Adventure Cell of the Tourism Department after clearance from the Forest Department, Home Department and Army, applied through a registered Travel Agency."
+            }
+          ],
+          "notes": []
+        },
+        {
+          "heading": "South District",
+          "entries": [
+            {
+              "label": "Maenam Trekking",
+              "detail": "Trekking permits are issued from TIC Pelling and TIC Gangtok through a registered Travel Agency after clearance is obtained from Home / Army / Forest and Police."
+            },
+            {
+              "label": "Alpine Mountaineering Expedition",
+              "detail": "Permit is issued by the Tourism Department after clearance from the Home Department, Forest, Army and Police, for the notified peaks as per Home Department Notification No. 25/Home/2006 dated 20/03/2006."
+            },
+            {
+              "label": "National Park & Wildlife Sanctuary",
+              "detail": "Entry permits are issued by the Forest Department at Gangtok."
+            }
+          ],
+          "notes": [
+            "Tinchen Khang 5,603 m · West Sikkim",
+            "Frey's Peak 5,830 m · West Sikkim",
+            "Lama Angden 5,868 m · North Sikkim",
+            "Brum Khangse 5,433 m · North Sikkim"
+          ]
+        },
+        {
+          "heading": "Nathula",
+          "entries": [],
+          "notes": [
+            "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
+          ]
+        },
+        {
+          "heading": "Gurudongmar",
+          "entries": [],
+          "notes": [
+            "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
+            "Not allowed to Gurudongmar, but may visit Lachen & Yumthang.",
+            "For Lachen & Yumthang: photocopy of valid passport, Indian visa, 2 passport-size photos with original documents & ILP."
+          ]
+        },
+        {
+          "heading": "Zuluk",
+          "entries": [],
+          "notes": [
+            "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
+          ]
+        },
+        {
+          "heading": "Two-Wheeler / Motorbike Permit",
+          "entries": [],
+          "notes": [
+            "1Registration certificate of the bike",
+            "5Passport-size photographs (2 nos.)",
+            "6Identity proof of rider and co-rider"
+          ]
+        }
       ],
-      "count": 48
+      "count": 24
     },
     {
       "sourceName": "Tourism & Civil Aviation Department, Government of Sikkim",
@@ -220,60 +523,9 @@
       "retrievedAt": "2026-08-18",
       "lastVerifiedAt": "2026-08-18",
       "verificationStatus": "PENDING_REVIEW",
-      "kind": "prose",
+      "kind": "permits",
       "title": "Tourism & Civil Aviation Department",
-      "headings": [
-        "Key Essentials",
-        "Fill the Prescribed Form",
-        "Nepal / Bangladesh Citizens",
-        "Register Within 24 Hours",
-        "Free of Cost",
-        "Prior Clearance Required",
-        "PRC Country Nationals",
-        "PRC Origin by Birth",
-        "Myanmar / Nigeria",
-        "Restricted Areas for Foreigners",
-        "East District",
-        "West District",
-        "South District",
-        "North District",
-        "Validity of Permit",
-        "Up to 30 Days",
-        "Apply 2 Days Early",
-        "Max 60 Days Total",
-        "Offices for Obtaining RAP",
-        "Ministry of Home Affairs, Government of India",
-        "All Indian Missions Abroad",
-        "Airport Immigration Offices",
-        "Tourist Information Centre, Siliguri",
-        "Assistant Director, Tourism Department",
-        "Assistant Director, Tourism Department",
-        "Assistant Director, Tourism Department",
-        "Assistant Director",
-        "Deputy Commissioner, Darjeeling",
-        "Deputy / Under Secretary, Home Department",
-        "Tourist Information Centre, Bagdogra",
-        "Tourist Information Centre, Pakyong",
-        "Tourist Information Centre, Rambam",
-        "Tourist Information Centre, Reshi",
-        "How to Apply",
-        "Fill the Application Form",
-        "Submit & Verify Documents",
-        "Permit Issued",
-        "FRO Record Entry",
-        "Stay & Extension",
-        "Exit Recording",
-        "Special Conditions",
-        "Through Registered Travel Agents",
-        "Trekking Permits",
-        "Non-Tourist Visa Activities",
-        "Specific Purpose Endorsement",
-        "Special Permit",
-        "Important Links",
-        "Information",
-        "Contact Us"
-      ],
-      "paragraphs": [
+      "intro": [
         "Every foreigner (excluding people of Bhutanese origin) who wishes to enter and stay in a Protected or Restricted Area of Sikkim must obtain a Restricted Area Permit, issued free of cost by authorised offices of the Government of India and the Tourism Department.",
         "Every foreigner (excluding people of Bhutanese origin) must fill the prescribed format provided at the permit office, attach the required documents, and seek approval from the competent authority.",
         "Citizens of Nepal or Bangladesh may produce a valid identity card reflecting their origin while applying for the permit.",
@@ -304,29 +556,121 @@
         "A foreigner holding a non-tourist visa but visiting only for tourism may be granted a Special Permit for places that are open for tourism.",
         "Citizens of Nepal and Bangladesh may produce a valid identity card reflecting their origin. All foreign visitors must register within 24 hours of arrival, and the permit is issued free of cost."
       ],
-      "items": [
-        "1 Ministry of Home Affairs, Government of IndiaLok Nayak Bhawan, New Delhi",
-        "2 All Indian Missions AbroadIndian embassies & consulates worldwide",
-        "3 Airport Immigration OfficesPakyong and Bagdogra",
-        "4 Tourist Information Centre, SiliguriSNT Complex, Siliguri · Tourism Department +91 8348554260 +91 9832438118 +91 9775600888",
-        "5 Assistant Director, Tourism DepartmentSikkim Tourism Office, 4/1 Middleton Street, Kolkata 033 22817905",
-        "6 Assistant Director, Tourism DepartmentMelli, Near Melli Police Check Post, South Sikkim 9775453611 03595-248536 ILP issuing time is from 8 AM to 8 PM every day.",
-        "7 Assistant Director, Tourism DepartmentSikkim Tourism Office, Rangpo, East Sikkim 03592-240818",
-        "8 Assistant DirectorGovernment of Sikkim, Sikkim House, Panchsheel Marg, New Delhi 011-41680421 011-26115346",
-        "9 Deputy Commissioner, DarjeelingWest Bengal",
-        "10 Deputy / Under Secretary, Home DepartmentGovernment of West Bengal, Kolkata",
-        "11 Tourist Information Centre, BagdograBagdogra, West Bengal +91 9933133819",
-        "12 Tourist Information Centre, PakyongPakyong, East Sikkim",
-        "13 Tourist Information Centre, RambamRambam, Sikkim +91 7318714900",
-        "14 Tourist Information Centre, ReshiReshi, Sikkim",
-        "1 Fill the Application FormForeigners or travel agents fill the application form with name, nationality, passport number & validity date, entry date and exit date, then submit it to the permit office (form provided at the permit office).",
-        "2 Submit & Verify DocumentsSubmit a copy of the valid passport, visa and a passport-size photo. The office verifies the traveller detail sheet, passport, visa stamp, seal and signature. Invalid documents make the application invalid.",
-        "3 Permit IssuedOn successful verification, the permit is issued with a unique reference number, valid for a duration of 30 days.",
-        "4 FRO Record EntryA copy of the duly filled application form / permit is submitted to the Foreigners Registration Office (FRO) for record and entry into the database.",
-        "5 Stay & ExtensionOn issue of the permit, the foreigner may stay for 30 days unless prior permission for an extension is obtained.",
-        "6 Exit RecordingWhile exiting, the foreigner must present themselves at the FRO office to record their exit details."
+      "sections": [
+        {
+          "heading": "Offices for Obtaining RAP",
+          "entries": [],
+          "notes": [
+            "1 Ministry of Home Affairs, Government of IndiaLok Nayak Bhawan, New Delhi"
+          ]
+        },
+        {
+          "heading": "Ministry of Home Affairs, Government of India",
+          "entries": [],
+          "notes": [
+            "2 All Indian Missions AbroadIndian embassies & consulates worldwide"
+          ]
+        },
+        {
+          "heading": "All Indian Missions Abroad",
+          "entries": [],
+          "notes": [
+            "3 Airport Immigration OfficesPakyong and Bagdogra"
+          ]
+        },
+        {
+          "heading": "Airport Immigration Offices",
+          "entries": [],
+          "notes": [
+            "4 Tourist Information Centre, SiliguriSNT Complex, Siliguri · Tourism Department +91 8348554260 +91 9832438118 +91 9775600888"
+          ]
+        },
+        {
+          "heading": "Assistant Director, Tourism Department",
+          "entries": [],
+          "notes": [
+            "6 Assistant Director, Tourism DepartmentMelli, Near Melli Police Check Post, South Sikkim 9775453611 03595-248536 ILP issuing time is from 8 AM to 8 PM every day."
+          ]
+        },
+        {
+          "heading": "Assistant Director, Tourism Department",
+          "entries": [],
+          "notes": [
+            "7 Assistant Director, Tourism DepartmentSikkim Tourism Office, Rangpo, East Sikkim 03592-240818"
+          ]
+        },
+        {
+          "heading": "Assistant Director, Tourism Department",
+          "entries": [],
+          "notes": [
+            "8 Assistant DirectorGovernment of Sikkim, Sikkim House, Panchsheel Marg, New Delhi 011-41680421 011-26115346"
+          ]
+        },
+        {
+          "heading": "Assistant Director",
+          "entries": [],
+          "notes": [
+            "9 Deputy Commissioner, DarjeelingWest Bengal"
+          ]
+        },
+        {
+          "heading": "Deputy Commissioner, Darjeeling",
+          "entries": [],
+          "notes": [
+            "10 Deputy / Under Secretary, Home DepartmentGovernment of West Bengal, Kolkata"
+          ]
+        },
+        {
+          "heading": "Deputy / Under Secretary, Home Department",
+          "entries": [],
+          "notes": [
+            "11 Tourist Information Centre, BagdograBagdogra, West Bengal +91 9933133819"
+          ]
+        },
+        {
+          "heading": "How to Apply",
+          "entries": [],
+          "notes": [
+            "1 Fill the Application FormForeigners or travel agents fill the application form with name, nationality, passport number & validity date, entry date and exit date, then submit it to the permit office (form provided at the permit office)."
+          ]
+        },
+        {
+          "heading": "Fill the Application Form",
+          "entries": [],
+          "notes": [
+            "2 Submit & Verify DocumentsSubmit a copy of the valid passport, visa and a passport-size photo. The office verifies the traveller detail sheet, passport, visa stamp, seal and signature. Invalid documents make the application invalid."
+          ]
+        },
+        {
+          "heading": "Submit & Verify Documents",
+          "entries": [],
+          "notes": [
+            "3 Permit IssuedOn successful verification, the permit is issued with a unique reference number, valid for a duration of 30 days."
+          ]
+        },
+        {
+          "heading": "Permit Issued",
+          "entries": [],
+          "notes": [
+            "4 FRO Record EntryA copy of the duly filled application form / permit is submitted to the Foreigners Registration Office (FRO) for record and entry into the database."
+          ]
+        },
+        {
+          "heading": "FRO Record Entry",
+          "entries": [],
+          "notes": [
+            "5 Stay & ExtensionOn issue of the permit, the foreigner may stay for 30 days unless prior permission for an extension is obtained."
+          ]
+        },
+        {
+          "heading": "Stay & Extension",
+          "entries": [],
+          "notes": [
+            "6 Exit RecordingWhile exiting, the foreigner must present themselves at the FRO office to record their exit details."
+          ]
+        }
       ],
-      "count": 49
+      "count": 16
     },
     {
       "sourceName": "Tourism & Civil Aviation Department, Government of Sikkim",
