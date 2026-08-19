@@ -105,6 +105,56 @@ export const GALLERY_REJECTIONS: GalleryRejection[] = [
     reason:
       "A generic Himalayan range view whose caption cites a school geography textbook and names no location. Nothing ties it to Chungthang, so it cannot be published as Chungthang.",
   },
+
+  /* --- Depicts a DIFFERENT catalogued subject. ------------------------------
+   *
+   * A distinct failure from the wrong-country matches above, and a subtler one:
+   * these photographs are all genuinely of Sikkim, taken where the archive says
+   * they were. The problem is that the thing in the frame has its own record.
+   *
+   * Ravangla was the case a reader spotted on the home page: the photograph
+   * rail showed the great Buddha at Ravangla twice, once captioned "Buddha
+   * Park, Ravangla" and once simply "Ravangla", as though they were two places
+   * worth visiting. They are one statue. All three photographs filed under the
+   * town were of the park, which is catalogued separately 2.6 km away — so the
+   * town of Ravangla has, in fact, no photograph of itself, and now says so.
+   */
+  {
+    galleryKey: "place/ravangla",
+    file: "File:Buddha statue at Buddha Park of Ravangla, Sikkim, India (1).jpg",
+    reason:
+      "Depicts the Buddha statue at Buddha Park, which is catalogued separately as place/buddha-park-ravangla. Filed under the town because its filename contains 'Ravangla'.",
+  },
+  {
+    galleryKey: "place/ravangla",
+    file: "File:Large Buddha statue inside Buddha Park of Ravangla.jpg",
+    reason:
+      "Second photograph of the same statue at Buddha Park, not of Ravangla town.",
+  },
+  {
+    galleryKey: "place/ravangla",
+    file: "File:Large Gautama Buddha statue in Buddha Park of Ravangla, Sikkim.jpg",
+    reason:
+      "Third photograph of the same statue at Buddha Park. With these removed the town has no photograph, which is the true state of the archive.",
+  },
+  {
+    galleryKey: "monastery/sanga-choeling",
+    file: "File:Rabdentse ruins.jpg",
+    reason:
+      "Depicts the Rabdentse ruins — the old royal capital, catalogued separately as place/rabdentse — not Sanga Choeling Monastery. Commons' own caption places it 'close to Pelling'.",
+  },
+  {
+    galleryKey: "place/yumthang-valley",
+    file: "File:Kangchenjunga - Early Morning View.jpg",
+    reason:
+      "Depicts Kangchenjunga from south of the Dongkya Range, per the photographer's own caption. Kangchenjunga has its own record; this is not a photograph of Yumthang Valley.",
+  },
+  {
+    galleryKey: "place/namgyal-institute-of-tibetology",
+    file: "File:Urban settlements beside Crown Prince Tenzing Kunzang Namgyal Walkway in Gangtok.jpg",
+    reason:
+      "A townscape of Gangtok shot from the ropeway. It shares the word 'Namgyal' with the Institute and nothing else — the Institute is not in the frame.",
+  },
 ];
 
 const REJECTED_BY_GALLERY = new Map<string, Set<string>>();

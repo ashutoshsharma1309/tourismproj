@@ -1,0 +1,62 @@
+{
+  "generatedAt": "2026-08-19T10:39:13.754Z",
+  "threshold": 6,
+  "duplicates": [
+    {
+      "galleryKey": "monastery/phodong",
+      "file": "File:Ancient sacred tree in the premise of Mahayogi Milarepa Memorial Statue in the premise of Phodong \"Karma Thubten Tashi ChoKhorling\" Monastery at Phodong town, North Sikkim, India 02.jpg",
+      "duplicateOf": "File:Ancient sacred tree in the premise of Mahayogi Milarepa Memorial Statue in the premise of Phodong \"Karma Thubten Tashi ChoKhorling\" Monastery at Phodong town, North Sikkim, India 01.jpg",
+      "hamming": 3
+    },
+    {
+      "galleryKey": "monastery/tsuklakhang",
+      "file": "File:Interiors of Tsuklakhang Monastery, Gangtok district, East Sikkim 02.jpg",
+      "duplicateOf": "File:Interiors of Tsuklakhang Monastery, Gangtok district, East Sikkim 03.jpg",
+      "hamming": 3
+    },
+    {
+      "galleryKey": "place/dzuluk",
+      "file": "File:Silk-Rout-Zuluk.jpg",
+      "duplicateOf": "File:Zuluk.jpg",
+      "hamming": 0
+    },
+    {
+      "galleryKey": "place/kabi-lungchok",
+      "file": "File:Kabi Lungchok Sacred Groves, Kabi, North Sikkim, India 01.jpg",
+      "duplicateOf": "File:Kabi Lungchok Sacred Groves, Kabi, North Sikkim, India 02.jpg",
+      "hamming": 6
+    },
+    {
+      "galleryKey": "place/kabi-lungchok",
+      "file": "File:Kabi Lungchok Sacred Groves at Kabi village in North Sikkim, India 01.jpg",
+      "duplicateOf": "File:Kabi Lungchok Sacred Groves at Kabi village in North Sikkim, India 02.jpg",
+      "hamming": 1
+    },
+    {
+      "galleryKey": "place/nathu-la",
+      "file": "File:Watershed Martyr's Memorial premises at Sherathang near Nathu La, East Sikkim 01.jpg",
+      "duplicateOf": "File:Watershed Martyr's Memorial premises at Sherathang near Nathu La, East Sikkim 02.jpg",
+      "hamming": 3
+    },
+    {
+      "galleryKey": "place/yuksom",
+      "file": "File:Prayer Hall near Norbugang Coronation throne near Yuksom (Gyalshing), West Sikkim 02.jpg",
+      "duplicateOf": "File:Prayer Hall near Norbugang Coronation throne near Yuksom (Gyalshing), West Sikkim 03.jpg",
+      "hamming": 1
+    },
+    {
+      "galleryKey": "monastery/kewzing",
+      "file": "File:Interiors of the Kewzing Monastery at Kewzing Village, South Sikkim 02.jpg",
+      "hamming": 11,
+      "note": "Same altar, same lighting, a step further back. Opened both.",
+      "duplicateOf": "(confirmed by inspection)"
+    },
+    {
+      "galleryKey": "monastery/kewzing",
+      "file": "File:Kewzing Monastery at Kewzing Village, South Sikkim 02.jpg",
+      "hamming": 7,
+      "note": "Same facade, same day, same light, one step closer. Opened both.",
+      "duplicateOf": "(confirmed by inspection)"
+    }
+  ]
+}

@@ -157,6 +157,94 @@ if (unconfirmedNamed.length) {
   for (const p of unconfirmedNamed) console.log(`        ${p.gallery.key} ← ${p.file}`);
 }
 
+/* ------------------------------- does it depict THIS subject, or another? */
+
+/*
+ * The third variant of the same failure, and the hardest to see.
+ *
+ * The first was wrong-country (Monchaux-Soreng for Soreng). The second was
+ * wrong-object (a butterfly for a wildlife sanctuary). This one is a
+ * photograph that is genuinely of Sikkim, genuinely where it says it is — and
+ * of something that has its own record. Every photograph filed under the town
+ * of Ravangla was of the Buddha statue at Buddha Park, catalogued separately
+ * 2.6 km away, so the home page rail showed the same statue twice as though it
+ * were two destinations.
+ *
+ * The test: a photograph whose caption names another catalogued subject in full
+ * while naming its own subject not at all. That asymmetry is what distinguishes
+ * a genuine mis-file from a photograph that merely mentions its district.
+ */
+
+const SUBJECT_NAMES = [
+  ...[...read("src/data/places.ts").matchAll(/slug: "([^"]+)"[\s\S]{0,200}?name: "([^"]+)"/g)]
+    .map((m) => ({ key: `place/${m[1]}`, name: m[2] })),
+  ...[...read("src/data/monasteries.ts").matchAll(/slug: "([^"]+)"[\s\S]{0,200}?name: "([^"]+)"/g)]
+    .map((m) => ({ key: `monastery/${m[1]}`, name: m[2] })),
+];
+
+/* Words too generic to identify a subject on their own. */
+const GENERIC =
+  /^(monastery|gompa|lake|valley|pass|park|palace|ruins|falls|the|of|and|sikkim|india|west|east|north|south|national|centre|center|institute)$/i;
+const distinctive = (name) =>
+  name.split(/[\s,()]+/).filter((t) => t.length > 3 && !GENERIC.test(t));
+
+/*
+ * Sikkim's place names are transliterated from Tibetan and Nepali, so the same
+ * place is spelled several ways across Commons and a strict match reports
+ * legitimate photographs as misfiled: Phensang/Phensong, Ralang/Ralong,
+ * Rabdentse/Rabdantse, Khangchendzonga/Kangchenjunga, Ban Jhakri/Banjhakri.
+ * A couple of places also have a second name entirely — Tsomgo is Changu.
+ *
+ * So the "does it name its own subject" side of the test is deliberately
+ * generous: spacing is ignored, one letter may differ, and known alternates
+ * count. Being generous here only ever makes the check quieter, and a check
+ * that cries wolf on eight good photographs is one nobody will keep running.
+ */
+const ALIASES = {
+  "place/tsomgo-lake": ["changu"],
+  "place/khangchendzonga-national-park": ["kangchenjunga", "khangchendzonga", "dzongri", "goecha"],
+  "place/rangeet-teesta-confluence": ["rangeet", "rangit", "teesta"],
+};
+
+const squash = (t) => t.toLowerCase().replace(/[^a-z]/g, "");
+
+/** True when `needle` occurs in `hay` allowing one substituted letter. */
+function fuzzyIncludes(hay, needle) {
+  if (needle.length < 5) return hay.includes(needle);
+  if (hay.includes(needle)) return true;
+  for (let i = 0; i + needle.length <= hay.length; i++) {
+    let diff = 0;
+    for (let j = 0; j < needle.length && diff < 2; j++) {
+      if (hay[i + j] !== needle[j]) diff++;
+    }
+    if (diff < 2) return true;
+  }
+  return false;
+}
+
+const misfiled = photos.filter((p) => {
+  if (REJECTIONS.has(p.file)) return false;
+  const hay = `${p.file} ${p.caption ?? ""}`.toLowerCase();
+  const squashed = squash(hay);
+  const own = [
+    ...distinctive(p.gallery.subject),
+    ...(ALIASES[p.gallery.key] ?? []),
+  ];
+  /* If the photo names its own subject at all — however spelled — trust it. */
+  if (own.some((t) => fuzzyIncludes(squashed, squash(t)))) return false;
+  return SUBJECT_NAMES.some(
+    (s) =>
+      s.key !== p.gallery.key &&
+      distinctive(s.name).length > 0 &&
+      distinctive(s.name).every((t) => hay.includes(t.toLowerCase())),
+  );
+});
+check(
+  "gallery: no photograph depicts a different catalogued subject",
+  misfiled.length === 0,
+  misfiled.map((p) => `${p.gallery.key} ← ${p.file}`).join("; "),
+);
+
 /* --------------------------------------------------- the one that matters */
 
 const byFile = new Map();

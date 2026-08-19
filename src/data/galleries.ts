@@ -1,5 +1,6 @@
 import generated from "@/data/generated/site-galleries.json";
 import { isRejected } from "@/data/gallery-rejections";
+import duplicates from "@/data/generated/gallery-duplicates.json";
 
 /**
  * Photographic galleries for monasteries and places.
@@ -53,16 +54,42 @@ interface Gallery {
 const RAW_GALLERIES = generated.galleries as unknown as Record<string, Gallery>;
 
 /**
- * The published galleries, with every rejected photograph removed.
+ * The published galleries: rejected frames removed, duplicate frames removed.
  *
  * See src/data/gallery-rejections.ts for what was rejected and why. Filtering
  * here rather than editing the generated JSON means re-running the gallery
  * agent cannot quietly reinstate a French wind farm as Soreng, Sikkim.
  */
+
+/*
+ * The same photograph, twice.
+ *
+ * Separate from the rejections above, which remove frames showing the WRONG
+ * subject. These show the right subject and were collected twice — Commons
+ * holds re-uploads and near-identical bursts of the same view. Left in, a
+ * gallery announces "6 photographs" and shows four, and the home page rail
+ * offered the same Buddha statue as two different destinations.
+ *
+ * Written by `node scripts/dedupe-galleries.mjs`, which perceptually hashes
+ * every vendored file. See that script for why the automatic threshold is
+ * conservative and why some pairs are confirmed by eye instead.
+ */
+const DUPLICATES = new Set(
+  (duplicates.duplicates as { galleryKey: string; file: string }[]).map(
+    (d) => `${d.galleryKey}\u0001${d.file}`,
+  ),
+);
+
 const GALLERIES: Record<string, Gallery> = Object.fromEntries(
   Object.entries(RAW_GALLERIES).map(([key, gallery]) => [
     key,
-    { ...gallery, photos: gallery.photos.filter((photo) => !isRejected(key, photo.file)) },
+    {
+      ...gallery,
+      photos: gallery.photos.filter(
+        (photo) =>
+          !isRejected(key, photo.file) && !DUPLICATES.has(`${key}\u0001${photo.file}`),
+      ),
+    },
   ]),
 );
 
