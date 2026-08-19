@@ -19,7 +19,6 @@ const COLUMNS = [
     links: [
       { href: "/stories", label: "Stories" },
       { href: "/preservation", label: "Digital preservation" },
-      { href: "/preservation/review", label: "Review queue" },
     ],
   },
   {

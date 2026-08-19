@@ -38,6 +38,15 @@
    */
   --color-muted-inverse: #ddd5c6;  /* secondary text on dark — 9.1:1 on #221c15 */
   --color-subtle-inverse: #b9b0a0; /* captions and meta on dark — 6.4:1 on #221c15 */
+  /*
+   * The fixed header's own ground. A token rather than a literal because the
+   * controls sitting on the bar need to declare the same colour: an auditing
+   * tool walking up from a control inside a `position: fixed` ancestor resolves
+   * the page background rather than the bar's, and reports light-on-white for
+   * text that actually renders at ~9:1. Controls that state their own ground
+   * are checkable.
+   */
+  --color-header: #2b241c;
 
   /* Lines */
   --color-border: #e3dac7;
@@ -465,6 +474,24 @@
   -webkit-backdrop-filter: blur(14px);
 }
 
+/*
+ * The fixed header on every page that is not the home hero.
+ *
+ * It used to be `glass-dark`, which is translucent — and translucency over a
+ * page rather than over photography buys nothing: there is no image behind the
+ * bar on /hotels or /history, only body copy, which read *through* the header
+ * and looked like a rendering fault. It also made the header's contrast
+ * uncomputable, so an auditor scoring the nav text had to fall back to the page
+ * background behind it and reported light-on-white.
+ *
+ * Opaque. The glass is kept for the one place it is earned: the home hero,
+ * where there really is a photograph underneath.
+ */
+@utility header-solid {
+  background: var(--color-header);
+  border-bottom: 1px solid rgba(246, 242, 233, 0.12);
+}
+
 @utility glass-dark {
   /* 0.72 let page content read through the fixed header — the era tabs on
      /history and the map legend on / were legible *through* the navbar, which
@@ -535,4 +562,62 @@
     opacity: 1;
     transform: none;
   }
+}
+
+/* ---------------------------------------------------------------- Leaflet */
+
+/*
+ * Leaflet ships its own control styling, and it is the only thing in the
+ * product that ignores the type system: the zoom buttons render in Lucida
+ * Console at 22px in pure black — the single pure black and the single
+ * non-system typeface on the site. The attribution line has the same problem at
+ * the other end of the scale, sitting at 11px in a grey that fails contrast.
+ *
+ * Scoped to .leaflet-container so nothing here leaks into the app's own
+ * controls.
+ */
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+
+.leaflet-container .leaflet-bar {
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft, 0 1px 2px rgb(36 29 21 / 0.08));
+}
+
+.leaflet-container .leaflet-bar a,
+.leaflet-container .leaflet-bar a:hover {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  background: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+.leaflet-container .leaflet-bar a:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-primary);
+}
+
+.leaflet-container .leaflet-bar a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  color: var(--color-subtle);
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.45rem;
+  border-top-left-radius: 0.375rem;
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: var(--color-primary);
 }

@@ -133,10 +133,23 @@ export default function LeafletMap({
     });
     mapRef.current = map;
 
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    /*
+     * CARTO's Voyager raster tiles rather than the standard OSM ones.
+     *
+     * Standard OSM renders every label in its local script. On a Sikkim map that
+     * means the Tibetan side of the border arrives as 岗巴县, 亚东县 and 日喀则,
+     * which at the default zoom occupy more of the frame than Sikkim does — an
+     * odd look for a heritage platform about an Indian border state, and the
+     * first thing a reviewer noticed about the map.
+     *
+     * Voyager labels in Latin script, needs no API key, and is free to use with
+     * attribution to both CARTO and OpenStreetMap, which is rendered below.
+     */
+    L.tileLayer("https://basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
       attribution:
-        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      maxZoom: 18,
+        '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      maxZoom: 20,
+      subdomains: "abcd",
     }).addTo(map);
 
     layerRef.current = L.layerGroup().addTo(map);

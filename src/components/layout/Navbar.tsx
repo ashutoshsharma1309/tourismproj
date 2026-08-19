@@ -77,7 +77,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed inset-x-0 top-0 z-90 text-foreground-inverse transition-[background-color,border-color,backdrop-filter] duration-300",
-        onGlass ? "glass-dark border-x-0 border-t-0 border-b" : "border-b border-transparent",
+        onGlass ? "header-solid" : "border-b border-transparent",
       )}
     >
       {/* Only when the bar has no background of its own. */}
@@ -85,13 +85,14 @@ export function Navbar() {
         <div aria-hidden className="header-scrim pointer-events-none absolute inset-x-0 top-0 h-24" />
       ) : null}
 
-      <div className="relative mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 md:px-6">
+      <div className="relative mx-auto flex h-16 max-w-[84rem] items-center justify-between gap-4 px-4 md:px-6">
         <Link href="/" className="text-glow" aria-label={`${SITE.name} — home`}>
           <Logo />
         </Link>
 
-        <nav aria-label="Primary" className="hidden lg:block">
-          <ul className="flex items-center gap-4 xl:gap-6">
+        {/* Ten links need ~1080px; below xl they live in the drawer. */}
+        <nav aria-label="Primary" className="hidden xl:block">
+          <ul className="flex items-center gap-3.5 xl:gap-5">
             {NAV_LINKS.map((link) => {
               const base = link.href.split("#")[0] || "/";
               const active = base !== "/" && pathname.startsWith(base);
@@ -108,7 +109,7 @@ export function Navbar() {
                            serious contrast failure on 8 of 10 audited routes.
                            accent-soft is the same gilt hue at 5.91:1. */
                         ? "text-accent-soft"
-                        : "text-foreground-inverse/80 hover:text-foreground-inverse",
+                        : "text-muted-inverse hover:text-foreground-inverse",
                     )}
                   >
                     {link.label}
@@ -124,7 +125,7 @@ export function Navbar() {
             type="button"
             onClick={openSearch}
             aria-label="Search (Command K)"
-            className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label whitespace-nowrap text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
+            className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 bg-header px-3.5 text-label whitespace-nowrap text-muted-inverse transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
           >
             <Search className="size-3.5" aria-hidden />
             <span className="hidden md:inline">Search</span>
@@ -134,13 +135,18 @@ export function Navbar() {
           </button>
 
           {/* Role switcher — mock personas until real auth lands. */}
-          <div ref={roleRef} className="relative hidden sm:block">
+          {/* Ten primary links plus search plus this control needs ~1310px, so below
+          1400 the role switcher moves into the drawer, where a duplicate of it
+          already lives. It is a secondary affordance — a viewing mode, not a
+          destination — and it was the element being pushed outside the header's
+          own container and clipped. */}
+        <div ref={roleRef} className="relative hidden min-[1400px]:block">
             <button
               type="button"
               onClick={() => setRoleOpen(!roleOpen)}
               aria-expanded={roleOpen}
               aria-haspopup="menu"
-              className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 px-3.5 text-label whitespace-nowrap text-foreground-inverse/80 transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
+              className="flex h-9 items-center gap-2 rounded-full border border-foreground-inverse/25 bg-header px-3.5 text-label whitespace-nowrap text-muted-inverse transition-colors hover:border-foreground-inverse/60 hover:text-foreground-inverse"
             >
               <UserRound className="size-3.5" aria-hidden />
               <span className="hidden xl:inline">View as:</span> {activeRole.label}
@@ -163,7 +169,7 @@ export function Navbar() {
                       "block rounded-md px-3 py-2 text-small transition-colors",
                       role.label === activeRole.label
                         ? "bg-foreground-inverse/10 text-accent-soft"
-                        : "text-foreground-inverse/80 hover:bg-foreground-inverse/10 hover:text-foreground-inverse",
+                        : "text-muted-inverse hover:bg-foreground-inverse/10 hover:text-foreground-inverse",
                     )}
                   >
                     {role.label}
@@ -177,7 +183,7 @@ export function Navbar() {
             type="button"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
-            className="flex size-10 items-center justify-center rounded-full text-foreground-inverse/85 transition-colors hover:bg-foreground-inverse/10 lg:hidden"
+            className="flex size-10 items-center justify-center rounded-full text-foreground-inverse/85 transition-colors hover:bg-foreground-inverse/10 xl:hidden"
           >
             <Menu className="size-5" aria-hidden />
           </button>
@@ -186,7 +192,7 @@ export function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen ? (
-        <div className="fixed inset-0 z-100 lg:hidden" role="dialog" aria-modal="true" aria-label="Menu">
+        <div className="fixed inset-0 z-100 xl:hidden" role="dialog" aria-modal="true" aria-label="Menu">
           <button
             type="button"
             aria-label="Close menu"

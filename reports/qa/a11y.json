@@ -3,7 +3,7 @@
     "route": "/",
     "violations": [],
     "keyboard": {
-      "focusableCount": 121
+      "focusableCount": 120
     },
     "firstFocus": {
       "tag": "a",
@@ -15,7 +15,7 @@
     "route": "/monasteries",
     "violations": [],
     "keyboard": {
-      "focusableCount": 53
+      "focusableCount": 51
     },
     "firstFocus": {
       "tag": "a",
@@ -27,7 +27,7 @@
     "route": "/monasteries/rumtek",
     "violations": [],
     "keyboard": {
-      "focusableCount": 81
+      "focusableCount": 80
     },
     "firstFocus": {
       "tag": "a",
@@ -39,7 +39,7 @@
     "route": "/stories",
     "violations": [],
     "keyboard": {
-      "focusableCount": 134
+      "focusableCount": 132
     },
     "firstFocus": {
       "tag": "a",
@@ -51,7 +51,7 @@
     "route": "/stories/the-throne-of-stone-at-norbugang",
     "violations": [],
     "keyboard": {
-      "focusableCount": 45
+      "focusableCount": 43
     },
     "firstFocus": {
       "tag": "a",
@@ -63,7 +63,7 @@
     "route": "/hotels",
     "violations": [],
     "keyboard": {
-      "focusableCount": 52
+      "focusableCount": 106
     },
     "firstFocus": {
       "tag": "a",
@@ -75,7 +75,7 @@
     "route": "/planner",
     "violations": [],
     "keyboard": {
-      "focusableCount": 44
+      "focusableCount": 42
     },
     "firstFocus": {
       "tag": "a",
@@ -99,7 +99,7 @@
     "route": "/preservation",
     "violations": [],
     "keyboard": {
-      "focusableCount": 73
+      "focusableCount": 74
     },
     "firstFocus": {
       "tag": "a",
@@ -111,7 +111,7 @@
     "route": "/preservation/review",
     "violations": [],
     "keyboard": {
-      "focusableCount": 56
+      "focusableCount": 25
     },
     "firstFocus": {
       "tag": "a",

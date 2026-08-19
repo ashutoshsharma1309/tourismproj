@@ -58,7 +58,7 @@ export function Logo({ className, compact = false }: LogoProps) {
     <span className={cn("inline-flex items-center gap-2.5", className)}>
       <LogoMark className="size-8 shrink-0" />
       {compact ? null : (
-        <span className="font-display text-xl leading-none tracking-tight">
+        <span className="font-display text-xl leading-none tracking-tight whitespace-nowrap">
           <span className="font-semibold">Sikkim</span> Darshan
         </span>
       )}
