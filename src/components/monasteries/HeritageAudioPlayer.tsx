@@ -23,6 +23,14 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
   const [position, setPosition] = useState(0);
   const [rate, setRate] = useState(1);
   const [showTranscript, setShowTranscript] = useState(false);
+  /*
+   * "loading" covers the gap between pressing play on a preload="none" element
+   * and the first audio arriving — on a hill road that gap is long enough that
+   * a silent, unresponsive button reads as broken. "failed" replaces the
+   * controls entirely: offering a play button for a track that cannot load
+   * invites the visitor to press it repeatedly.
+   */
+  const [status, setStatus] = useState<"idle" | "loading" | "ready" | "failed">("idle");
 
   // Switching language restarts the track rather than seeking into a different one.
   //
@@ -37,6 +45,7 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
     }
     const audio = audioRef.current;
     if (!audio) return;
+    setStatus("idle");
     audio.pause();
     audio.load();
     setPlaying(false);
@@ -102,10 +111,24 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
         preload="none"
         onTimeUpdate={(e) => setPosition(e.currentTarget.currentTime)}
         onEnded={() => setPlaying(false)}
-      >
-        <track kind="captions" />
-      </audio>
+        onWaiting={() => setStatus("loading")}
+        onCanPlay={() => setStatus("ready")}
+        onPlaying={() => setStatus("ready")}
+        onError={() => {
+          setStatus("failed");
+          setPlaying(false);
+        }}
+      />
 
+      {status === "failed" ? (
+        <p
+          role="status"
+          className="mt-4 rounded-lg border border-warning bg-warning-soft p-4 text-small leading-relaxed"
+        >
+          Audio temporarily unavailable. The transcript below carries the same
+          words.
+        </p>
+      ) : (
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <Button size="icon" onClick={toggle} aria-label={playing ? "Pause" : "Play"}>
           {playing ? <Pause className="size-4" aria-hidden /> : <Play className="size-4" aria-hidden />}
@@ -148,7 +171,13 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
             ))}
           </select>
         </label>
+        {status === "loading" ? (
+          <span role="status" className="font-mono text-caption text-subtle">
+            Loading…
+          </span>
+        ) : null}
       </div>
+      )}
 
       <button
         type="button"

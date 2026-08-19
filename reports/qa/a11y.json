@@ -27,7 +27,7 @@
     "route": "/monasteries/rumtek",
     "violations": [],
     "keyboard": {
-      "focusableCount": 80
+      "focusableCount": 81
     },
     "firstFocus": {
       "tag": "a",
