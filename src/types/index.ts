@@ -127,13 +127,25 @@ export type PlannerStyle = "Solo" | "Couple" | "Family" | "Group" | "Luxury" | "
 
 export interface PlannerPreferences {
   interests: PlannerInterest[];
-  /** Whole-trip budget per person, INR. */
-  budget: number;
   /** Days, 3–14. */
   duration: number;
   travelStyle: PlannerStyle;
+  /**
+   * How many people are going. Counted, not inferred.
+   *
+   * This used to be read off `travelStyle`: Solo meant one person and every
+   * other style meant exactly two, so a family of five was quoted the entry fee
+   * for two. The fee is statutory and printed to the rupee, which makes an
+   * inferred headcount worse than no figure at all.
+   */
+  travellers: number;
+  /**
+   * Of those travellers, how many are under 5 — the age at which the state
+   * exempts a visitor from the TSD fee. See TSD_EXEMPT_UNDER_AGE.
+   */
+  childrenUnderFive?: number;
+  /** ISO date. Used to date the days; it does not change the route. */
   startDate?: string;
-  specialRequests?: string;
 }
 
 export interface ItineraryDayPlan {
@@ -149,6 +161,10 @@ export interface ItineraryDayPlan {
 export interface ItineraryCostBreakdown {
   /** The statutory TSD entry fee — the only cost this project can state exactly. */
   tsd: number;
+  /** Travellers the fee is charged for: everyone aged 5 and over. */
+  chargeable: number;
+  /** Travellers exempted because they are under 5. */
+  exempt: number;
 }
 
 export interface GeneratedItinerary {
@@ -156,8 +172,11 @@ export interface GeneratedItinerary {
   days: number;
   nights: number;
   travelStyle: PlannerStyle;
+  travellers: number;
   interests: PlannerInterest[];
   dayPlans: ItineraryDayPlan[];
   cost: ItineraryCostBreakdown;
+  /** The bases, in order, with how many nights each — the route in one line. */
+  stops: { location: string; days: number }[];
 }
 

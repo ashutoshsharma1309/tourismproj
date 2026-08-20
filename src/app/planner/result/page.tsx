@@ -9,12 +9,20 @@ import { Badge } from "@/components/ui/Badge";
 import { representativePhoto } from "@/data/galleries";
 import { permitsMentionedIn } from "@/data/permits";
 import { generateItinerary } from "@/lib/generate-itinerary";
-import { formatPrice, formatPriceCompact } from "@/lib/format";
+import { TSD_EXEMPT_UNDER_AGE, TSD_FEE_PER_PERSON } from "@/lib/booking";
+import { formatPrice } from "@/lib/format";
 import type { PlannerInterest, PlannerStyle } from "@/types";
 
 export const metadata: Metadata = {
   title: "Your Itinerary",
-  description: "Day-by-day Sikkim itinerary with hotels, route map and full cost breakdown.",
+  /*
+   * Was "with hotels, route map and full cost breakdown". There are no hotels
+   * in this plan — no licensed rates feed exists, so nothing is selected — and
+   * the cost breakdown is one line, the statutory entry fee. Two of the three
+   * things promised were not here.
+   */
+  description:
+    "A day-by-day Sikkim route over real geography, with the permits it requires and the one fee the state publishes.",
 };
 
 interface PageProps {
@@ -47,15 +55,61 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
   const style: PlannerStyle = (VALID_STYLES as string[]).includes(styleParam)
     ? (styleParam as PlannerStyle)
     : "Couple";
-  const budget = Number(first(params.budget)) || 35_000;
   const duration = Number(first(params.duration)) || 7;
+
+  /*
+   * Headcount, counted.
+   *
+   * `travellers` is what the form now sends. A link made before it existed
+   * carries only `style`, so the old inference — Solo means one, anything else
+   * means two — is kept as the fallback for those links and nowhere else. It
+   * was wrong for families and groups, which is why it is no longer how the
+   * form works.
+   */
+  const travellersParam = Number(first(params.travellers));
+  const travellers =
+    Number.isFinite(travellersParam) && travellersParam > 0
+      ? Math.min(20, Math.round(travellersParam))
+      : style === "Solo"
+        ? 1
+        : 2;
+  const childrenParam = Number(first(params.children));
+  const childrenUnderFive =
+    Number.isFinite(childrenParam) && childrenParam > 0
+      ? Math.min(travellers, Math.round(childrenParam))
+      : 0;
+  const startDate = first(params.start);
 
   const itinerary = generateItinerary({
     interests,
-    budget,
     duration,
     travelStyle: style,
+    travellers,
+    childrenUnderFive,
+    startDate: startDate || undefined,
   });
+
+  /*
+   * The start date, if one was given, dates the days.
+   *
+   * The field was collected and put in the URL from the beginning and nothing
+   * ever read it — a date input that changed nothing. Day 1 is the start date,
+   * and each subsequent day is one day on. Nothing else is inferred from it:
+   * seasonal road closures are real in Sikkim but this project has no sourced
+   * calendar for them, so it does not pretend to one.
+   */
+  const dayDate = (dayNumber: number): string | null => {
+    if (!startDate) return null;
+    const start = new Date(`${startDate}T00:00:00`);
+    if (Number.isNaN(start.getTime())) return null;
+    const date = new Date(start);
+    date.setDate(start.getDate() + dayNumber - 1);
+    return date.toLocaleDateString("en-IN", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    });
+  };
 
   /* Collapse consecutive days in the same base into route stops. */
   const stops: Array<{ location: string; coordinates: { lat: number; lng: number }; days: string }> =
@@ -75,8 +129,11 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
 
   const summary = [
     { icon: CalendarRange, label: `${itinerary.days} days, ${itinerary.nights} nights` },
-    { icon: Users, label: itinerary.travelStyle },
-    { icon: Wallet, label: `${formatPriceCompact(budget)} budget/person` },
+    {
+      icon: Users,
+      label: `${itinerary.travellers} traveller${itinerary.travellers === 1 ? "" : "s"}`,
+    },
+    { icon: Wallet, label: `${formatPrice(itinerary.cost.tsd)} TSD entry fee` },
     { icon: Route, label: stops.map((stop) => stop.location).join(" → ") },
   ];
 
@@ -206,6 +263,10 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
                       <span>
                         <span className="font-mono text-caption text-primary">
                           DAY {day.day}
+                          {/* Real dates when a start date was given — see dayDate. */}
+                          {dayDate(day.day) ? (
+                            <span className="text-subtle"> · {dayDate(day.day)}</span>
+                          ) : null}
                         </span>
                         <span className="mt-0.5 block font-display text-h4">{day.title}</span>
                       </span>
@@ -235,7 +296,12 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
           {/* Cost + map rail */}
           <aside className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
             <div className="rounded-xl border bg-surface p-5">
-              <h2 className="text-h4 font-semibold">Cost per person</h2>
+              {/*
+                "Cost per person" was the old heading, over a figure that was
+                the party's total — ₹100 for two people read as ₹100 each. The
+                figure is now labelled for what it is and shows its arithmetic.
+              */}
+              <h2 className="text-h4 font-semibold">What this trip costs</h2>
               <div className="mt-3">
                 <div className="flex items-baseline justify-between gap-3">
                   <span className="text-small text-muted">TSD entry fee (statutory)</span>
@@ -243,12 +309,19 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
                     {formatPrice(cost.tsd)}
                   </span>
                 </div>
+                <p data-numeric className="mt-1 font-mono text-caption text-subtle">
+                  {formatPrice(TSD_FEE_PER_PERSON)} × {cost.chargeable} traveller
+                  {cost.chargeable === 1 ? "" : "s"}
+                  {cost.exempt > 0
+                    ? ` · ${cost.exempt} under ${TSD_EXEMPT_UNDER_AGE} exempt`
+                    : ""}
+                </p>
               </div>
               <p className="mt-3 text-caption leading-relaxed text-subtle">
+                Collected once by your hotel at check-in and valid one month.
                 Accommodation, transport and activity costs are not estimated —
                 Sikkim Darshan has no licensed rates feed, and a guessed total
-                would be worse than none. The ₹50 per-person TSD entry fee is
-                statutory and is quoted exactly.
+                would be worse than none.
               </p>
             </div>
 

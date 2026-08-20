@@ -39,9 +39,17 @@ export default function PlannerPage() {
             <h1 className="mt-3 max-w-2xl font-display text-h1 text-foreground-inverse text-glow">
               Plan your perfect Sikkim trip
             </h1>
+            {/*
+              This said "we'll craft the itinerary, pick the hotels, and show
+              every rupee including TSD". It picks no hotels — there is no
+              licensed rates feed, which is why /stays names no tariff either —
+              and "every rupee" oversells a cost panel with one line in it. The
+              hero was the last place on the route still making both claims.
+            */}
             <p className="mt-3 max-w-xl text-body-lg text-foreground-inverse/85">
-              Tell us your preferences — we&apos;ll craft the itinerary, pick the
-              hotels, and show every rupee including TSD.
+              Tell us how long you have and what you came for. You get a
+              day-by-day route over real geography, the permits it needs, and
+              the one fee the state actually publishes.
             </p>
           </div>
         </div>

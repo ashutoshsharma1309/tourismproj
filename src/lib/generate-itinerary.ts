@@ -1,4 +1,4 @@
-import { TSD_FEE_PER_PERSON } from "@/lib/booking";
+import { TSD_EXEMPT_UNDER_AGE, TSD_FEE_PER_PERSON } from "@/lib/booking";
 import type {
   Coordinates,
   GeneratedItinerary,
@@ -8,10 +8,19 @@ import type {
 } from "@/types";
 
 /**
- * Rule-based itinerary generator — the mock "AI" behind /planner. Composes a
- * day-by-day route from real geography: anchor bases, drive-time-sane day
- * trips, hotels picked from the catalogue by budget and district. Phase 4
- * swaps the rules for a model; the return shape is the contract.
+ * Rule-based itinerary generator behind /planner.
+ *
+ * It composes a day-by-day route from real geography: four anchor bases and
+ * day trips that are actually drivable from them. It is rules, not a model,
+ * and the UI says so rather than dressing it up as inference.
+ *
+ * WHAT IT DELIBERATELY DOES NOT DO
+ * -------------------------------
+ * It does not pick hotels and it does not price the trip. This docblock used to
+ * say "hotels picked from the catalogue by budget and district", which stopped
+ * being true when the invented tariffs came out of the hotel data: there is no
+ * licensed rates feed, so there is nothing to pick on. The one figure it states
+ * is the statutory TSD entry fee, which is published to the rupee.
  */
 
 interface Anchor {
@@ -190,27 +199,44 @@ export function generateItinerary(prefs: PlannerPreferences): GeneratedItinerary
     }
   }
 
-  /* No tariff feed is licensed, so the planner quotes only the one cost it
-     can state exactly: the statutory ₹50 TSD entry fee. Accommodation and
-     transport are deliberately not estimated. */
-  const tsd = TSD_FEE_PER_PERSON * (prefs.travelStyle === "Solo" ? 1 : 2);
+  /*
+   * The only cost this project can state exactly.
+   *
+   * It used to be `TSD × (style === "Solo" ? 1 : 2)` — the headcount was
+   * inferred from the travel style, so a family of five and a couple were both
+   * quoted ₹100. The fee is statutory and printed to the rupee; inferring the
+   * multiplier made an exact figure wrong. It is now counted, with the state's
+   * own under-5 exemption applied.
+   *
+   * Accommodation and transport stay un-estimated. No licensed rates feed
+   * exists, and a plausible-looking guess is the thing this planner is built
+   * not to produce.
+   */
+  const travellers = Math.min(20, Math.max(1, Math.round(prefs.travellers || 1)));
+  const exempt = Math.min(travellers, Math.max(0, Math.round(prefs.childrenUnderFive ?? 0)));
+  const chargeable = travellers - exempt;
+  const tsd = TSD_FEE_PER_PERSON * chargeable;
 
-  const styleWord =
-    prefs.travelStyle === "Luxury"
-      ? "Grand"
-      : prefs.travelStyle === "Budget"
-        ? "Backpacker"
-        : "Classic";
+  /* The route itself, which is more use in a title than an invented adjective:
+     "Grand" and "Backpacker" described a difference the plan does not contain,
+     since nothing here is priced or graded. */
+  const stops = plan.map((stop) => ({ location: stop.anchor.name, days: stop.days }));
+  const route = stops.map((stop) => stop.location).join(" → ");
 
   return {
-    name: `${duration}-Day ${styleWord} Sikkim`,
+    name: `${duration} days · ${route}`,
     days: duration,
     nights: duration - 1,
     travelStyle: prefs.travelStyle,
+    travellers,
     interests,
     dayPlans,
-    cost: { tsd },
+    stops,
+    cost: { tsd, chargeable, exempt },
   };
 }
+
+/** Days below which the under-5 exemption is worth explaining in the UI. */
+export const TSD_EXEMPT_AGE = TSD_EXEMPT_UNDER_AGE;
 
 /** Monastery highlights matching the traveller's interests, for the result page. */

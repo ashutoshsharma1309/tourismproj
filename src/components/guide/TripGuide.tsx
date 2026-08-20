@@ -216,11 +216,19 @@ export function TripGuide() {
   const chooseStyle = (style: string) => {
     if (!plan) return;
     push({ role: "visitor", text: style });
+    /*
+      `budget: "35000"` used to ride along here. Nothing has ever read it — the
+      generator does not price anything — and the planner form no longer asks
+      for it. `travellers` is what the fee is calculated from, so the party word
+      the visitor picked is turned into a headcount rather than left to be
+      inferred downstream.
+    */
+    const headcount: Record<string, number> = { Solo: 1, Couple: 2, Family: 4, Group: 6 };
     const params = new URLSearchParams({
       interests: plan.interests.join(","),
       duration: String(plan.duration ?? 5),
       style,
-      budget: "35000",
+      travellers: String(headcount[style] ?? 2),
     });
     const href = `/planner/result?${params.toString()}`;
     setPlan(null);
