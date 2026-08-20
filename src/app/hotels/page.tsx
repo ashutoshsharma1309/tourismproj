@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layout/Footer";
 import { TSDBreakdown } from "@/components/bookings/TSDBreakdown";
 import { StaysExplorer } from "@/components/stays/StaysExplorer";
-import { hotels, REGISTER_STATS } from "@/data/hotels";
+import { hotels, REGISTER_STATS, STAY_SOURCES } from "@/data/hotels";
 
 export const metadata: Metadata = {
   title: "Stays",
@@ -44,6 +44,23 @@ export default function StaysPage() {
           </a>{" "}
           on {REGISTER_STATS.retrievedAt}.
         </p>
+        <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
+          {REGISTER_STATS.located} of them could be matched to a mapped location
+          in{" "}
+          <a
+            href={STAY_SOURCES.osm.url}
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary hover:underline"
+          >
+            OpenStreetMap
+          </a>{" "}
+          ({STAY_SOURCES.osm.licence}), which is where their coordinates,
+          approximate distances, {REGISTER_STATS.withWebsite} websites and{" "}
+          {REGISTER_STATS.withPhone} telephone numbers come from. A match counts
+          only when the district agrees too — six were rejected because it did
+          not. The rest carry what the register alone publishes.
+        </p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
           <div>
@@ -62,6 +79,12 @@ export default function StaysPage() {
                 address: hotel.address,
                 category: hotel.category,
                 registrationNo: hotel.registrationNo,
+                mapsUrl: hotel.googleMapsUrl,
+                located: hotel.osm !== null,
+                confidence: hotel.osm?.confidence ?? null,
+                website: hotel.osm?.website ?? null,
+                phone: hotel.osm?.phone ?? null,
+                distances: hotel.osm?.distancesKm ?? null,
               }))}
               districts={districts}
             />

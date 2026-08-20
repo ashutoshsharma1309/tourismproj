@@ -1,4 +1,5 @@
 import generated from "@/data/generated/registered-hotels.json";
+import enrichment from "@/data/generated/stay-enrichment.json";
 import { googleMapsSearchUrl } from "@/data/monasteries";
 import type { Provenance } from "@/data/sources";
 import type { SikkimDistrict } from "@/types";
@@ -31,6 +32,27 @@ import type { SikkimDistrict } from "@/types";
  * Refresh with `npm run ingest:tourism`.
  */
 
+/**
+ * What a property gains from OpenStreetMap, where it could be matched.
+ *
+ * Separate from the register's own fields on purpose: the register is the
+ * authority for whether a hotel is licensed, and OSM is the authority for
+ * where it stands. Keeping them apart is what lets the UI attribute each fact
+ * to whoever actually published it.
+ */
+export interface StayEnrichment {
+  osmId: string;
+  /** "high" — names and district both agree. "medium" — partial name, district agrees. */
+  confidence: "high" | "medium";
+  latitude: number;
+  longitude: number;
+  propertyType: string | null;
+  website: string | null;
+  phone: string | null;
+  /** Straight-line kilometres. Not road distance — the UI says "approx." */
+  distancesKm: Record<string, number>;
+}
+
 export interface StayDirectoryEntry {
   slug: string;
   name: string;
@@ -47,6 +69,8 @@ export interface StayDirectoryEntry {
   /** Licence validity as printed. Null where the register leaves it blank. */
   validUpto: string | null;
   googleMapsUrl: string;
+  /** Present only where OSM held a match the district corroborated. */
+  osm: StayEnrichment | null;
   provenance: Provenance;
 }
 
@@ -77,6 +101,13 @@ function asDistrict(value: string): SikkimDistrict | null {
 
 const REGISTER = generated.hotels as GeneratedHotel[];
 
+const ENRICHED = new Map<string, StayEnrichment>(
+  (enrichment.rows as StayEnrichment[] & { slug: string }[]).map((row) => [
+    (row as unknown as { slug: string }).slug,
+    row,
+  ]),
+);
+
 export const hotels: StayDirectoryEntry[] = REGISTER.flatMap((entry) => {
   const district = asDistrict(entry.district);
   if (!district) return [];
@@ -89,7 +120,12 @@ export const hotels: StayDirectoryEntry[] = REGISTER.flatMap((entry) => {
       category: entry.category,
       registrationNo: entry.registrationNo,
       validUpto: entry.validUpto,
-      googleMapsUrl: googleMapsSearchUrl(entry.name, district),
+      osm: ENRICHED.get(entry.slug) ?? null,
+      /* With a coordinate, link to the point. Without one, a name search is the
+         honest best — it opens Maps at a query, not at a false pin. */
+      googleMapsUrl: ENRICHED.has(entry.slug)
+        ? `https://www.google.com/maps/search/?api=1&query=${ENRICHED.get(entry.slug)!.latitude}%2C${ENRICHED.get(entry.slug)!.longitude}`
+        : googleMapsSearchUrl(entry.name, district),
       provenance: {
         sourceId: "sikkim-tourism-registered-hotels",
         sourceUrl: generated.source.url,
@@ -105,10 +141,28 @@ export const hotels: StayDirectoryEntry[] = REGISTER.flatMap((entry) => {
 });
 
 /** What the department itself reported as the register's size, for the UI. */
+export const STAY_SOURCES = {
+  register: {
+    name: generated.source.name,
+    url: generated.source.url,
+    retrievedAt: generated.retrievedAt,
+  },
+  osm: {
+    name: enrichment.source.name,
+    url: enrichment.source.url,
+    licence: enrichment.source.licence,
+    retrievedAt: enrichment.generatedAt.slice(0, 10),
+  },
+  landmarks: enrichment.landmarks as { key: string; label: string }[],
+} as const;
+
 export const REGISTER_STATS = {
   published: hotels.length,
   reportedTotal: generated.reportedTotal ?? null,
   withCategory: hotels.filter((h) => h.category !== null).length,
   retrievedAt: generated.retrievedAt,
   sourceUrl: generated.source.url,
+  located: hotels.filter((h) => h.osm).length,
+  withWebsite: hotels.filter((h) => h.osm?.website).length,
+  withPhone: hotels.filter((h) => h.osm?.phone).length,
 } as const;

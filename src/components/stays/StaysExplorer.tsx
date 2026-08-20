@@ -29,15 +29,17 @@ export interface StayRow {
   address: string | null;
   category: string | null;
   registrationNo: string | null;
+  mapsUrl: string;
+  /** Present only where OpenStreetMap held a corroborated match. */
+  located: boolean;
+  confidence: "high" | "medium" | null;
+  website: string | null;
+  phone: string | null;
+  /** Straight-line km to the landmarks a visitor measures against. */
+  distances: Record<string, number> | null;
 }
 
 const PAGE = 24;
-
-function mapsUrl(name: string, district: string) {
-  return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-    `${name}, ${district} District, Sikkim, India`,
-  )}`;
-}
 
 export function StaysExplorer({
   rows,
@@ -49,6 +51,7 @@ export function StaysExplorer({
   const [query, setQuery] = useState("");
   const [district, setDistrict] = useState("");
   const [starred, setStarred] = useState(false);
+  const [locatedOnly, setLocatedOnly] = useState(false);
   const [shown, setShown] = useState(PAGE);
   const deferred = useDeferredValue(query);
 
@@ -57,6 +60,7 @@ export function StaysExplorer({
     return rows.filter((row) => {
       if (district && row.district !== district) return false;
       if (starred && !row.category) return false;
+      if (locatedOnly && !row.located) return false;
       if (!q) return true;
       return (
         row.name.toLowerCase().includes(q) ||
@@ -64,15 +68,16 @@ export function StaysExplorer({
         row.district.toLowerCase().includes(q)
       );
     });
-  }, [rows, deferred, district, starred]);
+  }, [rows, deferred, district, starred, locatedOnly]);
 
   const visible = filtered.slice(0, shown);
-  const active = Boolean(query || district || starred);
+  const active = Boolean(query || district || starred || locatedOnly);
 
   const reset = () => {
     setQuery("");
     setDistrict("");
     setStarred(false);
+    setLocatedOnly(false);
     setShown(PAGE);
   };
 
@@ -122,6 +127,18 @@ export function StaysExplorer({
           className={buttonClasses({ variant: starred ? "primary" : "outline", size: "lg" })}
         >
           Star-graded only
+        </button>
+
+        <button
+          type="button"
+          onClick={() => {
+            setLocatedOnly((value) => !value);
+            setShown(PAGE);
+          }}
+          aria-pressed={locatedOnly}
+          className={buttonClasses({ variant: locatedOnly ? "primary" : "outline", size: "lg" })}
+        >
+          Mapped only
         </button>
       </div>
 
@@ -174,15 +191,51 @@ export function StaysExplorer({
                   {row.registrationNo ? <span>Reg. {row.registrationNo}</span> : null}
                 </p>
 
-                <a
-                  href={mapsUrl(row.name, row.district)}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-auto inline-flex items-center gap-1.5 pt-2 text-small font-medium text-primary hover:underline"
-                >
-                  Open in Google Maps
-                  <ExternalLink className="size-3.5" aria-hidden />
-                </a>
+                {/* Distances are straight-line from an OpenStreetMap coordinate,
+                    so they are shown as "approx." and rounded to the kilometre.
+                    Roads through this terrain are nothing like straight, and a
+                    decimal place would be precision the number does not have. */}
+                {row.distances ? (
+                  <p className="flex flex-wrap gap-x-3 gap-y-1 text-caption text-muted">
+                    <span>approx. {row.distances.bagdogra} km from Bagdogra</span>
+                    <span>·</span>
+                    <span>{row.distances.mgmarg} km from M.G. Marg</span>
+                  </p>
+                ) : null}
+
+                <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 text-small font-medium">
+                  <a
+                    href={row.mapsUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline"
+                  >
+                    {row.located ? "Open location" : "Find on Google Maps"}
+                    <ExternalLink className="size-3.5" aria-hidden />
+                  </a>
+                  {row.website ? (
+                    <a
+                      href={row.website}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 text-primary hover:underline"
+                    >
+                      Website
+                      <ExternalLink className="size-3.5" aria-hidden />
+                    </a>
+                  ) : null}
+                  {row.phone ? (
+                    <a href={`tel:${row.phone.replace(/\s+/g, "")}`} className="text-primary hover:underline">
+                      Call
+                    </a>
+                  ) : null}
+                </div>
+
+                {row.confidence === "medium" ? (
+                  <p className="text-caption text-subtle">
+                    Location matched on a partial name; treat as approximate.
+                  </p>
+                ) : null}
               </li>
             ))}
           </ul>

@@ -1,0 +1,705 @@
+{
+  "generatedAt": "2026-08-20T09:30:57.193Z",
+  "source": {
+    "name": "OpenStreetMap contributors, via the Overpass API",
+    "url": "https://www.openstreetmap.org/copyright",
+    "licence": "ODbL 1.0",
+    "query": "area[\"ISO3166-2\"=\"IN-SK\"]; node/way[tourism~hotel|guest_house|hostel|motel|apartment|chalet]"
+  },
+  "landmarks": [
+    {
+      "key": "bagdogra",
+      "label": "Bagdogra Airport",
+      "lat": 26.6812,
+      "lng": 88.3286
+    },
+    {
+      "key": "pakyong",
+      "label": "Pakyong Airport",
+      "lat": 27.2255,
+      "lng": 88.586
+    },
+    {
+      "key": "njp",
+      "label": "New Jalpaiguri station",
+      "lat": 26.7271,
+      "lng": 88.3953
+    },
+    {
+      "key": "mgmarg",
+      "label": "M.G. Marg, Gangtok",
+      "lat": 27.3283,
+      "lng": 88.6138
+    }
+  ],
+  "note": "Coordinates, websites and telephone numbers come from OpenStreetMap and are matched to the state register only where the district also agrees. Distances are straight-line from those coordinates and are labelled approximate. Nothing here is inferred from a name alone.",
+  "matched": 35,
+  "rejectedOnDistrict": 6,
+  "rows": [
+    {
+      "slug": "tashi-gang-resort",
+      "osmId": "node/2110896094",
+      "osmName": "Tashi Gang Resort",
+      "confidence": "high",
+      "latitude": 27.29697,
+      "longitude": 88.27226,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 69,
+        "pakyong": 32,
+        "njp": 65,
+        "mgmarg": 34
+      }
+    },
+    {
+      "slug": "m-s-mintokling-guest-house",
+      "osmId": "node/2114200026",
+      "osmName": "Mintokling Guesthouse",
+      "confidence": "high",
+      "latitude": 27.32948,
+      "longitude": 88.61514,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "ladakh-house",
+      "osmId": "node/2208739481",
+      "osmName": "Ladakh Guest House",
+      "confidence": "high",
+      "latitude": 27.30073,
+      "longitude": 88.23572,
+      "propertyType": "guest_house",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 37
+      }
+    },
+    {
+      "slug": "sonamchen-hotel",
+      "osmId": "node/4157266570",
+      "osmName": "Hotel Sonamchen",
+      "confidence": "high",
+      "latitude": 27.30112,
+      "longitude": 88.23302,
+      "propertyType": "hotel",
+      "website": "http://hotelsonamchenpelling.com",
+      "phone": "+918170028232;+918170028224;+918170028231;+913592204199",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 38
+      }
+    },
+    {
+      "slug": "primula-hotel",
+      "osmId": "node/4168451291",
+      "osmName": "Hotel Primula Food and lodge",
+      "confidence": "medium",
+      "latitude": 27.33101,
+      "longitude": 88.61145,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "hotel-dragon-inn",
+      "osmId": "node/4544256694",
+      "osmName": "Dragon hotel",
+      "confidence": "high",
+      "latitude": 27.36686,
+      "longitude": 88.22298,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": "+9735934578",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 39,
+        "njp": 73,
+        "mgmarg": 39
+      }
+    },
+    {
+      "slug": "hotel-kabur",
+      "osmId": "node/4544266489",
+      "osmName": "Hotel Kabur",
+      "confidence": "high",
+      "latitude": 27.3012,
+      "longitude": 88.23746,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": "+919775972112",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 35,
+        "njp": 66,
+        "mgmarg": 37
+      }
+    },
+    {
+      "slug": "hotel-garuda",
+      "osmId": "node/4742482724",
+      "osmName": "Garuda",
+      "confidence": "high",
+      "latitude": 27.30076,
+      "longitude": 88.23628,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 69,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 37
+      }
+    },
+    {
+      "slug": "m-s-pandim",
+      "osmId": "node/4783979844",
+      "osmName": "Hotel Pandim",
+      "confidence": "high",
+      "latitude": 27.32772,
+      "longitude": 88.61431,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "central-hotel",
+      "osmId": "way/1065790699",
+      "osmName": "Central Government Touring Officers Guest House",
+      "confidence": "medium",
+      "latitude": 27.3428,
+      "longitude": 88.61372,
+      "propertyType": "guest_house",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 79,
+        "pakyong": 13,
+        "njp": 72,
+        "mgmarg": 2
+      }
+    },
+    {
+      "slug": "mayur",
+      "osmId": "node/4925330121",
+      "osmName": "Hotel mayur",
+      "confidence": "high",
+      "latitude": 27.33175,
+      "longitude": 88.61355,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 78,
+        "pakyong": 12,
+        "njp": 71,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "new-modern-central",
+      "osmId": "node/4925330122",
+      "osmName": "New Modern Central Lodge",
+      "confidence": "high",
+      "latitude": 27.32969,
+      "longitude": 88.6142,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "hotel-snow-white",
+      "osmId": "node/4925330136",
+      "osmName": "Hotel snow white",
+      "confidence": "high",
+      "latitude": 27.30547,
+      "longitude": 88.36496,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 24,
+        "njp": 64,
+        "mgmarg": 25
+      }
+    },
+    {
+      "slug": "sobralia-residency",
+      "osmId": "node/5222864838",
+      "osmName": "Summit Sobralia Resort & Spa",
+      "confidence": "medium",
+      "latitude": 27.15992,
+      "longitude": 88.35144,
+      "propertyType": "hotel",
+      "website": "https://www.summithotels.in/summit-sobralia-resort-spa-namchi",
+      "phone": "+91 3595 210131",
+      "stars": "3",
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 53,
+        "pakyong": 24,
+        "njp": 48,
+        "mgmarg": 32
+      }
+    },
+    {
+      "slug": "alpine-hotel",
+      "osmId": "node/5242700261",
+      "osmName": "Alpine Hotel",
+      "confidence": "high",
+      "latitude": 27.30118,
+      "longitude": 88.23698,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 37
+      }
+    },
+    {
+      "slug": "panchak-hotel",
+      "osmId": "node/5243701042",
+      "osmName": "Panchak",
+      "confidence": "high",
+      "latitude": 27.30146,
+      "longitude": 88.23436,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 38
+      }
+    },
+    {
+      "slug": "hotel-red-panda",
+      "osmId": "node/12458266701",
+      "osmName": "Red Panda's Homestay",
+      "confidence": "medium",
+      "latitude": 27.36879,
+      "longitude": 88.22051,
+      "propertyType": "hostel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 39,
+        "njp": 73,
+        "mgmarg": 39
+      }
+    },
+    {
+      "slug": "red-palace",
+      "osmId": "node/6153595191",
+      "osmName": "Hotel Red Palace",
+      "confidence": "high",
+      "latitude": 27.3663,
+      "longitude": 88.22102,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 39,
+        "njp": 73,
+        "mgmarg": 39
+      }
+    },
+    {
+      "slug": "dzongri-retreat",
+      "osmId": "node/6493516185",
+      "osmName": "Hostel Dzongrila",
+      "confidence": "medium",
+      "latitude": 27.36843,
+      "longitude": 88.22233,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 39,
+        "njp": 73,
+        "mgmarg": 39
+      }
+    },
+    {
+      "slug": "the-bamboo-retreat",
+      "osmId": "node/6773477285",
+      "osmName": "The Bamboo Retreat Hotel",
+      "confidence": "high",
+      "latitude": 27.30518,
+      "longitude": 88.56755,
+      "propertyType": "hotel",
+      "website": "https://bambooretreat.in/",
+      "phone": "00919232513090",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 73,
+        "pakyong": 9,
+        "njp": 67,
+        "mgmarg": 5
+      }
+    },
+    {
+      "slug": "m-s-gangtok-resort",
+      "osmId": "node/12439049301",
+      "osmName": "Mellow Fellow Hostel Gangtok",
+      "confidence": "medium",
+      "latitude": 27.32617,
+      "longitude": 88.61179,
+      "propertyType": "hostel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 11,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "m-s-nirvana",
+      "osmId": "node/7113645247",
+      "osmName": "Hotel Nirvana Inn",
+      "confidence": "high",
+      "latitude": 27.31641,
+      "longitude": 88.59626,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 75,
+        "pakyong": 10,
+        "njp": 68,
+        "mgmarg": 2
+      }
+    },
+    {
+      "slug": "m-s-tashi-tagey",
+      "osmId": "node/8116668925",
+      "osmName": "Hotel Tashi Tagey",
+      "confidence": "high",
+      "latitude": 27.31742,
+      "longitude": 88.6017,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 76,
+        "pakyong": 10,
+        "njp": 69,
+        "mgmarg": 2
+      }
+    },
+    {
+      "slug": "green-valley-hotel",
+      "osmId": "node/9726221617",
+      "osmName": "Green Valley Hotel",
+      "confidence": "high",
+      "latitude": 27.30101,
+      "longitude": 88.23655,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 37
+      }
+    },
+    {
+      "slug": "retreat-crassula-ovata",
+      "osmId": "node/9729299117",
+      "osmName": "Retreat Crassula Ovata",
+      "confidence": "high",
+      "latitude": 27.30126,
+      "longitude": 88.23067,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 70,
+        "pakyong": 36,
+        "njp": 66,
+        "mgmarg": 38
+      }
+    },
+    {
+      "slug": "m-s-the-sikkim-retreat",
+      "osmId": "node/9733820617",
+      "osmName": "Parasol Inn Sikkim",
+      "confidence": "medium",
+      "latitude": 27.35537,
+      "longitude": 88.61726,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": "707768-12998",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 80,
+        "pakyong": 15,
+        "njp": 73,
+        "mgmarg": 3
+      }
+    },
+    {
+      "slug": "m-s-the-rice-valley-residency",
+      "osmId": "node/9832106376",
+      "osmName": "The Rice Valley Residency",
+      "confidence": "high",
+      "latitude": 27.34282,
+      "longitude": 88.60379,
+      "propertyType": "motel",
+      "website": "https://www.thericevalleyresidency.com/",
+      "phone": "8710086346",
+      "stars": null,
+      "rooms": 20,
+      "distancesKm": {
+        "bagdogra": 78,
+        "pakyong": 13,
+        "njp": 72,
+        "mgmarg": 2
+      }
+    },
+    {
+      "slug": "the-nettle-fern-hotel",
+      "osmId": "node/9939573801",
+      "osmName": "The Nettle & Fern Hotel",
+      "confidence": "high",
+      "latitude": 27.33647,
+      "longitude": 88.61302,
+      "propertyType": "hotel",
+      "website": "http://www.nettleandfernhotel.com/",
+      "phone": "+91 9434132377",
+      "stars": null,
+      "rooms": 12,
+      "distancesKm": {
+        "bagdogra": 78,
+        "pakyong": 13,
+        "njp": 71,
+        "mgmarg": 1
+      }
+    },
+    {
+      "slug": "himalayan",
+      "osmId": "node/10833540205",
+      "osmName": "Himalayan hotel",
+      "confidence": "high",
+      "latitude": 27.30384,
+      "longitude": 88.36594,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 69,
+        "pakyong": 23,
+        "njp": 64,
+        "mgmarg": 25
+      }
+    },
+    {
+      "slug": "yalung-retreat",
+      "osmId": "node/11175762237",
+      "osmName": "Hotel Yalung",
+      "confidence": "high",
+      "latitude": 27.33032,
+      "longitude": 88.61367,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 78,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "heritage",
+      "osmId": "node/11372438633",
+      "osmName": "Yangsum Heritage Farm",
+      "confidence": "medium",
+      "latitude": 27.25533,
+      "longitude": 88.27516,
+      "propertyType": "guest_house",
+      "website": null,
+      "phone": "+919434179029",
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 64,
+        "pakyong": 31,
+        "njp": 60,
+        "mgmarg": 34
+      }
+    },
+    {
+      "slug": "golden-heights",
+      "osmId": "node/11940139168",
+      "osmName": "Hotel Golden Heights",
+      "confidence": "high",
+      "latitude": 27.32842,
+      "longitude": 88.61268,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "m-s-ambrosia-hotel",
+      "osmId": "node/12385541129",
+      "osmName": "Hotel Ambrosia",
+      "confidence": "high",
+      "latitude": 27.32843,
+      "longitude": 88.61296,
+      "propertyType": "hotel",
+      "website": "https://hotelambrosia.co.in",
+      "phone": "+917001689591",
+      "stars": null,
+      "rooms": 20,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "pomra",
+      "osmId": "node/13188553005",
+      "osmName": "Pomra",
+      "confidence": "high",
+      "latitude": 27.32755,
+      "longitude": 88.61431,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    },
+    {
+      "slug": "red-cherry-residency",
+      "osmId": "way/342022239",
+      "osmName": "Red Cherry Residency",
+      "confidence": "high",
+      "latitude": 27.32981,
+      "longitude": 88.61338,
+      "propertyType": "hotel",
+      "website": null,
+      "phone": null,
+      "stars": null,
+      "rooms": null,
+      "distancesKm": {
+        "bagdogra": 77,
+        "pakyong": 12,
+        "njp": 70,
+        "mgmarg": 0
+      }
+    }
+  ]
+}
