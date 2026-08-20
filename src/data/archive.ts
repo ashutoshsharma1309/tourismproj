@@ -222,6 +222,35 @@ function verificationOf(item: GeneratedItem): VerificationStatus {
   return "verified";
 }
 
+/**
+ * Catalogue order.
+ *
+ * The generated file is in the order the agent collected things, and the first
+ * six entries in it — the Tibetan canon, a manuscript leaf, a prayer wheel, a
+ * thangka being painted, a Cham dancer, a festival crowd — are every one of
+ * them photographed outside Sikkim. Rendered in file order, the archive of
+ * Sikkim's heritage opened on six consecutive "Photographed outside Sikkim"
+ * badges, which is what a visitor met before anything else on the page. 21 of
+ * the 77 objects are stand-ins; showing all six of the first six was an
+ * accident of collection order, not a fact about the collection.
+ *
+ * The stand-ins are not demoted out of sight — they are honest material and
+ * they keep their badge — but they follow the objects actually photographed in
+ * Sikkim. Within each group, dated material leads, oldest first, and everything
+ * else falls back to the title so the order is total and stable: a catalogue
+ * that reshuffles between builds is impossible to cite.
+ */
+function catalogueOrder(a: ArchiveItem, b: ArchiveItem): number {
+  if (a.sikkimSubject !== b.sikkimSubject) return a.sikkimSubject ? -1 : 1;
+
+  const aYear = a.period?.match(/\b(1[0-9]{3}|20[0-9]{2})\b/)?.[1];
+  const bYear = b.period?.match(/\b(1[0-9]{3}|20[0-9]{2})\b/)?.[1];
+  if (aYear && bYear && aYear !== bYear) return Number(aYear) - Number(bYear);
+  if (Boolean(aYear) !== Boolean(bYear)) return aYear ? -1 : 1;
+
+  return a.title.localeCompare(b.title);
+}
+
 export const archiveItems: ArchiveItem[] = (generated.items as GeneratedItem[]).map((item) => {
   const communities = splitCommunities(item.community);
   const monasteryNames = item.relatedMonasteries
@@ -276,7 +305,7 @@ export const archiveItems: ArchiveItem[] = (generated.items as GeneratedItem[]).
       .join(" ")
       .toLowerCase(),
   };
-});
+}).sort(catalogueOrder);
 
 /* ------------------------------------------------------------------ accessors */
 

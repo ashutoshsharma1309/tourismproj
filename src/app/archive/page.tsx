@@ -5,6 +5,7 @@ import Link from "next/link";
 
 import { ArchiveCard } from "@/components/archive/ArchiveCard";
 import { ArchiveExplorer } from "@/components/archive/ArchiveExplorer";
+import { ArchiveTimeline } from "@/components/archive/ArchiveTimeline";
 import { Footer } from "@/components/layout/Footer";
 import { VERIFICATION_LEGEND, VerificationChip } from "@/components/ui/VerificationChip";
 import {
@@ -19,6 +20,7 @@ import {
   getArchiveByCategory,
   getArchiveItemByKey,
 } from "@/data/archive";
+import { TIMELINE_STATS } from "@/data/archive-timeline";
 
 export const metadata: Metadata = {
   title: "Digital Heritage Archive",
@@ -54,12 +56,6 @@ export default async function ArchivePage() {
   const featured = FEATURED_KEYS.map((key) => getArchiveItemByKey(key)).filter(
     (item) => item !== undefined,
   );
-  const historical = [
-    ...getArchiveByCategory("Historical photographs"),
-    ...getArchiveByCategory("Historical documents"),
-    ...getArchiveByCategory("Historic sites"),
-  ].slice(0, 3);
-
   return (
     <>
       <main id="main">
@@ -239,30 +235,33 @@ export default async function ArchivePage() {
           </div>
         </section>
 
-        {/* --------------------------------------------- historical material */}
-        {historical.length > 0 ? (
-          <section className="border-y bg-surface-muted/40" aria-label="Featured historical material">
-            <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
-              <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
-                Historical material
-              </p>
-              <h2 className="mt-3 max-w-2xl font-display text-h2 text-balance-heading">
-                The oldest things in the collection
-              </h2>
-              <p className="mt-3 max-w-2xl text-body text-muted">
-                Sikkim&apos;s manuscripts and historical photographs are held
-                overwhelmingly in monastery libraries and family collections that
-                have never been digitised. What is here is what exists in the open
-                record — and it is not much.
-              </p>
-              <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-                {historical.map((item) => (
-                  <ArchiveCard key={item.id} item={item} />
-                ))}
-              </div>
+        {/* ------------------------------------------------------- timeline */}
+        <section
+          id="timeline"
+          className="border-y bg-surface-muted/40 scroll-mt-20"
+          aria-labelledby="timeline-heading"
+        >
+          <div className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
+            <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
+              The archive in time
+            </p>
+            <h2
+              id="timeline-heading"
+              className="mt-3 max-w-2xl font-display text-h2 text-balance-heading"
+            >
+              {TIMELINE_STATS.earliest} to {TIMELINE_STATS.latest}, object by object
+            </h2>
+            <p className="mt-3 max-w-2xl text-body text-muted">
+              A category list says what kinds of thing the archive holds. This
+              says when they are from — which is the question a heritage
+              collection is actually asked. Every entry keeps the date its record
+              carries, in the record&apos;s own words, and links to the object.
+            </p>
+            <div className="mt-8">
+              <ArchiveTimeline />
             </div>
-          </section>
-        ) : null}
+          </div>
+        </section>
 
         {/* ------------------------------------------------ explore by place */}
         <section className="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20" aria-label="Explore by location">
