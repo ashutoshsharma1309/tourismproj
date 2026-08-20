@@ -33,7 +33,8 @@ const plexMono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
-  /* Set NEXT_PUBLIC_SITE_URL in the deployment environment. See SITE_URL. */
+  /* SITE_URL is already parsed and validated — see resolveSiteUrl in
+     constants.ts. It cannot be blank, so this cannot throw. */
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Sikkim Darshan — Digitizing the Sacred Heritage of Sikkim",

@@ -24,13 +24,56 @@ export const SITE = {
 /**
  * The origin this deployment serves from.
  *
- * Absolute URLs in metadata — Open Graph images, canonicals, the sitemap — have
- * to name a host. The placeholder that stood here (`sikkimdarshan.example.com`)
- * meant every social preview pointed at a domain that does not resolve, so
- * every shared link rendered without its image.
+ * WHY THIS IS MORE CAREFUL THAN IT LOOKS
+ * --------------------------------------
+ * This was `process.env.NEXT_PUBLIC_SITE_URL?.replace(...) ?? "http://localhost:3000"`,
+ * and it broke the production build. `??` falls back only on null or undefined,
+ * and Vercel passes a declared-but-unfilled variable as an EMPTY STRING — which
+ * is neither. So the empty string sailed through the fallback and reached
+ * `new URL("")` in the root layout, which throws ERR_INVALID_URL while Next is
+ * collecting page data. The whole deploy failed on /_not-found with no obvious
+ * connection to a metadata setting.
+ *
+ * Three defences now, because a build must not fail over a blank env var:
+ *
+ *   1. Anything blank or whitespace counts as unset, not as a value.
+ *   2. Vercel's own origin is used when nothing is configured, which is
+ *      correct for a preview or a production deploy and is what the previous
+ *      localhost fallback got wrong even when it did fire.
+ *   3. The value is parsed here, once, and falls back again if it will not
+ *      parse — so a typo in the dashboard degrades a canonical URL rather
+ *      than taking the site down.
  */
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "http://localhost:3000";
+const LOCAL_ORIGIN = "http://localhost:3000";
+
+function resolveSiteUrl(): string {
+  const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+  const vercel =
+    process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim() || process.env.VERCEL_URL?.trim();
+
+  const candidate = configured
+    ? configured.replace(/\/+$/, "")
+    : vercel
+      ? `https://${vercel.replace(/^https?:\/\//, "").replace(/\/+$/, "")}`
+      : LOCAL_ORIGIN;
+
+  try {
+    const parsed = new URL(candidate);
+    /*
+     * The protocol check is not decoration. `new URL("htps:/typo")` does not
+     * throw — it parses as an exotic scheme, and `.origin` on a non-special
+     * scheme returns the STRING "null", which then fails to parse everywhere
+     * downstream. A mistyped scheme in the dashboard would have swapped one
+     * build failure for a subtler one.
+     */
+    if (parsed.protocol !== "https:" && parsed.protocol !== "http:") return LOCAL_ORIGIN;
+    return parsed.origin;
+  } catch {
+    return LOCAL_ORIGIN;
+  }
+}
+
+export const SITE_URL = resolveSiteUrl();
 
 export const NAV_LINKS = [
   { href: "/monasteries", label: "Monasteries" },
