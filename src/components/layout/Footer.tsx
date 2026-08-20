@@ -41,6 +41,11 @@ const COLUMNS = [
  * assertion in the chrome that no source backed.
  *
  * Restore this when real accounts exist, with their real handles.
+ *
+ * The build credit below is not a counter-example to that rule: it is one
+ * named person's own profile, which is a real handle, and it is offered as a
+ * way to reach the team rather than as a platform presence the project claims
+ * to keep.
  */
 
 export function Footer() {
@@ -89,11 +94,26 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-border-inverse">
-        <p className="mx-auto max-w-6xl px-6 py-5 text-caption text-foreground-inverse/50">
-          © 2026 {SITE.name} — a prototype built for the Sikkim Tourism
-          Department. Photography and recordings are freely licensed Wikimedia
-          Commons works.
-        </p>
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 text-caption text-foreground-inverse/50 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © 2026 {SITE.name} — a prototype built for the Sikkim Tourism
+            Department. Photography and recordings are freely licensed Wikimedia
+            Commons works.
+          </p>
+          <p className="sm:shrink-0">
+            Made by{" "}
+            <a
+              href="https://www.linkedin.com/in/ashutoshsharma1309/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Contact Ashutosh Sharma on LinkedIn"
+              className="font-medium text-foreground-inverse/80 underline decoration-from-font underline-offset-2 transition-colors hover:text-accent"
+            >
+              Ashutosh Sharma
+            </a>{" "}
+            and team
+          </p>
+        </div>
       </div>
     </footer>
   );
