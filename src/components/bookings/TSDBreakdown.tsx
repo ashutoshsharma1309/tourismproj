@@ -14,7 +14,10 @@ export function TSDBreakdown({ travellers }: { travellers: number }) {
 
   return (
     <div className="rounded-xl border bg-surface p-5">
-      <h3 className="text-h4 font-semibold">Tourism Sustainability Development levy</h3>
+      {/* h2, not h3. This panel sits directly under the page h1 with nothing
+          between, so an h3 skipped a level — the one moderate axe violation
+          left on /hotels. Its size is set by the class, not the tag. */}
+      <h2 className="text-h4 font-semibold">Tourism Sustainability Development levy</h2>
       <dl className="mt-4 flex flex-col gap-2.5">
         <div className="flex items-baseline justify-between gap-4">
           <dt className="text-small text-muted">

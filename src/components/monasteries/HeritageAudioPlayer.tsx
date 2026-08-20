@@ -206,9 +206,18 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
       {guide.attribution ? (
         <p className="mt-1 text-caption text-subtle">{guide.attribution}</p>
       ) : null}
-      {(VISITOR_LANGUAGES as readonly string[]).includes(guide.language) ? (
+      {/*
+        This note was gated on VISITOR_LANGUAGES, which no longer contains "bn"
+        — so a sentence explaining why BENGALI is offered appeared on the
+        Japanese, Korean, Mandarin, Arabic, Russian, German, French and Spanish
+        guides, and never on the Bengali one. The point it makes is true of the
+        whole set, so it is now written for the whole set and shown wherever it
+        applies.
+      */}
+      {(VISITOR_LANGUAGES as readonly string[]).includes(guide.language) ||
+      guide.language === "bn" ? (
         <p className="mt-1 text-caption text-subtle">
-          Bengali is offered for visitors arriving through West Bengal. Sikkim&apos;s
+          Offered for visitors rather than as a language of Sikkim. Sikkim&apos;s
           own languages are Nepali, Bhutia, Lepcha and Limbu.
         </p>
       ) : null}

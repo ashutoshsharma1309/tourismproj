@@ -133,7 +133,10 @@ export function StaysExplorer({
               setQuery(event.target.value);
               setShown(PAGE);
             }}
-            placeholder="Search by property or locality — Pelling, Mayfair…"
+            /* The placeholder used to suggest "Mayfair", which returns nothing:
+               the register spells it "May Fair Resort", two words. An example
+               query that fails is worse than no example. */
+            placeholder="Search by property or locality — Pelling, Denzong…"
             className="h-12 w-full rounded-full border bg-surface pr-4 pl-10 text-body focus-visible:border-primary focus-visible:outline-2 focus-visible:outline-primary"
           />
         </label>
@@ -225,7 +228,7 @@ export function StaysExplorer({
                     columns "May Fair Resort" broke across two lines to make
                     room for a grade only 22 of 905 properties even have. The
                     name gets the full width; the grade joins the meta line. */}
-                <h3 className="text-body font-semibold text-balance-heading">{row.name}</h3>
+                <p className="text-body font-semibold text-balance-heading">{row.name}</p>
 
                 {row.address ? (
                   <p className="text-caption leading-relaxed text-muted">{row.address}</p>
