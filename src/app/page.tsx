@@ -262,6 +262,9 @@ export default async function HomePage() {
                     src={img("int/thiksey")}
                     alt="Butter lamps and offering bowls inside the prayer hall at Thiksey Monastery, Ladakh"
                     fill
+                    /* First image below the hero; a reader reaches it within a
+                       scroll or two, which is sooner than lazy loading starts. */
+                    loading="eager"
                     sizes="(min-width: 1024px) 50vw, 100vw"
                     className="object-cover"
                   />
@@ -333,6 +336,13 @@ export default async function HomePage() {
                       src={monastery.image}
                       alt={`${monastery.name}, ${monastery.district}`}
                       fill
+                      /* Measured: scrolling at reading pace on a throttled
+                         connection reached these six cards before they had
+                         decoded. They are the first grid under the hero, so
+                         they load eagerly rather than on approach. `priority`
+                         would be wrong — that also preloads, and would compete
+                         with the hero for the largest paint. */
+                      loading="eager"
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="media-zoom object-cover group-hover:scale-[1.04]"
                     />
@@ -534,7 +544,8 @@ export default async function HomePage() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {stories.slice(0, 6).map((story, index) => (
               <ScrollReveal key={story.slug} delay={(index % 3) * 0.1}>
-                <StoryCard story={story} />
+                {/* First row only — see the eager prop on StoryCard. */}
+                <StoryCard story={story} eager={index < 3} />
               </ScrollReveal>
             ))}
           </div>

@@ -69,7 +69,25 @@ function ReadStoryCta() {
   );
 }
 
-export function StoryCard({ story, priority = false }: { story: Story; priority?: boolean }) {
+export function StoryCard({
+  story,
+  priority = false,
+  eager = false,
+}: {
+  story: Story;
+  /** Preload AND load immediately. Only for a card in the first viewport. */
+  priority?: boolean;
+  /**
+   * Load immediately without preloading.
+   *
+   * The distinction matters. A card sitting 5,600px down the home page is
+   * reached quickly enough that lazy loading is visibly late — measured, six of
+   * them were still undecoded when a reader arrived on a throttled connection —
+   * but preloading it would put it in the same queue as the hero and delay the
+   * largest paint. Eager without priority loads it early and quietly.
+   */
+  eager?: boolean;
+}) {
   return (
     <Link
       href={`/stories/${story.slug}`}
@@ -89,6 +107,7 @@ export function StoryCard({ story, priority = false }: { story: Story; priority?
           alt={story.heroAlt}
           fill
           priority={priority}
+          loading={eager && !priority ? "eager" : undefined}
           sizes="(min-width: 1280px) 24rem, (min-width: 640px) 45vw, 92vw"
           className="media-zoom object-cover group-hover:scale-[1.05]"
         />
