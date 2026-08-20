@@ -61,22 +61,9 @@
   },
   {
     "route": "/hotels",
-    "violations": [
-      {
-        "id": "heading-order",
-        "impact": "moderate",
-        "help": "Heading levels should only increase by one",
-        "count": 1,
-        "sample": [
-          {
-            "target": ".shadow-soft.overflow-hidden.p-5:nth-child(1) > h3",
-            "summary": "Fix any of the following:   Heading order invalid"
-          }
-        ]
-      }
-    ],
+    "violations": [],
     "keyboard": {
-      "focusableCount": 62
+      "focusableCount": 77
     },
     "firstFocus": {
       "tag": "a",
