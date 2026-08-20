@@ -118,7 +118,10 @@ export function AmbientAudio({ sources = AMBIENT_SOUNDS }: AmbientAudioProps) {
   }, []);
 
   return (
-    <div className="fixed right-4 bottom-4 z-50 flex flex-col items-end gap-2">
+    /* Bottom-LEFT. This sat bottom-right, where it covered the build credit
+       in the footer once the page was scrolled to the end, and where it now
+       shares a corner with the trip guide. */
+    <div className="fixed bottom-4 left-4 z-50 flex flex-col items-start gap-2">
       {panelOpen ? (
         <div className="w-60 rounded-lg border border-border-inverse bg-surface-inverse/95 p-4 shadow-overlay backdrop-blur">
           <p className="text-eyebrow font-mono tracking-widest text-foreground-inverse/60 uppercase">

@@ -27,7 +27,16 @@ from pathlib import Path
 import numpy as np
 from faster_whisper import WhisperModel
 
-ASR_LANG = {"en": "en", "hi": "hi", "de": "de", "fr": "fr", "es": "es"}
+ASR_LANG = {
+    "en": "en", "hi": "hi", "de": "de", "fr": "fr", "es": "es",
+    "bn": "bn", "ne": "ne", "ja": "ja", "ko": "ko", "zh": "zh", "ar": "ar", "ru": "ru",
+}
+
+# Japanese, Chinese and Korean are not written with spaces between words, so a
+# word error rate computed on whitespace tokens is meaningless for them — it
+# compares two arbitrary chunkings. Character error rate is the only figure that
+# means anything, and it is the one to read for these three.
+NO_WORD_BOUNDARIES = {"ja", "zh", "ko"}
 
 
 def normalise(text: str) -> str:
@@ -85,6 +94,7 @@ def main() -> None:
         cer = jiwer.cer(asked, heard)
         row = {**r, **audio_metrics(wav),
                "wer": round(wer * 100, 1), "cer": round(cer * 100, 1),
+               "werMeaningful": r["lang"] not in NO_WORD_BOUNDARIES,
                "heard": heard[:150]}
         out.append(row)
         print(f"  {r['lang']}  {r['model']:<26} WER {wer*100:5.1f}%  CER {cer*100:5.1f}%  "

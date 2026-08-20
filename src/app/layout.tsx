@@ -4,6 +4,7 @@ import type { ReactNode } from "react";
 
 import "./globals.css";
 
+import { TripGuide } from "@/components/guide/TripGuide";
 import { AmbientAudio } from "@/components/immersive/AmbientAudio";
 import { Navbar } from "@/components/layout/Navbar";
 import { CommandPalette } from "@/components/search/CommandPalette";
@@ -93,8 +94,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </a>
         <Navbar />
         {children}
-        {/* Global, muted-by-default ambience toggle. */}
+        {/* Bottom-left: ambience. Bottom-right: the guide. They share the
+            viewport's lower edge, so neither may move without the other. */}
         <AmbientAudio />
+        <TripGuide />
         <CommandPalette items={buildSearchIndex()} />
         <Toaster />
       </body>

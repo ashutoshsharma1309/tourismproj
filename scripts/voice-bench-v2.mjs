@@ -5,7 +5,7 @@
  * post-processing, so anything that differs between two renders is the voice.
  */
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
 
 const OUT = "voice-benchmark/v2/renders";
 const MODELS = ".tts-models";
@@ -14,48 +14,63 @@ const scripts = JSON.parse(readFileSync("voice-benchmark/v2/test-scripts.json", 
 
 /** Candidates. Piper quality tier is the project's own label, carried through. */
 const CANDIDATES = [
-  ["en", "en_US-ryan-high", "male", "high"],
-  ["en", "en_GB-cori-high", "female", "high"],
-  ["hi", "hi_IN-pratham-medium", "male", "medium"],
-  ["hi", "hi_IN-priyamvada-medium", "female", "medium"],
-  ["hi", "hi_IN-rohan-medium", "male", "medium"],
-  ["de", "de_DE-thorsten-high", "male", "high"],
-  ["de", "de_DE-thorsten-medium", "male", "medium"],
-  ["de", "de_DE-eva_k-x_low", "female", "x_low"],
-  ["fr", "fr_FR-tom-medium", "male", "medium"],
-  ["fr", "fr_FR-siwis-medium", "female", "medium"],
-  ["fr", "fr_FR-upmc-medium", "mixed", "medium"],
-  ["es", "es_MX-claude-high", "male", "high"],
-  ["es", "es_AR-daniela-high", "female", "high"],
-  ["es", "es_ES-davefx-medium", "male", "medium"],
+  /* The seven languages added in the expansion. Piper is thin for several of
+     them — one voice only for Bengali, Japanese and Korean — so the macOS
+     voices are entered as genuine candidates rather than as fallbacks. */
+  ["bn", "bn_BD-google-medium", "female", "medium", "piper"],
+  ["bn", "say-Piya", "female", "system", "say"],
+  ["ne", "ne_NP-chitwan-medium", "male", "medium", "piper"],
+  ["ne", "ne_NP-google-medium", "female", "medium", "piper"],
+  ["ja", "ja_JA-hi_fi_captain-medium", "male", "medium", "piper"],
+  ["ja", "say-Kyoko", "female", "system", "say"],
+  ["ko", "ko_KR-kss-medium", "female", "medium", "piper"],
+  ["ko", "say-Yuna", "female", "system", "say"],
+  ["zh", "zh_CN-huayan-medium", "female", "medium", "piper"],
+  ["zh", "zh_CN-chaowen-medium", "female", "medium", "piper"],
+  ["zh", "zh_CN-xiao_ya-medium", "female", "medium", "piper"],
+  ["zh", "say-Tingting", "female", "system", "say"],
+  ["ar", "ar_JO-kareem-medium", "male", "medium", "piper"],
+  ["ar", "say-Majed", "male", "system", "say"],
+  ["ru", "ru_RU-denis-medium", "male", "medium", "piper"],
+  ["ru", "ru_RU-dmitri-medium", "male", "medium", "piper"],
+  ["ru", "ru_RU-irina-medium", "female", "medium", "piper"],
+  ["ru", "say-Milena", "female", "system", "say"],
 ];
 
 mkdirSync(OUT, { recursive: true });
 const results = [];
 
-for (const [lang, model, character, quality] of CANDIDATES) {
+for (const [lang, model, character, quality, engine] of CANDIDATES) {
   const text = scripts[lang];
   const wav = `${OUT}/${lang}__${model}.wav`;
   const started = Date.now();
   try {
-    execFileSync(PIPER, ["-m", `${MODELS}/${model}.onnx`, "-f", wav], {
-      input: text,
-      stdio: ["pipe", "ignore", "pipe"],
-      timeout: 180000,
-    });
+    if (engine === "say") {
+      const voice = model.replace(/^say-/, "");
+      const aiff = `${wav}.aiff`;
+      execFileSync("say", ["-v", voice, "-r", "135", "-o", aiff, text], { stdio: "pipe", timeout: 180000 });
+      execFileSync("afconvert", ["-f", "WAVE", "-d", "LEI16@22050", "-c", "1", aiff, wav], { stdio: "pipe" });
+      rmSync(aiff, { force: true });
+    } else {
+      execFileSync(PIPER, ["-m", `${MODELS}/${model}.onnx`, "-f", wav], {
+        input: text,
+        stdio: ["pipe", "ignore", "pipe"],
+        timeout: 180000,
+      });
+    }
   } catch (error) {
     process.stdout.write(`  FAIL ${lang} ${model}: ${String(error).slice(0, 90)}\n`);
-    results.push({ lang, model, character, quality, ok: false });
+    results.push({ lang, model, character, quality, engine, ok: false });
     continue;
   }
   const ms = Date.now() - started;
   const bytes = statSync(wav).size;
   /* 16-bit mono PCM: 44-byte header, then 2 bytes per sample. */
-  const rate = JSON.parse(readFileSync(`${MODELS}/${model}.onnx.json`, "utf8")).audio?.sample_rate ?? 22050;
+  const rate = engine === "say" ? 22050 : (JSON.parse(readFileSync(`${MODELS}/${model}.onnx.json`, "utf8")).audio?.sample_rate ?? 22050);
   const seconds = (bytes - 44) / 2 / rate;
-  const words = text.split(/\s+/).length;
+  const words = /^(ja|zh|ko)$/.test(lang) ? text.length / 2 : text.split(/\s+/).length;
   results.push({
-    lang, model, character, quality, ok: true,
+    lang, model, character, quality, engine, ok: true,
     seconds: Number(seconds.toFixed(2)),
     wordsPerMinute: Number(((words / seconds) * 60).toFixed(1)),
     generationMs: ms,

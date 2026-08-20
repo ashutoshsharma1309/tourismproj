@@ -27,6 +27,14 @@ export const DISTRICTS = {
   de: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
   fr: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
   es: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  /* District names are proper nouns. Japanese, Korean, Mandarin, Arabic and
+     Russian keep them in Latin script rather than transliterated: a
+     transliteration is a claim about spelling that no source here supports. */
+  ja: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  ko: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  zh: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  ar: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
+  ru: { Gangtok: "Gangtok", Mangan: "Mangan", Namchi: "Namchi", Gyalshing: "Gyalshing", Pakyong: "Pakyong", Soreng: "Soreng" },
 };
 
 /** Lineage glosses, written per language rather than translated at runtime. */
@@ -75,6 +83,36 @@ export const TRADITIONS = {
     Kagyu: "a la escuela Kagyu",
     "Karma Kagyu": "al linaje Karma Kagyu",
     "Zurmang Kagyu": "al linaje Zurmang Kagyu",
+  },
+  ja: {
+    Nyingma: "チベット仏教で最も古い宗派であるニンマ派",
+    Kagyu: "カギュ派",
+    "Karma Kagyu": "カルマ・カギュ派",
+    "Zurmang Kagyu": "ズルマン・カギュ派",
+  },
+  ko: {
+    Nyingma: "티베트 불교에서 가장 오래된 종파인 닝마파",
+    Kagyu: "카규파",
+    "Karma Kagyu": "카르마 카규파",
+    "Zurmang Kagyu": "주르망 카규파",
+  },
+  zh: {
+    Nyingma: "藏传佛教中最古老的宁玛派",
+    Kagyu: "噶举派",
+    "Karma Kagyu": "噶玛噶举派",
+    "Zurmang Kagyu": "苏曼噶举派",
+  },
+  ar: {
+    Nyingma: "مدرسة نيينغما، أقدم المدارس التبتية",
+    Kagyu: "مدرسة كاغيو",
+    "Karma Kagyu": "سلالة كارما كاغيو",
+    "Zurmang Kagyu": "سلالة زورمانغ كاغيو",
+  },
+  ru: {
+    Nyingma: "школе Ньингма, старейшей из школ тибетского буддизма",
+    Kagyu: "школе Кагью",
+    "Karma Kagyu": "линии Карма Кагью",
+    "Zurmang Kagyu": "линии Зурманг Кагью",
   },
 };
 
@@ -212,6 +250,120 @@ export const TEMPLATES = {
       "Si viene de visita, vista con discreción. Rodee los santuarios y las estupas en el sentido de las agujas del reloj. Descálcese antes de entrar en una sala de oración, y pida permiso antes de fotografiar el interior.",
     closing: (n) => `Toda la información de esta guía procede de las fuentes indicadas en la página de ${n}.`,
   },
+  /*
+   * The five languages added in the expansion, written per language.
+   *
+   * Monastery names stay in Latin script and are never transliterated, the same
+   * rule bn and ne already follow above. A transliteration is a claim about how
+   * a name is written in that language, and this project has no source for
+   * "Rumtek in Korean". The common noun beside it — 사원, 寺院, دير, монастырь —
+   * is a translation and does move.
+   *
+   * Sentences are short deliberately. Punctuation is where a TTS engine takes
+   * breath, and in Japanese and Mandarin especially a long clause is where the
+   * prosody flattens out.
+   */
+  ja: {
+    label: "日本語",
+    welcome: (n) => `${n}僧院へようこそ。`,
+    place: (d) => (d ? `インド・シッキム州の${d}地区、東ヒマラヤに位置します。` : `東ヒマラヤ、インドのシッキム州に位置します。`),
+    founded: (y, t) =>
+      y && t ? `${y}年に創建され、${t}に属します。`
+      : y ? `${y}年に創建されました。`
+      : t ? `${t}に属します。`
+      : null,
+    kingdom:
+      "シッキムは1975年にインドの州となるまでヒマラヤの王国でした。僧院はその王国の暮らしと深く結びついていました。",
+    context:
+      "シッキムのゴンパは記念物であると同時に、生きた共同体です。彩色された扉の奥には本堂があり、木版の経典を収めた書庫があります。僧たちがここに暮らし、学び、問答し、一年の儀礼を守り続けています。",
+    architecture:
+      "建築はチベット僧院の伝統に従います。厚い壁が鮮やかな彩色の正面を支え、内部には柱の並ぶ講堂があります。その上の金色の屋根飾りが、山からの最初の光を受けます。",
+    etiquette:
+      "参拝の際は控えめな服装でお願いします。仏塔や祠は時計回りに巡ってください。本堂に入る前に靴を脱ぎ、堂内での撮影は必ず許可を得てください。",
+    closing: (n) => `この案内の内容はすべて、${n}のページに記載された出典に基づいています。`,
+  },
+  ko: {
+    label: "한국어",
+    welcome: (n) => `${n} 사원에 오신 것을 환영합니다.`,
+    place: (d) => (d ? `인도 시킴주 ${d} 지구, 동히말라야에 자리하고 있습니다.` : `동히말라야, 인도 시킴주에 자리하고 있습니다.`),
+    founded: (y, t) =>
+      y && t ? `${y}년에 세워졌으며, ${t}에 속합니다.`
+      : y ? `${y}년에 세워졌습니다.`
+      : t ? `${t}에 속합니다.`
+      : null,
+    kingdom:
+      "시킴은 1975년 인도의 주가 되기까지 히말라야의 왕국이었습니다. 이곳의 사원들은 그 왕국의 삶과 긴밀히 이어져 있었습니다.",
+    context:
+      "시킴의 곰파는 기념물이자 살아 있는 공동체입니다. 채색된 문 안에는 법당이 있고, 목판으로 찍은 경전을 모은 서고가 있습니다. 승려들이 이곳에 머물며 공부하고, 논쟁하고, 한 해의 의례를 이어 갑니다.",
+    architecture:
+      "건축은 티베트 사원의 전통을 따릅니다. 두꺼운 벽이 선명하게 채색된 정면을 받치고, 안에는 기둥이 늘어선 법당이 있습니다. 그 위 금빛 지붕 장식이 산에서 오는 첫 햇빛을 받습니다.",
+    etiquette:
+      "방문하실 때에는 단정한 옷차림을 부탁드립니다. 탑과 사당은 시계 방향으로 도십시오. 법당에 들어가기 전 신발을 벗고, 내부 촬영은 반드시 허락을 구하십시오.",
+    closing: (n) => `이 안내의 모든 내용은 ${n} 페이지에 실린 출처에 근거합니다.`,
+  },
+  zh: {
+    label: "中文",
+    welcome: (n) => `欢迎来到 ${n} 寺院。`,
+    place: (d) => (d ? `它坐落在印度锡金邦的${d}县，位于东喜马拉雅。` : `它坐落在印度锡金邦，位于东喜马拉雅。`),
+    founded: (y, t) =>
+      y && t ? `建于${y}年，属于${t}。`
+      : y ? `建于${y}年。`
+      : t ? `属于${t}。`
+      : null,
+    kingdom:
+      "锡金在一九七五年成为印度的一个邦之前，是喜马拉雅山中的王国。这里的寺院与那个王国的生活紧密相连。",
+    context:
+      "锡金的贡巴既是古迹，也是仍在运转的僧团。彩绘的门后是经堂，还有收藏木刻经卷的书库。僧人在此居住、修学、辩经，并守着一年之中的仪轨。",
+    architecture:
+      "建筑遵循藏传寺院的传统。厚墙托起色彩浓烈的立面，内部是列柱的大殿。殿顶的鎏金饰件，最先接住山间的晨光。",
+    etiquette:
+      "前来参访时，请着装得体。绕行佛塔与殿堂请顺时针方向。进入经堂前请脱鞋，殿内摄影须先征得许可。",
+    closing: (n) => `本导览的全部内容，均出自 ${n} 页面所列的资料来源。`,
+  },
+  ar: {
+    label: "العربية",
+    welcome: (n) => `أهلاً بكم في دير ${n}.`,
+    place: (d) => (d ? `يقع في منطقة ${d} بولاية سيكيم الهندية، في شرق الهيمالايا.` : `يقع في ولاية سيكيم الهندية، في شرق الهيمالايا.`),
+    founded: (y, t) =>
+      y && t ? `أُسّس عام ${y}، وينتمي إلى ${t}.`
+      : y ? `أُسّس عام ${y}.`
+      : t ? `ينتمي إلى ${t}.`
+      : null,
+    kingdom:
+      "كانت سيكيم مملكة في الهيمالايا حتى صارت ولاية هندية عام 1975، وارتبطت أديرتها بحياة تلك المملكة.",
+    /* Arabic runs long. The full-length blocks used by the other eleven
+       languages put every Arabic guide over the 90-second ceiling, and the
+       voice caps its own speaking rate — 130 to 190 moved 110s to only 93s — so
+       speeding it up could not recover the difference. These blocks are
+       shortened rather than the ceiling raised: the format is a guide someone
+       listens to while walking, and that is the constraint that should win. */
+    context:
+      "الغومبا في سيكيم جماعة حيّة بقدر ما هي أثر. خلف أبوابها المزخرفة قاعات للصلاة ومكتبة من النصوص. يعيش الرهبان هنا، ويقيمون طقوس السنة.",
+    architecture:
+      "تتبع العمارة تقاليد الأديرة التبتية: جدران سميكة، وواجهة زاهية الألوان، وقاعة اجتماع ذات أعمدة يعلوها سقف مذهّب.",
+    etiquette:
+      "الرجاء ارتداء ملابس محتشمة، والطواف حول المزارات باتجاه عقارب الساعة، وخلع الأحذية قبل دخول قاعة الصلاة، والاستئذان قبل التصوير.",
+    closing: (n) => `كل ما ورد في هذا الدليل مأخوذ من المصادر المذكورة في صفحة ${n}.`,
+  },
+  ru: {
+    label: "Русский",
+    welcome: (n) => `Добро пожаловать в монастырь ${n}.`,
+    place: (d) => (d ? `Он расположен в округе ${d}, в индийском штате Сикким, в Восточных Гималаях.` : `Он расположен в индийском штате Сикким, в Восточных Гималаях.`),
+    founded: (y, t) =>
+      y && t ? `Основан в ${y} году и принадлежит ${t}.`
+      : y ? `Основан в ${y} году.`
+      : t ? `Принадлежит ${t}.`
+      : null,
+    kingdom:
+      "До 1975 года, когда Сикким стал индийским штатом, он был гималайским королевством. Его монастыри были тесно связаны с жизнью этого королевства.",
+    context:
+      "Гомпа в Сиккиме — не только памятник, но и живая община. За расписными дверями лежат молитвенные залы и библиотека ксилографических текстов. Здесь живут монахи: учатся, ведут диспуты и соблюдают обряды годового круга.",
+    architecture:
+      "Архитектура следует тибетской монастырской традиции. Толстые стены несут ярко расписанный фасад, внутри — колонный зал собраний. Над ним позолоченная кровля первой ловит свет, сходящий с гор.",
+    etiquette:
+      "Если вы приедете, оденьтесь скромно. Обходите святыни и ступы по часовой стрелке. Разувайтесь перед входом в молитвенный зал и спрашивайте разрешения, прежде чем фотографировать внутри.",
+    closing: (n) => `Все сведения этого путеводителя взяты из источников, перечисленных на странице «${n}».`,
+  },
   bn: {
     label: "বাংলা",
     welcome: (n) => `${n}-এ আপনাকে স্বাগতম।`,
@@ -248,9 +400,17 @@ export const TEMPLATES = {
  */
 const NAME_FORMS = {
   en: (core, noun) => `${core} ${noun}`,
+  /* Scripts whose templates already supply the common noun take the bare name.
+     Without this the Japanese line read "Rumtek Monastery僧院へようこそ" —
+     "welcome to Rumtek Monastery monastery". */
   hi: (core) => core,
   ne: (core) => core,
   bn: (core) => core,
+  ja: (core) => core,
+  ko: (core) => core,
+  zh: (core) => core,
+  ar: (core) => core,
+  ru: (core) => core,
   de: (core, noun) => `${noun} ${core}`,
   fr: (core, noun) => `${noun} de ${core}`,
   es: (core, noun) => `${noun} de ${core}`,

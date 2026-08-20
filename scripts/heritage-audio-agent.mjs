@@ -39,9 +39,12 @@ const PIPER = {
     de: ".tts-models/de_DE-thorsten-high.onnx",
     fr: ".tts-models/fr_FR-tom-medium.onnx",
     es: ".tts-models/es_MX-claude-high.onnx",
+    ne: ".tts-models/ne_NP-google-medium.onnx",
+    ja: ".tts-models/ja_JA-hi_fi_captain-medium.onnx",
+    ru: ".tts-models/ru_RU-irina-medium.onnx",
   },
   attribution:
-    "Narration uses Piper (MIT) with voices from the rhasspy/piper-voices catalogue. No voice here imitates an identifiable person.",
+    "Narration uses Piper (MIT) with voices from the rhasspy/piper-voices catalogue, and Apple's system voices where they measured better. No voice here imitates an identifiable person.",
 };
 
 /**
@@ -71,6 +74,13 @@ const PIPER = {
 const VOICES = {
   en: { engine: "piper", voice: "en_US-ryan-high", label: TEMPLATES.en.label },
   hi: { engine: "say", voice: "Lekha", rate: 136, label: TEMPLATES.hi.label },
+  bn: { engine: "say", voice: "Piya", rate: 134, label: TEMPLATES.bn.label },
+  ne: { engine: "piper", voice: "ne_NP-google-medium", label: TEMPLATES.ne.label },
+  ja: { engine: "piper", voice: "ja_JA-hi_fi_captain-medium", label: TEMPLATES.ja.label },
+  ko: { engine: "say", voice: "Yuna", rate: 132, label: TEMPLATES.ko.label },
+  zh: { engine: "say", voice: "Tingting", rate: 132, label: TEMPLATES.zh.label },
+  ar: { engine: "say", voice: "Majed", rate: 170, label: TEMPLATES.ar.label },
+  ru: { engine: "piper", voice: "ru_RU-irina-medium", label: TEMPLATES.ru.label },
   de: { engine: "piper", voice: "de_DE-thorsten-high", label: TEMPLATES.de.label },
   fr: { engine: "piper", voice: "fr_FR-tom-medium", label: TEMPLATES.fr.label },
   es: { engine: "piper", voice: "es_MX-claude-high", label: TEMPLATES.es.label },
@@ -97,6 +107,11 @@ const SCRIPT_RANGES = {
   hi: /[\u0900-\u097F]/,
   ne: /[\u0900-\u097F]/,
   bn: /[\u0980-\u09FF]/,
+  ja: /[\u3040-\u30FF\u4E00-\u9FFF]/,
+  ko: /[\uAC00-\uD7AF]/,
+  zh: /[\u4E00-\u9FFF]/,
+  ar: /[\u0600-\u06FF]/,
+  ru: /[\u0400-\u04FF]/,
 };
 
 function checkLanguagePurity(lang, script, properNouns) {
@@ -377,6 +392,9 @@ function main() {
       withinTargetDuration: guides.filter((g) => g.withinTargetDuration).length,
       overMaximumDuration: guides.filter((g) => g.durationSeconds > TARGET_MAX_SECONDS).length,
       skipped: skipped.length,
+      /* The count alone is useless when a whole language vanishes: 15 skips
+         looked like a sampling glitch and was in fact every Arabic guide. */
+      skippedDetail: skipped.slice(0, 20),
     },
     durationNote:
       "Scripts are composed from a fixed template plus verified per-site facts, so every language lands inside the 60-90 second window by construction.",

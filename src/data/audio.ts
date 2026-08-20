@@ -82,7 +82,7 @@ export const BLOCKED_AUDIO_LANGUAGES = [
  * international ones. None of the five is a language of Sikkim, and the UI says
  * so rather than implying the archive speaks in the region's own voice.
  */
-export const VISITOR_LANGUAGES = ["de", "fr", "es"] as const;
+export const VISITOR_LANGUAGES = ["ja", "ko", "zh", "ar", "ru", "de", "fr", "es"] as const;
 
 /**
  * The order languages appear in the selector.
@@ -90,7 +90,14 @@ export const VISITOR_LANGUAGES = ["de", "fr", "es"] as const;
  * Fixed rather than derived from the data, so the guide for one monastery does
  * not list its languages in a different order from the next.
  */
-export const LANGUAGE_ORDER = ["en", "hi", "de", "fr", "es"] as const;
+export const LANGUAGE_ORDER = [
+  /* Regional first — the visitors Sikkim actually receives most of — then the
+     international set. Fixed rather than derived, so the selector reads the
+     same on every monastery. */
+  "en", "hi", "bn", "ne",
+  "ja", "ko", "zh", "ar", "ru",
+  "de", "fr", "es",
+] as const;
 
 /**
  * Retired from the public selector on 2026-08-19.
@@ -100,19 +107,11 @@ export const LANGUAGE_ORDER = ["en", "hi", "de", "fr", "es"] as const;
  * described them. They are listed here so the removal is a documented decision
  * rather than a gap someone later mistakes for an oversight.
  */
-export const RETIRED_LANGUAGES = [
-  {
-    code: "ne",
-    label: "नेपाली",
-    retiredAt: "2026-08-19",
-    reason:
-      "Nepali is a language of Sikkim and its removal is a real loss. It was retired because the platform's language set was refocused on the visitors it actually receives — domestic and international — and no Nepali speaker was available to review the narration. The audio is archived, not deleted.",
-  },
-  {
-    code: "bn",
-    label: "বাংলা",
-    retiredAt: "2026-08-19",
-    reason:
-      "Bengali served visitors arriving through West Bengal. Retired in the same pass; the benchmark could never measure it, since no speech recogniser available here transcribes Bengali reliably enough to score.",
-  },
-] as const;
+/**
+ * Nothing is retired at present.
+ *
+ * Nepali and Bengali were removed from the selector on 2026-08-19 and restored
+ * on 2026-08-20 when the language set was widened to twelve. Their audio was
+ * archived rather than deleted, which is why restoring them cost nothing.
+ */
+export const RETIRED_LANGUAGES = [] as const;

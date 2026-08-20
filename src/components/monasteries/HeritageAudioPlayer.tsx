@@ -1,10 +1,9 @@
 "use client";
 
-import { Pause, Play, RotateCcw, RotateCw } from "lucide-react";
+import { Languages, Pause, Play, RotateCcw, RotateCw } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { cn } from "@/lib/cn";
 import { BLOCKED_AUDIO_LANGUAGES, VISITOR_LANGUAGES } from "@/data/audio";
 import type { AudioGuide } from "@/data/audio";
 
@@ -83,25 +82,29 @@ export function HeritageAudioPlayer({ guides }: { guides: AudioGuide[] }) {
     <div className="w-full min-w-0 rounded-xl border bg-surface p-5">
       <div className="flex flex-wrap items-center justify-between gap-3">
         <h3 className="text-h4 font-semibold">Listen to Heritage</h3>
+        {/*
+          Twelve languages will not fit as twelve pills. A row of them wrapped
+          onto three lines and pushed the transport controls off the first
+          screen, so the language becomes a select — one control, one line,
+          native keyboard behaviour and a native picker on a phone, which is
+          better than anything a custom listbox would give here.
+        */}
         {guides.length > 1 ? (
-          <div className="flex min-w-0 flex-wrap gap-1.5" role="group" aria-label="Narration language">
-            {guides.map((g) => (
-              <button
-                key={g.language}
-                type="button"
-                onClick={() => setLang(g.language)}
-                aria-pressed={g.language === lang}
-                className={cn(
-                  "h-9 rounded-full border px-3.5 text-label font-medium transition-colors",
-                  g.language === lang
-                    ? "border-primary bg-primary text-primary-foreground"
-                    : "border-border-strong text-muted hover:border-primary hover:text-primary",
-                )}
-              >
-                {g.label}
-              </button>
-            ))}
-          </div>
+          <label className="flex min-w-0 items-center gap-2">
+            <Languages className="size-4 shrink-0 text-subtle" aria-hidden />
+            <span className="sr-only">Narration language</span>
+            <select
+              value={lang}
+              onChange={(e) => setLang(e.target.value)}
+              className="h-9 min-w-0 rounded-full border border-border-strong bg-surface px-3 text-label font-medium transition-colors hover:border-primary focus-visible:border-primary"
+            >
+              {guides.map((g) => (
+                <option key={g.language} value={g.language}>
+                  {g.label} · {clock(g.durationSeconds)}
+                </option>
+              ))}
+            </select>
+          </label>
         ) : null}
       </div>
 

@@ -57,7 +57,9 @@ function normalise(src, dst) {
   return { gain: Number(gain.toFixed(3)), rmsBefore: Number((20 * Math.log10(rms)).toFixed(2)) };
 }
 
-const scores = JSON.parse(readFileSync("voice-benchmark/v2/scores.json", "utf8"));
+const ONLY = process.env.BLIND_LANGS ? new Set(process.env.BLIND_LANGS.split(",")) : null;
+const scores = JSON.parse(readFileSync("voice-benchmark/v2/scores.json", "utf8"))
+  .filter((r) => !ONLY || ONLY.has(r.lang));
 mkdirSync("voice-benchmark/v2/blind", { recursive: true });
 
 const byLang = {};

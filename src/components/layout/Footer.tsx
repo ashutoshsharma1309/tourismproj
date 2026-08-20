@@ -94,7 +94,16 @@ export function Footer() {
       </div>
 
       <div className="relative border-t border-border-inverse">
-        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 py-5 text-caption text-foreground-inverse/50 sm:flex-row sm:items-center sm:justify-between">
+        {/*
+          pb-24, not py-5. Two controls are fixed to the bottom of the viewport
+          — ambience on the left, the trip guide on the right — and each sits in
+          the lowest ~64px. Scrolled to the end of the document, that band lands
+          exactly on this bar, and whichever control shares its corner covers
+          the text. It covered the sound toggle's own corner first, then the
+          build credit when the guide took the other one. Reserving the band is
+          the fix that holds however wide those controls get.
+        */}
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pt-5 pb-24 text-caption text-foreground-inverse/50 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © 2026 {SITE.name} — a prototype built for the Sikkim Tourism
             Department. Photography and recordings are freely licensed Wikimedia
