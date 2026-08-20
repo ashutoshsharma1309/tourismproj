@@ -40,8 +40,8 @@ export default function StaysPage() {
           exists, and no booking platform page could be confirmed. What each one
           carries is the register&apos;s own telephone number —{" "}
           {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — a Google
-          Maps destination, and an official website where the page was fetched
-          and checked. Read from{" "}
+          Maps destination for every property, and an official website for the{" "}
+          {CURATED_STATS.withWebsite} whose page was fetched and checked. Read from{" "}
           <a
             href={REGISTER_STATS.sourceUrl}
             target="_blank"

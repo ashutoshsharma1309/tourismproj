@@ -41,6 +41,29 @@ function monogram(name: string) {
   return ((words[0]?.[0] ?? name[0] ?? "?") + (words[1]?.[0] ?? "")).toUpperCase();
 }
 
+/**
+ * A number an international visitor can actually dial.
+ *
+ * The register prints local STD form — "03592-250304", sometimes with further
+ * numbers after a slash. That is correct as printed and valid as a tel: URI,
+ * but a phone abroad cannot place the call: the leading 0 is India's national
+ * trunk prefix and has to become +91. This platform now narrates in Japanese,
+ * Korean, Mandarin, Arabic and Russian, so its visitors are exactly the people
+ * for whom the local form does not work.
+ *
+ * The displayed text is left as the register prints it. Only the dial string
+ * is rewritten, and only when the shape is unambiguous — anything already
+ * carrying a country code, or too short to be a full number, is passed through
+ * rather than guessed at.
+ */
+function dialable(raw: string): string {
+  const first = (raw.split(/[\/,;]/)[0] ?? raw).replace(/[^\d+]/g, "");
+  if (first.startsWith("+")) return first;
+  if (first.startsWith("0") && first.length >= 10) return `+91${first.slice(1)}`;
+  if (first.length === 10) return `+91${first}`;
+  return first;
+}
+
 function tintFor(name: string) {
   let hash = 0;
   for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
@@ -219,7 +242,7 @@ export function CuratedStays({
                   <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-3 text-small font-medium">
                     {stay.phone ? (
                       <a
-                        href={`tel:${(stay.phone.split(/[\/,]/)[0] ?? stay.phone).replace(/\s+/g, "")}`}
+                        href={`tel:${dialable(stay.phone)}`}
                         className={buttonClasses({ variant: "primary", size: "sm" })}
                       >
                         <Phone className="size-3.5" aria-hidden />
