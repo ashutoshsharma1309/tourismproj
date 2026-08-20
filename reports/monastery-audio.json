@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19",
+  "generatedAt": "2026-08-20",
   "agent": "Heritage Audio Agent",
   "method": "Scripts assembled from verified record fields only; no generative prose. Sourced summary sentences are quoted from the cited article. Narration is machine-synthesised and disclosed as such in the UI.",
   "languages": {
@@ -13,6 +13,41 @@
         "code": "hi",
         "voice": "Lekha",
         "label": "हिन्दी"
+      },
+      {
+        "code": "bn",
+        "voice": "Piya",
+        "label": "বাংলা"
+      },
+      {
+        "code": "ne",
+        "voice": "ne_NP-google-medium",
+        "label": "नेपाली"
+      },
+      {
+        "code": "ja",
+        "voice": "ja_JA-hi_fi_captain-medium",
+        "label": "日本語"
+      },
+      {
+        "code": "ko",
+        "voice": "Yuna",
+        "label": "한국어"
+      },
+      {
+        "code": "zh",
+        "voice": "Tingting",
+        "label": "中文"
+      },
+      {
+        "code": "ar",
+        "voice": "Majed",
+        "label": "العربية"
+      },
+      {
+        "code": "ru",
+        "voice": "ru_RU-irina-medium",
+        "label": "Русский"
       },
       {
         "code": "de",
@@ -45,11 +80,12 @@
   },
   "totals": {
     "eligibleMonasteries": 15,
-    "guidesGenerated": 75,
+    "guidesGenerated": 15,
     "monasteriesWithAudio": 15,
-    "withinTargetDuration": 71,
+    "withinTargetDuration": 15,
     "overMaximumDuration": 0,
-    "skipped": 0
+    "skipped": 0,
+    "skippedDetail": []
   },
   "durationNote": "Scripts are composed from a fixed template plus verified per-site facts, so every language lands inside the 60-90 second window by construction.",
   "skipped": []

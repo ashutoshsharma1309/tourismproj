@@ -3,7 +3,7 @@
     "route": "/",
     "violations": [],
     "keyboard": {
-      "focusableCount": 119
+      "focusableCount": 121
     },
     "firstFocus": {
       "tag": "a",
@@ -15,7 +15,7 @@
     "route": "/monasteries",
     "violations": [],
     "keyboard": {
-      "focusableCount": 50
+      "focusableCount": 52
     },
     "firstFocus": {
       "tag": "a",
@@ -27,7 +27,7 @@
     "route": "/monasteries/rumtek",
     "violations": [],
     "keyboard": {
-      "focusableCount": 80
+      "focusableCount": 78
     },
     "firstFocus": {
       "tag": "a",
@@ -39,7 +39,7 @@
     "route": "/stories",
     "violations": [],
     "keyboard": {
-      "focusableCount": 131
+      "focusableCount": 133
     },
     "firstFocus": {
       "tag": "a",
@@ -51,7 +51,7 @@
     "route": "/stories/the-throne-of-stone-at-norbugang",
     "violations": [],
     "keyboard": {
-      "focusableCount": 42
+      "focusableCount": 44
     },
     "firstFocus": {
       "tag": "a",
@@ -61,9 +61,22 @@
   },
   {
     "route": "/hotels",
-    "violations": [],
+    "violations": [
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "help": "Heading levels should only increase by one",
+        "count": 1,
+        "sample": [
+          {
+            "target": ".shadow-soft.overflow-hidden.p-5:nth-child(1) > h3",
+            "summary": "Fix any of the following:   Heading order invalid"
+          }
+        ]
+      }
+    ],
     "keyboard": {
-      "focusableCount": 105
+      "focusableCount": 62
     },
     "firstFocus": {
       "tag": "a",
@@ -75,7 +88,7 @@
     "route": "/planner",
     "violations": [],
     "keyboard": {
-      "focusableCount": 41
+      "focusableCount": 43
     },
     "firstFocus": {
       "tag": "a",
@@ -87,7 +100,7 @@
     "route": "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
     "violations": [],
     "keyboard": {
-      "focusableCount": 33
+      "focusableCount": 35
     },
     "firstFocus": {
       "tag": "a",
@@ -99,7 +112,7 @@
     "route": "/preservation",
     "violations": [],
     "keyboard": {
-      "focusableCount": 72
+      "focusableCount": 74
     },
     "firstFocus": {
       "tag": "a",
@@ -111,7 +124,7 @@
     "route": "/permits",
     "violations": [],
     "keyboard": {
-      "focusableCount": 26
+      "focusableCount": 28
     },
     "firstFocus": {
       "tag": "a",
@@ -123,7 +136,7 @@
     "route": "/responsible",
     "violations": [],
     "keyboard": {
-      "focusableCount": 25
+      "focusableCount": 27
     },
     "firstFocus": {
       "tag": "a",
@@ -135,7 +148,7 @@
     "route": "/places/tsomgo-lake",
     "violations": [],
     "keyboard": {
-      "focusableCount": 45
+      "focusableCount": 47
     },
     "firstFocus": {
       "tag": "a",
