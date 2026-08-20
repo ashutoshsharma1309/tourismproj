@@ -41,6 +41,46 @@ export interface StayRow {
 
 const PAGE = 24;
 
+/**
+ * A property's visual identity, drawn rather than photographed.
+ *
+ * There is no photograph. That is a finding, not an oversight: Wikimedia
+ * Commons was searched for all 55 mapped and state-graded properties and
+ * returned nothing but nineteenth-century travel books; the 137 OpenStreetMap
+ * objects carry no `image`, `wikimedia_commons` or `wikidata` tag between them;
+ * and of six official websites, four are dead and two publish an og:image.
+ *
+ * The alternative — a stock hotel interior, or a photograph of the town
+ * standing in for the building — is the invention this directory was stripped
+ * back to remove. So each card gets a monogram panel instead: the property's
+ * own initials, tinted deterministically from its name so the same hotel always
+ * looks the same, and unmistakably a graphic rather than a picture of a
+ * building. It gives the grid a rhythm without claiming to show anything.
+ */
+const TINTS = [
+  "from-[#2f3f34] to-[#43614d]",
+  "from-[#3b3226] to-[#6b5a3e]",
+  "from-[#2b3540] to-[#44566b]",
+  "from-[#3d2b2b] to-[#6b4444]",
+  "from-[#2f3a3a] to-[#4a6060]",
+  "from-[#37324a] to-[#565073]",
+];
+
+function monogram(name: string) {
+  const words = name
+    .replace(/^M\/s\.?\s*/i, "")
+    .split(/[\s.]+/)
+    .filter((w) => /[a-z]/i.test(w) && !/^(hotel|the|and|of)$/i.test(w));
+  const letters = (words[0]?.[0] ?? name[0] ?? "?") + (words[1]?.[0] ?? "");
+  return letters.toUpperCase();
+}
+
+function tintFor(name: string) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  return TINTS[hash % TINTS.length];
+}
+
 export function StaysExplorer({
   rows,
   districts,
@@ -170,8 +210,17 @@ export function StaysExplorer({
             {visible.map((row) => (
               <li
                 key={row.slug}
-                className="flex flex-col gap-2 rounded-xl border bg-surface p-5 shadow-soft"
+                className="flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft"
               >
+                <div
+                  aria-hidden
+                  className={`-mx-5 -mt-5 mb-1 flex h-24 items-center justify-center bg-gradient-to-br ${tintFor(row.name)}`}
+                >
+                  <span className="font-display text-h2 text-foreground-inverse/90">
+                    {monogram(row.name)}
+                  </span>
+                </div>
+
                 {/* The badge sat beside the name and squeezed it — at three
                     columns "May Fair Resort" broke across two lines to make
                     room for a grade only 22 of 905 properties even have. The
