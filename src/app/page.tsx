@@ -251,7 +251,13 @@ export default async function HomePage() {
                 documents that living heritage — traced to named sources,
                 readable in its own words, and narrated in four languages.
               </p>
-              <p className="mt-4 font-mono text-small tracking-widest text-accent uppercase">
+              {/* accent-ink, not accent. The gilt is 2.71:1 on the page
+                  background and only legible on dark surfaces — the token
+                  comment in globals.css says so. This line was invisible to
+                  the auditor until the scroll reveal stopped rendering it at
+                  opacity 0, which is how a real contrast failure sat here
+                  through twelve consecutive clean a11y runs. */}
+              <p className="mt-4 font-mono text-small tracking-widest text-accent-ink uppercase">
                 {SITE.motto}
               </p>
             </ScrollReveal>
