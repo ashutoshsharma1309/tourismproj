@@ -2,8 +2,14 @@ import type { Metadata } from "next";
 
 import { Footer } from "@/components/layout/Footer";
 import { TSDBreakdown } from "@/components/bookings/TSDBreakdown";
-import { StaysExplorer } from "@/components/stays/StaysExplorer";
-import { hotels, REGISTER_STATS, STAY_SOURCES } from "@/data/hotels";
+import { CuratedStays } from "@/components/stays/CuratedStays";
+import { REGISTER_STATS } from "@/data/hotels";
+import {
+  CURATED_DISTRICTS,
+  CURATED_STATS,
+  STAR_GRADES,
+  curatedStays,
+} from "@/data/curated-stays";
 
 export const metadata: Metadata = {
   title: "Stays",
@@ -12,7 +18,6 @@ export const metadata: Metadata = {
 };
 
 export default function StaysPage() {
-  const districts = [...new Set(hotels.map((h) => h.district))].sort();
 
   return (
     <>
@@ -21,19 +26,22 @@ export default function StaysPage() {
           Where to stay
         </p>
         <h1 className="mt-3 font-display text-h1 text-balance-heading">
-          Registered stays across Sikkim
+          State-graded stays across Sikkim
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted">
-          Every property here is on the Government of Sikkim&apos;s own register
-          of licensed hotels — {REGISTER_STATS.published.toLocaleString()} of the{" "}
-          {REGISTER_STATS.reportedTotal?.toLocaleString()} entries the department
-          publishes, each with its registration number.
+          The {CURATED_STATS.total} properties the Tourism &amp; Civil Aviation
+          Department awards a star grade, across{" "}
+          {CURATED_STATS.districts} districts. The grade is the state&apos;s
+          own — this page ranks nothing itself.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          No tariff, guest rating or review is shown: Sikkim Darshan holds no
-          licensed feed for them. Nor is a star grade invented — the register
-          records a category for only {REGISTER_STATS.withCategory} of these
-          properties, and the rest are shown without one. Read from{" "}
+          No tariff, photograph or guest rating is shown, because none could be
+          verified: no openly licensed photograph of any of these properties
+          exists, and no booking platform page could be confirmed. What each one
+          carries is the register&apos;s own telephone number —{" "}
+          {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — a Google
+          Maps destination, and an official website where the page was fetched
+          and checked. Read from{" "}
           <a
             href={REGISTER_STATS.sourceUrl}
             target="_blank"
@@ -42,51 +50,25 @@ export default function StaysPage() {
           >
             the department&apos;s register
           </a>{" "}
-          on {REGISTER_STATS.retrievedAt}.
-        </p>
-        <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          {REGISTER_STATS.located} of them could be matched to a mapped location
-          in{" "}
-          <a
-            href={STAY_SOURCES.osm.url}
-            target="_blank"
-            rel="noreferrer"
-            className="text-primary hover:underline"
-          >
-            OpenStreetMap
-          </a>{" "}
-          ({STAY_SOURCES.osm.licence}), which is where their coordinates,
-          approximate distances, {REGISTER_STATS.withWebsite} websites and{" "}
-          {REGISTER_STATS.withPhone} telephone numbers come from. A match counts
-          only when the district agrees too — six were rejected because it did
-          not. The rest carry what the register alone publishes.
+          on {REGISTER_STATS.retrievedAt}. The full register of{" "}
+          {REGISTER_STATS.published.toLocaleString()} licensed properties sits
+          behind this page as its reference layer.
         </p>
 
         <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
           <div>
             {/*
-              One searchable list, not twelve-per-district with a link out.
-              The register holds 905 properties; the district sections showed 70
-              of them, so 835 registered hotels could not be reached from this
-              site at all. Grouping by district survives as a filter, which is
-              what the grouping was actually for.
+              The 22 the state grades, not the 905 it licenses.
+              The register is an administrative list; scrolling it is not
+              discovering somewhere to stay. The grading is the one editorial
+              judgement in this data that the project did not make itself,
+              which makes it the honest basis for a curated page. The full
+              register stays in the data layer and is linked below.
             */}
-            <StaysExplorer
-              rows={hotels.map((hotel) => ({
-                slug: hotel.slug,
-                name: hotel.name,
-                district: hotel.district,
-                address: hotel.address,
-                category: hotel.category,
-                registrationNo: hotel.registrationNo,
-                mapsUrl: hotel.googleMapsUrl,
-                located: hotel.osm !== null,
-                confidence: hotel.osm?.confidence ?? null,
-                website: hotel.osm?.website ?? null,
-                phone: hotel.osm?.phone ?? null,
-                distances: hotel.osm?.distancesKm ?? null,
-              }))}
-              districts={districts}
+            <CuratedStays
+              stays={curatedStays}
+              districts={CURATED_DISTRICTS}
+              grades={STAR_GRADES}
             />
           </div>
 
