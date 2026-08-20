@@ -61,16 +61,28 @@ export function CuratedStays({
   const [grade, setGrade] = useState("");
   const deferred = useDeferredValue(query);
 
+  /*
+   * Matching ignores spacing and punctuation.
+   *
+   * The register writes "May Fair Resort" as two words; every visitor writes
+   * "Mayfair". Matched literally, the best-known hotel in Gangtok returns
+   * nothing to the one query most likely to be typed for it. Collapsing both
+   * sides to letters and digits fixes that whole class — "Nor-Khill" against
+   * "Norkhill", "M/s.Mintokling" against "Mintokling" — without any per-name
+   * alias list to maintain.
+   */
+  const squash = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
+
   const filtered = useMemo(() => {
-    const q = deferred.trim().toLowerCase();
+    const q = squash(deferred);
     return stays.filter((stay) => {
       if (district && stay.district !== district) return false;
       if (grade && stay.starCategory !== grade) return false;
       if (!q) return true;
       return (
-        stay.name.toLowerCase().includes(q) ||
-        (stay.address ?? "").toLowerCase().includes(q) ||
-        stay.district.toLowerCase().includes(q)
+        squash(stay.name).includes(q) ||
+        squash(stay.address ?? "").includes(q) ||
+        squash(stay.district).includes(q)
       );
     });
   }, [stays, deferred, district, grade]);
@@ -97,7 +109,7 @@ export function CuratedStays({
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by property or locality — Denzong, Pelling…"
+            placeholder="Search by property or locality — Mayfair, Pelling…"
             className="h-12 w-full rounded-full border bg-surface pr-4 pl-10 text-body focus-visible:border-primary focus-visible:outline-2 focus-visible:outline-primary"
           />
         </label>
