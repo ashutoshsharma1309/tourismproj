@@ -63,7 +63,7 @@
     "route": "/hotels",
     "violations": [],
     "keyboard": {
-      "focusableCount": 77
+      "focusableCount": 99
     },
     "firstFocus": {
       "tag": "a",

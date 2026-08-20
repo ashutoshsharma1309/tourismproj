@@ -35,10 +35,13 @@ export default function StaysPage() {
           own — this page ranks nothing itself.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          No tariff, photograph or guest rating is shown, because none could be
-          verified: no openly licensed photograph of any of these properties
-          exists, and no booking platform page could be confirmed. What each one
-          carries is the register&apos;s own telephone number —{" "}
+          No tariff or guest rating is shown, because none could be verified,
+          and no photograph of any property either: no openly licensed picture
+          of these buildings exists, and no booking platform page could be
+          confirmed. Each card instead shows a freely licensed photograph of a
+          catalogued place in the same district, captioned with what it actually
+          depicts — never with the hotel beside it. What each property does
+          carry is the register&apos;s own telephone number —{" "}
           {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — a Google
           Maps destination for every property, and an official website for the{" "}
           {CURATED_STATS.withWebsite} whose page was fetched and checked. Read from{" "}
@@ -55,7 +58,29 @@ export default function StaysPage() {
           behind this page as its reference layer.
         </p>
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_340px]">
+        {/*
+          The levy panel sits above the grid, not beside it.
+
+          It was a sticky right rail against a column of 22 cards, and it is
+          about 400px tall — so for the whole scroll below it the page was a
+          340px empty gutter running down the right of every row, while the
+          cards were squeezed into three narrow columns in the remaining 772px.
+          Moving it up gives the grid the full container and puts the levy where
+          it is actually read: before the properties, since it is a cost that
+          applies whichever one you choose.
+        */}
+        <div className="mt-10 grid gap-6 lg:grid-cols-[1fr_340px] lg:items-start">
+          <p className="rounded-xl border border-dashed p-4 text-caption leading-relaxed text-muted lg:order-2">
+            Rates, availability and guest reviews return when a licensed Places
+            or booking integration is connected. Until then this page shows only
+            what can be stated without inventing it.
+          </p>
+          <div className="lg:order-1">
+            <TSDBreakdown travellers={2} />
+          </div>
+        </div>
+
+        <div className="mt-10">
           <div>
             {/*
               The 22 the state grades, not the 905 it licenses.
@@ -71,15 +96,6 @@ export default function StaysPage() {
               grades={STAR_GRADES}
             />
           </div>
-
-          <aside className="lg:sticky lg:top-24 lg:self-start">
-            <TSDBreakdown travellers={2} />
-            <p className="mt-4 rounded-xl border border-dashed p-4 text-caption leading-relaxed text-muted">
-              Rates, availability and guest reviews return when a licensed
-              Places or booking integration is connected. Until then this page
-              shows only what can be stated without inventing it.
-            </p>
-          </aside>
         </div>
       </main>
       <Footer />

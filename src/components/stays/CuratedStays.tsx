@@ -1,11 +1,13 @@
 "use client";
 
 import { ExternalLink, MapPin, Phone, Search, X } from "lucide-react";
+import Image from "next/image";
 import { useDeferredValue, useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
 import type { CuratedStay, StarGrade } from "@/data/curated-stays";
+import { stayPhoto } from "@/data/stay-photos";
 
 /**
  * The curated stays grid.
@@ -15,13 +17,19 @@ import type { CuratedStay, StarGrade } from "@/data/curated-stays";
  * that this project did not invent. Search and the two filters exist because a
  * visitor arriving with a name in mind should not have to scan for it.
  *
- * Each property has no photograph, and that is a researched finding rather than
- * a gap: Commons was searched for every one of them, OpenStreetMap carries no
- * image tags, and of the official websites only three resolve to a real
- * property page. So the card leads with a monogram panel — the property's
- * initials over a tint derived from its name, so the same hotel always looks
- * the same. It is plainly a graphic, which is the point: a stock hotel interior
- * would be the invention this directory exists to avoid.
+ * No property has a photograph of itself, and that is a researched finding
+ * rather than a gap: Commons was searched for every one of them, OpenStreetMap
+ * carries no image tags, and of the official websites only three resolve to a
+ * real property page. A stock hotel interior would be the invention this
+ * directory exists to avoid.
+ *
+ * What the card leads with instead is a photograph of a catalogued place in the
+ * same district, captioned with the place it actually shows and credited to the
+ * photographer who released it — see src/data/stay-photos.ts for how one is
+ * chosen. The caption is not decoration and must not be dropped: it is the only
+ * thing separating "somewhere in this district looks like this" from "this is
+ * the hotel". The monogram remains as the fallback for a district with no
+ * qualifying photograph, and as the property's own mark over the frame.
  */
 
 const TINTS = [
@@ -202,20 +210,50 @@ export function CuratedStays({
               {group.grade} · {group.items.length}
             </h2>
 
-            <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-              {group.items.map((stay) => (
+            <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {group.items.map((stay) => {
+                const photo = stayPhoto(stay);
+                return (
                 <li
                   key={stay.slug}
                   className="flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft"
                 >
-                  <div
-                    aria-hidden
-                    className={`-mx-5 -mt-5 mb-1 flex h-24 items-center justify-center bg-gradient-to-br ${tintFor(stay.name)}`}
-                  >
-                    <span className="font-display text-h2 text-foreground-inverse/90">
-                      {monogram(stay.name)}
-                    </span>
-                  </div>
+                  {photo ? (
+                    <figure className="-mx-5 -mt-5 mb-1">
+                      <div className="relative h-32 bg-surface-muted">
+                        <Image
+                          src={photo.localPath}
+                          alt={`${photo.placeName}, ${photo.placeDistrict} district — not a photograph of ${stay.name}`}
+                          fill
+                          sizes="(min-width: 1280px) 22rem, (min-width: 640px) 45vw, 92vw"
+                          className="object-cover"
+                        />
+                        <div className="gradient-overlay absolute inset-0" aria-hidden />
+                        {/* The property's own mark stays, over the frame: it is
+                            what makes one card distinguishable from another at a
+                            glance, and it is the only graphic here that belongs
+                            to the hotel. */}
+                        <span
+                          aria-hidden
+                          className="absolute top-2 left-3 font-display text-h4 text-foreground-inverse text-glow"
+                        >
+                          {monogram(stay.name)}
+                        </span>
+                        <figcaption className="absolute inset-x-0 bottom-0 px-3 pb-2 font-mono text-caption text-foreground-inverse/90">
+                          {photo.placeName} · not this property
+                        </figcaption>
+                      </div>
+                    </figure>
+                  ) : (
+                    <div
+                      aria-hidden
+                      className={`-mx-5 -mt-5 mb-1 flex h-24 items-center justify-center bg-linear-to-br ${tintFor(stay.name)}`}
+                    >
+                      <span className="font-display text-h2 text-foreground-inverse/90">
+                        {monogram(stay.name)}
+                      </span>
+                    </div>
+                  )}
 
                   <p className="text-body font-semibold text-balance-heading">{stay.name}</p>
 
@@ -270,8 +308,27 @@ export function CuratedStays({
                       </a>
                     ) : null}
                   </div>
+
+                  {/* The licence is satisfied by naming the author and the
+                      terms, not by the file page link alone — so both are here,
+                      under the frame they belong to. */}
+                  {photo ? (
+                    <p className="border-t pt-2 text-caption text-subtle">
+                      Photograph: {photo.placeName}, {photo.placeDistrict} district. ©{" "}
+                      {photo.attribution} ·{" "}
+                      <a
+                        href={photo.descriptionUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="underline decoration-dotted underline-offset-2 hover:no-underline"
+                      >
+                        {photo.license}
+                      </a>
+                    </p>
+                  ) : null}
                 </li>
-              ))}
+                );
+              })}
             </ul>
           </section>
         ))
