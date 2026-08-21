@@ -31,6 +31,26 @@
 export const VERIFIED_AT = "2026-08-21";
 
 /**
+ * Domains that must never be linked, whatever a future pass finds.
+ *
+ * Two of these hotels' former domains have lapsed and been re-registered by
+ * other people. They still rank for the hotel's name, so a later search for
+ * "Yarlam Resort official site" will surface one of them and it will answer
+ * HTTP 200 — the exact shape of a successful verification.
+ *
+ * A government-facing tourism page sending a visitor to a betting affiliate
+ * because a domain changed hands is the worst failure available here, and it
+ * would be invisible in every check that only asks whether a URL responds. So
+ * the block list is explicit rather than relying on anyone re-checking.
+ */
+export const BLOCKED_DOMAINS: Record<string, string> = {
+  "yarlamresort.com":
+    "Lapsed and re-registered; serves a 4rabet betting-affiliate site as of 2026-08-21. Yarlam Resort's own content survives only in the Internet Archive.",
+  "sobraliahotels.com":
+    "Lapsed and re-registered as a scraped-content spam site. The hotel's real address survives on archived captures.",
+};
+
+/**
  * slug → verified property page, or null to suppress a stored value that is
  * broken. Absent slugs keep whatever the register data holds.
  */

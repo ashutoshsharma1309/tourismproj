@@ -67,6 +67,13 @@ export const MAPS_OVERRIDES: Record<string, MapsOverride> = {
     locality: "Lachung",
     note: "The register writes the locality as \"Phaka, North Sikkim\". The property's own archived site titles itself \"Yarlam Resort in Lachung, North Sikkim\", and Lachung is the name a map knows.",
   },
+  "tamarind-hotel": {
+    tradingName: "Hotel Tamarind",
+    locality: "Upper Tathangchen, Gangtok",
+    note: "The register writes \"Upper Tathanchen\"; the property's own page spells it Tathangchen and places itself below Mintokgang.",
+  },
+  "terrace-valley": { locality: "Gangtok" },
+  "the-royal-plaza": { locality: "Upper Syari, Gangtok" },
   "tashiling-residency": {
     tradingName: "Tashiling Residency Hotel & Spa",
     locality: "Bhusuk Road, Rongyek, Gangtok",
