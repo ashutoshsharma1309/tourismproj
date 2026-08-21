@@ -48,6 +48,7 @@ export function StayGallery({
         <button
           type="button"
           onClick={() => setOpen(0)}
+          aria-label={`Open the ${live.length} photographs of ${propertyName}`}
           className="group relative col-span-full aspect-16/10 overflow-hidden rounded-xl border bg-surface-muted sm:col-span-2 sm:aspect-4/3 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -70,6 +71,11 @@ export function StayGallery({
                 <button
                   type="button"
                   onClick={() => setOpen(index + 1)}
+                  aria-label={
+                    index === 2 && rest.length > 3
+                      ? `View all ${live.length} photographs of ${propertyName}`
+                      : `View photograph ${index + 2} of ${live.length} of ${propertyName}`
+                  }
                   className="group relative block aspect-4/3 w-full overflow-hidden rounded-lg border bg-surface-muted focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
