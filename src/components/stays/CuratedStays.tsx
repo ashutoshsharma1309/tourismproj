@@ -1,21 +1,31 @@
 "use client";
 
-import { ExternalLink, MapPin, Phone, Search, X } from "lucide-react";
+import { ArrowRight, ExternalLink, MapPin, Phone, Search, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
-import type { CuratedStay, StarGrade } from "@/data/curated-stays";
+import type { DistrictGroup, StarGrade } from "@/data/curated-stays";
 import { stayPhoto } from "@/data/stay-photos";
 
 /**
- * The curated stays grid.
+ * The curated stays directory, organised by district.
  *
- * Twenty-two properties do not need pagination or a virtualised list, so this
- * shows all of them, grouped by grade — which is the only ranking in the data
- * that this project did not invent. Search and the two filters exist because a
- * visitor arriving with a name in mind should not have to scan for it.
+ * WHY DISTRICT AND NOT GRADE
+ * --------------------------
+ * Grouping by star grade made the page read as a ranking, which is how a
+ * booking site is organised, not how a journey is. Nobody plans a Sikkim trip
+ * by deciding to stay somewhere four-star; they decide to go to Pelling, or to
+ * Lachung, and then look for a bed there. Geography is the axis the visitor
+ * already has in their head when they arrive on this page, so it is the axis
+ * the page is built on. The grade has not gone anywhere — it is on every card
+ * and it still orders the properties inside each district — but it is now an
+ * attribute of a stay rather than the shape of the directory.
+ *
+ * Twenty-two properties need no pagination, so every one is on the page and
+ * the district navigation jumps between them.
  *
  * No property has a photograph of itself, and that is a researched finding
  * rather than a gap: Commons was searched for every one of them, OpenStreetMap
@@ -79,14 +89,13 @@ function tintFor(name: string) {
 }
 
 export function CuratedStays({
-  stays,
   districts,
   grades,
 }: {
-  stays: CuratedStay[];
-  districts: string[];
+  districts: DistrictGroup[];
   grades: StarGrade[];
 }) {
+  const stays = useMemo(() => districts.flatMap((d) => d.stays), [districts]);
   const [query, setQuery] = useState("");
   const [district, setDistrict] = useState("");
   const [grade, setGrade] = useState("");
@@ -104,19 +113,32 @@ export function CuratedStays({
    */
   const squash = (value: string) => value.toLowerCase().replace(/[^a-z0-9]/g, "");
 
-  const filtered = useMemo(() => {
+  /*
+   * Matching also runs over the former cardinal district name, because a
+   * visitor who types "West Sikkim" is asking a real question and the register
+   * only knows the word "Gyalshing".
+   */
+  const groups = useMemo(() => {
     const q = squash(deferred);
-    return stays.filter((stay) => {
-      if (district && stay.district !== district) return false;
-      if (grade && stay.starCategory !== grade) return false;
-      if (!q) return true;
-      return (
-        squash(stay.name).includes(q) ||
-        squash(stay.address ?? "").includes(q) ||
-        squash(stay.district).includes(q)
-      );
-    });
-  }, [stays, deferred, district, grade]);
+    return districts
+      .filter((group) => !district || group.name === district)
+      .map((group) => ({
+        ...group,
+        stays: group.stays.filter((stay) => {
+          if (grade && stay.starCategory !== grade) return false;
+          if (!q) return true;
+          return (
+            squash(stay.name).includes(q) ||
+            squash(stay.address ?? "").includes(q) ||
+            squash(stay.district).includes(q) ||
+            squash(group.formerName).includes(q)
+          );
+        }),
+      }))
+      .filter((group) => group.stays.length > 0);
+  }, [districts, deferred, district, grade]);
+
+  const matchCount = groups.reduce((total, group) => total + group.stays.length, 0);
 
   const active = Boolean(query || district || grade);
   const reset = () => {
@@ -124,12 +146,6 @@ export function CuratedStays({
     setDistrict("");
     setGrade("");
   };
-
-  /* Grouped by grade, highest first, so the page reads as a ranking rather
-     than as an alphabetical list. */
-  const groups = grades
-    .map((g) => ({ grade: g, items: filtered.filter((s) => s.starCategory === g) }))
-    .filter((group) => group.items.length > 0);
 
   return (
     <div>
@@ -140,25 +156,9 @@ export function CuratedStays({
           <input
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search by property or locality — Mayfair, Pelling…"
+            placeholder="Search by property, locality or district — Mayfair, Pelling, West Sikkim…"
             className="h-12 w-full rounded-full border bg-surface pr-4 pl-10 text-body focus-visible:border-primary focus-visible:outline-2 focus-visible:outline-primary"
           />
-        </label>
-
-        <label className="flex items-center gap-2">
-          <span className="sr-only">District</span>
-          <select
-            value={district}
-            onChange={(event) => setDistrict(event.target.value)}
-            className="h-12 rounded-full border border-border-strong bg-surface px-4 text-small"
-          >
-            <option value="">All districts</option>
-            {districts.map((name) => (
-              <option key={name} value={name}>
-                {name}
-              </option>
-            ))}
-          </select>
         </label>
 
         <label className="flex items-center gap-2">
@@ -178,10 +178,42 @@ export function CuratedStays({
         </label>
       </div>
 
+      {/* District navigation.
+          Selecting a district filters to it; the counts are live, so a chip
+          reading "0" never appears and a visitor can see where the graded
+          properties actually are before clicking anything. */}
+      <nav className="mt-4 -mx-4 overflow-x-auto px-4 md:mx-0 md:px-0" aria-label="Districts">
+        <ul className="flex w-max gap-2 md:w-auto md:flex-wrap">
+          <li>
+            <DistrictChip
+              selected={district === ""}
+              onClick={() => setDistrict("")}
+              label="All districts"
+              count={stays.length}
+            />
+          </li>
+          {districts.map((group) => (
+            <li key={group.name}>
+              <DistrictChip
+                selected={district === group.name}
+                onClick={() => setDistrict(group.name)}
+                label={group.name}
+                sublabel={group.formerName}
+                count={
+                  groups.find((candidate) => candidate.name === group.name)?.stays.length ??
+                  0
+                }
+                total={group.stays.length}
+              />
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       <p className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 text-small text-muted">
         <span>
-          {filtered.length} {filtered.length === 1 ? "property" : "properties"}
-          {active ? " match" : " graded by the state"}
+          {matchCount} {matchCount === 1 ? "property" : "properties"}
+          {active ? " match" : ` graded by the state, across ${districts.length} districts`}
         </span>
         {active ? (
           <button
@@ -202,21 +234,29 @@ export function CuratedStays({
         </p>
       ) : (
         groups.map((group) => (
-          <section key={group.grade} className="mt-10" aria-labelledby={`grade-${group.grade}`}>
-            <h2
-              id={`grade-${group.grade}`}
-              className="font-mono text-eyebrow tracking-widest text-subtle uppercase"
-            >
-              {group.grade} · {group.items.length}
-            </h2>
+          <section
+            key={group.name}
+            id={`district-${group.slug}`}
+            className="mt-10 scroll-mt-24"
+            aria-labelledby={`district-heading-${group.slug}`}
+          >
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b pb-2">
+              <h2 id={`district-heading-${group.slug}`} className="font-display text-h3">
+                {group.name}
+              </h2>
+              <p className="font-mono text-caption tracking-wide text-subtle uppercase">
+                formerly {group.formerName} · {group.stays.length}{" "}
+                {group.stays.length === 1 ? "property" : "properties"}
+              </p>
+            </div>
 
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-              {group.items.map((stay) => {
+              {group.stays.map((stay) => {
                 const photo = stayPhoto(stay);
                 return (
                 <li
                   key={stay.slug}
-                  className="flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft"
+                  className="relative flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft transition-colors hover:border-accent"
                 >
                   {photo ? (
                     <figure className="-mx-5 -mt-5 mb-1">
@@ -255,7 +295,14 @@ export function CuratedStays({
                     </div>
                   )}
 
-                  <p className="text-body font-semibold text-balance-heading">{stay.name}</p>
+                  <h3 className="text-body font-semibold text-balance-heading">
+                    <Link
+                      href={`/stays/${stay.slug}`}
+                      className="after:absolute after:inset-0 hover:text-primary focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                    >
+                      {stay.name}
+                    </Link>
+                  </h3>
 
                   {stay.address ? (
                     <p className="text-caption leading-relaxed text-muted">{stay.address}</p>
@@ -277,14 +324,21 @@ export function CuratedStays({
 
                   {/* Calling is the only booking route that could be verified
                       for these properties, so it leads. */}
-                  <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-3 text-small font-medium">
+                  <div className="relative z-1 mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 pt-3 text-small font-medium">
+                    <Link
+                      href={`/stays/${stay.slug}`}
+                      className={buttonClasses({ variant: "primary", size: "sm" })}
+                    >
+                      View stay
+                      <ArrowRight className="size-3.5" aria-hidden />
+                    </Link>
                     {stay.phone ? (
                       <a
                         href={`tel:${dialable(stay.phone)}`}
-                        className={buttonClasses({ variant: "primary", size: "sm" })}
+                        className="inline-flex items-center gap-1.5 text-primary hover:underline"
                       >
                         <Phone className="size-3.5" aria-hidden />
-                        Call to book
+                        Call
                       </a>
                     ) : null}
                     <a
@@ -296,24 +350,13 @@ export function CuratedStays({
                       {stay.mapsIsExact ? "Open location" : "Find on Maps"}
                       <ExternalLink className="size-3.5" aria-hidden />
                     </a>
-                    {stay.officialWebsite ? (
-                      <a
-                        href={stay.officialWebsite}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="inline-flex items-center gap-1.5 text-primary hover:underline"
-                      >
-                        Website
-                        <ExternalLink className="size-3.5" aria-hidden />
-                      </a>
-                    ) : null}
                   </div>
 
                   {/* The licence is satisfied by naming the author and the
                       terms, not by the file page link alone — so both are here,
                       under the frame they belong to. */}
                   {photo ? (
-                    <p className="border-t pt-2 text-caption text-subtle">
+                    <p className="relative z-1 border-t pt-2 text-caption text-subtle">
                       Photograph: {photo.placeName}, {photo.placeDistrict} district. ©{" "}
                       {photo.attribution} ·{" "}
                       <a
@@ -334,5 +377,61 @@ export function CuratedStays({
         ))
       )}
     </div>
+  );
+}
+
+/**
+ * One district in the navigation.
+ *
+ * The count is the number matching the current search and grade, and `total`
+ * is how many the district holds in all. Showing "2 of 4" while a filter is
+ * active tells a visitor that the district has more than they are seeing,
+ * which a bare number does not.
+ */
+function DistrictChip({
+  selected,
+  onClick,
+  label,
+  sublabel,
+  count,
+  total,
+}: {
+  selected: boolean;
+  onClick: () => void;
+  label: string;
+  sublabel?: string;
+  count: number;
+  total?: number;
+}) {
+  const narrowed = total !== undefined && count !== total;
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={selected}
+      className={`flex h-12 shrink-0 items-center gap-2 rounded-full border px-4 text-small font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none ${
+        selected
+          ? "border-primary bg-primary text-primary-foreground"
+          : "border-border-strong bg-surface hover:border-accent"
+      }`}
+    >
+      <span className="whitespace-nowrap">{label}</span>
+      {sublabel ? (
+        <span
+          className={`hidden font-mono text-caption whitespace-nowrap sm:inline ${
+            selected ? "text-primary-foreground/75" : "text-subtle"
+          }`}
+        >
+          {sublabel}
+        </span>
+      ) : null}
+      <span
+        className={`font-mono text-caption tabular-nums ${
+          selected ? "text-primary-foreground/75" : "text-subtle"
+        }`}
+      >
+        {narrowed ? `${count}/${total}` : count}
+      </span>
+    </button>
   );
 }

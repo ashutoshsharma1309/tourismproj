@@ -1,7 +1,6 @@
 import {
   ArrowLeft,
   ArrowRight,
-  Camera,
   Clock3,
   Compass,
   Headphones,
@@ -18,6 +17,7 @@ import { notFound } from "next/navigation";
 import { VisitRecorder } from "@/components/discovery/VisitRecorder";
 import { Footer } from "@/components/layout/Footer";
 import { ClaimBadge } from "@/components/stories/StoryCard";
+import { StoryHero } from "@/components/stories/StoryHero";
 import { StorySources } from "@/components/stories/StorySources";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
@@ -132,33 +132,13 @@ export default async function StoryDetailPage({ params }: PageProps) {
         </div>
 
         {/* Hero */}
-        <figure className="mx-auto mt-5 max-w-5xl px-4 md:px-6">
-          <div className="relative h-64 overflow-hidden rounded-2xl border bg-surface-muted sm:h-80 md:h-104">
-            <Image
-              src={story.heroImage}
-              alt={story.heroAlt}
-              fill
-              priority
-              sizes="(min-width: 1024px) 64rem, 100vw"
-              className="object-cover"
-            />
-          </div>
-          {story.imageCredit ? (
-            <figcaption className="mt-2.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-caption text-subtle">
-              <Camera className="size-3.5 shrink-0" aria-hidden />
-              <span>{story.heroAlt}.</span>
-              <a
-                href={story.imageCredit.descriptionUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-primary hover:underline"
-              >
-                {story.imageCredit.attribution}
-              </a>
-              <span>· {story.imageCredit.license} · Wikimedia Commons</span>
-            </figcaption>
-          ) : null}
-        </figure>
+        <StoryHero
+          src={story.heroImage}
+          alt={story.heroAlt}
+          width={story.imageCredit?.width}
+          height={story.imageCredit?.height}
+          credit={story.imageCredit}
+        />
 
         <article className="mx-auto max-w-3xl px-4 md:px-6">
           <header className="mt-8">

@@ -4,6 +4,7 @@ import { archiveItems } from "@/data/archive";
 import { historyTimeline } from "@/data/history";
 import { monasteries } from "@/data/monasteries";
 import { places } from "@/data/places";
+import { curatedStays } from "@/data/curated-stays";
 import { stories } from "@/data/stories";
 import { SITE_URL } from "@/lib/constants";
 
@@ -65,6 +66,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${SITE_URL}/history/${event.slug}`,
       changeFrequency: "yearly" as const,
       priority: 0.6,
+    })),
+    /* One page per state-graded stay. These are static and generated at
+       build, so leaving them out of the sitemap only hid them. */
+    ...curatedStays.map((stay) => ({
+      url: `${SITE_URL}/stays/${stay.slug}`,
+      changeFrequency: "yearly" as const,
+      priority: 0.5,
     })),
     ...archiveItems.map((item) => ({
       url: `${SITE_URL}/archive/${item.id}`,

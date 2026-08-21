@@ -24,6 +24,16 @@ export interface ImageCredit {
    * Commons in a separate pass and records no per-file resolution date.
    */
   resolvedAt?: string;
+  /**
+   * Intrinsic pixels, when the research agent recorded them.
+   *
+   * These were sitting unused in the generated JSON while every consumer laid
+   * the photograph out blind — which is how a 4:3 picture ended up in a 2.5:1
+   * band with its subject cropped away. A layout that knows the real shape of
+   * the file can show the whole of it.
+   */
+  width?: number;
+  height?: number;
 }
 
 interface GeneratedImage extends ImageCredit {
@@ -54,6 +64,8 @@ export function storyImage(key: string): ImageCredit | undefined {
     license: entry.license,
     attribution: entry.attribution,
     resolvedAt: entry.resolvedAt,
+    width: entry.width,
+    height: entry.height,
   };
 }
 

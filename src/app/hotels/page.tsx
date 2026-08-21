@@ -5,10 +5,9 @@ import { TSDBreakdown } from "@/components/bookings/TSDBreakdown";
 import { CuratedStays } from "@/components/stays/CuratedStays";
 import { REGISTER_STATS } from "@/data/hotels";
 import {
-  CURATED_DISTRICTS,
+  STAYS_BY_DISTRICT,
   CURATED_STATS,
   STAR_GRADES,
-  curatedStays,
 } from "@/data/curated-stays";
 
 export const metadata: Metadata = {
@@ -90,11 +89,7 @@ export default function StaysPage() {
               which makes it the honest basis for a curated page. The full
               register stays in the data layer and is linked below.
             */}
-            <CuratedStays
-              stays={curatedStays}
-              districts={CURATED_DISTRICTS}
-              grades={STAR_GRADES}
-            />
+            <CuratedStays districts={STAYS_BY_DISTRICT} grades={STAR_GRADES} />
           </div>
         </div>
       </main>
