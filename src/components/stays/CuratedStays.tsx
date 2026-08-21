@@ -42,8 +42,8 @@ import { stayImages } from "@/data/stay-images";
  * own monogram. It is deterministic per name, so two cards never look alike,
  * and it never claims to be a building.
  *
- * Five of the twenty-two have photographs of themselves, published on their
- * own websites and served from there. The other seventeen have none, and show
+ * Nine of the twenty-two have photographs of themselves, published on their
+ * own websites and served from there. The other thirteen have none, and show
  * a stated unavailable panel rather than a borrowed picture.
  */
 

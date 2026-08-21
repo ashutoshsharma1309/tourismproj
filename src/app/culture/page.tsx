@@ -67,9 +67,10 @@ export default function CulturePage() {
           search result advertised. {CULTURE_STATS.institutional} come from
           government, public-broadcaster or institute channels — the Eastern
           Zonal Cultural Centre, DD&nbsp;Gangtok, the Namgyal Institute of
-          Tibetology. Of 109 candidates examined, 75 were rejected: duplicates,
-          Shorts, films about Darjeeling or Nepal rather than Sikkim, political
-          material, and two whose owners do not permit embedding.
+          Tibetology, the Sikkim State Archives, UNDP India. Of 173 candidates
+          examined across two sweeps, 123 were rejected: duplicates, Shorts,
+          films about Darjeeling or Nepal rather than Sikkim, political
+          material, and five whose owners do not permit embedding.
         </p>
 
         <div className="mt-8">
