@@ -15,7 +15,10 @@
     "rehostable": true,
     "alt": null,
     "note": "Commons description: \"External look of the resort in Gangtok, Sikkim, India\". Categorised Resorts in Sikkim / Illuminated buildings in Sikkim. Only one Mayfair-branded resort exists in Gangtok, so the brand match is unambiguous; what is inferred (not proved) is that the register name \"May Fair Resort\", Lower Samdur, is that resort. 1920px thumb also verified 200: https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Mayfair_resort_and_spa%2C_Gangtok.jpg/1920px-Mayfair_resort_and_spa%2C_Gangtok.jpg",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "may-fair-resort-2",
@@ -30,7 +33,10 @@
     "rehostable": false,
     "alt": "the exterior facade during night time - Mayfair Spa Resort & Casino Gangtok",
     "note": "Served from the operator CDN under the property-specific folder /mayfair-spa-resort-casino-gangtok/, which is how Simplotel namespaces one hotel. 90 such images verified in total; a sample is listed.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "may-fair-resort-3",
@@ -45,7 +51,10 @@
     "rehostable": false,
     "alt": "the walking spaces inside the resort - Mayfair Spa Resort & Casino Gangtok",
     "note": "Served from the operator CDN under the property-specific folder /mayfair-spa-resort-casino-gangtok/, which is how Simplotel namespaces one hotel. 90 such images verified in total; a sample is listed.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "may-fair-resort-4",
@@ -60,7 +69,10 @@
     "rehostable": false,
     "alt": "the exterior facade during night time - Mayfair Spa Resort & Casino Gangtok 1",
     "note": "Served from the operator CDN under the property-specific folder /mayfair-spa-resort-casino-gangtok/, which is how Simplotel namespaces one hotel. 90 such images verified in total; a sample is listed.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "may-fair-resort-5",
@@ -75,7 +87,10 @@
     "rehostable": false,
     "alt": "the jacuzzi at the spa - Mayfair Spa Resort & Casino Gangtok",
     "note": "Served from the operator CDN under the property-specific folder /mayfair-spa-resort-casino-gangtok/, which is how Simplotel namespaces one hotel. 90 such images verified in total; a sample is listed.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "may-fair-resort-6",
@@ -90,7 +105,10 @@
     "rehostable": false,
     "alt": "seating space and a barbecue set-up by the pool - Mayfair Spa Resort & Casino Gangtok",
     "note": "Served from the operator CDN under the property-specific folder /mayfair-spa-resort-casino-gangtok/, which is how Simplotel namespaces one hotel. 90 such images verified in total; a sample is listed.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-006",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "lemon-tree": [
@@ -107,7 +125,10 @@
     "rehostable": false,
     "alt": "Lemon Tree Hotels",
     "note": "Filename lth_gangtok explicitly names the Gangtok property.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-005",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "gangtok-drift": [
@@ -124,7 +145,10 @@
     "rehostable": false,
     "alt": "Hotel Gangtok Drift",
     "note": "alt=\"Hotel Gangtok Drift\" on the property's own homepage.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-003",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "golden-crest": [
@@ -141,7 +165,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "golden-crest-2",
@@ -156,7 +183,10 @@
     "rehostable": false,
     "alt": "inline",
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "golden-crest-3",
@@ -171,7 +201,10 @@
     "rehostable": false,
     "alt": "inline",
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "golden-crest-4",
@@ -186,7 +219,10 @@
     "rehostable": false,
     "alt": "inline",
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "golden-crest-5",
@@ -201,7 +237,10 @@
     "rehostable": false,
     "alt": "inline",
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "golden-crest-6",
@@ -216,7 +255,10 @@
     "rehostable": false,
     "alt": "inline",
     "note": "Served from the property-specific Simplotel CDN folder /the-golden-crest-hotel-gangtok/.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "the-bamboo-retreat": [
@@ -233,7 +275,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-bamboo-retreat-2",
@@ -248,7 +293,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-bamboo-retreat-3",
@@ -263,7 +311,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-bamboo-retreat-4",
@@ -278,7 +329,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-bamboo-retreat-5",
@@ -293,7 +347,10 @@
     "rehostable": false,
     "alt": "panaroma Room Image",
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-bamboo-retreat-6",
@@ -308,7 +365,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain, property homepage. Hero and room imagery.",
-    "retrievedAt": "2026-08-21T04:35:10.487Z"
+    "retrievedAt": "2026-08-21T04:35:10.487Z",
+    "propertyId": "SKM-EAST-011",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "chumbi-mountain-retreat": [
@@ -325,7 +385,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Resort activity banner (mountain biking). Depicts a guest activity run by the resort rather than the building.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "chumbi-mountain-retreat-2",
@@ -340,7 +403,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Resort activity banner (jungle walk). Depicts a guest activity run by the resort rather than the building.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "chumbi-mountain-retreat-3",
@@ -355,7 +421,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Resort activity banner (cultural show). Depicts a guest activity run by the resort rather than the building.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "chumbi-mountain-retreat-4",
@@ -370,7 +439,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Guest room (\"Hotel Unit\" category).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "chumbi-mountain-retreat-5",
@@ -385,7 +457,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Guest room (\"Studio\" category).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "chumbi-mountain-retreat-6",
@@ -400,7 +475,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the operator CDN folder /storage/app/media/The Chumbi Mountain Retreat Resort/, which is how Club Mahindra namespaces one resort, so the path names the property. Only reachable after a Playwright render: a plain fetch of the resort page hits a Cloudflare interstitial. The gumlet.io mirrors (static2-/static3-clubmahindra.gumlet.io) content-negotiate to AVIF and re-crop by query string; the www.clubmahindra.com origin serves the stable master and is listed here. Aerial of the resort at dusk — the red-roofed blocks on the forested ridge below Pelling. Verified visually.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "denzong-regency": [
@@ -417,7 +495,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "denzong-regency-2",
@@ -432,7 +513,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "denzong-regency-3",
@@ -447,7 +531,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "denzong-regency-4",
@@ -462,7 +549,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "denzong-regency-5",
@@ -477,7 +567,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "denzong-regency-6",
@@ -492,7 +585,10 @@
     "rehostable": false,
     "alt": "5 star hotel in Gangtok Sikkim",
     "note": "First-party domain denzongregency.com, i.e. the property’s own name. Only surfaced after a Playwright render (networkidle + scroll); the gallery is injected by script and is absent from the raw HTML. Filenames are SEO strings rather than the property name, so the host, not the filename, is what identifies the subject. Homepage hero carousel (/Photos/).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-EAST-002",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "planter-s-home": [
@@ -509,7 +605,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Homepage hero slider.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "planter-s-home-2",
@@ -524,7 +623,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Homepage hero slider.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "planter-s-home-3",
@@ -539,7 +641,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Homepage hero slider.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "planter-s-home-4",
@@ -554,7 +659,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Homepage hero slider.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "planter-s-home-5",
@@ -569,7 +677,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Property gallery, linked from /Reservation/RoomListSonam/2 (the Planters Home room list).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "planter-s-home-6",
@@ -584,7 +695,10 @@
     "rehostable": false,
     "alt": null,
     "note": "Served from the property-specific asset folder /assets/images/custom/planters_home/ on the operator’s own site, which namespaces each of its two hotels (sonam_delek/ and planters_home/). Every frame also carries a burned-in caption reading \"Hotel The Planter’s Home\" and \"A Unit of Hotel Sonam Delek\"; several add \"MANGAN North Sikkim\". Property gallery, linked from /Reservation/RoomListSonam/2 (the Planters Home room list).",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-NORTH-001",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ],
   "the-retreat": [
@@ -601,7 +715,10 @@
     "rehostable": false,
     "alt": "Superior room at Simala Retreat",
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Superior room.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-retreat-2",
@@ -616,7 +733,10 @@
     "rehostable": false,
     "alt": "Suite at Simala Retreat",
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Suite.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-retreat-3",
@@ -631,7 +751,10 @@
     "rehostable": false,
     "alt": "Deluxe room at Simala Retreat",
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Deluxe room.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-retreat-4",
@@ -646,7 +769,10 @@
     "rehostable": false,
     "alt": "Premium room at Simala Retreat",
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Premium room.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-retreat-5",
@@ -661,7 +787,10 @@
     "rehostable": false,
     "alt": "Reception at Simala Retreat",
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Lobby and reception. The property name is on the wall in-frame.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    },
    {
     "id": "the-retreat-6",
@@ -676,7 +805,10 @@
     "rehostable": false,
     "alt": null,
     "note": "First-party domain of the property that now trades as Simala Retreat. WordPress upload paths, so the filename does not name the property — but the lobby frame (1a.jpg) shows \"SIMALA RETREAT\" lettering on the reception wall, and the room frames carry alt text naming the property. The theme demo images that ship with the template (e.g. /2024/04/h6-img7.webp, alt \"hotel carmelina\") were identified and excluded. Property view.",
-    "retrievedAt": "2026-08-21T00:00:00.000Z"
+    "retrievedAt": "2026-08-21T00:00:00.000Z",
+    "propertyId": "SKM-WEST-004",
+    "verified": true,
+    "verifiedAt": "2026-08-21"
    }
   ]
  }

@@ -4,7 +4,7 @@ import { archiveItems } from "@/data/archive";
 import { historyTimeline } from "@/data/history";
 import { monasteries } from "@/data/monasteries";
 import { places } from "@/data/places";
-import { curatedStays } from "@/data/curated-stays";
+import { publicStays } from "@/data/curated-stays";
 import { stories } from "@/data/stories";
 import { SITE_URL } from "@/lib/constants";
 
@@ -68,9 +68,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly" as const,
       priority: 0.6,
     })),
-    /* One page per state-graded stay. These are static and generated at
-       build, so leaving them out of the sitemap only hid them. */
-    ...curatedStays.map((stay) => ({
+    /* One page per state-graded stay that can be shown in its own
+       photographs. The rest keep their pages — the register entry is public
+       information and nothing is deleted — but a page with no picture of its
+       subject is not something to put forward for indexing. */
+    ...publicStays.map((stay) => ({
       url: `${SITE_URL}/stays/${stay.slug}`,
       changeFrequency: "yearly" as const,
       priority: 0.5,

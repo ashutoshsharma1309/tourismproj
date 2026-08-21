@@ -42,19 +42,19 @@ import { stayImages } from "@/data/stay-images";
  * own monogram. It is deterministic per name, so two cards never look alike,
  * and it never claims to be a building.
  *
- * Nine of the twenty-two have photographs of themselves, published on their
- * own websites and served from there. The other thirteen have none, and show
- * a stated unavailable panel rather than a borrowed picture.
+ * ON PHOTOGRAPHS: EVERY CARD HAS ONE
+ * ----------------------------------
+ * A card here always leads with a photograph of its own hotel. That is now
+ * guaranteed upstream: src/data/curated-stays.ts filters the public list to
+ * properties with a verified image, so a card with nothing to show never
+ * reaches this component. The unavailable panel that used to stand in for one
+ * is gone from the directory — thirteen cards apologising down a page was the
+ * loudest thing on it.
+ *
+ * A hidden property is not deleted. It keeps its page at /stays/[slug], where
+ * the missing photograph is explained, and it stays in the register data.
  */
 
-const TINTS = [
-  "from-[#2f3f34] to-[#43614d]",
-  "from-[#3b3226] to-[#6b5a3e]",
-  "from-[#2b3540] to-[#44566b]",
-  "from-[#3d2b2b] to-[#6b4444]",
-  "from-[#2f3a3a] to-[#4a6060]",
-  "from-[#37324a] to-[#565073]",
-];
 
 function monogram(name: string) {
   const words = name
@@ -87,11 +87,6 @@ function dialable(raw: string): string {
   return first;
 }
 
-function tintFor(name: string) {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
-  return TINTS[hash % TINTS.length];
-}
 
 export function CuratedStays({
   districts,
@@ -264,6 +259,8 @@ export function CuratedStays({
                   key={stay.slug}
                   className="relative flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft transition-colors hover:border-accent"
                 >
+                  {/* `own` is always present: publicStays admits only
+                      properties with a verified photograph. */}
                   {own ? (
                     <figure className="-mx-5 -mt-5 mb-1">
                       <div className="relative h-32 overflow-hidden bg-surface-muted">
@@ -274,7 +271,7 @@ export function CuratedStays({
                           src={own.url}
                           alt={`${stay.name}${own.alt ? ` — ${own.alt}` : ""}`}
                           loading="lazy"
-                          className="size-full object-cover"
+                          className="size-full object-cover object-center"
                         />
                         <div className="gradient-overlay absolute inset-0" aria-hidden />
                         <span
@@ -285,21 +282,7 @@ export function CuratedStays({
                         </span>
                       </div>
                     </figure>
-                  ) : (
-                    <div
-                      className={`-mx-5 -mt-5 mb-1 flex h-32 flex-col items-center justify-center gap-1 bg-linear-to-br ${tintFor(stay.name)}`}
-                    >
-                      <span
-                        aria-hidden
-                        className="font-display text-h2 text-foreground-inverse/90"
-                      >
-                        {monogram(stay.name)}
-                      </span>
-                      <span className="font-mono text-caption tracking-wide text-foreground-inverse/70 uppercase">
-                        Photograph unavailable
-                      </span>
-                    </div>
-                  )}
+                  ) : null}
 
                   <h3 className="text-body font-semibold text-balance-heading">
                     <Link

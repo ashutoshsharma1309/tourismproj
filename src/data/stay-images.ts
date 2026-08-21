@@ -80,6 +80,17 @@ import generated from "@/data/generated/stay-images.json";
 
 export interface StayImage {
   id: string;
+  /**
+   * The property this image belongs to, stated on the image itself.
+   *
+   * Belt and braces with the keyed lookup: an image record carries its own
+   * owner, so a future refactor cannot silently re-associate one by moving it
+   * between arrays. stayImages() asserts the two agree.
+   */
+  propertyId: string;
+  /** Whether this image was confirmed to depict the property it is filed under. */
+  verified: boolean;
+  verifiedAt: string;
   url: string;
   /** Where it is published — the operator, or Wikimedia Commons. */
   source: string;
@@ -104,13 +115,30 @@ export interface StayImage {
 
 const IMAGES = generated.images as Record<string, StayImage[]>;
 
+/**
+ * The verified images for a property.
+ *
+ * Only verified frames are returned, because the public Stays page is now
+ * gated on this: a property with no verified image is not shown at all. An
+ * unverified image must therefore never leak through as if it were one.
+ */
 export function stayImages(slug: string): StayImage[] {
-  return IMAGES[slug] ?? [];
+  return (IMAGES[slug] ?? []).filter((image) => image.verified);
 }
 
+/** True when a property has at least one verified photograph of itself. */
+export function hasVerifiedImage(slug: string): boolean {
+  return stayImages(slug).length > 0;
+}
+
+const VERIFIED = Object.entries(IMAGES).map(
+  ([slug, list]) => [slug, list.filter((image) => image.verified)] as const,
+);
+
 export const STAY_IMAGE_STATS = {
-  properties: Object.keys(IMAGES).length,
-  images: Object.values(IMAGES).flat().length,
-  withThreeOrMore: Object.values(IMAGES).filter((list) => list.length >= 3).length,
+  properties: VERIFIED.filter(([, list]) => list.length > 0).length,
+  images: VERIFIED.flatMap(([, list]) => list).length,
+  withThreeOrMore: VERIFIED.filter(([, list]) => list.length >= 3).length,
+  withOneOrTwo: VERIFIED.filter(([, list]) => list.length >= 1 && list.length <= 2).length,
   verifiedAt: generated.generatedAt.slice(0, 10),
 } as const;

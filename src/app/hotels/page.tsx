@@ -4,10 +4,10 @@ import { Footer } from "@/components/layout/Footer";
 import { TSDBreakdown } from "@/components/bookings/TSDBreakdown";
 import { CuratedStays } from "@/components/stays/CuratedStays";
 import { REGISTER_STATS } from "@/data/hotels";
-import { STAY_IMAGE_STATS } from "@/data/stay-images";
 import {
   STAYS_BY_DISTRICT,
   CURATED_STATS,
+  PUBLIC_STATS,
   STAR_GRADES,
 } from "@/data/curated-stays";
 
@@ -29,30 +29,27 @@ export default function StaysPage() {
           State-graded stays across Sikkim
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted">
-          The {CURATED_STATS.total} properties the Tourism &amp; Civil Aviation
-          Department awards a star grade, across{" "}
-          {CURATED_STATS.districts} districts. The grade is the state&apos;s
-          own — this page ranks nothing itself.
+          The {PUBLIC_STATS.total} state-graded properties that can be shown in
+          their own photographs, across {PUBLIC_STATS.districts} districts. The
+          grade is the Tourism &amp; Civil Aviation Department&apos;s — this
+          page ranks nothing itself.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          {STAY_IMAGE_STATS.properties} of the {CURATED_STATS.total} are shown
-          in their own photographs, published by the hotels themselves and
-          displayed from their sites rather than copied here. The other{" "}
-          {CURATED_STATS.total - STAY_IMAGE_STATS.properties} say so plainly.
-          They previously carried a photograph of a catalogued place in the same
-          district, and that was a mistake: a caption reading &ldquo;not this
-          property&rdquo; does not stop a photograph looking like the hotel
-          above it, and the same picture was illustrating up to three different
-          hotels. A card here shows its own building or it shows none. No
-          tariff and no guest rating appears anywhere either, because none
+          Every photograph here is of the hotel beside it, published by that
+          hotel and served from its own site rather than copied here. That is
+          the whole entry requirement for this page: the department grades{" "}
+          {CURATED_STATS.total} properties, and the {PUBLIC_STATS.hidden} whose
+          photographs could not be found or licensed are not listed as cards —
+          a directory of apologies is worse than a shorter directory. Their
+          register entries remain published at their own pages, with the reason
+          stated. No tariff and no guest rating appears anywhere, because none
           could be verified.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          Every property carries the register&apos;s own telephone number —{" "}
-          {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — and a
-          Google Maps destination. {CURATED_STATS.withWebsite} have an official
-          website that was fetched and confirmed to answer; the rest were
-          searched for and either do not exist or no longer resolve. Read from{" "}
+          Every property listed carries the register&apos;s own telephone
+          number, a Google Maps destination, and — for{" "}
+          {PUBLIC_STATS.withWebsite} of them — an official website that was
+          fetched and confirmed to answer. Read from{" "}
           <a
             href={REGISTER_STATS.sourceUrl}
             target="_blank"

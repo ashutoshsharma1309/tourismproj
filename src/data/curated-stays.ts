@@ -1,5 +1,7 @@
 import generated from "@/data/generated/curated-stays.json";
 import type { Provenance } from "@/data/sources";
+import { mapsQuery } from "@/data/stay-maps";
+import { hasVerifiedImage } from "@/data/stay-images";
 import { VERIFIED_WEBSITES, WEBSITE_NOTES } from "@/data/stay-websites";
 
 /**
@@ -134,8 +136,48 @@ export interface DistrictGroup extends DistrictMeta {
   stays: CuratedStay[];
 }
 
+/**
+ * The properties the public Stays page shows.
+ *
+ * WHY THIS IS A FILTER AND NOT A DELETION
+ * ---------------------------------------
+ * A tourist-facing directory card that says "Photograph unavailable" is a
+ * confession, not a product. It tells a visitor the archive could not do its
+ * job, and repeated thirteen times down a page it is the loudest thing on the
+ * screen. So the public page now shows a property only if a photograph of that
+ * property has been verified.
+ *
+ * Nothing is deleted to achieve that. The 905-property government register
+ * stays whole in src/data/hotels.ts, all 22 state-graded properties stay whole
+ * in `curatedStays` above, and every hidden property keeps its page at
+ * /stays/[slug] — reachable by anyone with the link, and still in the sitemap,
+ * because the register entry is public information worth publishing. What
+ * changes is only which cards a visitor browsing districts is shown.
+ *
+ * The gate is `hasVerifiedImage`, which reads the image's own `verified` flag
+ * rather than inferring anything from array length or position.
+ */
+export const publicStays: CuratedStay[] = curatedStays
+  .filter((stay) => hasVerifiedImage(stay.slug))
+  .map((stay) =>
+    /* A property with verified coordinates keeps its pin; only name searches
+       are sharpened. See src/data/stay-maps.ts. */
+    stay.mapsIsExact
+      ? stay
+      : {
+          ...stay,
+          mapsUrl: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            mapsQuery(stay.slug, stay.name, stay.district),
+          )}`,
+        },
+  );
+
+export const HIDDEN_STAYS: CuratedStay[] = curatedStays.filter(
+  (stay) => !hasVerifiedImage(stay.slug),
+);
+
 export const STAYS_BY_DISTRICT: DistrictGroup[] = (() => {
-  const present = [...new Set(curatedStays.map((s) => s.district))];
+  const present = [...new Set(publicStays.map((s) => s.district))];
   const ordered = [
     ...DISTRICT_META.filter((d) => present.includes(d.name)),
     ...present
@@ -145,17 +187,26 @@ export const STAYS_BY_DISTRICT: DistrictGroup[] = (() => {
   return ordered.map((district) => ({
     ...district,
     slug: district.name.toLowerCase().replace(/[^a-z0-9]+/g, "-"),
-    stays: curatedStays
+    stays: publicStays
       .filter((s) => s.district === district.name)
       .sort((a, b) => a.rank - b.rank || a.name.localeCompare(b.name)),
   }));
-})();
+  /* A district with nothing to show is not rendered as an empty shelf. */
+})().filter((group) => group.stays.length > 0);
 
 export const CURATED_DISTRICTS = [...new Set(curatedStays.map((s) => s.district))].sort();
 
 export function getCuratedStay(slug: string): CuratedStay | undefined {
   return curatedStays.find((s) => s.slug === slug);
 }
+
+export const PUBLIC_STATS = {
+  total: publicStays.length,
+  districts: [...new Set(publicStays.map((s) => s.district))].length,
+  withPhone: publicStays.filter((s) => s.phone).length,
+  withWebsite: publicStays.filter((s) => s.officialWebsite).length,
+  hidden: HIDDEN_STAYS.length,
+} as const;
 
 export const CURATED_STATS = {
   total: curatedStays.length,

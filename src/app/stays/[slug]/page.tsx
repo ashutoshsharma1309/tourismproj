@@ -1,7 +1,6 @@
 import {
   ArrowLeft,
   ExternalLink,
-  ImageOff,
   MapPin,
   Phone,
   ShieldCheck,
@@ -113,30 +112,24 @@ export default async function StayPage({ params }: PageProps) {
           All stays
         </Link>
 
-        {/* ---------------------------------------------------------- hero */}
-        <div className="mt-5">
+        {/*
+          The hero renders only where the property has verified photographs of
+          itself. Where it has none there is no frame, no placeholder and no
+          apology: the page simply leads with the name and what the register
+          records, which is real information and stands on its own. An empty
+          picture frame on a tourism page reads as a broken product; a register
+          entry without a picture reads as a register entry.
+        */}
+        <div className={gallery.length > 0 ? "mt-5" : ""}>
           {gallery.length > 0 ? (
             <StayGallery images={gallery} propertyName={stay.name} />
-          ) : (
-            <div className="flex h-56 flex-col items-center justify-center rounded-2xl border border-dashed bg-surface-muted/40 px-6 text-center sm:h-72">
-              <ImageOff className="size-6 text-subtle" aria-hidden />
-              <p className="mt-3 font-display text-h4">Photograph unavailable</p>
-              <p className="mt-1.5 max-w-md text-small leading-relaxed text-muted">
-                No photograph of this property could be licensed or verified.
-                Wikimedia Commons holds none, the register carries none, and
-                either the hotel publishes none or its server will not serve
-                them to another site. A picture of somewhere else in the
-                district would tell you nothing true about this building, so
-                there is none here.
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
 
         {/* -------------------------------------------------------- identity */}
         <header className="mt-8">
           <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
-            State-graded stay
+            {gallery.length > 0 ? "State-graded stay" : "State register entry"}
           </p>
           <h1 className="mt-3 font-display text-h1 text-balance-heading">{stay.name}</h1>
           <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-2">
