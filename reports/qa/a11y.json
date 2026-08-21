@@ -63,7 +63,7 @@
     "route": "/hotels",
     "violations": [],
     "keyboard": {
-      "focusableCount": 141
+      "focusableCount": 96
     },
     "firstFocus": {
       "tag": "a",
@@ -87,7 +87,7 @@
     "route": "/culture",
     "violations": [],
     "keyboard": {
-      "focusableCount": 173
+      "focusableCount": 221
     },
     "firstFocus": {
       "tag": "a",
@@ -111,7 +111,7 @@
     "route": "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
     "violations": [],
     "keyboard": {
-      "focusableCount": 36
+      "focusableCount": 44
     },
     "firstFocus": {
       "tag": "a",
