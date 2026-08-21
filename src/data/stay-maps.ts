@@ -54,6 +54,24 @@ export const MAPS_OVERRIDES: Record<string, MapsOverride> = {
     note: "Formerly The Retreat by Zuri, then Club Mahindra Baiguney; the register still holds the original name.",
   },
   "the-bamboo-retreat": { locality: "Sajong, Rumtek" },
+
+  /* The three whose own sites have gone dark. Their archived pages give a
+     fuller address than the register's single-word locality, and an archived
+     address is still the property's own statement of where it is. */
+  "sobralia-residency": {
+    locality: "Purano Namchi, Namchi",
+    note: "Formerly Summit Sobralia Resort & Spa; Summit no longer lists it, so the register name is what a map is most likely to hold.",
+  },
+  "yarlam-resort": {
+    tradingName: "Yarlam Resort",
+    locality: "Lachung",
+    note: "The register writes the locality as \"Phaka, North Sikkim\". The property's own archived site titles itself \"Yarlam Resort in Lachung, North Sikkim\", and Lachung is the name a map knows.",
+  },
+  "tashiling-residency": {
+    tradingName: "Tashiling Residency Hotel & Spa",
+    locality: "Bhusuk Road, Rongyek, Gangtok",
+    note: "From the property's own archived contact page, whose telephone matches the register character for character.",
+  },
 };
 
 /** The query string for a property, sharpened where we know more. */

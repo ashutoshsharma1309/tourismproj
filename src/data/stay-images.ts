@@ -54,6 +54,16 @@ import generated from "@/data/generated/stay-images.json";
  *     falls back to the district photograph and its page links to Elgin's own
  *     gallery instead.
  *
+ * WHERE A HOTEL'S SITE HAS GONE DARK
+ * ----------------------------------
+ * Sobralia Residency, Yarlam Resort and Tashiling Residency publish nothing
+ * today: two domains are dead and one is an untrusted host. All three DID
+ * publish photographs of themselves, and the Internet Archive still serves
+ * them from the hotels' own former URLs — Sobralia's under the operator's
+ * property-namespaced /images/hotels/sobralia/ path. They are shown from the
+ * archive, dated with the capture, and Sobralia is the reason Namchi appears
+ * on the public page at all.
+ *
  * WHAT A SECOND SWEEP FOUND
  * -------------------------
  * Four more properties, after the first pass concluded there were none. Three
@@ -111,6 +121,17 @@ export interface StayImage {
   alt: string | null;
   note: string | null;
   retrievedAt: string;
+  /**
+   * The capture date, for images recovered from the Internet Archive.
+   *
+   * Three properties are only photographed because their own websites have
+   * since gone dark and the Wayback Machine still holds them. Those pictures
+   * are genuine and they are also old — 2016 for Sobralia, 2019 for Yarlam,
+   * 2023 for Tashiling. A tourism page that shows a nine-year-old photograph
+   * without saying so is implying something it cannot support, so the date is
+   * printed wherever the photograph is.
+   */
+  archivedFrom?: string | null;
 }
 
 const IMAGES = generated.images as Record<string, StayImage[]>;

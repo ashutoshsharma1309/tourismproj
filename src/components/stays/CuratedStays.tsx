@@ -56,6 +56,21 @@ import { stayImages } from "@/data/stay-images";
  */
 
 
+const TINTS = [
+  "from-[#2f3f34] to-[#43614d]",
+  "from-[#3b3226] to-[#6b5a3e]",
+  "from-[#2b3540] to-[#44566b]",
+  "from-[#3d2b2b] to-[#6b4444]",
+  "from-[#2f3a3a] to-[#4a6060]",
+  "from-[#37324a] to-[#565073]",
+];
+
+function tintFor(name: string) {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) >>> 0;
+  return TINTS[hash % TINTS.length];
+}
+
 function monogram(name: string) {
   const words = name
     .replace(/^M\/s\.?\s*/i, "")
@@ -95,6 +110,17 @@ export function CuratedStays({
   districts: DistrictGroup[];
   grades: StarGrade[];
 }) {
+  /*
+   * Every card here has a verified photograph, but the file lives on the
+   * hotel's own server or in the Internet Archive — neither of which this
+   * project controls. If one is slow or down at the moment a visitor loads
+   * the page, the frame must not become a broken-image icon. It falls back to
+   * the property's own monogram over its own tint: deterministic per name, so
+   * no two look alike, and intentional rather than broken. This is a network
+   * fallback, not a designed state — a property with no photograph at all
+   * never reaches this component.
+   */
+  const [failed, setFailed] = useState<Set<string>>(new Set());
   const stays = useMemo(() => districts.flatMap((d) => d.stays), [districts]);
   const [query, setQuery] = useState("");
   const [district, setDistrict] = useState("");
@@ -266,13 +292,23 @@ export function CuratedStays({
                       <div className="relative h-32 overflow-hidden bg-surface-muted">
                         {/* Served from the property's own site — see
                             StayGallery for why no copy is taken. */}
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={own.url}
-                          alt={`${stay.name}${own.alt ? ` — ${own.alt}` : ""}`}
-                          loading="lazy"
-                          className="size-full object-cover object-center"
-                        />
+                        {failed.has(stay.slug) ? (
+                          <div
+                            aria-hidden
+                            className={`size-full bg-linear-to-br ${tintFor(stay.name)}`}
+                          />
+                        ) : (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            src={own.url}
+                            alt={`${stay.name}${own.alt ? ` — ${own.alt}` : ""}`}
+                            loading="lazy"
+                            onError={() =>
+                              setFailed((current) => new Set(current).add(stay.slug))
+                            }
+                            className="size-full object-cover object-center"
+                          />
+                        )}
                         <div className="gradient-overlay absolute inset-0" aria-hidden />
                         <span
                           aria-hidden

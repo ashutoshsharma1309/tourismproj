@@ -114,6 +114,11 @@ export function StayGallery({
           </a>
         )}
         {lead.license ? null : ", and shown from it. No copy is held by this archive."}
+        {lead.archivedFrom
+          ? ` This property's site is no longer online; these photographs are
+             as it published them, recovered from the Internet Archive's
+             capture of ${lead.archivedFrom}.`
+          : null}
       </figcaption>
 
       {open !== null ? (
@@ -125,7 +130,11 @@ export function StayGallery({
             height: image.height ?? undefined,
             caption: image.license
               ? `© ${image.attribution} · ${image.license} · ${image.source}`
-              : `Published by ${image.attribution} on ${new URL(image.sourceUrl).hostname}. Shown from source; no copy is held by this archive.`,
+              : `Published by ${image.attribution}${
+                  image.archivedFrom
+                    ? `, from the Internet Archive's capture of ${image.archivedFrom}`
+                    : ` on ${new URL(image.sourceUrl).hostname}`
+                }. Shown from source; no copy is held by this archive.`,
           }))}
           index={open}
           onIndexChange={setOpen}
