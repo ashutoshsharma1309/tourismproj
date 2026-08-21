@@ -15,7 +15,7 @@ export const metadata: Metadata = {
    * honour.
    */
   description:
-    "All 15 catalogued gompas of Sikkim — searchable by district and tradition, mapped where a source publishes a coordinate, with credited photography and narrated guides in four languages.",
+    "All 15 catalogued gompas of Sikkim — searchable by district and tradition, mapped where a source publishes a coordinate, with credited photography and narrated guides in twelve languages.",
 };
 
 export default function MonasteriesPage() {

@@ -36,6 +36,13 @@ export interface PermitDestination {
 export interface PermitDocuments {
   for: string;
   notes: string[];
+  /**
+   * A condition of entry that is not a document to carry — currently only the
+   * two-wheeler engine-capacity minimum. It is published as prose on the
+   * department's page rather than as a checklist item, which is how the first
+   * ingest lost it.
+   */
+  rule?: string;
 }
 
 export const permitDestinations = generated.destinations as PermitDestination[];

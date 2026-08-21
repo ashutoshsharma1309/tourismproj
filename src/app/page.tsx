@@ -19,6 +19,7 @@ import { StoryCard } from "@/components/stories/StoryCard";
 import { ContinueExploring } from "@/components/discovery/ContinueExploring";
 import { GALLERY_PHOTO_COUNT, showcasePhotos } from "@/data/galleries";
 import { MAP_STATS } from "@/data/map-sites";
+import { CULTURE_STATS } from "@/data/culture-videos";
 import { stories } from "@/data/stories";
 import { ParallaxHero } from "@/components/immersive/ParallaxHero";
 import { ScrollReveal } from "@/components/immersive/ScrollReveal";
@@ -163,7 +164,7 @@ export default async function HomePage() {
               {SITE.tagline}
             </h1>
             <p className="fade-in-up mt-5 max-w-xl text-body-lg leading-relaxed text-muted-inverse [animation-delay:220ms]">
-              Fifteen monasteries catalogued, narrated in four languages, and
+              Fifteen monasteries catalogued, narrated in twelve languages, and
               every claim traced to a named source — or marked as missing.
             </p>
 
@@ -249,7 +250,7 @@ export default async function HomePage() {
                 For three centuries the monasteries of Sikkim have held the
                 state&apos;s art, its festivals and its histories. {SITE.name}{" "}
                 documents that living heritage — traced to named sources,
-                readable in its own words, and narrated in four languages.
+                readable in its own words, and narrated in twelve languages.
               </p>
               {/* accent-ink, not accent. The gilt is 2.71:1 on the page
                   background and only legible on dark surfaces — the token
@@ -472,7 +473,7 @@ export default async function HomePage() {
                   languages", over a CTA reading "Enter Virtual Tour". None of
                   that existed: there is one panorama in the archive, it is a
                   flat stitched photograph rather than a sphere, there are no
-                  hotspots, and the audio is in four languages. It also carried
+                  hotspots, and the audio is in twelve languages. It also carried
                   a disclaimer about "prototype captures" that contradicted the
                   rest of the site, where every photograph is Commons-sourced
                   and credited. It was the last of the pre-integrity-pass
@@ -494,7 +495,7 @@ export default async function HomePage() {
                 <ul className="mt-6 flex flex-wrap gap-2.5">
                   {[
                     { icon: Camera, label: `${GALLERY_PHOTO_COUNT} credited photographs` },
-                    { icon: Headphones, label: "Audio guides in 4 languages" },
+                    { icon: Headphones, label: "Audio guides in 12 languages" },
                     { icon: Rotate3d, label: "Rumtek courtyard panorama" },
                   ].map((item) => (
                     <li
@@ -555,6 +556,39 @@ export default async function HomePage() {
               </ScrollReveal>
             ))}
           </div>
+        </section>
+
+        {/* --------------------------------------------- 6b · Culture on film */}
+        {/* The culture shelves were reachable only from the navigation bar,
+            which meant the 34 verified films — the one part of this archive
+            that covers the kitchen, the loom and the wedding rather than the
+            monastery — had no entry point on the page most visitors land on. */}
+        <section className="mx-auto max-w-6xl px-6 pb-20 md:pb-28" aria-label="Culture on film">
+          <ScrollReveal>
+            <Link
+              href="/culture"
+              className="card-lift group flex flex-col gap-4 rounded-xl border bg-surface p-7 md:flex-row md:items-center md:justify-between md:p-9"
+            >
+              <div className="min-w-0">
+                <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
+                  Culture on film
+                </p>
+                <h2 className="mt-3 max-w-xl font-display text-h2 text-balance-heading">
+                  The kitchen, the loom, the dance floor
+                </h2>
+                <p className="mt-3 max-w-xl text-body leading-relaxed text-muted">
+                  {CULTURE_STATS.total} verified films across{" "}
+                  {CULTURE_STATS.categories} subjects — food, festivals, music and
+                  dance, crafts, textiles and communities. Each one plays without
+                  leaving the archive.
+                </p>
+              </div>
+              <span className="flex shrink-0 items-center gap-1.5 text-small font-medium text-primary group-hover:underline">
+                Watch
+                <ArrowRight className="size-4" aria-hidden />
+              </span>
+            </Link>
+          </ScrollReveal>
         </section>
 
         {/* ------------------------------- 7 · History & archive entry points */}

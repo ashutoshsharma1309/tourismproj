@@ -38,14 +38,32 @@ export type ArchiveCategory =
   | "Food heritage"
   | "Oral traditions"
   | "Community heritage"
-  | "Traditional knowledge";
+  | "Traditional knowledge"
+  /*
+   * "Documents" and "Portraits" come from the history generator and were
+   * missing from both this union and the display order below. Six catalogued
+   * objects — the Anglo-Nepalese War, the Kingdom of Sikkim, the Sikkim
+   * Expedition, and portraits of the Chogyal, Palden Thondup Namgyal and
+   * Joseph Hooker — therefore had no chip in the category filter and could not
+   * be reached by category at all, while their own pages went on printing the
+   * category name. The archive also described itself as holding 15 categories
+   * when the data holds 17.
+   *
+   * They are added rather than folded into "Historical documents" and
+   * "Historical photographs", because merging would relabel six objects to
+   * make a counting bug go away.
+   */
+  | "Documents"
+  | "Portraits";
 
 /** Display order — the order a visitor would want to meet the shelves in. */
 export const ARCHIVE_CATEGORY_ORDER: ArchiveCategory[] = [
   "Monastery heritage",
   "Historic sites",
   "Historical photographs",
+  "Portraits",
   "Historical documents",
+  "Documents",
   "Architecture",
   "Sacred landscapes",
   "Festivals",

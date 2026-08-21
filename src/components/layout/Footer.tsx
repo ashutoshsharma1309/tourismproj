@@ -104,10 +104,30 @@ export function Footer() {
           the fix that holds however wide those controls get.
         */}
         <div className="mx-auto flex max-w-6xl flex-col gap-3 px-6 pt-5 pb-24 text-caption text-foreground-inverse/50 sm:flex-row sm:items-center sm:justify-between">
+          {/*
+            This line used to claim two things that were not true, on every
+            page of the site.
+
+            It said the project was "built for the Sikkim Tourism Department",
+            which asserts a commissioning relationship that does not exist.
+            Nobody commissioned this. It is government-ready, which is a claim
+            about the standard of the work rather than about who asked for it.
+
+            And it said "photography and recordings are freely licensed
+            Wikimedia Commons works", as a blanket statement covering the whole
+            site. Most of the photography is exactly that — but the stay
+            galleries are the hotels' own copyrighted promotional images, shown
+            from their servers under no licence at all, and the audio guides
+            are machine-narrated, not recordings of anyone. Both are disclosed
+            correctly where they appear; the blanket claim in the footer
+            contradicted those disclosures and, on the images, asserted a
+            licence their owners never granted.
+          */}
           <p>
-            © 2026 {SITE.name} — a prototype built for the Sikkim Tourism
-            Department. Photography and recordings are freely licensed Wikimedia
-            Commons works.
+            © 2026 {SITE.name} — an independent, government-ready prototype, not
+            an official publication of the Government of Sikkim. Most photography
+            is freely licensed Wikimedia Commons work; each image and audio guide
+            carries its own source and licence where it appears.
           </p>
           <p className="sm:shrink-0">
             Made by{" "}

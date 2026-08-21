@@ -1,127 +1,133 @@
 {
-  "generatedAt": "2026-08-18T16:19:56.916Z",
-  "retrievedAt": "2026-08-18",
-  "source": {
-    "name": "Tourism & Civil Aviation Department, Government of Sikkim",
-    "papUrl": "https://sikkimtourism.gov.in/pap",
-    "rapUrl": "https://sikkimtourism.gov.in/rap",
-    "type": "government"
+ "generatedAt": "2026-08-18T16:19:56.916Z",
+ "retrievedAt": "2026-08-18",
+ "source": {
+  "name": "Tourism & Civil Aviation Department, Government of Sikkim",
+  "papUrl": "https://sikkimtourism.gov.in/pap",
+  "rapUrl": "https://sikkimtourism.gov.in/rap",
+  "type": "government"
+ },
+ "note": "Protected Area Permit destinations and Restricted Area Permit rules. The RAP issuing-office list is deliberately NOT reproduced: the department renders each office name as a heading and its address as the following block, which mis-pairs by one, and a wrong address or telephone number for a government permit office is worse than a link. The page is linked instead.",
+ "destinations": [
+  {
+   "slug": "tsomgo-baba-mandir",
+   "name": "Tsomgo – Baba Mandir",
+   "region": "East District",
+   "authority": "Permits are issued by the Police Check Post for domestic tourists. Foreign tourists are allowed till Tsomgo Lake — the permit is issued by the Tourism & Civil Aviation Department and the vehicle permit by the Police Check Post, applied through a registered Travel Agency."
   },
-  "note": "Protected Area Permit destinations and Restricted Area Permit rules. The RAP issuing-office list is deliberately NOT reproduced: the department renders each office name as a heading and its address as the following block, which mis-pairs by one, and a wrong address or telephone number for a government permit office is worse than a link. The page is linked instead.",
-  "destinations": [
-    {
-      "slug": "tsomgo-baba-mandir",
-      "name": "Tsomgo – Baba Mandir",
-      "region": "East District",
-      "authority": "Permits are issued by the Police Check Post for domestic tourists. Foreign tourists are allowed till Tsomgo Lake — the permit is issued by the Tourism & Civil Aviation Department and the vehicle permit by the Police Check Post, applied through a registered Travel Agency."
-    },
-    {
-      "slug": "nathula-pass",
-      "name": "Nathula Pass",
-      "region": "East District",
-      "authority": "Permit is issued by the Tourism Department and the vehicle permit by the Police Check Post for domestic tourists, issued through a registered Travel Agency."
-    },
-    {
-      "slug": "dzongri-trek",
-      "name": "Dzongri Trek",
-      "region": "West District",
-      "authority": "Permit is issued by TIC Pelling and TIC Gangtok."
-    },
-    {
-      "slug": "singalila-trek",
-      "name": "Singalila Trek",
-      "region": "West District",
-      "authority": "Permit is issued by TIC Pelling after clearance from the Home Department, Forest Department and Army, through registered Travel Agencies."
-    },
-    {
-      "slug": "yumthang",
-      "name": "Yumthang",
-      "region": "North District",
-      "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit from the Police Check Post."
-    },
-    {
-      "slug": "yumesamdong",
-      "name": "Yumesamdong",
-      "region": "North District",
-      "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle pass from the Police Check Post."
-    },
-    {
-      "slug": "thangu-chopta-valley",
-      "name": "Thangu – Chopta Valley",
-      "region": "North District",
-      "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit by the Police Check Post. Foreigners must apply through a Sikkim Tourism registered Travel Agent in groups of two or more."
-    },
-    {
-      "slug": "gurudongmar",
-      "name": "Gurudongmar",
-      "region": "North District",
-      "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Permit Cell, Tourism Department only till Thangu."
-    },
-    {
-      "slug": "green-lake-trek",
-      "name": "Green Lake Trek",
-      "region": "North District",
-      "authority": "Permit is issued by the Adventure Cell of the Tourism Department after clearance from the Forest Department, Home Department and Army, applied through a registered Travel Agency."
-    },
-    {
-      "slug": "maenam-trekking",
-      "name": "Maenam Trekking",
-      "region": "South District",
-      "authority": "Trekking permits are issued from TIC Pelling and TIC Gangtok through a registered Travel Agency after clearance is obtained from Home / Army / Forest and Police."
-    },
-    {
-      "slug": "alpine-mountaineering-expedition",
-      "name": "Alpine Mountaineering Expedition",
-      "region": "South District",
-      "authority": "Permit is issued by the Tourism Department after clearance from the Home Department, Forest, Army and Police, for the notified peaks as per Home Department Notification No. 25/Home/2006 dated 20/03/2006."
-    },
-    {
-      "slug": "national-park-wildlife-sanctuary",
-      "name": "National Park & Wildlife Sanctuary",
-      "region": "South District",
-      "authority": "Entry permits are issued by the Forest Department at Gangtok."
-    }
-  ],
-  "documents": [
-    {
-      "for": "Nathula",
-      "notes": [
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
-      ]
-    },
-    {
-      "for": "Gurudongmar",
-      "notes": [
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
-        "Not allowed to Gurudongmar, but may visit Lachen & Yumthang.",
-        "For Lachen & Yumthang: photocopy of valid passport, Indian visa, 2 passport-size photos with original documents & ILP."
-      ]
-    },
-    {
-      "for": "Zuluk",
-      "notes": [
-        "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
-      ]
-    },
-    {
-      "for": "Two-Wheeler / Motorbike Permit",
-      "notes": [
-        "1Registration certificate of the bike",
-        "5Passport-size photographs (2 nos.)",
-        "6Identity proof of rider and co-rider"
-      ]
-    }
-  ],
-  "rapRules": [
-    "Every foreigner (excluding people of Bhutanese origin) who wishes to enter and stay in a Protected or Restricted Area of Sikkim must obtain a Restricted Area Permit, issued free of cost by authorised offices of the Government of India and the Tourism Department.",
-    "Every foreigner (excluding people of Bhutanese origin) must fill the prescribed format provided at the permit office, attach the required documents, and seek approval from the competent authority.",
-    "Citizens of Nepal or Bangladesh may produce a valid identity card reflecting their origin while applying for the permit.",
-    "All foreigners visiting the State must register themselves within 24 hours of their arrival.",
-    "The Restricted Area Permit (RAP) is issued free of cost from the authorised offices listed below.",
-    "The issuance of a RAP requires prior clearance from the Ministry of Home Affairs in the following cases before applying.",
-    "Nationals, OCIs or citizens of Pakistan, Afghanistan or China — under the Prior Reference Category (PRC), including Hong Kong and Macau — must obtain prior approval from the Ministry of Home Affairs, Government of India, New Delhi before applying for a RAP.",
-    "Individuals of Pakistani, Afghan or Chinese origin (by birth), also under PRC including Hong Kong and Macau, must receive prior approval from the Ministry of Home Affairs, New Delhi before applying for a RAP.",
-    "Individuals born in, or who are nationals, OCIs or citizens of Myanmar or Nigeria, need prior clearance from either the Ministry of Home Affairs or the Home Department of Sikkim before entering the State.",
-    "On issue of the permit, a foreigner is allowed to visit the following places strictly for tourism purposes only."
-  ]
+  {
+   "slug": "nathula-pass",
+   "name": "Nathula Pass",
+   "region": "East District",
+   "authority": "Permit is issued by the Tourism Department and the vehicle permit by the Police Check Post for domestic tourists, issued through a registered Travel Agency."
+  },
+  {
+   "slug": "dzongri-trek",
+   "name": "Dzongri Trek",
+   "region": "West District",
+   "authority": "Permit is issued by TIC Pelling and TIC Gangtok."
+  },
+  {
+   "slug": "singalila-trek",
+   "name": "Singalila Trek",
+   "region": "West District",
+   "authority": "Permit is issued by TIC Pelling after clearance from the Home Department, Forest Department and Army, through registered Travel Agencies."
+  },
+  {
+   "slug": "yumthang",
+   "name": "Yumthang",
+   "region": "North District",
+   "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit from the Police Check Post."
+  },
+  {
+   "slug": "yumesamdong",
+   "name": "Yumesamdong",
+   "region": "North District",
+   "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle pass from the Police Check Post."
+  },
+  {
+   "slug": "thangu-chopta-valley",
+   "name": "Thangu – Chopta Valley",
+   "region": "North District",
+   "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Tourism Department and the vehicle permit by the Police Check Post. Foreigners must apply through a Sikkim Tourism registered Travel Agent in groups of two or more."
+  },
+  {
+   "slug": "gurudongmar",
+   "name": "Gurudongmar",
+   "region": "North District",
+   "authority": "Permit is issued by the Police Check Post for domestic tourists. For foreigners, the permit is issued by the Permit Cell, Tourism Department only till Thangu."
+  },
+  {
+   "slug": "green-lake-trek",
+   "name": "Green Lake Trek",
+   "region": "North District",
+   "authority": "Permit is issued by the Adventure Cell of the Tourism Department after clearance from the Forest Department, Home Department and Army, applied through a registered Travel Agency."
+  },
+  {
+   "slug": "maenam-trekking",
+   "name": "Maenam Trekking",
+   "region": "South District",
+   "authority": "Trekking permits are issued from TIC Pelling and TIC Gangtok through a registered Travel Agency after clearance is obtained from Home / Army / Forest and Police."
+  },
+  {
+   "slug": "alpine-mountaineering-expedition",
+   "name": "Alpine Mountaineering Expedition",
+   "region": "South District",
+   "authority": "Permit is issued by the Tourism Department after clearance from the Home Department, Forest, Army and Police, for the notified peaks as per Home Department Notification No. 25/Home/2006 dated 20/03/2006."
+  },
+  {
+   "slug": "national-park-wildlife-sanctuary",
+   "name": "National Park & Wildlife Sanctuary",
+   "region": "South District",
+   "authority": "Entry permits are issued by the Forest Department at Gangtok."
+  }
+ ],
+ "documents": [
+  {
+   "for": "Nathula",
+   "notes": [
+    "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
+   ]
+  },
+  {
+   "for": "Gurudongmar",
+   "notes": [
+    "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted.",
+    "Not allowed to Gurudongmar, but may visit Lachen & Yumthang.",
+    "For Lachen & Yumthang: photocopy of valid passport, Indian visa, 2 passport-size photos with original documents & ILP."
+   ]
+  },
+  {
+   "for": "Zuluk",
+   "notes": [
+    "Kids below 18 require their birth certificate / father's Voter ID / passport. Aadhaar card is not accepted."
+   ]
+  },
+  {
+   "for": "Two-Wheeler / Motorbike Permit",
+   "notes": [
+    "Registration certificate of the bike",
+    "Driving License",
+    "Pollution certificate",
+    "Insurance certificate",
+    "Passport-size photographs (2 nos.)",
+    "Identity proof of rider and co-rider"
+   ],
+   "rule": "Engine capacity must be 150 cc or higher.",
+   "correctedAt": "2026-08-21",
+   "correctionNote": "Re-read from the department's rendered PAP page on 2026-08-21. The first ingest glued the list ordinals to the labels and dropped items 2-4 (driving licence, pollution certificate, insurance certificate) because they fall under the 30-character prose floor, and lost the 150 cc rule because it is a paragraph rather than a list item. The scraper has been fixed so a re-run reproduces this."
+  }
+ ],
+ "rapRules": [
+  "Every foreigner (excluding people of Bhutanese origin) who wishes to enter and stay in a Protected or Restricted Area of Sikkim must obtain a Restricted Area Permit, issued free of cost by authorised offices of the Government of India and the Tourism Department.",
+  "Every foreigner (excluding people of Bhutanese origin) must fill the prescribed format provided at the permit office, attach the required documents, and seek approval from the competent authority.",
+  "Citizens of Nepal or Bangladesh may produce a valid identity card reflecting their origin while applying for the permit.",
+  "All foreigners visiting the State must register themselves within 24 hours of their arrival.",
+  "The Restricted Area Permit (RAP) is issued free of cost from the authorised offices listed below.",
+  "The issuance of a RAP requires prior clearance from the Ministry of Home Affairs in the following cases before applying.",
+  "Nationals, OCIs or citizens of Pakistan, Afghanistan or China — under the Prior Reference Category (PRC), including Hong Kong and Macau — must obtain prior approval from the Ministry of Home Affairs, Government of India, New Delhi before applying for a RAP.",
+  "Individuals of Pakistani, Afghan or Chinese origin (by birth), also under PRC including Hong Kong and Macau, must receive prior approval from the Ministry of Home Affairs, New Delhi before applying for a RAP.",
+  "Individuals born in, or who are nationals, OCIs or citizens of Myanmar or Nigeria, need prior clearance from either the Ministry of Home Affairs or the Home Department of Sikkim before entering the State.",
+  "On issue of the permit, a foreigner is allowed to visit the following places strictly for tourism purposes only."
+ ]
 }

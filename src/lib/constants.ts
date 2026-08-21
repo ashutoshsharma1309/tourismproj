@@ -18,7 +18,7 @@ export const SITE = {
    * result or a shared link showed. It now describes what the archive holds.
    */
   description:
-    "A sourced digital archive of Sikkim's monasteries — 15 catalogued gompas with audio guides in four languages, 70 cultural stories, an interactive heritage map and a trip planner. Every claim traces to a named source.",
+    "A sourced digital archive of Sikkim's monasteries — 15 catalogued gompas with audio guides in twelve languages, 70 cultural stories, an interactive heritage map and a trip planner. Every claim traces to a named source.",
 } as const;
 
 /**

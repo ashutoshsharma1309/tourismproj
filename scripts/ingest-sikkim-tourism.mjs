@@ -184,7 +184,13 @@ for (const route of ROUTES) {
         const tag = n.tagName;
         if (/^H[1-4]$/.test(tag)) {
           const h = n.textContent.replace(/\s+/g, " ").trim();
-          if (h) { current = { heading: h, items: [] }; out.push(current); }
+          if (h) { current = { heading: h, items: [], prose: [] }; out.push(current); }
+        } else if (tag === "P" && current && !n.closest("li")) {
+          /* A section's own prose. The two-wheeler heading carries its single
+             most important rule this way — "Engine capacity must be 150 cc or
+             higher" — which an LI-only sweep threw away entirely. */
+          const t = n.textContent.replace(/\s+/g, " ").trim();
+          if (t) current.prose.push(t);
         } else if (tag === "LI" && current && !n.querySelector("li")) {
           const t = n.textContent.replace(/\s+/g, " ").trim();
           /*
@@ -217,7 +223,24 @@ for (const route of ROUTES) {
                     .trim(),
                 }
               : null;
-          if (t) current.items.push({ text: t, icon, pair });
+          /*
+           * Numbered checklists render the ordinal as its own node, so
+           * textContent glues it to the label: "2Driving License". A digit
+           * followed immediately by a capital with no space is never prose,
+           * so it is safe to lift off — and lifting it off is what lets the
+           * item be recognised as a checklist entry rather than a sentence.
+           *
+           * This mattered. The two-wheeler permit checklist lost items 2, 3
+           * and 4 — driving licence, pollution certificate, insurance
+           * certificate — because the notes filter below drops anything under
+           * 30 characters as chrome, and those three are short. The page told
+           * riders to bring a registration certificate and photographs and
+           * said nothing about a licence or insurance.
+           */
+          const ordinalMatch = t.match(/^(\d{1,2})(?=[A-Z])/);
+          const ordinal = ordinalMatch ? Number(ordinalMatch[1]) : null;
+          const text = ordinal === null ? t : t.slice(ordinalMatch[0].length).trim();
+          if (text) current.items.push({ text, icon, pair, ordinal });
         }
       }
       return out;
@@ -275,13 +298,27 @@ for (const { route, base, payload, paginated } of raw) {
         entries: sec.items
           .filter((it) => it.pair && it.pair.label && it.pair.detail)
           .map((it) => ({ label: it.pair.label, detail: it.pair.detail })),
+        /*
+         * A numbered item is a checklist entry and is kept whatever its
+         * length; the 30-character floor only applies to unnumbered prose,
+         * where it is still doing its job of filtering navigation chrome.
+         */
         notes: sec.items
-          .filter((it) => !it.pair && it.text.length > 30 && !isChrome(it.text) && !isFurniture(it.text))
+          .filter(
+            (it) =>
+              !it.pair &&
+              (it.ordinal !== null || it.text.length > 30) &&
+              !isChrome(it.text) &&
+              !isFurniture(it.text),
+          )
           .map((it) => it.text),
+        prose: (sec.prose ?? []).filter(
+          (t) => t.length > 20 && !isChrome(t) && !isFurniture(t),
+        ),
       }))
       .filter(
         (sec) =>
-          (sec.entries.length > 0 || sec.notes.length > 0) &&
+          (sec.entries.length > 0 || sec.notes.length > 0 || sec.prose.length > 0) &&
           !/important links|information|contact us/i.test(sec.heading),
       );
     const paras = payload.paras.filter((t) => t.length > 60 && !isChrome(t) && !isFurniture(t));

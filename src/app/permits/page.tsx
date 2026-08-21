@@ -98,7 +98,15 @@ export default function PermitsPage() {
                 <h3 className="font-mono text-eyebrow tracking-widest text-subtle uppercase">
                   {group.for}
                 </h3>
-                <ul className="mt-3 flex flex-col gap-1.5">
+                {/* A condition of entry, not a document — so it leads, above
+                    the checklist. Turning up at a check post on a 125 cc bike
+                    with every paper in order still means being turned back. */}
+                {group.rule ? (
+                  <p className="mt-3 rounded-lg border-l-4 border-warning bg-warning-soft px-3 py-2 text-small leading-relaxed">
+                    {group.rule}
+                  </p>
+                ) : null}
+                <ul className="mt-3 flex list-decimal flex-col gap-1.5 pl-5 marker:font-mono marker:text-subtle">
                   {group.notes.map((note) => (
                     <li key={note} className="text-small leading-relaxed text-muted">
                       {note}
