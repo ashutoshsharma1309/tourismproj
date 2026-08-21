@@ -38,11 +38,14 @@ export default function StaysPage() {
           {STAY_IMAGE_STATS.properties} of the {CURATED_STATS.total} are shown
           in their own photographs, published by the hotels themselves and
           displayed from their sites rather than copied here. The other{" "}
-          {CURATED_STATS.total - STAY_IMAGE_STATS.properties} have none that
-          could be verified, so their cards carry a freely licensed photograph
-          of a catalogued place in the same district, captioned with what it
-          actually depicts — never with the hotel beside it. No tariff and no
-          guest rating appears anywhere, because none could be verified.
+          {CURATED_STATS.total - STAY_IMAGE_STATS.properties} say so plainly.
+          They previously carried a photograph of a catalogued place in the same
+          district, and that was a mistake: a caption reading &ldquo;not this
+          property&rdquo; does not stop a photograph looking like the hotel
+          above it, and the same picture was illustrating up to three different
+          hotels. A card here shows its own building or it shows none. No
+          tariff and no guest rating appears anywhere either, because none
+          could be verified.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
           Every property carries the register&apos;s own telephone number —{" "}

@@ -23,7 +23,6 @@ import {
 import { places } from "@/data/places";
 import { stayImages } from "@/data/stay-images";
 import { StayGallery } from "@/components/stays/StayGallery";
-import { stayPhoto } from "@/data/stay-photos";
 import { distanceKm } from "@/lib/geo";
 import { SITE_URL } from "@/lib/constants";
 
@@ -71,10 +70,11 @@ export default async function StayPage({ params }: PageProps) {
   const stay = getCuratedStay(slug);
   if (!stay) notFound();
 
-  /* The property's own photographs where any exist; otherwise the district
-     stand-in, which is captioned as not being this hotel. */
+  /* The property's own photographs, or none. A picture of somewhere else in
+     the same district was shown here until it became clear that a caption
+     saying "not this property" does not stop a photograph reading as one —
+     and that the same photograph was illustrating up to three hotels. */
   const gallery = stayImages(stay.slug);
-  const photo = gallery.length === 0 ? stayPhoto(stay) : undefined;
   const meta = DISTRICT_META.find((district) => district.name === stay.district);
 
   /*
@@ -117,43 +117,17 @@ export default async function StayPage({ params }: PageProps) {
         <div className="mt-5">
           {gallery.length > 0 ? (
             <StayGallery images={gallery} propertyName={stay.name} />
-          ) : photo ? (
-            <figure>
-              <div className="relative h-56 overflow-hidden rounded-2xl border bg-surface-muted sm:h-72 md:h-80">
-                <Image
-                  src={photo.localPath}
-                  alt={`${photo.placeName}, ${photo.placeDistrict} district — not a photograph of ${stay.name}`}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 64rem, 100vw"
-                  className="object-cover"
-                />
-                <div className="gradient-overlay absolute inset-0" aria-hidden />
-                <p className="absolute inset-x-0 bottom-0 px-4 pb-3 font-mono text-caption text-foreground-inverse/90">
-                  {photo.placeName} · not this property
-                </p>
-              </div>
-              <figcaption className="mt-2 text-caption leading-relaxed text-subtle">
-                This photograph shows {photo.placeName} in {photo.placeDistrict}{" "}
-                district, not {stay.name}. No openly licensed photograph of the
-                property itself could be found. © {photo.attribution} ·{" "}
-                <a
-                  href={photo.descriptionUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="underline decoration-dotted underline-offset-2 hover:no-underline"
-                >
-                  {photo.license}
-                </a>
-              </figcaption>
-            </figure>
           ) : (
             <div className="flex h-56 flex-col items-center justify-center rounded-2xl border border-dashed bg-surface-muted/40 px-6 text-center sm:h-72">
               <ImageOff className="size-6 text-subtle" aria-hidden />
-              <p className="mt-3 font-display text-h4">No photograph available</p>
+              <p className="mt-3 font-display text-h4">Photograph unavailable</p>
               <p className="mt-1.5 max-w-md text-small leading-relaxed text-muted">
-                No openly licensed photograph of this property exists, and a
-                picture of somewhere else would tell you nothing true about it.
+                No photograph of this property could be licensed or verified.
+                Wikimedia Commons holds none, the register carries none, and
+                either the hotel publishes none or its server will not serve
+                them to another site. A picture of somewhere else in the
+                district would tell you nothing true about this building, so
+                there is none here.
               </p>
             </div>
           )}
@@ -227,6 +201,7 @@ export default async function StayPage({ params }: PageProps) {
             What the register records
           </h2>
           <dl className="mt-4 grid gap-x-8 gap-y-4 sm:grid-cols-2">
+            <Field label="Property reference" value={stay.propertyId} />
             <Field label="State grade" value={stay.starCategory} />
             <Field label="District" value={stay.district} />
             <Field label="Registration number" value={stay.registrationNo} />

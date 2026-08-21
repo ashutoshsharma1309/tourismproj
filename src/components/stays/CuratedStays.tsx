@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight, ExternalLink, MapPin, Phone, Search, X } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { useDeferredValue, useMemo, useState } from "react";
 
@@ -9,7 +8,6 @@ import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
 import type { DistrictGroup, StarGrade } from "@/data/curated-stays";
 import { stayImages } from "@/data/stay-images";
-import { stayPhoto } from "@/data/stay-photos";
 
 /**
  * The curated stays directory, organised by district.
@@ -28,19 +26,25 @@ import { stayPhoto } from "@/data/stay-photos";
  * Twenty-two properties need no pagination, so every one is on the page and
  * the district navigation jumps between them.
  *
- * No property has a photograph of itself, and that is a researched finding
- * rather than a gap: Commons was searched for every one of them, OpenStreetMap
- * carries no image tags, and of the official websites only three resolve to a
- * real property page. A stock hotel interior would be the invention this
- * directory exists to avoid.
+ * ON PHOTOGRAPHS: NEVER SOMEONE ELSE'S
+ * ------------------------------------
+ * A card shows a photograph of its own hotel or it shows no photograph. There
+ * is no third option, and there used to be: seventeen of the twenty-two
+ * carried a picture of a catalogued place in the same district, assigned by
+ * `index % pool.length`. That is a positional relationship, not a real one, so
+ * Do-drul Chorten illustrated three different hotels and six other places
+ * illustrated two each. The caption said "not this property" underneath, but a
+ * caption does not undo a photograph — at a glance the card reads as a picture
+ * of the hotel, and a visitor scrolling past three cards showing the same
+ * stupa learns nothing except to distrust the page.
  *
- * What the card leads with instead is a photograph of a catalogued place in the
- * same district, captioned with the place it actually shows and credited to the
- * photographer who released it — see src/data/stay-photos.ts for how one is
- * chosen. The caption is not decoration and must not be dropped: it is the only
- * thing separating "somewhere in this district looks like this" from "this is
- * the hotel". The monogram remains as the fallback for a district with no
- * qualifying photograph, and as the property's own mark over the frame.
+ * The seventeen now carry a stated unavailable panel keyed to the property's
+ * own monogram. It is deterministic per name, so two cards never look alike,
+ * and it never claims to be a building.
+ *
+ * Five of the twenty-two have photographs of themselves, published on their
+ * own websites and served from there. The other seventeen have none, and show
+ * a stated unavailable panel rather than a borrowed picture.
  */
 
 const TINTS = [
@@ -253,11 +257,8 @@ export function CuratedStays({
 
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {group.stays.map((stay) => {
-                /* A photograph of the hotel itself where one exists; the
-                   captioned district stand-in where none does. Six of the
-                   twenty-two have their own. */
+                /* The hotel's own photograph, or none at all. */
                 const own = stayImages(stay.slug)[0];
-                const photo = own ? undefined : stayPhoto(stay);
                 return (
                 <li
                   key={stay.slug}
@@ -284,39 +285,18 @@ export function CuratedStays({
                         </span>
                       </div>
                     </figure>
-                  ) : photo ? (
-                    <figure className="-mx-5 -mt-5 mb-1">
-                      <div className="relative h-32 bg-surface-muted">
-                        <Image
-                          src={photo.localPath}
-                          alt={`${photo.placeName}, ${photo.placeDistrict} district — not a photograph of ${stay.name}`}
-                          fill
-                          sizes="(min-width: 1280px) 22rem, (min-width: 640px) 45vw, 92vw"
-                          className="object-cover"
-                        />
-                        <div className="gradient-overlay absolute inset-0" aria-hidden />
-                        {/* The property's own mark stays, over the frame: it is
-                            what makes one card distinguishable from another at a
-                            glance, and it is the only graphic here that belongs
-                            to the hotel. */}
-                        <span
-                          aria-hidden
-                          className="absolute top-2 left-3 font-display text-h4 text-foreground-inverse text-glow"
-                        >
-                          {monogram(stay.name)}
-                        </span>
-                        <figcaption className="absolute inset-x-0 bottom-0 px-3 pb-2 font-mono text-caption text-foreground-inverse/90">
-                          {photo.placeName} · not this property
-                        </figcaption>
-                      </div>
-                    </figure>
                   ) : (
                     <div
-                      aria-hidden
-                      className={`-mx-5 -mt-5 mb-1 flex h-24 items-center justify-center bg-linear-to-br ${tintFor(stay.name)}`}
+                      className={`-mx-5 -mt-5 mb-1 flex h-32 flex-col items-center justify-center gap-1 bg-linear-to-br ${tintFor(stay.name)}`}
                     >
-                      <span className="font-display text-h2 text-foreground-inverse/90">
+                      <span
+                        aria-hidden
+                        className="font-display text-h2 text-foreground-inverse/90"
+                      >
                         {monogram(stay.name)}
+                      </span>
+                      <span className="font-mono text-caption tracking-wide text-foreground-inverse/70 uppercase">
+                        Photograph unavailable
                       </span>
                     </div>
                   )}
@@ -378,21 +358,10 @@ export function CuratedStays({
                     </a>
                   </div>
 
-                  {/* The licence is satisfied by naming the author and the
-                      terms, not by the file page link alone — so both are here,
-                      under the frame they belong to. */}
-                  {photo ? (
+                  {own ? (
                     <p className="relative z-1 border-t pt-2 text-caption text-subtle">
-                      Photograph: {photo.placeName}, {photo.placeDistrict} district. ©{" "}
-                      {photo.attribution} ·{" "}
-                      <a
-                        href={photo.descriptionUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="underline decoration-dotted underline-offset-2 hover:no-underline"
-                      >
-                        {photo.license}
-                      </a>
+                      Photograph published by {own.attribution}
+                      {own.license ? ` · ${own.license}` : ""}
                     </p>
                   ) : null}
                 </li>

@@ -28,6 +28,17 @@ export type StarGrade =
   | "2-Star";
 
 export interface CuratedStay {
+  /**
+   * Stable identity, e.g. SKM-EAST-001.
+   *
+   * Assigned deterministically by district then slug, so regenerating the
+   * register does not shuffle ids. Nothing in this project should relate a
+   * photograph, a coordinate or a booking route to a property by array
+   * position — that is how seventeen hotels ended up illustrated by pictures
+   * of places they have nothing to do with, three of them by the same stupa.
+   * Keyed relationships only.
+   */
+  propertyId: string;
   slug: string;
   name: string;
   starCategory: StarGrade;
