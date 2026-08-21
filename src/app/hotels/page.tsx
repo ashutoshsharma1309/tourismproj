@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/Footer";
 import { TSDBreakdown } from "@/components/bookings/TSDBreakdown";
 import { CuratedStays } from "@/components/stays/CuratedStays";
 import { REGISTER_STATS } from "@/data/hotels";
+import { STAY_IMAGE_STATS } from "@/data/stay-images";
 import {
   STAYS_BY_DISTRICT,
   CURATED_STATS,
@@ -34,16 +35,21 @@ export default function StaysPage() {
           own — this page ranks nothing itself.
         </p>
         <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          No tariff or guest rating is shown, because none could be verified,
-          and no photograph of any property either: no openly licensed picture
-          of these buildings exists, and no booking platform page could be
-          confirmed. Each card instead shows a freely licensed photograph of a
-          catalogued place in the same district, captioned with what it actually
-          depicts — never with the hotel beside it. What each property does
-          carry is the register&apos;s own telephone number —{" "}
-          {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — a Google
-          Maps destination for every property, and an official website for the{" "}
-          {CURATED_STATS.withWebsite} whose page was fetched and checked. Read from{" "}
+          {STAY_IMAGE_STATS.properties} of the {CURATED_STATS.total} are shown
+          in their own photographs, published by the hotels themselves and
+          displayed from their sites rather than copied here. The other{" "}
+          {CURATED_STATS.total - STAY_IMAGE_STATS.properties} have none that
+          could be verified, so their cards carry a freely licensed photograph
+          of a catalogued place in the same district, captioned with what it
+          actually depicts — never with the hotel beside it. No tariff and no
+          guest rating appears anywhere, because none could be verified.
+        </p>
+        <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
+          Every property carries the register&apos;s own telephone number —{" "}
+          {CURATED_STATS.withPhone} of {CURATED_STATS.total} have one — and a
+          Google Maps destination. {CURATED_STATS.withWebsite} have an official
+          website that was fetched and confirmed to answer; the rest were
+          searched for and either do not exist or no longer resolve. Read from{" "}
           <a
             href={REGISTER_STATS.sourceUrl}
             target="_blank"

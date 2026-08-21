@@ -8,6 +8,7 @@ import { useDeferredValue, useMemo, useState } from "react";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
 import type { DistrictGroup, StarGrade } from "@/data/curated-stays";
+import { stayImages } from "@/data/stay-images";
 import { stayPhoto } from "@/data/stay-photos";
 
 /**
@@ -252,13 +253,38 @@ export function CuratedStays({
 
             <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               {group.stays.map((stay) => {
-                const photo = stayPhoto(stay);
+                /* A photograph of the hotel itself where one exists; the
+                   captioned district stand-in where none does. Six of the
+                   twenty-two have their own. */
+                const own = stayImages(stay.slug)[0];
+                const photo = own ? undefined : stayPhoto(stay);
                 return (
                 <li
                   key={stay.slug}
                   className="relative flex flex-col gap-2 overflow-hidden rounded-xl border bg-surface p-5 shadow-soft transition-colors hover:border-accent"
                 >
-                  {photo ? (
+                  {own ? (
+                    <figure className="-mx-5 -mt-5 mb-1">
+                      <div className="relative h-32 overflow-hidden bg-surface-muted">
+                        {/* Served from the property's own site — see
+                            StayGallery for why no copy is taken. */}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={own.url}
+                          alt={`${stay.name}${own.alt ? ` — ${own.alt}` : ""}`}
+                          loading="lazy"
+                          className="size-full object-cover"
+                        />
+                        <div className="gradient-overlay absolute inset-0" aria-hidden />
+                        <span
+                          aria-hidden
+                          className="absolute top-2 left-3 font-display text-h4 text-foreground-inverse text-glow"
+                        >
+                          {monogram(stay.name)}
+                        </span>
+                      </div>
+                    </figure>
+                  ) : photo ? (
                     <figure className="-mx-5 -mt-5 mb-1">
                       <div className="relative h-32 bg-surface-muted">
                         <Image

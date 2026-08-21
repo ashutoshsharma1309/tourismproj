@@ -1,5 +1,6 @@
 import generated from "@/data/generated/curated-stays.json";
 import type { Provenance } from "@/data/sources";
+import { VERIFIED_WEBSITES, WEBSITE_NOTES } from "@/data/stay-websites";
 
 /**
  * The state-graded stays — what the public Stays page shows.
@@ -52,7 +53,23 @@ export interface CuratedStay {
   verificationStatus: "cross-verified" | "register-only";
 }
 
-export const curatedStays = generated.properties as CuratedStay[];
+/**
+ * The register data, with the verified-website overlay applied.
+ *
+ * Three of the stored website URLs were broken — one 404, one redirecting to
+ * the wrong page, one whose TLS certificate no browser will accept — and seven
+ * more properties had a working official site that had never been found. See
+ * src/data/stay-websites.ts for what was checked and what failed.
+ */
+export const curatedStays: CuratedStay[] = (generated.properties as CuratedStay[]).map((stay) =>
+  stay.slug in VERIFIED_WEBSITES
+    ? {
+        ...stay,
+        officialWebsite: VERIFIED_WEBSITES[stay.slug] ?? null,
+        websiteNote: WEBSITE_NOTES[stay.slug] ?? stay.websiteNote,
+      }
+    : stay,
+);
 
 /** Grades in the order the department lists them, highest first. */
 export const STAR_GRADES: StarGrade[] = [

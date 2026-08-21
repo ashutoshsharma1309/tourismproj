@@ -21,6 +21,8 @@ import {
   getCuratedStay,
 } from "@/data/curated-stays";
 import { places } from "@/data/places";
+import { stayImages } from "@/data/stay-images";
+import { StayGallery } from "@/components/stays/StayGallery";
 import { stayPhoto } from "@/data/stay-photos";
 import { distanceKm } from "@/lib/geo";
 import { SITE_URL } from "@/lib/constants";
@@ -69,7 +71,10 @@ export default async function StayPage({ params }: PageProps) {
   const stay = getCuratedStay(slug);
   if (!stay) notFound();
 
-  const photo = stayPhoto(stay);
+  /* The property's own photographs where any exist; otherwise the district
+     stand-in, which is captioned as not being this hotel. */
+  const gallery = stayImages(stay.slug);
+  const photo = gallery.length === 0 ? stayPhoto(stay) : undefined;
   const meta = DISTRICT_META.find((district) => district.name === stay.district);
 
   /*
@@ -109,9 +114,11 @@ export default async function StayPage({ params }: PageProps) {
         </Link>
 
         {/* ---------------------------------------------------------- hero */}
-        <figure className="mt-5">
-          {photo ? (
-            <>
+        <div className="mt-5">
+          {gallery.length > 0 ? (
+            <StayGallery images={gallery} propertyName={stay.name} />
+          ) : photo ? (
+            <figure>
               <div className="relative h-56 overflow-hidden rounded-2xl border bg-surface-muted sm:h-72 md:h-80">
                 <Image
                   src={photo.localPath}
@@ -139,7 +146,7 @@ export default async function StayPage({ params }: PageProps) {
                   {photo.license}
                 </a>
               </figcaption>
-            </>
+            </figure>
           ) : (
             <div className="flex h-56 flex-col items-center justify-center rounded-2xl border border-dashed bg-surface-muted/40 px-6 text-center sm:h-72">
               <ImageOff className="size-6 text-subtle" aria-hidden />
@@ -150,7 +157,7 @@ export default async function StayPage({ params }: PageProps) {
               </p>
             </div>
           )}
-        </figure>
+        </div>
 
         {/* -------------------------------------------------------- identity */}
         <header className="mt-8">
