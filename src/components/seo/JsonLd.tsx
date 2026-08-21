@@ -84,7 +84,8 @@ export function placeSchema(place: {
   url: string;
   latitude: number;
   longitude: number;
-  image: string;
+  /** Absent where no photograph of the place could be verified. */
+  image?: string;
   elevation?: number;
 }): Record<string, unknown> {
   return {
@@ -93,7 +94,7 @@ export function placeSchema(place: {
     name: place.name,
     description: place.description,
     url: `${SITE_URL}${place.url}`,
-    image: `${SITE_URL}${place.image}`,
+    ...(place.image ? { image: `${SITE_URL}${place.image}` } : {}),
     address: {
       "@type": "PostalAddress",
       addressRegion: "Sikkim",

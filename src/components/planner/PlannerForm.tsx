@@ -1,15 +1,15 @@
 "use client";
 
-import { CalendarRange, FileCheck2, Info, Route, Users, Wallet } from "lucide-react";
+import { CalendarRange, FileCheck2, Gauge, Info, Route, Users, Wallet } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 import { Button } from "@/components/ui/Button";
-import { permitsMentionedIn } from "@/data/permits";
+import { permitDestinations } from "@/data/permits";
 import { TSD_EXEMPT_UNDER_AGE, TSD_FEE_PER_PERSON } from "@/lib/booking";
 import { cn } from "@/lib/cn";
 import { formatPrice } from "@/lib/format";
-import { generateItinerary } from "@/lib/generate-itinerary";
+import { planRoute } from "@/lib/generate-itinerary";
 import type { PlannerInterest, PlannerStyle } from "@/types";
 
 /**
@@ -83,13 +83,19 @@ export function PlannerForm() {
   const minDate = useMemo(() => todayIso(), []);
 
   /*
-   * The preview runs the real generator. Not an approximation of it, not a
+   * The preview runs the real route planner. Not an approximation of it, not a
    * second set of rules that could drift from it — the same pure function the
-   * result page calls, so what is shown here is what will be produced.
+   * result page builds its itinerary from, so what is shown here is what will
+   * be produced.
+   *
+   * `planRoute` names its days by slug and reads no place records, which is
+   * deliberate: this is a client component, and `src/data/monasteries.ts`
+   * carries 400 KB of audio-guide JSON behind it. The descriptions are resolved
+   * on the server in src/app/planner/_lib/itinerary.ts.
    */
   const preview = useMemo(
     () =>
-      generateItinerary({
+      planRoute({
         interests: [...interests],
         duration,
         travelStyle: style,
@@ -100,11 +106,12 @@ export function PlannerForm() {
     [interests, duration, style, travellers, children, startDate],
   );
 
+  /* Permit destinations the planned days enter, by the department's own slug. */
   const permits = useMemo(
     () =>
-      permitsMentionedIn(
-        preview.dayPlans.flatMap((day) => [day.title, day.morning, day.afternoon, day.evening]),
-      ),
+      preview.permits
+        .map((slug) => permitDestinations.find((permit) => permit.slug === slug))
+        .filter((permit) => permit !== undefined),
     [preview],
   );
 
@@ -270,7 +277,8 @@ export function PlannerForm() {
               className="h-12 w-24 rounded-lg border border-border-strong px-3 text-center font-mono text-body"
             />
             <p id="planner-days-hint" className="text-caption text-subtle">
-              3–14. Under 5 days the route stays in the east.
+              3–14. Under 5 days the route stays around Gangtok; North
+              Sikkim needs at least 6.
             </p>
           </div>
 
@@ -312,12 +320,19 @@ export function PlannerForm() {
           <span>{preview.stops.map((stop) => stop.location).join(" → ")}</span>
         </p>
 
+        {/* Keyed by the run, not the base: a North Sikkim loop comes back to
+            Gangtok, so the same base legitimately appears twice on a route. */}
         <ul className="mt-3 flex flex-col gap-1.5 text-small text-muted">
           {preview.stops.map((stop) => (
-            <li key={stop.location} className="flex items-baseline justify-between gap-3">
+            <li
+              key={`${stop.base}-${stop.fromDay}`}
+              className="flex items-baseline justify-between gap-3"
+            >
               <span>{stop.location}</span>
               <span data-numeric className="font-mono text-caption text-subtle">
-                {stop.days} {stop.days === 1 ? "day" : "days"}
+                {stop.fromDay === stop.toDay
+                  ? `Day ${stop.fromDay}`
+                  : `Day ${stop.fromDay}–${stop.toDay}`}
               </span>
             </li>
           ))}
@@ -345,6 +360,13 @@ export function PlannerForm() {
           </div>
           <div className="flex items-center justify-between gap-3">
             <dt className="flex items-center gap-2 text-muted">
+              <Gauge className="size-3.5 text-subtle" aria-hidden />
+              Pace
+            </dt>
+            <dd>{preview.pace.label}</dd>
+          </div>
+          <div className="flex items-center justify-between gap-3">
+            <dt className="flex items-center gap-2 text-muted">
               <Wallet className="size-3.5 text-subtle" aria-hidden />
               TSD entry fee
             </dt>
@@ -366,8 +388,9 @@ export function PlannerForm() {
             <FileCheck2 className="mt-0.5 size-3.5 shrink-0" aria-hidden />
             <span>
               This route needs a Protected Area Permit for{" "}
-              {permits.map((permit) => permit.name.split(/[–—-]/)[0]?.trim()).join(", ")} —
-              arranged before departure.
+              {permits.map((permit) => permit.name.split(/[–—-]/)[0]?.trim()).join(", ")}.
+              Check current local conditions and permit requirements, and
+              arrange it before departure.
             </span>
           </p>
         ) : null}
@@ -392,9 +415,11 @@ export function PlannerForm() {
         <p className="mt-4 flex items-start gap-2 text-caption leading-relaxed text-subtle">
           <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
           <span>
-            The route comes from fixed rules over real geography — four bases and
-            the day trips that are actually drivable from them. It is not a
-            model, and it does not book anything.
+            The route comes from fixed rules over Sikkim&rsquo;s road structure: six
+            bases, the roads that actually connect them, and only the day trips
+            that are drivable from each. A change of base always gets its own
+            day. It is not a model, it quotes no travel times, and it books
+            nothing.
           </span>
         </p>
       </aside>

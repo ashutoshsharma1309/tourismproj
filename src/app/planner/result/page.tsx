@@ -1,4 +1,17 @@
-import { ArrowRight, CalendarRange, FileCheck2, Route, Users, Wallet } from "lucide-react";
+import {
+  ArrowRight,
+  CalendarRange,
+  Car,
+  FileCheck2,
+  Gauge,
+  Info,
+  MapPin,
+  Mountain,
+  Route,
+  TriangleAlert,
+  Users,
+  Wallet,
+} from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,8 +20,7 @@ import { Footer } from "@/components/layout/Footer";
 import { ItineraryMap } from "@/components/planner/ItineraryExtras";
 import { Badge } from "@/components/ui/Badge";
 import { representativePhoto } from "@/data/galleries";
-import { permitsMentionedIn } from "@/data/permits";
-import { generateItinerary } from "@/lib/generate-itinerary";
+import { buildItinerary, type ResolvedDay, type ResolvedSlot } from "@/app/planner/_lib/itinerary";
 import { TSD_EXEMPT_UNDER_AGE, TSD_FEE_PER_PERSON } from "@/lib/booking";
 import { formatPrice } from "@/lib/format";
 import type { PlannerInterest, PlannerStyle } from "@/types";
@@ -22,7 +34,7 @@ export const metadata: Metadata = {
    * things promised were not here.
    */
   description:
-    "A day-by-day Sikkim route over real geography, with the permits it requires and the one fee the state publishes.",
+    "A day-by-day Sikkim route built on the road structure of the state, with the permits it requires and the one fee the state publishes.",
 };
 
 interface PageProps {
@@ -43,14 +55,180 @@ function first(value: string | string[] | undefined): string {
   return Array.isArray(value) ? (value[0] ?? "") : (value ?? "");
 }
 
+/** What "Half day" and "Short stop" mean — a plan's allocation, not a timetable. */
+const HOLD_LABEL: Record<string, string> = {
+  "Half day": "About half a day set aside",
+  "Short stop": "A short stop in the plan",
+};
+
+/* -------------------------------------------------------------------------
+   One slot of one day
+   ------------------------------------------------------------------------- */
+
+function SlotRow({ slot }: { slot: ResolvedSlot }) {
+  return (
+    <div className="grid gap-2 sm:grid-cols-[5.5rem_minmax(0,1fr)] sm:gap-4">
+      <p className="pt-0.5 font-mono text-caption tracking-wide text-subtle uppercase">
+        {slot.slot}
+      </p>
+
+      {slot.travel ? (
+        <div className="min-w-0 rounded-lg border border-dashed bg-surface-muted/50 p-4">
+          <p className="flex flex-wrap items-center gap-x-2 gap-y-1 font-display text-h4">
+            <Car className="size-4 shrink-0 text-primary" aria-hidden />
+            {slot.travel.from}
+            <ArrowRight className="size-3.5 shrink-0 text-subtle" aria-hidden />
+            {slot.travel.to}
+          </p>
+          {slot.travel.via.length > 0 ? (
+            <p className="mt-2 flex flex-wrap items-center gap-x-1.5 gap-y-1 text-small text-muted">
+              <span className="text-subtle">Road runs through</span>
+              {slot.travel.via.map((town, index) => (
+                <span key={town.href}>
+                  <Link href={town.href} className="text-primary hover:underline">
+                    {town.name}
+                  </Link>
+                  {index < slot.travel!.via.length - 1 ? "," : ""}
+                </span>
+              ))}
+            </p>
+          ) : null}
+          {/*
+            The distance is a great-circle figure and is labelled as one. It is
+            NOT converted into a driving time anywhere: mountain road distance
+            in Sikkim runs to several times the straight line, and this project
+            holds no routing licence. The old planner printed "Drive west along
+            the Rangeet gorge (5–6 h)" — a road time nothing here could support.
+          */}
+          <p className="mt-2 text-small leading-relaxed text-muted">
+            <span data-numeric className="font-mono text-caption text-subtle">
+              Approx. {slot.travel.straightLine} in a straight line
+            </span>{" "}
+            — the road is longer, and no travel time is stated here. This plan
+            sets the whole day aside for the drive. Check current local
+            conditions before you leave.
+          </p>
+        </div>
+      ) : slot.stop ? (
+        <div className="min-w-0 rounded-lg border bg-surface p-4">
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <Link
+              href={slot.stop.href}
+              className="font-display text-h4 text-foreground hover:text-primary hover:underline"
+            >
+              {slot.stop.name}
+            </Link>
+            <span className="font-mono text-caption text-subtle">
+              {slot.stop.label} · {slot.stop.district}
+            </span>
+          </div>
+
+          {/* The record's own sourced sentence. Nothing is written for the planner. */}
+          <p className="mt-2 text-small leading-relaxed text-muted">{slot.stop.why}</p>
+
+          <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-caption text-subtle">
+            <span className="inline-flex items-center gap-1.5">
+              <CalendarRange className="size-3.5" aria-hidden />
+              {HOLD_LABEL[slot.stop.hold] ?? slot.stop.hold}
+            </span>
+            {slot.stop.elevation ? (
+              <span data-numeric className="inline-flex items-center gap-1.5 font-mono">
+                <Mountain className="size-3.5" aria-hidden />
+                {slot.stop.elevation.toLocaleString("en-IN")} m
+              </span>
+            ) : null}
+          </div>
+
+          {slot.stop.permitNote ? (
+            <p className="mt-3 flex items-start gap-2 rounded-md bg-warning-soft p-2.5 text-caption leading-relaxed text-warning">
+              <FileCheck2 className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+              <span>{slot.stop.permitNote}</span>
+            </p>
+          ) : null}
+
+          {slot.stop.hoursNote ? (
+            <p className="mt-2 text-caption leading-relaxed text-subtle">{slot.stop.hoursNote}</p>
+          ) : null}
+        </div>
+      ) : (
+        <p className="min-w-0 rounded-lg border border-dashed px-4 py-3 text-small text-subtle">
+          {slot.note}
+        </p>
+      )}
+    </div>
+  );
+}
+
+/* -------------------------------------------------------------------------
+   One day
+   ------------------------------------------------------------------------- */
+
+function DayCard({ day, date }: { day: ResolvedDay; date: string | null }) {
+  return (
+    <li className="relative">
+      <span
+        aria-hidden
+        className="absolute top-6 -left-[31px] flex size-4 items-center justify-center rounded-full border-2 border-primary bg-surface"
+      />
+      <article className="rounded-xl border bg-surface shadow-card">
+        <header className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 border-b p-5">
+          <div className="min-w-0">
+            <p className="font-mono text-caption text-primary">
+              DAY {day.day}
+              {date ? <span className="text-subtle"> · {date}</span> : null}
+            </p>
+            <h3 className="mt-0.5 font-display text-h3 text-balance-heading">{day.title}</h3>
+          </div>
+          <div className="flex flex-wrap items-center gap-2">
+            {day.isTravelDay ? <Badge tone="marigold-soft">Travel day</Badge> : null}
+            <span className="inline-flex items-center gap-1.5 text-caption whitespace-nowrap text-subtle">
+              <MapPin className="size-3.5" aria-hidden />
+              Nights in {day.location}
+            </span>
+          </div>
+        </header>
+
+        <div className="flex flex-col gap-4 p-5">
+          {day.slots.map((slot) => (
+            <SlotRow key={slot.slot} slot={slot} />
+          ))}
+
+          {day.advisories.length > 0 ? (
+            <div className="rounded-lg border-l-4 border-warning bg-warning-soft p-4">
+              <ul className="flex flex-col gap-2">
+                {day.advisories.map((advisory) => (
+                  <li key={advisory} className="flex items-start gap-2 text-caption leading-relaxed">
+                    <TriangleAlert className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+                    <span>{advisory}</span>
+                  </li>
+                ))}
+              </ul>
+              {day.permits.length > 0 ? (
+                <p className="mt-2 pl-5.5 text-caption leading-relaxed">
+                  Permit for{" "}
+                  {day.permits.map((permit) => permit.name).join(", ")} —{" "}
+                  <Link href="/permits" className="font-medium text-primary hover:underline">
+                    who issues it
+                  </Link>
+                  .
+                </p>
+              ) : null}
+            </div>
+          ) : null}
+        </div>
+      </article>
+    </li>
+  );
+}
+
+/* ------------------------------------------------------------------------- */
+
 export default async function ItineraryResultPage({ searchParams }: PageProps) {
   const params = await searchParams;
 
   const interests = first(params.interests)
     .split(",")
-    .filter((value): value is PlannerInterest =>
-      (VALID_INTERESTS as string[]).includes(value),
-    );
+    .filter((value): value is PlannerInterest => (VALID_INTERESTS as string[]).includes(value));
   const styleParam = first(params.style);
   const style: PlannerStyle = (VALID_STYLES as string[]).includes(styleParam)
     ? (styleParam as PlannerStyle)
@@ -62,9 +240,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
    *
    * `travellers` is what the form now sends. A link made before it existed
    * carries only `style`, so the old inference — Solo means one, anything else
-   * means two — is kept as the fallback for those links and nowhere else. It
-   * was wrong for families and groups, which is why it is no longer how the
-   * form works.
+   * means two — is kept as the fallback for those links and nowhere else.
    */
   const travellersParam = Number(first(params.travellers));
   const travellers =
@@ -80,7 +256,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
       : 0;
   const startDate = first(params.start);
 
-  const itinerary = generateItinerary({
+  const itinerary = buildItinerary({
     interests,
     duration,
     travelStyle: style,
@@ -90,13 +266,9 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
   });
 
   /*
-   * The start date, if one was given, dates the days.
-   *
-   * The field was collected and put in the URL from the beginning and nothing
-   * ever read it — a date input that changed nothing. Day 1 is the start date,
-   * and each subsequent day is one day on. Nothing else is inferred from it:
-   * seasonal road closures are real in Sikkim but this project has no sourced
-   * calendar for them, so it does not pretend to one.
+   * The start date, if one was given, dates the days. Nothing else is inferred
+   * from it: seasonal road closures are real in Sikkim but this project has no
+   * sourced calendar for them, so it does not pretend to one.
    */
   const dayDate = (dayNumber: number): string | null => {
     if (!startDate) return null;
@@ -104,28 +276,8 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
     if (Number.isNaN(start.getTime())) return null;
     const date = new Date(start);
     date.setDate(start.getDate() + dayNumber - 1);
-    return date.toLocaleDateString("en-IN", {
-      weekday: "short",
-      day: "numeric",
-      month: "short",
-    });
+    return date.toLocaleDateString("en-IN", { weekday: "short", day: "numeric", month: "short" });
   };
-
-  /* Collapse consecutive days in the same base into route stops. */
-  const stops: Array<{ location: string; coordinates: { lat: number; lng: number }; days: string }> =
-    [];
-  for (const day of itinerary.dayPlans) {
-    const last = stops[stops.length - 1];
-    if (last && last.location === day.location) {
-      last.days = `${last.days.split("–")[0]}–Day ${day.day}`;
-    } else {
-      stops.push({
-        location: day.location,
-        coordinates: day.coordinates,
-        days: `Day ${day.day}`,
-      });
-    }
-  }
 
   const summary = [
     { icon: CalendarRange, label: `${itinerary.days} days, ${itinerary.nights} nights` },
@@ -133,25 +285,34 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
       icon: Users,
       label: `${itinerary.travellers} traveller${itinerary.travellers === 1 ? "" : "s"}`,
     },
+    { icon: Gauge, label: `${itinerary.pace.label} pace` },
     { icon: Wallet, label: `${formatPrice(itinerary.cost.tsd)} TSD entry fee` },
-    { icon: Route, label: stops.map((stop) => stop.location).join(" → ") },
   ];
 
   const cost = itinerary.cost;
+  const permitsNeeded = itinerary.permitDestinations;
 
-  /* A route reads as a list of place names until you see the places. Each base
-     the itinerary sleeps in is also a mapped place in this archive, so its own
-     photography is already here — no separate stock imagery needed. */
-  /* Read the day plans, not the sleeping bases — see permitsMentionedIn. */
-  const permitsNeeded = permitsMentionedIn(
-    itinerary.dayPlans.flatMap((day) => [day.title, day.morning, day.afternoon, day.evening]),
-  );
-
-  const routePhotos = stops
-    .map((stop) => ({ stop, photo: representativePhoto("place", stop.location.toLowerCase()) }))
-    .filter((entry): entry is { stop: (typeof stops)[number]; photo: NonNullable<typeof entry.photo> } =>
-      entry.photo !== undefined,
+  /*
+   * The bases, photographed. A route reads as a list of names until you see
+   * the places, and every base is also a mapped place in this archive, so its
+   * own credited photography is already here. Keyed by run rather than by name:
+   * a North Sikkim loop returns to Gangtok, so a base can legitimately appear
+   * on the route twice.
+   */
+  const routePhotos = itinerary.routeStops
+    .map((stop) => ({ stop, photo: representativePhoto("place", stop.slug) }))
+    .filter(
+      (entry): entry is { stop: (typeof itinerary.routeStops)[number]; photo: NonNullable<typeof entry.photo> } =>
+        entry.photo !== undefined,
     );
+
+  const mapStops = itinerary.routeStops
+    .filter((stop) => stop.coordinates !== undefined)
+    .map((stop) => ({
+      location: stop.location,
+      coordinates: stop.coordinates!,
+      days: stop.dayLabel,
+    }));
 
   return (
     <>
@@ -159,7 +320,8 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
         <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">
           Your itinerary
         </p>
-        <h1 className="mt-3 font-display text-h1">{itinerary.name}</h1>
+        <h1 className="mt-3 font-display text-h1 text-balance-heading">{itinerary.name}</h1>
+
         <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
           {summary.map((item) => (
             <p key={item.label} className="flex items-center gap-2 text-small text-muted">
@@ -168,6 +330,14 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             </p>
           ))}
         </div>
+
+        {/* The route, in full, including the nights that come back through
+            Gangtok. A North Sikkim loop is not a detour to be tidied away. */}
+        <p className="mt-3 flex items-start gap-2 text-body-lg text-foreground">
+          <Route className="mt-1 size-4 shrink-0 text-primary" aria-hidden />
+          <span>{itinerary.route}</span>
+        </p>
+
         <div className="mt-3 flex flex-wrap gap-2">
           {itinerary.interests.map((interest) => (
             <Badge key={interest} tone="jade">
@@ -175,6 +345,14 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             </Badge>
           ))}
         </div>
+
+        {/* A link can ask for 30 days or 0. Say what was done about it. */}
+        {itinerary.durationAdjusted ? (
+          <p className="mt-4 rounded-lg border border-dashed p-3 text-small text-muted">
+            This planner routes trips of 1 to 14 days. You asked for{" "}
+            {itinerary.requestedDuration}, so the plan below is {itinerary.days}.
+          </p>
+        ) : null}
 
         {/*
           An itinerary that routes through Tsomgo, Yumthang, Gurudongmar or
@@ -187,13 +365,15 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             className="mt-8 rounded-xl border-l-4 border-warning bg-warning-soft p-5"
             aria-labelledby="permits-needed"
           >
-            <h2
-              id="permits-needed"
-              className="flex items-center gap-2 font-display text-h4"
-            >
+            <h2 id="permits-needed" className="flex items-center gap-2 font-display text-h4">
               <FileCheck2 className="size-4 shrink-0" aria-hidden />
-              This route needs a permit
+              This route needs permits
             </h2>
+            <p className="mt-2 text-small leading-relaxed">
+              Check current local conditions and permit requirements before you
+              travel — requirements differ for Indian and foreign nationals, and
+              are set by the department, not by this site.
+            </p>
             <ul className="mt-3 flex flex-col gap-2.5">
               {permitsNeeded.map((permit) => (
                 <li key={permit.slug} className="text-small leading-relaxed">
@@ -215,7 +395,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
           <section className="mt-8" aria-label="The bases on this route">
             <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               {routePhotos.map(({ stop, photo }) => (
-                <li key={stop.location}>
+                <li key={stop.key}>
                   <figure>
                     <div className="relative h-40 overflow-hidden rounded-xl border bg-surface-muted">
                       <Image
@@ -231,7 +411,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
                           {stop.location}
                         </span>
                         <span className="font-mono text-caption text-foreground-inverse/80">
-                          {stop.days}
+                          {stop.dayLabel}
                         </span>
                       </figcaption>
                     </div>
@@ -245,52 +425,41 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
           </section>
         ) : null}
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_380px]">
+        <div className="mt-10 grid gap-10 lg:grid-cols-[1fr_360px]">
           {/* Day by day */}
-          <section aria-label="Day-by-day itinerary" className="min-w-0">
-            <ol className="relative flex flex-col gap-4 border-l-2 border-primary-soft pl-6">
-              {itinerary.dayPlans.map((day) => (
-                <li key={day.day} className="relative">
-                  <span
-                    aria-hidden
-                    className="absolute top-5 -left-[31px] flex size-4 items-center justify-center rounded-full border-2 border-primary bg-surface"
-                  />
-                  <details
-                    className="group rounded-xl border bg-surface open:shadow-card"
-                    open={day.day === 1}
-                  >
-                    <summary className="flex cursor-pointer list-none items-baseline justify-between gap-3 p-5 [&::-webkit-details-marker]:hidden">
-                      <span>
-                        <span className="font-mono text-caption text-primary">
-                          DAY {day.day}
-                          {/* Real dates when a start date was given — see dayDate. */}
-                          {dayDate(day.day) ? (
-                            <span className="text-subtle"> · {dayDate(day.day)}</span>
-                          ) : null}
-                        </span>
-                        <span className="mt-0.5 block font-display text-h4">{day.title}</span>
-                      </span>
-                      <span className="text-caption whitespace-nowrap text-subtle">
-                        {day.location}
-                      </span>
-                    </summary>
-                    <div className="border-t px-5 pt-4 pb-5">
-                      <dl className="flex flex-col gap-2.5 text-small">
-                        {[
-                          ["Morning", day.morning],
-                          ["Afternoon", day.afternoon],
-                          ["Evening", day.evening],
-                        ].map(([slot, activity]) => (
-                          <div key={slot} className="flex gap-3">
-                            <dt className="w-20 shrink-0 font-medium text-subtle">{slot}</dt>
-                            <dd className="text-muted">{activity}</dd>
-                          </div>
-                        ))}</dl>
-                    </div>
-                  </details>
-                </li>
+          {/* A real heading, not an aria-label: the day cards carry h3s, and a
+              trip with no permit panel had nothing between them and the h1. */}
+          <section aria-labelledby="day-by-day" className="min-w-0">
+            <h2 id="day-by-day" className="font-display text-h2">
+              Day by day
+            </h2>
+            <ol className="relative mt-5 flex flex-col gap-5 border-l-2 border-primary-soft pl-6">
+              {itinerary.itineraryDays.map((day) => (
+                <DayCard key={day.day} day={day} date={dayDate(day.day)} />
               ))}
             </ol>
+
+            {/*
+              What the times in this plan are, and what they are not. The plan
+              allocates half-days; it does not publish opening hours, because
+              the state tourism portal publishes none and the aggregators that
+              do contradict each other.
+            */}
+            <div className="mt-6 rounded-xl border border-dashed p-5 text-caption leading-relaxed text-subtle">
+              <p className="flex items-start gap-2">
+                <Info className="mt-0.5 size-3.5 shrink-0" aria-hidden />
+                <span>
+                  <strong className="text-muted">About the timings.</strong>{" "}
+                  &ldquo;Half a day&rdquo; and &ldquo;a short stop&rdquo; are how
+                  much of the day this plan sets aside — not opening times.
+                  Sikkim&rsquo;s tourism portal
+                  publishes no visiting hours for these sites, so none are shown
+                  here. Distances are straight-line figures, never road distances
+                  or driving times. Confirm opening times, road status and
+                  permits locally before you travel.
+                </span>
+              </p>
+            </div>
           </section>
 
           {/* Cost + map rail */}
@@ -298,8 +467,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
             <div className="rounded-xl border bg-surface p-5">
               {/*
                 "Cost per person" was the old heading, over a figure that was
-                the party's total — ₹100 for two people read as ₹100 each. The
-                figure is now labelled for what it is and shows its arithmetic.
+                the party's total — ₹100 for two people read as ₹100 each.
               */}
               <h2 className="text-h4 font-semibold">What this trip costs</h2>
               <div className="mt-3">
@@ -312,9 +480,7 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
                 <p data-numeric className="mt-1 font-mono text-caption text-subtle">
                   {formatPrice(TSD_FEE_PER_PERSON)} × {cost.chargeable} traveller
                   {cost.chargeable === 1 ? "" : "s"}
-                  {cost.exempt > 0
-                    ? ` · ${cost.exempt} under ${TSD_EXEMPT_UNDER_AGE} exempt`
-                    : ""}
+                  {cost.exempt > 0 ? ` · ${cost.exempt} under ${TSD_EXEMPT_UNDER_AGE} exempt` : ""}
                 </p>
               </div>
               <p className="mt-3 text-caption leading-relaxed text-subtle">
@@ -325,12 +491,27 @@ export default async function ItineraryResultPage({ searchParams }: PageProps) {
               </p>
             </div>
 
-            <div>
-              <h2 className="text-h4 font-semibold">Route</h2>
-              <div className="mt-3">
-                <ItineraryMap stops={stops} />
-              </div>
+            <div className="rounded-xl border bg-surface p-5">
+              <h2 className="flex items-center gap-2 text-h4 font-semibold">
+                <Gauge className="size-4 text-primary" aria-hidden />
+                {itinerary.pace.label} pace
+              </h2>
+              <p className="mt-2 text-caption leading-relaxed text-subtle">
+                {itinerary.pace.note}
+              </p>
             </div>
+
+            {mapStops.length > 0 ? (
+              <div>
+                <h2 className="text-h4 font-semibold">Route</h2>
+                <p className="mt-1 text-caption text-subtle">
+                  Bases in travel order. The line joins them; it is not the road.
+                </p>
+                <div className="mt-3">
+                  <ItineraryMap stops={mapStops} />
+                </div>
+              </div>
+            ) : null}
 
             <Link
               href="/planner"

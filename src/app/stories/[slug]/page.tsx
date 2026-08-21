@@ -233,14 +233,18 @@ export default async function StoryDetailPage({ params }: PageProps) {
                       href={`/explore?place=${place.slug}`}
                       className="group flex h-full gap-3 rounded-xl border bg-surface p-3 transition-colors hover:border-accent focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:outline-none"
                     >
-                      <span className="relative size-16 shrink-0 overflow-hidden rounded-lg bg-surface-muted">
-                        <Image
-                          src={place.image}
-                          alt={place.imageAlt}
-                          fill
-                          sizes="64px"
-                          className="object-cover"
-                        />
+                      <span className="relative flex size-16 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-surface-muted">
+                        {place.image ? (
+                          <Image
+                            src={place.image}
+                            alt={place.imageAlt}
+                            fill
+                            sizes="64px"
+                            className="object-cover"
+                          />
+                        ) : (
+                          <MapPin className="size-5 text-subtle" aria-hidden />
+                        )}
                       </span>
                       <span className="min-w-0 flex-1">
                         <span className="block text-body font-semibold group-hover:text-primary">

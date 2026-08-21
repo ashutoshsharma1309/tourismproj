@@ -75,7 +75,8 @@ export interface MapSite {
   district: SikkimDistrict;
   coordinates: Coordinates;
   description: string;
-  image: string;
+  /** Null where no photograph of this site could be verified. */
+  image: string | null;
   imageAlt: string;
   googleMapsUrl: string;
   /** Internal page, where one exists. */

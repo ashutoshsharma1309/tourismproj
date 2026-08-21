@@ -51,7 +51,9 @@ export async function generateMetadata({
       title: place.name,
       description: place.description,
       type: "article",
-      images: [{ url: place.image, alt: place.imageAlt }],
+      /* Omitted where no verified photograph exists. An Open Graph card is
+         better with no image than with a picture of a different place. */
+      ...(place.image ? { images: [{ url: place.image, alt: place.imageAlt }] } : {}),
     },
   };
 }
@@ -93,7 +95,9 @@ export default async function PlacePage({
             url: `/places/${place.slug}`,
             latitude: place.coordinates.lat,
             longitude: place.coordinates.lng,
-            image: place.image,
+            /* Structured data is what a search engine ingests, so a borrowed
+               photograph here is the most durable kind of false claim. */
+            image: place.image ?? undefined,
             elevation: place.elevation,
           }),
           breadcrumbSchema([

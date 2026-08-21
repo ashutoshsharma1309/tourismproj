@@ -24,6 +24,7 @@
     "qa:a11y": "node scripts/qa/a11y.mjs",
     "qa:heritage": "node scripts/qa/heritage-integrity.mjs",
     "qa:gallery": "node scripts/qa/gallery-integrity.mjs",
+    "qa:integrity": "node scripts/qa/integrity.mjs",
     "qa:immersive": "node scripts/qa/immersive.mjs",
     "qa:stories-map": "node scripts/qa/stories-map-flows.mjs",
     "images:credits": "node scripts/enrich-image-credits.mjs",

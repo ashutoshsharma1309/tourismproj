@@ -42,6 +42,40 @@ export interface GalleryRejection {
 }
 
 export const GALLERY_REJECTIONS: GalleryRejection[] = [
+  /* --- Chungthang. -------------------------------------------------------
+     The header above already reasoned about the butterfly — "a butterfly
+     photographed two metres from the Chungthang coordinate is evidence of a
+     butterfly" — but it was never actually struck, so it stayed in the
+     gallery and became the town's representative photograph. The other three
+     arrived on "category" evidence and none of them shows Chungthang: two are
+     Dzongri Top, a trek summit in Gyalshing district roughly eighty
+     kilometres away, and one is a generic Himalayan range shot. Rejecting all
+     four leaves Chungthang with no photograph, which is the true answer. */
+  {
+    galleryKey: "place/chungthang",
+    file: "File:Close wing pudding position of Ochlodes brahma (Moore, 1878) - Grey-branded Darter IMG 0531.jpg",
+    reason:
+      "A macro of a Grey-branded Darter butterfly, accepted on GPS two metres from the Chungthang coordinate. It shows a butterfly, not the town.",
+  },
+  {
+    galleryKey: "place/chungthang",
+    file: "File:Magical Views From Dzongri Top 4900m (259371765).jpeg",
+    reason:
+      "Dzongri Top is a trek summit in Gyalshing district, roughly 80 km from Chungthang in Mangan. Accepted on category evidence alone.",
+  },
+  {
+    galleryKey: "place/chungthang",
+    file: "File:Magical Views From Dzongri Top 4900m (259371781).jpeg",
+    reason:
+      "The second frame of the same Dzongri Top viewpoint, and equally not Chungthang.",
+  },
+  {
+    galleryKey: "place/chungthang",
+    file: "File:Rise of the plateaus.jpg",
+    reason:
+      "A general view of the Himalayan range with no stated location. It carries no evidence of showing Chungthang.",
+  },
+
   /* --- Wrong country. "named" evidence, substring collision. ------------- */
   {
     galleryKey: "place/soreng",

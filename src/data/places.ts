@@ -1,3 +1,4 @@
+import { representativePhoto } from "@/data/galleries";
 import { img } from "@/data/images";
 import { googleMapsSearchUrl } from "@/data/monasteries";
 import type { Provenance } from "@/data/sources";
@@ -63,7 +64,9 @@ export interface Place {
   coordinates: Coordinates;
   /** One or two sentences. Every claim in it comes from the cited article. */
   description: string;
-  image: string;
+  /** Null when no photograph of this place could be verified. Never another
+      place's picture — see resolveImage. */
+  image: string | null;
   imageAlt: string;
   googleMapsUrl: string;
   wikipediaUrl: string;
@@ -364,7 +367,6 @@ const SEEDS: Seed[] = [
     lat: 27.338,
     lng: 88.3856,
     wiki: "Maenam_Wildlife_Sanctuary",
-    imageKey: "hero/yumthang",
     imageAlt: "Forested slopes in the hills of south Sikkim",
     description:
       "About 35 sq km above Ravangla, established in 1987. The name means 'treasure-house of medicines', for the medicinal plants in its flora.",
@@ -390,7 +392,6 @@ const SEEDS: Seed[] = [
     lat: 27.377,
     lng: 88.741,
     wiki: "Kyongnosla_Alpine_Sanctuary",
-    imageKey: "place/tsomgo",
     imageAlt: "Alpine slopes around Tsomgo Lake in eastern Sikkim",
     description:
       "About 31 sq km around Tsomgo Lake, holding orchids and rhododendrons among tall junipers and silver firs. Part of the Sacred Himalayan Landscape.",
@@ -479,7 +480,6 @@ const SEEDS: Seed[] = [
     lat: 27.2925,
     lng: 88.3594,
     wiki: "Ravangla",
-    imageKey: "hero/buddha-park",
     imageAlt: "The Buddha Park at Ravangla with Mount Narsing behind",
     description:
       "A small town at about 8,000 feet with views of Kanchenjunga, Pandim, Siniolchu and Kabru, and the start of the trek into Maenam Wildlife Sanctuary.",
@@ -532,7 +532,6 @@ const SEEDS: Seed[] = [
     lat: 27.6045,
     lng: 88.6456,
     wiki: "Chungthang",
-    imageKey: "mon/lachung",
     imageAlt: "The high valley of north Sikkim near Chungthang",
     elevation: 1790,
     description:
@@ -590,7 +589,6 @@ const SEEDS: Seed[] = [
     lat: 27.17,
     lng: 88.2,
     wiki: "Soreng",
-    imageKey: "mon/rinchenpong",
     imageAlt: "The hills of Soreng district, western Sikkim",
     description:
       "Headquarters of Sikkim's smallest district, and one of three entry points for the Varsey Rhododendron Sanctuary.",
@@ -616,7 +614,6 @@ const SEEDS: Seed[] = [
     lat: 27.2331,
     lng: 88.4961,
     wiki: "Singtam",
-    imageKey: "editorial/map",
     imageAlt: "The Teesta valley in southern Sikkim",
     description:
       "A trading town on the Teesta, one of the main road junctions between Gangtok, Namchi and the plains.",
@@ -636,12 +633,46 @@ const SEEDS: Seed[] = [
   },
 ];
 
-function resolveImage(seed: Seed): { url: string; alt: string } {
+/**
+ * A place's photograph — of that place, or none.
+ *
+ * WHAT THIS REPLACED
+ * ------------------
+ * The last line used to be `img(seed.imageKey ?? "editorial/map")`, and five
+ * seeds named a key belonging to somewhere else entirely:
+ *
+ *   maenam-wildlife-sanctuary  hero/yumthang     Yumthang Valley is in Mangan,
+ *                                                about 100 km north, and the
+ *                                                alt text called it "the hills
+ *                                                of south Sikkim".
+ *   chungthang                 mon/lachung       Lachung Monastery.
+ *   soreng                     mon/rinchenpong   Rinchenpong Monastery.
+ *   ravangla                   hero/buddha-park  the same Buddha statue already
+ *                                                serving buddha-park-ravangla.
+ *   kyongnosla-alpine-sanct.   place/tsomgo      the same frame as tsomgo-lake.
+ *
+ * These were not only on cards. They reached the place page hero and the
+ * JSON-LD `image`, which is what a search engine ingests — so the archive was
+ * publishing a photograph of north Sikkim as structured data about a sanctuary
+ * in the south. A sixth seed, singtam, named "editorial/map", which is not in
+ * the registry at all, so it silently rendered the drawn placeholder.
+ *
+ * The order is now: a story credit if the seed names one, else the place's own
+ * verified gallery — which is rejection-filtered, so the French commune that
+ * shares Soreng's name cannot come back through this door — else nothing.
+ * `null` is a real answer and the UI states it.
+ */
+function resolveImage(seed: Seed): { url: string | null; alt: string } {
   if (seed.storyImageKey) {
     const credit = storyImage(seed.storyImageKey);
     if (credit) return { url: credit.url, alt: seed.imageAlt };
   }
-  return { url: img(seed.imageKey ?? "editorial/map"), alt: seed.imageAlt };
+  if (seed.imageKey) return { url: img(seed.imageKey), alt: seed.imageAlt };
+
+  const own = representativePhoto("place", seed.slug);
+  if (own) return { url: own.localPath, alt: own.caption ?? seed.imageAlt };
+
+  return { url: null, alt: seed.imageAlt };
 }
 
 export const places: Place[] = SEEDS.map((seed) => {

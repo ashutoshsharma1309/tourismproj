@@ -132,14 +132,20 @@ function SiteDetail({
 }) {
   return (
     <div className="flex flex-col">
-      <div className="relative aspect-16/10 w-full overflow-hidden rounded-lg bg-surface-muted">
-        <Image
-          src={site.image}
-          alt={site.imageAlt}
-          fill
-          sizes="(min-width: 1024px) 26rem, 100vw"
-          className="object-cover"
-        />
+      <div className="relative flex aspect-16/10 w-full items-center justify-center overflow-hidden rounded-lg bg-surface-muted">
+        {site.image ? (
+          <Image
+            src={site.image}
+            alt={site.imageAlt}
+            fill
+            sizes="(min-width: 1024px) 26rem, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <p className="px-6 text-center text-caption leading-relaxed text-subtle">
+            No verified photograph of this site
+          </p>
+        )}
         <button
           type="button"
           onClick={onClose}
