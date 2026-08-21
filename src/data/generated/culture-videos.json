@@ -1,0 +1,981 @@
+{
+  "generatedAt": "2026-08-21T02:19:10.237Z",
+  "method": {
+    "discovery": "WebSearch over youtube.com only; /watch?v= results only, so Shorts never entered the pool.",
+    "verification": "YouTube's public oEmbed endpoint. Title, channel, channel URL and thumbnail are copied from the response verbatim — no field is written that was not read from a response.",
+    "quality": "Thumbnail CDN rendition probe; maxresdefault.jpg exists only for uploads of 1280x720 or better.",
+    "lengthCheck": "lengthSeconds read from each watch page and /shorts/<id> probed — a 303 confirms the upload is not a Short.",
+    "embedding": "youtube-nocookie.com embed, click-to-load. No embedding restriction was bypassed; a 401/403/404 from oEmbed is a rejection."
+  },
+  "videos": [
+    {
+      "id": "sikkim-local-food-gundruk-kinema-churpi",
+      "category": "food",
+      "videoId": "crsIHDZB6RI",
+      "provider": "youtube",
+      "title": "Sikkim Local Food - Gundruk, Ishkus, Kinema, Churpi, Sisnu. Gangtok Local Food Tour",
+      "channel": "Foodie Robin",
+      "channelUrl": "https://www.youtube.com/@FoodieRobin",
+      "thumbnail": "https://i.ytimg.com/vi/crsIHDZB6RI/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=crsIHDZB6RI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/crsIHDZB6RI",
+      "quality": "hd",
+      "topic": "15-minute local-food tour of Gangtok built around Sikkim's own fermented staples — gundruk, kinema, churpi, sisnu and ishkus — eaten in local kitchens rather than tourist restaurants.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "sel-roti-made-in-sikkim",
+      "category": "food",
+      "videoId": "o30o-p1yKp8",
+      "provider": "youtube",
+      "title": "HOW TO MAKE SEL ROTI IN SIKKIM, INDIA  ...  SEL ROTI RECIPE",
+      "channel": "Rupak Jyoti",
+      "channelUrl": "https://www.youtube.com/@RupakJyoti",
+      "thumbnail": "https://i.ytimg.com/vi/o30o-p1yKp8/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=o30o-p1yKp8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/o30o-p1yKp8",
+      "quality": "hd",
+      "topic": "Documentary film following sel roti being made in Sikkim from rice batter to the ring-shaped fried bread, the festival sweet of the state's Nepali households.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "eight-must-try-sikkim-dishes",
+      "category": "food",
+      "videoId": "AZDbcBzX0jg",
+      "provider": "youtube",
+      "title": "8 BEST FOOD IN SIKKIM | Gundruk Soup + Momos + Sikkim Food Tour |  NORTHEAST INDIA FOOD Tour",
+      "channel": "GRRRLTRAVELER | Christine Kaaloa",
+      "channelUrl": "https://www.youtube.com/@grrrltraveler",
+      "thumbnail": "https://i.ytimg.com/vi/AZDbcBzX0jg/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=AZDbcBzX0jg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/AZDbcBzX0jg",
+      "quality": "sd",
+      "topic": "A run through eight Sikkimese dishes — gundruk soup, momos and other fermented hill foods — explaining why fermentation dominates cooking at this altitude.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "gangtok-street-food-churpi-thukpa",
+      "category": "food",
+      "videoId": "kZmRHmt0qUI",
+      "provider": "youtube",
+      "title": "7 Must-Try Street Food in Gangtok | Churpi Momos, Butter Tea, Thukpa & more",
+      "channel": "Sinful Foodie",
+      "channelUrl": "https://www.youtube.com/@SinfulFoodie",
+      "thumbnail": "https://i.ytimg.com/vi/kZmRHmt0qUI/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=kZmRHmt0qUI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/kZmRHmt0qUI",
+      "quality": "hd",
+      "topic": "Street-food walk along MG Marg, Gangtok, covering churpi momos, butter tea and thukpa.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "pang-lhabsol-tsuklakhang",
+      "category": "festivals",
+      "videoId": "jXocnQ9YKpg",
+      "provider": "youtube",
+      "title": "Sikkim's famed Pang Lhabsol festival underway, masked dances reverberate palace lawns",
+      "channel": "IndiaTodayNE",
+      "channelUrl": "https://www.youtube.com/@indiatodayne",
+      "thumbnail": "https://i.ytimg.com/vi/jXocnQ9YKpg/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=jXocnQ9YKpg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/jXocnQ9YKpg",
+      "quality": "hd",
+      "topic": "News footage of Pang Lhabsol, the festival honouring Kanchenjunga as Sikkim's guardian deity, with Pangtoed masked warrior dances on the Tsuklakhang palace lawns in Gangtok.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "kagyed-masked-dance",
+      "category": "festivals",
+      "videoId": "3QkqGMBmCiQ",
+      "provider": "youtube",
+      "title": "KAGYED DANCE (Masked dance of Sikkim) | Festivals of Sikkim | Offbeat and Untold",
+      "channel": "Offbeat and Untold",
+      "channelUrl": "https://www.youtube.com/@OffbeatandUntold",
+      "thumbnail": "https://i.ytimg.com/vi/3QkqGMBmCiQ/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=3QkqGMBmCiQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/3QkqGMBmCiQ",
+      "quality": "hd",
+      "topic": "The Kagyed masked dance performed just before Losoong, explaining how the dance enacts the destruction of the old year's evil forces before the Bhutia new year.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "losoong-harvest-new-year",
+      "category": "festivals",
+      "videoId": "esGu5wCkJrI",
+      "provider": "youtube",
+      "title": "Sikkim celebrates Lossong festival",
+      "channel": "Northeast Live",
+      "channelUrl": "https://www.youtube.com/@NortheastLiveYT",
+      "thumbnail": "https://i.ytimg.com/vi/esGu5wCkJrI/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=esGu5wCkJrI",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/esGu5wCkJrI",
+      "quality": "sd",
+      "topic": "Losoong, the Sikkimese harvest new year, reported as it is celebrated across the state, including the Kagyed mask dance that is its centrepiece.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "saga-dawa-tsuklakhang",
+      "category": "festivals",
+      "videoId": "h2OO_ItO5UE",
+      "provider": "youtube",
+      "title": "Sikkim celebrates Saga Dawa at Tsuklakhang Palace",
+      "channel": "EastMojo",
+      "channelUrl": "https://www.youtube.com/@EastMojoOfficial",
+      "thumbnail": "https://i.ytimg.com/vi/h2OO_ItO5UE/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=h2OO_ItO5UE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/h2OO_ItO5UE",
+      "quality": "hd",
+      "topic": "Saga Dawa — the fourth Buddhist lunar month marking the Buddha's birth, enlightenment and parinirvana — observed at Tsuklakhang, Gangtok.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "bumchu-tashiding",
+      "category": "festivals",
+      "videoId": "hyZsdisEKu8",
+      "provider": "youtube",
+      "title": "Bumchu Festival 2018 |Sikkim|Traditional|Buddhist|Tashiding Monastry|",
+      "channel": "The Times of Sikkim",
+      "channelUrl": "https://www.youtube.com/@The_Times_of_Sikkim",
+      "thumbnail": "https://i.ytimg.com/vi/hyZsdisEKu8/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=hyZsdisEKu8",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/hyZsdisEKu8",
+      "quality": "sd",
+      "topic": "The Bumchu ceremony at Tashiding Monastery, West Sikkim: the opening of the sacred vessel whose water level is read as the coming year's fortune.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "sikkim-archery-indigenous-game",
+      "category": "traditions",
+      "videoId": "vfPYxkJRP5w",
+      "provider": "youtube",
+      "title": "Indigenous Game | Sikkim Archery",
+      "channel": "Fit India Movement",
+      "channelUrl": "https://www.youtube.com/@FitIndiaMovement2019",
+      "thumbnail": "https://i.ytimg.com/vi/vfPYxkJRP5w/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=vfPYxkJRP5w",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/vfPYxkJRP5w",
+      "quality": "hd",
+      "topic": "Government of India's Indigenous Sports series on Sikkim archery, tracing the bow's Himalayan origins and its survival as a living community sport tied to Losoong.",
+      "institutional": true,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "lepcha-wedding-stinging-nettle",
+      "category": "traditions",
+      "videoId": "J4rin12Uy9Y",
+      "provider": "youtube",
+      "title": "TRADITIONAL LEPCHA WEDDING IN RURAL SIKKIM || SIMMIMESS WEDDING || STINGING NETTLE LEAVES #wedding",
+      "channel": "Gangtok Amala ",
+      "channelUrl": "https://www.youtube.com/@GangtokAmala",
+      "thumbnail": "https://i.ytimg.com/vi/J4rin12Uy9Y/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=J4rin12Uy9Y",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/J4rin12Uy9Y",
+      "quality": "hd",
+      "topic": "A rural Lepcha wedding in Sikkim, including the custom in which the bride's family strikes the groom's male relatives with stinging nettle.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "bhutia-wedding-ceremony",
+      "category": "traditions",
+      "videoId": "LPUAdrIlFCs",
+      "provider": "youtube",
+      "title": "Sikkim's Traditional Bhutia Wedding ལྷོ'པའི' གཉེན' ཚང'འཐུང'། 🎎 || Northeast India",
+      "channel": "Sangay Vlogs",
+      "channelUrl": "https://www.youtube.com/@Sangay_Vlogs",
+      "thumbnail": "https://i.ytimg.com/vi/LPUAdrIlFCs/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=LPUAdrIlFCs",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LPUAdrIlFCs",
+      "quality": "hd",
+      "topic": "A traditional Bhutia (Lhopo) wedding in Sikkim filmed by a Sikkimese family, showing the ceremony's stages and dress.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "tendong-lho-rum-faat",
+      "category": "traditions",
+      "videoId": "f9FScSaU_j0",
+      "provider": "youtube",
+      "title": "Sikkim celebrates ancient Lepcha festival honouring nature",
+      "channel": "EastMojo",
+      "channelUrl": "https://www.youtube.com/@EastMojoOfficial",
+      "thumbnail": "https://i.ytimg.com/vi/f9FScSaU_j0/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=f9FScSaU_j0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/f9FScSaU_j0",
+      "quality": "hd",
+      "topic": "Tendong Lho Rum Faat, the Lepcha festival of thanksgiving to Mount Tendong and to nature, at the state-level observance in Gangtok.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "folk-dances-of-sikkim-ezcc",
+      "category": "music-dance",
+      "videoId": "l8Bp4baIaEQ",
+      "provider": "youtube",
+      "title": "Folk Dances of Sikkim | Documentary | EZCC",
+      "channel": "Eastern Zonal Cultural Centre",
+      "channelUrl": "https://www.youtube.com/@ezcckolkata",
+      "thumbnail": "https://i.ytimg.com/vi/l8Bp4baIaEQ/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=l8Bp4baIaEQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/l8Bp4baIaEQ",
+      "quality": "hd",
+      "topic": "Hour-long documentary by the Eastern Zonal Cultural Centre (Ministry of Culture) surveying the folk dances of Sikkim's Lepcha, Bhutia and Nepali communities.",
+      "institutional": true,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "chyabrung-limboo-drum",
+      "category": "music-dance",
+      "videoId": "0X1SvKZuhGw",
+      "provider": "youtube",
+      "title": "\"CHYABRUNG\" A Documentary on  Musical Instrument of Limboo Community of Sikkim",
+      "channel": "DD Gangtok",
+      "channelUrl": "https://www.youtube.com/@ddgangtok",
+      "thumbnail": "https://i.ytimg.com/vi/0X1SvKZuhGw/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=0X1SvKZuhGw",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/0X1SvKZuhGw",
+      "quality": "hd",
+      "topic": "Doordarshan Kendra Gangtok documentary on the chyabrung, the wood-and-hide drum of Sikkim's Limboo community, and the dance built around it.",
+      "institutional": true,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "maruni-nepali-folk-dance",
+      "category": "music-dance",
+      "videoId": "0-0LRF6bXcE",
+      "provider": "youtube",
+      "title": "Sikkimese Nepali Maruni Folk Dance(EKTA CLUB from Sikkim)",
+      "channel": "robin mukhia",
+      "channelUrl": "https://www.youtube.com/@robinmukhia8780",
+      "thumbnail": "https://i.ytimg.com/vi/0-0LRF6bXcE/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=0-0LRF6bXcE",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/0-0LRF6bXcE",
+      "quality": "sd",
+      "topic": "Maruni, the oldest and most widespread Nepali folk dance, performed by a Sikkimese troupe in full costume and ornament.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "lepcha-traditional-folk-dance",
+      "category": "music-dance",
+      "videoId": "JVCy_5WwYjU",
+      "provider": "youtube",
+      "title": "Lepcha | Traditional Folk Dance | Sikkim",
+      "channel": "God Gifted Cameras",
+      "channelUrl": "https://www.youtube.com/@GodGiftedCameras",
+      "thumbnail": "https://i.ytimg.com/vi/JVCy_5WwYjU/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=JVCy_5WwYjU",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JVCy_5WwYjU",
+      "quality": "hd",
+      "topic": "Lepcha traditional folk dance from Sikkim, with an introduction to how the community's dances mark different occasions.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "limbu-chyabrung-dance-red-panda",
+      "category": "music-dance",
+      "videoId": "gDDlnqqhKkY",
+      "provider": "youtube",
+      "title": "Limbu chabrung dance from Sikkim",
+      "channel": "WildFilmsIndia",
+      "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+      "thumbnail": "https://i.ytimg.com/vi/gDDlnqqhKkY/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=gDDlnqqhKkY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/gDDlnqqhKkY",
+      "quality": "hd",
+      "topic": "Limbu chyabrung dance performed at the Red Panda Winter Festival in Sikkim — field footage of the drum-led circle dance.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "sikkim-carpet-weaving",
+      "category": "crafts",
+      "videoId": "A9d7K0B1tyQ",
+      "provider": "youtube",
+      "title": "CARPET WEAVING | CRAFTS OF SIKKIM",
+      "channel": "SikkimTube",
+      "channelUrl": "https://www.youtube.com/@SikkimTube",
+      "thumbnail": "https://i.ytimg.com/vi/A9d7K0B1tyQ/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=A9d7K0B1tyQ",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/A9d7K0B1tyQ",
+      "quality": "hd",
+      "topic": "Hand-knotted carpet weaving on fixed vertical looms in Sikkim, one of the oldest surviving carpet-weaving methods.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "handicrafts-handloom-directorate-museum",
+      "category": "crafts",
+      "videoId": "zTC29z4twWk",
+      "provider": "youtube",
+      "title": "Directorate of Handicrafts & Handloom Museum of Sikkim",
+      "channel": "WildFilmsIndia",
+      "channelUrl": "https://www.youtube.com/@WildFilmsIndia",
+      "thumbnail": "https://i.ytimg.com/vi/zTC29z4twWk/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=zTC29z4twWk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/zTC29z4twWk",
+      "quality": "sd",
+      "topic": "The Directorate of Handicrafts & Handloom in Gangtok — the 1957 government cottage-industries centre — and the crafts held in its museum.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "lepcha-sumok-thyaktak-bamboo",
+      "category": "crafts",
+      "videoId": "JodgzmmIna0",
+      "provider": "youtube",
+      "title": "In order to preserve Lepcha traditional Hat (Sumok Thyaktak ) making art Jorden Lepcha",
+      "channel": "The Sikkim Chronicle",
+      "channelUrl": "https://www.youtube.com/@sikkimchronicle",
+      "thumbnail": "https://i.ytimg.com/vi/JodgzmmIna0/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=JodgzmmIna0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/JodgzmmIna0",
+      "quality": "hd",
+      "topic": "Jorden Lepcha of Lower Lingdong, Dzongu, making the Lepcha traditional hat (sumok thyaktak) and bamboo craft, and training young people in it.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "lepcha-woven-textiles",
+      "category": "textiles",
+      "videoId": "LlU2SHKkdRo",
+      "provider": "youtube",
+      "title": "Lepcha Himalayan Elegance: Sikkim's Tradition Woven in Fabric.",
+      "channel": "Fabflaire",
+      "channelUrl": "https://www.youtube.com/@Fabflaire-All.About.Fabrics",
+      "thumbnail": "https://i.ytimg.com/vi/LlU2SHKkdRo/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=LlU2SHKkdRo",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/LlU2SHKkdRo",
+      "quality": "hd",
+      "topic": "Lepcha textile tradition of Sikkim — the weaves, motifs and garments, and how they carry the community's identity.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "sikkim-handloom-fabric-tour",
+      "category": "textiles",
+      "videoId": "_xK-t8kNbjc",
+      "provider": "youtube",
+      "title": "Fabric Tour of Sikkim | All About Lepcha",
+      "channel": "All Play and Fun",
+      "channelUrl": "https://www.youtube.com/@AllPlayandFun156",
+      "thumbnail": "https://i.ytimg.com/vi/_xK-t8kNbjc/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=_xK-t8kNbjc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/_xK-t8kNbjc",
+      "quality": "hd",
+      "topic": "Walkthrough of Sikkimese handloom: how yarn and fabric are made, then carpet weaving and blanket weaving, chaptered through the process.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "bakhu-hanju-pangden-dress",
+      "category": "textiles",
+      "videoId": "rBpmsE-n3es",
+      "provider": "youtube",
+      "title": "Sikkimese/Tibetan Traditional Dress -Bhaku ,Hanju,Coat,Pangden ​⁠ ​⁠​⁠​⁠@ChumsWorld",
+      "channel": "Chums World",
+      "channelUrl": "https://www.youtube.com/@ChumsWorld",
+      "thumbnail": "https://i.ytimg.com/vi/rBpmsE-n3es/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=rBpmsE-n3es",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/rBpmsE-n3es",
+      "quality": "hd",
+      "topic": "A Sikkimese family showing the components of Sikkimese/Tibetan dress — bakhu, hanju, coat and pangden — worn and explained.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "tingvong-lepcha-village",
+      "category": "communities",
+      "videoId": "6HkdE155PdM",
+      "provider": "youtube",
+      "title": "1. Tingvong: A Lepcha Village in Sikkim (2005)",
+      "channel": "Namgyal Institute Of Tibetology, Sikkim",
+      "channelUrl": "https://www.youtube.com/@namgyalinstituteoftibetolo3185",
+      "thumbnail": "https://i.ytimg.com/vi/6HkdE155PdM/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=6HkdE155PdM",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6HkdE155PdM",
+      "quality": "sd",
+      "topic": "Hour-long ethnographic film from the Namgyal Institute of Tibetology on Tingvong, a Lepcha village in the Dzongu reserve, North Sikkim, and sixty years of change from hunting and shifting cultivation to settled farming.",
+      "institutional": true,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "tribes-of-sikkim-before-chogyals",
+      "category": "communities",
+      "videoId": "FTlxoYt91UA",
+      "provider": "youtube",
+      "title": "Sikkim Before Chogyals | The Tribes of Sikkim | Lepchas | Limboos | Mangars | The Cord",
+      "channel": "The Cord",
+      "channelUrl": "https://www.youtube.com/@thecord_in",
+      "thumbnail": "https://i.ytimg.com/vi/FTlxoYt91UA/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=FTlxoYt91UA",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/FTlxoYt91UA",
+      "quality": "hd",
+      "topic": "Sikkim before the Chogyals: how Lepcha, Limboo and Mangar communities held different parts of the region, and where each came from.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "saving-the-last-of-the-lepchas",
+      "category": "communities",
+      "videoId": "nh4i_ZtgyN0",
+      "provider": "youtube",
+      "title": "Saving the last of the Lepchas",
+      "channel": "Cara Online",
+      "channelUrl": "https://www.youtube.com/@caraonline3621",
+      "thumbnail": "https://i.ytimg.com/vi/nh4i_ZtgyN0/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=nh4i_ZtgyN0",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/nh4i_ZtgyN0",
+      "quality": "hd",
+      "topic": "A Lepcha community in the Indian Himalaya working to keep its language and customs alive.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "limbu-chyabrung-tungeba-yumaism",
+      "category": "communities",
+      "videoId": "6HBm5YXc0Ko",
+      "provider": "youtube",
+      "title": "Limbu Community of Darjeeling & Sikkim | Chyabrung | Tungeba | Yumaism",
+      "channel": "Kaahon",
+      "channelUrl": "https://www.youtube.com/@kaahonkommunications",
+      "thumbnail": "https://i.ytimg.com/vi/6HBm5YXc0Ko/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=6HBm5YXc0Ko",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/6HBm5YXc0Ko",
+      "quality": "hd",
+      "topic": "The Limbu community of Sikkim and Darjeeling — origins in the Kirat lineage, the chyabrung drum, tungeba millet beer and the Yumaism faith.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "rabdentse-ruins",
+      "category": "heritage",
+      "videoId": "aJ5nmq8NxSY",
+      "provider": "youtube",
+      "title": "Ruins of Rabdentse | The Second Capital of the former Kingdom of Sikkim.",
+      "channel": "OurGuest",
+      "channelUrl": "https://www.youtube.com/@OurGuest",
+      "thumbnail": "https://i.ytimg.com/vi/aJ5nmq8NxSY/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=aJ5nmq8NxSY",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/aJ5nmq8NxSY",
+      "quality": "hd",
+      "topic": "The ruins of Rabdentse, Sikkim's second capital, moved there from Yuksom by the second Chogyal Tensung Namgyal in the late 17th century.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "namgyal-institute-of-tibetology",
+      "category": "heritage",
+      "videoId": "j8iftsQj2uk",
+      "provider": "youtube",
+      "title": "Namgyal Institute of Tibetology | Tibet Museum in Gangtok, Sikkim",
+      "channel": "SK Live",
+      "channelUrl": "https://www.youtube.com/@sklive9828",
+      "thumbnail": "https://i.ytimg.com/vi/j8iftsQj2uk/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=j8iftsQj2uk",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/j8iftsQj2uk",
+      "quality": "hd",
+      "topic": "The Namgyal Institute of Tibetology in Gangtok — Sikkim's Tibetology research institute and museum of Himalayan Buddhist art, manuscripts and thangkas.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "chogyal-palden-thondup-centennial",
+      "category": "heritage",
+      "videoId": "3YK24570dUg",
+      "provider": "youtube",
+      "title": "Year-Long Centennial Birth Celebration of Erstwhile Chogyal Palden Thondup Namgyal Concludes",
+      "channel": "The Sikkim Chronicle",
+      "channelUrl": "https://www.youtube.com/@sikkimchronicle",
+      "thumbnail": "https://i.ytimg.com/vi/3YK24570dUg/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=3YK24570dUg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/3YK24570dUg",
+      "quality": "hd",
+      "topic": "Close of the year-long centenary of Chogyal Palden Thondup Namgyal, Sikkim's twelfth and last Chogyal, held at the Namgyal Institute of Tibetology.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "dzongu-lepcha-reserve",
+      "category": "daily-life",
+      "videoId": "BqakKmkD3_E",
+      "provider": "youtube",
+      "title": "DZONGU: A Restricted Valley Nestled Silently in North Sikkim",
+      "channel": "THE UNTRAVEL SHOW",
+      "channelUrl": "https://www.youtube.com/@THEUNTRAVELSHOW",
+      "thumbnail": "https://i.ytimg.com/vi/BqakKmkD3_E/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=BqakKmkD3_E",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/BqakKmkD3_E",
+      "quality": "hd",
+      "topic": "Dzongu, the reserve in North Sikkim held for the Lepchas — daily life in a valley closed to outside settlement, 70km from Gangtok.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "dzongu-village-homestay",
+      "category": "daily-life",
+      "videoId": "o5I5KCIZaHc",
+      "provider": "youtube",
+      "title": "Exploring Offbeat Sikkim: Dzongu Village & Homestay | Village Life | Vlog 4",
+      "channel": "Travel Nature Ritwick",
+      "channelUrl": "https://www.youtube.com/@TravelNatureRitwick",
+      "thumbnail": "https://i.ytimg.com/vi/o5I5KCIZaHc/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=o5I5KCIZaHc",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/o5I5KCIZaHc",
+      "quality": "hd",
+      "topic": "Village life and homestays in Dzongu, North Sikkim, filmed with residents rather than about them.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    },
+    {
+      "id": "sikkim-organic-state",
+      "category": "daily-life",
+      "videoId": "spLVFwyS5f4",
+      "provider": "youtube",
+      "title": "Sikkim: India's First 100% Organic State",
+      "channel": "Discover Agriculture",
+      "channelUrl": "https://www.youtube.com/@DiscoverAgriculture",
+      "thumbnail": "https://i.ytimg.com/vi/spLVFwyS5f4/hqdefault.jpg",
+      "sourceUrl": "https://www.youtube.com/watch?v=spLVFwyS5f4",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/spLVFwyS5f4",
+      "quality": "hd",
+      "topic": "Sikkim as India's first fully organic state — the farming communities, the biodiversity and the policy that got it there.",
+      "institutional": false,
+      "usageNote": "Played through YouTube's own embedded player on youtube-nocookie.com. Nothing is downloaded, re-hosted or re-encoded; the rights holder keeps their analytics and their controls.",
+      "verifiedAt": "2026-08-21",
+      "oembedStatus": 200,
+      "reverified": true
+    }
+  ],
+  "rejected": [
+    {
+      "videoId": "vwJsFZdXzz4",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "XjYil0z29Fc",
+      "reason": "oEmbed title is only \"Phagshapa\"; neither the returned title nor the channel (a hotel-management institute) names Sikkim, so Sikkim relevance cannot be verified from the response."
+    },
+    {
+      "videoId": "02zPFD7yVlU",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "tBvJA-4tFmw",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "ksikysx0dH8",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "KSgt4qxlCnE",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "qBM8LBEw5mQ",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "6rWUpBAd_Zs",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "TcXLaz00uqs",
+      "reason": "Generic Gangtok food vlog; the category is already covered by more specific verified films."
+    },
+    {
+      "videoId": "rjLtSfmpQ14",
+      "reason": "49 seconds — a Short, excluded at source."
+    },
+    {
+      "videoId": "S45P_2U8XtM",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "6Xnxuf5sYFM",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "2r-o8NJ4euk",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "fPfMlK5cTxY",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "a909ofouoCg",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "j6LNYuxAp2s",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "N14-RMFNs_w",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "Wr3GUGgG4U8",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "0do29R-ssiQ",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "1wwTlczQ2u8",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "aXaikAKnqjM",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "Z9iQX8FL3Fc",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "yvQvHax2qQM",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "8lniv6KcwoQ",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "5Jk94c3BbsQ",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "YU2FaW88kO4",
+      "reason": "Duplicate or thinner coverage of a festival already represented by a verified record."
+    },
+    {
+      "videoId": "_Fq56RFKOys",
+      "reason": "Performance at a festival outside the state; Sikkim is the performers' origin, not the subject."
+    },
+    {
+      "videoId": "sGZyGSS-yAM",
+      "reason": "UPSC/SSC exam-coaching slide video, not documentation of the dances."
+    },
+    {
+      "videoId": "5aWq99B3PWU",
+      "reason": "School performance recording, not documentation."
+    },
+    {
+      "videoId": "TvuNgCVP9bo",
+      "reason": "School performance recording, not documentation."
+    },
+    {
+      "videoId": "n288nDVi-v0",
+      "reason": "Maruni framed as \"Nepal, Sikkim and Darjeeling\" at a Delhi festival — Sikkim is not substantially the subject."
+    },
+    {
+      "videoId": "tE84pBV24C0",
+      "reason": "The video's own description places dhan naach with the Limbu of Nepal; Sikkim is incidental."
+    },
+    {
+      "videoId": "XGFzxGBq92Y",
+      "reason": "Duplicate or thinner coverage of a dance already represented."
+    },
+    {
+      "videoId": "OHtB2qJRPpQ",
+      "reason": "Returned title names neither Sikkim nor a Sikkim venue."
+    },
+    {
+      "videoId": "ztlCWbJcHEM",
+      "reason": "\"Eastern Himalayas\" framing; Sikkim not established as substantially the subject."
+    },
+    {
+      "videoId": "qGqOZE5p-Ts",
+      "reason": "Same channel and overlapping subject as the accepted tribes documentary; not added twice."
+    },
+    {
+      "videoId": "v94IuI8neiE",
+      "reason": "Thin, unattributed channel; the subject is covered by verified alternatives."
+    },
+    {
+      "videoId": "RcxFCNM2758",
+      "reason": "Darjeeling-led framing in the returned title."
+    },
+    {
+      "videoId": "fWHbAk3th8Q",
+      "reason": "Clickbait framing (\"Unknown Facts\", \"Secrets of Lepcha Tribe\")."
+    },
+    {
+      "videoId": "T--FZZM3ZWE",
+      "reason": "36-second clip with no description or provenance beyond a personal name."
+    },
+    {
+      "videoId": "yRjEnrWVv4E",
+      "reason": "47-second clip; the same subject is covered properly by the 5:43 Directorate museum film."
+    },
+    {
+      "videoId": "ef37y4RsUPs",
+      "reason": "Duplicate or thinner coverage of the Gangtok handicrafts directorate."
+    },
+    {
+      "videoId": "ZeKGevyYvrI",
+      "reason": "Duplicate or thinner coverage of the Gangtok handicrafts directorate."
+    },
+    {
+      "videoId": "rWP-FM5y-YI",
+      "reason": "Duplicate or thinner coverage of the Gangtok handicrafts directorate."
+    },
+    {
+      "videoId": "MzJ7MOizjgU",
+      "reason": "A student's craft-project file, not the living thangka tradition."
+    },
+    {
+      "videoId": "J-96SQ97AHU",
+      "reason": "oEmbed HTTP 401 — private, deleted or embedding-restricted. REJECTED, never bypassed."
+    },
+    {
+      "videoId": "rKckc_D1q8I",
+      "reason": "Tagged #ytshorts; vertical short-form."
+    },
+    {
+      "videoId": "_R4U-EoUod0",
+      "reason": "Still-image slideshow, not footage."
+    },
+    {
+      "videoId": "HgEQs_ZqvMU",
+      "reason": "Political — Tibet-politics channel and framing."
+    },
+    {
+      "videoId": "01zi0CT37m8",
+      "reason": "Political — the 1975 merger and the end of the monarchy as a political argument."
+    },
+    {
+      "videoId": "He-Ozs9-M-c",
+      "reason": "Political — \"Sikkim Integration\" framing."
+    },
+    {
+      "videoId": "pD4IJU56nHI",
+      "reason": "Political — a serving royal claimant on democracy and Sikkim's political future."
+    },
+    {
+      "videoId": "AVi8aSPypZs",
+      "reason": "Hosted on a serving politician's personal channel; the organic-mission subject is covered without that framing elsewhere."
+    },
+    {
+      "videoId": "dBcmlXb_sPQ",
+      "reason": "oEmbed HTTP 403 — private, deleted or embedding-restricted. REJECTED, never bypassed."
+    },
+    {
+      "videoId": "FVXL8xB5OtM",
+      "reason": "Duplicate or thinner coverage of Dzongu / rural Sikkim already represented."
+    },
+    {
+      "videoId": "gty2mdNf0hg",
+      "reason": "Duplicate or thinner coverage of Dzongu / rural Sikkim already represented."
+    },
+    {
+      "videoId": "qDeSeIQ-07c",
+      "reason": "52-second stock landscape clip; prayer flags as scenery, not as a documented tradition."
+    },
+    {
+      "videoId": "HZwsYCin83w",
+      "reason": "Clickbait framing (\"Hinduism vs Buddhism: The Secret of...\")."
+    },
+    {
+      "videoId": "7Irxp_0R8do",
+      "reason": "Generic prayer-flag explainer, not Sikkim-specific documentation."
+    },
+    {
+      "videoId": "bC6mcLmy8pc",
+      "reason": "Stock scenery clip of a lake, not a tradition."
+    },
+    {
+      "videoId": "1O1oTynJ3BQ",
+      "reason": "Duplicate of the accepted Sikkim archery episode from the same government series."
+    },
+    {
+      "videoId": "3pRHOdFlR3E",
+      "reason": "Duplicate of the accepted Sikkim archery episode."
+    },
+    {
+      "videoId": "F8bOWMzZx2E",
+      "reason": "Personal wedding vlog without documentary framing; the custom is already represented."
+    },
+    {
+      "videoId": "WYONwueoKr4",
+      "reason": "Personal wedding vlog without documentary framing; the custom is already represented."
+    },
+    {
+      "videoId": "NSSIXzR9ZtI",
+      "reason": "Personal wedding vlog without documentary framing; the custom is already represented."
+    },
+    {
+      "videoId": "r57EpKDsyXg",
+      "reason": "Personal wedding vlog without documentary framing; the custom is already represented."
+    },
+    {
+      "videoId": "D_ow0zIXSF4",
+      "reason": "Personal wedding vlog without documentary framing; the custom is already represented."
+    },
+    {
+      "videoId": "9y1N-NPKjMA",
+      "reason": "Generic travel-series episode title; the returned title names no cultural subject, so no truthful topic line can be written from it."
+    },
+    {
+      "videoId": "3n6hVNLI6oQ",
+      "reason": "Generic travel-series episode title; no verifiable cultural subject."
+    },
+    {
+      "videoId": "ypp-l1PpMrM",
+      "reason": "Generic travel-series episode title; no verifiable cultural subject."
+    },
+    {
+      "videoId": "jgCV_gDi9kQ",
+      "reason": "Duplicate subject — the same centenary is covered by the accepted concluding-ceremony film."
+    },
+    {
+      "videoId": "h7cmVk0TVJM",
+      "reason": "Institutional founder's-day news item; no cultural content beyond the event."
+    },
+    {
+      "videoId": "ydepwBIXVNU",
+      "reason": "Tourism promotional reel, not documentation."
+    },
+    {
+      "videoId": "wYIiDBAarW4",
+      "reason": "General sightseeing episode; food is incidental."
+    },
+    {
+      "videoId": "1FSGlNrpofg",
+      "reason": "Political — a Chief Minister's inauguration event rather than the tradition itself."
+    }
+  ],
+  "summary": {
+    "byCategory": {
+      "food": 4,
+      "festivals": 5,
+      "traditions": 4,
+      "music-dance": 5,
+      "crafts": 3,
+      "textiles": 3,
+      "communities": 4,
+      "heritage": 3,
+      "daily-life": 3
+    },
+    "accepted": 34,
+    "rejected": 75,
+    "officialOrInstitutionalChannels": [
+      "Fit India Movement — vfPYxkJRP5w",
+      "Eastern Zonal Cultural Centre — l8Bp4baIaEQ",
+      "DD Gangtok — 0X1SvKZuhGw",
+      "Namgyal Institute Of Tibetology, Sikkim — 6HkdE155PdM"
+    ]
+  }
+}

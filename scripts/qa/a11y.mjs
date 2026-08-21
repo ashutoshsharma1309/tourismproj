@@ -58,6 +58,10 @@ const ROUTES = [
      page (and, in dev, the error overlay) rather than a story. */
   "/stories/the-throne-of-stone-at-norbugang",
   "/hotels",
+  /* Shipped since the last sweep and previously unaudited: the per-property
+     stay page, and the culture shelves with their 34 video cards. */
+  "/stays/may-fair-resort",
+  "/culture",
   "/planner",
   "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
   "/preservation",

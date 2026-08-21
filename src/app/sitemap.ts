@@ -29,6 +29,7 @@ const STATIC_ROUTES = [
   { path: "/permits", priority: 0.8 },
   { path: "/responsible", priority: 0.8 },
   { path: "/planner", priority: 0.7 },
+  { path: "/culture", priority: 0.8 },
   { path: "/hotels", priority: 0.6 },
   { path: "/preservation", priority: 0.6 },
   { path: "/archive/contribute", priority: 0.5 },

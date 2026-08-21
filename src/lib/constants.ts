@@ -78,6 +78,7 @@ export const SITE_URL = resolveSiteUrl();
 export const NAV_LINKS = [
   { href: "/monasteries", label: "Monasteries" },
   { href: "/stories", label: "Stories" },
+  { href: "/culture", label: "Culture" },
   { href: "/history", label: "History" },
   { href: "/archive", label: "Archive" },
   { href: "/explore", label: "Explore" },
