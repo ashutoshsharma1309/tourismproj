@@ -256,7 +256,7 @@ const SEEDS: Seed[] = [
     lng: 88.775,
     wiki: "Dzuluk",
     storyImageKey: "story/silk-route",
-    imageAlt: "The switchback road climbing through Zuluk in eastern Sikkim",
+    imageAlt: "Morning on the old Silk Route road through eastern Sikkim",
     elevation: 2900,
     description:
       "A hamlet on the old Kalimpong–Tibet trade route, used as an overnight halt by traders crossing at Jelep La until 1959. Famous for its switchback road.",
@@ -311,7 +311,6 @@ const SEEDS: Seed[] = [
     lat: 27.3478,
     lng: 88.6286,
     wiki: "Hanuman_Tok",
-    imageKey: "hero/kanchenjunga",
     imageAlt: "The Khangchendzonga range seen from the ridge above Gangtok",
     description:
       "A Hindu temple complex in the upper reaches of Gangtok, built over a stone in 1950 and maintained by the Indian Army, with long views west to the range.",
@@ -379,7 +378,6 @@ const SEEDS: Seed[] = [
     lat: 27.3113,
     lng: 88.5337,
     wiki: "Fambong_Lho_Wildlife_Sanctuary",
-    storyImageKey: "story/red-panda",
     imageAlt: "Himalayan forest of the kind protected at Fambong Lho",
     description:
       "51 sq km about 30 km west of Gangtok, contiguous with Khangchendzonga National Park and part of the Sacred Himalayan Landscape.",
@@ -436,7 +434,6 @@ const SEEDS: Seed[] = [
     lat: 27.6078,
     lng: 88.1869,
     wiki: "Goecha_La",
-    imageKey: "hero/kanchenjunga",
     imageAlt: "The Kangchenjunga massif seen from high in west Sikkim",
     elevation: 4940,
     description:
@@ -626,7 +623,6 @@ const SEEDS: Seed[] = [
     lat: 27.2037,
     lng: 88.7015,
     wiki: "Rongli",
-    storyImageKey: "story/silk-route",
     imageAlt: "The old trade road through eastern Sikkim",
     description:
       "The subdivision town of eastern Sikkim, and the permit checkpoint for the old silk route through Zuluk towards the Tibet border.",

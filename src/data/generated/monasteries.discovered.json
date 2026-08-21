@@ -1,975 +1,1005 @@
 [
-  {
-    "slug": "bermiok",
-    "name": "Bermiok Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": "Karma Kagyu",
-    "historicalSummary": "Bermiok Monastery (a.k.a. Bermiok Wosel Choling Monastery) is a Buddhist monastery in Sikkim, northeastern India. The monastery belongs to the Karma Kagyu lineage.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Burmiokwosel_Choling_Monastery_in_South_Sikkim_at_Burmiok_village.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Burmiokwosel_Choling_Monastery_in_South_Sikkim_at_Burmiok_village.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Amitabha Gupta",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Bermiok_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+ {
+  "slug": "bermiok",
+  "name": "Bermiok Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": "Karma Kagyu",
+  "historicalSummary": "Bermiok Monastery (a.k.a. Bermiok Wosel Choling Monastery) is a Buddhist monastery in Sikkim, northeastern India. The monastery belongs to the Karma Kagyu lineage.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Burmiokwosel_Choling_Monastery_in_South_Sikkim_at_Burmiok_village.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Burmiokwosel_Choling_Monastery_in_South_Sikkim_at_Burmiok_village.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Amitabha Gupta",
+   "attributionRequired": true
   },
-  {
-    "slug": "chawayng-ani",
-    "name": "Chawayng Ani Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.534,
-    "longitude": 88.512,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Chawayng Ani Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Chawayng_Ani_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Bermiok_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "chawayng-ani",
+  "name": "Chawayng Ani Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.534,
+  "longitude": 88.512,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Chawayng Ani Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Chawayng_Ani_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "dalling",
+  "name": "Dalling Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.288,
+  "longitude": 88.344,
+  "establishedYear": 1840,
+  "tradition": null,
+  "historicalSummary": "Dalling Monastery is a Buddhist monastery in Sikkim, northeastern India, built in 1840.\nThe name means \"Thunderbolt\".",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Dalling_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "dubdi",
+  "name": "Dubdi Monastery",
+  "alternateNames": [],
+  "district": "Gyalshing",
+  "latitude": 27.06666667,
+  "longitude": 88.46666667,
+  "establishedYear": 1701,
+  "tradition": "Nyingma",
+  "historicalSummary": "Dubdi Monastery, occasionally called Yuksom Monastery, is a Buddhist monastery of the Nyingma sect of Tibetan Buddhism near Yuksom, in the Geyzing subdivision of West Sikkim district, in Northeastern India.\nThe Chogyar Namgyal established the first monastery known as the Dubdi Monastery in 1701, at Yuksom in Sikkim, which is part of Buddhist religious pilgrimage circuit involving the Norbugang Chorten, Pemayangtse Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, the Khecheopalri Lake and the Tashiding Monastery.\nEstablished in 1701, it is professed to be the oldest monastery in Sikkim and is located on the top of a hill which is about an hour's walk (3 kilometres (1.9 mi)) from Yuksom. It was also known as the Hermit's Cell after its ascetic founder Lhatsun Namkha Jigme, who along with two other lamas from Tibet met at Norbugang near Yuksom and crowned Phuntsog Namgyal as the first King or Chogyal of Sikkim at Norbugang Yuksom in 1642. The literal meaning of 'Dubdi' in local language is \"the retreat\".",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Dubdi_Monastery_2.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dubdi_Monastery_2.jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Rangan Datta Wiki",
+   "attributionRequired": true
   },
-  {
-    "slug": "dalling",
-    "name": "Dalling Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.288,
-    "longitude": 88.344,
-    "establishedYear": 1840,
-    "tradition": null,
-    "historicalSummary": "Dalling Monastery is a Buddhist monastery in Sikkim, northeastern India, built in 1840.\nThe name means \"Thunderbolt\".",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Dalling_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Dubdi_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "dubdi"
+ },
+ {
+  "slug": "enchey",
+  "name": "Enchey Monastery",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": 27.33583333,
+  "longitude": 88.61916667,
+  "establishedYear": 1909,
+  "tradition": "Nyingma",
+  "historicalSummary": "The Enchey Monastery was established in 1909 above Gangtok, the capital city of Sikkim in the Northeastern Indian state. It belongs to the Nyingma order of Vajrayana Buddhism. The monastery built around the then small hamlet of Gangtok became a religious centre. The location was blessed by Lama Drupthob Karpo, a renowned exponent of tantric (adept) art in Buddhism with flying powers; initially a small Gompa was established by him after he flew from Maenam Hill in South Sikkim to this site. The literal meaning of Enchey Monastery is the \"Solitary Monastery\". Its sacredness is attributed to the belief that Khangchendzonga and Yabdean – the protecting deities – reside in this monastery. As, according to a legend, Guru Padmasambhava had subdued the spirits of the Khangchendzonga, Yabdean and Mahākāla here. In view of this legend, the religious significance of Enchey Monastery is deeply ingrained in every household in Gangtok. It is also believed that these powerful deities always fulfil the wishes of the devotees.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Enchey_Monastery_in_Gangtok_district%2C_East_Sikkim.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Enchey_Monastery_in_Gangtok_district,_East_Sikkim.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Amitabha Gupta",
+   "attributionRequired": true
   },
-  {
-    "slug": "dubdi",
-    "name": "Dubdi Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": 27.06666667,
-    "longitude": 88.46666667,
-    "establishedYear": 1701,
-    "tradition": "Nyingma",
-    "historicalSummary": "Dubdi Monastery, occasionally called Yuksom Monastery, is a Buddhist monastery of the Nyingma sect of Tibetan Buddhism near Yuksom, in the Geyzing subdivision of West Sikkim district, in Northeastern India.\nThe Chogyar Namgyal established the first monastery known as the Dubdi Monastery in 1701, at Yuksom in Sikkim, which is part of Buddhist religious pilgrimage circuit involving the Norbugang Chorten, Pemayangtse Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, the Khecheopalri Lake and the Tashiding Monastery.\nEstablished in 1701, it is professed to be the oldest monastery in Sikkim and is located on the top of a hill which is about an hour's walk (3 kilometres (1.9 mi)) from Yuksom. It was also known as the Hermit's Cell after its ascetic founder Lhatsun Namkha Jigme, who along with two other lamas from Tibet met at Norbugang near Yuksom and crowned Phuntsog Namgyal as the first King or Chogyal of Sikkim at Norbugang Yuksom in 1642. The literal meaning of 'Dubdi' in local language is \"the retreat\".",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Dubdi_Monastery_2.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Dubdi_Monastery_2.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "author": "Rangan Datta Wiki",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Dubdi_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Enchey_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "enchey"
+ },
+ {
+  "slug": "gnathang",
+  "name": "Gnathang Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": "Gelug",
+  "historicalSummary": "Gnathang Monastery is a Gelugpa Buddhist monastery in Sikkim in northeastern India.  The monastery is about 100 years old.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Gnathang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "hee-gyathang",
+  "name": "Hee Gyathang Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": 27.476,
+  "longitude": 88.501,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Hee Gyathang Monastery is a Buddhist monastery situated in Upper Dzongu, North Sikkim in northeastern India. It was built by hermit Abi Putso Rangdrol in 1914.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Hee_Gyathang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "karthok",
+  "name": "Karthok Monastery",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": 27.2408,
+  "longitude": 88.588,
+  "establishedYear": null,
+  "tradition": "Nyingma",
+  "historicalSummary": "Kartok Monastery is a Buddhist monastery in Pakyong, a town in the foothills of the Himalayas located in the East Sikkim district of the northeastern Indian state of Sikkim. It is considered  the sixth oldest monastery of Sikkim and this monastery follows the Nyingma Order of Tibetan Buddhism.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kathog_Monastery_alias_Kartok_Monastery_at_Pakyong_in_East_Sikkim_14.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Kathog_Monastery_alias_Kartok_Monastery_at_Pakyong_in_East_Sikkim_14.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Amitabha Gupta",
+   "attributionRequired": true
   },
-  {
-    "slug": "enchey",
-    "name": "Enchey Monastery",
-    "alternateNames": [],
-    "district": "Namchi",
-    "latitude": 27.33583333,
-    "longitude": 88.61916667,
-    "establishedYear": 1909,
-    "tradition": "Nyingma",
-    "historicalSummary": "The Enchey Monastery was established in 1909 above Gangtok, the capital city of Sikkim in the Northeastern Indian state. It belongs to the Nyingma order of Vajrayana Buddhism. The monastery built around the then small hamlet of Gangtok became a religious centre. The location was blessed by Lama Drupthob Karpo, a renowned exponent of tantric (adept) art in Buddhism with flying powers; initially a small Gompa was established by him after he flew from Maenam Hill in South Sikkim to this site. The literal meaning of Enchey Monastery is the \"Solitary Monastery\". Its sacredness is attributed to the belief that Khangchendzonga and Yabdean – the protecting deities – reside in this monastery. As, according to a legend, Guru Padmasambhava had subdued the spirits of the Khangchendzonga, Yabdean and Mahākāla here. In view of this legend, the religious significance of Enchey Monastery is deeply ingrained in every household in Gangtok. It is also believed that these powerful deities always fulfil the wishes of the devotees.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/e/ed/Enchey_Monastery_in_Gangtok_district%2C_East_Sikkim.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Enchey_Monastery_in_Gangtok_district,_East_Sikkim.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Amitabha Gupta",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Enchey_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Karthok_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": true
+ },
+ {
+  "slug": "kewwzing",
+  "name": "Kewwzing Monastery",
+  "alternateNames": [],
+  "district": "Namchi",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": 1974,
+  "tradition": "Bon",
+  "historicalSummary": "Kewwzing Monastery is a Bon Buddhist monastery in Sikkim, northeastern India. It was founded in 1974 by Gomchhen Ongden, the Head Lama of Tashiding Monastery. It is one of only two Bon monasteries in India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Kewwzing_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.5,
+  "isNew": true,
+  "catalogued": true,
+  "cataloguedAs": "kewzing"
+ },
+ {
+  "slug": "labrang",
+  "name": "Labrang Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": 27.41805556,
+  "longitude": 88.57944444,
+  "establishedYear": null,
+  "tradition": "Nyingma",
+  "historicalSummary": "Labrang Monastery (Sikkim), (lit. 'lama's dwelling', a.k.a. Palden Phuntshog Phodrang or Palden Phuntsok Monastery) is a Buddhist monastery located in Mangan district, Sikkim, India.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Labrang_Monastery.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Labrang_Monastery.jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Prof Ranga Sai",
+   "attributionRequired": true
   },
-  {
-    "slug": "gnathang",
-    "name": "Gnathang Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": "Gelug",
-    "historicalSummary": "Gnathang Monastery is a Gelugpa Buddhist monastery in Sikkim in northeastern India.  The monastery is about 100 years old.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Gnathang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Labrang_Monastery_(Sikkim)",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": true
+ },
+ {
+  "slug": "lachen",
+  "name": "Lachen Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": 1858,
+  "tradition": "Nyingma",
+  "historicalSummary": "Lachen Monastery (also called Ngodrub Choling Gonpa, \"Launching Gompa\"), built in 1858, is a Nyingma Buddhist monastery near Lachen, Sikkim, northeastern India.\nIt is home to Lachen Monastic School.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Lachen_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.5,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "lachen"
+ },
+ {
+  "slug": "lachung",
+  "name": "Lachung Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": 1880,
+  "tradition": "Nyingma",
+  "historicalSummary": "Lachung Monastery is a Nyingma Buddhist gompa in the Lachung Valley in Mangan district in Northeastern Indian state of Sikkim. It is approx. 50 km from Mangan town, the district headquarters. It was established in 1880.\nLachung means a 'small mountain'. Lachung is at an elevation of about 3,000 m (9,600 ft) at the confluence of the Lachen River and Lachung River, tributaries of the Teesta River. The village is 118 km from Gangtok on the North Sikkim Highway and is the last one before the Indo-Chinese border. It was a trading post between India and Tibet before China forcefully annexed Tibet in 1950. Permits are required for visits to Mangan (Sikkim). The monastery hosts a famous mask dance each year.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_01.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim,_India_01.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Amitabha Gupta",
+   "attributionRequired": true
   },
-  {
-    "slug": "hee-gyathang",
-    "name": "Hee Gyathang Monastery",
-    "alternateNames": [],
-    "district": "Mangan",
-    "latitude": 27.476,
-    "longitude": 88.501,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Hee Gyathang Monastery is a Buddhist monastery situated in Upper Dzongu, North Sikkim in northeastern India. It was built by hermit Abi Putso Rangdrol in 1914.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Hee_Gyathang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Lachung_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.65,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "lachung"
+ },
+ {
+  "slug": "lingdum",
+  "name": "Lingdum Monastery",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": "Zurmang Kagyu",
+  "historicalSummary": "Lingdum Monastery (also Ranka Lingdum or Pal Zurmang Kagyud Monastery) is a Buddhist monastery near Ranka in Sikkim, North East India, about an hour's drive from Gangtok. It was completed in 1999.\nIt follows the Zurmang Kagyu tradition.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lingdum_Monastery_(also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery).jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Subhrajyoti07",
+   "attributionRequired": true
   },
-  {
-    "slug": "karthok",
-    "name": "Karthok Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": 27.2408,
-    "longitude": 88.588,
-    "establishedYear": null,
-    "tradition": "Nyingma",
-    "historicalSummary": "Kartok Monastery is a Buddhist monastery in Pakyong, a town in the foothills of the Himalayas located in the East Sikkim district of the northeastern Indian state of Sikkim. It is considered  the sixth oldest monastery of Sikkim and this monastery follows the Nyingma Order of Tibetan Buddhism.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e4/Kathog_Monastery_alias_Kartok_Monastery_at_Pakyong_in_East_Sikkim_14.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Kathog_Monastery_alias_Kartok_Monastery_at_Pakyong_in_East_Sikkim_14.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Amitabha Gupta",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Karthok_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Lingdum_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.65,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "lingdum"
+ },
+ {
+  "slug": "lingthem",
+  "name": "Lingthem Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.522,
+  "longitude": 88.501,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Lingthem Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Lingthem_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "melli-atsing",
+  "name": "Melli Atsing Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.32722222,
+  "longitude": 88.20694444,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Melli Atsing Monastery (a.k.a. Mallu Monastery) is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Melli_Atsing_Monastery%2C_West_Sikkim_02.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Melli_Atsing_Monastery,_West_Sikkim_02.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Amitabha Gupta",
+   "attributionRequired": true
   },
-  {
-    "slug": "kewwzing",
-    "name": "Kewwzing Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": 1974,
-    "tradition": "Bon",
-    "historicalSummary": "Kewwzing Monastery is a Bon Buddhist monastery in Sikkim, northeastern India. It was founded in 1974 by Gomchhen Ongden, the Head Lama of Tashiding Monastery. It is one of only two Bon monasteries in India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Kewwzing_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.5,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Melli_Atsing_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "namchi",
+  "name": "Namchi Monastery",
+  "alternateNames": [],
+  "district": "Namchi",
+  "latitude": 27.165,
+  "longitude": 88.366,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Namchi Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Namchi_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "pemayangtse",
+  "name": "Pemayangtse Monastery",
+  "alternateNames": [],
+  "district": "Gyalshing",
+  "latitude": 27.30444444,
+  "longitude": 88.25277778,
+  "establishedYear": null,
+  "tradition": "Nyingma",
+  "historicalSummary": "The Pemayangtse Monastery is a Buddhist monastery in Pemayangtse, near Gyalshing city in Gyalshing district in the northeastern Indian state of Sikkim, located 6 km from Gyalshing city, the district headquarters, 110 km west of Gangtok. Planned, designed and founded by Lama Lhatsun Chempo in 1647, it is one of the oldest and premier monasteries of Sikkim, also the most famous in Sikkim. Originally started as a small Lhakhang, it was subsequently enlarged during the reign of the third Chogyal Chakdor Namgyal and Khenchen Rolpai Dorjee in the year 1705 and consecrated by the third Lhatsun Chenpo Dzogchen Jigme Pawo in the year 1710 C.E. The monastery follows  the Nyingma Order of Tibetan Buddhism and controls all other monasteries of that Order in Sikkim. The monks of this monastery are normally chosen from the Bhutias of Sikkim.\nThe monastery was built for \"pure monks\" (ta-tshang) meaning \"monks of pure lineage\", celibate and without any physical abnormality. This practice is still retained. Only the monks of Pemayangtse Monastery are entitled to the title \"ta-tshang\". The head lama of this monastery had the unique privilege of anointing the Chogyals of the erstwhile monarchy of Sikkim with holy water. Pemayangtse means \"Perfect Sublime Lotus\", and is said to represent one of the four plexus of the human body.\nThe  Pemayangtse Monastery is part of Buddhist religious  pilgrimage circuit starting with the first monastery at Yuksom known as the Dubdi Monastery, followed by Norbugang Chorten, Tashiding Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, and the Khecheopalri Lake.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Main_Shrine_of_Pemangytse_Gompa_with_prayer_flags.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Main_Shrine_of_Pemangytse_Gompa_with_prayer_flags.jpg",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "author": "Kothanda Srinivasan",
+   "attributionRequired": true
   },
-  {
-    "slug": "labrang",
-    "name": "Labrang Monastery",
-    "alternateNames": [],
-    "district": "Mangan",
-    "latitude": 27.41805556,
-    "longitude": 88.57944444,
-    "establishedYear": null,
-    "tradition": "Nyingma",
-    "historicalSummary": "Labrang Monastery (Sikkim), (lit. 'lama's dwelling', a.k.a. Palden Phuntshog Phodrang or Palden Phuntsok Monastery) is a Buddhist monastery located in Mangan district, Sikkim, India.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7e/Labrang_Monastery.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Labrang_Monastery.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "author": "Prof Ranga Sai",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Labrang_Monastery_(Sikkim)",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Pemayangtse_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "pemayangtse"
+ },
+ {
+  "slug": "phensang",
+  "name": "Phensang Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": 27.42027778,
+  "longitude": 88.61027778,
+  "establishedYear": 1721,
+  "tradition": "Nyingma",
+  "historicalSummary": "Phensang Monastery is a Buddhist monastery of the Nyingmapa Order in Sikkim, India, 9 kilometres north of Gangtok. It was established in 1721 during the time of Jigme Pawo.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Phensong_Monastery.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phensong_Monastery.jpg",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "author": "walter callens",
+   "attributionRequired": true
   },
-  {
-    "slug": "lachen",
-    "name": "Lachen Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": 1858,
-    "tradition": "Nyingma",
-    "historicalSummary": "Lachen Monastery (also called Ngodrub Choling Gonpa, \"Launching Gompa\"), built in 1858, is a Nyingma Buddhist monastery near Lachen, Sikkim, northeastern India.\nIt is home to Lachen Monastic School.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Lachen_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.5,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Phensang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "phensang"
+ },
+ {
+  "slug": "phodong",
+  "name": "Phodong Monastery",
+  "alternateNames": [],
+  "district": "Mangan",
+  "latitude": 27.41277778,
+  "longitude": 88.58388889,
+  "establishedYear": null,
+  "tradition": "Karma Kagyu",
+  "historicalSummary": "Phodong Monastery (or Phodang and Podong; Tibetan: ཕོ་གདོང, Wylie: pho gdong) is a Buddhist monastery in Sikkim, India.  It is located 28 kilometres from Gangtok.\nIt was built in the early 18th century but an older monastery had pre-existed the current one.\n9th Karmapa was invited by the king of Sikkim, where he founded three monasteries : Rumtek, one of the most important monastery of the Karma Kagyu school of Tibetan Buddhism, Phodong and Ralang Monastery.\nIt was reconstructed by Sidkeong Tulku Namgyal, who was recognized as the reincarnation of his uncle, Sidkeong Namgyal, the abbot of the monastery. The line was to be continued by Palden Thondup Namgyal.\nThe monastery has a residence of approximately 260 monks and has a numerous collection of some ancient murals.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Phodong_monastery_-_north_sikkim.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phodong_monastery_-_north_sikkim.jpg",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "author": "dhillan chandramowli",
+   "attributionRequired": true
   },
-  {
-    "slug": "lachung",
-    "name": "Lachung Monastery",
-    "alternateNames": [],
-    "district": "Mangan",
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": 1880,
-    "tradition": "Nyingma",
-    "historicalSummary": "Lachung Monastery is a Nyingma Buddhist gompa in the Lachung Valley in Mangan district in Northeastern Indian state of Sikkim. It is approx. 50 km from Mangan town, the district headquarters. It was established in 1880.\nLachung means a 'small mountain'. Lachung is at an elevation of about 3,000 m (9,600 ft) at the confluence of the Lachen River and Lachung River, tributaries of the Teesta River. The village is 118 km from Gangtok on the North Sikkim Highway and is the last one before the Indo-Chinese border. It was a trading post between India and Tibet before China forcefully annexed Tibet in 1950. Permits are required for visits to Mangan (Sikkim). The monastery hosts a famous mask dance each year.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/5/57/Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim%2C_India_01.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lachung_Monastery_at_Lachung_Valley_in_North_Sikkim,_India_01.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Amitabha Gupta",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Lachung_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.65,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Phodong_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "phodong"
+ },
+ {
+  "slug": "ralang",
+  "name": "Ralang Monastery",
+  "alternateNames": [],
+  "district": "Namchi",
+  "latitude": 27.32833333,
+  "longitude": 88.33472222,
+  "establishedYear": null,
+  "tradition": "Karma Kagyu",
+  "historicalSummary": "New Ralang Monastery or Ralong Palchen Choling is a Buddhist monastery of the Kagyu sect of Tibetan Buddhism in southern Sikkim, northeastern India. It is located six kilometres from Ravangla. Ralang Monastery has an extensive collection of paintings and thangkas.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Ralong_monastery_-_top_view.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ralong_monastery_-_top_view.jpg",
+   "license": "CC BY-SA 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
+   "author": "dhillan chandramowli",
+   "attributionRequired": true
   },
-  {
-    "slug": "lingdum",
-    "name": "Lingdum Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": "Zurmang Kagyu",
-    "historicalSummary": "Lingdum Monastery (also Ranka Lingdum or Pal Zurmang Kagyud Monastery) is a Buddhist monastery near Ranka in Sikkim, North East India, about an hour's drive from Gangtok. It was completed in 1999.\nIt follows the Zurmang Kagyu tradition.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/Lingdum_Monastery_%28also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery%29.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Lingdum_Monastery_(also_Ranka_Lingdum_or_Pal_Zurmang_Kagyud_Monastery).jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "author": "Subhrajyoti07",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Lingdum_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.65,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Ralang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "ralang"
+ },
+ {
+  "slug": "rhenock",
+  "name": "Rhenock Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Rhenock Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Rhenock_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "rinchenpong",
+  "name": "Rinchenpong Monastery",
+  "alternateNames": [],
+  "district": "Soreng",
+  "latitude": 27.2353,
+  "longitude": 88.2685,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Rinchenpong Monastery is situated above the twin villages of Rinchenpong (Richenpong) and Kaluk in West Sikkim, at a height of over 1,700 metres (5,500 ft) in the northeastern state of Sikkim, India. This 18th century monastery is a popular tourist attraction in West Sikkim.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/View_of_rinchenpong_monastery_entry.JPG",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:View_of_rinchenpong_monastery_entry.JPG",
+   "license": "CC BY-SA 3.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
+   "author": "Alakananda.s",
+   "attributionRequired": true
   },
-  {
-    "slug": "lingthem",
-    "name": "Lingthem Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.522,
-    "longitude": 88.501,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Lingthem Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Lingthem_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Rinchenpong_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "rinchenpong"
+ },
+ {
+  "slug": "rumtek",
+  "name": "Rumtek Monastery",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": 27.28861111,
+  "longitude": 88.56138889,
+  "establishedYear": null,
+  "tradition": "Karma Kagyu",
+  "historicalSummary": "Rumtek Monastery (Tibetan: རུམ་ཐེག་དགོན་པ་, Wylie: rum theg dgon pa), also called the Dharma Chakra Centre, is a gompa located in the Indian state of Sikkim near the capital Gangtok. It is the seat in exile of the Gyalwang Karmapa, inaugurated in 1966 by the 16th Karmapa. It is also a focal point for the sectarian tensions within the Karma Kagyu school of Tibetan Buddhism that characterize the 17th Karmapa controversy.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok,_East_Sikkim_09.jpg",
+   "license": "CC BY 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
+   "author": "Anjan Kumar Kundu",
+   "attributionRequired": true
   },
-  {
-    "slug": "melli-atsing",
-    "name": "Melli Atsing Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.32722222,
-    "longitude": 88.20694444,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Melli Atsing Monastery (a.k.a. Mallu Monastery) is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Melli_Atsing_Monastery%2C_West_Sikkim_02.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Melli_Atsing_Monastery,_West_Sikkim_02.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Amitabha Gupta",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Melli_Atsing_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Rumtek_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "rumtek"
+ },
+ {
+  "slug": "sa-ngor-chotshog-centre",
+  "name": "Sa-Ngor-Chotshog Centre",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.341,
+  "longitude": 88.644,
+  "establishedYear": 1961,
+  "tradition": "Sakya",
+  "historicalSummary": "Sa-Ngor-Chotshog Centre is a Buddhist monastery in Sikkim, northeastern India. It is the only monastery in Sikkim that belongs to the Sakyapa sect of Buddhism. It was founded in 1961.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Sa-Ngor-Chotshog_Centre",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.65,
+  "isNew": true
+ },
+ {
+  "slug": "sang",
+  "name": "Sang Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": 1912,
+  "tradition": "Kagyu",
+  "historicalSummary": "Sang Monastery is a Buddhist monastery in Sikkim, northeastern India.\nSang Monastery, the Karma Dubgyu Chokhorling Monastery, was built in 1912 AD. The Monastery belongs to Kagyupa sect of Vajrayana Buddhism\n The Monastery houses two flat stone prints, each bearing one footprint and a hand print of Phaya lama. He was a prominent lama from Tibet who stayed in this Gompa for few years. \nThe Lama spent time meditating in a cave situated at a ravine, nearby.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Sang_Monastery%2C_Sikkim_India.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Sang_Monastery,_Sikkim_India.jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Prof Ranga Sai",
+   "attributionRequired": true
   },
-  {
-    "slug": "namchi",
-    "name": "Namchi Monastery",
-    "alternateNames": [],
-    "district": "Namchi",
-    "latitude": 27.165,
-    "longitude": 88.366,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Namchi Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Namchi_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Sang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.65,
+  "isNew": true
+ },
+ {
+  "slug": "sanga-choeling",
+  "name": "Sanga Choeling Monastery",
+  "alternateNames": [],
+  "district": "Gyalshing",
+  "latitude": 27.26388889,
+  "longitude": 88.22138889,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "The Sanga Choeling Monastery, also spelt Sange Choeling Monastery (Sikkimese: གསང་སྔགས་ཆོས་གླིང, Wylie: gsang sngags chos gling, THL Sangngak Chö Ling), established in the 17th century by Lama Lhatsün Chempo, is one of the oldest monasteries in Pelling, about 10 km from Gyalshing city in the Gyalshing district in Northeast Indian state of Sikkim. The literal meaning of Sanga Choeling is \"Island of the Guhyamantra teachings\", where gling means a vihara and \"secret Mantra teachings\" is a synonym for \"Vajrayana Buddhism\".\nThe monastery is located on a ridge top above Pelling at a distance of 7 kilometres (4.3 mi) from Pemayangtse Monastery and is accessed by walking the steep hilly track of 4 kilometres (2.5 mi), which traverses through rich forest cover.\nPilgrimage to Sanga Choeling Monastery is undertaken by many Buddhist devotees as part of a religious and heritage circuit encompassing Pemayangtse Monastery, Rabdentse ruins, Khecheopalri Lake, Norbugang Chorten, Dubdi Monastery, Yuksom and Tashiding Monastery.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Full_view_of_Sanga-Choeling_Monastery.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "author": "walter callens",
+   "attributionRequired": true
   },
-  {
-    "slug": "pemayangtse",
-    "name": "Pemayangtse Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": 27.30444444,
-    "longitude": 88.25277778,
-    "establishedYear": null,
-    "tradition": "Nyingma",
-    "historicalSummary": "The Pemayangtse Monastery is a Buddhist monastery in Pemayangtse, near Gyalshing city in Gyalshing district in the northeastern Indian state of Sikkim, located 6 km from Gyalshing city, the district headquarters, 110 km west of Gangtok. Planned, designed and founded by Lama Lhatsun Chempo in 1647, it is one of the oldest and premier monasteries of Sikkim, also the most famous in Sikkim. Originally started as a small Lhakhang, it was subsequently enlarged during the reign of the third Chogyal Chakdor Namgyal and Khenchen Rolpai Dorjee in the year 1705 and consecrated by the third Lhatsun Chenpo Dzogchen Jigme Pawo in the year 1710 C.E. The monastery follows  the Nyingma Order of Tibetan Buddhism and controls all other monasteries of that Order in Sikkim. The monks of this monastery are normally chosen from the Bhutias of Sikkim.\nThe monastery was built for \"pure monks\" (ta-tshang) meaning \"monks of pure lineage\", celibate and without any physical abnormality. This practice is still retained. Only the monks of Pemayangtse Monastery are entitled to the title \"ta-tshang\". The head lama of this monastery had the unique privilege of anointing the Chogyals of the erstwhile monarchy of Sikkim with holy water. Pemayangtse means \"Perfect Sublime Lotus\", and is said to represent one of the four plexus of the human body.\nThe  Pemayangtse Monastery is part of Buddhist religious  pilgrimage circuit starting with the first monastery at Yuksom known as the Dubdi Monastery, followed by Norbugang Chorten, Tashiding Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, and the Khecheopalri Lake.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Main_Shrine_of_Pemangytse_Gompa_with_prayer_flags.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Main_Shrine_of_Pemangytse_Gompa_with_prayer_flags.jpg",
-      "license": "CC BY 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-      "author": "Kothanda Srinivasan",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Pemayangtse_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Sanga_Choeling_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "sanga-choeling"
+ },
+ {
+  "slug": "shurishing-yungdrung-dungdrakling",
+  "name": "Shurishing Yungdrung Dungdrakling Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Shurishing Yungdrung Dungdrakling Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Shurishing_Yungdrung_Dungdrakling_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "simik",
+  "name": "Simik Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Simik Monastery is a Buddhist monastery in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Simik_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "sinon",
+  "name": "Sinon Monastery",
+  "alternateNames": [],
+  "district": "Gyalshing",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": 1716,
+  "tradition": null,
+  "historicalSummary": "Sinon Monastery is a Buddhist monastery in Sikkim, northeastern India.Sinon Monastery is located in West Sikkim District. Sinon means 'the suppressor of intense fear'. The monastery was constructed in 1716 and is situated on a hilltop, 10 km from Tashiding. The monastery was built under the leadership of Pedi Wangmo, half-sister of Chogyal Chagdor Namgyal. The famous painting, Pedi Wangmo, can be found in the Sinon Monastery. Another famous Sikkimese artwork found in the monastery is a painting of Arhat Nagasena. The saint's peaceful face is expressed with a minimum of colours and line drawings. The painting displays strong influence of the Ajanta cave paintings.\nThe nearest airport is Civil Enclave Bagdogra",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Sinon_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.5,
+  "isNew": true
+ },
+ {
+  "slug": "taktse-ogyen-choekhorling",
+  "name": "Taktse Ogyen Choekhorling Monastery",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Taktse Ogyen Choekhorling Monastery is a Tibetan Buddhist monastery near Gangtok in Sikkim, northeastern India.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Taktse_Ogyen_Choekhorling_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "NEEDS_REVIEW",
+  "confidence": 0.25,
+  "isNew": true
+ },
+ {
+  "slug": "tashiding",
+  "name": "Tashiding Monastery",
+  "alternateNames": [],
+  "district": "Gyalshing",
+  "latitude": 27.30833333,
+  "longitude": 88.29805556,
+  "establishedYear": 1641,
+  "tradition": "Nyingma",
+  "historicalSummary": "Tashiding Monastery (Sikkimese: བཀྲ་ཤིས་སྡིངས་དགོན་པ་, Wylie: bkra shis sdings dgon pa) is a Buddhist monastery of the Nyingma sect of Tibetan Buddhism in Tashiding, about 27 km from Gyalshing city in Gyalshing district in northeastern Indian state of Sikkim. which is the most sacred and holiest monasteries in Sikkim. It is described as the \"Heart of Sikkim/Denzong\", citing to its importance of religious sacredness. It is located on top of the hill rising between the Rathong chu and the Rangeet River, 40 kilometres (25 mi) from Gyalshing and 19 kilometres (12 mi) to the south east of Yuksam. \nThe annual festival of Bumchu, meaning ~Holy water~ takes place on the 14th and 15th of the 1st month of Tibetan lunar calendar, often around the months of February and March.\nThe festival is believed to predict the upcoming forecasts and events for Sikkim in the coming year. Undoubtedly, one of the most important and holiest festivals for all the Buddhists in Sikkim and around, it also provides for a perfect platform for all those Non-Buddhists who seek a deeper insight into Buddhism and its religious customs, beliefs and rituals.\nHistory of the Festival-\nSomewhere between 755 and 804 CE in Tibet under the reign of King Trisong Deutsen. It was under his rule that Guru Padmasambhava when invited to Tibet performed a holy sadhana and consecrated the land with water from his SACRED VASE, which was then later concealed as a hidden treasure in his most blessed place, the Tashiding Monastery in Sikkim. Somewhere around 17th century, the vase was again discovered by one of the reincarnations of Padmasambhava and it is since that time, this festival again resumed with all its glory and splendour in the hidden and blessed land of Sikkim/Beyul Demozong.\nTashiding is the nearest town to the Tashiding Monastery (Gompa)\nTashiding means \"The Devoted Central Glory\" and the monastery by this name was founded in 1641 by Ngadak Sempa Chempo Phunshok Rigzing who belonged to the Nyingma sect of Tibetan Buddhism. Ngadak was one of the three wise men who held the consecration ceremony crowning the first King of Sikkim at Yuksom. It was extended and renovated in 1717 during the reign of the third Chogyal Chakdor Namgyal. 'Bhumchu Ceremony' or festival is a popular religious festival that is held on the 14th and 15th day of the first month of Tibetan Calendar.\nThe Tashiding Monastery is part of Buddhist religious pilgrimage circuit starting with the first monastery at Yuksam in Sikkim known as the Dubdi Monastery, Norbugang Chorten, Pemayangtse Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, and the Khecheopalri Lake.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
+   "license": "CC BY 2.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
+   "author": "walter callens",
+   "attributionRequired": true
   },
-  {
-    "slug": "phensang",
-    "name": "Phensang Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": 27.42027778,
-    "longitude": 88.61027778,
-    "establishedYear": 1721,
-    "tradition": "Nyingma",
-    "historicalSummary": "Phensang Monastery is a Buddhist monastery of the Nyingmapa Order in Sikkim, India, 9 kilometres north of Gangtok. It was established in 1721 during the time of Jigme Pawo.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Phensong_Monastery.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phensong_Monastery.jpg",
-      "license": "CC BY 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-      "author": "walter callens",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Phensang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Tashiding_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": false,
+  "catalogued": true,
+  "cataloguedAs": "tashiding"
+ },
+ {
+  "slug": "tendong-gumpa",
+  "name": "Tendong Gumpa",
+  "alternateNames": [],
+  "district": "Namchi",
+  "latitude": 27.20611111,
+  "longitude": 88.40805556,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Tendong Dichhen Salhun Gumpa or Tendong Gumpa as commonly known, is a Buddhist monastery situated atop 8530 ft. altitude from mean sea level (msl). This monastery is surrounded by lush green virgin reserve forest and nearest hamlet is Damthang which is at a six kilometer walking distance. Because of its seclusion, there are no resident monks/nuns in this monastery.\nGomchen Pema Chewang Tamang from Boomtar, Namchi, South Sikkim, was the main founder and head lama of Tendong Dichhen Salhun Gumpa. He did his spiritual studies in Tibet and acquired the title of ‘Gomchen’, (the great meditator) from an eminent Rempoche Yongzi Dangi Wongpo of Namdrolling Gumpa. In Tibet, one of his classmates happened to be Maharani Kunshang Dechen wife of Maharaja Sir Tashi Namgyal of Sikkim. Being a brilliant student, he had a cordial relation with the Maharani. Maharaja & Maharani later extended great help in building the monastery. He was also one of the Twenty-Four founding members of the world-famous Namgyal Institute of Tibetology, Deorali, Gangtok. He possessed a multi-talented personality, yet calm, gentle and simple, spent most of his time meditating in loneliness and sometimes helping the society of all spheres in their spiritual needs.\nA small holy cave is also present where Sangey Lama Ghesela, founder of Aahley Dichhen Cholling Gumpa had meditated for 6 months. Tendong Peak also houses Tendong Lho Rumfaat of Lepcha community.\nThere is an approx. 50 ft. tall tower under Sikkim Tourism Department from where one can have a 360 degree scenic view of the mountain range and also offers a good view of majestic Kanchenjunga range. On a clear morning, one can view a beautiful sunrise too.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gumpa1.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gumpa1.jpg",
+   "license": "CC BY-SA 4.0",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
+   "author": "Atulkini",
+   "attributionRequired": true
   },
-  {
-    "slug": "phodong",
-    "name": "Phodong Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": 27.41277778,
-    "longitude": 88.58388889,
-    "establishedYear": null,
-    "tradition": "Karma Kagyu",
-    "historicalSummary": "Phodong Monastery (or Phodang and Podong; Tibetan: ཕོ་གདོང, Wylie: pho gdong) is a Buddhist monastery in Sikkim, India.  It is located 28 kilometres from Gangtok.\nIt was built in the early 18th century but an older monastery had pre-existed the current one.\n9th Karmapa was invited by the king of Sikkim, where he founded three monasteries : Rumtek, one of the most important monastery of the Karma Kagyu school of Tibetan Buddhism, Phodong and Ralang Monastery.\nIt was reconstructed by Sidkeong Tulku Namgyal, who was recognized as the reincarnation of his uncle, Sidkeong Namgyal, the abbot of the monastery. The line was to be continued by Palden Thondup Namgyal.\nThe monastery has a residence of approximately 260 monks and has a numerous collection of some ancient murals.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/a/af/Phodong_monastery_-_north_sikkim.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Phodong_monastery_-_north_sikkim.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "author": "dhillan chandramowli",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Phodong_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Tendong_Gumpa",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": true
+ },
+ {
+  "slug": "tholung",
+  "name": "Tholung Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": 27.637,
+  "longitude": 88.461,
+  "establishedYear": null,
+  "tradition": "Nyingma",
+  "historicalSummary": "Tholung Monastery (Tibetan: ཋོལུང་དགོན་པ་, Wylie: Tho Lung dgon pa) is a gompa located in remote upper Dzongu, in the buffer zone of Khangchendzonga National Park.  It is considered one of the most sacred monasteries in Sikkim. Tholung literally means Areasima place or Areasima country.\nThis gompa was originally constructed during the beginning of 18th century by Chogyal Phuntsog Namgyal II. It includes unique and prized manuscripts and relics from other gompas that were placed there for protection at the time of the Nepalese invasion of the area during the end of the 17th and beginning of the 19th centuries. The monastery contains a metal Chorten, in which encloses the ashes of an incarnate of the revered Lama Latsun Chembo. All of these artifacts are contained within over a dozen boxes supervised by the Government of Sikkim. Every three years, the artifacts are unveiled to the public during the Kamsil Ceremony in April.\nIt follows the Nyingmapa school of Tibetan Buddhism. It is a World Heritage Property.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Tholung_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.65,
+  "isNew": true
+ },
+ {
+  "slug": "tsuklakhang-palace",
+  "name": "Tsuklakhang Palace",
+  "alternateNames": [],
+  "district": "Gangtok",
+  "latitude": 27.326,
+  "longitude": 88.615,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Tsuklakhang Palace or Tsuklakhang Royal Chapel and Monastery (Sikkimese: གཙུག་ལག་ཁང; Wylie: gtsug-tag-khang) is a Buddhist palatial monastery in Gangtok, Sikkim, India.\nThe Royal Chapel of the Chogyals is the main centre for prayers with an assembly hall in the centre and large depository of Buddhist scriptures and literature and contains altars which are orated with Buddha, Bodhisattvas and Tantric deities. Tsukhalang Palace which served as a location for coronation, marriages and victory ceremonies among the Sikkimese royalty.\nThe palace celebrates Pang Lhabsol, held in mid September in honor of Mount Khangchendzonga, and Kagyad is celebrated in early December.",
+  "image": {
+   "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Tsuklakhang.jpg",
+   "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Tsuklakhang.jpg",
+   "license": "CC BY-SA 2.5",
+   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
+   "author": "No machine-readable author provided. Bogman assumed (based on copyright claims).",
+   "attributionRequired": true
   },
-  {
-    "slug": "ralang",
-    "name": "Ralang Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.32833333,
-    "longitude": 88.33472222,
-    "establishedYear": null,
-    "tradition": "Karma Kagyu",
-    "historicalSummary": "New Ralang Monastery or Ralong Palchen Choling is a Buddhist monastery of the Kagyu sect of Tibetan Buddhism in southern Sikkim, northeastern India. It is located six kilometres from Ravangla. Ralang Monastery has an extensive collection of paintings and thangkas.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Ralong_monastery_-_top_view.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Ralong_monastery_-_top_view.jpg",
-      "license": "CC BY-SA 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
-      "author": "dhillan chandramowli",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Ralang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
-  },
-  {
-    "slug": "rhenock",
-    "name": "Rhenock Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Rhenock Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Rhenock_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
-  },
-  {
-    "slug": "rinchenpong",
-    "name": "Rinchenpong Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": 27.2353,
-    "longitude": 88.2685,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Rinchenpong Monastery is situated above the twin villages of Rinchenpong (Richenpong) and Kaluk in West Sikkim, at a height of over 1,700 metres (5,500 ft) in the northeastern state of Sikkim, India. This 18th century monastery is a popular tourist attraction in West Sikkim.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/View_of_rinchenpong_monastery_entry.JPG",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:View_of_rinchenpong_monastery_entry.JPG",
-      "license": "CC BY-SA 3.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-      "author": "Alakananda.s",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Rinchenpong_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
-  },
-  {
-    "slug": "rumtek",
-    "name": "Rumtek Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": 27.28861111,
-    "longitude": 88.56138889,
-    "establishedYear": null,
-    "tradition": "Karma Kagyu",
-    "historicalSummary": "Rumtek Monastery (Tibetan: རུམ་ཐེག་དགོན་པ་, Wylie: rum theg dgon pa), also called the Dharma Chakra Centre, is a gompa located in the Indian state of Sikkim near the capital Gangtok. It is the seat in exile of the Gyalwang Karmapa, inaugurated in 1966 by the 16th Karmapa. It is also a focal point for the sectarian tensions within the Karma Kagyu school of Tibetan Buddhism that characterize the 17th Karmapa controversy.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok,_East_Sikkim_09.jpg",
-      "license": "CC BY 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/4.0",
-      "author": "Anjan Kumar Kundu",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Rumtek_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
-  },
-  {
-    "slug": "sa-ngor-chotshog-centre",
-    "name": "Sa-Ngor-Chotshog Centre",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.341,
-    "longitude": 88.644,
-    "establishedYear": 1961,
-    "tradition": "Sakya",
-    "historicalSummary": "Sa-Ngor-Chotshog Centre is a Buddhist monastery in Sikkim, northeastern India. It is the only monastery in Sikkim that belongs to the Sakyapa sect of Buddhism. It was founded in 1961.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Sa-Ngor-Chotshog_Centre",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.65,
-    "isNew": true
-  },
-  {
-    "slug": "sang",
-    "name": "Sang Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": 1912,
-    "tradition": "Kagyu",
-    "historicalSummary": "Sang Monastery is a Buddhist monastery in Sikkim, northeastern India.\nSang Monastery, the Karma Dubgyu Chokhorling Monastery, was built in 1912 AD. The Monastery belongs to Kagyupa sect of Vajrayana Buddhism\n The Monastery houses two flat stone prints, each bearing one footprint and a hand print of Phaya lama. He was a prominent lama from Tibet who stayed in this Gompa for few years. \nThe Lama spent time meditating in a cave situated at a ravine, nearby.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/9/90/Sang_Monastery%2C_Sikkim_India.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Sang_Monastery,_Sikkim_India.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "author": "Prof Ranga Sai",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Sang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.65,
-    "isNew": true
-  },
-  {
-    "slug": "sanga-choeling",
-    "name": "Sanga Choeling Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": 27.26388889,
-    "longitude": 88.22138889,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "The Sanga Choeling Monastery, also spelt Sange Choeling Monastery (Sikkimese: གསང་སྔགས་ཆོས་གླིང, Wylie: gsang sngags chos gling, THL Sangngak Chö Ling), established in the 17th century by Lama Lhatsün Chempo, is one of the oldest monasteries in Pelling, about 10 km from Gyalshing city in the Gyalshing district in Northeast Indian state of Sikkim. The literal meaning of Sanga Choeling is \"Island of the Guhyamantra teachings\", where gling means a vihara and \"secret Mantra teachings\" is a synonym for \"Vajrayana Buddhism\".\nThe monastery is located on a ridge top above Pelling at a distance of 7 kilometres (4.3 mi) from Pemayangtse Monastery and is accessed by walking the steep hilly track of 4 kilometres (2.5 mi), which traverses through rich forest cover.\nPilgrimage to Sanga Choeling Monastery is undertaken by many Buddhist devotees as part of a religious and heritage circuit encompassing Pemayangtse Monastery, Rabdentse ruins, Khecheopalri Lake, Norbugang Chorten, Dubdi Monastery, Yuksom and Tashiding Monastery.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Full_view_of_Sanga-Choeling_Monastery.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Full_view_of_Sanga-Choeling_Monastery.jpg",
-      "license": "CC BY 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-      "author": "walter callens",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Sanga_Choeling_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
-  },
-  {
-    "slug": "shurishing-yungdrung-dungdrakling",
-    "name": "Shurishing Yungdrung Dungdrakling Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Shurishing Yungdrung Dungdrakling Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Shurishing_Yungdrung_Dungdrakling_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
-  },
-  {
-    "slug": "simik",
-    "name": "Simik Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Simik Monastery is a Buddhist monastery in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Simik_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
-  },
-  {
-    "slug": "sinon",
-    "name": "Sinon Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": 1716,
-    "tradition": null,
-    "historicalSummary": "Sinon Monastery is a Buddhist monastery in Sikkim, northeastern India.Sinon Monastery is located in West Sikkim District. Sinon means 'the suppressor of intense fear'. The monastery was constructed in 1716 and is situated on a hilltop, 10 km from Tashiding. The monastery was built under the leadership of Pedi Wangmo, half-sister of Chogyal Chagdor Namgyal. The famous painting, Pedi Wangmo, can be found in the Sinon Monastery. Another famous Sikkimese artwork found in the monastery is a painting of Arhat Nagasena. The saint's peaceful face is expressed with a minimum of colours and line drawings. The painting displays strong influence of the Ajanta cave paintings.\nThe nearest airport is Civil Enclave Bagdogra",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Sinon_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.5,
-    "isNew": true
-  },
-  {
-    "slug": "taktse-ogyen-choekhorling",
-    "name": "Taktse Ogyen Choekhorling Monastery",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Taktse Ogyen Choekhorling Monastery is a Tibetan Buddhist monastery near Gangtok in Sikkim, northeastern India.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Taktse_Ogyen_Choekhorling_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "NEEDS_REVIEW",
-    "confidence": 0.25,
-    "isNew": true
-  },
-  {
-    "slug": "tashiding",
-    "name": "Tashiding Monastery",
-    "alternateNames": [],
-    "district": "Gyalshing",
-    "latitude": 27.30833333,
-    "longitude": 88.29805556,
-    "establishedYear": 1641,
-    "tradition": "Nyingma",
-    "historicalSummary": "Tashiding Monastery (Sikkimese: བཀྲ་ཤིས་སྡིངས་དགོན་པ་, Wylie: bkra shis sdings dgon pa) is a Buddhist monastery of the Nyingma sect of Tibetan Buddhism in Tashiding, about 27 km from Gyalshing city in Gyalshing district in northeastern Indian state of Sikkim. which is the most sacred and holiest monasteries in Sikkim. It is described as the \"Heart of Sikkim/Denzong\", citing to its importance of religious sacredness. It is located on top of the hill rising between the Rathong chu and the Rangeet River, 40 kilometres (25 mi) from Gyalshing and 19 kilometres (12 mi) to the south east of Yuksam. \nThe annual festival of Bumchu, meaning ~Holy water~ takes place on the 14th and 15th of the 1st month of Tibetan lunar calendar, often around the months of February and March.\nThe festival is believed to predict the upcoming forecasts and events for Sikkim in the coming year. Undoubtedly, one of the most important and holiest festivals for all the Buddhists in Sikkim and around, it also provides for a perfect platform for all those Non-Buddhists who seek a deeper insight into Buddhism and its religious customs, beliefs and rituals.\nHistory of the Festival-\nSomewhere between 755 and 804 CE in Tibet under the reign of King Trisong Deutsen. It was under his rule that Guru Padmasambhava when invited to Tibet performed a holy sadhana and consecrated the land with water from his SACRED VASE, which was then later concealed as a hidden treasure in his most blessed place, the Tashiding Monastery in Sikkim. Somewhere around 17th century, the vase was again discovered by one of the reincarnations of Padmasambhava and it is since that time, this festival again resumed with all its glory and splendour in the hidden and blessed land of Sikkim/Beyul Demozong.\nTashiding is the nearest town to the Tashiding Monastery (Gompa)\nTashiding means \"The Devoted Central Glory\" and the monastery by this name was founded in 1641 by Ngadak Sempa Chempo Phunshok Rigzing who belonged to the Nyingma sect of Tibetan Buddhism. Ngadak was one of the three wise men who held the consecration ceremony crowning the first King of Sikkim at Yuksom. It was extended and renovated in 1717 during the reign of the third Chogyal Chakdor Namgyal. 'Bhumchu Ceremony' or festival is a popular religious festival that is held on the 14th and 15th day of the first month of Tibetan Calendar.\nThe Tashiding Monastery is part of Buddhist religious pilgrimage circuit starting with the first monastery at Yuksam in Sikkim known as the Dubdi Monastery, Norbugang Chorten, Pemayangtse Monastery, the Rabdentse ruins, the Sanga Choeling Monastery, and the Khecheopalri Lake.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Mani_stone_slabs_outside_Tashiding_Monastery.jpg",
-      "license": "CC BY 2.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by/2.0",
-      "author": "walter callens",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Tashiding_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": false
-  },
-  {
-    "slug": "tendong-gumpa",
-    "name": "Tendong Gumpa",
-    "alternateNames": [],
-    "district": "Namchi",
-    "latitude": 27.20611111,
-    "longitude": 88.40805556,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Tendong Dichhen Salhun Gumpa or Tendong Gumpa as commonly known, is a Buddhist monastery situated atop 8530 ft. altitude from mean sea level (msl). This monastery is surrounded by lush green virgin reserve forest and nearest hamlet is Damthang which is at a six kilometer walking distance. Because of its seclusion, there are no resident monks/nuns in this monastery.\nGomchen Pema Chewang Tamang from Boomtar, Namchi, South Sikkim, was the main founder and head lama of Tendong Dichhen Salhun Gumpa. He did his spiritual studies in Tibet and acquired the title of ‘Gomchen’, (the great meditator) from an eminent Rempoche Yongzi Dangi Wongpo of Namdrolling Gumpa. In Tibet, one of his classmates happened to be Maharani Kunshang Dechen wife of Maharaja Sir Tashi Namgyal of Sikkim. Being a brilliant student, he had a cordial relation with the Maharani. Maharaja & Maharani later extended great help in building the monastery. He was also one of the Twenty-Four founding members of the world-famous Namgyal Institute of Tibetology, Deorali, Gangtok. He possessed a multi-talented personality, yet calm, gentle and simple, spent most of his time meditating in loneliness and sometimes helping the society of all spheres in their spiritual needs.\nA small holy cave is also present where Sangey Lama Ghesela, founder of Aahley Dichhen Cholling Gumpa had meditated for 6 months. Tendong Peak also houses Tendong Lho Rumfaat of Lepcha community.\nThere is an approx. 50 ft. tall tower under Sikkim Tourism Department from where one can have a 360 degree scenic view of the mountain range and also offers a good view of majestic Kanchenjunga range. On a clear morning, one can view a beautiful sunrise too.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Gumpa1.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Gumpa1.jpg",
-      "license": "CC BY-SA 4.0",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-      "author": "Atulkini",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Tendong_Gumpa",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": true
-  },
-  {
-    "slug": "tholung",
-    "name": "Tholung Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": 27.637,
-    "longitude": 88.461,
-    "establishedYear": null,
-    "tradition": "Nyingma",
-    "historicalSummary": "Tholung Monastery (Tibetan: ཋོལུང་དགོན་པ་, Wylie: Tho Lung dgon pa) is a gompa located in remote upper Dzongu, in the buffer zone of Khangchendzonga National Park.  It is considered one of the most sacred monasteries in Sikkim. Tholung literally means Areasima place or Areasima country.\nThis gompa was originally constructed during the beginning of 18th century by Chogyal Phuntsog Namgyal II. It includes unique and prized manuscripts and relics from other gompas that were placed there for protection at the time of the Nepalese invasion of the area during the end of the 17th and beginning of the 19th centuries. The monastery contains a metal Chorten, in which encloses the ashes of an incarnate of the revered Lama Latsun Chembo. All of these artifacts are contained within over a dozen boxes supervised by the Government of Sikkim. Every three years, the artifacts are unveiled to the public during the Kamsil Ceremony in April.\nIt follows the Nyingmapa school of Tibetan Buddhism. It is a World Heritage Property.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Tholung_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.65,
-    "isNew": true
-  },
-  {
-    "slug": "tsuklakhang-palace",
-    "name": "Tsuklakhang Palace",
-    "alternateNames": [],
-    "district": "Gangtok",
-    "latitude": 27.326,
-    "longitude": 88.615,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Tsuklakhang Palace or Tsuklakhang Royal Chapel and Monastery (Sikkimese: གཙུག་ལག་ཁང; Wylie: gtsug-tag-khang) is a Buddhist palatial monastery in Gangtok, Sikkim, India.\nThe Royal Chapel of the Chogyals is the main centre for prayers with an assembly hall in the centre and large depository of Buddhist scriptures and literature and contains altars which are orated with Buddha, Bodhisattvas and Tantric deities. Tsukhalang Palace which served as a location for coronation, marriages and victory ceremonies among the Sikkimese royalty.\nThe palace celebrates Pang Lhabsol, held in mid September in honor of Mount Khangchendzonga, and Kagyad is celebrated in early December.",
-    "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Tsuklakhang.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Tsuklakhang.jpg",
-      "license": "CC BY-SA 2.5",
-      "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.5",
-      "author": "No machine-readable author provided. Bogman assumed (based on copyright claims).",
-      "attributionRequired": true
-    },
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Tsuklakhang_Palace",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "VERIFIED",
-    "confidence": 0.9,
-    "isNew": true
-  },
-  {
-    "slug": "yangyang",
-    "name": "Yangyang Monastery",
-    "alternateNames": [],
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "establishedYear": null,
-    "tradition": null,
-    "historicalSummary": "Yangyang or Yangang Monastery is a Buddhist monastery in Yangang, Sikkim, northeastern India.\nYangang Tashi Palding Monasery was established by Vth Lhatsun Pema Dechhen Gyatso in 1787 A.D.  In 1841 it was renovated.",
-    "image": null,
-    "sources": [
-      {
-        "name": "Wikipedia",
-        "type": "encyclopedia",
-        "url": "https://en.wikipedia.org/wiki/Yangyang_Monastery",
-        "retrievedAt": "2026-08-16"
-      }
-    ],
-    "lastVerifiedAt": "2026-08-16",
-    "status": "PARTIALLY_VERIFIED",
-    "confidence": 0.5,
-    "isNew": true
-  }
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Tsuklakhang_Palace",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "VERIFIED",
+  "confidence": 0.9,
+  "isNew": true,
+  "catalogued": true,
+  "cataloguedAs": "tsuklakhang"
+ },
+ {
+  "slug": "yangyang",
+  "name": "Yangyang Monastery",
+  "alternateNames": [],
+  "district": null,
+  "latitude": null,
+  "longitude": null,
+  "establishedYear": null,
+  "tradition": null,
+  "historicalSummary": "Yangyang or Yangang Monastery is a Buddhist monastery in Yangang, Sikkim, northeastern India.\nYangang Tashi Palding Monasery was established by Vth Lhatsun Pema Dechhen Gyatso in 1787 A.D.  In 1841 it was renovated.",
+  "image": null,
+  "sources": [
+   {
+    "name": "Wikipedia",
+    "type": "encyclopedia",
+    "url": "https://en.wikipedia.org/wiki/Yangyang_Monastery",
+    "retrievedAt": "2026-08-16"
+   }
+  ],
+  "lastVerifiedAt": "2026-08-16",
+  "status": "PARTIALLY_VERIFIED",
+  "confidence": 0.5,
+  "isNew": true
+ }
 ]

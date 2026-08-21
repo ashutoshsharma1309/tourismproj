@@ -137,7 +137,29 @@ export function representativePhoto(
   slug: string,
 ): GalleryPhoto | undefined {
   const photos = gallery(scope, slug);
-  return photos.find(depictsPlace) ?? photos[0];
+
+  /*
+   * Prefer a frame that NAMES the subject.
+   *
+   * Rongli's gallery holds a photograph captioned "la rivière de Rongli",
+   * taken by the 1922 Everest expedition — an actual picture of the place.
+   * It also holds a Kangchenjunga shot that arrived on category evidence.
+   * Neither is a specimen macro, so the old rule (first non-specimen) handed
+   * the lead slot to the mountain, and a page about a border town led with a
+   * photograph of a peak eighty kilometres away.
+   *
+   * Matching is squashed to letters and digits so a caption can spell the
+   * place differently from the slug — "Khecheopalri" against
+   * "khecheopalri-lake", "Zuluk" against "dzuluk" — the same tolerance the
+   * gallery audit already applies.
+   */
+  const key = slug.replace(/[^a-z0-9]/gi, "").toLowerCase();
+  const names = (photo: GalleryPhoto) => {
+    const text = `${photo.file} ${photo.caption ?? ""}`.replace(/[^a-z0-9]/gi, "").toLowerCase();
+    return key.length >= 5 && text.includes(key);
+  };
+
+  return photos.find((photo) => names(photo) && depictsPlace(photo)) ?? photos.find(depictsPlace) ?? photos[0];
 }
 
 /**

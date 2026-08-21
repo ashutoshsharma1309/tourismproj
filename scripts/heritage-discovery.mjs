@@ -122,11 +122,112 @@ async function fetchImageLicense(fileUrl) {
 
 const norm = (s) => s.toLowerCase().replace(/monastery|gompa|gonpa|\s|[^a-z]/g, "");
 
+/**
+ * Guess a district from an article's prose.
+ *
+ * WHY THE ORDER MATTERS
+ * ---------------------
+ * This used to return on the first alias that appeared anywhere in the text,
+ * which is how Phodong — forty kilometres north of the capital, in Mangan —
+ * came out as "Gangtok": its article says it stands 38 km from Gangtok, and
+ * that sentence was the first match. Enchey came out as "Namchi" the same way.
+ *
+ * An explicit "… District" phrase is a statement about where the place IS. A
+ * bare town name is usually a statement about how far it is from somewhere
+ * else. So the explicit form is tried first across every alias, and the loose
+ * form is only a fallback. It is still a guess, which is why reconcile() below
+ * overrides it wherever the published catalogue actually knows.
+ */
 function inferDistrict(text) {
+  for (const [alias, district] of Object.entries(DISTRICT_ALIASES)) {
+    if (new RegExp(`\\b${alias}\\s+(?:district|District)\\b`, "i").test(text)) {
+      return DISTRICT_ALIASES[alias] ?? district;
+    }
+  }
   for (const [alias, district] of Object.entries(DISTRICT_ALIASES)) {
     if (new RegExp(`\\b${alias}\\b`, "i").test(text)) return DISTRICT_ALIASES[alias] ?? district;
   }
   return null;
+}
+
+/**
+ * The published catalogue is the authority.
+ *
+ * This feed is research output — it is read by scripts, never by a page — but
+ * wrong data in the repository is still wrong data, and it was contradicting
+ * the shipped catalogue on four monasteries. Where a discovered record is the
+ * same site as a curated one, the curated district wins and the record is
+ * marked as already catalogued, so a later pass cannot mistake it for a new
+ * find under a second spelling ("Kewwzing" beside the curated "Kewzing", a
+ * "Tsuklakhang Palace" on the same coordinate as "Tsuklakhang").
+ */
+function reconcile(records) {
+  let curated = [];
+  try {
+    const raw = JSON.parse(
+      readFileSync("src/data/generated/monasteries.curated.json", "utf8"),
+    );
+    curated = Array.isArray(raw) ? raw : (Object.values(raw).find(Array.isArray) ?? []);
+  } catch {
+    return records;
+  }
+  const byKey = new Map(curated.map((m) => [norm(m.slug), m]));
+
+  /* One transposed or doubled letter is a spelling of the same monastery, not
+     a second monastery: the feed carried "Kewwzing" beside the curated
+     "Kewzing". A single-edit distance is tight enough that no two real Sikkim
+     monasteries collide under it. */
+  const withinOneEdit = (a, b) => {
+    if (Math.abs(a.length - b.length) > 1) return false;
+    let i = 0;
+    let j = 0;
+    let edits = 0;
+    while (i < a.length && j < b.length) {
+      if (a[i] === b[j]) {
+        i += 1;
+        j += 1;
+        continue;
+      }
+      if (++edits > 1) return false;
+      if (a.length > b.length) i += 1;
+      else if (b.length > a.length) j += 1;
+      else {
+        i += 1;
+        j += 1;
+      }
+    }
+    return edits + (a.length - i) + (b.length - j) <= 1;
+  };
+
+  /* And the same building under a longer name: the feed carried a
+     "Tsuklakhang Palace" beside the curated "Tsuklakhang". Coordinates would
+     be the better test, but monasteries.curated.json holds none — it records
+     only slug, name, district, tradition, established year and status — so
+     containment of one normalised slug within the other is what is available.
+     Both directions, because either side may be the longer name. */
+  const contains = (record) => {
+    const key = norm(record.slug);
+    return curated.find((m) => {
+      const other = norm(m.slug);
+      if (other.length < 6 || key.length < 6) return false;
+      return key !== other && (key.includes(other) || other.includes(key));
+    });
+  };
+
+  return records.map((record) => {
+    const key = norm(record.slug);
+    const match =
+      byKey.get(key) ??
+      curated.find((m) => withinOneEdit(norm(m.slug), key)) ??
+      contains(record);
+    if (!match) return record;
+    return {
+      ...record,
+      district: match.district ?? record.district,
+      catalogued: true,
+      cataloguedAs: match.slug,
+    };
+  });
 }
 
 function inferEstablished(text) {
@@ -176,7 +277,7 @@ async function main() {
     console.log(`  ${category}: ${members.length} articles`);
   }
 
-  const records = [];
+  let records = [];
   const rejected = [];
   const seen = new Map();
 
@@ -274,6 +375,7 @@ async function main() {
       "Confidence reflects evidence found, not completeness of the page. Nothing here is published without passing the VERIFIED gate or explicit human review.",
   };
 
+  records = reconcile(records);
   writeFileSync(
     "src/data/generated/monasteries.discovered.json",
     JSON.stringify(records, null, 2) + "\n",
