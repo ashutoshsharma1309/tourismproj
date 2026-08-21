@@ -3,7 +3,7 @@
     "route": "/",
     "violations": [],
     "keyboard": {
-      "focusableCount": 121
+      "focusableCount": 123
     },
     "firstFocus": {
       "tag": "a",
@@ -15,7 +15,7 @@
     "route": "/monasteries",
     "violations": [],
     "keyboard": {
-      "focusableCount": 52
+      "focusableCount": 53
     },
     "firstFocus": {
       "tag": "a",
@@ -27,7 +27,7 @@
     "route": "/monasteries/rumtek",
     "violations": [],
     "keyboard": {
-      "focusableCount": 78
+      "focusableCount": 79
     },
     "firstFocus": {
       "tag": "a",
@@ -39,7 +39,7 @@
     "route": "/stories",
     "violations": [],
     "keyboard": {
-      "focusableCount": 133
+      "focusableCount": 134
     },
     "firstFocus": {
       "tag": "a",
@@ -51,7 +51,7 @@
     "route": "/stories/the-throne-of-stone-at-norbugang",
     "violations": [],
     "keyboard": {
-      "focusableCount": 44
+      "focusableCount": 46
     },
     "firstFocus": {
       "tag": "a",
@@ -63,7 +63,31 @@
     "route": "/hotels",
     "violations": [],
     "keyboard": {
-      "focusableCount": 99
+      "focusableCount": 141
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Skip to content",
+      "outline": true
+    }
+  },
+  {
+    "route": "/stays/may-fair-resort",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 40
+    },
+    "firstFocus": {
+      "tag": "a",
+      "text": "Skip to content",
+      "outline": true
+    }
+  },
+  {
+    "route": "/culture",
+    "violations": [],
+    "keyboard": {
+      "focusableCount": 173
     },
     "firstFocus": {
       "tag": "a",
@@ -75,7 +99,7 @@
     "route": "/planner",
     "violations": [],
     "keyboard": {
-      "focusableCount": 43
+      "focusableCount": 42
     },
     "firstFocus": {
       "tag": "a",
@@ -87,7 +111,7 @@
     "route": "/planner/result?interests=Monasteries&budget=30000&duration=4&travellers=2&style=balanced&tier=3-star",
     "violations": [],
     "keyboard": {
-      "focusableCount": 35
+      "focusableCount": 36
     },
     "firstFocus": {
       "tag": "a",
@@ -99,7 +123,7 @@
     "route": "/preservation",
     "violations": [],
     "keyboard": {
-      "focusableCount": 74
+      "focusableCount": 75
     },
     "firstFocus": {
       "tag": "a",
@@ -111,7 +135,7 @@
     "route": "/permits",
     "violations": [],
     "keyboard": {
-      "focusableCount": 28
+      "focusableCount": 29
     },
     "firstFocus": {
       "tag": "a",
@@ -123,7 +147,7 @@
     "route": "/responsible",
     "violations": [],
     "keyboard": {
-      "focusableCount": 27
+      "focusableCount": 28
     },
     "firstFocus": {
       "tag": "a",
@@ -135,7 +159,7 @@
     "route": "/places/tsomgo-lake",
     "violations": [],
     "keyboard": {
-      "focusableCount": 47
+      "focusableCount": 48
     },
     "firstFocus": {
       "tag": "a",
