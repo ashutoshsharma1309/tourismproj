@@ -18,7 +18,17 @@ chromedriver/
 # Community submissions awaiting curator review, and their uploaded media.
 # Runtime state, not source — never committed.
 .data/
-voice-benchmark/
+# Voice benchmark: the renders are ~100 MB of regenerable audio, the results
+# are 92 KB of evidence the code cites by path — scripts/heritage-audio-agent
+# points a reader at voice-benchmark/v2/, and voice-bench-v2.mjs READS
+# test-scripts.json from here, so a clone without it cannot re-run the bench.
+# Results and scripts tracked; renders and clips not.
+voice-benchmark/*
+!voice-benchmark/*.json
+!voice-benchmark/*/
+voice-benchmark/*/*
+!voice-benchmark/*/*.json
+!voice-benchmark/*/*.txt
 
 # Retired audio kept on disk for recovery, and the agent's own generation logs.
 # The retirement decision is documented in src/data/audio.ts; the bytes are not

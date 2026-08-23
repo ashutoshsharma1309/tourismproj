@@ -1,0 +1,4 @@
+[
+  { "lang": "en", "model": "say-Daniel", "engine": "macOS say", "wer": 20.3, "cer": 7.0, "rmsDbfs": -19.87 },
+  { "lang": "hi", "model": "say-Lekha",  "engine": "macOS say", "wer": 41.4, "cer": 15.9, "rmsDbfs": -18.26 }
+]
