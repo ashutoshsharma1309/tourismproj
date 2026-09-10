@@ -17,17 +17,33 @@ import * as schema from "@/db/schema";
  * one long-lived process.
  */
 const connectionString = process.env.DATABASE_URL;
-if (!connectionString) {
-  throw new Error(
-    "DATABASE_URL is not set. Copy .env.example to .env.local and fill it in.",
-  );
-}
+
+/**
+ * Whether a Postgres connection is configured at all.
+ *
+ * WHY THIS IS A FLAG AND NOT A THROW.
+ * This module used to throw at import time when DATABASE_URL was unset. That
+ * made a missing environment variable a BUILD failure rather than a missing
+ * feature, and it broke the contract .env.example states in its first line:
+ * every value there is optional, and the app builds and deploys with the file
+ * empty. It does, because the archive ships as typed data in src/data — only
+ * the (explore) surface reads Postgres.
+ *
+ * So an unconfigured database now behaves the way an unconfigured Supabase
+ * does in lib/supabase.ts: the feature that needs it reports that it has
+ * nothing, and every other page renders exactly as before. Callers in
+ * db/queries check this flag; absence is a first-class state here as
+ * everywhere else in this project.
+ */
+export const hasDatabase = Boolean(connectionString);
 
 const globalForDb = globalThis as unknown as { __darshanSql?: ReturnType<typeof postgres> };
 
 const client =
   globalForDb.__darshanSql ??
-  postgres(connectionString, {
+  /* Unconfigured, this never connects: postgres-js is lazy, and no query
+     reaches it because every caller is gated on `hasDatabase` first. */
+  postgres(connectionString ?? "postgres://unset@127.0.0.1:5432/unset", {
     max: process.env.VERCEL ? 1 : 5,
     /* Dates come back as strings so a `date` column is never silently shifted
        into the server's timezone. Calendar days are not instants. */

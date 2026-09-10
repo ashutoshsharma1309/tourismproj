@@ -1,12 +1,18 @@
 import { and, asc, eq, sql } from "drizzle-orm";
 
-import { db } from "@/db";
+import { db, hasDatabase } from "@/db";
 import { audioGuides, destinations, media, sites, stories } from "@/db/schema";
 
 /**
  * Every read of destination content. Components never touch `src/db` directly
  * (CLAUDE.md §4) — this is the whole query surface, so it can be audited and
  * cached in one place.
+ *
+ * Each function opens by checking `hasDatabase`. With no DATABASE_URL set the
+ * (explore) surface reports that it holds nothing — no destinations, no sites
+ * — and the rest of the site, which reads typed data in src/data rather than
+ * Postgres, is untouched. That is the same shape absence takes everywhere
+ * else here: published as missing, never faked and never fatal.
  */
 
 export type DestinationRow = typeof destinations.$inferSelect;
@@ -14,6 +20,9 @@ export type SiteRow = typeof sites.$inferSelect;
 
 /** Counts for the six doors on a destination hub. One query, not six. */
 export async function getHubCounts(destinationId: string) {
+  if (!hasDatabase) {
+    return { sites: 0, stories: 0, stays: 0, itineraries: 0, culture: 0, audioLocales: 0 };
+  }
   const [row] = await db.execute<{
     sites: number; stories: number; stays: number; itineraries: number;
     culture: number; audio_locales: number;
@@ -39,6 +48,7 @@ export async function getHubCounts(destinationId: string) {
 
 /** Slugs for `generateStaticParams`. Published only. */
 export async function publishedDestinationSlugs() {
+  if (!hasDatabase) return [];
   const rows = await db
     .select({ slug: destinations.slug })
     .from(destinations)
@@ -48,6 +58,7 @@ export async function publishedDestinationSlugs() {
 }
 
 export async function listDestinations() {
+  if (!hasDatabase) return [];
   return db
     .select({
       id: destinations.id,
@@ -71,6 +82,7 @@ export async function listDestinations() {
 }
 
 export async function getDestinationBySlug(slug: string) {
+  if (!hasDatabase) return null;
   const [row] = await db
     .select()
     .from(destinations)
@@ -87,6 +99,7 @@ export async function getDestinationBySlug(slug: string) {
  * database-driven page slower than the hardcoded one it replaced.
  */
 export async function getSitesForDestination(destinationId: string) {
+  if (!hasDatabase) return [];
   return db
     .select({
       id: sites.id,
@@ -126,6 +139,7 @@ export async function getSitesForDestination(destinationId: string) {
 }
 
 export async function getSite(destinationSlug: string, siteSlug: string) {
+  if (!hasDatabase) return null;
   const [row] = await db
     .select({ site: sites, destination: destinations })
     .from(sites)
@@ -142,6 +156,7 @@ export async function getSite(destinationSlug: string, siteSlug: string) {
 }
 
 export async function getSiteMedia(siteId: string) {
+  if (!hasDatabase) return [];
   return db
     .select()
     .from(media)
@@ -151,6 +166,7 @@ export async function getSiteMedia(siteId: string) {
 
 /** Audio guides for a site, in the locale order the v1 selector used. */
 export async function getSiteAudio(siteId: string) {
+  if (!hasDatabase) return [];
   return db
     .select()
     .from(audioGuides)
@@ -159,6 +175,7 @@ export async function getSiteAudio(siteId: string) {
 }
 
 export async function getStoriesForSite(siteId: string) {
+  if (!hasDatabase) return [];
   return db
     .select({
       slug: stories.slug,
@@ -173,6 +190,7 @@ export async function getStoriesForSite(siteId: string) {
 
 /** Every site pair for `generateStaticParams` on the site route. */
 export async function publishedSitePaths() {
+  if (!hasDatabase) return [];
   const rows = await db
     .select({ destination: destinations.slug, site: sites.slug })
     .from(sites)
