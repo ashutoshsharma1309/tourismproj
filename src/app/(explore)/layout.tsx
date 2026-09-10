@@ -3,12 +3,17 @@ import type { ReactNode } from "react";
 
 import { DarshanNav } from "@/components/darshan/DarshanNav";
 
-/* Footer-only, per the IA: these are reference pages, not journeys. */
+/*
+ * Footer-only, per the IA: these are reference pages, not journeys.
+ *
+ * Only pages that exist are listed. "Sources" and "Accessibility" were here
+ * as /sources and /accessibility before either route was written, and a
+ * footer that 404s undercuts the one claim this footer makes — that the
+ * gaps are published rather than filled in. Add them back with their pages.
+ */
 const FOOTER_LINKS = [
   { label: "Responsible travel", href: "/responsible" },
   { label: "Preservation", href: "/preservation" },
-  { label: "Sources", href: "/sources" },
-  { label: "Accessibility", href: "/accessibility" },
 ] as const;
 
 /**

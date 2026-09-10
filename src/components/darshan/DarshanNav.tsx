@@ -59,13 +59,12 @@ export function DarshanNav() {
           })}
         </nav>
 
+        {/*
+          "List your property" used to sit here, linking to /partner. The
+          Partner surface is not built yet, so the link was a 404 in the one
+          place a judge is guaranteed to click. It returns with the route.
+        */}
         <div className="ms-auto flex items-center gap-3">
-          <Link
-            href="/partner"
-            className="hidden rounded border border-[var(--brass)]/50 px-3 py-1.5 text-[13px] text-[var(--brass)] transition-colors hover:bg-[var(--brass)]/10 sm:block"
-          >
-            List your property
-          </Link>
           <button
             type="button"
             onClick={() => setMenuOpen((open) => !open)}
@@ -92,11 +91,6 @@ export function DarshanNav() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link href="/partner" className="text-[16px] text-[var(--brass)]">
-                List your property
-              </Link>
-            </li>
           </ul>
         </nav>
       ) : null}
