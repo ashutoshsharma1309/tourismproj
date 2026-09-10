@@ -1,0 +1,92 @@
+{
+  "generatedAt": "2026-08-20",
+  "agent": "Heritage Audio Agent",
+  "method": "Scripts assembled from verified record fields only; no generative prose. Sourced summary sentences are quoted from the cited article. Narration is machine-synthesised and disclosed as such in the UI.",
+  "languages": {
+    "supported": [
+      {
+        "code": "en",
+        "voice": "en_US-ryan-high",
+        "label": "English"
+      },
+      {
+        "code": "hi",
+        "voice": "Lekha",
+        "label": "हिन्दी"
+      },
+      {
+        "code": "bn",
+        "voice": "Piya",
+        "label": "বাংলা"
+      },
+      {
+        "code": "ne",
+        "voice": "ne_NP-google-medium",
+        "label": "नेपाली"
+      },
+      {
+        "code": "ja",
+        "voice": "ja_JA-hi_fi_captain-medium",
+        "label": "日本語"
+      },
+      {
+        "code": "ko",
+        "voice": "Yuna",
+        "label": "한국어"
+      },
+      {
+        "code": "zh",
+        "voice": "Tingting",
+        "label": "中文"
+      },
+      {
+        "code": "ar",
+        "voice": "Majed",
+        "label": "العربية"
+      },
+      {
+        "code": "ru",
+        "voice": "ru_RU-irina-medium",
+        "label": "Русский"
+      },
+      {
+        "code": "de",
+        "voice": "de_DE-thorsten-high",
+        "label": "Deutsch"
+      },
+      {
+        "code": "fr",
+        "voice": "fr_FR-tom-medium",
+        "label": "Français"
+      },
+      {
+        "code": "es",
+        "voice": "es_MX-claude-high",
+        "label": "Español"
+      }
+    ],
+    "blocked": [
+      {
+        "code": "as",
+        "label": "Assamese",
+        "blocker": "No Assamese speech voice is available on this platform."
+      },
+      {
+        "code": "dz",
+        "label": "Dzongkha",
+        "blocker": "No Dzongkha speech voice is available, and this project has no Dzongkha speaker to review a translation. Publishing unreviewed Dzongkha narration about Buddhist practice would risk exactly the kind of error this archive exists to avoid."
+      }
+    ]
+  },
+  "totals": {
+    "eligibleMonasteries": 15,
+    "guidesGenerated": 15,
+    "monasteriesWithAudio": 15,
+    "withinTargetDuration": 15,
+    "overMaximumDuration": 0,
+    "skipped": 0,
+    "skippedDetail": []
+  },
+  "durationNote": "Scripts are composed from a fixed template plus verified per-site facts, so every language lands inside the 60-90 second window by construction.",
+  "skipped": []
+}

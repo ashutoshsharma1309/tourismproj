@@ -1,0 +1,26 @@
+{
+  "_comment": "The standardised pronunciation stress test. Every candidate voice reads exactly this, so differences heard between renders are differences between voices and nothing else. Content is drawn from the archive's own verified records — dates, names and figures are the ones already sourced in src/data, not invented for the test.",
+  "_requires": [
+    "Sikkim",
+    "Gangtok",
+    "Rumtek",
+    "Pemayangtse",
+    "Tashiding",
+    "Pang Lhabsol",
+    "dates",
+    "numbers",
+    "cultural terms"
+  ],
+  "en": "Welcome to Sikkim, in the eastern Himalaya. Above Gangtok stands Rumtek Monastery, seat of the Karma Kagyu lineage, established in 1966. Further west, Pemayangtse was founded in 1705, and Tashiding in 1717. Each September, the festival of Pang Lhabsol honours Khangchendzonga, the guardian mountain. Fifteen monasteries are catalogued here, with 207 photographs. Every claim traces to a named source.",
+  "hi": "पूर्वी हिमालय में बसे सिक्किम में आपका स्वागत है। गंगटोक के ऊपर रुमटेक मठ स्थित है, जो कर्म काग्यू परंपरा का केंद्र है और 1966 में स्थापित हुआ। पश्चिम में पेमायंग्त्से की स्थापना 1705 में हुई और ताशिदिंग की 1717 में। हर सितंबर, पांग ल्हाब्सोल का उत्सव रक्षक पर्वत खांगचेंदज़ोंगा के सम्मान में मनाया जाता है। यहाँ पंद्रह मठ दर्ज हैं, और 207 तस्वीरें। हर तथ्य का एक स्रोत है।",
+  "de": "Willkommen in Sikkim, im östlichen Himalaya. Oberhalb von Gangtok liegt das Kloster Rumtek, Sitz der Karma-Kagyü-Linie, gegründet 1966. Weiter westlich wurde Pemayangtse 1705 gegründet, Tashiding 1717. Jeden September ehrt das Fest Pang Lhabsol den Khangchendzonga, den Schutzberg. Fünfzehn Klöster sind hier verzeichnet, mit 207 Fotografien. Jede Angabe ist auf eine benannte Quelle zurückzuführen.",
+  "fr": "Bienvenue au Sikkim, dans l'Himalaya oriental. Au-dessus de Gangtok se dresse le monastère de Rumtek, siège de la lignée Karma Kagyu, fondé en 1966. Plus à l'ouest, Pemayangtse fut fondé en 1705, et Tashiding en 1717. Chaque mois de septembre, la fête de Pang Lhabsol honore le Khangchendzonga, la montagne gardienne. Quinze monastères sont répertoriés ici, avec 207 photographies. Chaque affirmation renvoie à une source nommée.",
+  "es": "Bienvenido a Sikkim, en el Himalaya oriental. Sobre Gangtok se alza el monasterio de Rumtek, sede del linaje Karma Kagyu, fundado en 1966. Más al oeste, Pemayangtse fue fundado en 1705, y Tashiding en 1717. Cada septiembre, la fiesta de Pang Lhabsol honra al Khangchendzonga, la montaña guardiana. Quince monasterios están catalogados aquí, con 207 fotografías. Cada afirmación remite a una fuente con nombre.",
+  "bn": "পূর্ব হিমালয়ের সিকিমে আপনাকে স্বাগতম। গ্যাংটকের উপরে দাঁড়িয়ে আছে Rumtek মঠ, কর্ম কাগ্যু ধারার আসন, প্রতিষ্ঠিত ১৯৬৬ সালে। আরও পশ্চিমে Pemayangtse প্রতিষ্ঠিত হয় ১৭০৫ সালে, এবং Tashiding ১৭১৭ সালে। প্রতি সেপ্টেম্বরে Pang Lhabsol উৎসবে রক্ষাকর্তা পর্বত Khangchendzonga-কে সম্মান জানানো হয়। এখানে পনেরোটি মঠ তালিকাভুক্ত, ২০১টি আলোকচিত্র সহ। প্রতিটি তথ্যের একটি নামযুক্ত উৎস আছে।",
+  "ne": "पूर्वी हिमालयको सिक्किममा तपाईंलाई स्वागत छ। गान्तोकमाथि Rumtek गुम्बा अवस्थित छ, कर्म काग्यू परम्पराको केन्द्र, सन् १९६६ मा स्थापित। पश्चिमतिर Pemayangtse सन् १७०५ मा र Tashiding सन् १७१७ मा स्थापना भएका हुन्। हरेक सेप्टेम्बरमा Pang Lhabsol पर्वले रक्षक हिमाल Khangchendzonga लाई सम्मान गर्छ। यहाँ पन्ध्र गुम्बा सूचीबद्ध छन्, र २०१ तस्बिरहरू। हरेक दाबीको नामसहितको स्रोत छ।",
+  "ja": "東ヒマラヤのシッキムへようこそ。ガントクの高台にルムテック僧院があります。カルマ・カギュ派の本山で、1966年に創建されました。西にはペマヤンツェ僧院が1705年に、タシディン僧院が1717年に開かれました。毎年9月、パン・ラプソルの祭りが守護の山カンチェンジュンガを讃えます。ここには15の僧院と201枚の写真が収められています。すべての記述には出典があります。",
+  "ko": "동히말라야의 시킴에 오신 것을 환영합니다. 강토크 위에는 카르마 카규파의 본산인 룸텍 사원이 있으며, 1966년에 세워졌습니다. 서쪽으로는 페마양체 사원이 1705년에, 타시딩 사원이 1717년에 창건되었습니다. 매년 9월, 팡 라브솔 축제가 수호의 산 칸첸중가를 기립니다. 이곳에는 열다섯 곳의 사원과 201장의 사진이 정리되어 있습니다. 모든 기술에는 출처가 있습니다.",
+  "zh": "欢迎来到东喜马拉雅的锡金。冈托克之上坐落着隆德寺，噶玛噶举派的祖庭，建于一九六六年。再往西，白玛央孜寺建于一七零五年，扎西顶寺建于一七一七年。每年九月，邦拉布索节都会祭祀守护之山干城章嘉。这里收录了十五座寺院和二百零一张照片。每一项记述都有确切的出处。",
+  "ar": "أهلاً بكم في سيكيم، في شرق الهيمالايا. فوق غانغتوك يقوم دير Rumtek، مقر سلالة كارما كاغيو، وقد أُسّس عام 1966. وإلى الغرب أُسّس دير Pemayangtse عام 1705، ودير Tashiding عام 1717. وفي أيلول من كل عام، يُكرّم مهرجان Pang Lhabsol جبل Khangchendzonga، الجبل الحارس. هنا خمسة عشر ديراً مُوثّقاً، ومئتان وواحدة من الصور. ولكل معلومة مصدر مُسمّى.",
+  "ru": "Добро пожаловать в Сикким, в Восточные Гималаи. Над Гангтоком стоит монастырь Румтек, престол линии Карма Кагью, основанный в 1966 году. Западнее Пемаянгце был основан в 1705 году, а Ташидинг — в 1717-м. Каждый сентябрь праздник Панг Лхабсол чтит Кангченджангу, гору-хранителя. Здесь описаны пятнадцать монастырей и 201 фотография. Каждое утверждение опирается на названный источник."
+}

@@ -1,0 +1,2137 @@
+{
+ "/images/capsule/agra/agra-fort.jpg": {
+  "w": 1920,
+  "h": 1200,
+  "y": 50
+ },
+ "/images/capsule/agra/akbars-tomb.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/agra/aram-bagh.jpg": {
+  "w": 1920,
+  "h": 1272,
+  "y": 50
+ },
+ "/images/capsule/agra/chini-ka-rauza.jpg": {
+  "w": 1920,
+  "h": 1272,
+  "y": 50
+ },
+ "/images/capsule/agra/craft-pietra-dura.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/agra/craft-zari.jpg": {
+  "w": 917,
+  "h": 660,
+  "y": 50
+ },
+ "/images/capsule/agra/fatehpur-sikri.jpg": {
+  "w": 1920,
+  "h": 1657,
+  "y": 42
+ },
+ "/images/capsule/agra/festival-diwali.jpg": {
+  "w": 1920,
+  "h": 1513,
+  "y": 50
+ },
+ "/images/capsule/agra/food-mughlai-cuisine.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/agra/guru-ka-tal.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/agra/itmad-ud-daulah.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/agra/jahangiri-mahal.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/agra/jama-masjid-agra.jpg": {
+  "w": 1920,
+  "h": 986,
+  "y": 50
+ },
+ "/images/capsule/agra/mariam-tomb.jpg": {
+  "w": 1920,
+  "h": 1062,
+  "y": 50
+ },
+ "/images/capsule/agra/mehtab-bagh.jpg": {
+  "w": 1920,
+  "h": 1079,
+  "y": 50
+ },
+ "/images/capsule/agra/moti-masjid-agra.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/agra/taj-mahal.jpg": {
+  "w": 1920,
+  "h": 1262,
+  "y": 50
+ },
+ "/images/capsule/delhi/agrasen-ki-baoli.jpg": {
+  "w": 1920,
+  "h": 2882,
+  "y": 25
+ },
+ "/images/capsule/delhi/craft-kundan.jpg": {
+  "w": 1920,
+  "h": 1727,
+  "y": 42
+ },
+ "/images/capsule/delhi/craft-minakari.jpg": {
+  "w": 1280,
+  "h": 1381,
+  "y": 33
+ },
+ "/images/capsule/delhi/craft-mughal-painting.jpg": {
+  "w": 1280,
+  "h": 1785,
+  "y": 33
+ },
+ "/images/capsule/delhi/craft-zardozi.jpg": {
+  "w": 1280,
+  "h": 1280,
+  "y": 42
+ },
+ "/images/capsule/delhi/festival-diwali.jpg": {
+  "w": 1920,
+  "h": 1513,
+  "y": 50
+ },
+ "/images/capsule/delhi/festival-eid-al-fitr.jpg": {
+  "w": 1920,
+  "h": 1920,
+  "y": 42
+ },
+ "/images/capsule/delhi/festival-guru-nanak-gurpurab.jpg": {
+  "w": 1920,
+  "h": 1277,
+  "y": 50
+ },
+ "/images/capsule/delhi/festival-republic-day-india.jpg": {
+  "w": 1920,
+  "h": 2573,
+  "y": 33
+ },
+ "/images/capsule/delhi/festival-vijayadashami.jpg": {
+  "w": 1920,
+  "h": 959,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-butter-chicken.jpg": {
+  "w": 1920,
+  "h": 2557,
+  "y": 33
+ },
+ "/images/capsule/delhi/food-chaat.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-chole-bhature.jpg": {
+  "w": 1920,
+  "h": 1083,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-jalebi.jpg": {
+  "w": 1920,
+  "h": 1446,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-makhan-malai.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/delhi/food-mughlai-cuisine.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-nihari.jpg": {
+  "w": 1920,
+  "h": 1498,
+  "y": 50
+ },
+ "/images/capsule/delhi/food-paratha.jpg": {
+  "w": 1920,
+  "h": 1919,
+  "y": 42
+ },
+ "/images/capsule/delhi/hauz-khas.jpg": {
+  "w": 1920,
+  "h": 1273,
+  "y": 50
+ },
+ "/images/capsule/delhi/india-gate.jpg": {
+  "w": 1280,
+  "h": 720,
+  "y": 50
+ },
+ "/images/capsule/delhi/jama-masjid.jpg": {
+  "w": 1920,
+  "h": 1285,
+  "y": 50
+ },
+ "/images/capsule/delhi/jantar-mantar-delhi.jpg": {
+  "w": 1920,
+  "h": 1040,
+  "y": 50
+ },
+ "/images/capsule/delhi/lotus-temple.jpg": {
+  "w": 1014,
+  "h": 626,
+  "y": 50
+ },
+ "/images/capsule/delhi/nizamuddin-dargah.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/delhi/purana-qila.jpg": {
+  "w": 1024,
+  "h": 768,
+  "y": 50
+ },
+ "/images/capsule/delhi/qutub-minar.jpg": {
+  "w": 1920,
+  "h": 2902,
+  "y": 25
+ },
+ "/images/capsule/delhi/rashtrapati-bhavan.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/delhi/red-fort.jpg": {
+  "w": 1920,
+  "h": 882,
+  "y": 50
+ },
+ "/images/capsule/delhi/safdarjung-tomb.jpg": {
+  "w": 1280,
+  "h": 803,
+  "y": 50
+ },
+ "/images/capsule/delhi/stay-ashok-hotel.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/delhi/stay-hyatt-regency-delhi.jpg": {
+  "w": 858,
+  "h": 560,
+  "y": 50
+ },
+ "/images/capsule/delhi/stay-maidens-hotel-delhi.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/delhi/stay-the-imperial-new-delhi.jpg": {
+  "w": 1280,
+  "h": 1927,
+  "y": 25
+ },
+ "/images/capsule/delhi/stay-the-lodhi.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/goa/anjuna.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/goa/basilica-bom-jesus.jpg": {
+  "w": 1920,
+  "h": 1357,
+  "y": 50
+ },
+ "/images/capsule/goa/cabo-de-rama.jpg": {
+  "w": 1920,
+  "h": 1287,
+  "y": 50
+ },
+ "/images/capsule/goa/chapora-fort.jpg": {
+  "w": 1920,
+  "h": 681,
+  "y": 50
+ },
+ "/images/capsule/goa/church-st-francis-assisi.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/goa/craft-azulejo.jpg": {
+  "w": 1920,
+  "h": 2386,
+  "y": 33
+ },
+ "/images/capsule/goa/dudhsagar-falls.jpg": {
+  "w": 1920,
+  "h": 2880,
+  "y": 25
+ },
+ "/images/capsule/goa/festival-shigmo.jpg": {
+  "w": 1920,
+  "h": 4054,
+  "y": 25
+ },
+ "/images/capsule/goa/festival-sunburn-festival.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/goa/food-bebinca.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/goa/food-cafreal.jpg": {
+  "w": 1920,
+  "h": 1549,
+  "y": 50
+ },
+ "/images/capsule/goa/food-sarapatel.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/goa/food-vindaloo.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/goa/food-xacuti.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/goa/fort-aguada.jpg": {
+  "w": 1024,
+  "h": 768,
+  "y": 50
+ },
+ "/images/capsule/goa/immaculate-conception.jpg": {
+  "w": 1920,
+  "h": 1295,
+  "y": 50
+ },
+ "/images/capsule/goa/mangueshi.jpg": {
+  "w": 1024,
+  "h": 768,
+  "y": 50
+ },
+ "/images/capsule/goa/naval-aviation-museum.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/goa/reis-magos.jpg": {
+  "w": 1920,
+  "h": 1088,
+  "y": 50
+ },
+ "/images/capsule/goa/shanta-durga.jpg": {
+  "w": 1000,
+  "h": 669,
+  "y": 50
+ },
+ "/images/capsule/goa/st-cajetan.jpg": {
+  "w": 1920,
+  "h": 1339,
+  "y": 50
+ },
+ "/images/capsule/goa/stay-grand-hyatt-goa.jpg": {
+  "w": 800,
+  "h": 531,
+  "y": 50
+ },
+ "/images/capsule/goa/stay-old-goa.jpg": {
+  "w": 1920,
+  "h": 1123,
+  "y": 50
+ },
+ "/images/capsule/goa/stay-taj-fort-aguada-resort.jpg": {
+  "w": 640,
+  "h": 480,
+  "y": 50
+ },
+ "/images/capsule/goa/tiracol.jpg": {
+  "w": 800,
+  "h": 600,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/birla-mandir-hyd.jpg": {
+  "w": 1280,
+  "h": 812,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/charminar.jpg": {
+  "w": 1920,
+  "h": 2712,
+  "y": 33
+ },
+ "/images/capsule/hyderabad/chowmahalla.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/craft-bidriware.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/hyderabad/craft-kalamkari.jpg": {
+  "w": 1280,
+  "h": 1125,
+  "y": 42
+ },
+ "/images/capsule/hyderabad/craft-pochampally-sari.jpg": {
+  "w": 1280,
+  "h": 2398,
+  "y": 25
+ },
+ "/images/capsule/hyderabad/falaknuma.jpg": {
+  "w": 1920,
+  "h": 775,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/festival-bathukamma.jpg": {
+  "w": 1280,
+  "h": 946,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/festival-bonalu.jpg": {
+  "w": 1280,
+  "h": 1095,
+  "y": 42
+ },
+ "/images/capsule/hyderabad/festival-eid-al-fitr.jpg": {
+  "w": 1920,
+  "h": 1920,
+  "y": 42
+ },
+ "/images/capsule/hyderabad/festival-ganesh-chaturthi.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/hyderabad/food-double-ka-meetha.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/hyderabad/food-haleem.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/food-hyderabadi-biryani.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/food-irani-cafe.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/food-khubani-ka-meetha.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/hussain-sagar.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/mecca-masjid.jpg": {
+  "w": 1920,
+  "h": 1285,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/paigah-tombs.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/purani-haveli.jpg": {
+  "w": 1920,
+  "h": 1442,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/qutb-shahi-tombs.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/salar-jung.jpg": {
+  "w": 1920,
+  "h": 1174,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/stay-chiraan-fort-palace.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/stay-falaknuma-palace.jpg": {
+  "w": 1280,
+  "h": 516,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/stay-hill-fort-palace.jpg": {
+  "w": 1280,
+  "h": 844,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/stay-park-hyatt-hyderabad.jpg": {
+  "w": 550,
+  "h": 366,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/stay-taj-mahal-hotel-abids.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/hyderabad/taramati-baradari.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/istanbul/archaeology-museums.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/istanbul/basilica-cistern.jpg": {
+  "w": 1920,
+  "h": 2972,
+  "y": 25
+ },
+ "/images/capsule/istanbul/blue-mosque.jpg": {
+  "w": 1920,
+  "h": 1618,
+  "y": 42
+ },
+ "/images/capsule/istanbul/chora.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/istanbul/craft-anatolian-rug.jpg": {
+  "w": 1280,
+  "h": 2040,
+  "y": 25
+ },
+ "/images/capsule/istanbul/craft-islamic-calligraphy.jpg": {
+  "w": 1280,
+  "h": 862,
+  "y": 50
+ },
+ "/images/capsule/istanbul/craft-iznik-pottery.jpg": {
+  "w": 1920,
+  "h": 1237,
+  "y": 50
+ },
+ "/images/capsule/istanbul/dolmabahce.jpg": {
+  "w": 1920,
+  "h": 1049,
+  "y": 50
+ },
+ "/images/capsule/istanbul/festival-eid-al-fitr.jpg": {
+  "w": 1920,
+  "h": 1920,
+  "y": 42
+ },
+ "/images/capsule/istanbul/festival-h-d-rellez.jpg": {
+  "w": 1280,
+  "h": 719,
+  "y": 50
+ },
+ "/images/capsule/istanbul/festival-ramadan.jpg": {
+  "w": 1920,
+  "h": 1121,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-baklava.jpg": {
+  "w": 1280,
+  "h": 854,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-bal-k-ekmek.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-lahmacun.jpg": {
+  "w": 1920,
+  "h": 1397,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-meze.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-turkish-coffee.jpg": {
+  "w": 1920,
+  "h": 2224,
+  "y": 33
+ },
+ "/images/capsule/istanbul/food-turkish-cuisine.jpg": {
+  "w": 1920,
+  "h": 1314,
+  "y": 50
+ },
+ "/images/capsule/istanbul/food-turkish-delight.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/istanbul/galata-tower.jpg": {
+  "w": 1920,
+  "h": 2616,
+  "y": 33
+ },
+ "/images/capsule/istanbul/grand-bazaar.jpg": {
+  "w": 1920,
+  "h": 2880,
+  "y": 25
+ },
+ "/images/capsule/istanbul/hagia-sophia.jpg": {
+  "w": 1920,
+  "h": 1161,
+  "y": 50
+ },
+ "/images/capsule/istanbul/rustem-pasha.jpg": {
+  "w": 480,
+  "h": 640,
+  "y": 33
+ },
+ "/images/capsule/istanbul/spice-bazaar.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/istanbul/stay-c-ragan-palace.jpg": {
+  "w": 1920,
+  "h": 1200,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-crowne-plaza-istanbul-old-city.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-divan-istanbul.jpg": {
+  "w": 1280,
+  "h": 1119,
+  "y": 42
+ },
+ "/images/capsule/istanbul/stay-ecole-st-pierre-hotel.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-emaar-square-istanbul.jpg": {
+  "w": 900,
+  "h": 1200,
+  "y": 33
+ },
+ "/images/capsule/istanbul/stay-hilton-istanbul-bosphorus.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-pera-palace-hotel.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-swissotel-the-bosphorus.jpg": {
+  "w": 1280,
+  "h": 598,
+  "y": 50
+ },
+ "/images/capsule/istanbul/stay-tokatl-yan-hotels.jpg": {
+  "w": 440,
+  "h": 271,
+  "y": 50
+ },
+ "/images/capsule/istanbul/suleymaniye.jpg": {
+  "w": 1920,
+  "h": 1436,
+  "y": 50
+ },
+ "/images/capsule/istanbul/topkapi-palace.jpg": {
+  "w": 1920,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/jaipur/albert-hall.jpg": {
+  "w": 1920,
+  "h": 1357,
+  "y": 50
+ },
+ "/images/capsule/jaipur/amber-fort.jpg": {
+  "w": 1920,
+  "h": 1742,
+  "y": 42
+ },
+ "/images/capsule/jaipur/birla-mandir-jaipur.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/jaipur/central-park-jaipur.jpg": {
+  "w": 1280,
+  "h": 622,
+  "y": 50
+ },
+ "/images/capsule/jaipur/city-palace-jaipur.jpg": {
+  "w": 1920,
+  "h": 1712,
+  "y": 42
+ },
+ "/images/capsule/jaipur/craft-bandhani.jpg": {
+  "w": 1920,
+  "h": 1282,
+  "y": 50
+ },
+ "/images/capsule/jaipur/craft-kundan.jpg": {
+  "w": 1920,
+  "h": 1727,
+  "y": 42
+ },
+ "/images/capsule/jaipur/craft-leheriya.jpg": {
+  "w": 1920,
+  "h": 1499,
+  "y": 50
+ },
+ "/images/capsule/jaipur/craft-minakari.jpg": {
+  "w": 1280,
+  "h": 1381,
+  "y": 33
+ },
+ "/images/capsule/jaipur/craft-woodblock-printing.jpg": {
+  "w": 1920,
+  "h": 1342,
+  "y": 50
+ },
+ "/images/capsule/jaipur/festival-diwali.jpg": {
+  "w": 1920,
+  "h": 1513,
+  "y": 50
+ },
+ "/images/capsule/jaipur/festival-gangaur.jpg": {
+  "w": 1920,
+  "h": 2874,
+  "y": 25
+ },
+ "/images/capsule/jaipur/festival-teej.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/jaipur/food-ghevar.jpg": {
+  "w": 1920,
+  "h": 1293,
+  "y": 50
+ },
+ "/images/capsule/jaipur/food-laal-maas.jpg": {
+  "w": 1280,
+  "h": 1638,
+  "y": 33
+ },
+ "/images/capsule/jaipur/food-rajasthani-cuisine.jpg": {
+  "w": 1280,
+  "h": 1566,
+  "y": 33
+ },
+ "/images/capsule/jaipur/galtaji.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/jaipur/govind-dev-ji.jpg": {
+  "w": 1024,
+  "h": 942,
+  "y": 42
+ },
+ "/images/capsule/jaipur/hawa-mahal.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/jaipur/jaigarh.jpg": {
+  "w": 1920,
+  "h": 1443,
+  "y": 50
+ },
+ "/images/capsule/jaipur/jal-mahal.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/jaipur/jantar-mantar-jaipur.jpg": {
+  "w": 1920,
+  "h": 1208,
+  "y": 50
+ },
+ "/images/capsule/jaipur/jawahar-kala-kendra.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/jaipur/nahargarh.jpg": {
+  "w": 1024,
+  "h": 614,
+  "y": 50
+ },
+ "/images/capsule/jaipur/stay-bissau-palace-hotel-jaipur.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/jaipur/stay-fort-madhogarh.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/jaipur/stay-raj-mahal.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/jaipur/stay-rambagh-palace-jaipur.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kochi/bolgatty-palace.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/cherai-beach.jpg": {
+  "w": 1920,
+  "h": 1059,
+  "y": 50
+ },
+ "/images/capsule/kochi/chinese-fishing-nets.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/cochin-jews.jpg": {
+  "w": 1280,
+  "h": 898,
+  "y": 50
+ },
+ "/images/capsule/kochi/craft-aranmula-kannadi.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kochi/craft-coir.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kochi/craft-kathakali.jpg": {
+  "w": 1280,
+  "h": 825,
+  "y": 50
+ },
+ "/images/capsule/kochi/craft-mohiniyattam.jpg": {
+  "w": 1280,
+  "h": 1924,
+  "y": 25
+ },
+ "/images/capsule/kochi/festival-cochin-carnival.jpg": {
+  "w": 1920,
+  "h": 1267,
+  "y": 50
+ },
+ "/images/capsule/kochi/festival-kochi-muziris-biennale.jpg": {
+  "w": 1280,
+  "h": 2125,
+  "y": 25
+ },
+ "/images/capsule/kochi/festival-onam.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kochi/festival-thrissur-pooram.jpg": {
+  "w": 1920,
+  "h": 897,
+  "y": 50
+ },
+ "/images/capsule/kochi/festival-vishu.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kochi/food-appam.jpg": {
+  "w": 1280,
+  "h": 1280,
+  "y": 42
+ },
+ "/images/capsule/kochi/food-green-chromide.jpg": {
+  "w": 1920,
+  "h": 1442,
+  "y": 50
+ },
+ "/images/capsule/kochi/food-malabar-matthi-curry.jpg": {
+  "w": 1920,
+  "h": 1831,
+  "y": 42
+ },
+ "/images/capsule/kochi/food-puttu.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/kochi/food-sadya.jpg": {
+  "w": 1280,
+  "h": 694,
+  "y": 50
+ },
+ "/images/capsule/kochi/food-south-indian-parotta.jpg": {
+  "w": 1920,
+  "h": 1720,
+  "y": 42
+ },
+ "/images/capsule/kochi/fort-kochi.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/hill-palace.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kochi/kerala-backwaters.jpg": {
+  "w": 1280,
+  "h": 1969,
+  "y": 25
+ },
+ "/images/capsule/kochi/mangalavanam.jpg": {
+  "w": 1920,
+  "h": 1216,
+  "y": 50
+ },
+ "/images/capsule/kochi/marine-drive-kochi.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kochi/mattancherry-palace.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/paradesi-synagogue.jpg": {
+  "w": 640,
+  "h": 480,
+  "y": 50
+ },
+ "/images/capsule/kochi/saint-thomas-christians.jpg": {
+  "w": 1117,
+  "h": 1473,
+  "y": 33
+ },
+ "/images/capsule/kochi/santa-cruz-basilica.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kochi/st-francis-church.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-bolgatty-palace-and-island-resort.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-brunton-boatyard.jpg": {
+  "w": 1280,
+  "h": 711,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-crowne-plaza-kochi.jpg": {
+  "w": 1280,
+  "h": 968,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-grand-hyatt-kochi-bolgatty.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-kochi-marriot-hotel.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/kochi/stay-le-colonial.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kochi/stay-old-harbour-hotel.jpg": {
+  "w": 1280,
+  "h": 732,
+  "y": 50
+ },
+ "/images/capsule/kochi/vypin.jpg": {
+  "w": 1920,
+  "h": 925,
+  "y": 50
+ },
+ "/images/capsule/kochi/willingdon-island.jpg": {
+  "w": 1024,
+  "h": 683,
+  "y": 50
+ },
+ "/images/capsule/kolkata/belur-math.jpg": {
+  "w": 1920,
+  "h": 1254,
+  "y": 50
+ },
+ "/images/capsule/kolkata/craft-baluchari-sari.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kolkata/craft-dhokra.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/kolkata/craft-kantha.jpg": {
+  "w": 1280,
+  "h": 1334,
+  "y": 42
+ },
+ "/images/capsule/kolkata/dakshineswar.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kolkata/eden-gardens.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kolkata/festival-durga-puja.jpg": {
+  "w": 1920,
+  "h": 2524,
+  "y": 33
+ },
+ "/images/capsule/kolkata/festival-kali-puja.jpg": {
+  "w": 1280,
+  "h": 1723,
+  "y": 33
+ },
+ "/images/capsule/kolkata/festival-kolkata-book-fair.jpg": {
+  "w": 1920,
+  "h": 1434,
+  "y": 50
+ },
+ "/images/capsule/kolkata/festival-pohela-boishakh.jpg": {
+  "w": 1920,
+  "h": 1271,
+  "y": 50
+ },
+ "/images/capsule/kolkata/festival-ratha-yatra.jpg": {
+  "w": 1280,
+  "h": 866,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-kati-roll.jpg": {
+  "w": 1920,
+  "h": 1322,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-luchi.jpg": {
+  "w": 1920,
+  "h": 1277,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-machher-jhol.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-mishti-doi.jpg": {
+  "w": 1280,
+  "h": 1038,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-panipuri.jpg": {
+  "w": 1920,
+  "h": 1272,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-rasgulla.jpg": {
+  "w": 1920,
+  "h": 1557,
+  "y": 50
+ },
+ "/images/capsule/kolkata/food-sandesh-confectionery.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kolkata/fort-william.jpg": {
+  "w": 1920,
+  "h": 1400,
+  "y": 50
+ },
+ "/images/capsule/kolkata/howrah-bridge.jpg": {
+  "w": 1280,
+  "h": 508,
+  "y": 50
+ },
+ "/images/capsule/kolkata/kalighat.jpg": {
+  "w": 1920,
+  "h": 886,
+  "y": 50
+ },
+ "/images/capsule/kolkata/marble-palace.jpg": {
+  "w": 1280,
+  "h": 718,
+  "y": 50
+ },
+ "/images/capsule/kolkata/nakhoda-mosque.jpg": {
+  "w": 1920,
+  "h": 1419,
+  "y": 50
+ },
+ "/images/capsule/kolkata/park-street.jpg": {
+  "w": 1280,
+  "h": 734,
+  "y": 50
+ },
+ "/images/capsule/kolkata/rabindra-sarobar.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kolkata/science-city-kolkata.jpg": {
+  "w": 1920,
+  "h": 1275,
+  "y": 50
+ },
+ "/images/capsule/kolkata/shaheed-minar.jpg": {
+  "w": 707,
+  "h": 897,
+  "y": 33
+ },
+ "/images/capsule/kolkata/st-pauls-cathedral.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kolkata/stay-elgin-fairlawn-kolkata.jpg": {
+  "w": 862,
+  "h": 1103,
+  "y": 33
+ },
+ "/images/capsule/kolkata/stay-grand-hotel-kolkata.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kolkata/stay-great-eastern-hotel-kolkata.jpg": {
+  "w": 1280,
+  "h": 847,
+  "y": 50
+ },
+ "/images/capsule/kolkata/stay-itc-royal-bengal.jpg": {
+  "w": 1080,
+  "h": 1440,
+  "y": 33
+ },
+ "/images/capsule/kolkata/stay-spence-s-hotel.jpg": {
+  "w": 712,
+  "h": 524,
+  "y": 50
+ },
+ "/images/capsule/kolkata/stay-taj-bengal.jpg": {
+  "w": 1280,
+  "h": 851,
+  "y": 50
+ },
+ "/images/capsule/kolkata/victoria-memorial.jpg": {
+  "w": 1920,
+  "h": 859,
+  "y": 50
+ },
+ "/images/capsule/kyoto/arashiyama.jpg": {
+  "w": 1920,
+  "h": 1166,
+  "y": 50
+ },
+ "/images/capsule/kyoto/craft-japanese-lacquerware.jpg": {
+  "w": 1920,
+  "h": 1620,
+  "y": 42
+ },
+ "/images/capsule/kyoto/craft-kintsugi.jpg": {
+  "w": 1920,
+  "h": 1317,
+  "y": 50
+ },
+ "/images/capsule/kyoto/craft-nishijin-ori.jpg": {
+  "w": 1280,
+  "h": 1700,
+  "y": 33
+ },
+ "/images/capsule/kyoto/craft-yuzen.jpg": {
+  "w": 1280,
+  "h": 1920,
+  "y": 25
+ },
+ "/images/capsule/kyoto/daitoku-ji.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kyoto/festival-aoi-matsuri.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/kyoto/festival-gion-matsuri.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kyoto/festival-gozan-no-okuribi.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/kyoto/festival-jidai-matsuri.jpg": {
+  "w": 1280,
+  "h": 1138,
+  "y": 42
+ },
+ "/images/capsule/kyoto/food-japanese-cuisine.jpg": {
+  "w": 1280,
+  "h": 910,
+  "y": 50
+ },
+ "/images/capsule/kyoto/food-japanese-tea-ceremony.jpg": {
+  "w": 1280,
+  "h": 2280,
+  "y": 25
+ },
+ "/images/capsule/kyoto/food-kaiseki.jpg": {
+  "w": 1920,
+  "h": 1113,
+  "y": 50
+ },
+ "/images/capsule/kyoto/food-matcha.jpg": {
+  "w": 1920,
+  "h": 1851,
+  "y": 42
+ },
+ "/images/capsule/kyoto/food-tofu.jpg": {
+  "w": 1920,
+  "h": 1640,
+  "y": 42
+ },
+ "/images/capsule/kyoto/food-wagashi.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kyoto/fushimi-inari.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kyoto/ginkakuji.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kyoto/heian-shrine.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/kyoto/kinkakuji.jpg": {
+  "w": 1920,
+  "h": 2880,
+  "y": 25
+ },
+ "/images/capsule/kyoto/kiyomizudera.jpg": {
+  "w": 1280,
+  "h": 854,
+  "y": 50
+ },
+ "/images/capsule/kyoto/kyoto-imperial-palace.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/kyoto/nanzen-ji.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kyoto/nijo-castle.jpg": {
+  "w": 1920,
+  "h": 1446,
+  "y": 50
+ },
+ "/images/capsule/kyoto/nishiki-market.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/kyoto/philosophers-walk.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/kyoto/ryoanji.jpg": {
+  "w": 1920,
+  "h": 1289,
+  "y": 50
+ },
+ "/images/capsule/kyoto/sanjusangendo.jpg": {
+  "w": 1920,
+  "h": 1238,
+  "y": 50
+ },
+ "/images/capsule/kyoto/toji.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/asiatic-society.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/mumbai/banganga.jpg": {
+  "w": 512,
+  "h": 384,
+  "y": 50
+ },
+ "/images/capsule/mumbai/bombay-high-court.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/mumbai/craft-paithani.jpg": {
+  "w": 1920,
+  "h": 1531,
+  "y": 50
+ },
+ "/images/capsule/mumbai/craft-warli-painting.jpg": {
+  "w": 1280,
+  "h": 850,
+  "y": 50
+ },
+ "/images/capsule/mumbai/csmvs.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/elephanta-caves.jpg": {
+  "w": 1920,
+  "h": 2185,
+  "y": 33
+ },
+ "/images/capsule/mumbai/festival-diwali.jpg": {
+  "w": 1920,
+  "h": 1513,
+  "y": 50
+ },
+ "/images/capsule/mumbai/festival-ganesh-chaturthi.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/mumbai/festival-gudi-padwa.jpg": {
+  "w": 1920,
+  "h": 1289,
+  "y": 50
+ },
+ "/images/capsule/mumbai/festival-kala-ghoda-arts-festival.jpg": {
+  "w": 1280,
+  "h": 958,
+  "y": 50
+ },
+ "/images/capsule/mumbai/festival-navaratri.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/mumbai/flora-fountain.jpg": {
+  "w": 1920,
+  "h": 2400,
+  "y": 33
+ },
+ "/images/capsule/mumbai/food-bhel-puri.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-bombay-duck.jpg": {
+  "w": 1920,
+  "h": 749,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-falooda.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-misal-pav.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-modak.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-pav-bhaji.jpg": {
+  "w": 1280,
+  "h": 795,
+  "y": 50
+ },
+ "/images/capsule/mumbai/food-vada-pav.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/gateway-of-india.jpg": {
+  "w": 1920,
+  "h": 1920,
+  "y": 42
+ },
+ "/images/capsule/mumbai/haji-ali.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/kanheri-caves.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/mumbai/marine-drive.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/mumbai/rajabai-tower.jpg": {
+  "w": 1280,
+  "h": 1753,
+  "y": 33
+ },
+ "/images/capsule/mumbai/stay-four-seasons-hotel-mumbai.jpg": {
+  "w": 480,
+  "h": 640,
+  "y": 33
+ },
+ "/images/capsule/mumbai/stay-grand-hyatt-mumbai.jpg": {
+  "w": 470,
+  "h": 587,
+  "y": 33
+ },
+ "/images/capsule/mumbai/stay-taj-mahal-palace-hotel.jpg": {
+  "w": 1920,
+  "h": 1065,
+  "y": 50
+ },
+ "/images/capsule/mumbai/stay-trident-hotel-nariman-point.jpg": {
+  "w": 700,
+  "h": 585,
+  "y": 42
+ },
+ "/images/capsule/new-york-city/amnh.jpg": {
+  "w": 1920,
+  "h": 1094,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/brooklyn-bridge.jpg": {
+  "w": 1920,
+  "h": 640,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/central-park.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/craft-graffiti-in-new-york-city.jpg": {
+  "w": 1920,
+  "h": 1269,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/craft-tiffany-glass.jpg": {
+  "w": 1920,
+  "h": 2714,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/ellis-island.jpg": {
+  "w": 1280,
+  "h": 748,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/empire-state-building.jpg": {
+  "w": 846,
+  "h": 1270,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/festival-macy-s-thanksgiving-day-parade.jpg": {
+  "w": 1920,
+  "h": 1381,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/festival-new-york-fashion-week.jpg": {
+  "w": 1920,
+  "h": 2899,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/festival-new-york-s-village-halloween-parade.jpg": {
+  "w": 1280,
+  "h": 850,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/festival-tribeca-festival.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-bagel.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-black-and-white-cookie.jpg": {
+  "w": 1280,
+  "h": 1037,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-cuisine-of-new-york-city.jpg": {
+  "w": 1920,
+  "h": 1281,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-hot-dog.jpg": {
+  "w": 1920,
+  "h": 938,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-new-york-style-pizza.jpg": {
+  "w": 1280,
+  "h": 856,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/food-pastrami.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/grand-central.jpg": {
+  "w": 1920,
+  "h": 1546,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/high-line.jpg": {
+  "w": 1920,
+  "h": 1328,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/met-museum.jpg": {
+  "w": 1920,
+  "h": 1072,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/moma.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/statue-of-liberty.jpg": {
+  "w": 1920,
+  "h": 2942,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-525-lexington-avenue.jpg": {
+  "w": 1280,
+  "h": 1806,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/stay-569-lexington-avenue.jpg": {
+  "w": 1280,
+  "h": 1280,
+  "y": 42
+ },
+ "/images/capsule/new-york-city/stay-75-wall-street.jpg": {
+  "w": 1280,
+  "h": 1920,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-algonquin-hotel.jpg": {
+  "w": 1280,
+  "h": 1920,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-american-radiator-building.jpg": {
+  "w": 1280,
+  "h": 2088,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-hotel-chelsea.jpg": {
+  "w": 1280,
+  "h": 634,
+  "y": 50
+ },
+ "/images/capsule/new-york-city/stay-hotel-wolcott.jpg": {
+  "w": 1280,
+  "h": 1831,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-hyatt-regency-times-square.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/stay-intercontinental-new-york-barclay-hotel.jpg": {
+  "w": 1280,
+  "h": 1280,
+  "y": 42
+ },
+ "/images/capsule/new-york-city/stay-lexington-hotel-new-york-city.jpg": {
+  "w": 1280,
+  "h": 2626,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-mandarin-oriental-new-york.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/stay-plaza-hotel.jpg": {
+  "w": 1920,
+  "h": 2440,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/stay-st-regis-new-york.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/new-york-city/stay-the-carlyle.jpg": {
+  "w": 1920,
+  "h": 3203,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-the-knickerbocker-hotel.jpg": {
+  "w": 1280,
+  "h": 2276,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/stay-waldorf-astoria-new-york.jpg": {
+  "w": 1920,
+  "h": 2748,
+  "y": 25
+ },
+ "/images/capsule/new-york-city/times-square.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/paris/arc-de-triomphe.jpg": {
+  "w": 1920,
+  "h": 1281,
+  "y": 50
+ },
+ "/images/capsule/paris/craft-gobelins-manufactory.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/paris/craft-haute-couture.jpg": {
+  "w": 1920,
+  "h": 2524,
+  "y": 33
+ },
+ "/images/capsule/paris/craft-manufacture-nationale-de-sevres.jpg": {
+  "w": 1920,
+  "h": 2880,
+  "y": 25
+ },
+ "/images/capsule/paris/eiffel-tower.jpg": {
+  "w": 1920,
+  "h": 3198,
+  "y": 25
+ },
+ "/images/capsule/paris/festival-fete-de-la-musique.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/paris/festival-nuit-blanche.jpg": {
+  "w": 1280,
+  "h": 1920,
+  "y": 25
+ },
+ "/images/capsule/paris/festival-paris-fashion-week.jpg": {
+  "w": 1280,
+  "h": 1921,
+  "y": 25
+ },
+ "/images/capsule/paris/food-baguette.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/paris/food-creme-brulee.jpg": {
+  "w": 1920,
+  "h": 1569,
+  "y": 50
+ },
+ "/images/capsule/paris/food-croissant.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/paris/food-eclair.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/paris/food-french-cuisine.jpg": {
+  "w": 1280,
+  "h": 854,
+  "y": 50
+ },
+ "/images/capsule/paris/food-macaron.jpg": {
+  "w": 1920,
+  "h": 1691,
+  "y": 42
+ },
+ "/images/capsule/paris/food-snails-as-food.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/paris/food-steak-frites.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/paris/les-invalides.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/paris/louvre.jpg": {
+  "w": 1920,
+  "h": 807,
+  "y": 50
+ },
+ "/images/capsule/paris/montmartre.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/paris/notre-dame.jpg": {
+  "w": 1920,
+  "h": 1268,
+  "y": 50
+ },
+ "/images/capsule/paris/pantheon-paris.jpg": {
+  "w": 1920,
+  "h": 1441,
+  "y": 50
+ },
+ "/images/capsule/paris/pere-lachaise.jpg": {
+  "w": 1920,
+  "h": 1417,
+  "y": 50
+ },
+ "/images/capsule/paris/place-concorde.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/paris/sainte-chapelle.jpg": {
+  "w": 989,
+  "h": 1961,
+  "y": 25
+ },
+ "/images/capsule/paris/stay-beat-hotel.jpg": {
+  "w": 565,
+  "h": 517,
+  "y": 42
+ },
+ "/images/capsule/paris/stay-castille-paris.jpg": {
+  "w": 475,
+  "h": 700,
+  "y": 25
+ },
+ "/images/capsule/paris/stay-hilton-paris-opera.jpg": {
+  "w": 1280,
+  "h": 855,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-costes.jpg": {
+  "w": 1280,
+  "h": 857,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-de-crillon.jpg": {
+  "w": 1920,
+  "h": 644,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-de-vendome-place-vendome-paris.jpg": {
+  "w": 1280,
+  "h": 850,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-du-louvre.jpg": {
+  "w": 1280,
+  "h": 775,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-le-bristol-paris.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-hotel-ritz-paris.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-l-hotel.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-la-clef-champs-elysees-paris.jpg": {
+  "w": 1280,
+  "h": 1707,
+  "y": 33
+ },
+ "/images/capsule/paris/stay-le-meurice.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/paris/stay-the-peninsula-paris.jpg": {
+  "w": 1920,
+  "h": 1035,
+  "y": 50
+ },
+ "/images/capsule/paris/versailles.jpg": {
+  "w": 1920,
+  "h": 1174,
+  "y": 50
+ },
+ "/images/capsule/rome/baths-caracalla.jpg": {
+  "w": 1920,
+  "h": 1150,
+  "y": 50
+ },
+ "/images/capsule/rome/capitoline-museums.jpg": {
+  "w": 1920,
+  "h": 1263,
+  "y": 50
+ },
+ "/images/capsule/rome/castel-santangelo.jpg": {
+  "w": 1920,
+  "h": 1720,
+  "y": 42
+ },
+ "/images/capsule/rome/colosseum.jpg": {
+  "w": 1920,
+  "h": 1345,
+  "y": 50
+ },
+ "/images/capsule/rome/craft-micromosaic.jpg": {
+  "w": 1280,
+  "h": 1069,
+  "y": 42
+ },
+ "/images/capsule/rome/craft-roman-mosaic.jpg": {
+  "w": 1920,
+  "h": 1637,
+  "y": 42
+ },
+ "/images/capsule/rome/festival-carnival-in-italy.jpg": {
+  "w": 1280,
+  "h": 854,
+  "y": 50
+ },
+ "/images/capsule/rome/festival-ferragosto.jpg": {
+  "w": 1920,
+  "h": 1277,
+  "y": 50
+ },
+ "/images/capsule/rome/festival-festa-della-repubblica.jpg": {
+  "w": 1920,
+  "h": 1290,
+  "y": 50
+ },
+ "/images/capsule/rome/festival-natale-di-roma.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/rome/food-amatriciana-sauce.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/rome/food-cacio-e-pepe.jpg": {
+  "w": 1920,
+  "h": 1081,
+  "y": 50
+ },
+ "/images/capsule/rome/food-carbonara.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/rome/food-gelato.jpg": {
+  "w": 1920,
+  "h": 1920,
+  "y": 42
+ },
+ "/images/capsule/rome/food-maritozzo.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/rome/food-roman-cuisine.jpg": {
+  "w": 1280,
+  "h": 1280,
+  "y": 42
+ },
+ "/images/capsule/rome/food-saltimbocca.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/rome/food-suppli.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/rome/palatine-hill.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/rome/pantheon.jpg": {
+  "w": 1920,
+  "h": 1546,
+  "y": 50
+ },
+ "/images/capsule/rome/piazza-navona.jpg": {
+  "w": 1920,
+  "h": 1358,
+  "y": 50
+ },
+ "/images/capsule/rome/roman-forum.jpg": {
+  "w": 1920,
+  "h": 788,
+  "y": 50
+ },
+ "/images/capsule/rome/spanish-steps.jpg": {
+  "w": 1200,
+  "h": 1600,
+  "y": 33
+ },
+ "/images/capsule/rome/st-peters.jpg": {
+  "w": 1920,
+  "h": 1003,
+  "y": 50
+ },
+ "/images/capsule/rome/stay-aldrovandi-villa-borghese.jpg": {
+  "w": 1280,
+  "h": 936,
+  "y": 50
+ },
+ "/images/capsule/rome/stay-hotel-d-inghilterra.jpg": {
+  "w": 1280,
+  "h": 1920,
+  "y": 25
+ },
+ "/images/capsule/rome/stay-hotel-eden.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/rome/stay-intercontinental-rome-ambasciatori-palace.jpg": {
+  "w": 1280,
+  "h": 815,
+  "y": 50
+ },
+ "/images/capsule/rome/stay-the-westin-excelsior-rome.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/rome/trastevere.jpg": {
+  "w": 1920,
+  "h": 1030,
+  "y": 50
+ },
+ "/images/capsule/rome/trevi-fountain.jpg": {
+  "w": 1920,
+  "h": 1042,
+  "y": 50
+ },
+ "/images/capsule/varanasi/alamgir-mosque.jpg": {
+  "w": 665,
+  "h": 734,
+  "y": 33
+ },
+ "/images/capsule/varanasi/assi-ghat.jpg": {
+  "w": 1145,
+  "h": 644,
+  "y": 50
+ },
+ "/images/capsule/varanasi/bharat-mata-mandir.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ },
+ "/images/capsule/varanasi/chunar-fort.jpg": {
+  "w": 976,
+  "h": 708,
+  "y": 50
+ },
+ "/images/capsule/varanasi/craft-banarasi-sari.jpg": {
+  "w": 1280,
+  "h": 921,
+  "y": 50
+ },
+ "/images/capsule/varanasi/craft-wood-carving.jpg": {
+  "w": 1920,
+  "h": 1297,
+  "y": 50
+ },
+ "/images/capsule/varanasi/dashashwamedh-ghat.jpg": {
+  "w": 1920,
+  "h": 1435,
+  "y": 50
+ },
+ "/images/capsule/varanasi/durga-mandir.jpg": {
+  "w": 1200,
+  "h": 896,
+  "y": 50
+ },
+ "/images/capsule/varanasi/festival-kartika-purnima.jpg": {
+  "w": 1280,
+  "h": 1781,
+  "y": 33
+ },
+ "/images/capsule/varanasi/festival-maha-shivaratri.jpg": {
+  "w": 1920,
+  "h": 2560,
+  "y": 33
+ },
+ "/images/capsule/varanasi/festival-nag-nathaiya.jpg": {
+  "w": 1920,
+  "h": 1280,
+  "y": 50
+ },
+ "/images/capsule/varanasi/festival-ramlila.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/varanasi/food-chaat.jpg": {
+  "w": 1280,
+  "h": 853,
+  "y": 50
+ },
+ "/images/capsule/varanasi/food-kachori.jpg": {
+  "w": 1280,
+  "h": 1101,
+  "y": 42
+ },
+ "/images/capsule/varanasi/food-lassi.jpg": {
+  "w": 1920,
+  "h": 2592,
+  "y": 33
+ },
+ "/images/capsule/varanasi/food-rabri.jpg": {
+  "w": 1920,
+  "h": 1390,
+  "y": 50
+ },
+ "/images/capsule/varanasi/food-thandai.jpg": {
+  "w": 1920,
+  "h": 2881,
+  "y": 25
+ },
+ "/images/capsule/varanasi/kashi-vishwanath.jpg": {
+  "w": 621,
+  "h": 452,
+  "y": 50
+ },
+ "/images/capsule/varanasi/manikarnika-ghat.jpg": {
+  "w": 1280,
+  "h": 850,
+  "y": 50
+ },
+ "/images/capsule/varanasi/ramnagar-fort.jpg": {
+  "w": 1920,
+  "h": 1080,
+  "y": 50
+ },
+ "/images/capsule/varanasi/sarnath.jpg": {
+  "w": 1280,
+  "h": 960,
+  "y": 50
+ },
+ "/images/capsule/varanasi/tulsi-manas.jpg": {
+  "w": 1920,
+  "h": 1440,
+  "y": 50
+ }
+}

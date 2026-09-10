@@ -1,0 +1,332 @@
+[
+  {
+    "slug": "craft-azulejo",
+    "destinationId": "goa",
+    "title": "Azulejo",
+    "dek": "Azulejo is a form of Iberian painted tin-glazed ceramic tilework.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Azulejo is a form of Iberian painted tin-glazed ceramic tilework. They are an ornamental art form, but also had a specific function, such as aiding temperature control in homes.\nThere is also a tradition of their production in former Portuguese and Spanish colonies in North America, South America, the Philippines, Goa, Lusophone Africa, East Timor, and Macau. Azulejos constitute a major aspect of Portuguese and Spanish architecture to this day, and are found on buildings across Portugal, Spain and their former territories. Many azulejos chronicle major historical and cultural aspects of Portuguese and Spanish history.",
+    "content": [
+      "Azulejo (Portuguese: [ɐzuˈle(j)ʒu, ɐzuˈlɐjʒu], Spanish: [aθuˈlexo]; from the Arabic الزليج, al-zillīj) is a form of Iberian painted tin-glazed ceramic tilework. They are an ornamental art form, but also had a specific function, such as aiding temperature control in homes.",
+      "There is also a tradition of their production in former Portuguese and Spanish colonies in North America, South America, the Philippines, Goa, Lusophone Africa, East Timor, and Macau. Azulejos constitute a major aspect of Portuguese and Spanish architecture to this day, and are found on buildings across Portugal, Spain and their former territories. Many azulejos chronicle major historical and cultural aspects of Portuguese and Spanish history.",
+      "The word azulejo (as well as the Ligurian laggion) is derived from the Arabic الزليج (al-zillīj), zellij meaning \"polished stone\" because the original idea was to imitate the Byzantine and Roman mosaics.",
+      "The Spanish city of Seville became the major centre of the Hispano-Moresque tile industry. The earliest azulejos in the 13th century were panels of tile-mosaic known as alicatados (from Arabic: ﻗَﻄَﻊَ, romanized: qata'a, lit. 'to cut'), known as zellij in Islamic architecture. Tiles were glazed in a single colour, cut into geometric shapes, and assembled to form geometric patterns. There are many examples in the Alhambra of Granada. This tradition was continued for a time in Mudéjar architecture in Spain (e.g. in the 14th-century sections of the Alcázar of Seville), and has been perpetuated to this day in Morocco.",
+      "When former Moorish-controlled territories came under Spanish rule in Spain, new techniques of tile-making developed from the older Andalusi traditions. As wealthy Spaniards favoured the Mudéjar style to decorate their residences, the demand for mosaic tilework in this style increased beyond what tilemakers could produce, requiring them to consider new methods. Towards the late 15th and early 16th centuries, Seville became an important production center for a type of tile known as cuenca (\"hollow\") or arista (\"ridge\"). In this technique, motifs were formed by pressing a metal or wooden mould over the unbaked tile, leaving a motif delineated by thin ridges of clay that prevented the different colours in between from bleeding into each other during baking. This was similar to the older cuerda seca technique but more efficient for mass production. The motifs on these tiles imitated earlier Islamic and Mudéjar designs from the zellij mosaic tradition or blended them with contemporary European influences such as Gothic or Italian Renaissance. Following their development, arista tiles grew in prominence during this period due to the streamlined manufacturing process and their ability to more readily incorporate epigraphical works associated with the Reconquista. Prominent examples of these tiles can be found in the early 16th-century decoration of the Casa de Pilatos in Seville. This type of tile was produced well into the 17th century, and was widely exported from Spain to other European countries and to the Spanish colonies in the Americas.",
+      "The same techniques were introduced into Portugal by King Manuel I after a visit to Seville in 1503. They were applied on walls and used for paving floors, as can be seen in several rooms, especially the Arab Room of the Sintra National Palace (including the famous cuenca tiles with the armillary sphere, symbol of king Manuel I). The Portuguese adopted the Moorish tradition of horror vacui ('fear of empty spaces') and covered the walls completely with azulejos.",
+      "Potters from Italy came into Seville in the early 16th century and established workshops there. They brought with them the maiolica techniques which allowed the artists to represent a much larger number of figurative themes in their compositions. The first Italian potter to move into Spain was Francisco Niculoso who settled in Seville in 1498. Niculoso's arrival led to the development of Sevillian tiles, often referred to as planos; and a new decorative technique known as pisanos, that incorporated maiolica technique with the new medium for azulejos. Examples of Niculoso's work are hosted in situ in the Alcazar of Seville. Numerous azulejos from this period—often influenced by Renaissance trends introduced by Niculoso and other Italian artisans— took the form of polychrome tile panels depicting religious and mythological themes, or hunting scenes."
+    ],
+    "keyFacts": [
+      "The earliest azulejos in the 13th century were panels of tile-mosaic known as alicatados (from Arabic: ﻗَﻄَﻊَ, romanized: qata'a, lit.",
+      "in the 14th-century sections of the Alcázar of Seville), and has been perpetuated to this day in Morocco.",
+      "Prominent examples of these tiles can be found in the early 16th-century decoration of the Casa de Pilatos in Seville.",
+      "This type of tile was produced well into the 17th century, and was widely exported from Spain to other European countries and to the Spanish colonies in the Americas."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/goa/craft-azulejo.jpg",
+    "heroAlt": "Azulejo, Goa",
+    "imageCredit": {
+      "file": "File:Azulejos_Parque_Eduardo_VII-2.jpg",
+      "url": "/images/capsule/goa/craft-azulejo.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Azulejos_Parque_Eduardo_VII-2.jpg",
+      "license": "CC BY 2.5",
+      "attribution": "Alvesgaspar"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Azulejo",
+        "url": "https://en.wikipedia.org/wiki/Azulejo",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "food-vindaloo",
+    "destinationId": "goa",
+    "title": "Vindaloo",
+    "dek": "Vindaloo is a curry dish known globally in its British form as a staple of curry houses and Indian restaurants, specifically a fiery, spicy dish that can be made with a choice of meats.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Vindaloo is a curry dish known globally in its British form as a staple of curry houses and Indian restaurants, specifically a fiery, spicy dish that can be made with a choice of meats. Vindaloo's name derives from the famous Portuguese Goan dish carne de vinha d'alhos or vindalho, made with pork.",
+    "content": [
+      "Vindaloo is a curry dish known globally in its British form as a staple of curry houses and Indian restaurants, specifically a fiery, spicy dish that can be made with a choice of meats. Vindaloo's name derives from the famous Portuguese Goan dish carne de vinha d'alhos (meat with garlic vinegar) or vindalho, made with pork.",
+      "From the 19th century onwards, the Portuguese-Indian dish was adapted within Anglo-Indian cuisine. The British highly prized Goan cooks, and acquired \"Portuguese curry\". This was initially applied to meats including beef and duck. In the 20th century, some recipes in Britain called for lemon juice in place of wine vinegar, possibly because British Muslim chefs intentionally omitted it. As a postwar British restaurant dish, vindaloo became popular as the curry to eat after pub closing time. The drunken clientele then demonstrated its machismo by ordering a specially hot curry. Fat Les's 1998 song \"Vindaloo\", which became a sort of football anthem, celebrates such lad culture behaviour. Potatoes are sometimes added through confusion with Hindi aloo.",
+      "The Portuguese founded their State of India in 1501; Goa became its capital in 1530. A standard element of Goan cuisine derived from the Portuguese carne de vinha d'alhos (\"meat in garlic wine\"), vindalho is a dish of pork marinated in vinegar and garlic. This was adapted by the local Goan cooks with the substitution of palm vinegar for the wine, and the addition of spices.",
+      "According to the chef Raghavan Iyer, cooks in Goa were free to use pork, a meat avoided by Hindus and Muslims in India, because they had been converted to Christianity by the Portuguese. The historian of food Lizzie Collingham writes that formerly high-caste Goans made a point of eating pork and beef as they had acquired outcaste status by becoming Christians, and accordingly had to emphasize their closeness to the Portuguese, such as by eating vindalho. Collingham writes that the Goans did not have vinegar, so the Portuguese there used sour tamarind, or made vinegar from coconut palm toddy. In addition, she states that the Portuguese liked their food extremely spicy, with up to 20 chili peppers in a recipe. Christopher Columbus found chili pepper when he sailed to Central America in 1492, and it was soon planted in the Iberian Peninsula. By 1528 at the latest, the Portuguese had introduced it to the Malabar Coast, and several varieties of it were being grown in Goa; their use quickly spread across India.",
+      "Vindaloo has, Collingham writes, become the most famous element of Goan cuisine. Traditional Goan vindalho does not include potatoes; some Indian versions add them due to the confusion with the Hindi आलू aloo, \"potato\".",
+      "The British highly prized Goan cooks. As a result, Anglo-Indian cuisine in the 19th century took on vindaloo or \"Portuguese curry\". Its method of preparation was then used for other kinds of meat, including especially duck. W. H. Dawe's 1888 cookery book, The Wife's Help to Indian Cookery, gave a recipe for \"Vindaloo or Bindaloo—A Portuguese Kárhí\", suggesting beef, pork, or duck as the meat. London's Veeraswamy restaurant, opened in 1926, served the same sort of British Raj food, including duck vindaloo in its early years. Vindaloo became widespread in Britain with the creation of more Indian restaurants in the 1970s.",
+      "The food writer Glyn Hughes suggests that at that time, British Muslim chefs intentionally omitted the pork and the wine vinegar called for by the Portuguese recipe, substituting chicken or beef as the meat and lemon juice for the vinegar. Iyer on the other hand gives a recipe for \"British Curry House Vindaloo\" which uses both vinegar and pork, along with both mild spices and \"potent-hot\" chili. Felicity Cloake however writes that the dish is sweet and sour rather than hot, and that the \"tangy gravy works best with rich meats like duck or pork\".",
+      "A variant theory, proposed by the food writer Pat Chapman, is that vindaloo served in British restaurants is not based on the Portuguese dish, but simply a version of the standard medium spicy (Madras) restaurant curry with the addition of vinegar, potatoes and plenty of chili peppers."
+    ],
+    "keyFacts": [
+      "From the 19th century onwards, the Portuguese-Indian dish was adapted within Anglo-Indian cuisine.",
+      "In the 20th century, some recipes in Britain called for lemon juice in place of wine vinegar, possibly because British Muslim chefs intentionally omitted it.",
+      "Fat Les's 1998 song \"Vindaloo\", which became a sort of football anthem, celebrates such lad culture behaviour.",
+      "The Portuguese founded their State of India in 1501; Goa became its capital in 1530."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/goa/food-vindaloo.jpg",
+    "heroAlt": "Vindaloo, Goa",
+    "imageCredit": {
+      "file": "File:Beef_Vindaloo_-_Chilli_Mama,_Chadstone_(3014236693).jpg",
+      "url": "/images/capsule/goa/food-vindaloo.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Beef_Vindaloo_-_Chilli_Mama%2C_Chadstone_(3014236693).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Alpha from Melbourne, Australia"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-goan-cuisine"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Vindaloo",
+        "url": "https://en.wikipedia.org/wiki/Vindaloo",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-sunburn-festival",
+    "destinationId": "goa",
+    "title": "Sunburn Festival",
+    "dek": "Sunburn Festival is a commercial electronic dance music festival held in India.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Sunburn Festival is a commercial electronic dance music festival held in India. It was started by entrepreneur Shailendra Singh of Percept Ltd.",
+    "content": [
+      "Sunburn Festival is a commercial electronic dance music festival held in India. It was started by entrepreneur Shailendra Singh of Percept Ltd.",
+      "Spanning over three to five days, the festival has multiple stages with artists playing simultaneously. It was held annually in Vagator, Goa from 2007 to 2015, and shifted to Pune, Maharashtra in 2016. In 2019, the festival returned to Vagator, Goa.",
+      "According to a 2014 International Music Summit report, Sunburn was \"as big as Tomorrowland and Ultra\". It was ranked by CNN in 2009 as one of the Top 10 Festivals in the world.",
+      "In 2011, Percept Ltd launched the Sunburn Arena, featuring Avicii, at the Turf Club in Mumbai. In 2012, Percept launched Sunburn City Festival, Sunburn Campus and Sunburn Reload, as well as their first international festival, Sunburn Colombo. Over the years Sunburn has expanded internationally and has included many well known DJs, including Swedish House Mafia, Martin Garrix, Hardwell, David Guetta, Axwell, Dimitri Vegas and Like Mike, Paul Van Dyk, Marshmello, Chainsmokers, Afrojack, Pete Tong, Tiesto, Armin van Buren, DeadMau5, Carl Cox, DJ Snake, Skazi.",
+      "Electronic music parties and similar festivals have been held in Goa, with the late 1980s seeing the start of free parties, events that included DJs, art, crafts and food stalls. This continued through 1990s to early 2000s at beaches such as Vagator Beach, Anjuna beach and Arambol beach.",
+      "In 2007, Shailendra Singh organized the first Sunburn as an international dance music festival. It took place on 28 and 29 December at Candolim Beach, Goa. Performers included Carl Cox, Above & Beyond and Axwell as headline acts. Held on two stages, with DJs playing simultaneously, other acts included John 00 Fleming, Pete Gooding, DJ Pearl, Jalebee Cartel, Super 8 & Tab. The festival was hosted by Nikhil Chinapa and Rohit Barker.",
+      "Sunburn Goa 2008 was themed Electric Circus and was held on two main stages: one for Trance acts and one for House music. Having tied up with Defected Records in 2008, the label brought house DJs Simon Dunmore, Shapeshifters, Copyright and percussionist Shovel playing. Headlining the festival were GMS, Gareth Emery and John 00 Fleming. The acts were Digital Blonde, Roger Shah, DJ Pearl, Brute Force, Nawed Khan, Vachan Chinnappa, Jalebee Cartel, Sanjay Dutta, and Ma Faiza. The event took place from 27 to 29 December at Candolim Beach.",
+      "Sunburn Goa 2010 took place from 27 to 29 December at Candolim Beach. Sunburn passes went live on 5 November with the early bird passes and pre-booking sale passes being sold out in 22 minutes. The headliners of the 2010 festival were Paul Van Dyk, Ferry Corsten and Axwell along with Sultan & Ned Shepard with Nadia Ali, Richard Durand, GMS, Pete Gooding, Aly & Fila and DJs Pearl, Ma Faiza, Anish Sood and Sanjay Dutta.",
+      "For the 2010 festival, Percept ran a \"Sunburn Anthem Contest\" for potential audio and visual producers, with participants in the visual category.",
+      "The 7th Edition of Sunburn took place in Vagator. This event had 7 stages and around 120 artists across 200 hours. Headline DJs were Afrojack, Axwell, Pete Tong, Ummet Ozcan.",
+      "The 9th edition was a 4-day event at Vagator, Goa. On 20 November 2015 Sunburn Goa's international ticketing partner, Viagogo, announced that the festival has become one of the largest international music festivals in Asia, The artist lineup would have 120 artists, including Sam Feldt, KYGO, Seth Troxler, Dimitri Vegas & Like Mike, Martin Garrix, DJ SMITH, Kshmr, David Guetta, Dyro, Felix Jaehn, Zaeden and Art Department.",
+      "Multiple colleges across the country have hosted music festivals associated with Sunburn. These events are often part of the college's annual festivals, usually called Sunburn Campus."
+    ],
+    "keyFacts": [
+      "It was held annually in Vagator, Goa from 2007 to 2015, and shifted to Pune, Maharashtra in 2016.",
+      "In 2019, the festival returned to Vagator, Goa.",
+      "According to a 2014 International Music Summit report, Sunburn was \"as big as Tomorrowland and Ultra\".",
+      "It was ranked by CNN in 2009 as one of the Top 10 Festivals in the world."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/goa/festival-sunburn-festival.jpg",
+    "heroAlt": "Sunburn Festival, Goa",
+    "imageCredit": {
+      "file": "File:Sunburn_Festival,_Goa,_Trance_music_culture.jpg",
+      "url": "/images/capsule/goa/festival-sunburn-festival.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Sunburn_Festival%2C_Goa%2C_Trance_music_culture.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Vyacheslav Argenberg"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "anjuna"
+    ],
+    "relatedStories": [
+      "festival-shigmo",
+      "festival-carnival-in-goa"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Sunburn Festival",
+        "url": "https://en.wikipedia.org/wiki/Sunburn_Festival",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "festival-shigmo",
+    "destinationId": "goa",
+    "title": "Shigmo",
+    "dek": "Shigmo, or Shishirotsava is a spring festival celebrated in the Indian state of Goa, where it is one of the major festivals of the Hindu community.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Shigmo, or Shishirotsava is a spring festival celebrated in the Indian state of Goa, where it is one of the major festivals of the Hindu community. It is also celebrated by Konkani diaspora and Indian festival of Holi is part of it.\n",
+    "content": [
+      "Shigmo, or Shishirotsava is a spring festival celebrated in the Indian state of Goa, where it is one of the major festivals of the Hindu community. It is also celebrated by Konkani diaspora and Indian festival of Holi is part of it.",
+      "The Konkani word śigmō comes from the Prakrit word suggimaho which in turn is derived from the Sanskrit word sugrīṣmaka.",
+      "In recent years the state government has supported public Shigmo parades consisting of traditional folk and street dancers and elaborately built floats depicting scenes from regional mythology and religious scenes. Meanwhile, Shigmo festivals also continue in various rural parts of Goa, spanning over a fortnight, with different days earmarked for celebrations in different areas. This festival is celebrated around March each year. It is linked to the Hindu lunar calendar, hence its date according to the Gregorian calendar varies.",
+      "There are two variants of Shigmo festival: Dhakto Shigmo (\"small Shigmo\") and Vhadlo Shigmo (\"big Shigmo\"). Dhakto Shigmo is generally celebrated by farmers, the labour class and the rural population, while Vhadlo Shigmo is of greater consequence and is celebrated by everyone together.",
+      "Dhakto Shigmo begins some five days before the full-moon day of the Indian lunar month of Phalguna and ends on the full-moon day in the Old Conquests areas of Goa (the areas that were under Portuguese colonial rule for a longer period of time, starting from the sixteenth century). On the other hand, Vhadlo Shigmo is mostly celebrated in the New Conquests areas, beginning on the full-moon day of Phalguna and continuing for five days.",
+      "Naman are songs sung in chorus during the festival, when villagers assemble at a fixed place. Jot is another kind of song. Dances include Talgadi, Hanpet, Lamp Dance and Gopha. Dhol and Taso are drums, some of which can be huge, which people carry from door to door, dancing to their sound. Money is placed in a plate carried by the performers, in response to which they sing a song called the Tali, wishing the donor well. On the last day of the festival, it is believed that a spirit known as the Gade padap enters the dancers. Mand davarap refers to a collective bath taken after the festival comes to an end.",
+      "Dhakto Shigmo can be considered mainly as a festival of folk songs and folk dances, while Vhadlo Shigmo is considered a festival performed in the village temple. It is celebrated in different temples on different dates around the same period. On the first day, the village deity is bathed and dressed in saffron robes. After the offering of food, a feast is held. Shigmo celebrated in the temples of Jambavali, Phatarpya, Kansarpal and Dhargale are very famous in Goa and the neighboring states and attract a large number of devotees and tourists."
+    ],
+    "keyFacts": [],
+    "local": true,
+    "heroImage": "/images/capsule/goa/festival-shigmo.jpg",
+    "heroAlt": "Shigmo, Goa",
+    "imageCredit": {
+      "file": "File:A_boy_with_aarat.jpg",
+      "url": "/images/capsule/goa/festival-shigmo.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:A_boy_with_aarat.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Gaonkarkrupesh"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-sunburn-festival",
+      "festival-carnival-in-goa"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Shigmo",
+        "url": "https://en.wikipedia.org/wiki/Shigmo",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 2,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-goan-cuisine",
+    "destinationId": "goa",
+    "title": "Goan cuisine",
+    "dek": "Goan cuisine consists of regional foods popular in Goa, India.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Goan cuisine consists of regional foods popular in Goa, India. Rice, seafood, coconut, vegetables, meat, bread, pork and local spices are staples of Goan cuisine. Use of kokum and vinegar is another distinct feature. Goan food is considered incomplete without fish.",
+    "content": [
+      "Goan cuisine consists of regional foods popular in Goa, India. Rice, seafood, coconut, vegetables, meat, bread, pork and local spices are staples of  Goan cuisine. Use of kokum and vinegar is another distinct feature. Goan food is considered incomplete without fish.",
+      "The cuisine of Goa originated from its Konkani roots, and was influenced by the 451 years of Portuguese rule and the Sultanate rule that preceded the Portuguese. Many Catholic dishes are either similar to or variants of their Portuguese counterparts in both naming or their use of ingredients.",
+      "The cuisine of Goan people is mostly seafood-based; the staple foods are rice and fish. Kingfish (Visvonn विस्वण or Isvonn इस्वण) is one of the most commonly eaten varieties of fish. Other fish varieties include pomfret, shark, tuna, sardines, and mackerel. Among the shellfish are crabs, prawns, tiger prawns, lobster, squid, and mussels. The cuisine of Goan Catholics is heavily influenced by Portuguese cuisine. The use of vinegar, for example, is very prominent, specifically toddy vinegar, which is made from coconut sap that is retrieved from stems, and is then left to  ferment for four  to six months.",
+      "The Portuguese introduced cashew nuts (now cultivated widely and popularly known as Goa cashews), pineapples, guavas, potatoes, and tomatoes from Latin America to Goa, and consequently the rest of India. Chillies are the most important aspect of Goan cuisine; they were introduced by the Portuguese and became very popular in wider Indian cuisine. One of Goa's beloved dishes is called sorpotel, which is made from pork. A classic example of Portuguese influence on the food of Goa is that the cuisine includes vinegar, an otherwise uncommon ingredient in traditional Indian cooking. Before the coming of the Portuguese, the Goan diet used to include flatbreads such as rotis and chappatis. The Portuguese brought with them the distinctive bread known as pão. Since then, bread has become an integral part of the diet for Goans.",
+      "Goan Hindu cuisine in Goa is mainly pescetarian and lacto-vegetarian, from which it originates. Goan Hindu cuisine is mild, with use of  tamarind and kokum for souring, and jaggery for sweetening. It uses spices such as asafoetida, fenugreek, curry leaves, mustard, and urad dal. Onion and garlic are also used. It also includes vegetables, such as lentils, pumpkins, gourds, bamboo shoots, and roots. The medium of cooking is coconut oil.",
+      "Bhaji — Fried fritters with besan (chickpea) batter. Different kind of bhajis can be made by changing the vegetable used with the besan. Common bhajis include those containing onion or chilies.",
+      "Varan — A lentil preparation often made with coconut milk tempered with mustard, curry leaves, and chilies, served as an accompaniment to rice for the Naivedya, prepared during all Hindu festivals, and an integral part of wedding feasts.",
+      "Goan Catholic cuisine in Goa is a fusion of Goan Hindu and Portuguese cooking styles. Vinegar (made from the toddy of local coconut trees) is used to give a tangy taste to the meat dishes.",
+      "Cafreal — A masala marinade mostly used for chicken or fish made from coriander leaves, green chilies, and other spices.",
+      "Croquettes — Fried minced beef rolls, a common snack among Goan Catholics and the Portuguese.",
+      "Feijoada — A stew brought by the Portuguese. It is made with meat (beef or pork), beans, and cabbage.",
+      "Vindalho — A spicy curry traditionally made with pork. The name is derived from the Portuguese term for ‘garlic’ and ‘wine’ (“vinho e alho” or “vinha d'alhos”) marinade. Contrary to popular versions made outside Goa, a traditional vindalho does not contain any meat besides pork. It also does not contain any potatoes nor is its name related to the Hindi word ‘āloo’ (potato).",
+      "Xacuti (Shâgotî) — Type of curry made with roasted grated coconut and pieces of chicken or lamb.",
+      "Bêbîk (Bebinca) — A multi-layered baked pudding traditionally eaten at Christmas."
+    ],
+    "keyFacts": [
+      "The cuisine of Goa originated from its Konkani roots, and was influenced by the 451 years of Portuguese rule and the Sultanate rule that preceded the Portuguese."
+    ],
+    "local": true,
+    "heroImage": null,
+    "heroAlt": "Goan cuisine, Goa",
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-vindaloo"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Goan cuisine",
+        "url": "https://en.wikipedia.org/wiki/Goan_cuisine",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-carnival-in-goa",
+    "destinationId": "goa",
+    "title": "Carnival in Goa",
+    "dek": "Carnival in Goa, also called Carnaval, Intruz, Entrado, or (colloquially) Viva Carnival refers to the festival of carnival, in state of Goa, India.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Carnival in Goa, also called Carnaval, Intruz, Entrado, or (colloquially) Viva Carnival refers to the festival of carnival, in state of Goa, India. Though significantly smaller than the well-known Rio Carnival or the Portuguese Carnival of Madeira, the Goa Carnival is the largest in India and one of the few traditional celebrations of the Western Christian holiday in Asia. The current version of the Goa Carnival was modelled after the Rio Carnival by a local Goan musician named Timoteo Fernandes and imposed in 1965 to attract tourists. It has since turned into a major tourist attraction for the small state.",
+    "content": [
+      "Carnival in Goa, also called Carnaval, Intruz, Entrado, or (colloquially) Viva Carnival refers to the festival of carnival, in state of Goa, India. Though significantly smaller than the well-known Rio Carnival or the Portuguese Carnival of Madeira, the Goa Carnival is the largest in India and one of the few traditional celebrations of the Western Christian holiday in Asia. The current version of the Goa Carnival was modelled after the Rio Carnival by a local Goan musician named Timoteo Fernandes and imposed in 1965 to attract tourists. It has since turned into a major tourist attraction for the small state.",
+      "While the roots of the Carnival in Goa date back to the introduction of Roman Catholic traditions during the Portuguese conquest of Goa, being celebrated since the eighteenth century, the festival itself fell into obscurity during the later days of colonialism, as Portugal's authoritarian regime known and is celebrated on the same day as Portugal Estado Novo limited freedom of assembly and press.",
+      "After the end of Portuguese rule, the Brazilian version of the festival was imposed by Timoteo Fernandes in 1965, a Goan musician who modeled it after the famed Rio Carnival. This was done to attract more tourism. Today, the urban parade includes floats from local villages, commercial entities, and cultural groups. It is still organised in a very traditional manner, including by the staging of streetside local plays called Khell tiatrs, in various villages, especially in the taluka of Salcete. Live bands play traditional Konkani, Latin, and EDM music throughout the festivities. Streets become open dance floors, where locals and visitors groove to the beat of lively tunes. The traditional mask dances and performances by local artists also add to the celebration. Beyond the parades, street performances, including acrobatics and fire-breathing shows are also held. According to the Government of Goa's Department of Tourism, the carnival is \"Goa's most famous festival and has been celebrated since the 18th century.\"",
+      "The Carnival usually starts off on Fat Saturday (known as Sabado Gordo) and concludes on Fat Tuesday (known as Shrove Tuesday), just before Ash Wednesday and the first day of the Western Christian season of Lent, observed by Christians of the Roman Catholic, Lutheran and Anglican denominations, among others. In Panjim, the capital of Goa, the festival is complemented by Grape Escapade, a local wine festival, and a dance at Samba Square in the centrally located Garden of Garcia da Orta.",
+      "According to local tradition, during Carnival Goa is taken over by King Momo, usually a local resident who presides over the festival during the four-day span. King Momo traditionally proclaims the Konkani message (English: \"Eat, drink and make merry\"). In 2021, the King Momo for the Goa Carnival was Sixtus Eric Dias from Candolim.",
+      "The parade usually begins on Fat Saturday evening with a procession headed by King Momo. Balloons, horse-drawn carriages, decorated bullock carts and elaborate floats are the highlights of the parade. The festivities during Goa Carnival include dancing troupes, revelers wearing masks and costumes, live music, sports competitions, floats and parades, and food and drinking.",
+      "In 2024, the festival was celebrated from 10 February – 13 February. In the urban areas, individual float parades were held in the Goan cities and towns of Panjim, Margao, Vasco and Mapusa. In 2026, the carnival was held from 13 February - 17 February across Goa in Porvorim, Panjim, Margao, Vasco and Mapusa."
+    ],
+    "keyFacts": [
+      "The current version of the Goa Carnival was modelled after the Rio Carnival by a local Goan musician named Timoteo Fernandes and imposed in 1965 to attract tourists.",
+      "After the end of Portuguese rule, the Brazilian version of the festival was imposed by Timoteo Fernandes in 1965, a Goan musician who modeled it after the famed Rio Carnival.",
+      "According to the Government of Goa's Department of Tourism, the carnival is \"Goa's most famous festival and has been celebrated since the 18th century.\"",
+      "In 2021, the King Momo for the Goa Carnival was Sixtus Eric Dias from Candolim."
+    ],
+    "local": true,
+    "heroImage": null,
+    "heroAlt": "Carnival in Goa, Goa",
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-sunburn-festival",
+      "festival-shigmo"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Carnival in Goa",
+        "url": "https://en.wikipedia.org/wiki/Carnival_in_Goa",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  }
+]

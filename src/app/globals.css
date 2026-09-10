@@ -1,0 +1,708 @@
+
+/* ==========================================================================
+   Darshan v2 palette — CLAUDE.md §6
+   Grounded in the materials of a Himalayan gompa, not in generic travel-site
+   colour. Prayer-flag colours are permitted ONLY as categorical encoding on
+   maps and charts, never as decoration.
+   ========================================================================== */
+:root {
+  --ink: #1A1613;        /* near-black, warm — public surface background   */
+  --parchment: #F2EDE4;  /* aged paper — partner surface background        */
+  --brass: #B98A2E;      /* butter-lamp brass — primary accent, sparingly  */
+  --maroon: #6E2436;     /* monastic robe — destructive and serious states */
+  --pine: #2F4A3C;       /* Himalayan forest — success, verified badge     */
+  --slate: #6B7078;      /* rock — secondary text, borders                 */
+}
+@import "tailwindcss";
+
+/* =========================================================================
+   Sikkim Darshan — design tokens
+   Single source of truth. Components must consume these tokens, never raw hex.
+   ========================================================================= */
+
+@theme {
+  /* ---------------------------------------------------------------------
+     COLOR — Sikkim Darshan
+     Drawn from monastery material culture: warm ivory plaster, aged wood
+     and deep charcoal shadow, forest ridge, bronze/gilt, Tibetan red.
+     --------------------------------------------------------------------- */
+
+  /* Surfaces */
+  --color-background: #f6f2e9; /* warm ivory — page ground */
+  --color-surface: #fffcf5; /* cards, sheets, inputs */
+  --color-surface-muted: #ece4d4; /* inset panels, track backgrounds */
+  --color-surface-inverse: #221c15; /* dark sections, footer — warm charcoal */
+
+  /* Text */
+  --color-foreground: #221c15; /* primary text — lamp-black */
+  --color-muted: #5d5647; /* secondary text */
+  --color-subtle: #6b6352; /* captions and meta — AA on page (5.3:1), card (5.8:1) and inset panel (4.7:1) */
+  --color-foreground-inverse: #f6f2e9;
+  /*
+   * The dark-surface text ramp.
+   *
+   * The light surfaces had a proper three-step ramp (foreground / muted /
+   * subtle) while dark surfaces had exactly one colour, so every component that
+   * needed a quieter tone on dark improvised with an opacity suffix. Six of them
+   * were in use across the home page and navbar — /60 /70 /75 /80 /85 /90 —
+   * none of them tokens, none contrast-checked, and the faintest of them
+   * measured 2.34:1 over hero photography.
+   *
+   * These are real colours rather than alphas, so they hold their contrast over
+   * a photograph instead of dissolving into it.
+   */
+  --color-muted-inverse: #ddd5c6;  /* secondary text on dark — 9.1:1 on #221c15 */
+  --color-subtle-inverse: #b9b0a0; /* captions and meta on dark — 6.4:1 on #221c15 */
+  /*
+   * The fixed header's own ground. A token rather than a literal because the
+   * controls sitting on the bar need to declare the same colour: an auditing
+   * tool walking up from a control inside a `position: fixed` ancestor resolves
+   * the page background rather than the bar's, and reports light-on-white for
+   * text that actually renders at ~9:1. Controls that state their own ground
+   * are checkable.
+   */
+  --color-header: #2b241c;
+
+  /* Lines */
+  --color-border: #e3dac7;
+  --color-border-strong: #cfc3a9;
+  --color-border-inverse: #3d3527;
+
+  /* Brand */
+  --color-primary: #43614d; /* forest ridge */
+  --color-primary-hover: #37513f;
+  --color-primary-active: #2c4233;
+  --color-primary-soft: #e5ebe1;
+  --color-primary-foreground: #fffcf5;
+
+  --color-secondary: #221c15; /* charcoal — high-emphasis neutral action */
+  --color-secondary-hover: #383023;
+  --color-secondary-foreground: #fffcf5;
+
+  --color-accent: #c08a2d; /* bronze/gilt — fills and marks, and text on dark only */
+  /* Text-safe bronze for light surfaces; the display gilt is 2.96:1 and fails AA. */
+  --color-accent-ink: #8a6110;
+  --color-accent-hover: #a37423;
+  --color-accent-soft: #f5ead3;
+  --color-accent-foreground: #37280b;
+
+  /* Status */
+  --color-success: #2f6340; /* 4.9:1 on success-soft, 6.9:1 on surface */
+  --color-success-soft: #e2efe5;
+  --color-warning: #8a6110; /* 5.4:1 on surface, 4.8:1 on warning-soft */
+  --color-warning-soft: #f7edd6;
+  --color-error: #a63a2a; /* Tibetan red */
+  --color-error-soft: #f6e5e0;
+  --color-info: #4c6e8f;
+  --color-info-soft: #e5edf4;
+
+  /* ---------------------------------------------------------------------
+     TYPOGRAPHY
+     Fraunces  — display only, used with restraint
+     Plus Jakarta Sans — all UI and body copy
+     IBM Plex Mono — eyebrows, departure times, coordinates
+     --------------------------------------------------------------------- */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+
+  --text-display: clamp(2.75rem, 6.2vw, 4.75rem);
+  --text-display--line-height: 1.02;
+  --text-display--letter-spacing: -0.032em;
+
+  --text-h1: clamp(2.125rem, 4.2vw, 3.125rem);
+  --text-h1--line-height: 1.08;
+  --text-h1--letter-spacing: -0.026em;
+
+  --text-h2: clamp(1.625rem, 3vw, 2.25rem);
+  --text-h2--line-height: 1.14;
+  --text-h2--letter-spacing: -0.022em;
+
+  --text-h3: clamp(1.25rem, 1.8vw, 1.5rem);
+  --text-h3--line-height: 1.24;
+  --text-h3--letter-spacing: -0.016em;
+
+  --text-h4: 1.125rem;
+  --text-h4--line-height: 1.36;
+  --text-h4--letter-spacing: -0.012em;
+
+  --text-body-lg: 1.0625rem;
+  --text-body-lg--line-height: 1.62;
+
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.62;
+
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+
+  --text-label: 0.8125rem;
+  --text-label--line-height: 1.35;
+  --text-label--letter-spacing: 0.005em;
+
+  --text-caption: 0.75rem;
+  --text-caption--line-height: 1.4;
+
+  --text-eyebrow: 0.6875rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.16em;
+
+  --text-price: clamp(1.5rem, 2.4vw, 2rem);
+  --text-price--line-height: 1.1;
+  --text-price--letter-spacing: -0.02em;
+
+  /* ---------------------------------------------------------------------
+     RADIUS — soft but not pill-shaped; travel cards read as printed tickets
+     --------------------------------------------------------------------- */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.625rem;
+  --radius-lg: 0.875rem;
+  --radius-xl: 1.25rem;
+  --radius-2xl: 1.75rem;
+
+  /* ---------------------------------------------------------------------
+     ELEVATION — low-spread, high-softness. No hard drop shadows.
+     --------------------------------------------------------------------- */
+  --shadow-soft: 0 1px 2px rgba(34, 28, 21, 0.05), 0 1px 3px rgba(34, 28, 21, 0.06);
+  --shadow-card: 0 2px 4px rgba(34, 28, 21, 0.04), 0 8px 24px -12px rgba(34, 28, 21, 0.16);
+  --shadow-lifted: 0 4px 8px rgba(34, 28, 21, 0.05), 0 20px 40px -16px rgba(34, 28, 21, 0.22);
+  --shadow-overlay: 0 24px 64px -20px rgba(34, 28, 21, 0.36);
+
+  /* ---------------------------------------------------------------------
+     MOTION — fast, subtle, purposeful
+     --------------------------------------------------------------------- */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out-soft: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --animate-fade-up: fade-up 0.5s var(--ease-out-soft) both;
+  --animate-bounce-soft: bounce-soft 2s var(--ease-in-out-soft) infinite;
+  --animate-kenburns: kenburns 36s var(--ease-in-out-soft) alternate infinite;
+  --animate-fade-in: fade-in 0.3s var(--ease-out-soft) both;
+  --animate-scale-in: scale-in 0.18s var(--ease-out-soft) both;
+  --animate-slide-up: slide-up 0.28s var(--ease-out-soft) both;
+  --animate-slide-in-right: slide-in-right 0.3s var(--ease-out-soft) both;
+  --animate-shimmer: shimmer 1.6s linear infinite;
+
+  @keyframes kenburns {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
+  }
+  @keyframes bounce-soft {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(8px);
+    }
+  }
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 14px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.97);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 10px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @keyframes slide-in-right {
+    from {
+      transform: translate3d(100%, 0, 0);
+    }
+    to {
+      transform: none;
+    }
+  }
+  @keyframes shimmer {
+    from {
+      background-position: -180% 0;
+    }
+    to {
+      background-position: 180% 0;
+    }
+  }
+}
+
+/* =========================================================================
+   BASE
+   ========================================================================= */
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Guard against horizontal overflow from full-bleed decorative layers. */
+    overflow-x: hidden;
+  }
+
+  /* One visible focus treatment across the whole product. */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: var(--radius-xs);
+  }
+
+  /*
+   * The green focus ring is ~2.45:1 against the dark surfaces and the glass
+   * navbar — below the 3:1 that WCAG 1.4.11 requires for a non-text indicator.
+   * On those surfaces the ring switches to the inverse foreground, which is
+   * what the panorama viewer already did locally.
+   */
+  .bg-surface-inverse :focus-visible,
+  .glass-dark :focus-visible {
+    outline-color: var(--color-foreground-inverse);
+  }
+
+  /*
+   * The skip link's target. The header is fixed, so scrolling #main to the very
+   * top of the viewport puts the first heading underneath it.
+   */
+  [id="main"] {
+    scroll-margin-top: 6rem;
+  }
+
+  /*
+   * Focus for a "stretched link" card.
+   *
+   * These cards put the real <a> inside the heading and blow it up to cover the
+   * card with an absolutely positioned span. The link therefore sets
+   * focus-visible:outline-none — a ring drawn around a zero-height heading link
+   * would trace the text, not the card. Nothing was drawing a ring around the
+   * card instead, so tabbing through the monastery grid, the archive grid, the
+   * history timeline and the featured cards on the home page showed no focus at
+   * all: four of the product's primary navigation surfaces.
+   *
+   * :has() lets the card style itself from its own descendant's focus.
+   */
+  .card-focus:has(a:focus-visible) {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  .bg-surface-inverse .card-focus:has(a:focus-visible) {
+    outline-color: var(--color-foreground-inverse);
+  }
+
+  ::selection {
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+  }
+
+  /* Prices, times and counts must never shift width while animating. */
+  [data-numeric] {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Links sitting inside a paragraph are underlined, so they are
+     distinguishable without relying on colour. */
+  p > a:not([class*="rounded"]):not([class*="inline-flex"]) {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Inputs inherit the type system rather than the UA stylesheet. */
+  input,
+  select,
+  textarea,
+  button {
+    font: inherit;
+    color: inherit;
+  }
+}
+
+/* =========================================================================
+   UTILITIES
+   ========================================================================= */
+
+@utility text-balance-heading {
+  text-wrap: balance;
+}
+
+/* Scroll-linked reveal. Elements start hidden and are released by the
+   Reveal component; without JS or with reduced motion they stay visible. */
+@utility reveal-hidden {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+}
+
+@utility reveal-shown {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.6s var(--ease-out-soft),
+    transform 0.6s var(--ease-out-soft);
+}
+
+/* Horizontal card rails on mobile: snap, no visible scrollbar. */
+@utility scroll-rail {
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@utility snap-card {
+  scroll-snap-align: start;
+}
+
+/* Image ken-burns on card hover — transform only, no layout thrash. */
+@utility media-zoom {
+  transition: transform 0.7s var(--ease-out-soft);
+  will-change: transform;
+}
+
+/* =========================================================================
+   IMMERSIVE UTILITIES — parallax hero, stat counters, lifted cards
+   ========================================================================= */
+
+/* Base class for parallax image/art layers. Transform-only movement. */
+@utility parallax-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+
+/* Warm charcoal scrim so hero copy stays readable over photography — kept
+   light at the top so the image itself stays dominant. */
+@utility gradient-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(24, 19, 13, 0.85) 0%,
+    rgba(24, 19, 13, 0.4) 42%,
+    rgba(24, 19, 13, 0.14) 68%,
+    rgba(24, 19, 13, 0.04) 100%
+  );
+}
+
+/*
+ * Mobile hero scrim.
+ *
+ * There is no room for a copy column on a 390px screen, so the copy sits over
+ * the subject and the only thing separating them is this. The default
+ * `gradient-overlay` tops out at 0.14 across the upper two thirds, which left
+ * the eyebrow and headline reading against the lit face of the Buddha. This is
+ * the same warm charcoal, carried much further up the frame.
+ */
+@utility gradient-overlay-hero {
+  background: linear-gradient(
+    to top,
+    rgba(24, 19, 13, 0.9) 0%,
+    rgba(24, 19, 13, 0.74) 36%,
+    rgba(24, 19, 13, 0.46) 62%,
+    rgba(24, 19, 13, 0.2) 82%,
+    rgba(24, 19, 13, 0.06) 100%
+  );
+}
+
+/*
+ * Directional scrim for a hero that puts its copy in a left-hand column.
+ *
+ * The bottom-up `gradient-overlay` sits at 0.04-0.14 alpha across the top two
+ * thirds of the frame, so hero copy anchored anywhere but the very bottom is
+ * reading against raw photograph — measured at 2.18:1 over the lit chest of the
+ * Buddha on the home page, against a 4.5:1 requirement. This lays a real ground
+ * under the copy column and leaves the right of the frame, where the subject
+ * sits, almost untouched.
+ */
+@utility gradient-overlay-left {
+  background:
+    linear-gradient(
+      to right,
+      rgba(24, 19, 13, 0.93) 0%,
+      rgba(24, 19, 13, 0.82) 30%,
+      rgba(24, 19, 13, 0.46) 56%,
+      rgba(24, 19, 13, 0.1) 80%,
+      rgba(24, 19, 13, 0.02) 100%
+    ),
+    linear-gradient(to top, rgba(24, 19, 13, 0.55) 0%, rgba(24, 19, 13, 0) 38%);
+}
+
+/* Soft halo for display type sitting on imagery. */
+@utility text-glow {
+  text-shadow:
+    0 1px 2px rgba(24, 19, 13, 0.5),
+    0 6px 32px rgba(24, 19, 13, 0.55);
+}
+
+/* Denser halo for gold type that may land on gold subject matter. */
+@utility text-glow-strong {
+  text-shadow:
+    0 1px 3px rgba(24, 19, 13, 0.92),
+    0 2px 10px rgba(24, 19, 13, 0.85),
+    0 8px 28px rgba(24, 19, 13, 0.6);
+}
+
+/* Architectural glass — used selectively: navbar, hero chips, map panels. */
+@utility glass {
+  background: rgba(255, 252, 245, 0.6);
+  border: 1px solid rgba(255, 252, 245, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/*
+ * The fixed header on every page that is not the home hero.
+ *
+ * It used to be `glass-dark`, which is translucent — and translucency over a
+ * page rather than over photography buys nothing: there is no image behind the
+ * bar on /hotels or /history, only body copy, which read *through* the header
+ * and looked like a rendering fault. It also made the header's contrast
+ * uncomputable, so an auditor scoring the nav text had to fall back to the page
+ * background behind it and reported light-on-white.
+ *
+ * Opaque. The glass is kept for the one place it is earned: the home hero,
+ * where there really is a photograph underneath.
+ */
+@utility header-solid {
+  background: var(--color-header);
+  border-bottom: 1px solid rgba(246, 242, 233, 0.12);
+}
+
+@utility glass-dark {
+  /* 0.72 let page content read through the fixed header — the era tabs on
+     /history and the map legend on / were legible *through* the navbar, which
+     reads as a rendering fault rather than as glass. */
+  background: rgba(34, 28, 21, 0.86);
+  border: 1px solid rgba(246, 242, 233, 0.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/*
+ * Ground for a header that floats over photography with no background of its
+ * own. Over the pale mist at the top of the Rumtek hero, the ivory nav links
+ * and the search control were reading white-on-white. This is a fade rather
+ * than a bar, so the header still looks unbounded.
+ */
+@utility header-scrim {
+  background: linear-gradient(
+    to bottom,
+    rgba(24, 19, 13, 0.72) 0%,
+    rgba(24, 19, 13, 0.45) 45%,
+    rgba(24, 19, 13, 0) 100%
+  );
+}
+
+/* Hoverable card: lift, deepen shadow, warm the border to marigold. */
+/*
+ * A tile that is itself a link: the repeated card chrome used by the landing
+ * page's destination grid and stage list.
+ *
+ * WHY A COMPOSED UTILITY RATHER THAN THE CLASS CHAIN
+ * --------------------------------------------------
+ * The chain is eleven utilities long and was emitted 38 times on one page —
+ * once in the HTML and again in the RSC flight payload, because a className is
+ * a serialised prop. Naming it once cut roughly 20 KB off the landing page and
+ * made the tiles provably identical rather than identical by inspection.
+ */
+@utility tile {
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  transition:
+    border-color 0.2s var(--ease-out-soft),
+    box-shadow 0.2s var(--ease-out-soft);
+}
+
+@utility card-lift {
+  transition:
+    transform 0.3s var(--ease-out-soft),
+    box-shadow 0.3s var(--ease-out-soft),
+    border-color 0.3s var(--ease-out-soft);
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lifted);
+    border-color: var(--color-accent);
+  }
+}
+
+/* Entrance animation for hero copy; stagger with [animation-delay:*]. */
+@utility fade-in-up {
+  animation: fade-up 0.6s var(--ease-out-soft) both;
+}
+
+/* Stat counters must not shift width while animating digits. */
+@utility number-counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* =========================================================================
+   REDUCED MOTION — honoured globally, not per component
+   ========================================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-hidden {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------------------------------------------------------------- Leaflet */
+
+/*
+ * Leaflet ships its own control styling, and it is the only thing in the
+ * product that ignores the type system: the zoom buttons render in Lucida
+ * Console at 22px in pure black — the single pure black and the single
+ * non-system typeface on the site. The attribution line has the same problem at
+ * the other end of the scale, sitting at 11px in a grey that fails contrast.
+ *
+ * Scoped to .leaflet-container so nothing here leaks into the app's own
+ * controls.
+ */
+.leaflet-container {
+  font-family: var(--font-sans);
+}
+
+.leaflet-container .leaflet-bar {
+  border: 1px solid var(--color-border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft, 0 1px 2px rgb(36 29 21 / 0.08));
+}
+
+.leaflet-container .leaflet-bar a,
+.leaflet-container .leaflet-bar a:hover {
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-foreground);
+  background: var(--color-surface);
+  border-bottom-color: var(--color-border);
+}
+
+.leaflet-container .leaflet-bar a:hover {
+  background: var(--color-surface-muted);
+  color: var(--color-primary);
+}
+
+.leaflet-container .leaflet-bar a:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: -2px;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  color: var(--color-subtle);
+  font-size: 0.6875rem;
+  padding: 0.15rem 0.45rem;
+  border-top-left-radius: 0.375rem;
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: var(--color-primary);
+}
+
+/*
+ * MIXED-DIRECTION TEXT ON A TRANSLATED PAGE
+ * -----------------------------------------
+ * A translated destination page is deliberately bilingual: the interface is
+ * in the reader's language, and the archive text stays in the language of the
+ * source it is quoted from, because a translated quotation is no longer a
+ * quotation.
+ *
+ * On the Arabic pages that mixture broke sentence punctuation. An English
+ * paragraph inside an RTL container inherits RTL, so its full stop is placed
+ * at the wrong end — "Essential experiences ... nothing beyond them." renders
+ * as ".nothing beyond them".
+ *
+ * `unicode-bidi: plaintext` resolves each block's direction from its own
+ * first strong character rather than inheriting it. Arabic paragraphs stay
+ * right-to-left, quoted English paragraphs read left-to-right, and neither
+ * needs to be tagged by hand. Scoped to right-to-left pages so nothing else
+ * in the product changes.
+ */
+[dir="rtl"] p,
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] li,
+[dir="rtl"] figcaption,
+[dir="rtl"] dd,
+[dir="rtl"] dt {
+  unicode-bidi: plaintext;
+}
+
+/*
+ * Crop origin for photographs taller than the box they fill.
+ *
+ * Derived per photograph by scripts/media/build-image-focal.mjs and applied
+ * through src/lib/media/focal.ts — never hand-placed on an element. There is
+ * deliberately no rule for 50%: that is the browser's own default, it covers
+ * 299 of the 408 photographs, and emitting it would put an attribute on every
+ * image to restate what already happens.
+ */
+.fy-25 {
+  object-position: 50% 25%;
+}
+.fy-33 {
+  object-position: 50% 33%;
+}
+.fy-42 {
+  object-position: 50% 42%;
+}

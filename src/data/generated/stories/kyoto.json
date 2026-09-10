@@ -1,0 +1,811 @@
+[
+  {
+    "slug": "food-japanese-cuisine",
+    "destinationId": "kyoto",
+    "title": "Japanese cuisine",
+    "dek": "Japanese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political, economic, and social changes.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Japanese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political, economic, and social changes. The traditional cuisine of Japan is based on rice with miso soup and other dishes with an emphasis on seasonal ingredients. Side dishes often consist of fish, pickled vegetables, tamagoyaki, and vegetables cooked in broth. Common seafood is often grilled, but it is also sometimes served raw as sashimi or as sushi. Seafood and vegetables are also deep-fried in a light batter, as tempura. Apart from rice, a staple includes noodles, such as soba and udon. Japan also has many simmered dishes, such as fish products in broth called oden, or beef in sukiyaki and nikujaga.",
+    "content": [
+      "Japanese cuisine encompasses the regional and traditional foods of Japan, which have developed through centuries of political, economic, and social changes. The traditional cuisine of Japan (Japanese: washoku) is based on rice with miso soup and other dishes with an emphasis on seasonal ingredients. Side dishes often consist of fish, pickled vegetables, tamagoyaki, and vegetables cooked in broth. Common seafood is often grilled, but it is also sometimes served raw as sashimi or as sushi. Seafood and vegetables are also deep-fried in a light batter, as tempura. Apart from rice, a staple includes noodles, such as soba and udon. Japan also has many simmered dishes, such as fish products in broth called oden, or beef in sukiyaki and nikujaga.",
+      "Historically influenced by Chinese cuisine, Japanese cuisine has also opened up to influence from Western cuisines in the modern era. Dishes inspired by foreign food—in particular Chinese food—like ramen and gyōza, as well as foods like spaghetti, curry and hamburgers, have been adapted to Japanese tastes and ingredients. Traditionally, the Japanese shunned meat as a result of adherence to Buddhism, but with the modernization of Japan in the 1880s, meat-based dishes such as tonkatsu and yakiniku have become common. Since this time, Japanese cuisine, particularly sushi and ramen, has become popular globally.",
+      "In 2011, Japan overtook France to become the country with the most 3-starred Michelin restaurants; as of 2018, the capital of Tokyo has maintained the title of the city with the most 3-starred restaurants in the world. In 2013, Japanese cuisine was added to the UNESCO Intangible Heritage List.",
+      "Rice is a staple in Japanese cuisine. Wheat and soybeans were introduced shortly after rice. All three act as staple foods in Japanese cuisine today. At the end of the Kofun period and beginning of the Asuka period, Buddhism became the official religion of the country. Therefore, eating meat and fish was prohibited. In 675 AD, Emperor Tenmu prohibited the eating of horses, dogs, monkeys, and chickens. In the 8th and 9th centuries, many emperors continued to prohibit killing many types of animals. However, meat continued to be eaten in some areas. In Kagoshima, pig farming flourished, and in Oumi, there was a culture of eating beef. In addition, in the Suwa region, there was a ritual of deer sacrifice for Shinto rituals. The number of regulated meats increased significantly, leading to the banning of all mammals except whale, which were categorized as fish. During the Asuka period, chopsticks were introduced to Japan. Initially, they were used only by the nobility. The general population used their hands, as utensils were quite expensive.",
+      "Due to the lack of meat products, Japanese people minimized spice utilization. Spices were rare to find at the time. Spices, like pepper and garlic, were used only in a minimalist amount. Spices widely used in Japan were sansho and black pepper. They were often used in noodle, white rice, and fish dishes. They were also used as a nourishing medicine. In the absence of meat, fish was served as the main protein, as Japan is an island nation. Fish has influenced many iconic Japanese dishes today. In the 9th century, grilled fish and sliced raw fish were widely popular. Japanese people who could afford it would eat fish at every meal; others would have to make do without animal protein for many of their meals. In traditional Japanese cuisine, oil and fat are usually avoided during the cooking process in order to maintain a healthy lifestyle.",
+      "Preserving fish became a sensation and sushi originated as a means of preserving fish by fermenting it in boiled rice. Fish that are salted and then placed in rice are preserved by lactic acid fermentation, which helps prevent the proliferation of the bacteria that bring about putrefaction. During the 15th century, advancement and development helped shorten the fermentation of sushi to about one to two weeks. Sushi thus became popular both as a main meal and as a snack food, combining fish with rice. During the late Edo period (early 19th century), sushi without fermentation was introduced. Sushi was still being consumed with and without fermentation till the 19th century when the hand-rolled and nigiri-type sushi was invented."
+    ],
+    "keyFacts": [
+      "In 2013, Japanese cuisine was added to the UNESCO Intangible Heritage List.",
+      "In 675 AD, Emperor Tenmu prohibited the eating of horses, dogs, monkeys, and chickens.",
+      "In the 9th century, grilled fish and sliced raw fish were widely popular.",
+      "During the 15th century, advancement and development helped shorten the fermentation of sushi to about one to two weeks."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/food-japanese-cuisine.jpg",
+    "heroAlt": "Japanese cuisine, Kyoto",
+    "imageCredit": {
+      "file": "File:Oseti.jpg",
+      "url": "/images/capsule/kyoto/food-japanese-cuisine.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Oseti.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "No machine-readable author provided. Sixgimic assumed (based on copyright claims)."
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-wagashi",
+      "food-kaiseki",
+      "food-matcha"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Japanese cuisine",
+        "url": "https://en.wikipedia.org/wiki/Japanese_cuisine",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "craft-kintsugi",
+    "destinationId": "kyoto",
+    "title": "Kintsugi",
+    "dek": "Kintsugi, also known as kintsukuroi , is the Japanese art of repairing broken pottery by mending the areas of breakage with urushi lacquer dusted or mixed with powdered gold, silver, or platinum.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Kintsugi, also known as kintsukuroi , is the Japanese art of repairing broken pottery by mending the areas of breakage with urushi lacquer dusted or mixed with powdered gold, silver, or platinum. The method is similar to the maki-e technique. As a philosophy, it treats breakage and repair as part of the history of an object, rather than something to disguise.",
+    "content": [
+      "Kintsugi (Japanese: [kɪnˈtsuːɡi] or [kʲint͡sɯɡʲi]; Japanese: 金継ぎ, lit. 'golden joinery'), also known as kintsukuroi (金繕い, \"golden repair\"), is the Japanese art of repairing broken pottery by mending the areas of breakage with urushi lacquer dusted or mixed with powdered gold, silver, or platinum. The method is similar to the maki-e technique. As a philosophy, it treats breakage and repair as part of the history of an object, rather than something to disguise.",
+      "Kintsugi became closely associated with ceramic vessels used for chanoyu (Japanese tea ceremony). One theory is that kintsugi may have originated when Japanese shōgun Ashikaga Yoshimasa sent a damaged Chinese tea bowl back to China for repairs in the late 15th century. When it was returned, repaired with simple metal staples, it may have prompted Japanese craftsmen to look for a more aesthetically pleasing means of repair. On the other hand, according to Bakōhan Saōki (record of tea-bowl with a 'large-locust' clamp), such \"ugliness\" was considered inspirational and Zen-like, as it connoted beauty in broken things. The bowl thus became highly valued due to the large metal staples, which looked like a locust, and the bowl was named 'bakōhan (\"large-locust clamp\").",
+      "Collectors became so enamored of the new art that some were accused of deliberately smashing valuable pottery so it could be repaired with the gold seams of kintsugi. It is also possible that a pottery piece was chosen for deformities it had acquired during production, then deliberately broken and repaired, instead of being discarded.",
+      "The technique of kintsugi was also applied to ceramic pieces with origins outside of Japan, including China, Vietnam, and Korea.",
+      "As a philosophy, kintsugi is similar to the Japanese philosophy of wabi-sabi, an embracing of the flawed or imperfect.",
+      "Japanese aesthetics values marks of wear from the use of an object. This can be seen as a rationale for keeping an object around even after it has broken. It can also be understood as a justification of kintsugi itself, highlighting cracks and repairs as events in the life of an object, rather than allowing its service to end at the time of its damage or breakage.",
+      "The philosophy of kintsugi can also be seen as a variant of the adage \"Waste not, want not.\"",
+      "Kintsugi can relate to the Japanese philosophy of mushin (無心, \"no mind\"), which encompasses the concepts of non-attachment, acceptance of change, and fate as aspects of human life.",
+      "Not only is there no attempt to hide the damage, but the repair is literally illuminated... a kind of physical expression of the spirit of mushin....Mushin is often literally translated as \"no mind\", but carries connotations of fully existing within the moment, of non-attachment, of equanimity amid changing conditions. ...The vicissitudes of existence over time, to which all humans are susceptible, could not be clearer than in the breaks, the knocks, and the shattering to which ceramic ware too is subject. This poignancy or aesthetic of existence has been known in Japan as mono no aware, a compassionate sensitivity, or perhaps identification with, [things] outside oneself.",
+      "The key materials of kintsugi are ki urushi (pure urushiol-based lacquer), bengara urushi (iron red urushi), mugi urushi (a mixture of 50% ki urushi and 50% wheat flour), sabi urushi (a mixture of ki urushi with two kinds of clay), and a storage compartment referred to as a furo (\"bath\" in Japanese) where the mended pottery can rest at 90% humidity for between 2 days to 2 weeks as the urushi hardens. Traditionally, a wooden cupboard and bowls of hot water were used as the furo. Alternatively, thick cardboard boxes are sometimes used as the furo as they create a steady atmosphere of humidity or large vessels filled with rice, beans, or sand into which the mended pottery is submerged.",
+      "Kintsugi is the general concept of highlighting or emphasizing imperfections, visualizing mends and seams as an additive or an area to celebrate or focus on, rather than absence or missing pieces.",
+      "Modern artists and designers experiment with the technique as a means of analyzing the idea of loss, synthesis, and improvement through destruction and repair or rebirth. Through an artistic lens, a Kintsugi object is permanently both evidence of crisis and cure."
+    ],
+    "keyFacts": [
+      "One theory is that kintsugi may have originated when Japanese shōgun Ashikaga Yoshimasa sent a damaged Chinese tea bowl back to China for repairs in the late 15th century."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/craft-kintsugi.jpg",
+    "heroAlt": "Kintsugi, Kyoto",
+    "imageCredit": {
+      "file": "File:Tea_bowl,_Korea,_Joseon_dynasty,_16th_century_AD,_Mishima-hakeme_type,_buncheong_ware,_stoneware_with_white_engobe_and_translucent,_greenish-gray_glaze,_gold_lacquer_-_Ethnological_Museum,_Berlin_-_DSC02061.JPG",
+      "url": "/images/capsule/kyoto/craft-kintsugi.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Tea_bowl%2C_Korea%2C_Joseon_dynasty%2C_16th_century_AD%2C_Mishima-hakeme_type%2C_buncheong_ware%2C_stoneware_with_white_engobe_and_translucent%2C_greenish-gray_glaze%2C_gold_lacquer_-_Ethnological_Museum%2C_Berlin_-_DSC02061.JPG",
+      "license": "CC0",
+      "attribution": "Daderot"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-nishijin-ori",
+      "craft-japanese-lacquerware",
+      "craft-yuzen"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Kintsugi",
+        "url": "https://en.wikipedia.org/wiki/Kintsugi",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "craft-nishijin-ori",
+    "destinationId": "kyoto",
+    "title": "Nishijin-ori",
+    "dek": "Nishijin-ori  refers to traditional silk textiles produced in the Nishijin (西陣) district of Kamigyō-ku in Kyoto, Japan.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Nishijin-ori  refers to traditional silk textiles produced in the Nishijin (西陣) district of Kamigyō-ku in Kyoto, Japan. The textiles can be woven using various techniques, such as tsumugi, kasuri, velvet, damask, brocade, and more. The term, therefore, refers to the place of origin, not a particular technique or pattern.",
+    "content": [
+      "Nishijin-ori (西陣織, lit. 'Nishijin fabric') refers to traditional silk textiles produced in the Nishijin (西陣) district of Kamigyō-ku in Kyoto, Japan. The textiles can be woven using various techniques, such as tsumugi, kasuri, velvet, damask, brocade, and more. The term, therefore, refers to the place of origin, not a particular technique or pattern.",
+      "Originating in Heian-kyō (now Kyoto) over 1,200 years ago, Nishijin weaving is known for its highly decorative and finely woven designs, created through the use of tedious and specialised production processes. It is well-regarded for the high quality and craftsmanship of the resulting fabrics, commonly used for high-quality obi and kimono.",
+      "In 794, Heian-kyō became the new capital city of Japan, with the Imperial Court and the aristocracy moving to the city as a result; due to this, the production of nishijin-ori increased in order to supply the Court and the aristocracy.",
+      "Despite this, over time, the desire for nishijin-ori began to decrease, resulting in weavers skilled in the process of its production going into business on their own, rather than working for textile production businesses. The demand for the material continued to dwindle during the Muromachi period due to the Ōnin War (1467–1477); exacerbated by a string of internal conflict in Kyoto and drought over the following years, the majority of Kyoto was demolished, with the people of Kyoto fleeing to nearby towns for safety.",
+      "Following the end of the war in the 1480s, the residents of Kyoto returned home, establishing residence on the Western side of Kyoto; this area of settlement was named Nishijin, meaning 'Western position', after the land that the residents had settled on, which had been the location – literally, the Western position – occupied by the army of Yamana Sozen during the war. Another group established residence in the Northern portion of Kyoto, in the location of the modern-day Shinmachi district; this Northern group became known for producing nerinuki, a shimmering fabric made from raw silk and scoured silk that became essential to the tsujigahana fabric dyeing technique.",
+      "Following the end of the Ōnin War, nishijin-ori weaving began to thrive. The weaving community supplied materials for both the Imperial Courts and the samurai lords. This increased their productivity, leading to improvements in the production process and the ability to create new fabrics, such as the gold brocades and damask silks that had originated in Ming Dynasty China.",
+      "During the Edo period (1603–1836) nishijin-ori weaving continued to thrive, with many studying its production and passing down their trade through the generations of skilled professionals. In 1837, production came to a halt following the unavailability of materials due to crop failures, meaning that weavers were unable to produce the fabric; this was compounded upon by the move of Japan's capital to Tokyo in 1869, a series of events thought to be the end of the production of nishijin-ori. However, in 1872, the production of nishijin-ori began to flourish once again, following a trip by some weavers to Europe in order to learn from the European weaving trade. During this trip, the weavers learned new techniques from the people of Europe, and adapted to the use of European weaving methods and machinery, such as the production of the Jacquard loom and the flying shuttle. By 1898, the Nishijin textile trade was well developed and encompassed the technology shared by the Europeans. This marked a beginning of a new era of Nishijin weaving involving the use of new machinery in the Japanese trade.",
+      "The production of nishijin-ori has continued its success into the modern day, with nishijin-ori worn frequently to traditional Japanese ceremonies such as weddings, where it may be used for the bride's kimono, displaying designs passed down through generations of Nishijin weavers. These traditional designs range from scenes of nature, different breeds of birds and several different types of flowers. Several other products, including kimono scarves, different types of kimono, belts, shawls and many different types of cloth and decorations that adorn the walls of Japanese homes are also made using Nishijin weaving."
+    ],
+    "keyFacts": [
+      "During the Edo period (1603–1836) nishijin-ori weaving continued to thrive, with many studying its production and passing down their trade through the generations of skilled professionals.",
+      "However, in 1872, the production of nishijin-ori began to flourish once again, following a trip by some weavers to Europe in order to learn from the European weaving trade.",
+      "By 1898, the Nishijin textile trade was well developed and encompassed the technology shared by the Europeans."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/craft-nishijin-ori.jpg",
+    "heroAlt": "Nishijin-ori, Kyoto",
+    "imageCredit": {
+      "file": "File:Fukuro_obi.JPG",
+      "url": "/images/capsule/kyoto/craft-nishijin-ori.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Fukuro_obi.JPG",
+      "license": "CC BY-SA 3.0 cz",
+      "attribution": "Ichiro Wada"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-kintsugi",
+      "craft-japanese-lacquerware",
+      "craft-yuzen"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Nishijin-ori",
+        "url": "https://en.wikipedia.org/wiki/Nishijin-ori",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "craft-japanese-lacquerware",
+    "destinationId": "kyoto",
+    "title": "Japanese lacquerware",
+    "dek": "Japanese Lacquerware  is a Japanese craft with a wide range of fine and decorative arts, as lacquer has been used in urushi-e, prints, and on a wide variety of objects from Buddha statues to bento boxes for food.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Japanese Lacquerware  is a Japanese craft with a wide range of fine and decorative arts, as lacquer has been used in urushi-e, prints, and on a wide variety of objects from Buddha statues to bento boxes for food.",
+    "content": [
+      "Japanese Lacquerware (日本漆器, shikki) is a Japanese craft with a wide range of fine and decorative arts, as lacquer has been used in urushi-e, prints, and on a wide variety of objects from Buddha statues to bento boxes for food.",
+      "The characteristic of Japanese lacquerware is the diversity of lacquerware using a decoration technique called maki-e (蒔絵) in which metal powder is sprinkled to attach to lacquer. The invention of various maki-e techniques in Japanese history expanded artistic expression, and various tools and works of art such as inro are highly decorative.",
+      "A number of terms are used in Japanese to refer to lacquerware. Shikki (漆器) means \"lacquer ware\" in the most literal sense, while nurimono (塗物) means \"coated things\", and urushi-nuri (漆塗) means \"lacquer coating.\"",
+      "The terms related to lacquer or lacquerware such as \"Japanning\", \"Urushiol\" and \"maque\" which means lacquer in Mexican Spanish, are derived from Japanese lacquerware.",
+      "It has been confirmed that the lacquer tree existed in Japan from 12,600 years ago in the incipient Jōmon period. This was confirmed by radioactive carbon dating of the lacquer tree found at the Torihama shell mound, and is the oldest lacquer tree in the world found as of 2011. Lacquer was used in Japan as early as 7000 BCE, during the Jōmon period. Evidence for the earliest lacquerware was discovered at the Kakinoshima \"B\" Excavation Site in Hokkaido. The ornaments woven with lacquered red thread were discovered in a pit grave dating from the first half of the Initial Jōmon period. Also, at Kakinoshima \"A\" Excavation Site, earthenware with a spout painted with vermilion lacquer, which was made 3200 years ago, was found almost completely intact.",
+      "Lacquering technology may have been invented by the Jōmon. They learned to refine urushi (poison oak sap) – the process taking several months. Iron oxide (colcothar) and cinnabar (mercury sulfide) were used for producing red lacquer. Lacquer was used both on pottery, and on different types of wooden items. In some cases, burial clothes for the dead were also lacquered. Many lacquered objects have turned up during the Early Jōmon period; this indicates that this was an established part of Jōmon culture. Experts are divided on whether Jōmon lacquer was derived from Chinese techniques, or invented independently. For example, Mark Hudson believes that \"Jomon lacquer technology was developed independently in Japan rather than being introduced from China as once believed\".",
+      "One of the masterpieces of ancient Japanese lacquer objects is the Tamamushi Shrine from middle of the seventh century AD. The shrine is made of lacquered hinoki or Japanese cypress and camphor wood, both native species. While commonly referred to as urushi, since the Meiji period some scholars have argued instead that the paintings employ the technique known as mitsuda-e, an early type of oil painting, using perilla (shiso) oil with litharge as a desiccant.",
+      "Many traditional crafts and industrial arts produced throughout Japanese history were initially influenced by China, and afterward experienced various native stylistic influences and innovations over the centuries.",
+      "In the Heian period (794–1185), various maki-e techniques characteristic of Japanese lacquerware were developed. While the method of drawing designs with a brush by dissolving gold powder in lacquer is a common technique in other countries, the method of drawing designs with lacquer and then sprinkling gold, silver, or copper powder of various sizes and shapes on top to polish them was developed in Japan. This made it possible to make the gold and silver of lacquerware brighter than before. Togidashi maki-e, a kind of maki-e, was developed and completed in this period. And hira maki-e was developed in the latter half of this period.",
+      "In the Kamakura period (1185–1333), carved lacquer from the Song dynasty of China was imported to Japan. However, many Japanese lacquer craftsmen did not adopt the Chinese method of depositing lacquer and then carving it; instead, they created Kamakurabori, a method of carving wood and then coating lacquer. During this period, Hira maki-e was completed and taka maki-e was newly developed."
+    ],
+    "keyFacts": [
+      "It has been confirmed that the lacquer tree existed in Japan from 12,600 years ago in the incipient Jōmon period.",
+      "This was confirmed by radioactive carbon dating of the lacquer tree found at the Torihama shell mound, and is the oldest lacquer tree in the world found as of 2011.",
+      "Lacquer was used in Japan as early as 7000 BCE, during the Jōmon period.",
+      "Also, at Kakinoshima \"A\" Excavation Site, earthenware with a spout painted with vermilion lacquer, which was made 3200 years ago, was found almost completely intact."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/craft-japanese-lacquerware.jpg",
+    "heroAlt": "Japanese lacquerware, Kyoto",
+    "imageCredit": {
+      "file": "File:Writing_Box_Yatsuhashi_bridge_design.jpg",
+      "url": "/images/capsule/kyoto/craft-japanese-lacquerware.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Writing_Box_Yatsuhashi_bridge_design.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Tokyo National Museum"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-kintsugi",
+      "craft-nishijin-ori",
+      "craft-yuzen"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Japanese lacquerware",
+        "url": "https://en.wikipedia.org/wiki/Japanese_lacquerware",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "craft-yuzen",
+    "destinationId": "kyoto",
+    "title": "Yūzen",
+    "dek": "Yūzen (友禅) is a Japanese resist dyeing technique where dyes are applied inside outlines of dyed or undyed rice-paste resist, which may be drawn freehand or stencilled; the paste keeps the dye areas separated.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Yūzen (友禅) is a Japanese resist dyeing technique where dyes are applied inside outlines of dyed or undyed rice-paste resist, which may be drawn freehand or stencilled; the paste keeps the dye areas separated. Originating in the 17th century, the technique became popular as both a way of subverting sumptuary laws on dress fabrics, and also as a way to quickly produce kimono that appeared to be painted freehand with dyes. The technique was named after Miyazaki Yūzen (宮崎友禅), a 17th century fan painter who perfected the technique. Miyazaki Yūzen's fan designs became so popular that a book called the yūzen-hiinagata was published in 1688, showing similar patterns applied to kosode. A fashion for elaborate pictorial yūzen designs lasted until 1692.",
+    "content": [
+      "Yūzen (友禅) is a Japanese resist dyeing technique where dyes are applied inside outlines of dyed or undyed rice-paste resist, which may be drawn freehand or stencilled; the paste keeps the dye areas separated. Originating in the 17th century, the technique became popular as both a way of subverting sumptuary laws on dress fabrics, and also as a way to quickly produce kimono that appeared to be painted freehand with dyes. The technique was named after Miyazaki Yūzen (宮崎友禅), a 17th century fan painter who perfected the technique. Miyazaki Yūzen's fan designs became so popular that a book called the yūzen-hiinagata was published in 1688, showing similar patterns applied to kosode (the predecessor of the kimono). A fashion for elaborate pictorial yūzen designs lasted until 1692.",
+      "The first is itome-yūzen, sometimes also called hon-yūzen.  First, a sketch is drawn freehand on the cloth or paper, using a black heat-labile ink made from dayflowers. A paste of rice powder, rice paste, rice bran and lime (called nori) is then piped from a cone, following the outline. These ridges of paste are called itome. A bean-based liquid called gojiru is then applied as a mordant, to make the dyes penetrate better. The dye-application stage is called irosashi. Dye is painted on using a brush. The ridges of paste separate the areas of dye, rather like cloissoné enamel. Within an area of dye, the brush can be used to apply ombré gradients (bokashi-zome, \"ombré-dyeing\"). Mushi, a step where the fabric is steamed at 80 °C (176 °F) for around 20–40 minutes, may be applied at this stage to set the colours, or steaming may be omitted until after the background is dyed. The background is dyed by covering all of the already-dyed areas with additional resist pastes, then applying the background dye either with a brush (hiki-zome), or by dipping the fabric in a vat of dye (ji-zome), sometimes with additional shibori (tie-dye) patterning. The yūzen-nagashi step washes the paste out of the fabric; this is now done in a specialized sink rather than a clear stream. The cloth may then be steamed again to adjust its dimensions, and other forms of decoration, such as embroidery, could be applied.",
+      "In the 1870s, the utsushi-yūzen technique was developed. It used synthetic aniline dyes, newly-introduced to Japan, and mixed them with the nori resist-paste. When the cloth was steamed, the dyes would penetrate the cloth, while the paste remained on the surface. The nori thus acted as both a dye and a resist against the other dyes. Stencils were extensively used. In 1879, this technique was used to dye a wool cloth called mosurin, producing mosurin-yuzen (wool was a new import to Japan at the time). Adapting the technique to silk took more time; Hirose Jisuke of Kyoto is credited for developing the kata-yūzen technique.",
+      "In 1881, improvements in the dye-paste and steaming techniques made it possible to dye the background using paste (shigoki), often using brighter colours than traditional techniques. Instead of scrolling the cloth past an artist who decorated part of it at a time, the whole length was spread on a board. All of the coloured pastes were applied through stencils with a spatula, and a different stencil was used for each colour (rather like Japanese woodblock printing). Brushwork through stencils was used only for creating gradients. A stencil for undyed paste was used to create skiamorphic white outlines between the areas of colour, making the finished kata-yūzen pattern resemble itome-yūzen.",
+      "The Exposition Universelle of 1900 in Paris introduced Art Nouveau (a Western art movement heavily influenced by Japanese art) to Japanese artists. In the early 20th century, yūzen developed new designs inspired by Art Nouveau.",
+      "Though similar in appearance to tsutsugaki, yūzen differs in application, with tsutsugaki pieces generally using one application of rice paste before dyeing, typically in an indigo dyebath, resulting in a characteristic blue-and-white end result. In contrast, yūzen can feature a number of repeated applications of rice paste, with dye hand painted into certain areas before the resist is removed."
+    ],
+    "keyFacts": [
+      "The technique was named after Miyazaki Yūzen (宮崎友禅), a 17th century fan painter who perfected the technique.",
+      "Miyazaki Yūzen's fan designs became so popular that a book called the yūzen-hiinagata was published in 1688, showing similar patterns applied to kosode (the predecessor of the kimono).",
+      "A fashion for elaborate pictorial yūzen designs lasted until 1692.",
+      "In 1879, this technique was used to dye a wool cloth called mosurin, producing mosurin-yuzen (wool was a new import to Japan at the time)."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/craft-yuzen.jpg",
+    "heroAlt": "Yūzen, Kyoto",
+    "imageCredit": {
+      "file": "File:Kosode_(Running_waters_and_wheels_with_mallets).Detail._Matsuzakaya_Collection.jpg",
+      "url": "/images/capsule/kyoto/craft-yuzen.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Kosode_(Running_waters_and_wheels_with_mallets).Detail._Matsuzakaya_Collection.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ismoon (talk)"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-kintsugi",
+      "craft-nishijin-ori",
+      "craft-japanese-lacquerware"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Yūzen",
+        "url": "https://en.wikipedia.org/wiki/Y%C5%ABzen",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "food-wagashi",
+    "destinationId": "kyoto",
+    "title": "Wagashi",
+    "dek": "Wagashi  is traditional Japanese confectionery, typically made using plant-based ingredients and with an emphasis on seasonality.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Wagashi  is traditional Japanese confectionery, typically made using plant-based ingredients and with an emphasis on seasonality. Wagashi generally makes use of cooking methods that pre-date Western influence in Japan. It is often served with green tea.",
+    "content": [
+      "Wagashi (和菓子, wa-gashi) is traditional Japanese confectionery, typically made using plant-based ingredients and with an emphasis on seasonality. Wagashi generally makes use of cooking methods that pre-date Western influence in Japan. It is often served with green tea.",
+      "Most of today's wagashi was born during the Edo period (1603–1868). This was a period of peace, economic and cultural prosperity, and increased domestic self-sufficiency in sugar.",
+      "During the Edo period, a type of wagashi called nerikiri (練り切り) were made by kneading white bean paste, gyūhi, sugar, yams, and other ingredients, and formed into various colors and shapes based on seasonal flowers, animals, nature, events, customs, and other themes.",
+      "In Japan, the word for sweets or confectionery, kashi (菓子), originally referred to fruits and nuts. Fruits and nuts may be eaten as snacks between meals and served as \"sweets\" during a tea ceremony. The word Wa means \"Japanese\", and kashi becomes gashi in compound words, wagashi therefore means \"Japanese confectionery\".",
+      "In 1603, the first year of the Edo period (1603–1868), the term kashi (菓子) meant both confectionery and fruit, and was more commonly used to refer to fruit. For example, the Japanese-Portuguese dictionary of the time describes \"quaxi\" (菓子) as \"fruit, especially fruit eaten after a meal.\" The term mizugashi (水菓子, water confections), which is used to refer to fruit today, is a remnant of the same term.",
+      "The word wagashi was coined at the end of 1800s to distinguish Japanese confectionery from sweets, cakes and baked goods introduced from the West termed yōgashi (洋菓子). However, wagashi was not the common term for Japanese confectionery until after the Second World War.",
+      "The definition of wagashi is ambiguous, and the line between wagashi and other types of Japanese confectionery is vague. For example, although the original kasutera (castella) was introduced from Portugal, it has been around for more than 400 years and has been modified to suit Japanese tastes, so it is classified as a wagashi. Mizu shingen mochi (水信玄餅, Raindrop cake), created in 2014, was developed by a wagashi shop as a derivative of shingen mochi and is recognized as a wagashi in Japan. In recent years, wagashi shops have developed and marketed many confections that are an eclectic mix of wagashi and Western confections, often referred to as \"neo-wagashi\".",
+      "It is believed that the first food eaten as a confection in Japan was a processed food from the Jomon period. It is thought to have been either a food made by kneading chestnuts into a powder and then baking and hardening it with eggs and salt, or a food made by adding animal flesh to chestnut flour and baking and hardening it.",
+      "During the Yayoi period, dango (団子, dumpling) were made from grain or rice flour.",
+      "During the Nara period (710–794), a food called karakudamono (唐菓子, Chinese confections) was brought to Japan from the Tang dynasty. This food consisted mostly of powdered kneaded rice, wheat, soybeans, and azuki beans, seasoned with sweet miso paste, and fried in oil as the main ingredient. It was prized as a ritual food in various forms, but later fell into disuse in Japan and is now used as an offering to the Buddha in modern Buddhism. Sugar was introduced to Japan around 750, but it was not until 850 years later, around the Edo period, that sugar-based wagashi began to be widely produced.",
+      "The first beautifully crafted confections were created in the Heian period (794–1185) and are mentioned in The Tale of Genji under the names tsubakimochi (椿餅) and aosashi (青差). Tsubakimochi was originally a confection that was not fried in oil, which was unusual among karakudamono, but it was later changed to suit the tastes of the Japanese people. In the beginning, it was a mochi made by coating rice flour with a sweetener made from the juice of boiled vine grass and wrapping it in camellia leaves. Later, the sweetener made from the juice of boiled vine grass was replaced by sugar, and the rice cake was filled with red bean paste. Confectionery of this period was food offered to the nobility."
+    ],
+    "keyFacts": [
+      "Most of today's wagashi was born during the Edo period (1603–1868).",
+      "In 1603, the first year of the Edo period (1603–1868), the term kashi (菓子) meant both confectionery and fruit, and was more commonly used to refer to fruit.",
+      "Mizu shingen mochi (水信玄餅, Raindrop cake), created in 2014, was developed by a wagashi shop as a derivative of shingen mochi and is recognized as a wagashi in Japan.",
+      "During the Nara period (710–794), a food called karakudamono (唐菓子, Chinese confections) was brought to Japan from the Tang dynasty."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/food-wagashi.jpg",
+    "heroAlt": "Wagashi, Kyoto",
+    "imageCredit": {
+      "file": "File:Wagashi_closeup_14.jpg",
+      "url": "/images/capsule/kyoto/food-wagashi.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Wagashi_closeup_14.jpg",
+      "license": "CC0",
+      "attribution": "Douglas Perkins"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-japanese-cuisine",
+      "food-kaiseki",
+      "food-matcha"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Wagashi",
+        "url": "https://en.wikipedia.org/wiki/Wagashi",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "food-kaiseki",
+    "destinationId": "kyoto",
+    "title": "Kaiseki",
+    "dek": "Kaiseki (懐石) or kaiseki-ryōri  is a traditional multi-course Japanese dinner.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Kaiseki (懐石) or kaiseki-ryōri  is a traditional multi-course Japanese dinner. The term also refers to the collection of skills and techniques that allow the preparation of such meals and is analogous to Western haute cuisine.",
+    "content": [
+      "Kaiseki (懐石) or kaiseki-ryōri (懐石料理) is a traditional multi-course Japanese dinner. The term also refers to the collection of skills and techniques that allow the preparation of such meals and is analogous to Western haute cuisine.",
+      "There are two kinds of traditional Japanese meal styles called kaiseki or kaiseki-ryōri. The first, where kaiseki is written as \"会席\" and kaiseki-ryōri as \"会席料理\", refers to a set menu of select food served on an individual tray (to each member of a gathering). The second, written as \"懐石\" and as \"懐石料理\", refers to the simple meal that the host of a chanoyu gathering serves to the guests before a ceremonial tea, and is also known as cha-kaiseki (茶懐石). The development of nouvelle cuisine was likely inspired by kaiseki principles.",
+      "The kanji characters used to write \"kaiseki\" (懐石) literally mean \"breast-pocket stone\". These kanji are thought to have been incorporated by Sen no Rikyū (1522–1591) to indicate the frugal meal served in the austere style of chanoyu (Japanese tea ceremony). The idea came from the practice where Zen monks would ward off hunger by putting warm stones into the front folds of their robes, near their stomachs.",
+      "Before these kanji started to be used, the kanji for writing the word were simply ones indicating that the cuisine was for a gathering (会席料理). Both sets of kanji remain in use today to write the word; the authoritative Japanese dictionary 'Kōjien' describes kaiseki (literally, \"cuisine for a gathering\") as a banquet meal where the main beverage is sake (Japanese rice wine), and the \"bosom-stone\" cuisine as the simple meal served in chanoyu. To distinguish between the two in speech and, if necessary, in writing, the chanoyu meal may be referred to as \"tea\" kaiseki or cha-kaiseki.",
+      "Modern kaiseki draws on a number of traditional Japanese haute cuisines, notably the following four traditions: imperial court cuisine (有職料理, yūsoku ryōri), from the 9th century in the Heian period; Buddhist cuisine of temples (精進料理, shōjin ryōri), from the 12th century in the Kamakura period; samurai cuisine of warrior households (本膳料理, honzen ryōri), from the 14th century in the Muromachi period; and tea ceremony cuisine (茶懐石, cha kaiseki), from the 15th century in the Higashiyama period of the Muromachi period. All of these individual cuisines were formalized and developed over time, and continue in some form to the present day, but have also been incorporated into kaiseki cuisine. Different chefs weigh these differently – court and samurai cuisine are more ornate, while temple and tea ceremony cuisine are more restrained.",
+      "In the present day, kaiseki is a type of art form that balances the taste, texture, appearance, and colors of food. To this end, only fresh seasonal ingredients are used and are prepared in ways that aim to enhance their flavor. Local ingredients are often included as well. Finished dishes are carefully presented on plates that are chosen to enhance both the appearance and the seasonal theme of the meal. Dishes are beautifully arranged and garnished, often with real leaves and flowers, as well as edible garnishes designed to resemble natural plants and animals.",
+      "Originally, kaiseki comprised a bowl of miso soup and three side dishes; this is now instead the standard form of Japanese-style cuisine generally, referred to as a セット (setto, \"set\"). Kaiseki has since evolved to include an appetizer, sashimi, a simmered dish, a grilled dish and a steamed course, in addition to other dishes at the discretion of the chef.",
+      "Hassun (八寸): the second course, which sets the seasonal theme. Typically one kind of sushi and several smaller side dishes. Traditionally served on a square dish measuring eight sun (寸) on each side.",
+      "Takiawase (煮合): vegetables served with meat, fish or tofu; the ingredients are simmered separately.",
+      "Su-zakana (酢肴): a small dish used to cleanse the palate, such as vegetables in vinegar; vinegared appetizer.",
+      "Mizumono (水物): a seasonal dessert; may be fruit, confection, ice cream, or cake."
+    ],
+    "keyFacts": [
+      "These kanji are thought to have been incorporated by Sen no Rikyū (1522–1591) to indicate the frugal meal served in the austere style of chanoyu (Japanese tea ceremony)."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/food-kaiseki.jpg",
+    "heroAlt": "Kaiseki, Kyoto",
+    "imageCredit": {
+      "file": "File:Jisaku_Kaiseki_Ryori_01.jpg",
+      "url": "/images/capsule/kyoto/food-kaiseki.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Jisaku_Kaiseki_Ryori_01.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Chris 73 / Wikimedia Commons"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-japanese-cuisine",
+      "food-wagashi",
+      "food-matcha"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Kaiseki",
+        "url": "https://en.wikipedia.org/wiki/Kaiseki",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "food-matcha",
+    "destinationId": "kyoto",
+    "title": "Matcha",
+    "dek": "Matcha is a finely ground powder of green tea specially processed from shade-grown tea leaves.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Matcha is a finely ground powder of green tea specially processed from shade-grown tea leaves. Shade growing gives matcha its characteristic bright green color and strong umami flavor. Matcha is typically consumed suspended in hot water.",
+    "content": [
+      "Matcha ( ; Japanese: 抹茶) is a finely ground powder of green tea specially processed from shade-grown tea leaves. Shade growing gives matcha its characteristic bright green color and strong umami flavor. Matcha is typically consumed suspended in hot water.",
+      "Matcha originated through cultural exchanges between China and Japan in the premodern period, developing from earlier powdered tea practices in China that were transmitted to Japan by Zen Buddhist monks. During the Song dynasty, tea leaves were ground into a fine powder and whisked with hot water. This method was introduced to Japan by the monk Eisai around 1191, where it continued to develop even as such practices declined in China.",
+      "During the Muromachi period in the sixteenth century, Japanese tea farmers developed shading techniques to produce tencha (碾茶), the tea leaves used for grinding into matcha. This innovation contributed to the development of modern matcha, characterized by its vivid green color and rich umami flavor, the latter derived from theanine, distinguishing it from earlier forms of powdered tea. It also contributed to the development in Japan of new tea styles such as sencha and gyokuro. Traditionally, matcha was produced almost exclusively in Japan,  although it is now also produced in other countries such as China and South Korea. In the twenty-first century, to meet the rising global demand for matcha, China invited Japanese specialists for technical guidance, introduced the necessary equipment, and has promoted mass production in Guizhou Province since 2018. While Japan still produces the finest matcha, the quality of Chinese matcha has been improving rapidly enough to be used in the food processing industry at more competitive prices.",
+      "The traditional Japanese tea ceremony, typically known as chanoyu (茶の湯) or sadō/chadō (茶道), centers on the preparation, serving and drinking of matcha as hot tea, and embodies a meditative and spiritual practice.",
+      "Matcha is also used to flavor and dye foods such as mochi and soba noodles, green tea ice cream, matcha lattes, and a variety of Japanese wagashi confectionery. For this purpose, matcha made green by color additives instead of expensive shade-grown matcha is often used.",
+      "Strict definitions of matcha are given by the International Organization for Standardization, ISO 20715:2023 \"Tea — Classification of tea types\", and the Japanese food labeling standard defined by Japan Tea Central Public Interest Incorporated Association (日本茶業中央会).",
+      "The Japanese food labeling standard requires the tea leaves to be shaded for 2–3 weeks before harvesting using covering materials such as yoshizu, komo, or cheesecloth. Tea leaves after processing the first three steps are called tencha (碾茶) in this standard. ISO 20715:2023 allows matcha to be made from tender leaves, buds, or shoots, but Japanese food labeling standard allows it to be made only from leaves.",
+      "Inexpensive green tea, hunmatsucha (粉末茶), made by crushing non-shade grown tea leaves, is sometimes sold under the name of \"matcha\" although it does not satisfy the above definitions. The cheaper alternative is used to flavor and dye foods.",
+      "Powdered tea originated in China during the Tang dynasty (618–907) where tea leaves were pounded and then milled into fine powder before being shaped into \"cakes\". The Classic of Tea, written by Chinese tea master Lu Yu roughly between 760 to 762 CE, had documented the practise of steeping powdered tea in hot water. This involved first roasting compressed tea over a fire and then grinding it in a wooden grinder called a niǎn (碾, Japanese: yagen), boiling water in a pot, adding salt once it comes to a boil, then adding the tea powder to the boiling water and boiling it until it began to foam. The tea was also sometimes mixed with green onions, ginger, jujubes, mandarin orange peels, Tetradium ruticarpum, and mint."
+    ],
+    "keyFacts": [
+      "This method was introduced to Japan by the monk Eisai around 1191, where it continued to develop even as such practices declined in China.",
+      "During the Muromachi period in the sixteenth century, Japanese tea farmers developed shading techniques to produce tencha (碾茶), the tea leaves used for grinding into matcha.",
+      "ISO 20715:2023 allows matcha to be made from tender leaves, buds, or shoots, but Japanese food labeling standard allows it to be made only from leaves.",
+      "Powdered tea originated in China during the Tang dynasty (618–907) where tea leaves were pounded and then milled into fine powder before being shaped into \"cakes\"."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/food-matcha.jpg",
+    "heroAlt": "Matcha, Kyoto",
+    "imageCredit": {
+      "file": "File:Matcha_Scoop.jpg",
+      "url": "/images/capsule/kyoto/food-matcha.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Matcha_Scoop.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Evanhoever"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-japanese-cuisine",
+      "food-wagashi",
+      "food-kaiseki"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Matcha",
+        "url": "https://en.wikipedia.org/wiki/Matcha",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-aoi-matsuri",
+    "destinationId": "kyoto",
+    "title": "Aoi Matsuri",
+    "dek": "The Aoi Matsuri (葵祭), or \"Hollyhock Festival\", is one of the three main annual festivals held in Kyoto, Japan, the other two being the Festival of the Ages and the Gion Festival.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Aoi Matsuri (葵祭), or \"Hollyhock Festival\", is one of the three main annual festivals held in Kyoto, Japan, the other two being the Festival of the Ages and the Gion Festival. It is a festival of the two Kamo shrines in the north of the city, Shimogamo Shrine and Kamigamo Shrine. The festival may also be referred to as the Kamo Festival. It is held on 15 May of each year.",
+    "content": [
+      "The Aoi Matsuri (葵祭), or \"Hollyhock Festival\", (although commonly, but mistakenly identified as \"hollyhock\", the \"aoi\" actually belongs to the birthwort family and translates as \"wild ginger\"—Asarum) is one of the three main annual festivals held in Kyoto, Japan, the other two being the Festival of the Ages (Jidai Matsuri) and the Gion Festival. It is a festival of the two Kamo shrines in the north of the city, Shimogamo Shrine and Kamigamo Shrine. The festival may also be referred to as the Kamo Festival. It is held on 15 May of each year.",
+      "According to the Nihon Shoki, the festival originated during the reign of Emperor Kinmei (reigned CE 539 - 571). The ancient records known as the Honchō getsurei (本朝月令) and Nenchūgyōji hissho (年中行事秘抄) reveal that a succession of disastrous rains with high winds ruined the grain crops, and epidemics had spread through the country. Because diviners placed the cause on divine punishment by the Kamo deities, the Emperor sent his messenger with a retinue to the shrine to conduct various acts to appease the deities, in prayer for a bountiful harvest. These included riding a galloping horse.",
+      "This became an annual ritual, and the galloping horse performance developed into an equestrian archery performance. According to the historical record known as the Shoku Nihongi (続日本記), so many people had come to view this equestrian performance on the festival day in the 2nd year of the reign of Emperor Monmu (r. 697–707) that the event was banned.",
+      "In the ninth century, Emperor Kanmu established the seat of the imperial throne in Kyoto. This represented the beginning of the Heian period in Japanese history. Emperor Kanmu recognized the deities of the Kamo shrines as protectors of the Heian capital, and established the Aoi Matsuri as an annual imperial event.",
+      "The festival saw its peak of grandeur in the middle of the Heian period, but this waned in the Kamakura period and the following Muromachi period, and as the nation entered the Sengoku period, the festival procession was discontinued. In the Genroku era (1688–1704) of the Edo period, it was revived, but in the 2nd year of the Meiji period (1869), when the capital was moved from Kyoto to Tokyo, observance of the festival procession stopped. In Meiji-17 (1885), it was again revived as part of a government plan to enliven Kyoto. All but the rituals at the shrine fronts were discontinued from 1944, due to the Pacific War. At last, the festival procession started to be held again from 1953. The Saiō-Dai festival princess tradition was initiated in 1956. The Saiō (斎王) was an unmarried female member of the Japanese imperial house.",
+      "The festival is named after the hollyhock (aoi) leaves used as decoration throughout the celebration as well as offerings to the gods. During the Heian Period, these leaves were once believed to protect against natural disasters such as earthquakes and thunder, and were often hung under the roofs of homes for protection. However, the plants used in the Aoi Matsuri may not be hollyhock, but possibly wild ginger. Due to the rarity of these plants, other plants with similarly shaped leaves have been used in the festival instead, such as the leaves of the katsura tree.",
+      "Preceding the main procession, a rite of divine manifestation known as Miare shinji is held on the night of 12 May at Kamigamo Shrine, in which the deity is invoked into five sakaki trees erected within a himorogi. On 15 May, the kami's manifestation is welcomed at Shimogamo Shrine through a procession of sacred horses (shinme) traveling from Mount Mikage, in a rite known as Mikage matsuri, before being carried to the shrine.There are several events that take place during the month but the most important event is on 15 May."
+    ],
+    "keyFacts": [
+      "According to the Nihon Shoki, the festival originated during the reign of Emperor Kinmei (reigned CE 539 - 571).",
+      "In the ninth century, Emperor Kanmu established the seat of the imperial throne in Kyoto.",
+      "In Meiji-17 (1885), it was again revived as part of a government plan to enliven Kyoto.",
+      "All but the rituals at the shrine fronts were discontinued from 1944, due to the Pacific War."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/festival-aoi-matsuri.jpg",
+    "heroAlt": "Aoi Matsuri, Kyoto",
+    "imageCredit": {
+      "file": "File:Aoi_Matsuri.jpg",
+      "url": "/images/capsule/kyoto/festival-aoi-matsuri.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Aoi_Matsuri.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Japanexperterna"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-gion-matsuri",
+      "festival-jidai-matsuri",
+      "festival-hanami"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Aoi Matsuri",
+        "url": "https://en.wikipedia.org/wiki/Aoi_Matsuri",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-tofu",
+    "destinationId": "kyoto",
+    "title": "Tofu",
+    "dek": "Tofu  or bean curd is a food prepared by pressing the curds of coagulated soy milk into solid white blocks of varying softness: 'silken', 'soft', 'firm', and 'extra firm'.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Tofu  or bean curd is a food prepared by pressing the curds of coagulated soy milk into solid white blocks of varying softness: 'silken', 'soft', 'firm', and 'extra firm'.",
+    "content": [
+      "It originated in China and has been consumed for over 2,000 years. Tofu is a traditional component of many East Asian and Southeast Asian cuisines; in modern Western cooking, it is often used as a meat substitute.",
+      "Nutritionally, tofu is low in calories, while providing a rich source of protein. Cultivation of tofu has one of the lowest needs for land use (1.3 m2/ 1000 kcal) and emits some of the lowest amounts of greenhouse gas emissions per gram of edible protein of any food (1.6 kg CO2/ 100 g protein).",
+      "The English word \"tofu\" comes from Japanese tōfu (豆腐). The Japanese tōfu, in turn, is a borrowing of Chinese 豆腐 (Mandarin: dòufǔ; tou4-fu) 'bean curd, bean ferment'.",
+      "The earliest documentation of the word in English is in the 1704 translation of Domingo Fernández Navarrete's A Collection of Voyages and Travels, that describes how tofu was made. The word towfu also appears in a 1770 letter from the English merchant James Flint to Benjamin Franklin. The term \"bean curd(s)\" for tofu has been used in the United States since at least 1840.",
+      "Tofu making was first recorded during the Chinese Han dynasty. Chinese legend ascribes its invention to Prince Liu An (179–122 BC) of Anhui province. Tofu and its production technique were introduced to Japan during the Nara period (710–794) but there are no clear records; tofu first appeared on record in AD 965. Some scholars believe tofu arrived in Vietnam during the 10th and 11th centuries. It spread to other parts of Southeast Asia as well. This probably coincided with the spread of Buddhism as it is an important source of protein in the vegetarian diet of East Asian Buddhism. Li Shizhen, during the Ming dynasty, described a method of making tofu in the Compendium of Materia Medica. Since then, tofu has become a staple in many countries, including Vietnam, Thailand, and Korea, with regional variations in production methods, texture, flavor, and usage.",
+      "The most commonly held of the three theories of tofu's origin maintains that tofu was discovered by Liu An (179–122 BC), a Han dynasty prince. While plausible, the paucity of reliable sources for this period makes this difficult to conclusively determine. In Chinese history, important inventions were frequently attributed to important leaders and figures of the time. It was used as a cheaper option to meat. In 1960, a stone mural unearthed from an Eastern Han dynasty tomb provided support for the theory of the Han origin of tofu; however some scholars maintain that tofu during the Han dynasty was rudimentary and lacked the firmness and taste for it to be considered as tofu.",
+      "Another theory suggests that the production method for tofu was discovered accidentally when a slurry of boiled, ground soybeans was mixed with impure sea salt. Such sea salt would probably have contained calcium and magnesium salts, allowing the soy mixture to curdle and produce a tofu-like gel.",
+      "The last group of theories maintains that the ancient Chinese learned the method for curdling soy milk by emulating the milk curdling techniques of the Mongolians. The primary evidence for this theory is the etymological similarity between the Chinese term rǔfǔ (乳腐), which literally means \"milk curdled\", used during Sui dynasty (AD 581–618), for dishes with a consistency like yogurt or soft cheese, later influenced by Mongolian milk products and methods of production, and the term dòufu (豆腐, \"beans curdled\" ) or tofu. Although intriguing and possible, there is no evidence to substantiate this theory beyond academic speculation.",
+      "A form of tofu may have been discovered during the Han dynasty (202 BC – AD 220), but it did not become a popular food in China until the Song dynasty (960–1279)."
+    ],
+    "keyFacts": [
+      "It originated in China and has been consumed for over 2,000 years.",
+      "The earliest documentation of the word in English is in the 1704 translation of Domingo Fernández Navarrete's A Collection of Voyages and Travels, that describes how tofu was made.",
+      "The word towfu also appears in a 1770 letter from the English merchant James Flint to Benjamin Franklin.",
+      "The term \"bean curd(s)\" for tofu has been used in the United States since at least 1840."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/food-tofu.jpg",
+    "heroAlt": "Tofu, Kyoto",
+    "imageCredit": {
+      "file": "File:Japanese_SilkyTofu_(Kinugoshi_Tofu).JPG",
+      "url": "/images/capsule/kyoto/food-tofu.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Japanese_SilkyTofu_(Kinugoshi_Tofu).JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "DryPot"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-japanese-cuisine",
+      "food-wagashi",
+      "food-kaiseki"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Tofu",
+        "url": "https://en.wikipedia.org/wiki/Tofu",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-gion-matsuri",
+    "destinationId": "kyoto",
+    "title": "Gion Matsuri",
+    "dek": "The Gion Festival  is one of the largest and most famous festivals in Japan, taking place annually during the month of July in Kyoto.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Gion Festival  is one of the largest and most famous festivals in Japan, taking place annually during the month of July in Kyoto. Many events take place in central Kyoto and at the Yasaka Shrine, the festival's patron shrine, located in Kyoto's famous Gion district, which gives the festival its name. It is formally a Shinto festival, and its original purposes were purification and pacification of disease-causing entities. There are many ceremonies held during the festival, but it is best known for its two Yamaboko Junkō (山鉾巡行) processions of floats, which take place on July 17 and 24.",
+    "content": [
+      "The Gion Festival (祇園祭, Gion Matsuri) is one of the largest and most famous festivals in Japan, taking place annually during the month of July in Kyoto. Many events take place in central Kyoto and at the Yasaka Shrine, the festival's patron shrine, located in Kyoto's famous Gion district, which gives the festival its name. It is formally a Shinto festival, and its original purposes were purification and pacification of disease-causing entities. There are many ceremonies held during the festival, but it is best known for its two Yamaboko Junkō (山鉾巡行) processions of floats, which take place on July 17 and 24.",
+      "The three nights leading up to each day of a procession are sequentially called yoiyoiyoiyama (宵々々山), yoiyoiyama (宵々山), and yoiyama (宵山). During these yoiyama evenings, Kyoto's downtown area is reserved for pedestrian traffic, and some traditional private houses near the floats open their entryways to the public, exhibiting family heirlooms in a custom known as the Folding Screen Festival (屏風祭り, Byōbu Matsuri). Additionally, the streets are lined with night stalls selling food such as yakitori (barbecued chicken on skewers), taiyaki, takoyaki (fried octopus balls), okonomiyaki, traditional Japanese sweets, and many other culinary delights.",
+      "The Gion Festival originated during an epidemic as part of a purification ritual (御霊会, goryo-e) to appease the gods thought to cause fire, floods, and earthquakes. In 869, when people were suffering from a plague attributed to vengeful spirits, Emperor Seiwa ordered prayers to Gozo Tenno, the god of the Yasaka Shrine, then known as Gion Temple. Sixty-six stylized and decorated halberds, one for each of the traditional provinces of Japan, were prepared and erected at Shinsen-en, a garden in the south of the imperial palace, along with mikoshi (御輿, 'portable shrines') from Yasaka Shrine. This practice was repeated wherever an outbreak of plague occurred. By the year 1000, the festival became an annual event and it has since seldom failed to take place. During the civil Onin War (under the Ashikaga shogunate), central Kyoto was devastated, and the festival was halted for three decades in the late 15th and early 16th centuries. Later in the 16th century, it was revived by Oda Nobunaga.",
+      "Gozu Tennō (\"Ox-Head Heavenly King\") was a syncretic guardian deity whose origins trace to an Indian tutelary deity of the Jetavana monastery (Gion Shōja); the cult was later merged in China with esoteric Buddhist, Taoist, and Yin-Yang beliefs before reaching Japan, where it fused with Onmyōdō and came to be identified with the kami Susanoo. The temple-shrine complex housing his cult, then known as Gion Kanjin'in, was renamed Yasaka Jinja only in the Meiji era, as part of the government's policy of shinbutsu bunri (the forced separation of kami worship from Buddhism), a change subsequently adopted by many other Gion shrines throughout Japan.",
+      "Over the centuries, some floats have been destroyed or otherwise lost, and in recent years several have been restored. Float neighborhood associations sometimes purchase antique tapestries to replace worn or destroyed ones, or commission replicas from industrial weavers in Kyoto, or design and commission new ones from the weavers of Kyoto's famous traditional Nishijin weaving district. When they are not in use, the floats and regalia are kept in special storehouses throughout the central district of Kyoto, or at Yasaka Shrine.",
+      "The festival serves as an important setting in Yasunari Kawabata's novel, The Old Capital, in which he describes the Gion Festival as one of \"the 'three great festivals' of the old capital\", along with the Festival of Ages and the Aoi Festival."
+    ],
+    "keyFacts": [
+      "There are many ceremonies held during the festival, but it is best known for its two Yamaboko Junkō (山鉾巡行) processions of floats, which take place on July 17 and 24.",
+      "In 869, when people were suffering from a plague attributed to vengeful spirits, Emperor Seiwa ordered prayers to Gozo Tenno, the god of the Yasaka Shrine, then known as Gion Temple.",
+      "By the year 1000, the festival became an annual event and it has since seldom failed to take place.",
+      "Later in the 16th century, it was revived by Oda Nobunaga."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/festival-gion-matsuri.jpg",
+    "heroAlt": "Gion Matsuri, Kyoto",
+    "imageCredit": {
+      "file": "File:Yoiyama_-_The_Gion_Festival_-_July_14,_2008.jpg",
+      "url": "/images/capsule/kyoto/festival-gion-matsuri.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Yoiyama_-_The_Gion_Festival_-_July_14%2C_2008.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Stéfan"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-aoi-matsuri",
+      "festival-jidai-matsuri",
+      "festival-hanami"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Gion Matsuri",
+        "url": "https://en.wikipedia.org/wiki/Gion_Matsuri",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "festival-jidai-matsuri",
+    "destinationId": "kyoto",
+    "title": "Jidai Matsuri",
+    "dek": "The Jidai Matsuri  is a traditional Japanese festival held annually on October 22 in Kyoto, Japan.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Jidai Matsuri  is a traditional Japanese festival held annually on October 22 in Kyoto, Japan. It is one of Kyoto's three major festivals, with the other two being the Aoi Matsuri, held annually on May 15, and the Gion Matsuri, which is held annually from 17 to July 24. It is a festival enjoyed by people of all ages, participating in its historical reenactment parade dressed in authentic costumes representing various periods, and characters in Japanese feudal history.",
+    "content": [
+      "The Jidai Matsuri (時代祭; \"Festival of the Ages\") is a traditional Japanese festival (also called matsuri) held annually on October 22 in Kyoto, Japan. It is one of Kyoto's three major festivals, with the other two being the Aoi Matsuri, held annually on May 15, and the Gion Matsuri, which is held annually from 17 to July 24. It is a festival enjoyed by people of all ages, participating in its historical reenactment parade dressed in authentic costumes representing various periods, and characters in Japanese feudal history.",
+      "The Jidai Matsuri traces its roots to the relocation of the Japanese capital from Kyoto to Tokyo during the Meiji Restoration in 1868. This involved the relocation of the Emperor of Japan and the Imperial family, the Imperial Palace, and thousands of government officials and subjects to the new city. Fearing for Kyoto's loss of glory and interest from her people, and to commemorate its history, the city government and the Kyoto prefectural government commemorated the 1100th anniversary of the founding of Heian-kyō (平安京), which was the former name of Kyoto, in 794 by Emperor Kanmu (桓武天皇, Kanmu-tennō) (737–806). To inaugurate the first Jidai celebration in 1895, the city government built the Heian Shrine (平安神宮, Heian jingū) to enshrine the spirit of Emperor Kanmu. To add meaning to the festival, it staged a costume procession representing people of each era in Kyoto history. In 1940, the local government decided that on top of honouring Emperor Kanmu, the Jidai festival was also to be held in honour of Emperor Kōmei (孝明天皇, Kōmei-tennō) (July 22, 1831 – January 30, 1867) for his work in unifying the country, the power of the imperial court and the affirmation of Kyoto as the center of Japan at the decline of the Tokugawa shogunate and the end of the Edo period.",
+      "The Jidai Matsuri begins in early morning with the mikoshi (portable shrines) brought out of the Kyoto Imperial Palace so that people may pay their respects. The mikoshi represents both Emperor Kanmu and Emperor Kōmei. The five-hour, two-kilometer costume procession begins in the afternoon, with approximately 2,000 performers dressed as samurai, military figures, and common people, from the earliest eras to the Meiji era. These are followed by Japanese women who are dressed in elaborate jūnihitoe (十二単衣, juunihitoe). Finally, the mikoshi are carried from the palace and are accompanied by a costumed military band that plays the gagaku. The procession ends at the Heian Shrine.",
+      "The Jidai Matsuri in 2019 was rescheduled to 26 October due to the Enthronement ceremony of Emperor Naruhito."
+    ],
+    "keyFacts": [
+      "The Jidai Matsuri (時代祭; \"Festival of the Ages\") is a traditional Japanese festival (also called matsuri) held annually on October 22 in Kyoto, Japan.",
+      "It is one of Kyoto's three major festivals, with the other two being the Aoi Matsuri, held annually on May 15, and the Gion Matsuri, which is held annually from 17 to July 24.",
+      "The Jidai Matsuri traces its roots to the relocation of the Japanese capital from Kyoto to Tokyo during the Meiji Restoration in 1868.",
+      "To inaugurate the first Jidai celebration in 1895, the city government built the Heian Shrine (平安神宮, Heian jingū) to enshrine the spirit of Emperor Kanmu."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/kyoto/festival-jidai-matsuri.jpg",
+    "heroAlt": "Jidai Matsuri, Kyoto",
+    "imageCredit": {
+      "file": "File:JidaiMatsuri_Gohouren.jpg",
+      "url": "/images/capsule/kyoto/festival-jidai-matsuri.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:JidaiMatsuri_Gohouren.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "PlusMinus"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "heian-shrine",
+      "kyoto-imperial-palace"
+    ],
+    "relatedStories": [
+      "festival-aoi-matsuri",
+      "festival-gion-matsuri",
+      "festival-hanami"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Jidai Matsuri",
+        "url": "https://en.wikipedia.org/wiki/Jidai_Matsuri",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 2,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-japanese-tea-ceremony",
+    "destinationId": "kyoto",
+    "title": "Japanese tea ceremony",
+    "dek": "The Japanese tea ceremony is a cultural activity known as sadō/chadō  or chanoyu .",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Japanese tea ceremony is a cultural activity known as sadō/chadō  or chanoyu . The ceremony focuses on the presentation and serving of matcha (抹茶), powdered green tea; this procedure is called temae (点前). Much less commonly, Japanese tea practice uses leaf tea, primarily sencha. This practice is known as senchadō.",
+    "content": [
+      "The Japanese tea ceremony is a cultural activity known as sadō/chadō (茶道, 'the way of tea') or chanoyu (茶の湯, 'hot water for tea'). The ceremony focuses on the presentation and serving of matcha (抹茶), powdered green tea; this procedure is called temae (点前). Much less commonly, Japanese tea practice uses leaf tea, primarily sencha. This practice is known as senchadō (煎茶道, 'the way of sencha').",
+      "In Japanese, there is a term, Sadō or Chadō, which means \"tea way\" and emphasizes the Tao (道). The English term Teaism was coined by Okakura Kakuzō to describe the unique worldview associated with the Japanese way of tea, rather than focusing solely on its presentation, which was initially perceived by some Western observers as ceremonial.",
+      "In the 1500s, Sen no Rikyū revolutionized Japanese tea culture. He played a key role in developing what is now known as the Japanese tea ceremony and elevated it to the status of an art form. He redefined the rules of the tea house, tea garden, utensils, and procedures of the tea ceremony with his own interpretation. He also introduced a much smaller chashitsu (tea house) and rustic, distorted ceramic tea bowls specifically for the tea ceremony, and emphasized the tea ceremony based on the aesthetic of wabi.",
+      "Sen no Rikyū's great-grandchildren founded the Omotesenke, Urasenke, and Mushakōjisenke schools of tea ceremony. As a result, the tea ceremony spread not only to daimyo (feudal lords) and the samurai class but also to the general public, which led to the establishment of various tea ceremony schools that continue to this day.",
+      "Zen Buddhism and Shinto has greatly influenced the culture of Japanese tea. For example, the practice of purifying one's hands and mouth before practicing the tea ceremony is influenced by the Shinto purification ritual of misogi. The architectural style of the chashitsu and the gate that serves as the boundary between the tea garden and the secular world has been influenced by Shinto shrine architecture and the torii (shrine gate). Buddhists used tea to prevent drowsiness during long meditations.",
+      "Tea gatherings are classified as either an informal tea gathering, chakai (茶会, 'tea gathering'), or a formal tea gathering, chaji (茶事, 'tea event'). A chakai is a relatively simple course of hospitality that includes wagashi (confections), thin tea, and perhaps a light meal. A chaji is a much more formal gathering, usually including a full-course kaiseki meal followed by confections, thick tea, and thin tea. A chaji may last up to four hours.",
+      "The first documented evidence of tea in Japan dates to the 9th century. An entry in the Nihon Kōki describes Buddhist monk Eichū (永忠) bringing tea back to Japan from Tang China. Eichū personally prepared and served sencha (tea steeped in hot water) to Emperor Saga, who was on an excursion in Karasaki (present Shiga Prefecture) in 815. By imperial order in 816, tea plantations began to be cultivated in the Kinki region of Japan. However, the interest in tea in Japan faded after this.",
+      "In China, tea had already been known, according to legend, for more than three thousand years (though the earliest archaeological evidence of tea-drinking dates to the 2nd century BCE). The form of tea popular in China in Eichū's time was dancha (団茶, \"cake tea\" or \"brick tea\") – tea compressed into a nugget in the same manner as the pu-er tea is today. This dancha would be ground in a mortar, then mixed with various other herbs and flavourings. The custom of drinking tea, first for medicinal, and then largely for pleasurable reasons, was already widespread throughout China. In the early 9th century, the Chinese author Lu Yu wrote The Classic of Tea, a treatise on tea that focuses on its cultivation and preparation. Lu Yu's, heavily influenced by Buddhism, particularly the Zen–Chán Buddhist school, strongly influenced the development of Japanese tea culture."
+    ],
+    "keyFacts": [
+      "The first documented evidence of tea in Japan dates to the 9th century.",
+      "Eichū personally prepared and served sencha (tea steeped in hot water) to Emperor Saga, who was on an excursion in Karasaki (present Shiga Prefecture) in 815.",
+      "By imperial order in 816, tea plantations began to be cultivated in the Kinki region of Japan.",
+      "In China, tea had already been known, according to legend, for more than three thousand years (though the earliest archaeological evidence of tea-drinking dates to the 2nd century BCE)."
+    ],
+    "local": true,
+    "heroImage": null,
+    "heroAlt": "Japanese tea ceremony, Kyoto",
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-japanese-cuisine",
+      "food-wagashi",
+      "food-kaiseki"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Japanese tea ceremony",
+        "url": "https://en.wikipedia.org/wiki/Japanese_tea_ceremony",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-hanami",
+    "destinationId": "kyoto",
+    "title": "Hanami",
+    "dek": "Hanami  is the Japanese traditional custom of enjoying the transient beauty of flowers; flowers  in this case almost always mean those of the cherry  or, less frequently, plum  trees.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Hanami  is the Japanese traditional custom of enjoying the transient beauty of flowers; flowers  in this case almost always mean those of the cherry  or, less frequently, plum  trees. From the end of March to early May, cherry trees bloom all over Japan, and around the second week of January on the island of Okinawa. The blossom forecast \"cherry blossom front\" is announced each year by the Japan Meteorological Agency and watched carefully by those planning hanami, as the blossoms only last a week or two.",
+    "content": [
+      "Hanami (花見; \"flower viewing\"; pronounced [hanamiꜜ]) is the Japanese traditional custom of enjoying the transient beauty of flowers; flowers (花, hana) in this case almost always mean those of the cherry (桜, sakura) or, less frequently, plum (梅, ume) trees. From the end of March to early May, cherry trees bloom all over Japan, and around the second week of January on the island of Okinawa. The blossom forecast (桜前線, sakura-zensen) \"cherry blossom front\" is announced each year by the Japan Meteorological Agency and watched carefully by those planning hanami, as the blossoms only last a week or two.",
+      "In modern-day Japan, hanami mostly consists of having an outdoor party beneath the sakura during daytime or at night. In some contexts the Sino-Japanese term kan'ō (観桜; view-cherry) is used instead, particularly for festivals. Hanami at night is called yozakura (夜桜) \"night cherry blossom\". In many places such as Ueno Park temporary paper lanterns are hung for the purpose of yozakura. On the island of Okinawa, decorative electric lanterns are hung in the trees for evening enjoyment, such as on the trees ascending Mt. Yae, near Motobu Town, or at the Nakijin Castle.",
+      "A more ancient form of hanami also exists in Japan, which is enjoying the plum blossoms instead, which is narrowly referred to as umemi (梅見; plum-viewing). This kind of hanami is popular among older people, because they are calmer than the sakura parties, which usually involve younger people and can sometimes be very crowded and noisy.",
+      "The practice of hanami is many centuries old. The custom is said to have started during the Nara period (710–794) when it was plum or ume blossoms that people admired in the beginning. The Japanese practice of hanami originated from the Chinese custom of enjoying poetry and wine underneath plum blossom trees while viewing their flowers, that was replicated by Japanese elites. This is supported by the fact that hanami started in urban areas rather than rural areas, that Japanese people initially admired plum blossoms like the Chinese rather than cherry blossoms, and that classic Japanese poetry does not associate cherry blossoms with merriness.",
+      "By the Heian period (794–1185), cherry blossoms or sakura came to attract more attention than the plum blossom and hanami was synonymous with sakura. From then on, in both waka and haiku, \"flowers\" meant \"sakura\". The historical text Nihon Kōki, documented the first observation of the sakura bloom in the year 812, which has been observed and recorded over the next twelve centuries.",
+      "Hanami was first used as a term analogous to cherry blossom viewing in the Heian era novel The Tale of Genji. Although a wisteria viewing party was also described, the terms \"hanami\" and \"flower party\" were subsequently used only in reference to cherry blossom viewing.",
+      "Sakura was originally used to divine that year's harvest as well as announce the rice-planting season. People believed in kami inside the trees and made offerings. Afterwards, they partook of the offering with sake.",
+      "Emperor Saga of the Heian period adopted this practice, and held flower-viewing parties with sake and feasts underneath the blossoming boughs of sakura trees in the Imperial Court in Kyoto. Poems would be written praising the delicate flowers, which were seen as a metaphor for life itself, luminous and beautiful yet fleeting and ephemeral. This was said to be the origin of Hanami in Japan.",
+      "The custom was originally limited to the elite of the Imperial Court, but soon spread to Samurai society and, by the Edo period, to the common people as well. Tokugawa Yoshimune planted areas of cherry blossom trees to encourage this. Under the sakura trees, people had lunch and drank sake in cheerful feasts."
+    ],
+    "keyFacts": [
+      "The custom is said to have started during the Nara period (710–794) when it was plum or ume blossoms that people admired in the beginning.",
+      "By the Heian period (794–1185), cherry blossoms or sakura came to attract more attention than the plum blossom and hanami was synonymous with sakura.",
+      "The historical text Nihon Kōki, documented the first observation of the sakura bloom in the year 812, which has been observed and recorded over the next twelve centuries."
+    ],
+    "local": true,
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-aoi-matsuri",
+      "festival-gion-matsuri",
+      "festival-jidai-matsuri"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Hanami",
+        "url": "https://en.wikipedia.org/wiki/Hanami",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  }
+]

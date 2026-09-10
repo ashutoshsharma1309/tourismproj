@@ -1,0 +1,2462 @@
+{
+  "schema": 1,
+  "destinations": {
+    "sikkim": {
+      "destinationId": "sikkim",
+      "claimSetVersion": "79e8bb58df397508",
+      "depth": {
+        "depth": "deep",
+        "basis": "declared",
+        "note": "Human-curated archive. Research adds to it and cannot change its depth.",
+        "earned": "researched",
+        "metrics": {
+          "approvedClaims": 16,
+          "categories": 4,
+          "higherTierClaims": 0,
+          "distinctSources": 2
+        },
+        "reasons": [
+          "16 approved claims (needs 20)",
+          "no claim from an official, institutional or academic source"
+        ]
+      },
+      "categories": [
+        {
+          "category": "culture",
+          "claims": [
+            {
+              "id": "claim_366a9d25c6213dfb",
+              "category": "culture",
+              "statement": "A relative of the Poinsettia, locally known as \"Christmas Flower\", can be found in abundance in the mountainous state.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.804Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "A relative of the Poinsettia, locally known as \"Christmas Flower\", can be found in abundance in the mountainous state.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "festivals",
+          "claims": [
+            {
+              "id": "claim_24cc6dfbe819cfed",
+              "category": "festivals",
+              "statement": "The Nyingmapa-Buddha-Festival is celebrated in the monastery on the 15th day of the first month of the Tibetan moon calendar.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.804Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "The Nyingmapa-Buddha-Festival is celebrated in the monastery on the 15th day of the first month of the Tibetan moon calendar.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "heritage",
+          "claims": [
+            {
+              "id": "claim_108cbd36d5028b77",
+              "category": "heritage",
+              "statement": "As of 2014, the Evangelical Presbyterian Church of Sikkim is the largest Christian denomination in Sikkim.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.802Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "As of 2014, the Evangelical Presbyterian Church of Sikkim is the largest Christian denomination in Sikkim.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_a04fbae71e8ef353",
+              "category": "heritage",
+              "statement": "It was established in 2021 under the Sikkim Private Universities (Amendment) Act, 2021.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.802Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "It was established in 2021 under the Sikkim Private Universities (Amendment) Act, 2021.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_a3d4abeb8e6a71d7",
+              "category": "heritage",
+              "statement": "The monastery was founded by Lhatson Champo, the protector of Sikkim.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.803Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "The monastery was founded by Lhatson Champo, the protector of Sikkim.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "history",
+          "claims": [
+            {
+              "id": "claim_e36b6a701e4e14d8",
+              "category": "history",
+              "statement": "The Kingdom of Sikkim was founded by the Namgyal dynasty in the 17th century.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.793Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "The Kingdom of Sikkim was founded by the Namgyal dynasty in the 17th century.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_bf2d4619c4e53eb0",
+              "category": "history",
+              "statement": "It was ruled by Buddhist priest-kings known as the Chogyal.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.799Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "It was ruled by Buddhist priest-kings known as the Chogyal.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_a084f47d463de7d9",
+              "category": "history",
+              "statement": "In historical Indian literature, Sikkim is known as Indrakil, the garden of the war god Indra.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.799Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "In historical Indian literature, Sikkim is known as Indrakil, the garden of the war god Indra.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_6aa12ab007f87747",
+              "category": "history",
+              "statement": "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.800Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_1d56357462e8bb16",
+              "category": "history",
+              "statement": "A state council was established in 1953 to allow for constitutional government under the Chogyal.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.800Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "A state council was established in 1953 to allow for constitutional government under the Chogyal.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_dd056cb6ad9f6e90",
+              "category": "history",
+              "statement": "Migrant resident communities known as Plainsmen Sikkimese include Bengalis, Biharis, and Marwaris, who are prominent in commerce in South Sikkim and Gangtok, but only those who are the native residents since 1946.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.800Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Sikkim — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "encyclopedia",
+                  "quote": "Migrant resident communities known as Plainsmen Sikkimese include Bengalis, Biharis, and Marwaris, who are prominent in commerce in South Sikkim and Gangtok, but only those who are the native residents since 1946.",
+                  "retrievedAt": "2026-08-25T06:00:38.238Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_ce17b98a398c3fe7",
+              "category": "history",
+              "statement": "Sikkim was declared a British protectorate in 1861.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.801Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "Sikkim was declared a British protectorate in 1861.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_be9590623a0625c8",
+              "category": "history",
+              "statement": "Built in 1952 for the Nyingma sect of Buddhism.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.801Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "Built in 1952 for the Nyingma sect of Buddhism.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_3183974e4f4245e6",
+              "category": "history",
+              "statement": "Built during the reign of Chogyal Thutob Namgyal.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.801Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "Built during the reign of Chogyal Thutob Namgyal.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_8d3ee7d34ad998aa",
+              "category": "history",
+              "statement": "Built in 1945-46 with a complete mandala set of Dorji Phurpa (Bajra Kilaya), a set of Ka-gyur holy Books, complete 'zung' (mantras) and many religious objects.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.801Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "Built in 1945-46 with a complete mandala set of Dorji Phurpa (Bajra Kilaya), a set of Ka-gyur holy Books, complete 'zung' (mantras) and many religious objects.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_e4f719943ca3eea3",
+              "category": "history",
+              "statement": "Built in 1740, the monastery is famous for its old wall murals.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.801Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Sikkim — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+                  "tier": "other-public",
+                  "quote": "Built in 1740, the monastery is famous for its old wall murals.",
+                  "retrievedAt": "2026-08-25T06:00:39.355Z"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "narrative": [
+        {
+          "id": "narr_2c9dc93f9a03f302",
+          "mode": "HISTORICAL",
+          "category": "history",
+          "claimType": "documented history",
+          "text": "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom. Built in 1740, the monastery is famous for its old wall murals. Sikkim was declared a British protectorate in 1861. Built in 1945-46 with a complete mandala set of Dorji Phurpa (Bajra Kilaya), a set of Ka-gyur holy Books, complete 'zung' (mantras) and many religious objects. Migrant resident communities known as Plainsmen Sikkimese include Bengalis, Biharis, and Marwaris, who are prominent in commerce in South Sikkim and Gangtok, but only those who are the native residents since 1946. Built in 1952 for the Nyingma sect of Buddhism.",
+          "claimIds": [
+            "claim_6aa12ab007f87747",
+            "claim_e4f719943ca3eea3",
+            "claim_ce17b98a398c3fe7",
+            "claim_8d3ee7d34ad998aa",
+            "claim_dd056cb6ad9f6e90",
+            "claim_be9590623a0625c8"
+          ],
+          "sentenceCount": 6,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T06:55:39.835Z"
+        },
+        {
+          "id": "narr_ec808dbf093b7042",
+          "mode": "HERITAGE",
+          "category": "heritage",
+          "claimType": "documented history",
+          "text": "As of 2014, the Evangelical Presbyterian Church of Sikkim is the largest Christian denomination in Sikkim. It was established in 2021 under the Sikkim Private Universities (Amendment) Act, 2021. The monastery was founded by Lhatson Champo, the protector of Sikkim.",
+          "claimIds": [
+            "claim_108cbd36d5028b77",
+            "claim_a04fbae71e8ef353",
+            "claim_a3d4abeb8e6a71d7"
+          ],
+          "sentenceCount": 3,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T06:55:39.836Z"
+        }
+      ],
+      "timeline": [
+        {
+          "claimId": "claim_6aa12ab007f87747",
+          "year": 1642,
+          "endYear": null,
+          "title": "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_e4f719943ca3eea3",
+          "year": 1740,
+          "endYear": null,
+          "title": "Built in 1740, the monastery is famous for its old wall murals.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_ce17b98a398c3fe7",
+          "year": 1861,
+          "endYear": null,
+          "title": "Sikkim was declared a British protectorate in 1861.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_8d3ee7d34ad998aa",
+          "year": 1945,
+          "endYear": null,
+          "title": "Built in 1945-46 with a complete mandala set of Dorji Phurpa (Bajra Kilaya), a set of Ka-gyur holy Books, complete 'zung' (mantras) and many religious objects.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_dd056cb6ad9f6e90",
+          "year": 1946,
+          "endYear": null,
+          "title": "Migrant resident communities known as Plainsmen Sikkimese include Bengalis, Biharis, and Marwaris, who are prominent in commerce in South Sikkim and Gangtok, but only those who are the native residents since 1946.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_be9590623a0625c8",
+          "year": 1952,
+          "endYear": null,
+          "title": "Built in 1952 for the Nyingma sect of Buddhism.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_1d56357462e8bb16",
+          "year": 1953,
+          "endYear": null,
+          "title": "A state council was established in 1953 to allow for constitutional government under the Chogyal.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_108cbd36d5028b77",
+          "year": 2014,
+          "endYear": null,
+          "title": "As of 2014, the Evangelical Presbyterian Church of Sikkim is the largest Christian denomination in Sikkim.",
+          "category": "heritage",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_a04fbae71e8ef353",
+          "year": 2021,
+          "endYear": null,
+          "title": "It was established in 2021 under the Sikkim Private Universities (Amendment) Act, 2021.",
+          "category": "heritage",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Sikkim — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "subject": "Sikkim",
+          "claimIds": [
+            "claim_e36b6a701e4e14d8",
+            "claim_a084f47d463de7d9",
+            "claim_6aa12ab007f87747",
+            "claim_ce17b98a398c3fe7",
+            "claim_108cbd36d5028b77",
+            "claim_a3d4abeb8e6a71d7"
+          ],
+          "statements": [
+            "The Kingdom of Sikkim was founded by the Namgyal dynasty in the 17th century.",
+            "In historical Indian literature, Sikkim is known as Indrakil, the garden of the war god Indra.",
+            "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom.",
+            "Sikkim was declared a British protectorate in 1861.",
+            "As of 2014, the Evangelical Presbyterian Church of Sikkim is the largest Christian denomination in Sikkim.",
+            "The monastery was founded by Lhatson Champo, the protector of Sikkim."
+          ]
+        },
+        {
+          "subject": "Chogyal",
+          "claimIds": [
+            "claim_bf2d4619c4e53eb0",
+            "claim_6aa12ab007f87747",
+            "claim_1d56357462e8bb16"
+          ],
+          "statements": [
+            "It was ruled by Buddhist priest-kings known as the Chogyal.",
+            "A fifth-generation descendant of Khye Bumsa, Phuntsog Namgyal, became the founder of Sikkim's monarchy in 1642, when he was consecrated as the first Chogyal, or priest-king, of Sikkim by the three venerated lamas at Yuksom.",
+            "A state council was established in 1953 to allow for constitutional government under the Chogyal."
+          ]
+        }
+      ],
+      "sourcesUsed": [
+        {
+          "sourceId": "wikipedia",
+          "title": "Sikkim — Wikipedia",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+          "tier": "encyclopedia"
+        },
+        {
+          "sourceId": "wikivoyage",
+          "title": "Sikkim — Wikivoyage",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
+          "tier": "other-public"
+        }
+      ],
+      "stats": {
+        "approved": 16,
+        "published": 16,
+        "withheld": 0,
+        "narrativeBlocks": 2,
+        "narrativeWithheld": 0,
+        "timelineEntries": 9,
+        "connections": 2
+      },
+      "withheld": [],
+      "withheldNarrative": []
+    },
+    "jaipur": {
+      "destinationId": "jaipur",
+      "claimSetVersion": "d8c89d5b15d1781e",
+      "depth": {
+        "depth": "curated",
+        "basis": "earned",
+        "note": null,
+        "earned": "curated",
+        "metrics": {
+          "approvedClaims": 35,
+          "categories": 4,
+          "higherTierClaims": 21,
+          "distinctSources": 4
+        },
+        "reasons": [
+          "35 approved claims across 4 categories",
+          "21 from higher-tier sources, 4 distinct sources"
+        ]
+      },
+      "categories": [
+        {
+          "category": "culture",
+          "claims": [
+            {
+              "id": "claim_a411d79c702f5992",
+              "category": "culture",
+              "statement": "The Jawahar Kala Kendra, more popularly known as the JKK, is an international institution that focuses on preserving and promoting the different genres of Indian culture and art.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.891Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "The Jawahar Kala Kendra, more popularly known as the JKK, is an international institution that focuses on preserving and promoting the different genres of Indian culture and art.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_992313aa275591d0",
+              "category": "culture",
+              "statement": "Established in Jaipur in the year 1993, the Jawahar Kala Kendra has become a very popular cultural destination in the city.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.891Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Established in Jaipur in the year 1993, the Jawahar Kala Kendra has become a very popular cultural destination in the city.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_9edc1c479d164932",
+              "category": "culture",
+              "statement": "Jaipur has many cultural sites like Jawahar Kala Kendra established by Charles Correa and Ravindra Manch.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.892Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "Jaipur has many cultural sites like Jawahar Kala Kendra established by Charles Correa and Ravindra Manch.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "festivals",
+          "claims": [
+            {
+              "id": "claim_496e6857a81e773c",
+              "category": "festivals",
+              "statement": "It also served as a place where the ladies of the royal household could observe everyday life without being seen themselves.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.892Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "It also served as a place where the ladies of the royal household could observe everyday life without being seen themselves.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_1df98c2099ba1648",
+              "category": "festivals",
+              "statement": "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.892Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_954066fc53513f98",
+              "category": "festivals",
+              "statement": "Gangaur is celebrated in the month of Chaitra (March-April), the first month of the Hindu calendar.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.892Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Gangaur is celebrated in the month of Chaitra (March-April), the first month of the Hindu calendar.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_c627820e48332d96",
+              "category": "festivals",
+              "statement": "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.892Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_ec3120b724a30022",
+              "category": "festivals",
+              "statement": "The festivals are dedicated, in many parts of India, to Goddess Parvati, also known as Teej Mata.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.893Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "The festivals are dedicated, in many parts of India, to Goddess Parvati, also known as Teej Mata.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "heritage",
+          "claims": [
+            {
+              "id": "claim_596ff46a7347eecf",
+              "category": "heritage",
+              "statement": "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.890Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_4bbd90cbff4546e4",
+              "category": "heritage",
+              "statement": "A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.890Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_fc03820c1513d204",
+              "category": "heritage",
+              "statement": "Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.890Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_9d33794fb2cef990",
+              "category": "heritage",
+              "statement": "Jaipur is the only city that is home to three forts , and more than five palaces.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.891Z",
+              "sources": [
+                {
+                  "sourceId": "incredible-india-jaipur",
+                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "publisher": "Ministry of Tourism, Government of India",
+                  "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+                  "tier": "official-tourism",
+                  "quote": "Jaipur is the only city that is home to three forts , and more than five palaces.",
+                  "retrievedAt": "2026-08-25T06:00:41.504Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_4b8d8d2299935398",
+              "category": "heritage",
+              "statement": "The main temple, Galtaji, is constructed in pink stone.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.891Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "The main temple, Galtaji, is constructed in pink stone.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_83b31aa6df83abeb",
+              "category": "heritage",
+              "statement": "Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.891Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "history",
+          "claims": [
+            {
+              "id": "claim_cdbbfd0aa8ab4cb9",
+              "category": "history",
+              "statement": "Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.882Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_05b87bb9f40954d9",
+              "category": "history",
+              "statement": "Raja Man Singh I began construction in 1592 and the palace, which was built as a strong, safe haven against attacking enemies, was completed by Mirja Raja Jai Singh.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.884Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Raja Man Singh I began construction in 1592 and the palace, which was built as a strong, safe haven against attacking enemies, was completed by Mirja Raja Jai Singh.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_ce5dc988929e90a3",
+              "category": "history",
+              "statement": "Hawa Mahal, literally the Palace of Winds, was built in 1799 by the poet king Sawai Pratap Singh as a summer retreat for him and his family.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.884Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "Hawa Mahal, literally the Palace of Winds, was built in 1799 by the poet king Sawai Pratap Singh as a summer retreat for him and his family.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_ad344042b5b2fcc1",
+              "category": "history",
+              "statement": "It was constructed during the reign of Jai Singh in 1734, and was later expanded in 1868.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.884Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "It was constructed during the reign of Jai Singh in 1734, and was later expanded in 1868.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_da7d6155365d32e9",
+              "category": "history",
+              "statement": "The temple was commissioned and built by renowned Indian industrialists, the Birlas, in 1988.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.886Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "The temple was commissioned and built by renowned Indian industrialists, the Birlas, in 1988.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_1b98dea32985d7a9",
+              "category": "history",
+              "statement": "This historical garden was built by Maharaja Sawai Ram Singh in 1868.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.886Z",
+              "sources": [
+                {
+                  "sourceId": "rajasthan-tourism-jaipur",
+                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "publisher": "Government of Rajasthan",
+                  "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+                  "tier": "official-government",
+                  "quote": "This historical garden was built by Maharaja Sawai Ram Singh in 1868.",
+                  "retrievedAt": "2026-08-25T06:00:41.234Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_789faf6def9302a0",
+              "category": "history",
+              "statement": "It was established in 1727 by Kachhwaha Rajput ruler Jai Singh II, who named it after himself.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.887Z",
+              "sources": [
+                {
+                  "sourceId": "incredible-india-jaipur",
+                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "publisher": "Ministry of Tourism, Government of India",
+                  "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+                  "tier": "official-tourism",
+                  "quote": "It was established in 1727 by Kachhwaha Rajput ruler Jai Singh II, who named it after himself.",
+                  "retrievedAt": "2026-08-25T06:00:41.504Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_6efc61b154e5de57",
+              "category": "history",
+              "statement": "The Hawa Mahal , also known as the Palace of Winds, a beautiful architectural marvel built in 1799, is an iconic symbol of Jaipur's finesse.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.887Z",
+              "sources": [
+                {
+                  "sourceId": "incredible-india-jaipur",
+                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "publisher": "Ministry of Tourism, Government of India",
+                  "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+                  "tier": "official-tourism",
+                  "quote": "The Hawa Mahal , also known as the Palace of Winds, a beautiful architectural marvel built in 1799, is an iconic symbol of Jaipur's finesse.",
+                  "retrievedAt": "2026-08-25T06:00:41.504Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_825cc189c20ad439",
+              "category": "history",
+              "statement": "The Amber Fort , also known as Amer Fort, is a UNESCO World Heritage Site with a history dating back to 1592.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.887Z",
+              "sources": [
+                {
+                  "sourceId": "incredible-india-jaipur",
+                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "publisher": "Ministry of Tourism, Government of India",
+                  "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+                  "tier": "official-tourism",
+                  "quote": "The Amber Fort , also known as Amer Fort, is a UNESCO World Heritage Site with a history dating back to 1592.",
+                  "retrievedAt": "2026-08-25T06:00:41.504Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_d02ea54aac15986e",
+              "category": "history",
+              "statement": "It was built in 1726 to guard the Amer Fort Palace complex and provides a view of both the Amer Fort and Maota Lake.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.887Z",
+              "sources": [
+                {
+                  "sourceId": "incredible-india-jaipur",
+                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "publisher": "Ministry of Tourism, Government of India",
+                  "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+                  "tier": "official-tourism",
+                  "quote": "It was built in 1726 to guard the Amer Fort Palace complex and provides a view of both the Amer Fort and Maota Lake.",
+                  "retrievedAt": "2026-08-25T06:00:41.504Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_8319c10e5d8ce557",
+              "category": "history",
+              "statement": "Jaipur was founded in 1727 by Sawai Jai Singh II, the Kachhwaha Rajput ruler of Amer, after whom the city is named.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.887Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "Jaipur was founded in 1727 by Sawai Jai Singh II, the Kachhwaha Rajput ruler of Amer, after whom the city is named.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_8f9638c0cb080ded",
+              "category": "history",
+              "statement": "Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.888Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_6e990733fd27869d",
+              "category": "history",
+              "statement": "The wide boulevards were paved, and its chief industries included metalwork and marble, fostered by a school of art founded in 1868.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.888Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "The wide boulevards were paved, and its chief industries included metalwork and marble, fostered by a school of art founded in 1868.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_73fd78e315709e4c",
+              "category": "history",
+              "statement": "A 13 km (8.1 mi) stretch of Dravyavati riverfront out of 47.5 km (29.5 mi) was opened after rejuvenation in 2018 and the remaining project was completed in 2022.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.888Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "A 13 km (8.1 mi) stretch of Dravyavati riverfront out of 47.5 km (29.5 mi) was opened after rejuvenation in 2018 and the remaining project was completed in 2022.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_040b8e7777751938",
+              "category": "history",
+              "statement": "Jaipur Municipal Corporation (JMC) was established in the year 1994.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.888Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "Jaipur Municipal Corporation (JMC) was established in the year 1994.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_5e894315e60e373c",
+              "category": "history",
+              "statement": "Established in 2018, Jaipur Water Supply and Sewerage Board (JWSSB) is responsible for the management of water supply and sewerage services in the city.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.889Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Jaipur — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "encyclopedia",
+                  "quote": "Established in 2018, Jaipur Water Supply and Sewerage Board (JWSSB) is responsible for the management of water supply and sewerage services in the city.",
+                  "retrievedAt": "2026-08-25T06:00:43.192Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_db0af5bdda78349e",
+              "category": "history",
+              "statement": "This massive fort-palace complex built in hybrid Hindu-Muslim style dates back to Raja Man Singh and was the royal palace of the Kachwahas from c. 1600-1727.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.889Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "This massive fort-palace complex built in hybrid Hindu-Muslim style dates back to Raja Man Singh and was the royal palace of the Kachwahas from c. 1600-1727.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_ff781511ebe7f8ce",
+              "category": "history",
+              "statement": "Built in 1734 by the Maharaja Sawai Jai Singh II in a mix of Indian and European styles, the fort also houses the (relatively) compact Madhavendra Bhawan palace, although its former splendour is fading under layers of graffiti and pigeon droppings.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.889Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "Built in 1734 by the Maharaja Sawai Jai Singh II in a mix of Indian and European styles, the fort also houses the (relatively) compact Madhavendra Bhawan palace, although its former splendour is fading under layers of graffiti and pigeon droppings.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_295adcc39d796d35",
+              "category": "history",
+              "statement": "Built in 1799 by Maharaja Sawai Singh as part of City Palace, it was an extension of the Zenana (women's) chamber.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.889Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "Built in 1799 by Maharaja Sawai Singh as part of City Palace, it was an extension of the Zenana (women's) chamber.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_c4f6af01545027e7",
+              "category": "history",
+              "statement": "This UNESCO world heritage site is the largest of five astronomical observatories build by Maharaja Jai Singh during the period 1727-1734 in Northern India.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.890Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "This UNESCO world heritage site is the largest of five astronomical observatories build by Maharaja Jai Singh during the period 1727-1734 in Northern India.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_7867d92529667121",
+              "category": "history",
+              "statement": "Built in 1868 by Maharaja Sawai Ram Singh of Jaipur, this garden contains a bird park, zoo, Ravindra Rang Manch Theatre, art gallery, exhibition ground, gymnasium and several cafes and picnic spots.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.890Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Jaipur — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+                  "tier": "other-public",
+                  "quote": "Built in 1868 by Maharaja Sawai Ram Singh of Jaipur, this garden contains a bird park, zoo, Ravindra Rang Manch Theatre, art gallery, exhibition ground, gymnasium and several cafes and picnic spots.",
+                  "retrievedAt": "2026-08-25T06:00:44.571Z"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "narrative": [
+        {
+          "id": "narr_53235f33c03f7181",
+          "mode": "HISTORICAL",
+          "category": "history",
+          "claimType": "documented history",
+          "text": "Raja Man Singh I began construction in 1592 and the palace, which was built as a strong, safe haven against attacking enemies, was completed by Mirja Raja Jai Singh. The Amber Fort , also known as Amer Fort, is a UNESCO World Heritage Site with a history dating back to 1592. This massive fort-palace complex built in hybrid Hindu-Muslim style dates back to Raja Man Singh and was the royal palace of the Kachwahas from c. 1600-1727. Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743. It was built in 1726 to guard the Amer Fort Palace complex and provides a view of both the Amer Fort and Maota Lake. It was established in 1727 by Kachhwaha Rajput ruler Jai Singh II, who named it after himself.",
+          "claimIds": [
+            "claim_05b87bb9f40954d9",
+            "claim_825cc189c20ad439",
+            "claim_db0af5bdda78349e",
+            "claim_8f9638c0cb080ded",
+            "claim_d02ea54aac15986e",
+            "claim_789faf6def9302a0"
+          ],
+          "sentenceCount": 6,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T09:47:48.892Z"
+        },
+        {
+          "id": "narr_065b14b99f0bdb0c",
+          "mode": "CULTURAL",
+          "category": "culture",
+          "claimType": "documented history",
+          "text": "Established in Jaipur in the year 1993, the Jawahar Kala Kendra has become a very popular cultural destination in the city. Jaipur has many cultural sites like Jawahar Kala Kendra established by Charles Correa and Ravindra Manch. The Jawahar Kala Kendra, more popularly known as the JKK, is an international institution that focuses on preserving and promoting the different genres of Indian culture and art.",
+          "claimIds": [
+            "claim_992313aa275591d0",
+            "claim_9edc1c479d164932",
+            "claim_a411d79c702f5992"
+          ],
+          "sentenceCount": 3,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T09:47:48.893Z"
+        },
+        {
+          "id": "narr_684790813038af75",
+          "mode": "HERITAGE",
+          "category": "heritage",
+          "claimType": "documented history",
+          "text": "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur. The main temple, Galtaji, is constructed in pink stone. Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains). Jaipur is the only city that is home to three forts , and more than five palaces. A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace. Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+          "claimIds": [
+            "claim_596ff46a7347eecf",
+            "claim_4b8d8d2299935398",
+            "claim_83b31aa6df83abeb",
+            "claim_9d33794fb2cef990",
+            "claim_4bbd90cbff4546e4",
+            "claim_fc03820c1513d204"
+          ],
+          "sentenceCount": 6,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T09:47:48.896Z"
+        }
+      ],
+      "timeline": [
+        {
+          "claimId": "claim_05b87bb9f40954d9",
+          "year": 1592,
+          "endYear": null,
+          "title": "Raja Man Singh I began construction in 1592 and the palace, which was built as a strong, safe haven against attacking enemies, was completed by Mirja Raja Jai Singh.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_825cc189c20ad439",
+          "year": 1592,
+          "endYear": null,
+          "title": "The Amber Fort , also known as Amer Fort, is a UNESCO World Heritage Site with a history dating back to 1592.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "publisher": "Ministry of Tourism, Government of India",
+              "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_db0af5bdda78349e",
+          "year": 1600,
+          "endYear": 1727,
+          "title": "This massive fort-palace complex built in hybrid Hindu-Muslim style dates back to Raja Man Singh and was the royal palace of the Kachwahas from c. 1600-1727.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_8f9638c0cb080ded",
+          "year": 1699,
+          "endYear": 1743,
+          "title": "Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_d02ea54aac15986e",
+          "year": 1726,
+          "endYear": null,
+          "title": "It was built in 1726 to guard the Amer Fort Palace complex and provides a view of both the Amer Fort and Maota Lake.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "publisher": "Ministry of Tourism, Government of India",
+              "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_789faf6def9302a0",
+          "year": 1727,
+          "endYear": null,
+          "title": "It was established in 1727 by Kachhwaha Rajput ruler Jai Singh II, who named it after himself.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "publisher": "Ministry of Tourism, Government of India",
+              "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_8319c10e5d8ce557",
+          "year": 1727,
+          "endYear": null,
+          "title": "Jaipur was founded in 1727 by Sawai Jai Singh II, the Kachhwaha Rajput ruler of Amer, after whom the city is named.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_c4f6af01545027e7",
+          "year": 1727,
+          "endYear": 1734,
+          "title": "This UNESCO world heritage site is the largest of five astronomical observatories build by Maharaja Jai Singh during the period 1727-1734 in Northern India.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_cdbbfd0aa8ab4cb9",
+          "year": 1727,
+          "endYear": null,
+          "title": "Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_ad344042b5b2fcc1",
+          "year": 1734,
+          "endYear": 1868,
+          "title": "It was constructed during the reign of Jai Singh in 1734, and was later expanded in 1868.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_ff781511ebe7f8ce",
+          "year": 1734,
+          "endYear": null,
+          "title": "Built in 1734 by the Maharaja Sawai Jai Singh II in a mix of Indian and European styles, the fort also houses the (relatively) compact Madhavendra Bhawan palace, although its former splendour is fading under layers of graffiti and pigeon droppings.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_295adcc39d796d35",
+          "year": 1799,
+          "endYear": null,
+          "title": "Built in 1799 by Maharaja Sawai Singh as part of City Palace, it was an extension of the Zenana (women's) chamber.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_6efc61b154e5de57",
+          "year": 1799,
+          "endYear": null,
+          "title": "The Hawa Mahal , also known as the Palace of Winds, a beautiful architectural marvel built in 1799, is an iconic symbol of Jaipur's finesse.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "publisher": "Ministry of Tourism, Government of India",
+              "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_ce5dc988929e90a3",
+          "year": 1799,
+          "endYear": null,
+          "title": "Hawa Mahal, literally the Palace of Winds, was built in 1799 by the poet king Sawai Pratap Singh as a summer retreat for him and his family.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_1b98dea32985d7a9",
+          "year": 1868,
+          "endYear": null,
+          "title": "This historical garden was built by Maharaja Sawai Ram Singh in 1868.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_6e990733fd27869d",
+          "year": 1868,
+          "endYear": null,
+          "title": "The wide boulevards were paved, and its chief industries included metalwork and marble, fostered by a school of art founded in 1868.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_7867d92529667121",
+          "year": 1868,
+          "endYear": null,
+          "title": "Built in 1868 by Maharaja Sawai Ram Singh of Jaipur, this garden contains a bird park, zoo, Ravindra Rang Manch Theatre, art gallery, exhibition ground, gymnasium and several cafes and picnic spots.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_da7d6155365d32e9",
+          "year": 1988,
+          "endYear": null,
+          "title": "The temple was commissioned and built by renowned Indian industrialists, the Birlas, in 1988.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_992313aa275591d0",
+          "year": 1993,
+          "endYear": null,
+          "title": "Established in Jaipur in the year 1993, the Jawahar Kala Kendra has become a very popular cultural destination in the city.",
+          "category": "culture",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "publisher": "Government of Rajasthan",
+              "url": "https://tourism.rajasthan.gov.in/jaipur.html"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_040b8e7777751938",
+          "year": 1994,
+          "endYear": null,
+          "title": "Jaipur Municipal Corporation (JMC) was established in the year 1994.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_5e894315e60e373c",
+          "year": 2018,
+          "endYear": null,
+          "title": "Established in 2018, Jaipur Water Supply and Sewerage Board (JWSSB) is responsible for the management of water supply and sewerage services in the city.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_73fd78e315709e4c",
+          "year": 2018,
+          "endYear": 2022,
+          "title": "A 13 km (8.1 mi) stretch of Dravyavati riverfront out of 47.5 km (29.5 mi) was opened after rejuvenation in 2018 and the remaining project was completed in 2022.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Jaipur — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "subject": "Jaipur",
+          "claimIds": [
+            "claim_cdbbfd0aa8ab4cb9",
+            "claim_6efc61b154e5de57",
+            "claim_8319c10e5d8ce557",
+            "claim_8f9638c0cb080ded",
+            "claim_7867d92529667121",
+            "claim_596ff46a7347eecf",
+            "claim_fc03820c1513d204",
+            "claim_9d33794fb2cef990",
+            "claim_992313aa275591d0",
+            "claim_9edc1c479d164932"
+          ],
+          "statements": [
+            "Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber.",
+            "The Hawa Mahal , also known as the Palace of Winds, a beautiful architectural marvel built in 1799, is an iconic symbol of Jaipur's finesse.",
+            "Jaipur was founded in 1727 by Sawai Jai Singh II, the Kachhwaha Rajput ruler of Amer, after whom the city is named.",
+            "Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743.",
+            "Built in 1868 by Maharaja Sawai Ram Singh of Jaipur, this garden contains a bird park, zoo, Ravindra Rang Manch Theatre, art gallery, exhibition ground, gymnasium and several cafes and picnic spots.",
+            "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+            "Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+            "Jaipur is the only city that is home to three forts , and more than five palaces.",
+            "Established in Jaipur in the year 1993, the Jawahar Kala Kendra has become a very popular cultural destination in the city.",
+            "Jaipur has many cultural sites like Jawahar Kala Kendra established by Charles Correa and Ravindra Manch."
+          ]
+        },
+        {
+          "subject": "Jai Singh",
+          "claimIds": [
+            "claim_cdbbfd0aa8ab4cb9",
+            "claim_ad344042b5b2fcc1",
+            "claim_789faf6def9302a0",
+            "claim_8f9638c0cb080ded"
+          ],
+          "statements": [
+            "Jaipur traces back its origins to 1727 when it was established by Jai Singh II, the Raja of Amber.",
+            "It was constructed during the reign of Jai Singh in 1734, and was later expanded in 1868.",
+            "It was established in 1727 by Kachhwaha Rajput ruler Jai Singh II, who named it after himself.",
+            "Jaipur was founded by the Rajput chief of Kachhwaha clan, Jai Singh II, on 18 November 1727, who ruled the region from 1699 to 1743."
+          ]
+        },
+        {
+          "subject": "Indian",
+          "claimIds": [
+            "claim_da7d6155365d32e9",
+            "claim_ff781511ebe7f8ce",
+            "claim_a411d79c702f5992"
+          ],
+          "statements": [
+            "The temple was commissioned and built by renowned Indian industrialists, the Birlas, in 1988.",
+            "Built in 1734 by the Maharaja Sawai Jai Singh II in a mix of Indian and European styles, the fort also houses the (relatively) compact Madhavendra Bhawan palace, although its former splendour is fading under layers of graffiti and pigeon droppings.",
+            "The Jawahar Kala Kendra, more popularly known as the JKK, is an international institution that focuses on preserving and promoting the different genres of Indian culture and art."
+          ]
+        },
+        {
+          "subject": "Maharaja Sawai Jai Singh",
+          "claimIds": [
+            "claim_ff781511ebe7f8ce",
+            "claim_596ff46a7347eecf",
+            "claim_fc03820c1513d204"
+          ],
+          "statements": [
+            "Built in 1734 by the Maharaja Sawai Jai Singh II in a mix of Indian and European styles, the fort also houses the (relatively) compact Madhavendra Bhawan palace, although its former splendour is fading under layers of graffiti and pigeon droppings.",
+            "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+            "Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur."
+          ]
+        },
+        {
+          "subject": "Amer Fort",
+          "claimIds": [
+            "claim_825cc189c20ad439",
+            "claim_d02ea54aac15986e"
+          ],
+          "statements": [
+            "The Amber Fort , also known as Amer Fort, is a UNESCO World Heritage Site with a history dating back to 1592.",
+            "It was built in 1726 to guard the Amer Fort Palace complex and provides a view of both the Amer Fort and Maota Lake."
+          ]
+        },
+        {
+          "subject": "Gan",
+          "claimIds": [
+            "claim_1df98c2099ba1648",
+            "claim_c627820e48332d96"
+          ],
+          "statements": [
+            "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+            "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses."
+          ]
+        },
+        {
+          "subject": "Goddess Parvati",
+          "claimIds": [
+            "claim_1df98c2099ba1648",
+            "claim_ec3120b724a30022"
+          ],
+          "statements": [
+            "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+            "The festivals are dedicated, in many parts of India, to Goddess Parvati, also known as Teej Mata."
+          ]
+        },
+        {
+          "subject": "Hindu",
+          "claimIds": [
+            "claim_db0af5bdda78349e",
+            "claim_954066fc53513f98"
+          ],
+          "statements": [
+            "This massive fort-palace complex built in hybrid Hindu-Muslim style dates back to Raja Man Singh and was the royal palace of the Kachwahas from c. 1600-1727.",
+            "Gangaur is celebrated in the month of Chaitra (March-April), the first month of the Hindu calendar."
+          ]
+        }
+      ],
+      "sourcesUsed": [
+        {
+          "sourceId": "rajasthan-tourism-jaipur",
+          "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+          "publisher": "Government of Rajasthan",
+          "url": "https://tourism.rajasthan.gov.in/jaipur.html",
+          "tier": "official-government"
+        },
+        {
+          "sourceId": "incredible-india-jaipur",
+          "title": "Jaipur — Incredible India, Ministry of Tourism",
+          "publisher": "Ministry of Tourism, Government of India",
+          "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
+          "tier": "official-tourism"
+        },
+        {
+          "sourceId": "wikipedia",
+          "title": "Jaipur — Wikipedia",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+          "tier": "encyclopedia"
+        },
+        {
+          "sourceId": "wikivoyage",
+          "title": "Jaipur — Wikivoyage",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
+          "tier": "other-public"
+        }
+      ],
+      "stats": {
+        "approved": 35,
+        "published": 35,
+        "withheld": 0,
+        "narrativeBlocks": 3,
+        "narrativeWithheld": 0,
+        "timelineEntries": 22,
+        "connections": 8
+      },
+      "withheld": [],
+      "withheldNarrative": []
+    },
+    "kyoto": {
+      "destinationId": "kyoto",
+      "claimSetVersion": "9c561e7bde377ca7",
+      "depth": {
+        "depth": "researched",
+        "basis": "earned",
+        "note": null,
+        "earned": "researched",
+        "metrics": {
+          "approvedClaims": 15,
+          "categories": 4,
+          "higherTierClaims": 1,
+          "distinctSources": 3
+        },
+        "reasons": [
+          "15 approved claims (needs 20)"
+        ]
+      },
+      "categories": [
+        {
+          "category": "culture",
+          "claims": [
+            {
+              "id": "claim_cc5dd8aa193739aa",
+              "category": "culture",
+              "statement": "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.976Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Kyoto — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "other-public",
+                  "quote": "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
+                  "retrievedAt": "2026-08-25T06:01:08.561Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "festivals",
+          "claims": [
+            {
+              "id": "claim_7eda36c79dc56459",
+              "category": "festivals",
+              "statement": "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.978Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_fe2576f2163ad1b5",
+              "category": "festivals",
+              "statement": "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.978Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "heritage",
+          "claims": [
+            {
+              "id": "claim_ae64783b4fb47538",
+              "category": "heritage",
+              "statement": "Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
+              "claimType": "documented history",
+              "confidence": "high",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.975Z",
+              "sources": [
+                {
+                  "sourceId": "kyoto-city-tourism",
+                  "title": "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
+                  "publisher": "Kyoto City Tourism Association",
+                  "url": "https://kyoto.travel/en/",
+                  "tier": "official-tourism",
+                  "quote": "Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
+                  "retrievedAt": "2026-08-25T06:00:48.467Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_545a4a7f02704ef4",
+              "category": "heritage",
+              "statement": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.976Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_86c29eeaeb0dc37d",
+              "category": "heritage",
+              "statement": "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.976Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Kyoto — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "other-public",
+                  "quote": "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
+                  "retrievedAt": "2026-08-25T06:01:08.561Z"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "history",
+          "claims": [
+            {
+              "id": "claim_411cac0099d86494",
+              "category": "history",
+              "statement": "The modern municipality of Kyoto was established in 1889.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.972Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "The modern municipality of Kyoto was established in 1889.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_9977e201cbbed73c",
+              "category": "history",
+              "statement": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.973Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_5a1f01cf4b9b6365",
+              "category": "history",
+              "statement": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.974Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_f4db56648382a157",
+              "category": "history",
+              "statement": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.974Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_c7453fa2c19711c6",
+              "category": "history",
+              "statement": "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.974Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_7a313002ce176672",
+              "category": "history",
+              "statement": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
+              "claimType": "documented history",
+              "confidence": "medium",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.975Z",
+              "sources": [
+                {
+                  "sourceId": "wikipedia",
+                  "title": "Kyoto — Wikipedia",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "encyclopedia",
+                  "quote": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
+                  "retrievedAt": "2026-08-25T06:01:07.270Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_2afb2b3ef37b93fc",
+              "category": "history",
+              "statement": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.975Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Kyoto — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "other-public",
+                  "quote": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
+                  "retrievedAt": "2026-08-25T06:01:08.561Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_f49f89cbbaa6f42a",
+              "category": "history",
+              "statement": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.975Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Kyoto — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "other-public",
+                  "quote": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
+                  "retrievedAt": "2026-08-25T06:01:08.561Z"
+                }
+              ]
+            },
+            {
+              "id": "claim_6ec4b0bc70768e1e",
+              "category": "history",
+              "statement": "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+              "claimType": "documented history",
+              "confidence": "unverified",
+              "approvedBy": "s.sinha",
+              "approvedAt": "2026-08-25T06:01:08.975Z",
+              "sources": [
+                {
+                  "sourceId": "wikivoyage",
+                  "title": "Kyoto — Wikivoyage",
+                  "publisher": "Wikimedia Foundation",
+                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+                  "tier": "other-public",
+                  "quote": "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+                  "retrievedAt": "2026-08-25T06:01:08.561Z"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "narrative": [
+        {
+          "id": "narr_948318292ba26070",
+          "mode": "HISTORICAL",
+          "category": "history",
+          "claimType": "documented history",
+          "text": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period. The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts: Nestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo. Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890. The modern municipality of Kyoto was established in 1889. The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto. Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
+          "claimIds": [
+            "claim_9977e201cbbed73c",
+            "claim_411cac0099d86494",
+            "claim_f4db56648382a157",
+            "claim_c7453fa2c19711c6",
+            "claim_7a313002ce176672",
+            "claim_2afb2b3ef37b93fc",
+            "claim_f49f89cbbaa6f42a",
+            "claim_6ec4b0bc70768e1e",
+            "claim_5a1f01cf4b9b6365"
+          ],
+          "sentenceCount": 6,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T06:55:40.088Z"
+        },
+        {
+          "id": "narr_dd51ebe09b9708ec",
+          "mode": "HERITAGE",
+          "category": "heritage",
+          "claimType": "documented history",
+          "text": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns. At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds. Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
+          "claimIds": [
+            "claim_545a4a7f02704ef4",
+            "claim_86c29eeaeb0dc37d",
+            "claim_ae64783b4fb47538"
+          ],
+          "sentenceCount": 3,
+          "generatedBy": "rule-based",
+          "verifiedAt": "2026-08-25T06:55:40.089Z"
+        }
+      ],
+      "timeline": [
+        {
+          "claimId": "claim_9977e201cbbed73c",
+          "year": 1603,
+          "endYear": null,
+          "title": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_f49f89cbbaa6f42a",
+          "year": 1868,
+          "endYear": null,
+          "title": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_5a1f01cf4b9b6365",
+          "year": 1885,
+          "endYear": 1890,
+          "title": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_411cac0099d86494",
+          "year": 1889,
+          "endYear": null,
+          "title": "The modern municipality of Kyoto was established in 1889.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_7a313002ce176672",
+          "year": 1895,
+          "endYear": null,
+          "title": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_f4db56648382a157",
+          "year": 1895,
+          "endYear": null,
+          "title": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikipedia",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        },
+        {
+          "claimId": "claim_2afb2b3ef37b93fc",
+          "year": 2023,
+          "endYear": null,
+          "title": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
+          "category": "history",
+          "claimType": "documented history",
+          "sources": [
+            {
+              "title": "Kyoto — Wikivoyage",
+              "publisher": "Wikimedia Foundation",
+              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
+            }
+          ]
+        }
+      ],
+      "connections": [
+        {
+          "subject": "Kyoto",
+          "claimIds": [
+            "claim_411cac0099d86494",
+            "claim_c7453fa2c19711c6",
+            "claim_7a313002ce176672",
+            "claim_f49f89cbbaa6f42a",
+            "claim_6ec4b0bc70768e1e",
+            "claim_86c29eeaeb0dc37d",
+            "claim_fe2576f2163ad1b5"
+          ],
+          "statements": [
+            "The modern municipality of Kyoto was established in 1889.",
+            "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+            "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
+            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
+            "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+            "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
+            "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16."
+          ]
+        },
+        {
+          "subject": "Japan",
+          "claimIds": [
+            "claim_2afb2b3ef37b93fc",
+            "claim_f49f89cbbaa6f42a",
+            "claim_7eda36c79dc56459"
+          ],
+          "statements": [
+            "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
+            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
+            "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17."
+          ]
+        },
+        {
+          "subject": "Japanese",
+          "claimIds": [
+            "claim_c7453fa2c19711c6",
+            "claim_cc5dd8aa193739aa",
+            "claim_6ec4b0bc70768e1e"
+          ],
+          "statements": [
+            "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
+            "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
+            "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya."
+          ]
+        },
+        {
+          "subject": "Tokyo",
+          "claimIds": [
+            "claim_9977e201cbbed73c",
+            "claim_f49f89cbbaa6f42a"
+          ],
+          "statements": [
+            "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
+            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo."
+          ]
+        }
+      ],
+      "sourcesUsed": [
+        {
+          "sourceId": "wikipedia",
+          "title": "Kyoto — Wikipedia",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+          "tier": "encyclopedia"
+        },
+        {
+          "sourceId": "wikivoyage",
+          "title": "Kyoto — Wikivoyage",
+          "publisher": "Wikimedia Foundation",
+          "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
+          "tier": "other-public"
+        },
+        {
+          "sourceId": "kyoto-city-tourism",
+          "title": "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
+          "publisher": "Kyoto City Tourism Association",
+          "url": "https://kyoto.travel/en/",
+          "tier": "official-tourism"
+        }
+      ],
+      "stats": {
+        "approved": 15,
+        "published": 15,
+        "withheld": 0,
+        "narrativeBlocks": 2,
+        "narrativeWithheld": 0,
+        "timelineEntries": 7,
+        "connections": 4
+      },
+      "withheld": [],
+      "withheldNarrative": []
+    }
+  }
+}

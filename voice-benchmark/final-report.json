@@ -1,0 +1,288 @@
+{
+  "generatedAt": "2026-08-17",
+  "hardware": "Apple M1, 8 GB RAM, no CUDA — MPS only",
+  "method": {
+    "intelligibility": "Whisper transcribes each render; transcript compared to the script the voice was asked to read (WER/CER, punctuation and case normalised).",
+    "instrumentControl": "Re-ran the Indic renders with a larger Whisper model. Hindi error roughly halved (64.8% -> 31.5% on the best candidate), proving much of the apparent error was the recogniser. Nepali and Bengali stayed above 100% and remain unmeasurable.",
+    "signal": "peak, RMS, silence ratio, clipping, sample rate measured off the PCM.",
+    "naturalness": "NOT MEASURED — requires listening."
+  },
+  "modelsEvaluated": [
+    "macOS AVSpeechSynthesizer (say): Daniel, Lekha, Piya",
+    "Piper ONNX: en_US-ryan-high, en_GB-cori-high, hi_IN-pratham/rohan/priyamvada-medium, ne_NP-google/chitwan-medium, bn_BD-google-medium"
+  ],
+  "modelsRejectedBeforeInstall": [
+    {
+      "model": "AI4Bharat IndicF5",
+      "reason": "Requires PyTorch (~2.5 GB) plus a diffusion-style model. On 8 GB RAM with 12 GB free disk and no CUDA this would thrash or fail; inference would be minutes per utterance."
+    },
+    {
+      "model": "Indic Parler-TTS / VEXYL-TTS",
+      "reason": "Same class of constraint — ~2 GB model plus torch, no GPU to run it on."
+    }
+  ],
+  "processing": {
+    "loudness": "RMS-matched to 0.11 with an 0.89 peak ceiling. Peak-matching alone left Bengali ~4.5 dB louder than English; after RMS matching the spread across all four languages is 0.2 dB.",
+    "applied": [
+      "gain only"
+    ],
+    "deliberatelyNotApplied": [
+      "compression",
+      "EQ",
+      "de-essing",
+      "noise reduction",
+      "reverb"
+    ],
+    "rationale": "Heavy processing is what makes synthetic speech sound worse. Gain fixes the real defect (level mismatch between languages) without adding artefacts."
+  },
+  "scriptEngineering": {
+    "change": "Three long sentences in the English narration split into eight shorter ones.",
+    "result": "Average 10.7 words per sentence, giving the engine natural pause points."
+  },
+  "languages": {
+    "en": {
+      "candidatesBenchmarked": 3,
+      "asrRankingUsable": true,
+      "asrNote": "Whisper transcribes this language well enough to rank candidates on intelligibility.",
+      "bestByIntelligibility": "v0-say-daniel",
+      "candidates": [
+        {
+          "id": "v0-say-daniel",
+          "engine": "say",
+          "voice": "Daniel",
+          "incumbent": true,
+          "wpm": 143,
+          "durationSeconds": 26.4,
+          "werSmall": 0.0476,
+          "werMedium": null,
+          "cerMedium": null
+        },
+        {
+          "id": "v1-piper-ryan-high",
+          "engine": "piper",
+          "voice": "en_US-ryan-high",
+          "incumbent": false,
+          "wpm": 178,
+          "durationSeconds": 21.2,
+          "werSmall": 0.1111,
+          "werMedium": null,
+          "cerMedium": null
+        },
+        {
+          "id": "v2-piper-cori-high",
+          "engine": "piper",
+          "voice": "en_GB-cori-high",
+          "incumbent": false,
+          "wpm": 165,
+          "durationSeconds": 22.9,
+          "werSmall": 0.127,
+          "werMedium": null,
+          "cerMedium": null
+        }
+      ],
+      "shipping": {
+        "voice": "Daniel",
+        "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+        "durationRange": [
+          70.5,
+          74.5
+        ],
+        "rms": 0.1084,
+        "peak": 0.889,
+        "clipping": 0
+      },
+      "naturalnessScore": null,
+      "naturalnessNote": "NOT SCORED. Judging whether a voice sounds human requires listening. No MOS number was computed, and inventing one would be the same failure this project exists to avoid. Renders are in voice-benchmark/ and voice-benchmark/listen.html for a human to rate."
+    },
+    "hi": {
+      "candidatesBenchmarked": 4,
+      "asrRankingUsable": true,
+      "asrNote": "Whisper transcribes this language well enough to rank candidates on intelligibility.",
+      "bestByIntelligibility": "v0-say-lekha",
+      "candidates": [
+        {
+          "id": "v0-say-lekha",
+          "engine": "say",
+          "voice": "Lekha",
+          "incumbent": true,
+          "wpm": 149,
+          "durationSeconds": 21.8,
+          "werSmall": 0.6481,
+          "werMedium": 0.3148,
+          "cerMedium": 0.1158
+        },
+        {
+          "id": "v1-piper-pratham",
+          "engine": "piper",
+          "voice": "hi_IN-pratham-medium",
+          "incumbent": false,
+          "wpm": 154,
+          "durationSeconds": 21.1,
+          "werSmall": 0.7222,
+          "werMedium": 0.3519,
+          "cerMedium": 0.1263
+        },
+        {
+          "id": "v2-piper-rohan",
+          "engine": "piper",
+          "voice": "hi_IN-rohan-medium",
+          "incumbent": false,
+          "wpm": 134,
+          "durationSeconds": 24.1,
+          "werSmall": 0.6296,
+          "werMedium": 0.4815,
+          "cerMedium": 0.1649
+        },
+        {
+          "id": "v3-piper-priyamvada",
+          "engine": "piper",
+          "voice": "hi_IN-priyamvada-medium",
+          "incumbent": false,
+          "wpm": 138,
+          "durationSeconds": 23.5,
+          "werSmall": 0.6111,
+          "werMedium": 0.4259,
+          "cerMedium": 0.1544
+        }
+      ],
+      "shipping": {
+        "voice": "Lekha",
+        "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+        "durationRange": [
+          75.2,
+          80.7
+        ],
+        "rms": 0.1099,
+        "peak": 0.871,
+        "clipping": 0
+      },
+      "naturalnessScore": null,
+      "naturalnessNote": "NOT SCORED. Judging whether a voice sounds human requires listening. No MOS number was computed, and inventing one would be the same failure this project exists to avoid. Renders are in voice-benchmark/ and voice-benchmark/listen.html for a human to rate."
+    },
+    "ne": {
+      "candidatesBenchmarked": 2,
+      "asrRankingUsable": false,
+      "asrNote": "Whisper stayed above 100% word error on EVERY candidate, including with the larger model. The recogniser cannot transcribe this language reliably, so it ranks nothing here. Judge by listening.",
+      "bestByIntelligibility": null,
+      "candidates": [
+        {
+          "id": "v0-piper-google",
+          "engine": "piper",
+          "voice": "ne_NP-google-medium",
+          "incumbent": true,
+          "wpm": 119,
+          "durationSeconds": 19.6,
+          "werSmall": 1.1282,
+          "werMedium": 1.5641,
+          "cerMedium": 1.1328
+        },
+        {
+          "id": "v1-piper-chitwan",
+          "engine": "piper",
+          "voice": "ne_NP-chitwan-medium",
+          "incumbent": false,
+          "wpm": 140,
+          "durationSeconds": 16.7,
+          "werSmall": 1.2308,
+          "werMedium": 1.0513,
+          "cerMedium": 0.4066
+        }
+      ],
+      "shipping": {
+        "voice": "ne_NP-google-medium",
+        "engine": "Piper (ONNX) → AAC via afconvert",
+        "durationRange": [
+          76,
+          81.9
+        ],
+        "rms": 0.1099,
+        "peak": 0.59,
+        "clipping": 0
+      },
+      "naturalnessScore": null,
+      "naturalnessNote": "NOT SCORED. Judging whether a voice sounds human requires listening. No MOS number was computed, and inventing one would be the same failure this project exists to avoid. Renders are in voice-benchmark/ and voice-benchmark/listen.html for a human to rate."
+    },
+    "bn": {
+      "candidatesBenchmarked": 2,
+      "asrRankingUsable": false,
+      "asrNote": "Whisper stayed above 100% word error on EVERY candidate, including with the larger model. The recogniser cannot transcribe this language reliably, so it ranks nothing here. Judge by listening.",
+      "bestByIntelligibility": null,
+      "candidates": [
+        {
+          "id": "v0-say-piya",
+          "engine": "say",
+          "voice": "Piya",
+          "incumbent": true,
+          "wpm": 98,
+          "durationSeconds": 20.2,
+          "werSmall": 1.5152,
+          "werMedium": 1.0909,
+          "cerMedium": 0.8864
+        },
+        {
+          "id": "v1-piper-google",
+          "engine": "piper",
+          "voice": "bn_BD-google-medium",
+          "incumbent": false,
+          "wpm": 120,
+          "durationSeconds": 16.5,
+          "werSmall": 1,
+          "werMedium": 1.2727,
+          "cerMedium": 0.8591
+        }
+      ],
+      "shipping": {
+        "voice": "Piya",
+        "engine": "macOS AVSpeechSynthesizer (say) → AAC via afconvert",
+        "durationRange": [
+          82.2,
+          88.3
+        ],
+        "rms": 0.11,
+        "peak": 0.552,
+        "clipping": 0
+      },
+      "naturalnessScore": null,
+      "naturalnessNote": "NOT SCORED. Judging whether a voice sounds human requires listening. No MOS number was computed, and inventing one would be the same failure this project exists to avoid. Renders are in voice-benchmark/ and voice-benchmark/listen.html for a human to rate."
+    }
+  },
+  "blocked": [
+    {
+      "language": "Bhutia (Sikkimese)",
+      "official": true,
+      "reason": "No speech voice in any available engine."
+    },
+    {
+      "language": "Lepcha",
+      "official": true,
+      "reason": "No TTS engine supports the language or its script."
+    },
+    {
+      "language": "Assamese",
+      "official": false,
+      "reason": "Absent from macOS voices and Piper's 50 languages."
+    },
+    {
+      "language": "Dzongkha",
+      "official": false,
+      "reason": "No voice, and no speaker available to review a translation."
+    }
+  ],
+  "labellingCorrection": "Bengali was implicitly presented alongside Sikkim's languages. Sikkim's own languages are Nepali, Bhutia, Lepcha and Limbu; Bengali belongs to neighbouring West Bengal, through which most domestic visitors arrive. The player now says so.",
+  "shipping": {
+    "guides": 60,
+    "monasteries": 15,
+    "languages": [
+      "bn",
+      "en",
+      "hi",
+      "ne"
+    ],
+    "durationRange": [
+      70.5,
+      88.3
+    ],
+    "allWithinTarget": true,
+    "clippedFiles": 0
+  }
+}

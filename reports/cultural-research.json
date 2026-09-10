@@ -1,0 +1,961 @@
+{
+  "generatedAt": "2026-08-17",
+  "images": null,
+  "sources": [
+    {
+      "url": "https://en.wikipedia.org/wiki/Yuksom",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Phuntsog_Namgyal",
+      "files": [
+        "src/data/stories/history.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chogyal",
+      "files": [
+        "src/data/stories/history.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kabi_Lungchok",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Indigenous_peoples_of_Sikkim",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/festivals.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/food.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rabdentse",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pelling",
+      "files": [
+        "src/data/stories/history.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sikkim",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/food.ts",
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Temi_Tea_Garden",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/food.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/1975_Sikkimese_monarchy_referendum",
+      "files": [
+        "src/data/stories/history.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dzuluk",
+      "files": [
+        "src/data/stories/history.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Aritar,_Sikkim",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sikkimese_cuisine",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/food.ts",
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gangtok",
+      "files": [
+        "src/data/stories/history.ts",
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Losar",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Bhutia",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/food.ts",
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Losoong_Festival",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cham_dance",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tashiding_Monastery",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Vesak",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tendong_Lho_Rumfaat",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lepcha_people",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sakela",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sikkimese_people",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Indra_Jatra",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Maghe_Sankranti",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tamu_Lhosar",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sonam_Lhosar",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dhaka_topi",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Dashain",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tihar_(festival)",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sel_roti",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Te-ongsi_Sirijunga_Xin_Thebe",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Limbu_people",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/communities.ts",
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lhabab_Duchen",
+      "files": [
+        "src/data/stories/festivals.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Enchey_Monastery",
+      "files": [
+        "src/data/stories/festivals.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kho_(Bhutia_dress)",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lachen,_Sikkim",
+      "files": [
+        "src/data/stories/communities.ts",
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chungthang",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mundhum",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Yuma_Sammang",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Jhākri",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Banjhakri_Falls_and_Energy_Park",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lake_Tsomgo",
+      "files": [
+        "src/data/stories/communities.ts",
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Banjhakri_and_Banjhakrini",
+      "files": [
+        "src/data/stories/communities.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sonam_Tshering_Lepcha",
+      "files": [
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Thangka",
+      "files": [
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Namgyal_Institute_of_Tibetology",
+      "files": [
+        "src/data/stories/folk-arts.ts",
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Limbu_script",
+      "files": [
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lepcha_script",
+      "files": [
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Lepcha_language",
+      "files": [
+        "src/data/stories/folk-arts.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Rumtek_Monastery",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Pemayangtse_Monastery",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Khecheopalri_Lake",
+      "files": [
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Architecture_of_Tibet",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Mani_stone",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Prayer_flag",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Do-drul_Chorten",
+      "files": [
+        "src/data/stories/monastery-heritage.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Stupa",
+      "files": [
+        "src/data/stories/monastery-heritage.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Thukpa",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gundruk",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kinema",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chhurpi",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Tongba",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Chhaang",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sikkim_tea",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Cardamom",
+      "files": [
+        "src/data/stories/food.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kangchenjunga",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Goecha_La",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Khangchendzonga_National_Park",
+      "files": [
+        "src/data/stories/landscape.ts",
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Gurudongmar_Lake",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Kyongnosla_Alpine_Sanctuary",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Sacred_Himalayan_Landscape",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Varsey_Rhododendron_Sanctuary",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Yumthang_Valley_of_Flowers",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Nathu_La",
+      "files": [
+        "src/data/stories/landscape.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Hanuman_Tok",
+      "files": [
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Namchi",
+      "files": [
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ravangla",
+      "files": [
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Buddha_Park_of_Ravangla",
+      "files": [
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Maenam_Wildlife_Sanctuary",
+      "files": [
+        "src/data/stories/journeys.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimexpress.com/news-details/sikkim-introduces-rs50-entry-fee-for-tourists-to-fund-sustainable-tourism-development",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.uniindia.com/news/east/tourism-sikkim-entry-fee/3414026.html",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.travelandtourworld.com/news/article/sikkim-tourism-shows-resilience-in-2025-with-over-seventeen-lakh-visitors-domestic-travel-growth-outpaces-foreign-arrivals/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimtourism.gov.in/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.trawell.in/sikkim/gangtok/rumtek-monastery",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.sikkim.gov.in/KnowSikkim/about-sikkim/festivals-in-sikkim",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "HEAD rejected; verified by GET",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimtourism.gov.in/about/dances",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimtourism.gov.in/about/cuisine",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimtourism.gov.in/about/sikkim",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://sikkimtourism.gov.in/do-and-do-not",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://utsav.gov.in/view-event/pang-lhabsol-1",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikipedia.org/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://commons.wikimedia.org/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.openstreetmap.org/copyright",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://ipr.sikkim.gov.in/Home/AboutSikkim",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "HEAD rejected; verified by GET",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://whc.unesco.org/en/list/1513/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "HEAD rejected; verified by GET",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://en.wikivoyage.org/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://www.youtube.com/",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    },
+    {
+      "url": "https://developers.google.com/maps/documentation/places/web-service/place-details",
+      "files": [
+        "src/data/sources.ts"
+      ],
+      "status": 200,
+      "note": "",
+      "checkedAt": "2026-08-17"
+    }
+  ]
+}

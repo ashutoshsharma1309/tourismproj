@@ -1,0 +1,162 @@
+{
+  "bn-A": {
+    "model": "bn_BD-google-medium",
+    "character": "female",
+    "quality": "medium",
+    "cer": 99.7,
+    "wer": 100,
+    "wpm": 110.3,
+    "rmsBeforeDbfs": -19.1,
+    "gainApplied": 0.89
+  },
+  "bn-B": {
+    "model": "say-Piya",
+    "character": "female",
+    "quality": "system",
+    "cer": 77.9,
+    "wer": 100,
+    "wpm": 82.5,
+    "rmsBeforeDbfs": -18.04,
+    "gainApplied": 0.878
+  },
+  "ne-A": {
+    "model": "ne_NP-chitwan-medium",
+    "character": "male",
+    "quality": "medium",
+    "cer": 56.3,
+    "wer": 132.1,
+    "wpm": 132.5,
+    "rmsBeforeDbfs": -16.45,
+    "gainApplied": 0.731
+  },
+  "ne-B": {
+    "model": "ne_NP-google-medium",
+    "character": "female",
+    "quality": "medium",
+    "cer": 48.5,
+    "wer": 108.9,
+    "wpm": 106.9,
+    "rmsBeforeDbfs": -14.4,
+    "gainApplied": 0.577
+  },
+  "ja-A": {
+    "model": "ja_JA-hi_fi_captain-medium",
+    "character": "male",
+    "quality": "medium",
+    "cer": 23.8,
+    "wer": 100,
+    "wpm": 169,
+    "rmsBeforeDbfs": -11.9,
+    "gainApplied": 0.433
+  },
+  "ja-B": {
+    "model": "say-Kyoko",
+    "character": "female",
+    "quality": "system",
+    "cer": 21.5,
+    "wer": 108.3,
+    "wpm": 144,
+    "rmsBeforeDbfs": -24.5,
+    "gainApplied": 1.846
+  },
+  "ko-A": {
+    "model": "ko_KR-kss-medium",
+    "character": "female",
+    "quality": "medium",
+    "cer": 17.6,
+    "wer": 47.7,
+    "wpm": 212.6,
+    "rmsBeforeDbfs": -14.99,
+    "gainApplied": 0.618
+  },
+  "ko-B": {
+    "model": "say-Yuna",
+    "character": "female",
+    "quality": "system",
+    "cer": 8.5,
+    "wer": 29.5,
+    "wpm": 197.2,
+    "rmsBeforeDbfs": -17.03,
+    "gainApplied": 0.782
+  },
+  "zh-A": {
+    "model": "say-Tingting",
+    "character": "female",
+    "quality": "system",
+    "cer": 41.6,
+    "wer": 90.9,
+    "wpm": 119.2,
+    "rmsBeforeDbfs": -17.86,
+    "gainApplied": 0.86
+  },
+  "zh-B": {
+    "model": "zh_CN-huayan-medium",
+    "character": "female",
+    "quality": "medium",
+    "cer": 42.4,
+    "wer": 100,
+    "wpm": 160.1,
+    "rmsBeforeDbfs": -16.23,
+    "gainApplied": 0.712
+  },
+  "ar-A": {
+    "model": "ar_JO-kareem-medium",
+    "character": "male",
+    "quality": "medium",
+    "cer": 27.2,
+    "wer": 46.3,
+    "wpm": 75.5,
+    "rmsBeforeDbfs": -16.52,
+    "gainApplied": 0.737
+  },
+  "ar-B": {
+    "model": "say-Majed",
+    "character": "male",
+    "quality": "system",
+    "cer": 21.1,
+    "wer": 37.3,
+    "wpm": 68.3,
+    "rmsBeforeDbfs": -16.97,
+    "gainApplied": 0.776
+  },
+  "ru-A": {
+    "model": "ru_RU-denis-medium",
+    "character": "male",
+    "quality": "medium",
+    "cer": 12.4,
+    "wer": 37,
+    "wpm": 109.2,
+    "rmsBeforeDbfs": -18.52,
+    "gainApplied": 0.89
+  },
+  "ru-B": {
+    "model": "ru_RU-dmitri-medium",
+    "character": "male",
+    "quality": "medium",
+    "cer": 30,
+    "wer": 61.1,
+    "wpm": 128.2,
+    "rmsBeforeDbfs": -18,
+    "gainApplied": 0.874
+  },
+  "ru-C": {
+    "model": "ru_RU-irina-medium",
+    "character": "female",
+    "quality": "medium",
+    "cer": 9.2,
+    "wer": 27.8,
+    "wpm": 93.8,
+    "rmsBeforeDbfs": -20.07,
+    "gainApplied": 0.89
+  },
+  "ru-D": {
+    "model": "say-Milena",
+    "character": "female",
+    "quality": "system",
+    "cer": 9.2,
+    "wer": 27.8,
+    "wpm": 96.4,
+    "rmsBeforeDbfs": -17.37,
+    "gainApplied": 0.812
+  }
+}

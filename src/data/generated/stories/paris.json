@@ -1,0 +1,778 @@
+[
+  {
+    "slug": "food-croissant",
+    "destinationId": "paris",
+    "title": "Croissant",
+    "dek": "A croissant is a Viennoiserie in a crescent shape made from a laminated yeast dough that sits between a bread and a puff pastry.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "A croissant is a Viennoiserie in a crescent shape made from a laminated yeast dough that sits between a bread and a puff pastry.",
+    "content": [
+      "A croissant (; French: [kʁwasɑ̃] ) is a Viennoiserie in a crescent shape made from a laminated yeast dough that sits between a bread and a puff pastry.",
+      "It is buttery and flaky, inspired by the shape of the Austrian kipferl, but using the Viennoiserie yeast-leavened laminated dough. Croissants are named for their crescent shape. The dough is layered with butter, rolled and folded several times in succession, then rolled into a thin sheet, in a technique called laminating. The process results in a layered, flaky texture, similar to a puff pastry.",
+      "Crescent-shaped breads have been made since the Renaissance, and crescent-shaped cakes possibly since antiquity. The modern croissant was developed in the early 20th century, when French bakers replaced the brioche dough of the kipferl with a yeast-leavened laminated dough.",
+      "In the late 1970s, the development of factory-made, frozen, preformed but unbaked dough made them into a fast food that could be freshly baked by unskilled labor. The croissant bakery, notably the La Croissanterie chain, was a French response to American-style fast food, and as of 2008, 30–40% of the croissants sold in French bakeries and patisseries were baked from frozen dough. Croissants are a common part of a continental breakfast in many European countries.",
+      "The kipferl, an Austrian crescent-shaped pastry, can be dated back to at least the 13th century in Austria, and came in various shapes. The kipferl can be made plain or with nuts or other fillings (some consider the rugelach a form of kipferl).",
+      "In either 1838 or 1839, an Austrian artillery officer, August Zang, founded a Viennese bakery (Boulangerie Viennoise) at 92, rue de Richelieu in Paris. This bakery, which served Viennese specialties including the kipferl and the Vienna loaf, quickly became popular and inspired French imitators (and the concept, if not the term, of viennoiserie). The French version of the kipferl was named for its crescent (croissant) shape and has become a universally identifiable shape across the world.",
+      "The earliest known recipe for the present-day croissant appears in 1905, although the name croissant appears among the \"fantasy or luxury breads\" in 1853. Earlier recipes for non-laminated croissants can be found in the 19th century and at least one reference to croissants as an established French bread appeared as early as 1850.",
+      "Zang himself returned to Austria in 1848 to become a press magnate, but the bakery remained popular for some time afterwards, and was mentioned in several works of the time: \"This same M. Zank  [sic]...founded around 1830  [sic], in Paris, the famous Boulangerie viennoise\". Several sources praise this bakery's products: \"Paris is of exquisite delicacy; and, in particular, the succulent products of the Boulangerie Viennoise\"; \"which seemed to us as fine as if it came from the Viennese bakery on the Rue de Richelieu\".",
+      "By 1869, the croissant was well established enough to be mentioned as a breakfast staple, and in 1872, Charles Dickens wrote (in his periodical All the Year Round) of \"the workman's pain de ménage and the soldier's pain de munition, to the dainty croissant on the boudoir table\".",
+      "The viennoiserie technique that now characterizes the croissant was already mentioned in the late 17th century, when La Varenne's Le Cuisinier françois gave a recipe for it in the 1680 – and possibly earlier – edition. It was typically used not on its own but for shells holding other ingredients (as in a vol-au-vent). It does not appear to be mentioned in relation to the croissant until the 20th century.",
+      "The first recipe corresponding to the modern croissant, not only for the shape but also the texture of the dough and the taste, was published in 1906, in Paris, in Colombié's Nouvelle Encyclopédie culinaire.",
+      "Sylvain Claudius Goy was a French chef who is sometimes said to have recorded the earliest recipe of the modern croissant. His 1915 book La Cuisine Anglo-Americaine contains a croissant recipe which Frey Fine Books consider to be the first such recipe published, and they describe the recipe as having \"[given] birth to the croissant of present day\". Goy's recipe uses a laminated yeast dough known in French as pâte feuilletée levée."
+    ],
+    "keyFacts": [
+      "The modern croissant was developed in the early 20th century, when French bakers replaced the brioche dough of the kipferl with a yeast-leavened laminated dough.",
+      "The kipferl, an Austrian crescent-shaped pastry, can be dated back to at least the 13th century in Austria, and came in various shapes.",
+      "In either 1838 or 1839, an Austrian artillery officer, August Zang, founded a Viennese bakery (Boulangerie Viennoise) at 92, rue de Richelieu in Paris.",
+      "The earliest known recipe for the present-day croissant appears in 1905, although the name croissant appears among the \"fantasy or luxury breads\" in 1853."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-croissant.jpg",
+    "heroAlt": "Croissant, Paris",
+    "imageCredit": {
+      "file": "File:Croissant-Petr_Kratochvil.jpg",
+      "url": "/images/capsule/paris/food-croissant.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Croissant-Petr_Kratochvil.jpg",
+      "license": "CC0",
+      "attribution": "Petr Kratochvil"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-baguette",
+      "food-french-cuisine",
+      "food-snails-as-food"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Croissant",
+        "url": "https://en.wikipedia.org/wiki/Croissant",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "craft-manufacture-nationale-de-sevres",
+    "destinationId": "paris",
+    "title": "Manufacture nationale de Sèvres",
+    "dek": "The Manufacture nationale de Sèvres is one of the principal European porcelain factories.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Manufacture nationale de Sèvres is one of the principal European porcelain factories. It is located in Sèvres, Hauts-de-Seine, France. It is the continuation of Vincennes porcelain, founded in 1740, which moved to Sèvres in 1756. It has been owned by the French crown or government since 1759.",
+    "content": [
+      "The Manufacture nationale de Sèvres (pronounced [manyfaktyʁ nɑsjɔnal də sɛvʁ]) is one of the principal European porcelain factories. It is located in Sèvres, Hauts-de-Seine, France. It is the continuation of Vincennes porcelain, founded in 1740, which moved to Sèvres in 1756. It has been owned by the French crown or government since 1759.",
+      "Its production is still largely based on the creation of contemporary objects today. It became part of the Cité de la céramique in 2010 with the Musée national de céramique, and since 2012 with the Musée national Adrien Dubouché in Limoges.",
+      "In 1740, the Manufacture de Vincennes was founded, thanks to the support of Louis XV's Polish born wife, Queen Marie Leszczyńska who was noted as an avid porcelain collector in her early years as queen. According to the memoirs of Charles Philippe d'Albert, 4th Duke of Luynes it was Queen Marie who originally promoted porcelain in Versailles by having regular commissions such as the first colored porcelain flowers presented to her by the company in her royal apartments in April 1748 in order to compete with the Chantilly porcelain and Meissen porcelain in Germany. Louis XV's mistress Madame de Pompadour then followed and became a patron in 1751. By 1756, the manufactury was moved to a building in Sèvres, built at the initiative of Madame de Pompadour, near her Château de Bellevue.",
+      "One hundred thirty metres long and four storeys high, the building was erected between 1753 and 1756 by the architect Laurent Lindet on the site of a farm called \"de la Guyarde.\" There was a central pavilion surmounted by a pediment with a clock from the old royal glass-makers on the fourth level, with two long wings terminating in corner pavilions at each end. In front of the pavilion was a \"public\" courtyard, enclosed by a wrought-iron fence. This front area was decorated twice a month in order to hold parties for visitors.",
+      "Jean-Claude Chambellan Duplessis served as artistic director of the Vincennes porcelain manufactory and its successor at Sèvres from 1748 to his death in 1774. The manufactory was bought by the King in 1759, although Madame de Pompadour was allowed effective free rein to oversee it.  A period of superb quality in both design and production followed, creating much of the enduring reputation of French porcelain. The light-hearted Rococo was given a more serious air, often by restricting it to the painting, rather than the porcelain shape.",
+      "Initially, the manufactory produced soft-paste porcelain. In 1768, the Bordeaux chemist, Vilaris and his friend Jean-Baptiste Darnet discovered the first deposit of kaolin on French soil at Saint-Yrieix-la-Perche to the south of Limoges. On 13 February 1771, the Comte de Thy de Milly of the Royal Academy of Sciences sent the academy a report on the creation of hard-paste porcelain. This report was published in 1777 in volume 7 of the encyclopedia, Art de la porcelaine. This work derived from his observations of the different manufacturies of Germany, especially Meissen. \"Up to this time, the manufacturies of France – Sèvres not excepted – have only produced glass porcelain, which only has some qualities of the real thing...\".",
+      "Hard-paste porcelain began to be manufactured in Sèvres after 1770, but soft-paste was also continued, only finally being dropped in 1804.  Vincennes had made a certain amount of painted plaques that were sold to furniture-makers to be inset in furniture, but at Sèvres these became a significant part of production.  Figures were almost entirely in unglazed biscuit porcelain, an \"invention\" of Vincennes.",
+      "Louis-Simon Boizot was director between 1774 and 1800. Even before the French Revolution, the initially severe style of Neoclassicism had begun to turn grandiose and ornate in goods for the courts of the Ancien Régime.  This trend deepened with the rise of Napoleon, which followed a difficult period for French porcelain factories. The Empire style was marked by lavish gilding, strong colours, and references to military conquests; Napoleon's ultimately unsuccessful expedition to Egypt sparked a fashion for \"Neo-Egyptian\" wares."
+    ],
+    "keyFacts": [
+      "It is the continuation of Vincennes porcelain, founded in 1740, which moved to Sèvres in 1756.",
+      "It has been owned by the French crown or government since 1759.",
+      "It became part of the Cité de la céramique in 2010 with the Musée national de céramique, and since 2012 with the Musée national Adrien Dubouché in Limoges.",
+      "Louis XV's mistress Madame de Pompadour then followed and became a patron in 1751."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/craft-manufacture-nationale-de-sevres.jpg",
+    "heroAlt": "Manufacture nationale de Sèvres, Paris",
+    "imageCredit": {
+      "file": "File:Sèvres_Clodion_vase.jpg",
+      "url": "/images/capsule/paris/craft-manufacture-nationale-de-sevres.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:S%C3%A8vres_Clodion_vase.jpg",
+      "license": "CC BY-SA 2.5",
+      "attribution": "Jean-Charles-François Leloy, Louis-Victor Godin, Louis-Honoré Boquet, Charles-Louis Constant, Jean-Charles Develly, Charles-Christian-Marie Durosey"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-haute-couture",
+      "craft-gobelins-manufactory"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Manufacture nationale de Sèvres",
+        "url": "https://en.wikipedia.org/wiki/Manufacture_nationale_de_S%C3%A8vres",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "festival-fete-de-la-musique",
+    "destinationId": "paris",
+    "title": "Fête de la Musique",
+    "dek": "The Fête de la Musique, also known in English as Music Day, Make Music Day, or World Music Day, is an annual music celebration which usually takes place in mid-June.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Fête de la Musique, also known in English as Music Day, Make Music Day, or World Music Day, is an annual music celebration which usually takes place in mid-June. On Music Day, citizens and residents are urged to play music outside, in their neighborhoods or in public spaces and parks. Free concerts are also organized, where musicians play for fun.",
+    "content": [
+      "The Fête de la Musique (French pronunciation: [fɛt d(ə) la myzik]), also known in English as Music Day, Make Music Day, or World Music Day, is an annual music celebration which usually takes place in mid-June. On Music Day, citizens and residents are urged to play music outside, in their neighborhoods or in public spaces and parks. Free concerts are also organized, where musicians play for fun.",
+      "The idea for the first all-day musical celebration on the day of the summer solstice came from Jack Lang, then Minister of Culture of France, and Maurice Fleuret; it was celebrated in Paris in 1982. Music Day later became celebrated in 120 countries around the world.",
+      "In October 1981, Maurice Fleuret became Director of Music and Dance at the French Ministry of Culture at Jack Lang's request. He applied his reflections to the musical practice and its evolution: \"the music everywhere and the concert nowhere\". When he discovered, in a 1982 study on the cultural habits of the French, that five million people, one young person out of two, played a musical instrument, he began to dream of a way to bring people out on the streets. It first took place in 1982 in Paris as the Fête de la Musique.",
+      "Ever since, the festival has become an international phenomenon, celebrated on the same day in more than 700 cities in 120 countries, including India, Germany, Italy, Greece, Russia, Australia, Peru, Brazil, Ecuador, Mexico, Canada, the United States, the UK, and Japan.",
+      "In the Anglosphere, the day has become known as Music Day, Make Music Day and World Music Day.",
+      "The main purpose of Fête de la Musique is to promote music. Amateur and professional musicians are encouraged to perform in the streets, under the slogan \"Faites de la musique\" (\"Make music\"), a homophone of Fête de la musique. Thousands of free concerts are staged throughout the day, making all genres of music accessible to the public.",
+      "Despite the general public exhibiting great tolerance for musical performances in public areas in evening hours, noise restrictions do apply and entertainment establishments may only extend their working hours on the day and broadcast music in the evening hours with prior authorization. Prefectures in France reserve the right to prohibit individuals, groups or establishments from installing audio equipment in the streets.",
+      "As of 2019, a total of 120 countries and over 1,000 cities participate in Fête de la Musique. In 2023, events were held on most continents.",
+      "The UK Event began as National Music Day in 1992. Make Music Day UK became an independent organization in 2022.",
+      "Ukraine has been holding its event in Lviv since 2013. Despite the Russian invasion of Ukraine, the event continues to be held each year.",
+      "In the United States, the Make Music Alliance was formed in 2014 to help coordinate efforts across the country. In 2023, a total of 4,791 free concerts were held across 117 cities. Cincinnati,  Madison, New York City, Philadelphia, and Salem each organized over a hundred different concerts on the day.",
+      "In India, classical, contemporary and folk music performances are held throughout the country. Musical duo Sourendro-Soumyojit are known for their annual World Music Day concert in Kolkata, which brings together Indian playback singers at a ticketed event. Brands and advertisers have also adopted the event; on June 21, 2026, The Hindu published a digital music crossword shaped like a beam note to mark the occasion.",
+      "In Australia, Make Music Day Australia was initiated in 2018 by the Australian Music Association (AMA), and as of 2022, was co-hosted by the AMA and National Association of Music Merchants (NAMM). In 2023, a huge international project called \"Make Music, Make Friends\" partnered 10 Australian schools with schools around the world to share music and greet one another on Make Music Day.",
+      "In Cyprus, the festival has been held every year since 2019. While Make Music Cyprus is usually limited to Nicosia, the 2025 edition expanded to Larnaca as well, but it was held at an earlier date.",
+      "Turkey and Ghana held their first Make Music Days in 2022, and South Africa in 2023."
+    ],
+    "keyFacts": [
+      "Music Day later became celebrated in 120 countries around the world.",
+      "In October 1981, Maurice Fleuret became Director of Music and Dance at the French Ministry of Culture at Jack Lang's request.",
+      "It first took place in 1982 in Paris as the Fête de la Musique.",
+      "As of 2019, a total of 120 countries and over 1,000 cities participate in Fête de la Musique."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/festival-fete-de-la-musique.jpg",
+    "heroAlt": "Fête de la Musique, Paris",
+    "imageCredit": {
+      "file": "File:Raga_du_soir_au_Collège_des_Bernardins_(4730079050).jpg",
+      "url": "/images/capsule/paris/festival-fete-de-la-musique.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Raga_du_soir_au_Coll%C3%A8ge_des_Bernardins_(4730079050).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "dalbera from Paris, France"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-paris-fashion-week",
+      "festival-nuit-blanche",
+      "festival-bastille-day"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Fête de la Musique",
+        "url": "https://en.wikipedia.org/wiki/F%C3%AAte_de_la_Musique",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-baguette",
+    "destinationId": "paris",
+    "title": "Baguette",
+    "dek": "A baguette is a long, thin type of bread commonly made from basic lean dough.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "A baguette is a long, thin type of bread commonly made from basic lean dough. Both the dough and the physical dimensions of the tradition baguette are defined by French law. It is distinguishable by its length and crisp crust.",
+    "content": [
+      "A baguette (; French: [baɡɛt] ) is a long, thin type of bread commonly made from basic lean dough. Both the dough and the physical dimensions of the traditional baguette are defined by French law. It is distinguishable by its length and crisp crust.",
+      "A baguette has a diameter of about 5 to 6 cm (2–2+1⁄2 in) and a usual length of about 65 cm (26 in), but can be up to 1 m (39 in) long.",
+      "In November 2018, documentation surrounding the \"craftsmanship and culture\" of making this bread was added to the French Ministry of Culture's National Inventory of Intangible Cultural Heritage. In 2022, the artisanal know-how and culture of baguette bread was inscribed to the UNESCO Intangible Cultural Heritage Lists.",
+      "Much of the history of the baguette is speculation; however, some facts can be established. Long, stick-like breads in France became more popular during the 18th century, French bakers started using \"gruau,\" a highly refined Hungarian high-milled flour in the early 19th century, Viennese steam oven baking was introduced to Paris in 1839 by August Zang, and the Austrian Adolf Ignaz Mautner von Markhof's compact yeast in 1867 at the Universal Exposition. Finally, the word \"baguette\" appears to define a particular type of bread in a regulation of the department of the Seine in August 1920: \"The baguette, having a minimum weight of 80 g [2+3⁄4 oz] and a maximum length of 40 cm [16 in], may not be sold for a price higher than 0.35 francs apiece\". No one of these events constitutes \"the invention of the baguette,\" but together they define the modern \"baguette.\"",
+      "In summary, \"the bread which became known as the baguette first appeared in its most primitive form in the eighteenth century, then experienced several refinements and variations before being (officially) given that name in 1920.\"",
+      "The word baguette means \"wand,\" \"baton,\" or \"stick,\" as in baguette magique (magic wand), baguettes chinoises (chopsticks), or baguette de direction (conductor's baton). It was first recorded as a kind of bread in 1920.",
+      "Outside France, the baguette is often considered a symbol of French culture, but the association of France with long loaves long predates it. Long, wide loaves had been made since the time of King Louis XIV, long thin ones since the mid-18th century, and by the 19th century, some were far longer than today's baguette: \"... loaves of bread six feet [1.8 m] long that look like crowbars!\" \"Housemaids were hurrying homewards with their purchases for various Gallic breakfasts, and the long sticks of bread, a yard or two [0.9 m to 1.8 m] in length, carried under their arms, made an odd impression upon me.\"",
+      "A less direct link can be made with deck or steam ovens. These combine a traditional gas-fired oven and a brick oven, a thick \"deck\" of stone or firebrick heated by natural gas instead of wood. The first steam oven was brought to Paris in the early 19th century by August Zang, who also introduced Vienna bread (pain viennois) and the croissant, and whom some French sources thus credit with originating the baguette.",
+      "Deck ovens heated to over 200 °C (390 °F) use steam injection to allow the crust to expand before setting, thus creating a lighter, airier loaf, and to melt the dextrose on the bread's surface, giving a slightly glazed effect.",
+      "In April 1944, a competition called Le Grand Prix de la Baguette began in France to determine who made the best baguettes. Nearly 200 bakers compete each year in front of a 14-judge panel following strict guidelines. They are judged based on baking, appearance, smell, taste, and crumb. The winner receives €4000 and supplies France's president with their daily bread for that year until a new winner is chosen.",
+      "Following the World Wars, French bakers began baking a whiter, softer baguette that contrasted with the darker loaves produced because of rationing during the wars. These doughs took less time to ferment and used more additives but had significantly less taste. They also began using pre-made dough and molds. The average consumption of bread fell from 600 grams/day in the early 1900s to 170 grams/day in 1986."
+    ],
+    "keyFacts": [
+      "A baguette has a diameter of about 5 to 6 cm (2–2+1⁄2 in) and a usual length of about 65 cm (26 in), but can be up to 1 m (39 in) long.",
+      "In 2022, the artisanal know-how and culture of baguette bread was inscribed to the UNESCO Intangible Cultural Heritage Lists.",
+      "It was first recorded as a kind of bread in 1920.",
+      "Long, wide loaves had been made since the time of King Louis XIV, long thin ones since the mid-18th century, and by the 19th century, some were far longer than today's baguette: \"..."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-baguette.jpg",
+    "heroAlt": "Baguette, Paris",
+    "imageCredit": {
+      "file": "File:Baguettes,_Paris,_France_-_panoramio.jpg",
+      "url": "/images/capsule/paris/food-baguette.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Baguettes%2C_Paris%2C_France_-_panoramio.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Nick Thweatt"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-croissant",
+      "food-french-cuisine",
+      "food-snails-as-food"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Baguette",
+        "url": "https://en.wikipedia.org/wiki/Baguette",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "food-french-cuisine",
+    "destinationId": "paris",
+    "title": "French cuisine",
+    "dek": "French cuisine is the cooking traditions and practices of France.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "French cuisine is the cooking traditions and practices of France. In the 14th century, Guillaume Tirel, a court chef known as \"Taillevent\", wrote Le Viandier, one of the earliest recipe collections of medieval France. In the 17th and 18th centuries, chefs François Pierre La Varenne and Marie-Antoine Carême spearheaded movements that shifted French cooking away from its foreign influences such as from Italian cuisine and developed France's own indigenous style.",
+    "content": [
+      "French cuisine is the cooking traditions and practices of France. In the 14th century, Guillaume Tirel, a court chef known as \"Taillevent\", wrote Le Viandier, one of the earliest recipe collections of medieval France. In the 17th and 18th centuries, chefs François Pierre La Varenne and Marie-Antoine Carême spearheaded movements that shifted French cooking away from its foreign influences such as from Italian cuisine and developed France's own indigenous style.",
+      "Cheese and wine are a major part of the cuisine. They play different roles regionally and nationally, with many variations and appellation d'origine contrôlée (AOC) (regulated appellation) laws.",
+      "Culinary tourism and the Guide Michelin helped to acquaint commoners with the cuisine bourgeoise of the urban elites and the peasant cuisine of the French countryside starting in the 20th century. Many dishes that were once regional have proliferated in variations across the country.",
+      "Knowledge of French cooking has contributed significantly to Western cuisines. Its criteria are used widely in Western cookery school boards and culinary education. In November 2010, French gastronomy was added by the UNESCO to its lists of the world's \"intangible cultural heritage\".",
+      "In French medieval cuisine, banquets were common among the aristocracy. Multiple courses would be prepared, but served in a style called service en confusion, or all at once. Food was generally eaten by hand, meats being sliced off in large pieces held between the thumb and two fingers. The sauces were highly seasoned and thick, and heavily flavored mustards were used.",
+      "Pies were a common banquet item, with the crust serving primarily as a container, rather than as food itself, and it was not until the very end of the Late Middle Ages that the shortcrust pie was developed.",
+      "Meals often ended with an issue de table, which later changed into the modern dessert, and typically consisted of dragées (in the Middle Ages, meaning spiced lumps of hardened sugar or honey), aged cheese, and spiced wine, such as hypocras.",
+      "The ingredients of the time varied greatly according to the seasons and the church calendar, and many items were preserved with salt, spices, honey, and other preservatives. Late spring, summer, and autumn afforded abundance, while winter meals were more sparse. Livestock were slaughtered at the beginning of winter. Beef was often salted, while pork was salted and smoked. Bacon and sausages would be smoked in the chimney, while the tongue and hams were brined and dried.  Cucumbers were brined as well, while greens would be packed in jars with salt. Fruits, nuts and root vegetables would be boiled in honey for preservation. Whale, dolphin and porpoise were considered fish, so during Lent, the salted meats of these sea mammals were eaten.",
+      "Artificial freshwater ponds (often called stews) held carp, pike, tench, bream, eel, and other fish. Poultry was kept in special yards, with pigeon and squab being reserved for the elite. Game was highly prized, but very rare, and included venison, boar, hare, rabbit, and fowl.",
+      "Kitchen gardens provided herbs, including some, such as tansy, rue, pennyroyal, and hyssop, which are rarely used today. Spices were treasured and very expensive at that time—they included pepper, cinnamon, cloves, nutmeg, and mace. Some spices used then, but no longer today in French cuisine are cubebs, long pepper (both from vines similar to black pepper), grains of paradise, and galengale.",
+      "Sweet-sour flavors were commonly added to dishes with vinegar and verjus combined with sugar (for the affluent) or honey. A common form of food preparation was to thoroughly cook, pound, and strain mixtures into fine pastes and mushes, something believed to be beneficial to make use of nutrients.",
+      "Visual display was prized. Brilliant colors were obtained by the addition of, for example, juices from spinach and the green part of leeks. Yellow came from saffron or egg yolk, while red came from sunflower (after the Columbian Exchange), and purple came from Crozophora tinctoria or Heliotropium europaeum."
+    ],
+    "keyFacts": [
+      "In the 14th century, Guillaume Tirel, a court chef known as \"Taillevent\", wrote Le Viandier, one of the earliest recipe collections of medieval France.",
+      "In November 2010, French gastronomy was added by the UNESCO to its lists of the world's \"intangible cultural heritage\"."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-french-cuisine.jpg",
+    "heroAlt": "French cuisine, Paris",
+    "imageCredit": {
+      "file": "File:Jacques_Lameloise,_escabèche_d'écrevisses_sur_gaspacho_d'asperge_et_cresson.jpg",
+      "url": "/images/capsule/paris/food-french-cuisine.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Jacques_Lameloise%2C_escab%C3%A8che_d'%C3%A9crevisses_sur_gaspacho_d'asperge_et_cresson.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Jacques Lameloise - Editer par Arnaud 25"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-croissant",
+      "food-baguette",
+      "food-snails-as-food"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — French cuisine",
+        "url": "https://en.wikipedia.org/wiki/French_cuisine",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "craft-haute-couture",
+    "destinationId": "paris",
+    "title": "Haute couture",
+    "dek": "Haute couture is the creation of exclusive custom-fitted high-end fashion design.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Haute couture is the creation of exclusive custom-fitted high-end fashion design. The term haute couture generally refers to a specific type of upper garment common in Europe during the 16th to the 18th century or to the upper portion of a modern dress to distinguish it from the skirt and sleeves. Beginning in the mid-nineteenth century, Paris became the centre of a growing industry that focused on making outfits from high-quality, expensive, and often unusual fabric, sewn with extreme attention to detail and finished by the most experienced and capable of sewers, often using time-consuming, hand-executed techniques. Couture is also commonly used on its own as an abbreviation of haute couture, referring to the same concept in spirit.",
+    "content": [
+      "Haute couture is the creation of exclusive custom-fitted high-end fashion design. The term haute couture generally refers to a specific type of upper garment common in Europe during the 16th to the 18th century or to the upper portion of a modern dress to distinguish it from the skirt and sleeves. Beginning in the mid-nineteenth century, Paris became the centre of a growing industry that focused on making outfits from high-quality, expensive, and often unusual fabric, sewn with extreme attention to detail and finished by the most experienced and capable of sewers, often using time-consuming, hand-executed techniques. Couture is also commonly used on its own as an abbreviation of haute couture, referring to the same concept in spirit.",
+      "The English term haute couture was borrowed from French, where it literally means 'high sewing' or 'high dressmaking'. Its first recorded use in English was in 1908, in the Arnold Bennett novel The Old Wives' Tale.",
+      "The term haute couture is protected by French law and defined by the Paris Chamber of Commerce. The Fédération de la Haute Couture et de la Mode is defined as \"the regulating commission that determines which fashion houses are eligible to be true haute couture houses\". Their rules state that only \"those companies mentioned on the list drawn up each year by a commission domiciled at the Ministry for Industry are entitled to avail themselves\" of the label haute couture. The Chambre Syndicale de la Couture Parisienne is an association of Parisian couturiers founded in 1868 as an outgrowth of medieval guilds that regulate its members with regard to counterfeiting of styles, dates of openings for collections, number of models presented, relations with press, questions of law and taxes, and promotional activities. Formation of the organisation was brought about by Charles Frederick Worth. An affiliated school was organized in 1930 called L'Ecole de la Chambre Syndicale de la Couture. The school helps bring new designers to help the \"couture\" houses that are still present today. Since 1975, it has operated within the Fédération de la Haute Couture et de la Mode.",
+      "The term is also used loosely to describe all high-fashion, custom-fitted clothing, whether it is produced in the fashion capitals of London, New York City, Paris, and Milan. In either case, the term can refer to the fashion houses or fashion designers that create exclusive and often trend-setting fashions or to the fashions created. The term haute couture has also taken on further popular meanings referring to non-dressmaking activities, such as production of fine art and music.",
+      "Haute couture can be referenced back as early as the 17th century. Industry and consumption were legally protected through guild statutes that required strict adherence to quality, quantity, etc. Women dressmakers, known as couturières, attained guild privileges in 1675. Their guild statutes made it so these women acquired the rights to make clothing for women and children, while male tailors retained the right to make clothing for men and boys over the age of 8. Within this empire, the couturières' work ranged from simple mending to modes (fashions). They performed darning and alterations, in addition to making fine dresses of luxurious fabric for members of the royal family and aristocracy. Seamstresses were only one part of this process, which also included domestic manufacture, imported products, and work, as well as guilds such as the lacemakers, ribbonmakers, fashion merchants, embroiderers, pin and needle peddlers, etc. Seamstresses did not operate public shops, unlike tailors, but instead relied on word of mouth and connections to procure high-end clientele.",
+      "18th century France witnessed a dramatic rise in clothing consumption, and scholars have documented a \"clothing revolution\" that occurred between 1700 and 1789. This was characterised by the increased size and value of wardrobes across the country, even among the middling and working classes. The fashion industry sprang to life to meet increasing demand."
+    ],
+    "keyFacts": [
+      "Its first recorded use in English was in 1908, in the Arnold Bennett novel The Old Wives' Tale.",
+      "An affiliated school was organized in 1930 called L'Ecole de la Chambre Syndicale de la Couture.",
+      "Since 1975, it has operated within the Fédération de la Haute Couture et de la Mode.",
+      "present a collection of at least 50 original designs to the public every fashion season (twice, in January and July of each year), of both day and evening garments."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/craft-haute-couture.jpg",
+    "heroAlt": "Haute couture, Paris",
+    "imageCredit": {
+      "file": "File:Pierre_Balmain_and_Ruth_Ford,_photographed_by_Carl_Van_Vechten,_November_9,_1947.jpg",
+      "url": "/images/capsule/paris/craft-haute-couture.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Pierre_Balmain_and_Ruth_Ford%2C_photographed_by_Carl_Van_Vechten%2C_November_9%2C_1947.jpg",
+      "license": "Public domain",
+      "attribution": "Carl Van Vechten"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-manufacture-nationale-de-sevres",
+      "craft-gobelins-manufactory"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Haute couture",
+        "url": "https://en.wikipedia.org/wiki/Haute_couture",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "festival-paris-fashion-week",
+    "destinationId": "paris",
+    "title": "Paris Fashion Week",
+    "dek": "Paris Fashion Week is a series of designer presentations held semi-annually in Paris, France, with spring/summer and autumn/winter events held each year.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Paris Fashion Week is a series of designer presentations held semi-annually in Paris, France, with spring/summer and autumn/winter events held each year. Dates are determined by the Fédération de la Haute Couture et de la Mode. Paris Fashion Week is held at venues throughout the city. It is one of the \"Big Four\" fashion weeks alongside New York, Milan, and London.",
+    "content": [
+      "Paris Fashion Week (French: Semaine de la mode de Paris, commonly [la] Fashion Week) is a series of designer presentations held semi-annually in Paris, France, with spring/summer and autumn/winter events held each year. Dates are determined by the Fédération de la Haute Couture et de la Mode. Paris Fashion Week is held at venues throughout the city. It is one of the \"Big Four\" fashion weeks alongside New York, Milan, and London.",
+      "In addition to ready-to-wear shows, there are men's and haute couture shows; these are held semiannually for the spring/summer and autumn/winter seasons. The haute couture collections are always presented and exhibited before the ready-to-wear collections, with there being a total of a little over 100 collections each season. Also, every year, famous brands like Dior, Chanel, Louis Vuitton, Kenzo, Givenchy, and Céline host their shows in historical places such as the Carrousel du Louvre and the Grand Palais.",
+      "In order to participate, the houses must fulfill the criteria that are set in place by the Chambre Syndicale de la Haute Couture, such as a requirement of 35 looks per year that need to include day and evening wear. Only a few houses are able to fulfill this requirement; therefore, this leaves few to participate in haute couture fashion shows. Since there are only a few spots left for those to participate, there are the well-known high-end fashion brands like Chanel and Alexander Mcqueen, but also the lesser-known ones like Maxime Simöens and Eymele Burgaud.",
+      "Paris Fashion Week is part of the global \"Big 4\" fashion weeks, the others being London Fashion Week, Milan Fashion Week and New York Fashion Week. The schedule begins with New York, followed by London, and then Milan and ends in Paris. New York was the first city to hold a \"fashion week\".",
+      "Although the first fashion week was held in New York, the event itself derives from \"salon shows\" (\"défilés de mode\" in French, literally \"fashion parades\") in Paris couture salons.",
+      "A fashion week consists of a week of organized events of multiple designers' collections. Before this organized event was recognized in New York City, fashion showings were being held in Paris as early as the 1700s. Some earlier showings were presented on mannequins, which made it difficult for clients to see fashion pieces fully since the mannequin didn't have the same mobility a model did. These early showings were only to clients purchasing items and were shown on mannequins.  In the 1800s, showings began to change. Charles Frederick Worth, noted for haute couture, began showing multiple pieces together and of a higher design. These designs were showcased to get the customer's attention in buying the pieces. Jeanne Paquin is the first designer to make her showings public and Paul Poiret is the first to host parties after his events.",
+      "In the mid 1800s, Mme Pauline von Metternich, an Austrian Princess and wife to the Ambassador of Paris, saw one of Worth's sketches and employed him to make her a gown. He gained much recognition through his powerful clients and opened his own haute couture house in Paris in 1858, which sold luxury fashion to upper-class women.",
+      "In 1868 the Chambre Syndicale de la Haute Couture was created to set the specifications to determine what constituted a 'couture house'. The group decided that to be defined a piece of haute couture the clothing must have been; custom-made to fit the wearer, hand-sewn by multiple skilled artisans in the separate fields of embroidery, stitching, and beading, and only the most high quality of materials may be used.",
+      "In 1921, fifty-three years after the Chambre Syndicale de la Haute Couture was created, the French press created L’Association de Protection des Industries Artistiques Saisonnieres, or PAIS to protect couture designs from being copied. To ensure the copyright of the designers, their creations were photographed on a model or mannequin from the front, back, and sides to catalog the design."
+    ],
+    "keyFacts": [
+      "The haute couture collections are always presented and exhibited before the ready-to-wear collections, with there being a total of a little over 100 collections each season.",
+      "He gained much recognition through his powerful clients and opened his own haute couture house in Paris in 1858, which sold luxury fashion to upper-class women.",
+      "In 1868 the Chambre Syndicale de la Haute Couture was created to set the specifications to determine what constituted a 'couture house'."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/festival-paris-fashion-week.jpg",
+    "heroAlt": "Paris Fashion Week, Paris",
+    "imageCredit": {
+      "file": "File:Magdalena_Frackowiak.jpg",
+      "url": "/images/capsule/paris/festival-paris-fashion-week.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Magdalena_Frackowiak.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Simon Ackerman"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "louvre"
+    ],
+    "relatedStories": [
+      "festival-fete-de-la-musique",
+      "festival-nuit-blanche",
+      "festival-bastille-day"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Paris Fashion Week",
+        "url": "https://en.wikipedia.org/wiki/Paris_Fashion_Week",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-snails-as-food",
+    "destinationId": "paris",
+    "title": "Snails as food",
+    "dek": "Snails are eaten by humans in many areas such as Africa, Southeast Asia and Mediterranean Europe, while in other cultures, snails are seen as a taboo food.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Snails are eaten by humans in many areas such as Africa, Southeast Asia and Mediterranean Europe, while in other cultures, snails are seen as a taboo food. Borrowed from the French word for 'snail', the term escargot is what English speakers use to specifically denote edible land snails. Snails as a food date back to ancient times, with numerous cultures worldwide having traditions and practices that attest to their consumption. In the modern era snails are farmed, an industry known as heliciculture.",
+    "content": [
+      "Snails are eaten by humans in many areas such as Africa, Southeast Asia and Mediterranean Europe, while in other cultures, snails are seen as a taboo food. Borrowed from the French word for 'snail', the term escargot is what English speakers use to specifically denote edible land snails. Snails as a food date back to ancient times, with numerous cultures worldwide having traditions and practices that attest to their consumption. In the modern era snails are farmed, an industry known as heliciculture.",
+      "The snails are collected after the rains and are put to \"purge\" (fasting). In the past, the consumption of snails had a marked seasonality, from April to June. Now, snail-breeding techniques make them available all year. Heliciculture occurs mainly in Spain, France, and Italy, which are also the countries with the greatest culinary tradition of the snail. Although throughout history the snail has had little value in the kitchen because it is considered \"poverty food\", in recent times it can be classified as a delicacy thanks to the appreciation given to it by haute cuisine chefs.",
+      "Escargot, French pronunciation: [ɛskaʁɡo] , comes from the French term for snail. Usage of the French word \"escargot\" dates back to 1892. The French word, first recorded in the 14th century, derives from escaragol (Provençal) and then escargol (Old French). It ultimately traces back through Vulgar Latin coculium and Classical Latin conchylium to the Ancient Greek konchylion (κογχύλιον), which meant \"edible shellfish, oyster\". The Online Etymological Dictionary notes that the form of the word in Provençal and French seems to have been influenced by words related to the scarab.",
+      "Researchers have not been able to pinpoint when humans began consuming snails, although archaeological discoveries point to earlier stages than the invention of hunting. A lot of broken snail shells have been found in the Franchthi Cave, in the Greek Argolis, from the year 10,700 BCE. In Historia de gastronomía (2004), Fernández-Armesto points out the possible reasons: snails are easy to handle, and their cultivation \"seems like a natural extension of harvesting\".",
+      "It is difficult to go beyond the limits of a developmentalist and progressive model of the history of food, according to which it is unthinkable that no food was cultivated in such early times, but snail farming is so simple, requires so little technical effort and is conceptually so close to harvesting methods, that it seems doctrinaire to the point of stubbornness to exclude such a possibility.",
+      "Many sites in the Zagros Mountains of Iraq and the Kermanshah region of western Iran are from the late Pleistocene and include snail shells that have been interpreted as food debris. Specifically, these species were mainly Helix salomonica or Levantina spiriplana. The deposits with snails from the ancient Capsian culture (present-day Tunisia) are of notable importance, as well as those found in the Cantabrian Mountains, the Pyrenees and the northern Adriatic (present-day Croatia and Slovenia), in addition to many other remains of snails throughout the Mediterranean Basin. The most convincing evidence for prehistoric land snail consumption is found in the Maghreb, beginning in the Iberomaurusian (20,000 BP) and continuing through the Capsian to at least 6,000 BP. Outside the Mediterranean region, the occurrence of land snails as food debris is less common. According to Lubell (2004b), archaeological remains of land snails have been found in the Caribbean, Peru, Texas and other parts of North America, East Africa, Sudan, Nigeria, and the Philippines. Also, archaeological remains of freshwater snails have been found in Yunnan.",
+      "A snail sauce is mentioned in the Book of Rites, a Confucian text of ancient China."
+    ],
+    "keyFacts": [
+      "Usage of the French word \"escargot\" dates back to 1892.",
+      "The French word, first recorded in the 14th century, derives from escaragol (Provençal) and then escargol (Old French).",
+      "A lot of broken snail shells have been found in the Franchthi Cave, in the Greek Argolis, from the year 10,700 BCE.",
+      "In Historia de gastronomía (2004), Fernández-Armesto points out the possible reasons: snails are easy to handle, and their cultivation \"seems like a natural extension of harvesting\"."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-snails-as-food.jpg",
+    "heroAlt": "Snails as food, Paris",
+    "imageCredit": {
+      "file": "File:Caracoles-del-restaurante-granero.jpg",
+      "url": "/images/capsule/paris/food-snails-as-food.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Caracoles-del-restaurante-granero.jpg",
+      "license": "Public domain",
+      "attribution": "Restaurante Granero"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-croissant",
+      "food-baguette",
+      "food-french-cuisine"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Snails as food",
+        "url": "https://en.wikipedia.org/wiki/Snails_as_food",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "craft-gobelins-manufactory",
+    "destinationId": "paris",
+    "title": "Gobelins Manufactory",
+    "dek": "The Gobelins Manufactory is a historic tapestry factory in Paris, France.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "The Gobelins Manufactory is a historic tapestry factory in Paris, France. It is located at 42 avenue des Gobelins, near Les Gobelins métro station in the 13th arrondissement of Paris. It was originally established on the site as a medieval dyeing business by the family Gobelin.",
+    "content": [
+      "The Gobelins Manufactory (French: Manufacture des Gobelins) is a historic tapestry factory in Paris, France. It is located at 42 avenue des Gobelins, near Les Gobelins métro station in the 13th arrondissement of Paris. It was originally  established on the site as a medieval dyeing business by the family Gobelin.",
+      "It is best known as a royal factory supplying the court of the French monarchs since Louis XIV, and it is now run by the General Administration of the National Furniture and National Manufactures of Carpets and Tapestries (French: Administration générale du Mobilier national et des Manufactures nationales de tapis et tapisseries) of the French Ministry of Culture. The factory is open for guided tours several afternoons per week by appointment, as well as for casual visits every day except Mondays and some specific holidays. The Galerie des Gobelins is dedicated to temporary exhibitions of tapestries from the French manufactures and furnitures from the Mobilier National, built in the gardens by Auguste Perret in 1937.",
+      "Along with Ōshima-tsumugi from Japan, and Persian carpets, Gobelin Tapestry are considered to be one of the worlds greatest textiles.",
+      "The Gobelins were a family of dyers who, in the middle of the 15th century, established themselves in the Faubourg Saint-Marcel, Paris, on the banks of the Bièvre.",
+      "In 1602, Henry IV of France rented factory space from the Gobelins for his Flemish tapestry makers, Marc de Comans and François de la Planche,  at the location of the modern Gobelins Manufactory adjoining the Bièvre river. In 1629, their sons Charles de Comans and Raphaël de la Planche took over their fathers' tapestry workshops, and in 1633, Charles was the head of the Gobelins manufactory. Their partnership ended around 1650, and the workshops were split into two. Tapestries from this early, Flemish period are sometimes called pre-gobelins.",
+      "In 1662, the works in the Faubourg Saint Marcel, with the adjoining grounds, were purchased by Jean-Baptiste Colbert on behalf of Louis XIV and made into a general upholstery factory, in which designs both in tapestry and in all kinds of furniture were executed under the superintendence of the court painter, Charles Le Brun, who served as director and chief designer from 1663–1690. On account of Louis XIV's financial problems, the establishment was closed in 1694, but reopened in 1697 for the manufacture of tapestry, chiefly for royal use. It rivalled the Beauvais tapestry works until the French Revolution, when work at the factory was suspended.",
+      "The factory was revived during the Bourbon Restoration and, in 1826, the manufacture of carpets was added to that of tapestry. In 1871, the building was partly burned down during the Paris Commune.",
+      "The modern manufactory consists of a set of four irregular buildings dating to the seventeenth century, plus the building on the avenue des Gobelins built by Jean-Camille Formigé in 1912 after the 1871 fire. They contain Le Brun's residence and workshops that served as foundries for most of the bronze statues in the park of Versailles, as well as looms on which tapestries are woven following seventeenth century techniques.",
+      "The Gobelins still produces some limited amount of tapestries for the decoration of French governmental institutions, with contemporary subjects.",
+      "The museum's gallery reopened to the public on May 12, 2007. Important exhibitions are organized regularly.",
+      "A branch of the manufactory was established in London probably in the early 18th-century in the area that is now Fulham High Street. Around 1753 it appears to have been taken over by the priest and adventurer, Pierre Parisot, but closed only a few years later."
+    ],
+    "keyFacts": [
+      "It is located at 42 avenue des Gobelins, near Les Gobelins métro station in the 13th arrondissement of Paris.",
+      "The Gobelins were a family of dyers who, in the middle of the 15th century, established themselves in the Faubourg Saint-Marcel, Paris, on the banks of the Bièvre.",
+      "In 1629, their sons Charles de Comans and Raphaël de la Planche took over their fathers' tapestry workshops, and in 1633, Charles was the head of the Gobelins manufactory.",
+      "Their partnership ended around 1650, and the workshops were split into two."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/craft-gobelins-manufactory.jpg",
+    "heroAlt": "Gobelins Manufactory, Paris",
+    "imageCredit": {
+      "file": "File:Manufacture_des_Gobelins.jpg",
+      "url": "/images/capsule/paris/craft-gobelins-manufactory.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Manufacture_des_Gobelins.jpg",
+      "license": "Public domain",
+      "attribution": "PHGCOM"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-manufacture-nationale-de-sevres",
+      "craft-haute-couture"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Gobelins Manufactory",
+        "url": "https://en.wikipedia.org/wiki/Gobelins_Manufactory",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
+    "slug": "festival-nuit-blanche",
+    "destinationId": "paris",
+    "title": "Nuit Blanche",
+    "dek": "Nuit Blanche is an annual all-night or night-time arts festival of a city.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Nuit Blanche is an annual all-night or night-time arts festival of a city. A Nuit Blanche typically has museums, private and public art galleries, and other cultural institutions open and free of charge, with the centre of the city itself being turned into a de facto art gallery, providing space for art installations, performances, themed social gatherings, and other activities.",
+    "content": [
+      "Nuit Blanche (French pronunciation: [nɥi ˈblɑ̃ʃ]) (Sleepless Night) is an annual all-night or night-time arts festival of a city. A Nuit Blanche typically has museums, private and public art galleries, and other cultural institutions open and free of charge, with the centre of the city itself being turned into a de facto art gallery, providing space for art installations, performances (music, film, dance, performance art), themed social gatherings, and other activities.",
+      "In 1989, the Helsinki Festival established its Night of the Arts, \"when every gallery, museum and bookshop is open until midnight or later and the whole city becomes one giant performance and carnival venue\". A year later, the mayor of Nantes, Jean-Marc Ayrault's program included renovating the central city and establishing a \"contemporary patrimony\", which led arts programmer Jean Blaise to create a late-night cultural festival, \"Les Allumées\" (\"Things Alight\"). His concept was to have an arts festival in Nantes, from 6 pm to 6 am, over six years with artists from six cities.",
+      "Havana, 16–21 October 1995. (The Cuban government refused to issue travel documents to the 300 artists expected, so the event was formally cancelled, though events did take place.)",
+      "In 1993, a year and a half after the St. Petersburg edition of Les Allumées, the annual White Nights Festival in that city began adding a specifically cultural component to a longstanding annual event that included street carnivals and the Scarlet Sails celebration. The expanded White Nights Festival has included pop culture (e.g. the Rolling Stones in the open air at Palace Square) in 2007 and high culture events (\"Stars of the White Nights Festival\" at the Mariinsky Theatre under Valery Gergiev) every year since 1993.",
+      "In 1997, the Long Night of Museums, took place in the newly re-united Berlin with a dozen participating schools and exhibitions; the number has risen to 125, with over 150,000 people taking part in the January 2005 night.",
+      "In 2001, when Bertrand Delanoë became Mayor of Paris, his deputy, Christophe Girard, invited Blaise to create an event there, and the Nuit Blanche was born. The concept of Les Allumées was scaled down to a single night and focused on the offerings of Paris. \"The first night-time trail through the streets of Paris and its contemporary-art scene took place on 5 October 2002, and the opportunity for anyone to explore artistic creation for a night has come back every year since.\"",
+      "The idea of a night-time festival of the arts has spread around the world, with events in over 120 cities, including Montreal, Ottawa, Toronto, Edmonton, Calgary, Halifax, Winnipeg and Saskatoon in Canada, and several European capitals (Paris, Brussels, Rome, Madrid, Riga, Bucharest and Valletta) which have chosen to pool their efforts as \"Nuits Blanches Europe\". The cities share their experiences and exchange projects and artists. Each year, new cities become candidates.",
+      "In 2013, Melbourne hosted Australia's first White Night event with the city's galleries, theatres, music venues, laneways, shops and major cultural institutions all showcasing the city's art and culture, food and wine, fashion and sport. This first Melbourne White Night saw an estimated 300,000 people attend, exceeding initial estimates and constituting the largest event of its kind in Australia.",
+      "Continuing with its international success, Nuit Blanche was announced to be held in Santiago, Chile during 2015, making this important South American capital part of the Nuit Blanche international community. In the capital of Colombia, Bogota, the \"Noche en Blanco\" was made between 2013 and 2015."
+    ],
+    "keyFacts": [
+      "(The Cuban government refused to issue travel documents to the 300 artists expected, so the event was formally cancelled, though events did take place.)",
+      "In 2001, when Bertrand Delanoë became Mayor of Paris, his deputy, Christophe Girard, invited Blaise to create an event there, and the Nuit Blanche was born.",
+      "This first Melbourne White Night saw an estimated 300,000 people attend, exceeding initial estimates and constituting the largest event of its kind in Australia.",
+      "In the capital of Colombia, Bogota, the \"Noche en Blanco\" was made between 2013 and 2015."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/festival-nuit-blanche.jpg",
+    "heroAlt": "Nuit Blanche, Paris",
+    "imageCredit": {
+      "file": "File:Grand_Palais_octobre_2005.jpg",
+      "url": "/images/capsule/paris/festival-nuit-blanche.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Grand_Palais_octobre_2005.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Gloumouth1"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-fete-de-la-musique",
+      "festival-paris-fashion-week",
+      "festival-bastille-day"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Nuit Blanche",
+        "url": "https://en.wikipedia.org/wiki/Nuit_Blanche",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  },
+  {
+    "slug": "food-creme-brulee",
+    "destinationId": "paris",
+    "title": "Crème brûlée",
+    "dek": "Crème brûlée, also known as burnt cream, Cambridge burnt cream, or Trinity cream, and virtually identical to crema catalana, is a dessert consisting of a rich custard base topped with a layer of hardened caramelized sugar.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Crème brûlée, also known as burnt cream, Cambridge burnt cream, or Trinity cream, and virtually identical to crema catalana, is a dessert consisting of a rich custard base topped with a layer of hardened caramelized sugar. It is normally served slightly chilled; the heat from the caramelizing process tends to warm the top of the custard, while leaving the center cool. The custard base is generally flavored with vanilla in French cuisine, but can have other flavorings. It is sometimes garnished with fruit.",
+    "content": [
+      "Crème brûlée (; French: [kʁɛm bʁy.le]), also known as burnt cream, Cambridge burnt cream, or Trinity cream, and virtually identical to crema catalana, is a dessert consisting of a rich custard base topped with a layer of hardened caramelized sugar. It is normally served slightly chilled; the heat from the caramelizing process tends to warm the top of the custard, while leaving the center cool. The custard base is generally flavored with vanilla in French cuisine, but can have other flavorings. It is sometimes garnished with fruit.",
+      "The earliest known recipe of a dessert called crème brûlée appears in François Massialot's 1691 cookbook Cuisinier royal et bourgeois, but its ultimate origins are unclear.",
+      "The recipe is based on egg yolks and milk, with a pinch of flour. Once cooked, François Massialot specifies \"that it must be sweetened on top, in addition to the sugar that is put in it: we take the shovel from the fire, very red at the same time we burn the cream, so that it takes a beautiful color of gold\".",
+      "Some authors mention Bartolomeo Stefani's Latte alla Spagnuola (1662) as describing crema catalana, but it calls for browning the top of the custard before serving with sugar on top.",
+      "The practice of browning dishes with a hot iron was already documented in La Varenne's Cuisinier françois, published in 1651. La Varenne applies the process to his Oeufs au laict [sic] 'eggs with milk', Oeufs à la crème 'eggs with cream', as well as non-custard dishes such as oeufs au miroir de cresme 'fried eggs in cream', ramequin de fromage 'cheese toast', and ramequin de roignon 'kidney ramequin'. But none of these had a layer of hard caramel on top.",
+      "The name \"burnt cream\" was later used to refer to the dish in the 1702 English translation of Massialot's Cuisinier royal et bourgeois. In 1740, he referred to a similar recipe as crême à l'Angloise, or 'English cream', which further cast doubt on its origins. The dessert was introduced at Trinity College, Cambridge, in 1879 as \"Trinity Cream\" or \"Cambridge burnt cream\", with the college arms \"impressed on top of the cream with a branding iron\".",
+      "Crème brûlée was generally uncommon in both French and English cookbooks of the nineteenth and twentieth centuries. It became extremely popular in the 1980s, \"a symbol of that decade's self-indulgence and the darling of the restaurant boom\", probably popularised by Sirio Maccioni at his New York restaurant Le Cirque. He claimed to have made it \"the most famous and by far the most popular dessert in restaurants from Paris to Peoria\". It also spread from France to other parts in Asia.",
+      "Crème brûlée is usually served in individual ramekins. Discs of caramel may be prepared separately and put on top just before serving, or the caramel may be formed directly on top of the custard immediately before serving. To do this, sugar is sprinkled onto the custard, then caramelized under a red-hot salamander (a cast-iron disk with a long wooden handle) or with a torch.",
+      "There are two methods for making the custard. The more common creates a \"hot\" custard by whisking egg yolks in a double boiler with sugar and incorporating the cream, adding vanilla once the custard is removed from the heat. Alternatively, the egg yolk/sugar mixture can be tempered with hot cream, then adding vanilla at the end. In the \"cold\" method, the egg yolks and sugar are whisked together until the mixture reaches the ribbon stage. Then, cold heavy cream is whisked into the yolk mixture, followed by the vanilla. It is then poured into ramekins and baked in a bain-marie."
+    ],
+    "keyFacts": [
+      "The earliest known recipe of a dessert called crème brûlée appears in François Massialot's 1691 cookbook Cuisinier royal et bourgeois, but its ultimate origins are unclear.",
+      "Some authors mention Bartolomeo Stefani's Latte alla Spagnuola (1662) as describing crema catalana, but it calls for browning the top of the custard before serving with sugar on top.",
+      "The practice of browning dishes with a hot iron was already documented in La Varenne's Cuisinier françois, published in 1651.",
+      "The name \"burnt cream\" was later used to refer to the dish in the 1702 English translation of Massialot's Cuisinier royal et bourgeois."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-creme-brulee.jpg",
+    "heroAlt": "Crème brûlée, Paris",
+    "imageCredit": {
+      "file": "File:2014_0531_Crème_brûlée_Doi_Mae_Salong_(cropped).jpg",
+      "url": "/images/capsule/paris/food-creme-brulee.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:2014_0531_Cr%C3%A8me_br%C3%BBl%C3%A9e_Doi_Mae_Salong_(cropped).jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Takeaway"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-croissant",
+      "food-baguette",
+      "food-french-cuisine"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Crème brûlée",
+        "url": "https://en.wikipedia.org/wiki/Cr%C3%A8me_br%C3%BBl%C3%A9e",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "food-macaron",
+    "destinationId": "paris",
+    "title": "Macaron",
+    "dek": "A macaron \nor French macaroon \n\nis a sweet meringue-based confection made with egg white, icing sugar, granulated sugar, almond meal, and often food colouring.",
+    "category": "Food & Flavours",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "A macaron \nor French macaroon \n\nis a sweet meringue-based confection made with egg white, icing sugar, granulated sugar, almond meal, and often food colouring.",
+    "content": [
+      "Since the 19th century, a typical Parisian-style macaron has been filled with a ganache, buttercream or jam. As baked, the circular macaron displays a smooth, square-edged top, a ruffled circumference—referred to as the \"crown\" or \"foot\" (or \"pied\")—and a flat base. It is mildly moist and easily melts in the mouth. Macarons can be found in a wide variety of flavours that range from traditional sweet such as raspberry or chocolate to savoury (as a foie gras).",
+      "The names \"macaron\" and \"macaroon\" both derive from the French word macaron, which in turn derives from the Italian maccheroni (also the source of \"macaroni\"). French words ending with \"-on\" that were borrowed into English in the 16th and 17th centuries usually end with \"-oon\" (for example: \"balloon\", \"cartoon\", \"platoon\"). In North America, most bakers use the term \"macaron\", distinguishing it from the related coconut or almond macaroon. In addition to \"macaron\", in the UK they are also referred to as \"French macaroons\" (or just \"macaroons\").",
+      "Although the sandwich-style macaron known today was created in Paris by Claude Gerbet, the story of the macaron can be traced to other almond-based cakes that appeared earlier.",
+      "Arab troops from Ifrīqiya (now Tunisia) occupied Sicily in 827. They brought with them nut-based sweets such as fālūdhaj and lauzinaj—baked goods with sweet almond cream inside. These pastries had been handed down by the Sassanid shahs in Persia, where the almond cake was made to celebrate the Zoroastrian New Year (Nowruz). In Sicily and in Toledo, Spain, another contact point between Muslim and Christian culture, fālūdhaj and lauzinaj developed into various desserts, such as the almond-paste tarts called marzapane and caliscioni.",
+      "Some food historians trace the origin of macarons to a French monastery in Cormery in the 8th century (791), in the Loire Valley. This particular macaron is made with egg whites, sugar and almonds.",
+      "A Swiss online encyclopaedia on the history of baking says that they were brought from al-Andalus (present-day Spain) to Marrakesh (present-day Morocco) in the early 11th century by the sultan and first king of the Almoravid dynasty Yusuf ibn Tashfin, and that they were served mainly during Ramadan.",
+      "A popular legend tells that the macaron was introduced in France by a chef of Catherine de Medici, however, a thorough investigation of records listing service personnel who worked with Catherine since her arrival in France until her death revealed the absence of any Italian chefs.",
+      "In the 1790s, macarons began to gain fame when two Carmelite nuns, seeking asylum in Nancy during the French Revolution, baked and sold the macarons in order to pay for their housing. These nuns became known as the \"Macaron Sisters\". In these early stages, macarons were served without special flavours or fillings.",
+      "It was not until the 1930s that macarons began to be served as a sandwich with the addition of jams, liqueurs, and spices. The macaron as it is known today, composed of two almond meringue discs filled with a layer of buttercream, jam, or ganache, was originally called the \"Gerbet\" or the \"Paris macaron\". Pierre Desfontaines, of the French pâtisserie Ladurée, has sometimes been credited with its creation in the early part of the 20th century, but another baker, Claude Gerbet, also claims to have invented it. French macaron bakeries became trendy in North America in the 2010s."
+    ],
+    "keyFacts": [
+      "Since the 19th century, a typical Parisian-style macaron has been filled with a ganache, buttercream or jam.",
+      "Arab troops from Ifrīqiya (now Tunisia) occupied Sicily in 827.",
+      "Some food historians trace the origin of macarons to a French monastery in Cormery in the 8th century (791), in the Loire Valley."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/paris/food-macaron.jpg",
+    "heroAlt": "Macaron, Paris",
+    "imageCredit": {
+      "file": "File:VanillaMacaron.jpg",
+      "url": "/images/capsule/paris/food-macaron.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:VanillaMacaron.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Michelle Naherny"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "food-croissant",
+      "food-baguette",
+      "food-french-cuisine"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Macaron",
+        "url": "https://en.wikipedia.org/wiki/Macaron",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "food",
+      "food & flavours"
+    ]
+  },
+  {
+    "slug": "festival-bastille-day",
+    "destinationId": "paris",
+    "title": "Bastille Day",
+    "dek": "Bastille Day is the common name given in English-speaking countries to the national day of France, which is celebrated on 14 July each year.",
+    "category": "Festivals",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Bastille Day is the common name given in English-speaking countries to the national day of France, which is celebrated on 14 July each year. It is referred to, both legally and commonly, as le 14 juillet in French, though la fête nationale is also used in the press.",
+    "content": [
+      "Bastille Day is the common name given in English-speaking countries to the national day of France, which is celebrated on 14 July each year. It is referred to, both legally and commonly, as le 14 juillet (French: [lə katɔʁz(ə) ʒɥijɛ]) in French, though la fête nationale is also used in the press.",
+      "French National Day is the anniversary of the Storming of the Bastille on 14 July 1789, a major event of the French Revolution, as well as the Fête de la Fédération that celebrated the unity of the French people on 14 July 1790. Celebrations are held throughout France. One that has been reported as \"the oldest and largest military parade in Europe\" is held on 14 July on the Champs-Élysées in Paris in front of the President of France, along with other French officials and foreign guests.",
+      "In 1789, tensions rose in France between reformist and conservative factions as the country struggled to resolve an economic crisis. In May, the Estates General legislative assembly was revived, but members of the Third Estate broke ranks, declaring themselves to be the National Assembly of the country, and on 20 June, vowed to write a constitution for the kingdom.",
+      "On 11 July, Jacques Necker, the finance minister of Louis XVI, who was sympathetic to the Third Estate, was dismissed by the King, provoking an angry reaction among Parisians. Crowds formed, fearful of an attack by the royal army or by foreign regiments of mercenaries in the King's service and seeking to arm themselves. Early on 14 July, a crowd besieged the Hôtel des Invalides for firearms, muskets, and cannons stored in its cellars. That same day, another crowd stormed the Bastille, a fortress-prison in Paris that had historically held people jailed on the basis of lettres de cachet (literally \"signet letters\"), arbitrary royal indictments that could not be appealed and did not indicate the reason for the imprisonment, and which was believed to hold a cache of ammunition and gunpowder. As it happened, at the time of the attack, the Bastille held only seven inmates, none of great political significance.",
+      "The crowd was eventually reinforced by the mutinous Régiment des Gardes Françaises (\"Regiment of French Guards\"), whose usual role was to protect public buildings. They proved a fair match for the fort's defenders, and Governor de Launay, the commander of the Bastille, capitulated and opened the gates to avoid a mutual massacre. According to the official documents, about 200 attackers and just one defender died before the capitulation. However, possibly because of a misunderstanding, fighting resumed. In this second round of fighting, de Launay and seven other defenders were killed, as was Jacques de Flesselles, the prévôt des marchands (\"provost of the merchants\"), the elected head of the city's guilds, who under the French monarchy had the responsibilities of a present-day mayor.",
+      "Shortly after the storming of the Bastille, late in the evening of 4 August, after a very stormy session of the Assemblée constituante, feudalism was abolished. On 26 August, the Declaration of the Rights of Man and of the Citizen (Déclaration des Droits de l'Homme et du Citoyen) was proclaimed.",
+      "As early as 1789, the year of the storming of the Bastille, preliminary designs for a national festival were underway. These designs were intended to strengthen the country's national identity through the celebration of the events of 14 July 1789. One of the first designs was proposed by Clément Gonchon, a French textile worker, who presented his design for a festival celebrating the anniversary of the storming of the Bastille to the French city administration and the public on 9 December 1789. There were other proposals and unofficial celebrations of 14 July 1789, but the official festival sponsored by the National Assembly was called the Fête de la Fédération."
+    ],
+    "keyFacts": [
+      "Bastille Day is the common name given in English-speaking countries to the national day of France, which is celebrated on 14 July each year.",
+      "It is referred to, both legally and commonly, as le 14 juillet (French: [lə katɔʁz(ə) ʒɥijɛ]) in French, though la fête nationale is also used in the press.",
+      "In 1789, tensions rose in France between reformist and conservative factions as the country struggled to resolve an economic crisis.",
+      "On 11 July, Jacques Necker, the finance minister of Louis XVI, who was sympathetic to the Third Estate, was dismissed by the King, provoking an angry reaction among Parisians."
+    ],
+    "local": true,
+    "heroImage": null,
+    "heroAlt": "Bastille Day, Paris",
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "festival-fete-de-la-musique",
+      "festival-paris-fashion-week",
+      "festival-nuit-blanche"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Bastille Day",
+        "url": "https://en.wikipedia.org/wiki/Bastille_Day",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "festival",
+      "festivals"
+    ]
+  }
+]

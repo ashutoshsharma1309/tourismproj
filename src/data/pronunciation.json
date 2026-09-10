@@ -1,0 +1,27 @@
+{
+  "_comment": "Pronunciation guidance for narration. 'say' respells phonetically; Piper (eSpeak phonemiser) reads Devanagari directly and needs no hint. Only entries that measurably improved a render are kept — guessing at a name's pronunciation is its own kind of fabrication.",
+  "_verifiedAt": "2026-08-17",
+  "en": {
+    "Rumtek": "Room-tek",
+    "Pemayangtse": "Pem-ah-yang-tsay",
+    "Tashiding": "Tah-shee-ding",
+    "Phodong": "Pho-dong",
+    "Ralang": "Rah-lang",
+    "Phensang": "Phen-sang",
+    "Sanga Choeling": "Sang-ah Choh-ling",
+    "Dubdi": "Doob-dee",
+    "Rinchenpong": "Rin-chen-pong",
+    "Tsuklakhang": "Tsook-lah-khang",
+    "Lingdum": "Ling-doom",
+    "Kewzing": "Kew-zing",
+    "Gyalshing": "Gyal-shing",
+    "Namchi": "Nahm-chee",
+    "Mangan": "Mahn-gan",
+    "gompa": "gom-pah",
+    "Chogyal": "Choh-gyal",
+    "Kagyu": "Kah-gyoo",
+    "Nyingma": "Nying-mah",
+    "Zangdok Palri": "Zang-dok Pal-ree",
+    "Kanchenjunga": "Kan-chen-jung-ah"
+  }
+}

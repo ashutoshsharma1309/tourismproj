@@ -1,0 +1,520 @@
+{
+  "generatedAt": "2026-08-17",
+  "agent": "Heritage Review Agent",
+  "method": {
+    "wikivoyage": "Article extracts via the MediaWiki API, sliced to each site's listing, then filtered to sentences carrying a visitor observation. CC BY-SA 4.0, quoted short and attributed.",
+    "googlePlaces": "Not run — GOOGLE_PLACES_API_KEY unset. Recorded as an explicit negative, never simulated.",
+    "refused": "No scraping of Google Maps, TripAdvisor, MakeMyTrip, Holidify or any other review platform. No invented authors, ratings, dates or review text.",
+    "ratings": "No aggregate rating is shown unless the Places API supplied one. Star counts are never synthesised from prose."
+  },
+  "totals": {
+    "sitesChecked": 15,
+    "sitesWithVoices": 6,
+    "sitesWithNone": 9,
+    "totalSnippets": 14,
+    "googleReviewsCollected": 0
+  },
+  "results": [
+    {
+      "slug": "rumtek",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Gangtok",
+          "Sikkim"
+        ],
+        "snippets": 4
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "rumtek-wikivoyage-1",
+          "monasteryId": "rumtek",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Gangtok",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "One of the most famous things to see near Gangtok.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "rumtek-wikivoyage-2",
+          "monasteryId": "rumtek",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The 16th Karmapa Rangjung Rigpe Dorje had to leave Tibet in 1959 and was invited to stay at Rumtek.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "rumtek-wikivoyage-3",
+          "monasteryId": "rumtek",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "He was granted land by the king of Sikkim and erected a new monastery here.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "rumtek-wikivoyage-4",
+          "monasteryId": "rumtek",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "Karmapa Rangjung Rigpe Dorje is considered one of the greatest Tibetan personalities of the 20th cent and had great influence in spreading Tibetan Buddhism in the West.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "pemayangtse",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Pelling",
+          "Sikkim",
+          "Yuksom"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "tashiding",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Ravangla",
+          "Sikkim",
+          "Pelling"
+        ],
+        "snippets": 5
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "tashiding-wikivoyage-1",
+          "monasteryId": "tashiding",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "It is considered as the holiest monastery in Sikkim.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "tashiding-wikivoyage-2",
+          "monasteryId": "tashiding",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "It is situated on a cone-shaped mountain, 19 km south-east of Yoksum.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "tashiding-wikivoyage-3",
+          "monasteryId": "tashiding",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The monastery consists of several stupas (corten), chapels and the main temple.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "tashiding-wikivoyage-4",
+          "monasteryId": "tashiding",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The relics of the lamas of Sikkims are preserved in a number of smalles chorten.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "tashiding-wikivoyage-5",
+          "monasteryId": "tashiding",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The Nyingmapa-Buddha-Festival is celebrated in the monastery on the 15th day of the first month of the Tibetan moon calendar.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [
+        {
+          "id": "festival",
+          "label": "the festivals and masked dances",
+          "mentions": 1
+        }
+      ],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "enchey",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Gangtok",
+          "Sikkim"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "lingdum",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Gangtok",
+          "Sikkim"
+        ],
+        "snippets": 1
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "lingdum-wikivoyage-1",
+          "monasteryId": "lingdum",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Gangtok",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "Ranka Monastery is newer and quieter but also very beautiful.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "phodong",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Sikkim",
+          "Lachen"
+        ],
+        "snippets": 1
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "phodong-wikivoyage-1",
+          "monasteryId": "phodong",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "It is considered one of the most beautiful monasteries in Sikkim.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "phensang",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Sikkim"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "lachen",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Sikkim",
+          "Lachen"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "lachung",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Sikkim",
+          "Lachung"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "sanga-choeling",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Pelling",
+          "Sikkim",
+          "Yuksom"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "dubdi",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Yuksom",
+          "Sikkim"
+        ],
+        "snippets": 2
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "dubdi-wikivoyage-1",
+          "monasteryId": "dubdi",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The first monastery established after the consecration ceremony of the first chogyal.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        },
+        {
+          "id": "dubdi-wikivoyage-2",
+          "monasteryId": "dubdi",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Sikkim",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "It is situated on a hill above Yuksom and can be approached by trekking only, including a steep slope taking about 35 minutes.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [
+        {
+          "id": "walk-in",
+          "label": "the walk or climb up to it",
+          "mentions": 1
+        }
+      ],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "ralang",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Ravangla",
+          "Sikkim"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "rinchenpong",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Sikkim"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    },
+    {
+      "slug": "tsuklakhang",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Gangtok",
+          "Sikkim"
+        ],
+        "snippets": 1
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [
+        {
+          "id": "tsuklakhang-wikivoyage-1",
+          "monasteryId": "tsuklakhang",
+          "source": "wikivoyage",
+          "sourceLabel": "Wikivoyage traveller guide",
+          "sourceUrl": "https://en.wikivoyage.org/wiki/Gangtok",
+          "authorName": null,
+          "rating": null,
+          "reviewDate": null,
+          "excerpt": "The palatial monastery of Sikkim's former royal family.",
+          "licence": "CC BY-SA 4.0",
+          "retrievedAt": "2026-08-17"
+        }
+      ],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "SOURCED"
+    },
+    {
+      "slug": "kewzing",
+      "wikivoyage": {
+        "articlesSearched": [
+          "Ravangla",
+          "Sikkim"
+        ],
+        "snippets": 0
+      },
+      "googlePlaces": {
+        "status": "NOT_CONFIGURED",
+        "reason": "GOOGLE_PLACES_API_KEY is unset. The Places API is the only sanctioned route to Google review data; scraping the Maps site instead would breach its terms, so no Google reviews are collected.",
+        "reviews": 0
+      },
+      "voices": [],
+      "themes": [],
+      "averageRating": null,
+      "ratingCount": null,
+      "outcome": "NONE_AVAILABLE"
+    }
+  ]
+}

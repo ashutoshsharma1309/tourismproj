@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" role="img" aria-label="Photograph not available">
+  <defs>
+    <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b2419"/>
+      <stop offset="100%" stop-color="#1b1710"/>
+    </linearGradient>
+    <linearGradient id="ridge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3b3327"/>
+      <stop offset="100%" stop-color="#241e15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="750" fill="url(#ground)"/>
+
+  <!-- Himalayan ridgeline: the archive's own motif, not a stock photograph. -->
+  <path d="M0 560 L180 400 L300 470 L470 300 L610 440 L760 330 L900 460 L1050 380 L1200 500 L1200 750 L0 750 Z"
+        fill="url(#ridge)"/>
+  <path d="M470 300 L520 360 L420 360 Z" fill="#5a4d38" opacity="0.7"/>
+  <path d="M760 330 L806 392 L714 392 Z" fill="#5a4d38" opacity="0.55"/>
+
+  <!-- Prayer-flag line -->
+  <g opacity="0.5">
+    <path d="M120 250 Q600 190 1080 250" stroke="#6b5c42" stroke-width="2" fill="none"/>
+    <rect x="300" y="215" width="34" height="24" fill="#c8912f" opacity="0.8" transform="rotate(4 317 227)"/>
+    <rect x="470" y="203" width="34" height="24" fill="#8fa38b" opacity="0.8" transform="rotate(2 487 215)"/>
+    <rect x="640" y="203" width="34" height="24" fill="#b5563f" opacity="0.8" transform="rotate(-2 657 215)"/>
+    <rect x="810" y="216" width="34" height="24" fill="#7d8fa8" opacity="0.8" transform="rotate(-4 827 228)"/>
+  </g>
+
+  <text x="600" y="628" text-anchor="middle"
+        font-family="ui-monospace, 'IBM Plex Mono', 'SFMono-Regular', Menlo, monospace"
+        font-size="21" letter-spacing="3" fill="#9b8a6f" opacity="0.85">
+    PHOTOGRAPH NOT AVAILABLE
+  </text>
+  <text x="600" y="664" text-anchor="middle"
+        font-family="ui-sans-serif, system-ui, sans-serif"
+        font-size="19" fill="#7d705a" opacity="0.85">
+    No freely licensed image of this subject has been sourced yet.
+  </text>
+</svg>

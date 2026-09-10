@@ -1,0 +1,693 @@
+# SIKKIM DARSHAN — PROJECT CONTEXT PACK
+# Digitizing the Sacred Heritage of Sikkim · "Explore. Experience. Preserve."
+
+meta:
+  doc_version:    3
+  last_updated:   2026-08-18
+  repo:           /Users/sangeetasinha/Desktop/tourismproj
+  branch:         main
+  head_commit:    6d0fe1a  fix(gallery): keep the home rail to places you can stand in
+  working_tree:   UNCOMMITTED — the §10 fix pass has not been committed yet
+  build_state:    lint PASS · typecheck PASS · build PASS (203 static pages)
+                  qa:heritage 21/21 · qa:gallery 12/12 · qa:a11y 0 violations
+  audience:       an LLM or a new collaborator with NO access to this repo
+
+---------------------------------------------------------------------------
+## 0 · HOW TO USE AND UPDATE THIS FILE
+---------------------------------------------------------------------------
+
+WHAT THIS IS
+  A self-contained briefing. Paste the whole file into a fresh ChatGPT (or any
+  model) session and it will know the project without reading the codebase.
+  Every number here was measured against the tree at the commit named above,
+  not remembered.
+
+HOW TO USE IT WITH CHATGPT
+  Open a new chat and paste, verbatim:
+
+    "Here is the current state of my project, Sikkim Darshan. Read it, then
+     help me with what I ask next. Do not invent facts about the project
+     that are not in this document."
+
+  ...followed by this entire file.
+
+HOW TO UPDATE IT (the protocol — follow it and the file stays trustworthy)
+  1. Bump `doc_version` and set `last_updated` to today.
+  2. Re-run the measurements before editing any number. The commands are in
+     §9 (BUILD STATUS) and §11 (HOW EVERY NUMBER HERE WAS MEASURED). A number
+     you did not re-measure is a number you should delete, not carry forward.
+  3. Edit the affected section in place. Keep the section numbering stable so
+     older chats referencing "§5" still line up.
+  4. Append one line to §12 (CHANGELOG). Never rewrite past changelog entries.
+  5. Move anything you finished out of §10 (OPEN ITEMS) and into the section
+     that describes shipped behaviour.
+
+  Rule of thumb: this file describes what IS TRUE NOW. Intentions belong in
+  §10. History belongs in §12. Nothing else should be aspirational.
+
+---------------------------------------------------------------------------
+## 1 · WHAT THIS IS, IN ONE PARAGRAPH
+---------------------------------------------------------------------------
+
+Sikkim Darshan (formerly "SikkimOS", originally scaffolded as "yatra-ai") is a
+digital cultural-heritage platform for the Indian state of Sikkim. It holds a
+sourced archive of 15 monasteries, 38 heritage and natural places, 70 long-form
+cultural stories, a 26-event historical timeline, a 77-object digital heritage
+archive with community contribution, 60 narrated audio guides in 4 languages,
+an interactive heritage map, a rule-based trip planner, a directory of 20
+registered stays, and a public preservation dashboard that reports the
+archive's own coverage and gaps. It was built for SIH (Smart India Hackathon).
+
+It is NOT a booking platform, NOT a SaaS product, and NOT an AI content
+generator. An earlier build tried to be the first two and faked the data to do
+it; that data was deleted rather than relabelled.
+
+---------------------------------------------------------------------------
+## 2 · THE GOVERNING RULE (read this before proposing any feature)
+---------------------------------------------------------------------------
+
+  > Every factual claim rendered in the product points at an entry in
+  > src/data/sources.ts, or it does not ship.
+
+Corollaries that shape almost every design decision in the codebase:
+
+  * Missing facts are PUBLISHED as missing. The UI says "Data not available"
+    or "Not yet captured" instead of estimating. /preservation exists to make
+    the gaps visible on purpose.
+  * NO LANGUAGE MODEL COMPOSES PROSE ANYWHERE IN THE PIPELINE. Every published
+    clause is assembled from a verified field on a record, and a clause is
+    omitted entirely when its field is absent. This is what makes it
+    structurally impossible for a guide to invent a founder, a date or a
+    legend the sources do not contain.
+  * A missing pin beats a guessed pin. Monasteries with disputed coordinates
+    are excluded from the map (`mappableMonasteries` is the map's only input).
+  * An empty gallery beats a wrong photograph. See §7 (gallery rejections).
+  * Two encyclopedia articles agreeing with each other is ONE tertiary source
+    agreeing with itself — it does not count as corroboration. Encyclopedia-
+    sourced confidence is capped at "medium" and this is enforced mechanically
+    by scripts/qa/heritage-integrity.mjs.
+  * Where sources disagree (15 vs 16 May 1975; 8th vs 9th century for Guru
+    Rinpoche), the disagreement is written into the record rather than
+    resolved by picking a side.
+
+WHAT THIS RULE ALREADY COST THE PROJECT — deleted, not relabelled:
+  invented hotel tariffs · star ratings · guest reviews · room inventories ·
+  220 synthetic bookings · a fabricated TSD remittance ledger · invented
+  festival dates, visiting hours, phone numbers and email addresses ·
+  European panoramas reused as Sikkim prayer halls · a fabricated arrivals
+  figure (21,47,892) and a fabricated TSD total (₹12.5 Cr).
+
+If you are asked to "add reviews" or "show prices", the answer is a licensed
+Places/booking integration, not more mock data.
+
+---------------------------------------------------------------------------
+## 3 · STACK
+---------------------------------------------------------------------------
+
+Runtime      Next.js 16.3 (App Router, RSC, Turbopack) · React 19.2 ·
+             TypeScript 5.7 · Tailwind CSS 4
+Libraries    framer-motion 13 · leaflet 1.9 (+@types/leaflet) · lucide-react ·
+             class-variance-authority · clsx · tailwind-merge ·
+             @supabase/supabase-js 2.112
+Dev/QA       eslint 9 + eslint-config-next · @axe-core/cli · playwright 1.62.1
+Python       a .venv-tts + .tts-models tree exists for the audio agent
+             (Piper TTS); both are gitignored.
+
+DROPPED (do not reintroduce without a reason): pannellum and recharts were
+removed in commit 7acc5cd along with the dead audio-player component. The
+360° viewer story is in §8.
+
+DESIGN SYSTEM
+  Type      Fraunces (display) · Plus Jakarta Sans (UI) · IBM Plex Mono
+            (numerics and data)
+  Tokens    src/app/globals.css — petrol/ink surfaces, temple-tank jade
+            primary, marigold accent, glass / glass-dark, card-lift,
+            media-zoom, text-glow, gradient-overlay
+  A11y      A dark-surface text ramp and a grounded header landed in c27319d;
+            visible focus and navbar contrast in ed80256. axe reports zero
+            violations across 10 audited routes (§9).
+
+SIZE         ~20,600 lines across 103 .ts/.tsx files under src/
+             public/ carries 102 MB images + 54 MB audio + 844 KB panoramas
+PACKAGE NAME "ney-heritage". It was still the "yatra-ai" scaffold name until
+             the v3 pass renamed it.
+
+---------------------------------------------------------------------------
+## 4 · ROUTE MAP (18 route files → 203 prerendered pages)
+---------------------------------------------------------------------------
+
+/                          Landing. Parallax hero over the Ravangla Buddha,
+                           live stat counters from src/lib/stats.ts, featured
+                           monasteries, interactive heritage map, gallery rail
+                           (restricted in 6d0fe1a to places a visitor can
+                           actually stand in), Stories of Sikkim section,
+                           planner CTA, preservation pillars. revalidate=1h.
+
+/monasteries               Explorer: debounced search, district / tradition /
+                           feature filters, grid ⇄ Leaflet map toggle with
+                           tradition-coloured markers. Map is dynamically
+                           imported (ssr:false) with a skeleton.
+/monasteries/[slug]        15 SSG pages. History, significance, architecture,
+                           provenance badges, photo gallery, audio guide
+                           player, honest availability panel, Maps link,
+                           Commons photo credits.
+
+/stories                   The Stories of Sikkim archive — 70 sourced
+/stories/[slug]            editorial pieces across 19 categories, filterable
+                           by category and by community (Lepcha, Bhutia,
+                           Nepali, …). Cross-links are made symmetric at build
+                           time so "related stories" is never a one-way street.
+                           70 SSG pages.
+
+/history                   The Story of Sikkim — a 26-event timeline across 6
+/history/[slug]            eras (Early Sikkim, The Namgyal Kingdom, Monastic
+                           Foundations, The Colonial Encounter, Political
+                           Transformation, Modern Sikkim). Every event carries
+                           a verification grade: verified / source-backed /
+                           oral tradition / unverified. 26 SSG pages.
+
+/archive                   The NEY Digital Heritage Archive — 77 catalogued,
+/archive/[id]              licensed, attributed objects across 15 categories.
+                           77 SSG pages. Each object states whether its
+                           photograph was actually taken in Sikkim
+                           (`sikkimSubject`), and quotes its subject article's
+                           own lead rather than paraphrasing it.
+/archive/contribute        Community submission form (see §6, submissions).
+/api/archive/submissions/[id]/media   Serves an unreviewed upload to curators
+                           only; uploads live in .data/, deliberately outside
+                           public/.
+
+/explore                   Full-screen heritage map over src/data/map-sites.ts
+                           — every coordinate-bearing monastery and place in
+                           one plottable list, grouped into 7 marker families
+                           (Monastery, Heritage, Sacred, Water, Nature,
+                           Journey, Town), each carrying the count of stories
+                           that reference it.
+
+/hotels                    "Stays" — a DIRECTORY, not a booking surface. 20
+                           real named properties grouped by district, each
+                           resolving to a Google Maps search. No price, rating
+                           or review, by design. District illustrations, not
+                           property photographs (f25d149).
+
+/planner                   Preference form: interests, budget slider,
+                           duration, travellers, travel style, start date,
+                           special requests. Parallax Tsomgo Lake hero.
+/planner/result            Dynamic. Day-by-day accordion itinerary from URL
+                           search params, collapsed route stops, Leaflet route
+                           map, and a cost panel quoting ONLY the statutory
+                           ₹50 TSD fee.
+
+/preservation              Public preservation dashboard: archive coverage
+                           bars (sourced / mapped / 360° captured / narrated),
+                           a per-site register, verified tourism statistics,
+                           and the full 19-entry source registry. All counts
+                           computed, never hardcoded. This page REPLACED the
+                           hotel-owner and monastery-admin dashboards.
+/preservation/review       Curator queue — discovered candidates and community
+                           submissions awaiting human approval. Dynamic.
+
+/robots.txt /sitemap.xml /icon.svg    Real metadata base + structured data
+                           (6aa490b).
+/_not-found, error, loading           Honest 404 copy and the previously
+                           missing error and loading states (2a57dae).
+
+GLOBAL CHROME
+  Navbar         scroll-condensing glass; 8 nav links; mobile drawer; role
+                 switcher with exactly two real destinations — Visitor (/) and
+                 Curator (/preservation/review). The old dead dashboard links
+                 are gone.
+  CommandPalette ⌘K, indexing monasteries + places + stays + stories. The
+                 index is built on the SERVER (55c0c8d), not shipped to the
+                 client as a blob.
+  AmbientAudio   muted by default, two Commons-licensed layers (singing bowl,
+                 mountain wind). A Buddhist chant layer is DELIBERATELY absent
+                 — Commons has no suitably licensed recording and substituting
+                 unrelated audio would be worse than silence.
+  Footer         four link columns and the Commons credit line. It carried
+                 three social icons linking to instagram.com, twitter.com and
+                 youtube.com — the platforms' front doors, not accounts this
+                 project owns, because it owns none. Removed in v3: a row of
+                 social icons reads as "we are on these platforms", which made
+                 it the only unsourced claim in the chrome.
+  Toaster.
+
+---------------------------------------------------------------------------
+## 5 · DATA LAYER — everything the product renders is typed data in src/data/
+---------------------------------------------------------------------------
+
+INVENTORY (measured at head commit)
+
+  sources.ts              19 sources. Each entry records WHAT MAY LEGITIMATELY
+                          BE CITED FROM IT — not just a URL. Exports the
+                          `Provenance` type carried by every record:
+                          { sourceId, sourceUrl, verifiedAt,
+                            confidence: high|medium|unverified, caveat? }.
+                          Registry includes: Sikkim Registration of Tourist
+                          Trade Rules 2025, UNI corroboration, 2025 arrivals
+                          reporting, sikkimtourism.gov.in (portal / festivals /
+                          dances / cuisine / about / conduct),
+                          community-timing-reports, utsav.gov.in, Sikkim IPR,
+                          UNESCO WHC, Wikipedia, Wikimedia Commons,
+                          OpenStreetMap, Wikivoyage, YouTube, Google Places.
+
+  monasteries.ts          15 records: rumtek, pemayangtse, tashiding, enchey,
+                          lingdum, phodong, phensang, lachen, lachung,
+                          sanga-choeling, dubdi, ralang, kewzing, rinchenpong,
+                          tsuklakhang. Names, districts, lineages, founding
+                          years and history from cited articles. Coordinates
+                          only where a source publishes one; disputed
+                          coordinates are marked unverified and NOT plotted.
+
+  places.ts               38 non-monastery heritage and natural sites, each
+                          with an article and a published coordinate. Permit
+                          notes where documented. No "coming soon" padding.
+
+  stories/                70 stories across 8 files (history, monastery-
+                          heritage, festivals, folk-arts, communities, food,
+                          landscape, journeys) + types.ts + index.ts. 19
+                          categories in editorial order. index.ts enforces
+                          symmetric cross-links and drops dangling slugs.
+
+  history.ts              26 timeline events, 6 eras, per-event verification
+                          grade and sources. `imageKey` points at a catalogued
+                          archive object, so an event's illustration is a
+                          licensed attributed object, never a stock mountain.
+                          Events with no legitimate photograph render
+                          "Documentation currently unavailable".
+
+  archive.ts              77 archive objects (from generated/archive-items.json,
+                          0 failures) across 15 categories. Never hand-edited —
+                          edit the agent's curated list and re-run.
+
+  hotels.ts               20 stay directory entries: slug, name, district,
+                          indicative tier, Google Maps URL, provenance marked
+                          "unverified" with an explicit caveat.
+
+  galleries.ts            53 site galleries (from generated/site-galleries.json).
+                          Every photograph carries a licence AND a named
+                          author — the agent drops any candidate missing
+                          either. Served from this origin (public/images/
+                          gallery), never hotlinked.
+  gallery-rejections.ts   The deny-list. See §7 — this file is the single best
+                          illustration of the project's method.
+
+  audio.ts                60 guides = 15 sites × 4 languages (en, hi, ne, bn),
+                          from generated/audio-guides.json. Also exports
+                          BLOCKED_AUDIO_LANGUAGES with the SPECIFIC blocker
+                          for each: Bhutia and Lepcha (no TTS voice exists in
+                          any engine available), Assamese (needs a multi-GB
+                          model this 8 GB machine cannot run), Dzongkha (no
+                          voice, and no speaker to review a translation about
+                          Buddhist practice). Bengali is labelled a VISITOR
+                          language, not a language of Sikkim.
+
+  panoramas.ts            Exactly 1 verified capture (Rumtek courtyard),
+                          published as a `flat-panorama` — a wide stitched
+                          photograph you can pan — and never described as a
+                          360° sphere, because it is not one.
+
+  map-sites.ts            One flat serialisable list of everything /explore can
+                          plot, derived from mappableMonasteries + places.
+  images.ts               29-key image registry resolved through img().
+  story-images.ts, videos.ts, reviews.ts, pronunciation.json
+  generated/              Raw agent output, committed as an audit trail:
+                          archive-items.json (77 items, 0 failures),
+                          site-galleries.json (53 galleries),
+                          audio-guides.json (60), image-credits.json (39),
+                          monasteries.discovered.json, monasteries.curated.json,
+                          monastery-reviews.json, monastery-videos.json,
+                          story-images.json.
+
+KEY LIB MODULES (src/lib/)
+
+  stats.ts            VERIFIED tourism metrics only. 2025 arrivals:
+                      17,12,360 total / 16,35,650 domestic / 61,710 foreign,
+                      with 2024 comparisons. TSD Fund collected is
+                      `value: null` — the fund exists but no collection total
+                      is published, so the UI renders "Data not available".
+  booking.ts          The TSD fee model — see §6.
+  generate-itinerary.ts  The planner — see §6.
+  archive-submissions.ts Community contribution store — see §6.
+  search-index.ts     Server-built ⌘K index.
+  geo.ts              Great-circle distance.
+  constants.ts        SITE name/tagline/description, SITE_URL, NAV_LINKS,
+                      AMBIENT_SOUNDS, planner ranges and tier metadata.
+  supabase.ts         Returns null when unconfigured; every caller handles it.
+  format.ts, cn.ts
+
+---------------------------------------------------------------------------
+## 6 · THE FOUR RULES-ENGINES (no ML anywhere in these)
+---------------------------------------------------------------------------
+
+TSD FEE — src/lib/booking.ts
+  Models the Tourism Sustainability Development Fund as the Government of
+  Sikkim actually defines it in the Sikkim Registration of Tourist Trade
+  Rules, 2025:
+    • Flat ₹50 per person, one-time, valid one month
+    • Collected by hotels at check-in, deposited to the TSD Fund
+    • Children under 5 and government-work visitors exempt
+    • Re-entry within the same month is charged again
+  The previous implementation charged 2–4% of room tariff. That was invented
+  AND it misstated live public policy; it is gone. GST is applied at 12% and
+  labelled an estimate, not a quoted rate. computeTariff(), nightsBetween()
+  and makeBookingId() ("NEY-HTL-####", deterministic) remain.
+
+TRIP PLANNER — src/lib/generate-itinerary.ts
+  Rule-based over real geography. Four anchors — Gangtok, Pelling, Lachung,
+  Ravangla — each with interest-tagged day templates (Monasteries, Culture,
+  Lakes, Food, Adventure, Trekking, Nature). routePlan() chooses the anchor
+  sequence and night allocation from trip length and interests, keeping drive
+  times sane; arrival days always sequence first. Duration clamped 3–14 days.
+  Cost output deliberately contains ONE line: the statutory TSD fee.
+  Accommodation, transport and activity totals are NOT estimated because no
+  rates feed is licensed. The return shape (GeneratedItinerary) is the
+  contract a model would fill in a later phase.
+
+COMMUNITY SUBMISSIONS — src/lib/archive-submissions.ts
+  The one rule this module exists to enforce: a submission NEVER becomes
+  published archive content on its own. Every record is created with status
+  "pending-review" and THERE IS NO CODE PATH IN THE APPLICATION THAT SETS ANY
+  OTHER STATUS. Approval is a curator action performed outside the public app.
+  Pre-screening is automatic but ADVISORY ONLY — it can flag a likely
+  duplicate, a missing field, a location that does not look like Sikkim, or an
+  obvious spam pattern. It cannot mark anything verified and it cannot reject
+  anything; a cultural verification decision is a human decision. Storage is a
+  JSON file + uploads dir under .data/, deliberately outside public/, so an
+  unreviewed upload is never served as a static asset. Max 8 MB,
+  jpeg/png/webp/avif. Supabase is the intended eventual home.
+
+AGENT PIPELINE — scripts/ (23 scripts; npm run agent:*)
+  agent:discover  heritage-discovery.mjs — walks Wikipedia categories and
+                  Commons, cross-checks fields, scores confidence, stores
+                  evidence. Records that cannot be corroborated are emitted as
+                  candidates for human review, not published.
+  agent:360       heritage-360-finder.mjs — Street View Static metadata
+                  endpoint (the only sanctioned availability check). Records
+                  an explicit NEGATIVE when none is found; a negative is a
+                  valid answer here. Scraping Maps instead would breach terms.
+  agent:audio     heritage-audio-agent.mjs — 60–90s guides composed PER
+                  LANGUAGE in audio-scripts.mjs rather than translated across
+                  them. Each guide ships with QA metadata: duration, word
+                  count, signal peak/RMS/silence/clipping, a language-purity
+                  check, the voice and engine used, and a `machineGenerated`
+                  flag the player discloses.
+  agent:gallery   heritage-gallery-agent.mjs — evidenced Commons photography.
+  agent:archive   heritage-archive-agent.mjs — refuses to emit an item unless
+                  three things resolve: the subject's reference article, a
+                  Commons file, and a readable licence with an author.
+  agent:research  sikkim-cultural-research.mjs → research/ + reports/
+  agent:video, agent:reviews, agent:report (data-quality-report.mjs)
+  images:vendor / images:optimize / images:credits — vendor Commons files into
+                  public/ with credits, rather than hotlinking.
+  export-curated.mjs keeps the agents reading the REVIEWED records the site
+                  actually publishes, so slugs and facts stay in step.
+  Output lands in reports/ and src/data/generated/, both committed as an audit
+  trail.
+
+---------------------------------------------------------------------------
+## 7 · THE QA / INTEGRITY HARNESS — npm run qa:*
+---------------------------------------------------------------------------
+
+  qa:audit        scripts/qa/audit.mjs — broad page audit
+  qa:flows        scripts/qa/flows.mjs — Playwright user flows
+  qa:a11y         scripts/qa/a11y.mjs — axe-core over 10 representative
+                  routes. Last run: 0 violations on all 10; every route's
+                  first focus stop is a working "Skip to content" link with a
+                  visible outline.
+  qa:heritage     scripts/qa/heritage-integrity.mjs — mechanically enforces
+                  the sourcing rules, including the "two encyclopedia articles
+                  are not corroboration" cap. RUN THIS AFTER ANY SLUG CHANGE.
+                  Now 21/21. It sat at 20/21 through the whole of v2: four
+                  colonial-era archive objects photographed outside Sikkim
+                  (Punakha Dzong, Darjeeling, Joseph Hooker, an engraving of
+                  the Anglo-Nepalese War) carried no `captureNote`. Coverage
+                  note: 21 of 26 timeline events have archive material.
+  qa:gallery      scripts/qa/gallery-integrity.mjs — licence, authorship, file
+                  existence, and no photograph reused across two places.
+                  Last run 12/12; 207 photographs published across 50 of 53
+                  subjects, 10 rejected as not depicting their subject.
+  qa:immersive    scripts/qa/immersive.mjs — panorama and media viewer checks.
+  qa:stories-map  scripts/qa/stories-map-flows.mjs — stories archive and
+                  explore-map browser flows. Last run 46/46.
+
+  ALL SEVEN are wired to npm scripts. immersive and stories-map were runnable
+  only by path until the v3 pass, which is most of why the archive check below
+  sat red without anyone seeing it.
+
+THE GALLERY-REJECTION STORY — worth understanding, because it is the clearest
+statement of this project's method and the QA harness's limits:
+
+  The gallery agent accepts a Commons file on three kinds of evidence: the file
+  sits in a category named for the subject, its title names the subject, or it
+  carries GPS within metres of the subject. Two of those three fail in ways the
+  agent cannot see.
+
+    NAMED evidence matches on substring. "Soreng" matched Monchaux-Soreng, a
+    commune in Seine-Maritime, France — and the gallery for a Sikkim town
+    filled with a French wind turbine, a French factory and a French church.
+    "Mangan" matched "Manganese", and a photograph of bacterial deposits on
+    rocks in Kilbirnie, North Ayrshire was served on /hotels as the
+    illustration for Mangan district. "Rongli" matched a school gate in
+    Guangzhou.
+
+    GEO evidence proves where the camera stood, not what it was pointed at. A
+    butterfly photographed two metres from the Chungthang coordinate is
+    evidence of a butterfly.
+
+  gallery-integrity.mjs checked licence, authorship, file existence and
+  duplicate use. It never checked that the photograph showed the place, so it
+  passed all of this 11/11. The fix was a hand-reviewed deny-list
+  (src/data/gallery-rejections.ts), and place/soreng now ends with an EMPTY
+  gallery. An empty gallery is a true statement about what has been found;
+  four photographs of Normandy are not.
+
+  LESSON TO CARRY FORWARD: a green QA run proves the checks passed, not that
+  the content is right. When adding a data source, ask what the checker
+  structurally cannot see.
+
+---------------------------------------------------------------------------
+## 8 · DELIBERATELY MISSING (do not "fix" these by inventing data)
+---------------------------------------------------------------------------
+
+360° TOURS        No 360° sphere of any Sikkim monastery exists in any openly
+                  licensed collection — 35 sites were swept to establish that,
+                  and Commons has no "360° panoramas of Sikkim" category at
+                  all (though it has them for neighbouring states). Google
+                  Street View availability cannot be established without a
+                  Maps Platform key, so the build records "not checked" rather
+                  than guessing. Exactly one genuine wide capture survived
+                  (Rumtek courtyard) and it is published as a flat panorama.
+                  The negative is published on /preservation. pannellum was
+                  uninstalled; a real capture programme in Sikkim is what
+                  would change this.
+
+AUDIO REVIEW      All 60 guides are machine-narrated and NOT yet
+                  translation-reviewed. Every guide carries
+                  `translationReviewed` and `machineGenerated` flags and the
+                  player discloses both. Four languages are blocked outright
+                  with named blockers (§5, audio.ts).
+
+STAY COMMERCIALS  Name and district only, marked unverified. Prices, ratings,
+                  reviews, room inventory and precise coordinates all need a
+                  licensed Places or booking integration.
+
+TSD FUND TOTAL    Unpublished by the government; rendered "Data not available".
+
+VISITING HOURS    Not captured for most sites; the availability panel says so.
+
+SUPABASE          supabase/schema.sql defines only `monasteries` and `stays`,
+                  both RLS-enabled with a public SELECT-only policy, provenance
+                  columns travelling with each row. bookings, tsd_transactions
+                  and tourism_stats were dropped with the synthetic data they
+                  held. seed.sql upserts on slug. src/lib/supabase.ts returns
+                  null when unconfigured and the app renders FULLY without a
+                  database — Supabase is an optional overlay, never a hard
+                  dependency. NOTE: the claude.ai Supabase MCP connector is
+                  currently unauthorized in this workspace.
+
+ENVIRONMENT       .env.example is accurate and every value in it is OPTIONAL:
+                  NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY
+                  (publishable/anon only — never the service-role key),
+                  GOOGLE_MAPS_API_KEY (agents only, never the app),
+                  RETRIEVED_AT (pins agent "retrieved at" dates for
+                  reproducible re-runs). The app builds and deploys with the
+                  file empty.
+
+---------------------------------------------------------------------------
+## 9 · BUILD STATUS (re-run these before updating this section)
+---------------------------------------------------------------------------
+
+  npm run typecheck   → PASS, 0 errors
+  npm run lint        → PASS, 0 errors, 0 warnings
+  npm run build       → PASS. 203 static pages in ~4.4s, compile ~1.5s.
+                        SSG breakdown: 77 archive · 70 stories · 26 history ·
+                        15 monasteries, plus the static shells.
+                        Dynamic (ƒ): /archive, /planner/result,
+                        /preservation/review, the submissions media route.
+                        Revalidating: / at 1h.
+  npm run qa:a11y     → 0 axe violations across 10 routes (last recorded run)
+  stories-map-flows   → 46/46 (last recorded run)
+
+  Build warning, harmless: Turbopack ignores a package-lock.json found at
+  /Users/sangeetasinha (outside the repo). Silence it by setting
+  `turbopack.root` in next.config.ts if it becomes annoying.
+
+---------------------------------------------------------------------------
+## 10 · OPEN ITEMS / NEXT UP
+---------------------------------------------------------------------------
+
+CLEARED IN THE v3 PASS — listed so a stale copy of v2 does not send anyone to
+re-fix them. Details in §12.
+    * Footer placeholder social links     * package.json named "yatra-ai"
+    * README drift                        * empty prompts.txt
+    * two QA scripts unwired              * NEXT_PUBLIC_SITE_URL undocumented
+    * qa:heritage failing 20/21           * four false claims in the live UI
+    * images.ts "pan-India leftovers" — this was a BAD FLAG in v2. int/thiksey
+      and fest/hemis are deliberate: regional Vajrayana subjects photographed
+      elsewhere in the Himalaya, used to illustrate thematic stories and never
+      to depict a named Sikkim site. Each carries an imageNote or a caption
+      naming where it was taken.
+
+STILL OPEN
+
+  1. [sourcing] Two registry entries want hardening: swap the press coverage of
+     the 2025 Rules for the gazetted PDF, and the arrivals reporting for the
+     departmental statistical handbook, once stable public URLs are confirmed.
+     DELIBERATELY NOT DONE IN v3 — swapping a source URL without opening the
+     replacement is exactly the failure mode this project exists to avoid.
+
+  2. [coverage] 5 of 26 timeline events have no archive material:
+     first-monasteries, phodong-and-the-six-great-monasteries,
+     convention-of-calcutta-1890, enchey-rebuilt-1909, rumtek-consecrated-1966.
+     3 of 53 gallery subjects have no photography at all.
+
+  3. [qa] Two gallery photographs are name-matched but mention neither Sikkim
+     nor their subject (monastery/lingdum, and place/namgyal-institute-of-
+     tibetology). qa:gallery reports them as a note rather than a failure.
+     Given the Soreng precedent in §7, these deserve a human look.
+
+  4. [product] Curator approval has no UI path. That no submission can be
+     published from inside the app is by design (§6), but WHERE approval
+     actually happens is unanswered, and the review queue is currently a
+     read-only view of work nobody can action.
+
+  5. [product] No Lighthouse run against the current build. axe is clean but
+     says nothing about performance, and public/ ships 102 MB of photography.
+
+  6. [ops] Set NEXT_PUBLIC_SITE_URL in the deploy environment. It is now
+     documented in .env.example, but unset it still falls back to
+     http://localhost:3000 and every canonical and OG image points there.
+
+  7. [audio] All 60 guides remain machine-narrated and translation-unreviewed;
+     four languages stay blocked with named blockers (§5). This needs human
+     reviewers, not code.
+
+  8. [content] Only the two home-page preservation pillars that made
+     disprovable claims were rewritten in v3. The remaining three
+     ("Digital archives", "Cultural records", "Access for everyone") were read
+     and left as supportable, but the rest of the marketing copy across the
+     site has not had the same line-by-line audit.
+
+---------------------------------------------------------------------------
+## 11 · HOW EVERY NUMBER HERE WAS MEASURED
+---------------------------------------------------------------------------
+
+Run these from the repo root to re-verify §5 before you edit it.
+
+  monasteries   grep -c 'slug: "' src/data/monasteries.ts          → 15
+  places        grep -c 'slug: "' src/data/places.ts               → 38
+  stories       grep -h -c 'slug: "' src/data/stories/*.ts | paste -sd+ | bc → 70
+  history       grep -c 'slug: "' src/data/history.ts              → 26
+  hotels        grep -cE '^  \["' src/data/hotels.ts               → 20
+  sources       grep -cE '^  "[^"]+": \{' src/data/sources.ts      → 19
+  archive       node -e "console.log(require('./src/data/generated/archive-items.json').items.length)" → 77
+  galleries     node -e "console.log(Object.keys(require('./src/data/generated/site-galleries.json').galleries).length)" → 53
+  audio         node -e "console.log(require('./src/data/generated/audio-guides.json').length)" → 60
+  LOC           find src -name '*.ts' -o -name '*.tsx' | xargs wc -l | tail -1
+  pages         npm run build   (read the route table)
+
+---------------------------------------------------------------------------
+## 12 · CHANGELOG OF THIS DOCUMENT
+---------------------------------------------------------------------------
+
+v3 · 2026-08-18 · head 6d0fe1a + uncommitted
+  A fix pass over everything v2 flagged, plus what auditing for those flags
+  turned up. Verified after: lint, typecheck, build (203 pages), qa:heritage
+  21/21, qa:gallery 12/12.
+
+  FOUR FALSE CLAIMS FOUND LIVE IN THE UI — none of these were on v2's list;
+  they surfaced while checking the flagged items, and all four are the exact
+  class of claim the integrity pass was supposed to have ended:
+    * src/app/page.tsx — the "Virtual documentation" pillar advertised "360°
+      captures of prayer halls and courtyards, scene by scene, hotspot by
+      hotspot". There are no captures of prayer halls, no scenes and no
+      hotspots. Rewritten to name the photography that exists.
+    * src/app/page.tsx — the "Community knowledge" pillar said monastery
+      admins "curate their own scenes, stories and archives through the
+      platform". No such role exists; the operator dashboards were deleted
+      with their fabricated data. Rewritten around /archive/contribute.
+    * src/app/page.tsx — the discover paragraph still called the heritage
+      "walkable in 360°" and "bookable when you're ready". Both had already
+      been struck from SITE.description in constants.ts; this paragraph was
+      where they survived.
+    * src/app/monasteries/page.tsx — the meta description promised "360°
+      tours ... and festival calendars"; the page has neither. And
+      src/app/planner/page.tsx promised "real hotels and transparent costs"
+      from a planner that names no property and quotes one statutory fee.
+    Also: the home page's Thiksey figure (Ladakh) was the last off-site
+    photograph on the site not saying where it was taken.
+
+  A RED CHECK NOBODY WAS RUNNING
+    qa:heritage had been failing 20/21 — four colonial-era archive objects
+    photographed outside Sikkim (Punakha Dzong, Darjeeling, Joseph Hooker, and
+    an engraving of the Anglo-Nepalese War) carried no `captureNote`. The UI
+    was already safe: a16811e made the "Not photographed in Sikkim" notice
+    render unconditionally with a fallback. The curated `note` on each item
+    already contained the right sentence, so it was moved into `captureNote`
+    in scripts/heritage-archive-agent.mjs and synced into archive-items.json
+    (a 4-line diff — captureNote is a pure curated pass-through, never a
+    fetched value, so this is what a re-run would emit).
+
+  FLAGGED ITEMS CLEARED
+    * Footer's three placeholder social links removed.
+    * README.md brought back in line: 12 → 70 stories, 8 → 19 sources, 9 → 38
+      places, "38 routes" → 203 pages; /history, /archive, /archive/contribute
+      and /explore added to the routes table; Pannellum and Recharts moved
+      from the stack to the uninstalled note; the gallery and archive agents
+      and the full qa:* harness documented; project structure refreshed.
+    * package.json renamed "yatra-ai" → "ney-heritage".
+    * qa:immersive and qa:stories-map wired into npm scripts.
+    * NEXT_PUBLIC_SITE_URL documented in .env.example as the one value that is
+      effectively required for production.
+    * prompts.txt (0 bytes, unreferenced) deleted.
+    * v2's images.ts flag WITHDRAWN as wrong — see §10.
+
+v2 · 2026-08-18 · head 6d0fe1a
+  Rewrote for ChatGPT ingestion and added the update protocol (§0) and the
+  measurement commands (§11). Caught the summary up on ~35 commits of work the
+  v1 document predated:
+    + NEW SURFACES: /history (26-event timeline), /archive + /archive/[id] +
+      /archive/contribute (77 objects, community submission), /explore
+      (full-screen heritage map), /preservation/review (curator queue), SEO
+      routes (sitemap, robots, structured data).
+    + Stories of Sikkim grew 12 → 70 across 19 categories, moved from
+      stories.ts to the src/data/stories/ directory with symmetric cross-links.
+    + Places grew 9 → 38. Sources grew 6 → 19.
+    + 53 evidenced Commons galleries vendored, plus the hand-reviewed
+      gallery-rejections deny-list (§7).
+    + 60 narrated audio guides shipped (15 sites × 4 languages) with per-guide
+      QA metadata and named blockers for 4 languages that cannot be produced.
+    + One verified flat panorama (Rumtek); pannellum and recharts uninstalled.
+    + A 5-script QA harness (audit / flows / a11y / heritage / gallery).
+    + Security and a11y passes: contributor addresses no longer published,
+      nosniff added, dark-surface text ramp, visible focus, 0 axe violations.
+    ~ RESOLVED from v1's gap list: dead /dashboard/* links (Navbar and Footer
+      now point at /preservation and /preservation/review); the
+      heritage-discovery lint error; the stale "SikkimOS" .env.example; the
+      orphaned AudioGuidePlayer (deleted, then replaced by a live player).
+    ~ CORRECTED from v1: build state is now clean and committed, not
+      "uncommitted on main"; lint passes; LOC is ~20,600 across 103 files, not
+      ~6,500 across 50.
+
+v1 · 2026-08-16 · Initial summary, written at the data-integrity pass.

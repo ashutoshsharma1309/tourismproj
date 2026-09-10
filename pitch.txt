@@ -1,0 +1,688 @@
+═══════════════════════════════════════════════════════════════════════════════
+Sikkim Darshan
+Digitizing the Sacred Heritage of Sikkim
+Explore. Experience. Preserve.
+
+>>> SUPERSEDED PROBLEM STATEMENT — READ THIS FIRST <<<
+
+    This document was written against SIH260542, "Digitize and Showcase
+    Monasteries of Sikkim for Tourism and Cultural Preservation".
+
+    That is NOT the current statement. The current one is:
+
+        26202 · Student Innovation · AICTE, MIC-Student Innovation
+        "A solution/idea that can boost the current situation of the
+         tourism industries including hotels, travel and others."
+
+    The wording below, and every framing that follows from it, addresses the
+    older statement. The measured evidence in Part 4 remains valid and is
+    still worth reading; the positioning is not.
+
+    For the current position see:
+      docs/current-problem-statement.md   the statement, and what it licenses
+      docs/gap-matrix.md                  what changed, and what was built
+      docs/pitch-26202.md                 the pitch for the current statement
+
+Smart India Hackathon 2026 · Problem Statement SIH260542
+"Digitize and Showcase Monasteries of Sikkim for Tourism and Cultural Preservation"
+Team: All In
+Repository: github.com/ashutoshsharma1309/tourismproj
+
+Every figure in this document was read out of the running application on
+2026-08-17 — from the prerendered build, the generated agent output, and the
+data files themselves. Nothing here is estimated or aspirational. Where a
+number is zero, it is printed as zero. See Part 4.
+═══════════════════════════════════════════════════════════════════════════════
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 1 · THE PROBLEM, STATED PLAINLY
+───────────────────────────────────────────────────────────────────────────────
+
+Sikkim has around 200 monasteries. They hold the state's art, its festival
+calendar, its written record and much of its history. They are also fragile:
+Phodong was levelled by earthquake and rebuilt, Sanga Choeling has burned more
+than once, Phensang burned in 1947.
+
+Almost none of this exists in a form that survives, or that a visitor can use.
+
+Concretely, we went and checked:
+
+  • The Government of Sikkim tourism portal publishes NO visiting hours for any
+    monastery. Not one. That negative finding is itself a cited source in our
+    registry.
+  • No 360° photograph of any Sikkim monastery exists in any openly licensed
+    collection. Wikimedia Commons has a "360° panoramas" category for
+    neighbouring states and none for Sikkim. We swept 35 sites to be sure.
+  • Only 8 of our 15 catalogued monasteries have a coordinate published by an
+    authoritative source.
+  • Travel aggregators fill the vacuum with numbers that contradict each other.
+    Reported opening times for Rumtek alone range from 6am to 10am, closing from
+    5pm to 6pm, and none of them cites the monastery or the department.
+  • Two of Sikkim's four official languages — Bhutia and Lepcha — have no
+    speech-synthesis voice in any engine on earth. The languages of the people
+    whose heritage this is cannot currently be spoken by a machine at all.
+
+So the problem is not "Sikkim needs a tourism website." The problem is that the
+information a visitor needs, and the record a culture needs, largely does not
+exist in retrievable form — and the vacuum is being filled with guesses.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 2 · THE MVP — WHAT IS ACTUALLY BUILT AND RUNNING
+───────────────────────────────────────────────────────────────────────────────
+
+One sentence: Sikkim Darshan is a digital cultural archive of Sikkim, built on a
+rule the data model enforces —
+
+    Every claim on the site is traceable to a named source,
+    or the site says it does not know.
+
+Not "we try to be accurate." A structural guarantee. Every record carries
+sourceId, sourceUrl, verifiedAt and a confidence grade. A field with no source
+renders as "Not published" / "Documentation currently unavailable", never as a
+plausible-looking value.
+
+The MVP is six connected collections plus a public audit surface. All of it is
+live, prerendered and works with no API key and no network.
+
+  190 prerendered routes across 16 route templates.
+
+
+2.1 THE MONASTERY CATALOGUE                                    /monasteries
+
+  15 monasteries — district, lineage, founding year, history, architecture,
+     significance, provenance badge on every record
+  14 of 15 cite a specific reference article (per-record URL, not a blanket
+     citation). The 15th, Kewzing, ships marked "Unverified" rather than dressed
+     up.
+   8 of 15 carry an authoritative coordinate. The other 7 are deliberately NOT
+     plotted. Dubdi's published coordinate conflicts with its known location
+     above Yuksom, so it ships unpinned and says why.
+   1 of 15 has any reported visiting hours — and that one is labelled
+     "reported", not "official", because no authority publishes it.
+  13 monastery videos, each verified through YouTube's own oEmbed endpoint:
+     confirmed public, real title and channel, HD upload, and the title must
+     name the monastery AS A MONASTERY — which is what stops a Lachung valley
+     road-trip vlog being served as footage of Lachung Monastery. Played in
+     YouTube's own embed; nothing re-hosted, the rights holder keeps analytics.
+   1 panoramic capture exists (Rumtek's courtyard) and is published as the wide
+     stitched 180° photograph it is. The viewer takes whatever the record
+     declares and will not upgrade a panorama into a sphere.
+  14 visitor voices across 6 monasteries, quoted from CC BY-SA Wikivoyage with
+     attribution. No author invented (Wikivoyage listings are unsigned), no
+     rating invented, no sentiment percentage invented.
+
+
+2.2 THE STORY OF SIKKIM — INTERACTIVE TIMELINE                     /history
+
+  26 documented events across 6 eras, from the crowning at Yuksom in 1642 to
+     the referendum that ended a 333-year dynasty
+  50 citations across those 26 events
+   4 verified · 20 source-backed · 2 oral tradition — each event states which
+  16 of 26 carry a legitimately sourced photograph. The other 10 say
+     "Documentation currently unavailable", which is true and better than a
+     stock picture of a mountain.
+
+  Note what "verified" deliberately excludes: two articles in the same
+  encyclopedia agreeing with each other. That is one tertiary publication
+  agreeing with itself. Where sources disagree — 15 May against 16 May 1975,
+  the 8th century against the 9th for Guru Rinpoche's passage — the
+  disagreement is written into the record instead of resolved by picking a side.
+  scripts/qa/heritage-integrity.mjs enforces this mechanically.
+
+
+2.3 THE DIGITAL HERITAGE ARCHIVE                        /archive · /contribute
+
+  67 catalogued objects across 15 categories — monastery heritage, historic
+     sites, historical photographs and documents, architecture, sacred
+     landscapes, festivals, dance, music, clothing, crafts, food heritage, oral
+     traditions, community heritage, traditional knowledge
+   7 communities represented · 6 districts covered
+  48 verified · 17 source-backed · 1 oral tradition
+  50 of 67 were photographed in Sikkim. The other 17 illustrate traditions
+     shared across the Himalaya and SAY WHERE THEY WERE TAKEN on the card and on
+     the detail page. They never claim to depict a named Sikkim site.
+
+  Every object resolves three things before the agent will emit it: the
+  subject's own reference article, a Wikimedia Commons file, and a readable
+  licence with a named author. Context is the subject article's own lead,
+  quoted — the archive adds no unsourced prose of its own.
+
+  /archive/contribute is the community intake: submit → pending review →
+  automated screening (advisory only) → curator review → published and
+  credited. The workflow is printed on the page above the form, because the
+  worst outcome for an archive is a contributor who thinks they published and a
+  reader who thinks a queued submission is fact.
+
+
+2.4 THE STORY ARCHIVE                                  /stories
+
+  70 stories across 19 categories — Sikkim history, monastery heritage,
+     festivals, folk music and dance, Lepcha / Bhutia / Nepali heritage,
+     languages and script, food and flavours, sacred landscapes, heritage
+     trails, responsible tourism, traditional knowledge, markets and community
+     life
+  58 are documented history. The rest are labelled oral tradition or legend —
+     on the card AND in the article, never presented as settled fact.
+     Enchey's flying-lama story is worth telling. Presenting it as history is
+     not.
+  Every story declares the communities it belongs to, and cross-links are
+  symmetric: a story that names a companion is always named back by it.
+
+
+2.5 THE EXPLORE MAP                                                /explore
+
+  46 sites, every coordinate published by a named source — 8 monasteries and 38
+     heritage, sacred, natural and journey sites (Tsomgo, Nathu La,
+     Khecheopalri, Yumthang, Gurudongmar, Rabdentse, Do-drul Chorten, the
+     Namgyal Institute, Buddha Park and more)
+   7 monasteries are stated as missing, on the page, with the reason.
+  Six marker families, not thirty, so the legend is readable. Every marker
+  leads into the stories that explain the place.
+  Four things the map refuses to do, printed on the page: no estimated pins, no
+  stays plotted (no licensed coordinate feed), distances are straight lines and
+  say so, and nothing placed by eye.
+
+
+2.6 THE AUDIO GUIDES                                    on every detail page
+
+  60 narrated guides = 15 monasteries × 4 languages
+     English · हिन्दी Hindi · नेपाली Nepali · বাংলা Bengali
+  70.5–88.3 seconds each — every file inside the 60–90s target, none over
+  RMS 0.107–0.110 across all 60 files, so switching language does not jump in
+     volume. Zero clipped files.
+  Every guide ships a transcript in its own language and is disclosed in the
+     player as machine-generated.
+  Scripts are ASSEMBLED from verified record fields and composed natively per
+     language — not translated across, and not written by a language model. The
+     narration structurally cannot invent a founder or a date.
+   4 languages are published as BLOCKED with the specific blocker named:
+     Bhutia and Lepcha (official languages of Sikkim, no voice exists in any
+     engine), Assamese and Dzongkha.
+
+  Nepali matters most — it is Sikkim's most spoken language. Bengali is
+  labelled what it is: a visitor language, for the West Bengal corridor most
+  domestic arrivals come through, not a Sikkim language.
+
+
+2.7 THE PUBLIC AUDIT SURFACE                /preservation · /preservation/review
+
+  The coverage dashboard reports our own archive, including the zeros, and
+  separates CAPABILITY BUILT from CONTENT CAPTURED — because having built a
+  viewer is not the same as having something true to show in it.
+  19 sources in the registry, each recording exactly what may legitimately be
+     cited from it — including the two negative findings (the department
+     publishes no hours; aggregator hours contradict each other).
+  35 discovered candidates from the pipeline: 13 verified, 9 partially
+     verified, 13 needing review — waiting for a human in the review queue.
+     Our agents can research. They cannot publish.
+
+  Verified statistics, from government-reported figures:
+     2025 arrivals 17,12,360 total · 16,35,650 domestic · 61,710 foreign
+     2024 comparison 16,25,241
+     TSD Fund collected: "Data not available" — the ₹50 mechanism is
+     documented, no collection total has ever been published, so the tile says
+     so instead of estimating.
+
+  Deliberately absent from this dashboard: a visitor counter, a "heritage
+  saved" percentage, and any figure describing material we have not catalogued.
+
+
+2.8 PLANNER AND STAYS                          /planner · /planner/result · /hotels
+
+  Preference form → day-by-day monastery-first itinerary with a route map.
+  ONE cost line: the statutory ₹50 per-person Tourism Sustainability
+  Development fee, modelled as the Sikkim Registration of Tourist Trade Rules,
+  2025 define it — one-time, one-month validity, collected by hotels at
+  check-in, under-5s and government-work visitors exempt. Accommodation and
+  transport totals are not estimated. GST is labelled an estimate.
+  20 real stay properties by district, marked unverified, resolving to Google
+  Maps. No price, no star rating, no guest review — no licensed feed supplies
+  them.
+
+
+2.9 THE AGENT PIPELINE
+
+  npm run agent:discover   Heritage Discovery — enumerates the monastery
+                           category rather than a guessed list; 35 articles
+                           found against our 15; scores VERIFIED /
+                           PARTIALLY_VERIFIED / NEEDS_REVIEW on evidence
+  npm run agent:archive    Archive builder — refuses to emit an object without
+                           article + Commons file + licence with author
+  npm run agent:audio      Audio — language-purity gate BEFORE synthesis, then
+                           measures the real signal (peak, RMS, silence,
+                           clipping) and rejects failures
+  npm run agent:video      Video — oEmbed liveness, HD check, title must name
+                           the monastery as a monastery
+  npm run agent:reviews    Visitor voices — licensed sources only; the Google
+                           Places branch is written and waits for a key
+  npm run agent:360        360 finder — Street View checked only via the
+                           official metadata endpoint; scraping Maps would
+                           breach its terms; a negative is a valid answer
+  npm run agent:report     Data quality — coverage and gaps into reports/
+  npm run qa:heritage      Mechanical integrity gate on the provenance rules
+
+  The shared constraint: NO LANGUAGE MODEL COMPOSES PROSE ANYWHERE IN THIS
+  PIPELINE. Every published clause is assembled from a verified field, and a
+  clause is omitted entirely when its field is absent. And no agent can
+  publish — output lands in a review queue.
+
+
+2.10 TECHNOLOGY AND QUALITY GATES
+
+  Next.js 16.3 (App Router, RSC) · React 19.2 · TypeScript 5.7 strict ·
+  Tailwind CSS 4 · Framer Motion 13 · Leaflet + OpenStreetMap · Recharts ·
+  Pannellum · Supabase (optional overlay, RLS, never a hard dependency)
+  Piper (ONNX) and macOS speech synthesis for narration · Whisper (small +
+  medium) for measurement only — none of it wired into the runtime
+
+  Design system: petrol/ink surfaces, temple-tank jade, marigold accent,
+  derived from monastery material culture, not a template.
+  Fraunces (display) · Plus Jakarta Sans (UI) · IBM Plex Mono (numerics)
+
+  TypeScript errors ............ 0
+  Lint errors .................. 0  (1 warning, a React ref-cleanup hint in
+                                     LeafletMap — stated, not swept)
+  Production build ............. clean, 190 prerendered routes
+  Accessibility violations ..... 0 across the audited routes (axe-core)
+  Horizontal overflow .......... none at 375/390/768/1024/1440px
+  Broken links / images ........ 0
+  Runs with zero env vars ...... yes — the archive is typed data in src/data
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 3 · WHY WE ARE BETTER
+───────────────────────────────────────────────────────────────────────────────
+
+Every other entry in this problem statement will show you a monastery website.
+Six things separate ours.
+
+3.1 THE HONESTY IS IN THE TYPE SYSTEM, NOT THE PITCH
+    Anyone can say "our data is accurate." Our records cannot hold a fact
+    without a source URL, a verification date and a confidence grade, and a QA
+    script fails the build if a provenance rule is broken. The guarantee is
+    mechanical. You can test it in front of us.
+
+3.2 NO AI WRITES A SINGLE PUBLISHED SENTENCE
+    Most heritage demos this year are an LLM wrapper. Ours is the opposite: the
+    agents research, extract, score and measure, and every published clause is
+    assembled from a verified field. A hallucinated founding year is not a bug
+    we hope to avoid — it is structurally unreachable. That is the difference
+    between a demo and something a Tourism Department can put its name on.
+
+3.3 WE MEASURED WHAT OTHERS SCORE
+    Asked to rate our narration on naturalness, we did not print "8.7/10." We
+    said we cannot hear it, then built an eleven-candidate, four-language voice
+    benchmark and measured what is measurable — word error rate, loudness,
+    pace, clipping. That work paid for itself twice:
+      · The first instrument was lying. Whisper-small put Hindi at 61–72% WER;
+        Whisper-medium halved it, and the RANKING INVERTED — the incumbent
+        macOS Lekha voice won at 31.5% WER over all three Piper candidates.
+        Trusting pass one would have shipped a LESS intelligible voice and
+        called it an upgrade.
+      · Nepali and Bengali stayed above 100% WER on both models — the
+        recogniser invents more words than the script contains. So we published
+        "unmeasurable here" instead of a ranking that would have been noise
+        dressed as data.
+    One real defect was found and fixed: Bengali was 4.5 dB louder than
+    English, so changing language jumped in your ears. RMS-matched to a 0.2 dB
+    spread, gain only — no compression, EQ or reverb, because heavy processing
+    is what makes synthetic speech worse.
+
+3.4 WE DELETED OUR MOST IMPRESSIVE FEATURES
+    An earlier build had 100 guest reviews, a revenue dashboard, occupancy
+    charts, a fabricated TSD remittance ledger, invented festival dates and
+    phone numbers, five 360° tours, and a headline of 2.1 million tourists. All
+    generated. We audited our own project and deleted every bit of it rather
+    than relabelling it.
+    Two of those numbers were not filler, they were WRONG ABOUT PUBLIC FACT: we
+    showed Sikkim's levy as a percentage of the room bill (it is a flat ₹50 per
+    person at check-in), and our arrivals figure was ~25% too high. Any judge
+    from Sikkim would catch both in four seconds.
+    The site got smaller and true.
+
+3.5 WE PUBLISH OUR OWN FAILURES ON A PUBLIC PAGE
+    /preservation reports 0 of 15 for 360° captures and 1 of 15 for visiting
+    hours, next to 15 of 15 for audio. No competitor will show you their
+    coverage gaps, because their gaps are filled with invention. Ours is the
+    page we ask to be judged on.
+
+3.6 IT IS AN ARCHIVE, NOT A BROCHURE — AND THE COMMUNITY CAN ADD TO IT
+    Timeline, object archive, 70 stories, 19 categories, 7 communities, a
+    curator-gated contribution route, and cross-links between all of it. A
+    brochure is finished when the hackathon ends. An archive with an intake
+    queue is a thing the state can keep filling for twenty years.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 4 · WHY USERS ACTUALLY NEED THIS
+───────────────────────────────────────────────────────────────────────────────
+
+THE VISITOR STANDING IN GANGTOK, DECIDING WHERE TO GO
+  Today they get aggregator pages disagreeing about opening hours, no idea which
+  monastery is a working community versus a museum piece, and no way to know
+  which of the two hundred is worth their one free day. We give them 15 sites
+  with sourced history, a courtyard video, an audio guide in their own language
+  and a plain statement of what is not known. 17,12,360 people arrived in Sikkim
+  in 2025. Almost none of them had this.
+
+THE VISITOR WHO DOES NOT READ ENGLISH COMFORTABLY
+  16,35,650 of those 2025 arrivals were domestic. Nepali is Sikkim's most spoken
+  language; the West Bengal corridor is how most of them travel in. Sixty
+  narrated guides in English, Hindi, Nepali and Bengali, each with a transcript,
+  is a real accessibility unlock — not a language dropdown that machine-
+  translates an English page.
+
+THE PERSON WHO CANNOT MAKE THE CLIMB
+  Dubdi is a 35-minute steep trek above Yuksom. Sikkim's monasteries ask a lot
+  of a body, and they ask it at altitude. The elderly, the disabled and the
+  diaspora who will never fly back get the history, the murals, the narration
+  and the sacred landscape from a screen. The mountains ask a lot. The archive
+  asks a screen.
+
+THE TOURISM DEPARTMENT AND THE STATE
+  A department cannot publish a claim it cannot defend. Everything here arrives
+  with its source attached, its confidence graded and its gaps listed, so it can
+  be adopted, corrected or extended without a fact-check project first. We would
+  rather hand them 15 monasteries they can stake their name on than 200 they
+  would have to check.
+
+THE MONASTERIES AND THE COMMUNITIES THEMSELVES
+  Phodong was levelled by an earthquake and rebuilt. Sanga Choeling has burned
+  more than once. Phensang burned in 1947. Documentation is the cheapest
+  insurance against the next time — and the contribution route means a family
+  with a photograph, or a monastery with its own festival calendar, has somewhere
+  to put it where it will be credited and kept.
+
+RESEARCHERS, TEACHERS AND WIKIPEDIA ITSELF
+  A 26-event timeline with 50 citations that records where sources disagree, and
+  67 licensed objects with creator and licence intact, is a citable starting
+  point. Sikkim's monastic record currently has no single one.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 5 · THE ZEROS, AND WHY THEY ARE THE PITCH
+───────────────────────────────────────────────────────────────────────────────
+
+Sites with a true 360° sphere ............ 0 of 15
+Sites with OFFICIAL visiting hours ....... 0 of 15  (1 has "reported" hours)
+Invented guest reviews ................... 0
+Invented prices, ratings, occupancy ...... 0
+LLM-written published sentences .......... 0
+
+None of those is a feature we ran out of time on. Each one is a RESULT:
+
+  · No openly licensed 360° sphere of any Sikkim monastery exists — Commons has
+    the category for neighbouring states and not for Sikkim. Filtering by aspect
+    ratio alone produced a close-up of a lily and a snow leopard, which is why
+    every candidate was opened and looked at.
+  · Street View availability cannot be established without a Maps Platform key,
+    and the only sanctioned check is the metadata endpoint. With no key, the
+    build records "not checked" rather than guessing.
+  · The tourism department publishes no hours for any monastery. We checked, and
+    filed the negative as a source.
+
+So the 360 viewer is built, tested, and ships empty — and tells the visitor
+exactly why. The one real capture we found ships as the 180° photograph it is.
+
+Here is the argument. A tourism site with fifty fake panoramas is worth LESS
+than one with zero, because the moment a visitor catches a single invention,
+every other claim becomes suspect. For a cultural heritage archive, credibility
+is not a feature. It is the entire product.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 6 · WHAT UNBLOCKS NEXT — ALL REAL-WORLD, NOT REWRITES
+───────────────────────────────────────────────────────────────────────────────
+
+  360° captures ......... One capture trip. A camera and a week in Sikkim. The
+                          viewer, the record shape and the data pipeline are
+                          already waiting for the files.
+  Official hours ........ One letter from the Tourism Department. The field, the
+                          "reported vs official" distinction and the UI state
+                          all exist.
+  Real rated reviews .... One GOOGLE_PLACES_API_KEY. The Places branch of the
+                          review agent is written and tested.
+  Street View ........... One Maps Platform key. Metadata check already coded.
+  Bhutia and Lepcha ..... Recorded human narration, because no engine on earth
+                          synthesises them. Roughly a day in a room with a
+                          microphone and a speaker of each.
+  20 more monasteries ... 22 candidates sit in the review queue right now with
+                          their evidence attached, waiting for a human.
+  Community intake ...... The contribute flow exists; it needs a curator
+                          account and a storage bucket to go live.
+  Live overlay .......... Supabase schema, RLS and seed are written. Set two env
+                          vars and the archive becomes editable without a
+                          redeploy.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 7 · ANTICIPATED JUDGE QUESTIONS
+───────────────────────────────────────────────────────────────────────────────
+
+Q: Only 15 monasteries out of 200?
+A: 15 we can defend. Our discovery agent found 35 articles and 22 more
+   candidates sit in the review queue with their evidence attached. Scaling is a
+   review-capacity problem now, not an engineering one — and a catalogue of 200
+   unverified records is a liability for a government, not an asset.
+
+Q: Why is there no 360° tour? That is in the problem statement.
+A: Because no licensed 360° capture of any Sikkim monastery exists. We swept 35
+   sites and filed the negative. The viewer is built and ships empty with the
+   reason printed. The alternative — which our own earlier build did — was to
+   show a European panorama as a Sikkim prayer hall.
+
+Q: Where is Wikipedia's authority? It is not a primary source.
+A: Agreed, and that is why encyclopedia-sourced confidence is capped at
+   "medium", agreement between two articles in the same work does not upgrade a
+   record, and the timeline reserves "verified" for government and institutional
+   sources. The cap is enforced by a QA script, not by discipline.
+
+Q: The audio is machine-generated. Is that acceptable for sacred content?
+A: It is disclosed in the player on every guide, the transcript is published in
+   the same language, no model wrote the words, and languages we cannot do
+   properly are listed as blocked rather than faked. Human narration is the
+   named next step for Bhutia and Lepcha.
+
+Q: How do you know your narration is any good?
+A: We measured it and published both the measurements and their limits — see
+   VOICE-QUALITY-REPORT.md and voice-benchmark/listen.html. We also caught our
+   own measuring instrument lying, which reversed a voice decision.
+
+Q: What is your AI/ML contribution if no model writes anything?
+A: Eight agents that discover, cross-check, licence-verify, score confidence,
+   render speech, gate language purity, measure the resulting waveform, and
+   route everything uncertain to a human. The intelligence is in verification,
+   not generation. Verification is the harder half and the half this domain
+   needs.
+
+Q: Is this deployable?
+A: It builds clean to 190 prerendered routes and runs with zero environment
+   variables. Supabase is an optional overlay with RLS. It works offline of any
+   service.
+
+Q: Stays with no prices and no ratings — is that not a worse product?
+A: It is a smaller true product. No licensed feed supplies them here. The
+   earlier build invented tariffs and reviews, and inventing a hotel price is
+   how you lose the right to be believed about a monastery.
+
+
+───────────────────────────────────────────────────────────────────────────────
+PART 8 · DEMO ROUTE (5 minutes, in order)
+───────────────────────────────────────────────────────────────────────────────
+
+  1. /                       Hero, live sourced counters, heritage map preview
+  2. /monasteries → Rumtek   Provenance badge, click the source link live.
+                             Play the audio guide. Switch to नेपाली.
+                             Scroll to the 180° capture — note it is labelled
+                             180°, not 360°. Note the courtyard video and the
+                             attributed visitor voices.
+  3. /history                Timeline, verification chips, open an event with
+                             "Documentation currently unavailable"
+  4. /archive                67 objects, filter by community; open an item and
+                             show the licence and creator; show one item that
+                             declares it was photographed outside Sikkim
+  5. /archive/contribute     The curator-gated intake workflow
+  6. /explore                46 sourced pins and the "7 monasteries are
+                             missing" panel
+  7. /preservation           THE PAGE TO JUDGE US ON — the zeros, capability
+                             vs coverage, the 19-source registry
+  8. /preservation/review    The queue. Agents propose, humans dispose.
+
+  Fallback if the network drops: everything above is prerendered and the audio
+  is local. The demo does not need internet.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PART 9 · THE 2-MINUTE SPOKEN PITCH
+═══════════════════════════════════════════════════════════════════════════════
+
+Delivery notes:
+  • 308 spoken words. At 150 words per minute that is 2 minutes 03 seconds,
+    measured, not guessed. The stage directions are free — you move while the
+    last sentence lands.
+  • [ ] is a stage direction, not spoken.
+  • Running long? Cut the two sentences marked ✂ in section D. That lands you at
+    1:53 and you lose the least.
+  • Do not speed up to fit more in. The pitch turns on one admission and it
+    needs air around it.
+  • Numbers to never get wrong: 15 monasteries, 60 audio guides, 4 languages,
+    26 events, 67 archive objects, 70 stories, 0 of 15 for 360°.
+
+
+─── A · THE NEED ──────────────────────────────────────── 0:00 – 0:22 ───
+
+"Sikkim has two hundred monasteries. We went looking for the public record.
+
+Its own tourism portal publishes opening hours for not one. No openly licensed
+three-sixty photograph of any Sikkim monastery exists anywhere — we swept
+thirty-five sites to be sure.
+
+This heritage isn't undigitised. It's undocumented.
+
+We're Team All In. This is Sikkim Darshan."
+
+[ ] Homepage. Let the hero hold for one beat.
+
+
+─── B · THE MVP ───────────────────────────────────────── 0:22 – 0:47 ───
+
+"Our MVP, live today, is four things.
+
+[ ] /monasteries → Rumtek. Click the source link.
+
+Fifteen monasteries where every fact carries a source URL, a verification date
+and a confidence grade.
+
+[ ] Press play. Switch to नेपाली.
+
+Sixty audio guides — fifteen sites in English, Hindi, Nepali and Bengali.
+
+[ ] /history, then /archive.
+
+A twenty-six event timeline of Sikkim, with fifty citations. And a heritage
+archive: sixty-seven licensed objects across seven communities, which the public
+can add to, through a curator."
+
+
+─── C · WHY PEOPLE NEED IT ────────────────────────────── 0:47 – 1:13 ───
+
+"Seventeen lakh people visited Sikkim last year, sixteen lakh of them domestic.
+They arrive to pages that disagree about opening hours, in a state whose first
+language is Nepali.
+
+So: sourced facts, narration in their own language, and the sacred landscape on
+a screen for anyone who can't make the climb.
+
+And these buildings burn. Phodong was levelled and rebuilt. Documentation is the
+cheapest insurance."
+
+
+─── D · WHY WE'RE BETTER ──────────────────────────────── 1:13 – 1:44 ───
+
+[ ] /preservation
+
+"This is the page I'd ask you to judge us on — it publishes our own failures.
+Zero of fifteen sites have a three-sixty capture.
+
+We can afford that, because no AI writes a published sentence here. Every clause
+is assembled from a verified field — so a hallucinated date isn't a risk we
+manage, it's unreachable.
+
+✂ And two weeks ago this build had a hundred fake guest reviews and a revenue
+dashboard. We audited ourselves and deleted all of it."
+
+
+─── E · THE CLOSE ─────────────────────────────────────── 1:44 – 2:03 ───
+
+"Fifty fake panoramas are worth less than zero — catch one invention and every
+other claim you make becomes suspect.
+
+We'd rather hand Sikkim fifteen monasteries they can stake their name on, than
+two hundred they'd have to fact-check.
+
+Sikkim Darshan. Explore, Experience, Preserve. Thank you."
+
+
+─── PRONUNCIATION AND FALLBACK NOTES ──────────────────────────────────
+
+  Dubdi ......... DOOB-dee
+  Pemayangtse ... pem-ah-YANG-tsay
+  Phensang ...... FEN-sang
+  Chogyal ....... CHOH-gyal
+  Nyingma ....... NYING-ma
+  Kagyu ......... KAH-gyu
+  Say "three-sixty", not "360 degrees" — it scans faster.
+  Say "seventeen lakh", not "1.7 million" — this is an Indian audience.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+PART 10 · SHORTER CUTS
+═══════════════════════════════════════════════════════════════════════════════
+
+─── 60-SECOND VERSION ─────────────────────────────────────────────────
+
+"Sikkim has two hundred monasteries and almost no usable public record — its
+own tourism portal doesn't publish a single monastery's opening hours.
+
+Sikkim Darshan is a digital cultural archive where every claim is traceable to a
+named source, or the site says it doesn't know. That's not a promise, it's the
+data model.
+
+Live today: fifteen monasteries with per-record citations. Sixty audio guides in
+English, Hindi, Nepali and Bengali. A twenty-six event timeline of Sikkim with
+fifty citations. And sixty-seven licensed archive objects across seven
+communities, which the public can add to through a curator.
+
+No language model writes a published sentence — every clause is assembled from a
+verified field, so the narration cannot invent a founder or a date.
+
+We found no licensed three-sixty photo of any Sikkim monastery exists, so our
+viewer ships empty and says why — instead of showing you a monastery in Germany,
+which is what our own earlier build was doing until we audited it and deleted it.
+
+Fifteen monasteries the Tourism Department can stake its name on beats two
+hundred they'd have to fact-check."
+
+
+─── 30-SECOND VERSION ─────────────────────────────────────────────────
+
+"Sikkim's own tourism portal publishes opening hours for zero of its two hundred
+monasteries. Sikkim Darshan is a heritage archive where every fact carries its
+source, its verification date and its confidence grade — enforced by the data
+model, not by good intentions.
+
+Fifteen monasteries, sixty audio guides in four languages, a twenty-six event
+sourced timeline, sixty-seven licensed archive objects, and a public page that
+publishes our own coverage gaps.
+
+No AI writes a published sentence here. That's why you can believe the rest."
+
+
+─── ONE-LINE VERSION ──────────────────────────────────────────────────
+
+"A digital heritage archive for Sikkim's monasteries where every claim is
+traceable to a named source — or the site says it doesn't know."
+
+═══════════════════════════════════════════════════════════════════════════════

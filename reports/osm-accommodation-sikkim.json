@@ -1,0 +1,1636 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-08-20T09:27:02Z",
+    "timestamp_areas_base": "2026-08-20T02:52:51Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+
+{
+  "type": "node",
+  "id": 2110896094,
+  "lat": 27.2969718,
+  "lon": 88.2722562,
+  "tags": {
+    "name": "Tashi Gang Resort",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2110927137,
+  "lat": 27.1736608,
+  "lon": 88.5309887,
+  "tags": {
+    "name": "Rangpo Tourist Lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2114200026,
+  "lat": 27.3294843,
+  "lon": 88.6151355,
+  "tags": {
+    "name": "Mintokling Guesthouse",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2208739480,
+  "lat": 27.3012639,
+  "lon": 88.2372745,
+  "tags": {
+    "amenity": "cafe",
+    "internet_access": "yes",
+    "internet_access:fee": "yes",
+    "name": "Cyber Cafe",
+    "smoking": "no",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 2208739481,
+  "lat": 27.3007282,
+  "lon": 88.2357243,
+  "tags": {
+    "internet_access": "no",
+    "name": "Ladakh Guest House",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 2210253147,
+  "lat": 27.2913030,
+  "lon": 88.5610840,
+  "tags": {
+    "name": "Sungay Guest House",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 2249285470,
+  "lat": 27.3486322,
+  "lon": 88.1926235,
+  "tags": {
+    "name": "Hotel Samphelgang",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 2249285474,
+  "lat": 27.3453741,
+  "lon": 88.1934500,
+  "tags": {
+    "internet_access": "no",
+    "name": "Sonam Home Stay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 2249285478,
+  "lat": 27.3487875,
+  "lon": 88.1945052,
+  "tags": {
+    "name": "Trekkers Hut",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 3702034138,
+  "lat": 27.2928192,
+  "lon": 88.4176201,
+  "tags": {
+    "name": "Lodge",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 4157266570,
+  "lat": 27.3011197,
+  "lon": 88.2330201,
+  "tags": {
+    "addr:place": "Pelling",
+    "addr:street": "Old Helipad Area",
+    "email": "hotelsonamchenpelling@gmail.com",
+    "name": "Hotel Sonamchen",
+    "phone": "+918170028232;+918170028224;+918170028231;+913592204199",
+    "tourism": "hotel",
+    "website": "http://hotelsonamchenpelling.com"
+  }
+},
+{
+  "type": "node",
+  "id": 4168451291,
+  "lat": 27.3310126,
+  "lon": 88.6114485,
+  "tags": {
+    "name": "Hotel Primula Food and lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4510889893,
+  "lat": 27.3262790,
+  "lon": 88.6131065,
+  "tags": {
+    "name": "view fresh",
+    "name:en": "view fresh",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4544256694,
+  "lat": 27.3668586,
+  "lon": 88.2229766,
+  "tags": {
+    "email": "yukland@yahoo.com",
+    "name": "Dragon hotel",
+    "name:en": "Dragon hotel",
+    "phone": "+9735934578",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4544266489,
+  "lat": 27.3012006,
+  "lon": 88.2374584,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Hotel Kabur",
+    "name:en": "Hotel Kabur",
+    "phone": "+919775972112",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4544266889,
+  "lat": 27.3705260,
+  "lon": 88.2250920,
+  "tags": {
+    "email": "dslimboo26@gmail.com",
+    "name": "Limbo HomeStay",
+    "name:en": "Limbo HomeStay",
+    "phone": "9733084983",
+    "tourism": "hotel",
+    "website": "http://limboohomestay.com"
+  }
+},
+{
+  "type": "node",
+  "id": 4624970389,
+  "lat": 27.3515773,
+  "lon": 88.1903980,
+  "tags": {
+    "addr:postcode": "737113",
+    "addr:street": "khechiperi",
+    "email": "cyampmaryla97@gmail.com",
+    "name": "Dadul hill homestay",
+    "name:en": "Dadul hill homestay",
+    "name:hi": "Dadul hill homestay",
+    "opening_hours": "24/7",
+    "operator": "mplatup bhutia",
+    "phone": "8145702994",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 4668388797,
+  "lat": 27.3524192,
+  "lon": 88.1899404,
+  "tags": {
+    "name": "Dadul HIll Homestay",
+    "name:en": "Dadul HIll Homestay",
+    "name:hi": "Dadul Hill Homestay",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4718004092,
+  "lat": 27.1647047,
+  "lon": 88.3620624,
+  "tags": {
+    "name": "Lodge",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 4742482724,
+  "lat": 27.3007622,
+  "lon": 88.2362819,
+  "tags": {
+    "name": "Garuda",
+    "name:hi": "Garuda",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4742485522,
+  "lat": 27.3528591,
+  "lon": 88.1898448,
+  "tags": {
+    "name": "Dudul memorial guest house",
+    "name:hi": "Dudul memorial guest house",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4783979844,
+  "lat": 27.3277153,
+  "lon": 88.6143103,
+  "tags": {
+    "name": "Hotel Pandim",
+    "name:en": "Hotel Pandim",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4784462421,
+  "lat": 27.3523694,
+  "lon": 88.1901183,
+  "tags": {
+    "name": "Dadul Hill Guesthouse",
+    "name:en": "Dadul Hill Guesthouse",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 4792716321,
+  "lat": 27.5282926,
+  "lon": 88.5014056,
+  "tags": {
+    "addr:postcode": "737116",
+    "addr:street": "Lingthem Lyang Homestay, Lingthem, Upper Dzongu, North Sikkim, Mangan",
+    "email": "lingthemlyang@gmail.com",
+    "name": "Lingthem Lyang Homestay",
+    "name:hi": "Lingthem Lyang Homestay",
+    "opening_hours": "24/7",
+    "operator": "Sangdup Lepcha",
+    "phone": "+919593781926",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 4818356222,
+  "lat": 27.3297527,
+  "lon": 88.6142081,
+  "tags": {
+    "addr:street": "tibet road, gangtok-737101",
+    "internet_access": "wlan",
+    "name": "Modern Central Lodge",
+    "name:en": "Modern Central Lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4868270026,
+  "lat": 27.3295393,
+  "lon": 88.6141018,
+  "tags": {
+    "name": "Modern Central Lodge",
+    "name:en": "Modern Central Lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4925330121,
+  "lat": 27.3317518,
+  "lon": 88.6135513,
+  "tags": {
+    "name": "Hotel mayur",
+    "name:en": "Hotel mayur",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4925330122,
+  "lat": 27.3296901,
+  "lon": 88.6141981,
+  "tags": {
+    "name": "New Modern Central Lodge",
+    "name:en": "New Modern Central Lodge",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4925330136,
+  "lat": 27.3054656,
+  "lon": 88.3649615,
+  "tags": {
+    "name": "Hotel snow white",
+    "name:en": "Hotel snow white",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 4925330241,
+  "lat": 27.2315774,
+  "lon": 88.4971362,
+  "tags": {
+    "name": "Shimam",
+    "name:en": "Shimam",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5139506236,
+  "lat": 27.3641356,
+  "lon": 88.2305107,
+  "tags": {
+    "name": "Mangta bong village family",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5189832622,
+  "lat": 27.3669832,
+  "lon": 88.2231571,
+  "tags": {
+    "name": "Mama's Kitchen and Homestay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5215921922,
+  "lat": 27.1327403,
+  "lon": 88.2801035,
+  "tags": {
+    "name": "Rangeet Valley",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5222864838,
+  "lat": 27.1599183,
+  "lon": 88.3514435,
+  "tags": {
+    "addr:city": "Old Namchi",
+    "addr:street": "Chardham Road",
+    "email": "mail@summithotels.in",
+    "internet_access:fee": "no",
+    "name": "Summit Sobralia Resort & Spa",
+    "phone": "+91 3595 210131",
+    "stars": "3",
+    "tourism": "hotel",
+    "website": "https://www.summithotels.in/summit-sobralia-resort-spa-namchi"
+  }
+},
+{
+  "type": "node",
+  "id": 5242697243,
+  "lat": 27.3015644,
+  "lon": 88.2376177,
+  "tags": {
+    "name": "Hotel De Regency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5242700261,
+  "lat": 27.3011809,
+  "lon": 88.2369764,
+  "tags": {
+    "name": "Alpine Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5243701041,
+  "lat": 27.3012961,
+  "lon": 88.2345187,
+  "tags": {
+    "name": "Paradzong",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5243701042,
+  "lat": 27.3014644,
+  "lon": 88.2343603,
+  "tags": {
+    "internet_access:fee": "no",
+    "name": "Panchak",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5262152223,
+  "lat": 27.3720514,
+  "lon": 88.2233400,
+  "tags": {
+    "email": "hammaejam@gmail.com",
+    "name": "Ejam Residency",
+    "phone": "+919732153604",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5275183332,
+  "lat": 27.2861062,
+  "lon": 88.3242776,
+  "tags": {
+    "name": "Kewzing Village Homestay",
+    "tourism": "guest_house",
+    "website": "http://sikkimtourism.gov.in/Webforms/General/VillageTourism/KewzingHome.aspx"
+  }
+},
+{
+  "type": "node",
+  "id": 5379559959,
+  "lat": 27.3062608,
+  "lon": 88.3644629,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Hotel Blue Spring",
+    "stars": "1",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5521134406,
+  "lat": 27.3679198,
+  "lon": 88.2219942,
+  "tags": {
+    "name": "Hotel Demazong",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 5546764322,
+  "lat": 27.3671831,
+  "lon": 88.2229803,
+  "tags": {
+    "name": "MAMA'S KITCHEN AND HOMESTAY (BAKERY)",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 5779493853,
+  "lat": 27.3303958,
+  "lon": 88.6138997,
+  "tags": {
+    "name": "Bird's Nest",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6045808885,
+  "lat": 27.3151797,
+  "lon": 88.2923162,
+  "tags": {
+    "addr:street": "Tashiding Dodham Busty P/O Sinek Bazar, Sosing, 737111, Indien",
+    "name": "Sanu Homestay",
+    "tourism": "guest_house",
+    "website": "https://booking.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6050319085,
+  "lat": 27.3126645,
+  "lon": 88.3646353,
+  "tags": {
+    "name": "red Panda",
+    "name:en": "Red Panda",
+    "phone": "9733193884",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6085620185,
+  "lat": 27.3240565,
+  "lon": 88.2869865,
+  "tags": {
+    "name": "Pema Homestay (500rps double)",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6089210385,
+  "lat": 27.3698341,
+  "lon": 88.2236390,
+  "tags": {
+    "name": "Norgay’s Homestay",
+    "phone": "9647880699",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6153595191,
+  "lat": 27.3662965,
+  "lon": 88.2210166,
+  "tags": {
+    "name": "Hotel Red Palace",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6315268285,
+  "lat": 27.3514903,
+  "lon": 88.1904250,
+  "tags": {
+    "email": "latupbhutia@gmail.com",
+    "name": "Sanctuary home stay",
+    "opening_hours": "24/7",
+    "phone": "+918145702994",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 6393142785,
+  "lat": 27.1831019,
+  "lon": 88.6621878,
+  "tags": {
+    "addr:postcode": "737133",
+    "addr:street": "Aritar Road",
+    "email": "booking@orangecourtresort.com",
+    "name": "Orange Court Resort",
+    "opening_hours": "24/7",
+    "operator": "Karma",
+    "phone": "9933112233",
+    "tourism": "hotel",
+    "website": "https://www.orangecourtresort.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 6493516185,
+  "lat": 27.3684327,
+  "lon": 88.2223251,
+  "tags": {
+    "name": "Hostel Dzongrila",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6508412686,
+  "lat": 27.3670010,
+  "lon": 88.2231076,
+  "tags": {
+    "name": "Yak Hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6516460085,
+  "lat": 27.3455995,
+  "lon": 88.6110396,
+  "tags": {
+    "addr:postcode": "737101",
+    "addr:street": "Dhupidara, Behind High Secondary. School",
+    "email": "sumiranadhikari@gmail.com",
+    "internet_access": "wlan",
+    "name": "Backpacker's Den Hostel",
+    "operator": "Sumiran Adhikari",
+    "phone": "+917679538038",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 6773477285,
+  "lat": 27.3051772,
+  "lon": 88.5675488,
+  "tags": {
+    "addr:postcode": "737101",
+    "addr:street": "Rumtek Rd",
+    "email": "bambooretreat@gmail.com",
+    "internet_access": "wlan",
+    "name": "The Bamboo Retreat Hotel",
+    "opening_hours": "24/7",
+    "phone": "00919232513090",
+    "tourism": "hotel",
+    "website": "https://bambooretreat.in/"
+  }
+},
+{
+  "type": "node",
+  "id": 6796341985,
+  "lat": 27.3010450,
+  "lon": 88.2373822,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Pakasm home stay",
+    "operator": "ruby",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 6880061686,
+  "lat": 27.2317312,
+  "lon": 88.4978536,
+  "tags": {
+    "name": "Hotel Anand",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6901780469,
+  "lat": 27.3233727,
+  "lon": 88.6033817,
+  "tags": {
+    "name": "Temi Residency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6901800397,
+  "lat": 27.3234665,
+  "lon": 88.6098650,
+  "tags": {
+    "name": "Hotel Reverie",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6907462185,
+  "lat": 27.3008594,
+  "lon": 88.2375303,
+  "tags": {
+    "addr:street": "Upper pelling",
+    "internet_access": "wlan",
+    "name": "Paksam homestay",
+    "operator": "Ruby",
+    "phone": "+919735963819",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 6907462187,
+  "lat": 27.1684721,
+  "lon": 88.2018339,
+  "tags": {
+    "email": "diwakar444rai@gmail.com",
+    "name": "The orchid",
+    "operator": "Diwakar Rai",
+    "phone": "+918119070844",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 6992451986,
+  "lat": 27.3133480,
+  "lon": 88.3620652,
+  "tags": {
+    "name": "Rain Drop guesthouse (real location)",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 7056393885,
+  "lat": 27.3161791,
+  "lon": 88.2924471,
+  "tags": {
+    "addr:postcode": "737111",
+    "addr:street": "Tashiding Dodham Busty P/O Sinek Bazaar District Gayzing West Pin No, Sikkim 737111, Indien",
+    "name": "Lucky's homestay",
+    "opening_hours": "24/7",
+    "operator": "lucky Sonam",
+    "phone": "+91 70760 56782",
+    "tourism": "guest_house",
+    "website": "https://m.facebook.com/luckyhomestaykk/"
+  }
+},
+{
+  "type": "node",
+  "id": 7065499885,
+  "lat": 27.3028516,
+  "lon": 88.5876490,
+  "tags": {
+    "name": "Sterling Gangtok Orange Village",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 7096720288,
+  "lat": 27.6786881,
+  "lon": 88.7356527,
+  "tags": {
+    "name": "Etho Metho Hotel",
+    "operator": "RightClique",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 7113645247,
+  "lat": 27.3164113,
+  "lon": 88.5962551,
+  "tags": {
+    "name": "Hotel Nirvana Inn",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 8116668925,
+  "lat": 27.3174161,
+  "lon": 88.6017044,
+  "tags": {
+    "addr:city": "Gangtok",
+    "addr:postcode": "737102",
+    "addr:street": "NH 10",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "Hotel Tashi Tagey",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 8498881529,
+  "lat": 27.1814404,
+  "lon": 88.5019728,
+  "tags": {
+    "name": "BH2",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 8498881530,
+  "lat": 27.1819977,
+  "lon": 88.5033687,
+  "tags": {
+    "name": "BH1",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 9723430017,
+  "lat": 27.3025519,
+  "lon": 88.2319670,
+  "tags": {
+    "addr:postcode": "737113",
+    "addr:street": "Pelling-Rimbi Road",
+    "name": "Hotel Norling SK Groups",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9723449417,
+  "lat": 27.2997741,
+  "lon": 88.2293670,
+  "tags": {
+    "name": "Pulling Resort",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9726221617,
+  "lat": 27.3010108,
+  "lon": 88.2365513,
+  "tags": {
+    "name": "Green Valley Hotel",
+    "name:en": "Hotel Green Valley",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9729299117,
+  "lat": 27.3012633,
+  "lon": 88.2306659,
+  "tags": {
+    "name": "Retreat Crassula Ovata",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9730666817,
+  "lat": 27.3282387,
+  "lon": 88.6125893,
+  "tags": {
+    "name": "Woileem",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9733820617,
+  "lat": 27.3553696,
+  "lon": 88.6172642,
+  "tags": {
+    "addr:street": "Lower Burtuk Road",
+    "email": "parasolinn99@gmail.com",
+    "name": "Parasol Inn Sikkim",
+    "phone": "707768-12998",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 9832106376,
+  "lat": 27.3428236,
+  "lon": 88.6037869,
+  "tags": {
+    "addr:city": "Gangtok",
+    "addr:full": "Thapa Golai, Near Forest Check Post, Lower Sichey",
+    "addr:postcode": "737101",
+    "addr:street": "Indira By-Pass",
+    "brand": "The Rice Valley Residency",
+    "email": "ricevalleyresidency@gmail.com",
+    "fixme": "addd proper tags:  confarence Hall = yes;View Rooms;Power Backup",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "laundry_service": "yes",
+    "name": "The Rice Valley Residency",
+    "parking": "yes",
+    "parking:fee": "no",
+    "phone": "8710086346",
+    "restaurant": "yes",
+    "rooms": "20",
+    "tourism": "motel",
+    "website": "https://www.thericevalleyresidency.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 9939573801,
+  "lat": 27.3364666,
+  "lon": 88.6130158,
+  "tags": {
+    "addr:city": "Gangtok",
+    "addr:postcode": "737101",
+    "addr:street": "Jiwan Theeng Marg, Development Area",
+    "brand": "Treebo",
+    "email": "nettleandfernhotel@gmail.com",
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "The Nettle & Fern Hotel",
+    "phone": "+91 9434132377",
+    "rooms": "12",
+    "tourism": "hotel",
+    "website": "http://www.nettleandfernhotel.com/"
+  }
+},
+{
+  "type": "node",
+  "id": 10294718910,
+  "lat": 27.3313916,
+  "lon": 88.6151492,
+  "tags": {
+    "name:en": "Sonam Delek",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10833510705,
+  "lat": 27.3058838,
+  "lon": 88.3650358,
+  "tags": {
+    "name": "Beyul residency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10833540205,
+  "lat": 27.3038359,
+  "lon": 88.3659391,
+  "tags": {
+    "name": "Himalayan hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10836658705,
+  "lat": 27.2849062,
+  "lon": 88.3499376,
+  "tags": {
+    "name": "Cloud's end cafe and hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10839421205,
+  "lat": 27.3673107,
+  "lon": 88.2224898,
+  "tags": {
+    "name": "Hotel Yangri",
+    "name:en": "Hotel Yangrigang",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10852708107,
+  "lat": 27.6859460,
+  "lon": 88.7471920,
+  "tags": {
+    "name": "Floret holiday",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855783806,
+  "lat": 27.6887611,
+  "lon": 88.7481712,
+  "tags": {
+    "name": "Yashshree hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855783807,
+  "lat": 27.6861314,
+  "lon": 88.7475307,
+  "tags": {
+    "name": "Rehoboth",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855783906,
+  "lat": 27.6865358,
+  "lon": 88.7477705,
+  "tags": {
+    "name": "Happy valley",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855968105,
+  "lat": 27.6861427,
+  "lon": 88.7470780,
+  "tags": {
+    "name": "Golden valley",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855968106,
+  "lat": 27.6864102,
+  "lon": 88.7474599,
+  "tags": {
+    "name": "Mystique valley",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10855968205,
+  "lat": 27.6859055,
+  "lon": 88.7469164,
+  "tags": {
+    "name": "Tashi tagye",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 10915628605,
+  "lat": 27.4198712,
+  "lon": 88.5898311,
+  "tags": {
+    "email": "tumlongglen@gmail.com",
+    "name": "Tumlong Glen",
+    "name:fr": "Tumlong Glen",
+    "phone": "(+91)-8159944359",
+    "tourism": "hotel",
+    "website": "https://tumlongglen.com/about-me-2/"
+  }
+},
+{
+  "type": "node",
+  "id": 11175761458,
+  "lat": 27.7002943,
+  "lon": 88.7497500,
+  "tags": {
+    "name": "Glory hotel",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11175762237,
+  "lat": 27.3303247,
+  "lon": 88.6136701,
+  "tags": {
+    "name": "Hotel Yalung",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11180482638,
+  "lat": 27.3010112,
+  "lon": 88.2332676,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Hotel Bhaichung",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11372438633,
+  "lat": 27.2553258,
+  "lon": 88.2751626,
+  "tags": {
+    "name": "Yangsum Heritage Farm",
+    "phone": "+919434179029",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 11377526017,
+  "lat": 27.3028671,
+  "lon": 88.3628542,
+  "tags": {
+    "name": "Sakoom Lee Homestay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 11377809230,
+  "lat": 27.3063600,
+  "lon": 88.3644351,
+  "tags": {
+    "name": "Hotel Pinewood",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11379294669,
+  "lat": 27.3114606,
+  "lon": 88.3640318,
+  "tags": {
+    "name": "Buddha Park Residency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11379294769,
+  "lat": 27.3116003,
+  "lon": 88.3643171,
+  "tags": {
+    "name": "Hotel Blueduke",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11383366169,
+  "lat": 27.3220171,
+  "lon": 88.6095324,
+  "tags": {
+    "name": "Zemu Gangtok backpaker hostel",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 11519282869,
+  "lat": 27.1866733,
+  "lon": 88.5080823,
+  "tags": {
+    "name": "Rasaily residency Sikkim railway",
+    "tourism": "apartment"
+  }
+},
+{
+  "type": "node",
+  "id": 11570474247,
+  "lat": 27.3123435,
+  "lon": 88.3647069,
+  "tags": {
+    "name": "Hotel Buddha Park",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11676639293,
+  "lat": 27.3398522,
+  "lon": 88.6079481,
+  "tags": {
+    "addr:street": "upper sichey road",
+    "elevator": "no",
+    "level": "0;1;2;3",
+    "name": "Zostel",
+    "tourism": "hostel",
+    "website": "https://zostel.com"
+  }
+},
+{
+  "type": "node",
+  "id": 11751935852,
+  "lat": 27.1730189,
+  "lon": 88.5310620,
+  "tags": {
+    "addr:street": "Majhi Gaon",
+    "description": "Lodging and food",
+    "name": "Hotel Annapurna",
+    "phone": "9002090500",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11768736169,
+  "lat": 27.3055820,
+  "lon": 88.2271306,
+  "tags": {
+    "contact:facebook": "https://www.facebook.com/mochileroh/",
+    "description": "Mochilero Ostello is a lively backpackers’ hostel offering cozy stays, vibrant common areas, and a friendly vibe. Perfect for adventurers and digital nomads to connect, share stories, and explore unforgettable local experiences.",
+    "email": "info@mochilerostello.in",
+    "guest_house": "hostel",
+    "internet_access": "yes",
+    "internet_access:fee": "no",
+    "name": "Mochilero Ostello",
+    "opening_hours": "Mo-Su 10:00-22:00",
+    "operator": "Nimesh Kunwar",
+    "payment:cash": "yes",
+    "payment:mastercard": "yes",
+    "payment:mastercard_electronic": "yes",
+    "payment:online_booking": "yes",
+    "payment:upi": "yes",
+    "payment:visa": "yes",
+    "phone": "+91 7889710986",
+    "reservation": "required",
+    "rooms": "5",
+    "smoking": "separated",
+    "tourism": "hostel",
+    "website": "https://mochilerostello.in/"
+  }
+},
+{
+  "type": "node",
+  "id": 11937239169,
+  "lat": 27.3014611,
+  "lon": 88.2346368,
+  "tags": {
+    "name": "Hotel Pema Sonam (Mimo Group of Hotel)",
+    "phone": "7407672442",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11940131271,
+  "lat": 27.3287851,
+  "lon": 88.6124788,
+  "tags": {
+    "name": "Hotel Prism Residency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 11940139168,
+  "lat": 27.3284228,
+  "lon": 88.6126786,
+  "tags": {
+    "name": "Hotel Golden Heights",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12385541129,
+  "lat": 27.3284318,
+  "lon": 88.6129619,
+  "tags": {
+    "addr:city": "Gangtok",
+    "addr:district": "Gangtok",
+    "addr:full": "Tibet Rd, Arithang, Gangtok, Sikkim 737101",
+    "addr:postcode": "737101",
+    "addr:state": "Sikkim",
+    "addr:street": "Tibet Rd, Arithang",
+    "currency:XBT": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Hotel Ambrosia",
+    "payment:lightning": "yes",
+    "payment:lightning_contactless": "no",
+    "payment:onchain": "yes",
+    "phone": "+917001689591",
+    "rooms": "20",
+    "survey:date": "2024-11-30",
+    "tourism": "hotel",
+    "website": "https://hotelambrosia.co.in"
+  }
+},
+{
+  "type": "node",
+  "id": 12439049301,
+  "lat": 27.3261687,
+  "lon": 88.6117941,
+  "tags": {
+    "internet_access": "wlan",
+    "name": "Mellow Fellow Hostel Gangtok",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 12452374301,
+  "lat": 27.3670934,
+  "lon": 88.2230589,
+  "tags": {
+    "name": "Hotel Pemathang",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 12455612502,
+  "lat": 27.3525876,
+  "lon": 88.1899797,
+  "tags": {
+    "name": "Khecheopelri Lake House",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 12458266701,
+  "lat": 27.3687901,
+  "lon": 88.2205123,
+  "tags": {
+    "name": "Red Panda's Homestay",
+    "tourism": "hostel"
+  }
+},
+{
+  "type": "node",
+  "id": 12459912624,
+  "lat": 27.1431580,
+  "lon": 88.1834300,
+  "tags": {
+    "fixme:website": "kotheybari pahunaghar peacepark ridang soreng zilla sikkim India",
+    "name": "Kotheybari Homestay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 12777782201,
+  "lat": 27.3110943,
+  "lon": 88.3486345,
+  "tags": {
+    "name": "3 Sisters Homestay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 13185505182,
+  "lat": 27.3285091,
+  "lon": 88.6138973,
+  "tags": {
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13185525866,
+  "lat": 27.3273431,
+  "lon": 88.6134027,
+  "tags": {
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13188553005,
+  "lat": 27.3275528,
+  "lon": 88.6143118,
+  "tags": {
+    "name": "Pomra",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13188553008,
+  "lat": 27.3282292,
+  "lon": 88.6146720,
+  "tags": {
+    "name": "Yashree",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "node",
+  "id": 13726906501,
+  "lat": 27.3165221,
+  "lon": 88.2919950,
+  "tags": {
+    "name": "Kunzang Homestay",
+    "phone": "75013117787",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "node",
+  "id": 13726957002,
+  "lat": 27.3238743,
+  "lon": 88.2871955,
+  "tags": {
+    "name": "Blue Bird Hotel",
+    "phone": "9932285795",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 342022239,
+  "center": {
+    "lat": 27.3298150,
+    "lon": 88.6133796
+  },
+  "tags": {
+    "name": "Red Cherry Residency",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 349543293,
+  "center": {
+    "lat": 27.3268751,
+    "lon": 88.5876253
+  },
+  "tags": {
+    "landuse": "commercial",
+    "name": "Khangchendzonga Tourist Villa",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 413020054,
+  "center": {
+    "lat": 27.3054014,
+    "lon": 88.2481530
+  },
+  "tags": {
+    "addr:city": "Pelling",
+    "addr:district": "West Sikkim",
+    "addr:place": "Pemayangtse",
+    "addr:postcode": "737113",
+    "addr:street": "Monestary Road",
+    "building": "yes",
+    "internet_access": "wlan",
+    "internet_access:fee": "no",
+    "name": "Elgin Mount Pandim",
+    "operator": "Elgin Hotels and Resorts",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 452322816,
+  "center": {
+    "lat": 27.2974703,
+    "lon": 88.5626091
+  },
+  "tags": {
+    "name": "Teen Taley Eco Resort",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 696937270,
+  "center": {
+    "lat": 27.5285696,
+    "lon": 88.5146110
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Mayallyang homestay",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 696943714,
+  "center": {
+    "lat": 27.5285492,
+    "lon": 88.5096579
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 1065790699,
+  "center": {
+    "lat": 27.3428042,
+    "lon": 88.6137164
+  },
+  "tags": {
+    "building": "yes",
+    "guest_house": "guest_house",
+    "name": "Central Government Touring Officers Guest House",
+    "operator": "Central Public Works Department",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 1214401943,
+  "center": {
+    "lat": 27.6859015,
+    "lon": 88.7469600
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214401944,
+  "center": {
+    "lat": 27.6861896,
+    "lon": 88.7471621
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214401945,
+  "center": {
+    "lat": 27.6860936,
+    "lon": 88.7473562
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214401947,
+  "center": {
+    "lat": 27.6859764,
+    "lon": 88.7475311
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214421824,
+  "center": {
+    "lat": 27.7002014,
+    "lon": 88.7497378
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214484458,
+  "center": {
+    "lat": 27.6865473,
+    "lon": 88.7477896
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1214484480,
+  "center": {
+    "lat": 27.6887597,
+    "lon": 88.7481051
+  },
+  "tags": {
+    "building": "yes",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1247736069,
+  "center": {
+    "lat": 27.2488430,
+    "lon": 88.1885332
+  },
+  "tags": {
+    "building": "yes",
+    "name": "Hotel Palpasa, Chayatal (Mimo Group of Hotel)",
+    "tourism": "hotel"
+  }
+},
+{
+  "type": "way",
+  "id": 1266454955,
+  "center": {
+    "lat": 27.2796836,
+    "lon": 88.2871785
+  },
+  "tags": {
+    "building": "yes",
+    "building:levels": "2",
+    "guest_house": "guest_house",
+    "internet_access": "no",
+    "name": "NHPC Rangit VIP Guest House",
+    "operator": "Rangit Power Station, NHPC Limited",
+    "tourism": "guest_house"
+  }
+},
+{
+  "type": "way",
+  "id": 1437010061,
+  "center": {
+    "lat": 27.1849041,
+    "lon": 88.5039793
+  },
+  "tags": {
+    "internet_access": "yes",
+    "internet_access:fee": "customers",
+    "name": "Sundar Hotel & Resort",
+    "tourism": "hotel"
+  }
+}
+
+  ]
+}

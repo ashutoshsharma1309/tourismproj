@@ -1,0 +1,45 @@
+node_modules/
+.next/
+out/
+build/
+.DS_Store
+*.pem
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+chromedriver/
+.venv-tts/
+.tts-models/
+# Community submissions awaiting curator review, and their uploaded media.
+# Runtime state, not source — never committed.
+.data/
+# Voice benchmark: the renders are ~100 MB of regenerable audio, the results
+# are 92 KB of evidence the code cites by path — scripts/heritage-audio-agent
+# points a reader at voice-benchmark/v2/, and voice-bench-v2.mjs READS
+# test-scripts.json from here, so a clone without it cannot re-run the bench.
+# Results and scripts tracked; renders and clips not.
+voice-benchmark/*
+!voice-benchmark/*.json
+!voice-benchmark/*/
+voice-benchmark/*/*
+!voice-benchmark/*/*.json
+!voice-benchmark/*/*.txt
+
+# Retired audio kept on disk for recovery, and the agent's own generation logs.
+# The retirement decision is documented in src/data/audio.ts; the bytes are not
+# source, and 54 MB of superseded narration does not belong in every clone.
+reports/audio-archive/
+reports/audio-*.log
+
+# QA artifacts: 232 MB of screenshots and 210 MB of QA output, all regenerable
+# by `pnpm qa:visual` / the qa:* scripts. Vercel re-clones the repo on every
+# build, so these were costing a third of the clone for nothing. The evidence
+# files at reports/ root (the *.json a source comment cites, e.g.
+# monastery-360-discovery.json in src/data/panoramas.ts) stay tracked.
+reports/visual/
+reports/qa/

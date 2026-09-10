@@ -1,0 +1,347 @@
+[
+  {
+    "slug": "old-goa-15th-century",
+    "destinationId": "goa",
+    "sortYear": 15,
+    "yearLabel": "AD 15",
+    "title": "Old Goa, 15th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "The city was established by the Bijapur Sultanate in the 15th century AD. After the Portuguese conquest of Goa, it served as capital of Portuguese Indian possessions, such as Mumbai/Bombay (Bom Bahia) territory and the state of Kochi/Cochin (Cochim), until its abandonment in the 18th century AD due to a plague.",
+    "description": [
+      "The city was founded in the 15th century as a port on the banks of the Mandovi river by the rulers of the Bijapur Sultanate. It was built to replace Govapuri, which lay a few kilometres to the south and had been used as a port by the Kadamba and Vijayanagar kings. Old Goa was the second capital after Bijapur of the rule of Adil Shahi Dynasty. It was surrounded by a moat and contained the shah's palace, mosques, and temples. The city was captured by the Portuguese and was under Portuguese rule from 1510 as the administrative seat of Portuguese India.",
+      "The viceroy's residence was transferred in 1759 to the future capital, Panjim (a village about 9 kilometres to its west). Few remnants, if any, of the pre-Portuguese period remain at Old Goa.",
+      "During the mid-16th century, the Portuguese colony of Goa, especially Velha Goa, was the center of Christianisation in the East. The city was evangelized by all religious orders, since all of them had their headquarters there. The population was roughly 200,000 by 1543. Malaria and cholera epidemics ravaged the city in the 17th century and it was largely abandoned, only having a remaining population of 1,500 in 1775. It was then that the viceroy moved to Panjim. It continued to be the de jure capital of Goa until 1843, when the capital was shifted to Panjim (Ponnjê in Konkani, Nova Goa in Portuguese and Panaji in Hindi). The abandoned city came to be known as \"Velha Goa\" (in Portuguese, 'Old Goa'), to distinguish it from the new capital Nova Goa (Panjim) and probably also Goa Velha (also meaning \"Old Goa\"), which was the Portuguese name for the town on the old site of Govapuri.",
+      "Velha Goa was incorporated into the Republic of India after its annexation in 1961, with the rest of Goa. It retains its religious significance in modern-day Goa, notably in its relations with Roman Catholicism. The Archbishop of Goa and Daman holds title as the Patriarch of the East Indies. Unlike the patriarchs and the major archbishops of the Eastern Catholic Churches, the Patriarch of the East Indies only enjoys honorary title and is fully subject to the Pope. He has a place in the Latin Church similar to the Patriarchs of Venice and Lisbon. This title was conferred upon the Archbishop of Goa as part of a settlement between the Holy See and the Portuguese government concerning the link between religious and political aspects of its territories."
+    ],
+    "keyFacts": [
+      "The city was founded in the 15th century as a port on the banks of the Mandovi river by the rulers of the Bijapur Sultanate.",
+      "The city was captured by the Portuguese and was under Portuguese rule from 1510 as the administrative seat of Portuguese India.",
+      "The viceroy's residence was transferred in 1759 to the future capital, Panjim (a village about 9 kilometres to its west)."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "old-goa"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Old Goa",
+        "url": "https://en.wikipedia.org/wiki/Old_Goa",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "dudhsagar-falls-1017",
+    "destinationId": "goa",
+    "sortYear": 1017,
+    "yearLabel": "AD 1017",
+    "title": "Dudhsagar Falls, 1017",
+    "era": "Medieval",
+    "eraId": "medieval",
+    "shortDescription": "Dudhsagar Falls is perched at the top of a crescent shaped valley and surrounded by pristine forests, and it is amongst India's tallest waterfalls with a height of 310 m (1017 feet) and an average width of 30 metres (100 feet).",
+    "detailHref": "/destinations/goa/history#dudhsagar-falls-1017",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "dudhsagar-falls"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Dudhsagar Falls, 1017",
+        "url": "https://en.wikipedia.org/wiki/Dudhsagar_Falls",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "church-st-francis-assisi-1517",
+    "destinationId": "goa",
+    "sortYear": 1517,
+    "yearLabel": "AD 1517",
+    "title": "Church and Convent of St. Francis of Assisi, 1517",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The Church of St. Francis of Assisi, together with a convent, was established by eight Portuguese Franciscan friars who landed in Goa in 1517.",
+    "detailHref": "/destinations/goa/history#church-st-francis-assisi-1517",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "church-st-francis-assisi"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Church and Convent of St. Francis of Assisi, 1517",
+        "url": "https://en.wikipedia.org/wiki/Church_and_Convent_of_St._Francis_of_Assisi",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "immaculate-conception-1541",
+    "destinationId": "goa",
+    "sortYear": 1541,
+    "yearLabel": "AD 1541",
+    "title": "Our Lady of the Immaculate Conception Church, Goa, 1541",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The colonial Portuguese Baroque style church was first built in 1541 as a chapel on a hill side overlooking the city of Panaji .It was eventually replaced by a larger church in the 1600s as part of Portuguese Goa's religious expansion.",
+    "detailHref": "/destinations/goa/history#immaculate-conception-1541",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "immaculate-conception"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Our Lady of the Immaculate Conception Church, Goa, 1541",
+        "url": "https://en.wikipedia.org/wiki/Our_Lady_of_the_Immaculate_Conception_Church%2C_Goa",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "anjuna-1595",
+    "destinationId": "goa",
+    "sortYear": 1595,
+    "yearLabel": "AD 1595",
+    "title": "Anjuna, 1595",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "Its church, St. Michael's Church, Anjuna, founded in 1595, is dedicated to Saint Michael, and celebrates the feasts of Saint Michael (29 September) and Nossa Senhora Advogada (second week of January).",
+    "detailHref": "/destinations/goa/history#anjuna-1595",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "anjuna"
+    ],
+    "relatedStories": [
+      "festival-sunburn-festival"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Anjuna, 1595",
+        "url": "https://en.wikipedia.org/wiki/Anjuna",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "fort-aguada-1612",
+    "destinationId": "goa",
+    "sortYear": 1612,
+    "yearLabel": "AD 1612",
+    "title": "Fort Aguada, 1612",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "Fort Aguada is a seventeenth-century Portuguese-era fort, built in 1612, along with a lighthouse, standing in Goa, India, on Sinquerim Beach, overlooking the Arabian Sea.",
+    "detailHref": "/destinations/goa/history#fort-aguada-1612",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "fort-aguada"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Fort Aguada, 1612",
+        "url": "https://en.wikipedia.org/wiki/Fort_Aguada",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "church-st-francis-assisi-1661",
+    "destinationId": "goa",
+    "sortYear": 1661,
+    "yearLabel": "AD 1661",
+    "title": "Church and Convent of St. Francis of Assisi, 1661",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The Church of St. Francis of Assisi was built in 1661 by the Portuguese in the Portuguese Viceroyalty of India.",
+    "detailHref": "/destinations/goa/history#church-st-francis-assisi-1661",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "church-st-francis-assisi"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Church and Convent of St. Francis of Assisi, 1661",
+        "url": "https://en.wikipedia.org/wiki/Church_and_Convent_of_St._Francis_of_Assisi",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "st-cajetan-1661",
+    "destinationId": "goa",
+    "sortYear": 1661,
+    "yearLabel": "AD 1661",
+    "title": "St. Cajetan Church, 1661",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The church was completed in 1661 and is part of the World Heritage Site, Churches and convents of Goa.",
+    "description": [
+      "Three Italian priests of the Theatine order arrived in India to preach Christianity in 1639. In 1643, they began work on a hospital, but were banished by the Portuguese viceroy Filipe Mascarenhas. However, the leader of the Italian priests, Pedro Avitabili, went to Portugal and convinced king John IV of Portugal that their working with the Portuguese priests in Goa would be in the interests of Christianity. The king permitted the construction of the hospital in 1650, and in 1655 they also managed to obtain permission for setting up the church and a small convent near it. The church's construction was under the supervision of Italian architects, Carlo Ferrarini and Francesco Maria Milazzo.",
+      "The church is considered to have been modeled on St. Peter's Basilica in Vatican City. Seventeenth century travelers Giovanni Francesco Gemelli Careri and Pietro Della Valle have also likened the church to the Sant'Andrea della Valle, which is the seat of the Theatine order."
+    ],
+    "keyFacts": [
+      "Three Italian priests of the Theatine order arrived in India to preach Christianity in 1639.",
+      "In 1643, they began work on a hospital, but were banished by the Portuguese viceroy Filipe Mascarenhas.",
+      "The king permitted the construction of the hospital in 1650, and in 1655 they also managed to obtain permission for setting up the church and a small convent near it."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "st-cajetan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — St. Cajetan Church",
+        "url": "https://en.wikipedia.org/wiki/St._Cajetan_Church",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "basilica-bom-jesus-1946",
+    "destinationId": "goa",
+    "sortYear": 1946,
+    "yearLabel": "AD 1946",
+    "title": "Basilica of Bom Jesus, 1946",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was made a basilica in the pontifical decree “Priscam Goae” on 20 March 1946.",
+    "detailHref": "/destinations/goa/history#basilica-bom-jesus-1946",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "basilica-bom-jesus"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Basilica of Bom Jesus, 1946",
+        "url": "https://en.wikipedia.org/wiki/Basilica_of_Bom_Jesus",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  },
+  {
+    "slug": "mangueshi-2011",
+    "destinationId": "goa",
+    "sortYear": 2011,
+    "yearLabel": "AD 2011",
+    "title": "Mangueshi Temple, 2011",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "From 2011, temple prescribed a dress code, to keep the sanctity of the temple premise.",
+    "description": [
+      "According to regional historical traditions, the sage Parashurama brought ten lineages of Brahmins (Dashagotri) comprising 64 distinct clans from Trihotra Pura to settle in Gomantak (Goa). These clans brought the idols of their family deities (Kuladevatas)—which included Mangesh, Shantadurga, Nagesh, Mahalakshmi, Saptakoteshwar, and Mahalasa—and established them across the region. The deity of Mangesh was originally consecrated in Kushasthali (also known as Cortalim), a village in Mormugão.",
+      "Following the establishment of Portuguese rule in Goa in 1510 CE, a period of religious persecution, forced conversions, and the destruction of Hindu temples began. Upon discovering a Portuguese plot to forcibly convert the inhabitants of Salcete taluka and demolish local temples, the traditional patrons (Kulavis) of the temple secretly uprooted the sacred lingam of Lord Mangesh overnight.",
+      "The lingam was transported to the neighbouring territory ruled by the Adil Shahi dynasty, where Hindu chieftains (Sardars) held administrative authority at the time. It was subsequently re-established in Priol, Ponda taluka. Ancient records from the temple date this relocation to the year 1560 CE (Shalivahan Shaka 1482, Raudra Samvatsara). Contemporary reports written by the priests of the Company of Jesus (Jesuits) to their superiors state that this migration took place prior to 1 May 1560. Following the relocation, the abandoned temple building in Kushasthali was utilized by the Jesuit priests as a church, where they installed their own religious deities."
+    ],
+    "keyFacts": [
+      "Following the establishment of Portuguese rule in Goa in 1510 CE, a period of religious persecution, forced conversions, and the destruction of Hindu temples began.",
+      "Ancient records from the temple date this relocation to the year 1560 CE (Shalivahan Shaka 1482, Raudra Samvatsara).",
+      "Contemporary reports written by the priests of the Company of Jesus (Jesuits) to their superiors state that this migration took place prior to 1 May 1560."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "mangueshi"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Mangueshi Temple",
+        "url": "https://en.wikipedia.org/wiki/Mangueshi_Temple",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "shanta-durga-2016",
+    "destinationId": "goa",
+    "sortYear": 2016,
+    "yearLabel": "AD 2016",
+    "title": "Shanta Durga Temple, 2016",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "On 4 December 2016, (Margashirsh Shuddh Panchmi).",
+    "detailHref": "/destinations/goa/history#shanta-durga-2016",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "shanta-durga"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Shanta Durga Temple, 2016",
+        "url": "https://en.wikipedia.org/wiki/Shanta_Durga_Temple",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-09",
+    "readingMinutes": null
+  }
+]

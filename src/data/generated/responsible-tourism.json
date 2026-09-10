@@ -1,0 +1,366 @@
+{
+  "generatedAt": "2026-08-18T09:50:19.074Z",
+  "source": {
+    "name": "Tourism & Civil Aviation Department, Government of Sikkim",
+    "url": "https://sikkimtourism.gov.in/do-and-do-not",
+    "type": "government"
+  },
+  "retrievedAt": "2026-08-18",
+  "note": "Do and Do Not guidance published by the Tourism & Civil Aviation Department. Polarity is the department's own: each item is ticked or crossed on its page, and that marking is carried through rather than inferred from wording.",
+  "sections": [
+    {
+      "slug": "respect-nature-environment",
+      "heading": "Respect Nature & Environment",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Keep Sikkim clean by using designated dustbins.",
+          "polarity": "do"
+        },
+        {
+          "text": "Carry reusable water bottles and shopping bags whenever possible.",
+          "polarity": "do"
+        },
+        {
+          "text": "Protect forests, alpine meadows, rivers, waterfalls and lakes.",
+          "polarity": "do"
+        },
+        {
+          "text": "Stay only on designated trekking trails and tourist routes.",
+          "polarity": "do"
+        },
+        {
+          "text": "Report forest fires, landslides or environmental hazards to local authorities.",
+          "polarity": "do"
+        },
+        {
+          "text": "Leave every destination cleaner than you found it.",
+          "polarity": "do"
+        },
+        {
+          "text": "Support eco-friendly tourism initiatives and sustainable travel practices.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "protect-wildlife",
+      "heading": "Protect Wildlife",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Do not feed wild animals or birds.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Never disturb wildlife or their habitats.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Do not collect plants, flowers, medicinal herbs or rare species.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Avoid loud music inside forests and protected areas.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Never purchase products made from endangered wildlife.",
+          "polarity": "avoid"
+        }
+      ]
+    },
+    {
+      "slug": "please-do",
+      "heading": "Please Do",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Carry your waste back whenever bins are unavailable.",
+          "polarity": "do"
+        },
+        {
+          "text": "Separate biodegradable and plastic waste wherever facilities exist.",
+          "polarity": "do"
+        },
+        {
+          "text": "Use refillable bottles instead of disposable plastics.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "please-don-t",
+      "heading": "Please Don't",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Throw garbage into rivers, lakes or valleys.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Burn plastic or other waste.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Leave food wrappers along trekking routes.",
+          "polarity": "avoid"
+        }
+      ]
+    },
+    {
+      "slug": "avoid-carrying",
+      "heading": "Avoid carrying",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Plastic carry bags",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Plastic cups and plates",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Disposable cutlery",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Certain PET bottles and other banned plastic products",
+          "polarity": "avoid"
+        }
+      ]
+    },
+    {
+      "slug": "permits-identity-documents",
+      "heading": "Permits & Identity Documents",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Carry a valid government-issued photo ID.",
+          "polarity": "do"
+        },
+        {
+          "text": "Keep digital and printed copies of permits.",
+          "polarity": "do"
+        },
+        {
+          "text": "Follow all instructions issued by permit authorities.",
+          "polarity": "do"
+        },
+        {
+          "text": "Travel only to destinations covered by your permit.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "travel-responsibly",
+      "heading": "Travel Responsibly",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Hire only registered travel agencies and licensed taxi operators.",
+          "polarity": "do"
+        },
+        {
+          "text": "Follow speed limits on mountain roads.",
+          "polarity": "do"
+        },
+        {
+          "text": "Wear seat belts at all times.",
+          "polarity": "do"
+        },
+        {
+          "text": "Wear helmets while riding motorcycles.",
+          "polarity": "do"
+        },
+        {
+          "text": "Avoid driving during heavy rainfall, snowfall or landslides unless advised safe.",
+          "polarity": "do"
+        },
+        {
+          "text": "Follow police and traffic advisories.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "high-altitude-safety",
+      "heading": "High Altitude Safety",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Avoid excessive alcohol.",
+          "polarity": "do"
+        },
+        {
+          "text": "Ascend gradually whenever possible.",
+          "polarity": "do"
+        },
+        {
+          "text": "Rest if you experience altitude sickness.",
+          "polarity": "do"
+        },
+        {
+          "text": "Follow medical advice immediately if symptoms worsen.",
+          "polarity": "do"
+        },
+        {
+          "text": "Carry prescribed medicines if required.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "respect-local-culture-religious-sites",
+      "heading": "Respect Local Culture & Religious Sites",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Remove footwear where required.",
+          "polarity": "do"
+        },
+        {
+          "text": "Maintain silence inside monasteries.",
+          "polarity": "do"
+        },
+        {
+          "text": "Ask permission before photographing monks, ceremonies or local residents.",
+          "polarity": "do"
+        },
+        {
+          "text": "Respect prayer flags, prayer wheels and sacred monuments.",
+          "polarity": "do"
+        },
+        {
+          "text": "Walk clockwise around stupas and religious structures where customary.",
+          "polarity": "do"
+        },
+        {
+          "text": "Consider making voluntary donations only through authorised donation boxes.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "photography-etiquette",
+      "heading": "Photography Etiquette",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Ask permission before photographing individuals.",
+          "polarity": "do"
+        },
+        {
+          "text": "Respect photography restrictions in religious and military areas.",
+          "polarity": "do"
+        },
+        {
+          "text": "Never fly drones in restricted or protected zones without official approval.",
+          "polarity": "do"
+        },
+        {
+          "text": "Avoid disturbing wildlife for photographs.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "adventure-tourism",
+      "heading": "Adventure Tourism",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Choose authorised operators.",
+          "polarity": "do"
+        },
+        {
+          "text": "Wear certified safety equipment.",
+          "polarity": "do"
+        },
+        {
+          "text": "Follow guide instructions.",
+          "polarity": "do"
+        },
+        {
+          "text": "Inform someone about your itinerary.",
+          "polarity": "do"
+        },
+        {
+          "text": "Check weather conditions before departure.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "smoking-alcohol",
+      "heading": "Smoking & Alcohol",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Smoking near monasteries, temples and sacred places.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Consuming alcohol in religious or culturally sensitive locations.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Littering cigarette butts.",
+          "polarity": "avoid"
+        },
+        {
+          "text": "Drinking and driving under any circumstances.",
+          "polarity": "avoid"
+        }
+      ]
+    },
+    {
+      "slug": "emergency-cooperation",
+      "heading": "Emergency Cooperation",
+      "appliesAtSite": false,
+      "items": [
+        {
+          "text": "Follow directions issued by Police, Tourism Officials, Forest Officials and Disaster Management Authorities.",
+          "polarity": "do"
+        },
+        {
+          "text": "Cooperate during landslides, road closures or weather-related restrictions.",
+          "polarity": "do"
+        },
+        {
+          "text": "Do not cross road barricades or restricted areas.",
+          "polarity": "do"
+        }
+      ]
+    },
+    {
+      "slug": "responsible-community-tourism",
+      "heading": "Responsible Community Tourism",
+      "appliesAtSite": true,
+      "items": [
+        {
+          "text": "Buying authentic local handicrafts.",
+          "polarity": "do"
+        },
+        {
+          "text": "Staying in registered hotels and homestays.",
+          "polarity": "do"
+        },
+        {
+          "text": "Respecting local traditions and festivals.",
+          "polarity": "do"
+        },
+        {
+          "text": "Supporting local guides and businesses.",
+          "polarity": "do"
+        },
+        {
+          "text": "Avoiding bargaining that may unfairly impact small vendors.",
+          "polarity": "do"
+        }
+      ]
+    }
+  ]
+}
