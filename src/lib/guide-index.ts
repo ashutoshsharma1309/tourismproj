@@ -126,15 +126,36 @@ export interface GuideDestination {
  * away, and it cannot drift from the archive because it is built from the same
  * accessors the pages render from.
  */
+export type GuideRecordKind =
+  | "place"
+  | "story"
+  | "history"
+  | "stay"
+  | "food"
+  | "festival"
+  | "craft"
+  | "experience";
+
 export interface GuideRecord {
   destinationId: string;
   destinationName: string;
-  kind: "place" | "story" | "history" | "stay";
+  /*
+   * Food, festivals, crafts and experiences joined the original four kinds
+   * when the guide learned to answer in a destination's own scope. Without
+   * them "what do people eat in Kolkata" could only be answered by a story
+   * that happened to mention food; with them it is answered by the dish
+   * records the culture page renders from.
+   */
+  kind: GuideRecordKind;
   name: string;
   blurb: string;
   href: string;
   /** Interest themes, where the record carries them. */
   themes: string[];
+  /** The record's own classification — "Temple", "Historic hotel", "legend". */
+  category?: string;
+  /** A season a source states for a festival, never a date. */
+  season?: string;
 }
 
 export interface GuideIndex {

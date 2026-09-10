@@ -1,4 +1,11 @@
-import { getCapsuleStays, getHistory, getPlaces, getStories } from "@/lib/destinations/content";
+import {
+  getCapsule,
+  getCapsuleStays,
+  getCultureRecords,
+  getHistory,
+  getPlaces,
+  getStories,
+} from "@/lib/destinations/content";
 import { listDestinations } from "@/lib/destinations/registry";
 import type { GuideRecord } from "@/lib/guide-index";
 
@@ -19,16 +26,16 @@ import type { GuideRecord } from "@/lib/guide-index";
  * summary as the archive publishes it, so the guide quotes the archive rather
  * than paraphrasing it — the same rule that governs every other surface here.
  *
- * A CAP PER DESTINATION, NOT PER ARCHIVE
- * --------------------------------------
- * Sikkim holds 70 stories and 38 places; the capsules hold a dozen or so each.
- * Taking everything would let one destination dominate the search purely by
- * volume, so each contributes at most `PER_KIND` of each kind. The guide is a
- * way in, not a mirror of the archive.
+ * A CAP PER KIND PER DESTINATION, NOT PER ARCHIVE
+ * ----------------------------------------------
+ * Sikkim holds 70 stories and 38 places; the capsules hold a dozen or so of
+ * each kind. Taking everything would let one destination dominate a global
+ * search purely by volume, so each contributes at most `PER_KIND` of each
+ * kind. Within a destination's own scope the cap is rarely reached.
  */
 
 /** How many of each kind a single destination may contribute. */
-const PER_KIND = 20;
+const PER_KIND = 24;
 
 /** One sentence, trimmed. A guide answer is a pointer, not a page. */
 function blurbOf(text: string | undefined): string {
@@ -51,16 +58,21 @@ function hrefOf(
 export async function buildGuideRecords(): Promise<GuideRecord[]> {
   const gathered = await Promise.all(
     listDestinations().map(async (destination) => {
-      const [places, stories, history, stays] = await Promise.all([
+      const [places, stories, history, stays, culture, capsule] = await Promise.all([
         getPlaces(destination.id),
         getStories(destination.id),
         getHistory(destination.id),
         /* Capsule stays only: Sikkim's register already reaches the guide as
            `GuideIndex.stays`, and listing it here too would double it. */
         destination.id === "sikkim" ? Promise.resolve([]) : getCapsuleStays(destination.id),
+        /* Sikkim's culture is held as films, a different shape; the guide
+           answers its food and festivals from the story corpus instead. */
+        getCultureRecords(destination.id),
+        getCapsule(destination.id),
       ]);
 
       const common = { destinationId: destination.id, destinationName: destination.name };
+      const discover = `/destinations/${destination.id}/discover`;
 
       return [
         ...places.slice(0, PER_KIND).map((place): GuideRecord => ({
@@ -69,7 +81,8 @@ export async function buildGuideRecords(): Promise<GuideRecord[]> {
           name: place.name,
           blurb: blurbOf(place.description),
           href: hrefOf(place, destination.id, "places"),
-          themes: [...((place as { themes?: string[] }).themes ?? [])],
+          themes: [...((place as { interests?: string[] }).interests ?? [])],
+          category: (place as { category?: string }).category,
         })),
         ...stories.slice(0, PER_KIND).map((story): GuideRecord => ({
           ...common,
@@ -78,6 +91,7 @@ export async function buildGuideRecords(): Promise<GuideRecord[]> {
           blurb: blurbOf(story.summary),
           href: hrefOf(story, destination.id, "stories"),
           themes: [],
+          category: (story as { claimType?: string }).claimType,
         })),
         ...history.slice(0, PER_KIND).map((entry): GuideRecord => ({
           ...common,
@@ -96,10 +110,41 @@ export async function buildGuideRecords(): Promise<GuideRecord[]> {
         ...stays.slice(0, PER_KIND).map((stay): GuideRecord => ({
           ...common,
           kind: "stay",
-          name: `${stay.name} (${stay.category})`,
+          name: stay.name,
           blurb: blurbOf(stay.summary),
           href: `/destinations/${destination.id}/stays/${stay.id}`,
           themes: [],
+          category: stay.category,
+        })),
+        /*
+         * Food, festivals and crafts, each anchored to its shelf on the
+         * culture page — the shelf's id is the kind, which is what
+         * DestinationCultureShelves renders. A festival carries its season
+         * only where the source states one, and never a date.
+         */
+        ...culture.slice(0, PER_KIND * 3).map((entry): GuideRecord => ({
+          ...common,
+          kind: entry.kind,
+          name: entry.name,
+          blurb: blurbOf(entry.summary),
+          href: `/destinations/${destination.id}/culture#${entry.kind}`,
+          themes: [],
+          season: entry.season,
+        })),
+        /*
+         * Experiences are the capsule's "why go": a sourced explanation tied
+         * to places, carrying the same interest vocabulary the planner and
+         * discovery use. They answer "what is there to do" directly.
+         */
+        ...(capsule?.experiences ?? []).slice(0, PER_KIND).map((experience): GuideRecord => ({
+          ...common,
+          kind: "experience",
+          name: experience.title,
+          blurb: blurbOf(experience.explanation),
+          /* The discovery page has one experiences section, not one anchor per
+             experience; the section heading carries this id. */
+          href: `${discover}#experience-intelligence`,
+          themes: [...experience.themes],
         })),
       ];
     }),

@@ -91,9 +91,9 @@ function opening(destinationName: string | null, destinationId: string | null): 
         : destinationName
           ? [
               { label: "Plan my trip", send: "__plan__" },
-              { label: `What should I see in ${destinationName}?`, send: `places in ${destinationName}` },
-              { label: "What is the history here?", send: `history of ${destinationName}` },
-              { label: "What do people eat?", send: `food in ${destinationName}` },
+              { label: `What should I see in ${destinationName}?`, send: "what should I see" },
+              { label: "What is the history here?", send: "history" },
+              { label: "Food and festivals", send: "food and festivals" },
             ]
           : [
               { label: "Tell me about Kyoto", send: "Kyoto" },
@@ -103,6 +103,36 @@ function opening(destinationName: string | null, destinationId: string | null): 
             ],
     },
   ];
+}
+
+/*
+ * The header line counts what the guide can answer from HERE. It read
+ * "Answers from 15 monasteries, 38 places and 70 stories" on every page —
+ * Sikkim's numbers, above a question box on Kyoto. Now it counts the
+ * destination in scope, from the same records the engine searches.
+ */
+function scopeLine(
+  index: GuideIndex | null,
+  destinationId: string | null,
+  destinationName: string | null,
+): string {
+  if (!index) return "Answers only from catalogued records. Nothing invented.";
+  if (destinationId === "sikkim") {
+    return `Answers from ${index.facts.monasteryCount} monasteries, ${index.facts.placeCount} places and ${index.facts.storyCount} stories. Nothing invented.`;
+  }
+  if (destinationId && destinationName) {
+    const mine = (index.records ?? []).filter((r) => r.destinationId === destinationId);
+    const count = (...kinds: string[]) => mine.filter((r) => kinds.includes(r.kind)).length;
+    const parts = [
+      count("place") > 0 ? `${count("place")} places` : null,
+      count("history") > 0 ? `${count("history")} events` : null,
+      count("food", "festival", "craft") > 0 ? `${count("food", "festival", "craft")} culture records` : null,
+    ].filter(Boolean);
+    return parts.length > 0
+      ? `Answers from ${destinationName}'s ${parts.join(", ")}. Nothing invented.`
+      : `Answers only from ${destinationName}'s catalogued records. Nothing invented.`;
+  }
+  return `Answers from the catalogued records of ${(index.destinations ?? []).length} destinations. Nothing invented.`;
 }
 
 export function TripGuide({
@@ -213,7 +243,10 @@ export function TripGuide({
         });
         return;
       }
-      const reply = respond(clean, index);
+      /* The page's destination is the default scope: on Kyoto, "temples"
+         means Kyoto's temples. A destination named in the question still
+         wins, so "tell me about Paris" works from anywhere. */
+      const reply = respond(clean, index, { destinationId });
       /* The engine can request the guided flow rather than answer in prose. */
       const wantsPlan = reply.blocks.some(
         (b) => b.kind === "chips" && b.chips.some((c) => c.send === "__plan__"),
@@ -224,7 +257,7 @@ export function TripGuide({
         startPlan();
       }
     },
-    [index, loadFailed, push, startPlan],
+    [index, loadFailed, push, startPlan, destinationId],
   );
 
   const submit = (e: React.FormEvent) => {
@@ -367,9 +400,7 @@ export function TripGuide({
                 trusting it for the things it deliberately refuses to answer.
               */}
               <p className="mt-0.5 text-caption leading-snug text-foreground-inverse/55">
-                {index
-                  ? `Answers from ${index.facts.monasteryCount} monasteries, ${index.facts.placeCount} places and ${index.facts.storyCount} stories. Nothing invented.`
-                  : "Answers only from catalogued records. Nothing invented."}
+                {scopeLine(index, destinationId, destinationName)}
               </p>
             </div>
             <button
@@ -469,7 +500,13 @@ export function TripGuide({
               ref={input}
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
-              placeholder="Ask about a monastery, a permit, a route…"
+              placeholder={
+                destinationId === "sikkim"
+                  ? "Ask about a monastery, a permit, a route…"
+                  : destinationName
+                    ? `Ask about a place, a festival, the history of ${destinationName}…`
+                    : "Ask about a destination or a landmark…"
+              }
               aria-label="Ask the trip guide"
               className="min-w-0 flex-1 bg-transparent text-small text-foreground-inverse placeholder:text-foreground-inverse/35 focus:outline-none"
             />

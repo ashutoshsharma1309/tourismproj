@@ -91,7 +91,8 @@
     "docs:matrix": "tsx --env-file=.env.local scripts/docs/completeness-matrix.mts",
     "qa:visual": "node scripts/qa/visual-capture.mjs",
     "archive:vendor": "node scripts/archive/vendor-archive-images.mjs",
-    "qa:media-provenance": "node scripts/qa/media-provenance.mjs"
+    "qa:media-provenance": "node scripts/qa/media-provenance.mjs",
+    "qa:guide": "tsx scripts/qa/guide-scope.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",
