@@ -43,3 +43,4 @@ reports/audio-*.log
 # monastery-360-discovery.json in src/data/panoramas.ts) stay tracked.
 reports/visual/
 reports/qa/
+package-lock.json
