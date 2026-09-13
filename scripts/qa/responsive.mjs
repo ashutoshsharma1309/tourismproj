@@ -20,19 +20,19 @@ const ROUTES = [
   "/",
   "/destinations",
   "/destinations/sikkim",
-  "/destinations/paris",
-  "/destinations/kyoto",
+  "/destinations/jaipur",
+  "/destinations/varanasi",
   "/discover",
   "/plan",
   "/stories",
   "/history",
-  "/destinations/compare?ids=sikkim,paris,kyoto",
+  "/destinations/compare?ids=sikkim,jaipur,varanasi",
   /* The newest layouts, and so the ones most worth checking: a culture shelf
      grid, a story index and a long-form article. */
-  "/destinations/kyoto/culture",
+  "/destinations/varanasi/culture",
   "/destinations/jaipur/culture",
-  "/destinations/kyoto/stories",
-  "/destinations/kyoto/stories/craft-kintsugi",
+  "/destinations/varanasi/stories",
+  "/destinations/varanasi/stories/craft-banarasi-sari",
 ];
 
 let passed = 0;
@@ -47,7 +47,11 @@ for (const width of WIDTHS) {
   const context = await browser.newContext({ viewport: { width, height: 900 } });
   const page = await context.newPage();
   for (const route of ROUTES) {
-    await page.goto(`${BASE}${route}`, { waitUntil: "load", timeout: 60000 });
+    /* DOM, not "load": overflow is a property of the markup and the CSS, and
+       every photograph sits in an aspect-ratio box, so waiting for 140 pages'
+       worth of images changed nothing but the clock — 39 minutes on the
+       eighteen-destination build, and the battery's 15-minute cap killed it. */
+    await page.goto(`${BASE}${route}`, { waitUntil: "domcontentloaded", timeout: 60000 });
     /* Let late-loading media settle; a lazily-sized image can widen a row. */
     await page.waitForTimeout(400);
     const overflow = await page.evaluate(

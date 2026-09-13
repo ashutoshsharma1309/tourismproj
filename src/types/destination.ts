@@ -74,12 +74,19 @@ export const DATA_DEPTH_ORDER: Record<DataDepth, number> = {
   planned: 0,
 };
 
+/*
+ * PLAIN WORDS, NOT TIER NAMES. These read "Deep archive", "Curated",
+ * "Tourism capsule" — the names of the tiers in the data model, shown as a
+ * badge beside the destination's name. A traveller cannot decode them, and
+ * "Curated" beside Jaipur read as a quality mark. The badge now says how much
+ * has been documented, which is the one thing it measures.
+ */
 export const DATA_DEPTH_LABEL: Record<DataDepth, string> = {
-  deep: "Deep archive",
-  curated: "Curated",
+  deep: "Deeply documented",
+  curated: "Well documented",
   researched: "Researched",
-  capsule: "Tourism capsule",
-  planned: "Not yet available",
+  capsule: "Documented",
+  planned: "Being catalogued",
 };
 
 /**
@@ -92,11 +99,11 @@ export const DATA_DEPTH_LABEL: Record<DataDepth, string> = {
  * which is the failure this whole model exists to prevent.
  */
 export const DATA_DEPTH_SUMMARY: Record<DataDepth, string> = {
-  deep: "Complete heritage intelligence — sites, stories, timeline, archive and planner, every claim sourced.",
-  curated: "Reviewer-approved knowledge across several topics, with the sources it came from.",
-  researched: "Machine-assembled from retrieved sources and human-reviewed before publication.",
-  capsule: "Essential experiences — a short set of sourced highlights, each quoted from a cited source, and nothing beyond them.",
-  planned: "Registered in the architecture. Nothing has been researched for it yet, and nothing is shown.",
+  deep: "Fully catalogued — places, stories, a timeline, an archive and a planner, every claim traced to its source.",
+  curated: "Reviewer-approved knowledge on several topics, each with the source it came from.",
+  researched: "Assembled from retrieved sources and reviewed before publication.",
+  capsule: "A short, sourced set of places, stories and culture — nothing beyond what a source says.",
+  planned: "We are still cataloguing this destination. Nothing is shown until it has a source.",
 };
 
 /* =========================================================================

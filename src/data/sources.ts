@@ -419,30 +419,6 @@ export const SOURCES: Record<string, Source> = {
     covers:
       "The national tourism ministry's destination page for Jaipur — heritage sites and cultural description.",
   },
-  "kyoto-city-tourism": {
-    id: "kyoto-city-tourism",
-    name: "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
-    type: "government",
-    url: "https://kyoto.travel/en/",
-    scope: forDestination("kyoto"),
-    retrievalMethod: "agent-api",
-    retrievedAt: "2026-08-25",
-    covers:
-      "The city's official destination marketing organisation. Authoritative for Kyoto's own account of its heritage and culture.",
-  },
-  "kyoto-prefecture": {
-    id: "kyoto-prefecture",
-    name: "Kyoto Prefecture — Official Multilingual Site",
-    type: "government",
-    url: "https://www.pref.kyoto.jp/en/index.html",
-    scope: forDestination("kyoto"),
-    retrievalMethod: "agent-api",
-    retrievedAt: "2026-08-25",
-    covers:
-      "Prefectural government portal. Its English index is largely navigation, so it is expected to yield little; recorded at its true authority rather than oversold.",
-    notes:
-      "Verified 2026-08-25: resolves with 200 but returns roughly 2 KB of mostly navigational text.",
-  },
   "google-places": {
     id: "google-places",
     name: "Google Places API — visitor ratings and reviews",

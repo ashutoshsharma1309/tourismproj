@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { allStories, hrefFor } from "@/lib/global-index";
 import { SITE } from "@/lib/constants";
+import { listDestinations } from "@/lib/destinations/registry";
 
 /**
  * Every story in the product, from every destination.
@@ -23,7 +24,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `Stories · ${SITE.name}`,
   description:
-    "Cultural narratives from fifteen destinations, each quoted from a named source and labelled by the kind of claim it makes.",
+    `Cultural narratives from ${listDestinations().length} Indian destinations, each quoted from a named source and labelled by the kind of claim it makes.`,
 };
 
 const CLAIM_TONE: Record<string, string> = {
@@ -44,7 +45,9 @@ export default async function StoriesPage() {
     byDestination.set(entry.destination.id, bucket);
   }
 
-  const countries = new Set(stories.map((entry) => entry.destination.country.name));
+  /* States, not countries: every destination is in India, so the spread
+     across states is the figure that says something. */
+  const states = new Set(stories.map((entry) => entry.destination.region?.name ?? entry.destination.country.name));
 
   return (
     <>
@@ -57,7 +60,7 @@ export default async function StoriesPage() {
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg leading-relaxed text-muted">
           {stories.length} stories from {byDestination.size} destinations across{" "}
-          {countries.size} countries. Each is quoted from a named source and says
+          {states.size} Indian states. Each is quoted from a named source and says
           how it should be read — a documented account is never dressed up as a
           legend.
         </p>

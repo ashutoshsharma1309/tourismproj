@@ -276,20 +276,21 @@ const STARTER_CHIPS: GuideChip[] = [
 ];
 
 const GLOBAL_CHIPS: GuideChip[] = [
-  { label: "Tell me about Kyoto", send: "Kyoto" },
-  { label: "Tell me about Paris", send: "Paris" },
+  { label: "Tell me about Jaipur", send: "Jaipur" },
   { label: "Tell me about Varanasi", send: "Varanasi" },
+  { label: "Tell me about Kochi", send: "Kochi" },
   { label: "Compare two destinations", send: "compare" },
 ];
 
 /**
  * The destination a question names, if any.
  *
- * People type "New York", not "New York City". Matching on the registry name
- * alone missed it — the one destination out of fifteen whose common name is
- * shorter than its registered one. So each destination is matched on its name
- * AND on that name minus a trailing generic word, and the LONGEST matching
- * key wins so a shorter alias can never shadow a fuller name.
+ * People type the common name, not the registered one — "New York" for
+ * "New York City" was the case that exposed it while the registry still held
+ * that destination. Matching on the registry name alone missed it, so each
+ * destination is matched on its name AND on that name minus a trailing
+ * generic word, and the LONGEST matching key wins so a shorter alias can
+ * never shadow a fuller name.
  */
 function namedDestination(q: string, index: GuideIndex): GuideDestination | undefined {
   const keys = (index.destinations ?? []).flatMap((d) => {
@@ -428,7 +429,10 @@ const SEE_WORDS = [
 ] as const;
 const HISTORY_WORDS = [
   "history", "historical", "historic", "past", "founded", "built", "century",
-  "centuries", "dynasty", "empire", "kingdom", "colonial", "era", "timeline",
+  /* "colonial" is deliberately absent: "colonial architecture" asks for
+     buildings, and routing it to the timeline answered Mumbai's question
+     with one dated event. */
+  "centuries", "dynasty", "empire", "kingdom", "era", "timeline",
   "origin", "origins", "ancient", "medieval", "when was", "how old", "date", "dates",
 ] as const;
 const FOOD_WORDS = [
@@ -792,7 +796,7 @@ function respondGlobal(query: string, index: GuideIndex): GuideReply {
       blocks: [
         {
           kind: "text",
-          text: `I answer from the catalogued records of ${destinations.length} destinations — their places, experiences, history, stories, food, festivals and crafts — and I write nothing myself. Name a destination, or ask about a landmark.`,
+          text: `I answer from the catalogued records of ${destinations.length} Indian destinations — their places, experiences, history, stories, food, festivals and crafts — and I write nothing myself. Name a destination, or ask about a landmark.`,
         },
         {
           kind: "items",
@@ -866,7 +870,7 @@ function respondGlobal(query: string, index: GuideIndex): GuideReply {
   return {
     blocks: [
       { kind: "text", text: "I don't hold anything on that, and I would rather say so than guess." },
-      { kind: "note", text: `I answer only from the catalogued records of ${destinations.length} destinations. Name one — ${destinations.slice(0, 5).map((d) => d.name).join(", ")} — or ask about a landmark.` },
+      { kind: "note", text: `I answer only from the catalogued records of ${destinations.length} Indian destinations. Name one — ${destinations.slice(0, 5).map((d) => d.name).join(", ")} — or ask about a landmark.` },
       { kind: "chips", chips: GLOBAL_CHIPS },
     ],
   };

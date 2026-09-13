@@ -174,7 +174,7 @@ export async function GlobalStories() {
           </p>
           <h2 id="global-timeline" className="mt-3 max-w-3xl font-display text-h1 text-balance-heading">
             {timeline[0]!.event.yearLabel} to {timeline[timeline.length - 1]!.event.yearLabel},
-            across {new Set(timeline.map((entry) => entry.destination.country.name)).size} countries
+            across {new Set(timeline.map((entry) => entry.destination.region?.name ?? entry.destination.country.name)).size} Indian states
           </h2>
           <p className="mt-4 max-w-2xl text-body-lg leading-relaxed text-muted">
             TerraStory does not just show you where a place is. Every dated

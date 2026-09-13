@@ -26,7 +26,9 @@ const ERA_IDS = new Set(["ancient", "medieval", "early-modern", "modern", "conte
 const NOW = new Date().getFullYear();
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".json"));
-check("Every capsule destination has a timeline", files.length === 14, `${files.length}`);
+/* Counted from ids.ts, not typed: 14 became 17 in the India-only expansion. */
+const CAPSULE_COUNT = (readFileSync("src/data/destinations/capsules/ids.ts", "utf8").match(/^\s+"[a-z-]+",$/gm) ?? []).length;
+check("Every capsule destination has a timeline", files.length === CAPSULE_COUNT, `${files.length}`);
 
 let total = 0, withPage = 0;
 for (const file of files) {

@@ -6,10 +6,10 @@ import { destinationMarkers } from "@/lib/destinations/markers";
 import { allCoverage } from "@/lib/global/coverage";
 
 /**
- * Where the fifteen actually are.
+ * Where the destinations actually are.
  *
  * The homepage listed destinations, grouped them by country and named their
- * countries, and never once showed them on a map — so "six countries" was a
+ * states, and never once showed them on a map — so the count of states was a
  * number a reader had to take on trust rather than something they could see.
  *
  * This is the SAME component and the SAME markers as /destinations, built

@@ -57,7 +57,7 @@ check("Tier ranking places official above encyclopedia",
   TIER_RANK["official-tourism"] < TIER_RANK.encyclopedia);
 check("Academic ranks above encyclopedia", TIER_RANK.academic < TIER_RANK.encyclopedia);
 
-for (const id of ["sikkim", "jaipur", "kyoto"]) {
+for (const id of ["sikkim", "jaipur", "kochi"]) {
   const dest = getDestination(id);
   const candidates = discoverSources(dest);
   const ranks = candidates.map((c) => TIER_RANK[c.tier] ?? 9);
@@ -69,8 +69,8 @@ for (const id of ["sikkim", "jaipur", "kyoto"]) {
   check(`  ${id}: every candidate is allowlisted`, candidates.every((c) => isAllowedUrl(c.url)));
 }
 
-check("Jaipur and Kyoto have readable higher-tier coverage",
-  hasHigherTierCoverage("jaipur") && hasHigherTierCoverage("kyoto"));
+check("Jaipur has readable higher-tier coverage",
+  hasHigherTierCoverage("jaipur"));
 check("Sikkim's own portal is recorded as unreadable rather than omitted",
   officialSourcesFor("sikkim").some((s) => s.rendersServerSide === false),
   "SPA — the gap is stated, not hidden");
@@ -80,7 +80,7 @@ check("Coverage profile reports blocked higher-tier sources",
 /* Every official registry entry must carry the metadata that answers
    "why was this source trusted?" */
 const missingMeta = [];
-for (const [dest, entries] of Object.entries({ sikkim: officialSourcesFor("sikkim"), jaipur: officialSourcesFor("jaipur"), kyoto: officialSourcesFor("kyoto") })) {
+for (const [dest, entries] of Object.entries({ sikkim: officialSourcesFor("sikkim"), jaipur: officialSourcesFor("jaipur") })) {
   for (const e of entries) {
     if (!e.tier || !e.publisher || !e.sourceRegistryId || !e.verified || !e.rationale) missingMeta.push(`${dest}:${e.url}`);
   }
@@ -90,7 +90,7 @@ check("Every official source records tier, publisher, registry id, rationale and
 
 const sourcesSrc = readFileSync("src/data/sources.ts", "utf8");
 check("New official sources are registered with scope + retrievalMethod",
-  ["rajasthan-tourism-jaipur", "incredible-india-jaipur", "kyoto-city-tourism", "kyoto-prefecture"]
+  ["rajasthan-tourism-jaipur", "incredible-india-jaipur"]
     .every((id) => new RegExp(`"${id}":[\\s\\S]{0,900}?scope:[\\s\\S]{0,200}?retrievalMethod:`).test(sourcesSrc)));
 
 /* Corroboration: same statement from two sources raises confidence. */
@@ -156,16 +156,16 @@ check("TEST D(gate)  A practical-data claim cannot be approved",
 
 /* TEST H: cross-destination source. */
 const crossDest = {
-  id: "x1", destinationId: "kyoto", status: "validated", claimType: "documented history",
-  statement: "A claim about Kyoto backed by a Sikkim-scoped source.",
+  id: "x1", destinationId: "kochi", status: "validated", claimType: "documented history",
+  statement: "A claim about Kochi backed by a Sikkim-scoped source.",
   evidence: [{ sourceId: "sikkim-tourism-portal", quote: "q", locator: { charStart: 0, charEnd: 1, url: "u" }, contentHash: "h", evidenceType: "direct-statement", retrievedAt: "" }],
 };
-check("TEST H  Sikkim-scoped source cannot back a Kyoto claim",
+check("TEST H  Sikkim-scoped source cannot back a Kochi claim",
   approvalBlockers(crossDest, { documents: [{ sourceId: "sikkim-tourism-portal", text: "q", contentHash: "h" }] })
     .some((b) => b.includes("not citable")),
   "cross-destination contamination blocked at approval");
 check("TEST H(scope) sourceInScope agrees",
-  !sourceInScope("sikkim-tourism-portal", getDestination("kyoto")));
+  !sourceInScope("sikkim-tourism-portal", getDestination("kochi")));
 
 /* ========================================================================
    8-9. PUBLISHED KNOWLEDGE ISOLATION + AUDIT TRAIL

@@ -22,7 +22,7 @@ const BASE = process.env.QA_BASE_URL ?? "http://localhost:3000";
 const outIndex = process.argv.indexOf("--out");
 const OUT = outIndex > -1 ? process.argv[outIndex + 1] : "reports/visual";
 
-const BENCHMARK = ["sikkim", "jaipur", "mumbai", "kyoto", "paris", "rome", "new-york-city"];
+const BENCHMARK = ["sikkim", "jaipur", "mumbai", "varanasi", "delhi", "agra", "kochi"];
 const MODULES = ["", "/stories", "/culture", "/history", "/archive"];
 const GLOBAL = ["/", "/destinations", "/discover", "/stories", "/history"];
 const WIDTHS = [

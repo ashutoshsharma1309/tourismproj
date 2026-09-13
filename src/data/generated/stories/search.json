@@ -31,21 +31,249 @@
   },
   {
     "destinationId": "agra",
-    "slug": "festival-holi",
-    "title": "Holi",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "agra",
     "slug": "craft-zari",
     "title": "Zari",
     "category": "Art & Craft"
   },
   {
     "destinationId": "agra",
+    "slug": "festival-holi",
+    "title": "Holi",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "agra",
     "slug": "food-braj-cuisine",
     "title": "Braj cuisine",
     "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "festival-navaratri",
+    "title": "Navaratri",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "food-gujarati-cuisine",
+    "title": "Gujarati cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "craft-kutch-embroidery",
+    "title": "Kutch embroidery",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "craft-bandhani",
+    "title": "Bandhani",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "craft-rogan-painting",
+    "title": "Rogan painting",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "food-undhiyu",
+    "title": "Undhiyu",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "festival-rath-yatra-ahmedabad",
+    "title": "Rath Yatra (Ahmedabad)",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "food-thepla",
+    "title": "Thepla",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "festival-diwali",
+    "title": "Diwali",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "craft-woodblock-printing",
+    "title": "Woodblock printing",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "ahmedabad",
+    "slug": "festival-uttarayana",
+    "title": "Uttarayana",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "craft-phulkari",
+    "title": "Phulkari",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-langar-sikhism",
+    "title": "Langar (Sikhism)",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-chole-bhature",
+    "title": "Chole bhature",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-punjabi-cuisine",
+    "title": "Punjabi cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-guru-nanak-gurpurab",
+    "title": "Guru Nanak Gurpurab",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-diwali",
+    "title": "Diwali",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-hola-mohalla",
+    "title": "Hola Mohalla",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-bandi-chhor-divas",
+    "title": "Bandi Chhor Divas",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "craft-salwar",
+    "title": "Salwar",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-lohri",
+    "title": "Lohri",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "craft-dhurrie",
+    "title": "Dhurrie",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-tandoori-chicken",
+    "title": "Tandoori chicken",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "craft-jutti",
+    "title": "Jutti",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-lassi",
+    "title": "Lassi",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "festival-vaisakhi",
+    "title": "Vaisakhi",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "amritsar",
+    "slug": "food-kulfi",
+    "title": "Kulfi",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "food-cuisine-of-odisha",
+    "title": "Cuisine of Odisha",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-tarakasi",
+    "title": "Tarakasi",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "food-rasgulla",
+    "title": "Rasgulla",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-odisha-ikat",
+    "title": "Odisha Ikat",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-sambalpuri-sari",
+    "title": "Sambalpuri sari",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-pattachitra",
+    "title": "Pattachitra",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "food-pakhala",
+    "title": "Pakhala",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-dhokra",
+    "title": "Dhokra",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-bomkai-sari",
+    "title": "Bomkai sari",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "craft-pipili-applique-work",
+    "title": "Pipili appliqué work",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "bhubaneswar",
+    "slug": "festival-kartika-purnima",
+    "title": "Kartika Purnima",
+    "category": "Festivals"
   },
   {
     "destinationId": "delhi",
@@ -264,102 +492,6 @@
     "category": "Festivals"
   },
   {
-    "destinationId": "istanbul",
-    "slug": "craft-iznik-pottery",
-    "title": "Iznik pottery",
-    "category": "Art & Craft"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-turkish-cuisine",
-    "title": "Turkish cuisine",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "craft-islamic-calligraphy",
-    "title": "Islamic calligraphy",
-    "category": "Art & Craft"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-meze",
-    "title": "Meze",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-lahmacun",
-    "title": "Lahmacun",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "craft-anatolian-rug",
-    "title": "Anatolian rug",
-    "category": "Art & Craft"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-baklava",
-    "title": "Baklava",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "festival-h-d-rellez",
-    "title": "Hıdırellez",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-turkish-coffee",
-    "title": "Turkish coffee",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-turkish-delight",
-    "title": "Turkish delight",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "festival-international-istanbul-film-festival",
-    "title": "International Istanbul Film Festival",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-doner-kebab",
-    "title": "Doner kebab",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "food-simit",
-    "title": "Simit",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "festival-istanbul-biennial",
-    "title": "Istanbul Biennial",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "festival-ramadan",
-    "title": "Ramadan",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "istanbul",
-    "slug": "festival-eid-al-fitr",
-    "title": "Eid al-Fitr",
-    "category": "Festivals"
-  },
-  {
     "destinationId": "jaipur",
     "slug": "food-rajasthani-cuisine",
     "title": "Rajasthani cuisine",
@@ -397,6 +529,12 @@
   },
   {
     "destinationId": "jaipur",
+    "slug": "craft-minakari",
+    "title": "Mīnākārī",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "jaipur",
     "slug": "craft-leheriya",
     "title": "Leheriya",
     "category": "Art & Craft"
@@ -412,12 +550,6 @@
     "slug": "festival-elephant-festival",
     "title": "Elephant Festival",
     "category": "Festivals"
-  },
-  {
-    "destinationId": "jaipur",
-    "slug": "craft-minakari",
-    "title": "Mīnākārī",
-    "category": "Art & Craft"
   },
   {
     "destinationId": "jaipur",
@@ -442,12 +574,6 @@
     "slug": "craft-kathakali",
     "title": "Kathakali",
     "category": "Art & Craft"
-  },
-  {
-    "destinationId": "kochi",
-    "slug": "festival-kochi-muziris-biennale",
-    "title": "Kochi-Muziris Biennale",
-    "category": "Festivals"
   },
   {
     "destinationId": "kochi",
@@ -514,6 +640,12 @@
     "slug": "food-kerala-cuisine",
     "title": "Kerala cuisine",
     "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "kochi",
+    "slug": "festival-kochi-muziris-biennale",
+    "title": "Kochi-Muziris Biennale",
+    "category": "Festivals"
   },
   {
     "destinationId": "kochi",
@@ -606,88 +738,172 @@
     "category": "Festivals"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "food-japanese-cuisine",
-    "title": "Japanese cuisine",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "kyoto",
-    "slug": "craft-kintsugi",
-    "title": "Kintsugi",
+    "destinationId": "lucknow",
+    "slug": "craft-attar",
+    "title": "Attar",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "craft-nishijin-ori",
-    "title": "Nishijin-ori",
+    "destinationId": "lucknow",
+    "slug": "craft-chikankari",
+    "title": "Chikankari",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "craft-japanese-lacquerware",
-    "title": "Japanese lacquerware",
+    "destinationId": "lucknow",
+    "slug": "festival-bada-mangal",
+    "title": "Bada Mangal",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "craft-zardozi",
+    "title": "Zardozi",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "craft-yuzen",
-    "title": "Yūzen",
+    "destinationId": "lucknow",
+    "slug": "food-kulfi",
+    "title": "Kulfi",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "food-nihari",
+    "title": "Nihari",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "food-makhan-malai",
+    "title": "Makhan malai",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "food-tunde-ke-kabab",
+    "title": "Tunde ke kabab",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "food-awadhi-cuisine",
+    "title": "Awadhi cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "festival-lucknow-mahotsav",
+    "title": "Lucknow Mahotsav",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "festival-muharram",
+    "title": "Muharram",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "festival-diwali",
+    "title": "Diwali",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "food-betel-nut-chewing",
+    "title": "Betel nut chewing",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "festival-eid-al-fitr",
+    "title": "Eid al-Fitr",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "lucknow",
+    "slug": "festival-holi",
+    "title": "Holi",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "food-chettinad-cuisine",
+    "title": "Chettinad cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "food-idli",
+    "title": "Idli",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "craft-kolam",
+    "title": "Kolam",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "food-wagashi",
-    "title": "Wagashi",
-    "category": "Food & Flavours"
+    "destinationId": "madurai",
+    "slug": "craft-thanjavur-painting",
+    "title": "Thanjavur painting",
+    "category": "Art & Craft"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "food-kaiseki",
-    "title": "Kaiseki",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "kyoto",
-    "slug": "food-matcha",
-    "title": "Matcha",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "kyoto",
-    "slug": "festival-aoi-matsuri",
-    "title": "Aoi Matsuri",
+    "destinationId": "madurai",
+    "slug": "festival-thaipusam",
+    "title": "Thaipusam",
     "category": "Festivals"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "food-tofu",
-    "title": "Tofu",
+    "destinationId": "madurai",
+    "slug": "festival-meenakshi-tirukalyanam",
+    "title": "Meenakshi Tirukalyanam",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "food-sambar-dish",
+    "title": "Sambar (dish)",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "festival-gion-matsuri",
-    "title": "Gion Matsuri",
+    "destinationId": "madurai",
+    "slug": "festival-aadi-perukku",
+    "title": "Aadi Perukku",
     "category": "Festivals"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "festival-jidai-matsuri",
-    "title": "Jidai Matsuri",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "kyoto",
-    "slug": "food-japanese-tea-ceremony",
-    "title": "Japanese tea ceremony",
+    "destinationId": "madurai",
+    "slug": "food-pongal-dish",
+    "title": "Pongal (dish)",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "kyoto",
-    "slug": "festival-hanami",
-    "title": "Hanami",
+    "destinationId": "madurai",
+    "slug": "food-tamil-cuisine",
+    "title": "Tamil cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "festival-diwali",
+    "title": "Diwali",
     "category": "Festivals"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "craft-lost-wax-casting",
+    "title": "Lost-wax casting",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "madurai",
+    "slug": "food-indian-filter-coffee",
+    "title": "Indian filter coffee",
+    "category": "Food & Flavours"
   },
   {
     "destinationId": "mumbai",
@@ -774,238 +990,286 @@
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "festival-new-york-fashion-week",
-    "title": "New York Fashion Week",
+    "destinationId": "mysuru",
+    "slug": "festival-ugadi",
+    "title": "Ugadi",
     "category": "Festivals"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "food-cuisine-of-new-york-city",
-    "title": "Cuisine of New York City",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "food-hot-dog",
-    "title": "Hot dog",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "craft-graffiti-in-new-york-city",
-    "title": "Graffiti in New York City",
+    "destinationId": "mysuru",
+    "slug": "craft-mysore-painting",
+    "title": "Mysore painting",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "festival-tribeca-festival",
-    "title": "Tribeca Festival",
+    "destinationId": "mysuru",
+    "slug": "festival-makar-sankranti",
+    "title": "Makar Sankranti",
     "category": "Festivals"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "craft-tiffany-glass",
-    "title": "Tiffany glass",
+    "destinationId": "mysuru",
+    "slug": "craft-mysore-sandal-soap",
+    "title": "Mysore Sandal Soap",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "food-pastrami",
-    "title": "Pastrami",
+    "destinationId": "mysuru",
+    "slug": "food-ragi-mudde",
+    "title": "Ragi mudde",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "festival-macy-s-thanksgiving-day-parade",
-    "title": "Macy's Thanksgiving Day Parade",
+    "destinationId": "mysuru",
+    "slug": "festival-mysore-dasara",
+    "title": "Mysore Dasara",
     "category": "Festivals"
   },
   {
-    "destinationId": "new-york-city",
-    "slug": "food-bagel",
-    "title": "Bagel",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "festival-new-york-s-village-halloween-parade",
-    "title": "New York's Village Halloween Parade",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "food-black-and-white-cookie",
-    "title": "Black and white cookie",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "food-new-york-style-pizza",
-    "title": "New York–style pizza",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "new-york-city",
-    "slug": "craft-hip-hop",
-    "title": "Hip-hop",
+    "destinationId": "mysuru",
+    "slug": "craft-ganjifa",
+    "title": "Ganjifa",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "paris",
-    "slug": "food-croissant",
-    "title": "Croissant",
+    "destinationId": "mysuru",
+    "slug": "food-puran-poli",
+    "title": "Puran poli",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "paris",
-    "slug": "craft-manufacture-nationale-de-sevres",
-    "title": "Manufacture nationale de Sèvres",
+    "destinationId": "mysuru",
+    "slug": "craft-channapatna-toys",
+    "title": "Channapatna toys",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "paris",
-    "slug": "festival-fete-de-la-musique",
-    "title": "Fête de la Musique",
+    "destinationId": "mysuru",
+    "slug": "festival-melukote",
+    "title": "Melukote",
     "category": "Festivals"
   },
   {
-    "destinationId": "paris",
-    "slug": "food-baguette",
-    "title": "Baguette",
+    "destinationId": "mysuru",
+    "slug": "food-indian-filter-coffee",
+    "title": "Indian filter coffee",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "paris",
-    "slug": "food-french-cuisine",
-    "title": "French cuisine",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "paris",
-    "slug": "craft-haute-couture",
-    "title": "Haute couture",
+    "destinationId": "mysuru",
+    "slug": "craft-mysore-silk",
+    "title": "Mysore silk",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "paris",
-    "slug": "festival-paris-fashion-week",
-    "title": "Paris Fashion Week",
-    "category": "Festivals"
-  },
-  {
-    "destinationId": "paris",
-    "slug": "food-snails-as-food",
-    "title": "Snails as food",
+    "destinationId": "mysuru",
+    "slug": "food-mysore-pak",
+    "title": "Mysore pak",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "paris",
-    "slug": "craft-gobelins-manufactory",
-    "title": "Gobelins Manufactory",
+    "destinationId": "mysuru",
+    "slug": "food-masala-dosa",
+    "title": "Masala dosa",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "mysuru",
+    "slug": "food-kesari-bat",
+    "title": "Kesari bat",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "mysuru",
+    "slug": "festival-diwali",
+    "title": "Diwali",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "festival-ganesh-chaturthi",
+    "title": "Ganesh Chaturthi",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "craft-kolhapuri-chappal",
+    "title": "Kolhapuri chappal",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "paris",
-    "slug": "festival-nuit-blanche",
-    "title": "Nuit Blanche",
+    "destinationId": "pune",
+    "slug": "festival-gudi-padwa",
+    "title": "Gudi Padwa",
     "category": "Festivals"
   },
   {
-    "destinationId": "paris",
-    "slug": "food-creme-brulee",
-    "title": "Crème brûlée",
+    "destinationId": "pune",
+    "slug": "festival-pandharpur-vari",
+    "title": "Pandharpur Vari",
+    "category": "Festivals"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "food-bhakri",
+    "title": "Bhakri",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "paris",
-    "slug": "food-macaron",
-    "title": "Macaron",
+    "destinationId": "pune",
+    "slug": "food-puran-poli",
+    "title": "Puran poli",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "paris",
-    "slug": "festival-bastille-day",
-    "title": "Bastille Day",
+    "destinationId": "pune",
+    "slug": "food-vada-pav",
+    "title": "Vada pav",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "food-shrewsbury-cake",
+    "title": "Shrewsbury cake",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "food-misal-pav",
+    "title": "Misal pav",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "food-maharashtrian-cuisine",
+    "title": "Maharashtrian cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "pune",
+    "slug": "festival-sawai-gandharva-bhimsen-festival",
+    "title": "Sawai Gandharva Bhimsen Festival",
     "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "festival-festa-della-repubblica",
-    "title": "Festa della Repubblica",
+    "destinationId": "pune",
+    "slug": "festival-diwali",
+    "title": "Diwali",
     "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "craft-micromosaic",
-    "title": "Micromosaic",
+    "destinationId": "pune",
+    "slug": "craft-warli-painting",
+    "title": "Warli painting",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "rome",
-    "slug": "food-roman-cuisine",
-    "title": "Roman cuisine",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "rome",
-    "slug": "craft-roman-mosaic",
-    "title": "Roman mosaic",
+    "destinationId": "pune",
+    "slug": "craft-paithani",
+    "title": "Paithani",
     "category": "Art & Craft"
   },
   {
-    "destinationId": "rome",
-    "slug": "festival-ferragosto",
-    "title": "Ferragosto",
+    "destinationId": "pune",
+    "slug": "food-jhunka",
+    "title": "Jhunka",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "food-kashmiri-cuisine",
+    "title": "Kashmiri cuisine",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "craft-kashmiri-handicrafts",
+    "title": "Kashmiri handicrafts",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "food-rogan-josh",
+    "title": "Rogan josh",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "craft-pashmina-material",
+    "title": "Pashmina (material)",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "craft-kashmir-shawl",
+    "title": "Kashmir shawl",
+    "category": "Art & Craft"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "festival-maha-shivaratri",
+    "title": "Maha Shivaratri",
     "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "food-carbonara",
-    "title": "Carbonara",
+    "destinationId": "srinagar",
+    "slug": "food-noon-chai",
+    "title": "Noon chai",
     "category": "Food & Flavours"
   },
   {
-    "destinationId": "rome",
-    "slug": "festival-carnival-in-italy",
-    "title": "Carnival in Italy",
+    "destinationId": "srinagar",
+    "slug": "festival-kheer-bhawani-temple",
+    "title": "Kheer Bhawani Temple",
     "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "festival-natale-di-roma",
-    "title": "Natale di Roma",
+    "destinationId": "srinagar",
+    "slug": "food-kahwah",
+    "title": "Kahwah",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "food-wazwan",
+    "title": "Wazwan",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "food-yahni",
+    "title": "Yahni",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "food-goshtaab",
+    "title": "Goshtaab",
+    "category": "Food & Flavours"
+  },
+  {
+    "destinationId": "srinagar",
+    "slug": "festival-nowruz",
+    "title": "Nowruz",
     "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "food-gelato",
-    "title": "Gelato",
-    "category": "Food & Flavours"
+    "destinationId": "srinagar",
+    "slug": "festival-eid-al-adha",
+    "title": "Eid al-Adha",
+    "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "food-amatriciana-sauce",
-    "title": "Amatriciana sauce",
-    "category": "Food & Flavours"
+    "destinationId": "srinagar",
+    "slug": "festival-eid-al-fitr",
+    "title": "Eid al-Fitr",
+    "category": "Festivals"
   },
   {
-    "destinationId": "rome",
-    "slug": "food-maritozzo",
-    "title": "Maritozzo",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "rome",
-    "slug": "food-suppli",
-    "title": "Supplì",
-    "category": "Food & Flavours"
-  },
-  {
-    "destinationId": "rome",
-    "slug": "food-cacio-e-pepe",
-    "title": "Cacio e pepe",
-    "category": "Food & Flavours"
+    "destinationId": "srinagar",
+    "slug": "festival-vaisakhi",
+    "title": "Vaisakhi",
+    "category": "Festivals"
   },
   {
     "destinationId": "varanasi",

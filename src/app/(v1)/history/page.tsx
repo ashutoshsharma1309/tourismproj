@@ -4,13 +4,14 @@ import Link from "next/link";
 import { Footer } from "@/components/layout/Footer";
 import { allHistory, hrefFor } from "@/lib/global-index";
 import { SITE } from "@/lib/constants";
+import { listDestinations } from "@/lib/destinations/registry";
 
 /**
  * One timeline, every destination, oldest first.
  *
  * WHY IT IS ONE LIST AND NOT FIFTEEN
  * ----------------------------------
- * Grouping by destination would have produced fifteen short chronologies and
+ * Grouping by destination would have produced a stack of short chronologies and
  * hidden the only thing this page can show that a destination page cannot:
  * that the Roman republic, the founding of Kyoto and the Brooklyn Bridge are
  * entries in the same archive. Sorting across destinations is the argument.
@@ -21,7 +22,7 @@ import { SITE } from "@/lib/constants";
 export const metadata: Metadata = {
   title: `History · ${SITE.name}`,
   description:
-    "A single chronology across fifteen destinations, every dated event traced to a named source.",
+    `A single chronology across ${listDestinations().length} Indian destinations, every dated event traced to a named source.`,
 };
 
 /** Era bands. Wide on purpose: they orient a reader, they do not classify. */
@@ -38,7 +39,9 @@ const eraOf = (year: number) => ERAS.find((era) => year < era.until)!.label;
 
 export default async function HistoryPage() {
   const events = await allHistory();
-  const countries = new Set(events.map((entry) => entry.destination.country.name));
+  /* States, not countries: every destination is in India, so the spread
+     across states is the figure that says something. */
+  const states = new Set(events.map((entry) => entry.destination.region?.name ?? entry.destination.country.name));
 
   /* Walk the sorted list once, opening a new band when the era changes. */
   const bands: { era: string; entries: typeof events }[] = [];
@@ -59,7 +62,7 @@ export default async function HistoryPage() {
           {events[0]?.record.yearLabel} to {events[events.length - 1]?.record.yearLabel}
         </h1>
         <p className="mt-4 max-w-2xl text-body-lg leading-relaxed text-muted">
-          {events.length} dated events across {countries.size} countries, in one
+          {events.length} dated events across {states.size} Indian states, in one
           chronology. Every one is traced to a named source, and where the
           evidence jumps, the gap is left as a gap.
         </p>

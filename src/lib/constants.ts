@@ -22,7 +22,13 @@ export const SITE = {
    * slogan. `motto` is the slogan. Keeping them separate is what lets the first
    * viewport say what the product does while the brand line still appears.
    */
-  tagline: "Verified tourism knowledge, one destination at a time",
+  /*
+   * Plain words a first-time visitor can act on. The previous line —
+   * "Verified tourism knowledge, one destination at a time" — described the
+   * method and never said WHERE. A newcomer could not answer "what is this?"
+   * from the first viewport, which a UX audit recorded as the top finding.
+   */
+  tagline: "Cultural tourism and heritage discovery for India",
   motto: "Discover. Experience. Preserve.",
   /**
    * The Sikkim archive's own identity, used on the pages that ARE the Sikkim
@@ -42,7 +48,7 @@ export const SITE = {
    * result or a shared link showed. It now describes what the archive holds.
    */
   description:
-    "Tourism knowledge you can check. Fifteen destinations, each opening into its places, history, culture and experiences, with every claim traced to a named source and every gap stated rather than filled.",
+    "Tourism knowledge you can check, across India. Every destination opens into its places, history, culture and experiences, with every claim traced to a named source and every gap stated rather than filled.",
 } as const;
 
 /**
@@ -114,42 +120,37 @@ export interface NavLink {
  * so a visitor reading about Paris was offered Monasteries, Stays, Trade and
  * Permits — Sikkim's routes, under a header that also said Sikkim.
  *
- * What replaced them is not fewer links, it is the right ones: the navbar now
- * appends the CURRENT destination's sections, derived from its content by
- * `destinationNavMap()`. On Sikkim that restores every link that used to be
- * here, and on Paris it lists Paris's four. Nothing lost, thirteen
- * destinations fixed.
+ * For a while after that the navbar appended the CURRENT destination's
+ * sections to these, derived from its content by `destinationNavMap()`. That
+ * fixed the wrong-destination bug and created a ten-link header; the
+ * sections now live on the destination hub itself and the header carries
+ * only what is below.
  */
 export const NAV_LINKS: NavLink[] = [
   /*
-   * WHAT THE PRODUCT DOES, NAMED.
+   * FOUR VERBS, NOT SIX NOUNS.
    *
-   * Three links — Discover, Destinations, Compare — described the product to
-   * somebody who already knew what it was. Stories, History and Plan are the
-   * three things a visitor actually comes for, and all three existed only
-   * inside a destination: there was no answer to "show me the stories" that
-   * did not first require choosing a city. The global index pages exist now,
-   * so the navigation can name them.
+   * The bar read "Destinations · Discover · Stories · History · Plan ·
+   * Compare", and a first-time-user audit found that "Destinations" and
+   * "Discover" were indistinguishable, and that Stories, History and Plan —
+   * content categories and a secondary tool — competed as equals with the
+   * one thing a newcomer has to do first, which is open a destination. On a
+   * destination page five more section links were appended, for ten.
    *
-   * "Explore" is deliberately NOT a separate entry. It would have pointed at
-   * /destinations, which is already here under its own name, and a menu with
-   * two words for one page teaches a visitor that the words do not mean
-   * anything.
+   * What is here now is the visitor's own sequence: explore a place, get
+   * matched to one, keep the ones you want, compare them. Stories, History
+   * and Plan are still one click away — in the footer, and inside every
+   * destination that has them — they just no longer share the header with
+   * the primary action. The header is the same on every page; a
+   * destination's own sections belong to its hub, not to the chrome.
    *
    * `prefetch: false` on the routes that read searchParams: they are
    * dynamic, and Next issues then ABORTS a prefetch for them — measured as
    * two `net::ERR_ABORTED` requests on every page in the site.
    */
-  { href: "/destinations", label: "Destinations" },
-  { href: "/discover", label: "Discover", prefetch: false },
-  { href: "/stories", label: "Stories" },
-  { href: "/history", label: "History" },
-  { href: "/plan", label: "Plan" },
-  /*
-   * Coverage comparison was reachable only from a link partway down
-   * /destinations, which made the one page that answers "how much do you
-   * actually know about these places?" the hardest one to find.
-   */
+  { href: "/destinations", label: "Explore" },
+  { href: "/discover", label: "For you", prefetch: false },
+  { href: "/journey", label: "Journey", prefetch: false },
   { href: "/destinations/compare", label: "Compare", prefetch: false },
 ];
 

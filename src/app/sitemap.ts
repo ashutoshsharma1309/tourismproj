@@ -130,7 +130,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       /*
        * Equal priority. This gave Sikkim 0.9 and every other destination 0.7
        * — a stated preference for one destination in the one file search
-       * engines read for exactly that signal. All fifteen are documented;
+       * engines read for exactly that signal. All of them are documented;
        * none is the product's preferred one.
        */
       priority: 0.8,

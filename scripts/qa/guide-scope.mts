@@ -4,10 +4,10 @@
  * WHAT THIS GUARDS
  * ----------------
  * The guide once answered every page from Sikkim's corpus unless the
- * question named another destination: "temples" on Kyoto listed Sikkim's
+ * question named another destination: "temples" on Kochi listed Sikkim's
  * monasteries. This suite runs the engine directly — no browser, no server —
  * with the page's destination passed as context, and asserts two things for
- * each of the fifteen:
+ * each of the eighteen:
  *
  *   1. Every record it offers belongs to the destination in scope. A single
  *      foreign href is a failure, whatever else the answer got right.
@@ -54,10 +54,12 @@ const foreign = (r: GuideReply, id: string) =>
 /* ====================================================================== */
 console.log("\n-- Index --");
 const destinations = listDestinations();
-check("fifteen destinations in the registry", destinations.length === 15, String(destinations.length));
+check("eighteen destinations in the registry", destinations.length === 18, String(destinations.length));
+check("every registered destination is in India", destinations.every((d) => d.country.code === "IN"), destinations.filter((d) => d.country.code !== "IN").map((d) => d.id).join(", ") || "18/18");
 const byDest = new Map<string, GuideRecord[]>();
 for (const r of index.records) byDest.set(r.destinationId, [...(byDest.get(r.destinationId) ?? []), r]);
-check("every destination contributes records", byDest.size === 15, `${byDest.size}/15`);
+check("every destination contributes records", byDest.size === 18,
+  `${byDest.size}/18${byDest.size < 18 ? ` — no records yet for: ${destinations.filter((d) => !byDest.has(d.id)).map((d) => d.id).join(", ")}` : ""}`);
 check(
   "every record's href belongs to its destination",
   index.records.every((r) => r.href.startsWith(`/destinations/${r.destinationId}`)),
@@ -136,7 +138,7 @@ for (const d of destinations) {
   const sikkim = ask("Sikkim monasteries");
   check(`${label("Sikkim monasteries")} reaches Sikkim by name`, items(sikkim).length > 0 && items(sikkim).every((i) => i.kind === "monastery"));
 
-  const other = d.id === "paris" ? "Kyoto" : "Paris";
+  const other = d.id === "jaipur" ? "Kochi" : "Jaipur";
   const otherId = other.toLowerCase();
   const cross = ask(`tell me about ${other}`);
   check(`${label(`tell me about ${other}`)} reaches ${other} by name`, items(cross).length > 0 && own(cross, otherId));
@@ -164,8 +166,8 @@ console.log("\n-- Sikkim's deep engine --");
   check("Sikkim: fees", /Sikkim charges/.test(prose(ask("what does it cost"))));
   const gangtok = ask("hotels in Gangtok");
   check("Sikkim: hotels in Gangtok", items(gangtok).length > 0 && items(gangtok).every((i) => i.kind === "stay" && /Gangtok/.test(i.meta)));
-  check("Sikkim: Colosseum reaches Rome", /Rome/.test(prose(ask("Colosseum"))) && own(ask("Colosseum"), "rome"));
-  check("Sikkim: tell me about Kyoto", own(ask("tell me about Kyoto"), "kyoto") && items(ask("tell me about Kyoto")).length > 0);
+  check("Sikkim: Charminar reaches Hyderabad", /Hyderabad/.test(prose(ask("Charminar"))) && own(ask("Charminar"), "hyderabad"));
+  check("Sikkim: tell me about Kochi", own(ask("tell me about Kochi"), "kochi") && items(ask("tell me about Kochi")).length > 0);
 }
 
 /* ====================================================================== */
@@ -173,9 +175,9 @@ console.log("\n-- Global scope (no destination) --");
 {
   const ask = (q: string) => respond(q, index, {});
   const hello = ask("hello");
-  check("global: hello lists destinations", items(hello).length > 0 && items(hello).every((i) => i.kind === "destination") && /15 destinations/.test(prose(hello)));
-  const rome = ask("What is the ticket price and opening time for the Colosseum?");
-  check("global: Colosseum reaches Rome, refuses price", /Rome/.test(prose(rome)) && /no opening hours or ticket prices/.test(prose(rome)) && !/Sikkim charges/.test(prose(rome)));
+  check("global: hello lists destinations", items(hello).length > 0 && items(hello).every((i) => i.kind === "destination") && /18 Indian destinations/.test(prose(hello)));
+  const hyderabad = ask("What is the ticket price and opening time for the Charminar?");
+  check("global: Charminar reaches Hyderabad, refuses price", /Hyderabad/.test(prose(hyderabad)) && /no opening hours or ticket prices/.test(prose(hyderabad)) && !/Sikkim charges/.test(prose(hyderabad)));
   check("global: monasteries go to Sikkim", items(ask("monasteries")).every((i) => i.kind === "monastery") && items(ask("monasteries")).length > 0);
   const museums = ask("museums");
   check("global: museums search the whole archive", items(museums).length > 0 && new Set(items(museums).map((i) => i.meta.split(" · ")[0])).size >= 2, [...new Set(items(museums).map((i) => i.meta.split(" · ")[0]))].join(","));
@@ -184,25 +186,42 @@ console.log("\n-- Global scope (no destination) --");
 
   /* The browser suite's own questions, answered from each named destination. */
   const QUESTIONS: [string, string, string][] = [
-    ["kyoto", "Kyoto", "What should I explore in Kyoto for architecture?"],
     ["mumbai", "Mumbai", "Tell me about Mumbai colonial architecture"],
     ["jaipur", "Jaipur", "Tell me about the history of Jaipur"],
-    ["rome", "Rome", "What should I see in Rome for archaeology?"],
     ["kolkata", "Kolkata", "What food traditions in Kolkata?"],
-    ["paris", "Paris", "Paris museums"],
     ["agra", "Agra", "Agra Mughal heritage"],
     ["goa", "Goa", "Goa churches"],
-    ["istanbul", "Istanbul", "Istanbul bazaars"],
     ["delhi", "Delhi", "Delhi monuments"],
     ["varanasi", "Varanasi", "Varanasi ghats"],
     ["hyderabad", "Hyderabad", "Hyderabad forts"],
     ["kochi", "Kochi", "Kochi heritage"],
-    ["new-york-city", "New York", "New York museums"],
     ["sikkim", "Sikkim", "Sikkim monasteries"],
+    ["amritsar", "Amritsar", "Amritsar Golden Temple"],
+    ["ahmedabad", "Ahmedabad", "Ahmedabad stepwells"],
+    ["lucknow", "Lucknow", "Food in Lucknow"],
+    ["pune", "Pune", "Pune Shaniwar Wada"],
+    ["mysuru", "Mysuru", "Mysuru palace"],
+    ["madurai", "Madurai", "Temples in Madurai"],
+    ["bhubaneswar", "Bhubaneswar", "Bhubaneswar temples"],
+    ["srinagar", "Srinagar", "Srinagar gardens"],
   ];
+  /* Indian landmark pairs: a question about one city must never be answered
+     with another city's landmark. */
+  const FOREIGN: Record<string, RegExp> = {
+    amritsar: /Dashashwamedh|Rumtek|Charminar/i,
+    srinagar: /Hawa Mahal|Rumtek|Charminar/i,
+    varanasi: /Golden Temple|Rumtek|Charminar/i,
+    mumbai: /Charminar|Hawa Mahal|Rumtek/i,
+    madurai: /Rumtek|Golden Temple|Charminar/i,
+  };
   for (const [id, name, q] of QUESTIONS) {
     const r = ask(q);
     check(`global: "${q}" answered from ${name}'s records`, items(r).length > 0 && own(r, id) && prose(r).includes(name), foreign(r, id).slice(0, 2).join(" "));
+    const landmark = FOREIGN[id];
+    if (landmark) {
+      const everything = prose(r) + " " + items(r).map((i) => `${i.title} ${i.meta}`).join(" ");
+      check(`global: "${q}" carries no other city's landmark`, !landmark.test(everything), everything.match(landmark)?.[0] ?? "clean");
+    }
   }
 }
 

@@ -92,7 +92,8 @@
     "qa:visual": "node scripts/qa/visual-capture.mjs",
     "archive:vendor": "node scripts/archive/vendor-archive-images.mjs",
     "qa:media-provenance": "node scripts/qa/media-provenance.mjs",
-    "qa:guide": "tsx scripts/qa/guide-scope.mts"
+    "qa:guide": "tsx scripts/qa/guide-scope.mts",
+    "qa:india": "tsx scripts/qa/india-only.mts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.112.3",

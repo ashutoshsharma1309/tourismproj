@@ -26,7 +26,9 @@ const UNINFORMATIVE =
 const MACHINE_SYNTAX = /\bQS:P\d+|\+\d{4}-\d{2}-\d{2}T/;
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".json"));
-check("Every capsule destination has a catalogue", files.length === 14, `${files.length}`);
+/* Counted from ids.ts, not typed: 14 became 17 in the India-only expansion. */
+const CAPSULE_COUNT = (readFileSync("src/data/destinations/capsules/ids.ts", "utf8").match(/^\s+"[a-z-]+",$/gm) ?? []).length;
+check("Every capsule destination has a catalogue", files.length === CAPSULE_COUNT, `${files.length}`);
 
 let total = 0;
 const allIds = new Set();

@@ -104,7 +104,7 @@ export async function buildGuideRecords(): Promise<GuideRecord[]> {
         /*
          * Stays: name, type and the source's own sentence, linking to the
          * stay's page. The guide can then answer "what kind of accommodation
-         * is documented in Kyoto" from records rather than declining — and
+         * is documented in Kochi" from records rather than declining — and
          * it still holds no rate, rating or availability to be asked about.
          */
         ...stays.slice(0, PER_KIND).map((stay): GuideRecord => ({

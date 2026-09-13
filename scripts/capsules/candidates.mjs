@@ -71,34 +71,54 @@ export const CANDIDATES = {
     craft: ["Azulejo", "Kunbi saree"],
     stay: ["Taj Exotica Goa", "Cidade de Goa", "Taj Fort Aguada"],
   },
-  kyoto: {
-    food: ["Kaiseki", "Japanese cuisine", "Matcha", "Yudofu", "Wagashi", "Tofu", "Japanese tea ceremony"],
-    festival: ["Gion Matsuri", "Aoi Matsuri", "Jidai Matsuri", "Hanami", "Gozan no Okuribi"],
-    craft: ["Nishijin-ori", "Yūzen", "Kyo-yaki", "Japanese lacquerware", "Kintsugi"],
-    stay: ["Tawaraya Ryokan", "Hiiragiya", "Hotel Okura Kyoto"],
+  /* INDIA-ONLY (SIH 2026 final): the eight added cities. Over-long on purpose;
+     check-titles.mjs keeps only the titles that are real articles. */
+  amritsar: {
+    food: ["Amritsari kulcha", "Amritsari fish", "Chole bhature", "Lassi", "Punjabi cuisine", "Sarson da saag", "Makki di roti", "Langar (Sikhism)", "Pinni", "Tandoori chicken", "Kulfi"],
+    festival: ["Vaisakhi", "Guru Nanak Gurpurab", "Bandi Chhor Divas", "Hola Mohalla", "Lohri", "Diwali"],
+    craft: ["Phulkari", "Jutti", "Dhurrie", "Parandi", "Punjabi suit"],
+    stay: [],
   },
-  paris: {
-    food: ["French cuisine", "Croissant", "Baguette", "Macaron", "Crème brûlée", "Steak frites", "Escargot", "Éclair"],
-    festival: ["Bastille Day", "Nuit Blanche", "Fête de la Musique", "Paris Fashion Week"],
-    craft: ["Haute couture", "Gobelins Manufactory", "Sèvres porcelain"],
-    stay: ["Hôtel Ritz Paris", "Hôtel de Crillon", "Le Meurice", "Hôtel Plaza Athénée", "The Peninsula Paris"],
+  ahmedabad: {
+    food: ["Gujarati cuisine", "Dhokla", "Khaman", "Fafda", "Thepla", "Undhiyu", "Khandvi", "Gujarati thali", "Dabeli", "Handvo", "Sev khamani"],
+    festival: ["Uttarayan", "International Kite Festival in Gujarat", "Navaratri", "Rath Yatra (Ahmedabad)", "Diwali", "Kankaria Carnival"],
+    craft: ["Bandhani", "Patola", "Ajrakh", "Block printing", "Mata ni Pachedi", "Rogan painting", "Kutch embroidery"],
+    stay: [],
   },
-  rome: {
-    food: ["Roman cuisine", "Carbonara", "Cacio e pepe", "Supplì", "Saltimbocca", "Gelato", "Amatriciana", "Maritozzo"],
-    festival: ["Natale di Roma", "Carnival of Rome", "Ferragosto", "Festa della Repubblica"],
-    craft: ["Roman mosaic", "Micromosaic"],
-    stay: ["Hotel de Russie", "Hassler Roma", "Hotel Eden (Rome)", "St. Regis Rome"],
+  lucknow: {
+    food: ["Awadhi cuisine", "Tunday Kababi", "Galouti kebab", "Kakori kebab", "Awadhi biryani", "Sheermal", "Nihari", "Makhan malai", "Paan", "Kulfi", "Basket chaat"],
+    festival: ["Lucknow Mahotsav", "Muharram", "Eid al-Fitr", "Diwali", "Holi", "Bada Mangal"],
+    craft: ["Chikan (embroidery)", "Zardozi", "Ittar", "Mukaish", "Lucknow zardozi"],
+    stay: [],
   },
-  istanbul: {
-    food: ["Turkish cuisine", "Baklava", "Doner kebab", "Simit", "Turkish delight", "Turkish coffee", "Meze", "Lahmacun", "Balık ekmek"],
-    festival: ["Istanbul Film Festival", "Istanbul Biennial", "Eid al-Fitr", "Hıdırellez", "Ramadan"],
-    craft: ["İznik pottery", "Turkish carpet", "Ebru (art)", "Islamic calligraphy"],
-    stay: ["Pera Palace Hotel", "Çırağan Palace", "Four Seasons Hotel Istanbul at Sultanahmet"],
+  pune: {
+    food: ["Maharashtrian cuisine", "Misal pav", "Bakarwadi", "Puran poli", "Vada pav", "Poha", "Sabudana khichdi", "Mastani (drink)", "Pithla", "Shrewsbury biscuit", "Bhakri"],
+    festival: ["Ganesh Chaturthi", "Sawai Gandharva Bhimsen Mahotsav", "Gudi Padwa", "Pandharpur Wari", "Diwali", "Pune Festival"],
+    craft: ["Paithani", "Kolhapuri chappal", "Warli painting", "Tambat", "Copper craft"],
+    stay: [],
   },
-  "new-york-city": {
-    food: ["New York-style pizza", "Bagel", "Pastrami", "New York-style cheesecake", "Hot dog", "Cuisine of New York City", "Black and white cookie"],
-    festival: ["Macy's Thanksgiving Day Parade", "Tribeca Festival", "New York Fashion Week", "Village Halloween Parade", "St. Patrick's Day Parade, New York City"],
-    craft: ["Tiffany glass", "Graffiti in New York City", "Hip-hop"],
-    stay: ["Waldorf Astoria New York", "Plaza Hotel", "Hotel Chelsea", "The Carlyle", "St. Regis New York"],
+  mysuru: {
+    food: ["Mysore pak", "Masala dosa", "Karnataka cuisine", "Bisi bele bath", "Ragi mudde", "Indian filter coffee", "Set dosa", "Holige", "Mysore bonda", "Chow chow bath", "Kesari bath"],
+    festival: ["Mysore Dasara", "Ugadi", "Deepavali", "Makar Sankranti", "Vairamudi Brahmotsava"],
+    craft: ["Mysore silk", "Mysore painting", "Channapatna toys", "Mysore Sandal Soap", "Mysore rosewood inlay", "Ganjifa", "Sandalwood carving"],
+    stay: [],
+  },
+  madurai: {
+    food: ["Jigarthanda", "Tamil cuisine", "Idli", "Dosa", "Paruthi paal", "Chettinad cuisine", "Sambar (dish)", "Indian filter coffee", "Pongal (dish)", "Kari dosai", "Madurai malli"],
+    festival: ["Chithirai Thiruvizha", "Pongal", "Thaipusam", "Diwali", "Aadi Perukku", "Float Festival"],
+    craft: ["Sungudi", "Madurai malli", "Kolam", "Thanjavur painting", "Pattamadai pai", "Bronze casting"],
+    stay: [],
+  },
+  bhubaneswar: {
+    food: ["Odia cuisine", "Dalma", "Pakhala", "Chhena poda", "Odisha Rasagola", "Chhena jhili", "Khaja", "Santula", "Pitha", "Dahi vada", "Chhena gaja"],
+    festival: ["Rath Yatra", "Raja Parba", "Durga Puja", "Bali Jatra", "Ashokashtami", "Konark Dance Festival", "Nuakhai", "Kartik Purnima"],
+    craft: ["Pattachitra", "Pipili applique work", "Tarakasi", "Sambalpuri saree", "Dhokra", "Bomkai sari", "Odisha Ikat"],
+    stay: [],
+  },
+  srinagar: {
+    food: ["Kashmiri cuisine", "Wazwan", "Rogan josh", "Kahwah", "Noon chai", "Yakhni", "Gushtaba", "Rista", "Kashmiri pulao", "Harisa (dish)", "Tabak maaz", "Modur pulav"],
+    festival: ["Tulip Festival (Srinagar)", "Eid al-Fitr", "Eid al-Adha", "Nowruz", "Kheer Bhawani", "Maha Shivaratri", "Baisakhi"],
+    craft: ["Pashmina", "Kashmir shawl", "Kashmiri papier-mache", "Kashmiri carpet", "Walnut wood carving", "Kani shawl", "Namda (rug)", "Khatamband", "Sozni embroidery"],
+    stay: [],
   },
 };

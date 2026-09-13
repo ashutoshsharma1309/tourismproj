@@ -110,8 +110,8 @@ function firstTerm(haystack: string, terms: string[]): string | null {
 /**
  * Which themes a destination carries, with the evidence that produced each.
  *
- * Both sources are consulted; a destination with only claims (Jaipur, Kyoto)
- * and a destination with mostly records (Sikkim) are treated identically.
+ * Both sources are consulted; a destination with only claims and a
+ * destination with mostly records (Sikkim) are treated identically.
  */
 export function themesFor(destinationId: string, experiences: Experience[]): ThemePresence[] {
   const knowledge = getPublishedKnowledge(destinationId);

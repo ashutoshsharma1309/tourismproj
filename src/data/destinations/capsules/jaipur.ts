@@ -307,6 +307,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-rambagh-palace-jaipur-wikidata",
+      title: "Rambagh Palace, Jaipur (Q7289168)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q7289168",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-bissau-palace-hotel-jaipur",
       title: "Bissau Palace Hotel, Jaipur",
       publisher: "Wikipedia",
@@ -920,7 +929,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/jaipur/stay-rambagh-palace-jaipur.jpg",
       imageAlt: "Rambagh Palace, Jaipur, Jaipur",
       website: "http://www.tajhotels.com/Luxury/Grand-Palaces-And-Iconic-Hotels/Rambagh-Palace-Jaipur/Overview.html",
-      sourceIds: ["stay-rambagh-palace-jaipur"],
+      sourceIds: ["stay-rambagh-palace-jaipur", "stay-rambagh-palace-jaipur-wikidata"],
     },
     {
       id: "stay-bissau-palace-hotel-jaipur",

@@ -124,27 +124,25 @@ export default async function ComparePage({
           · Compare
         </p>
         <h1 className="mt-3 font-display text-h1 text-balance-heading">
-          Compare what is actually known
+          Which destination fits you better?
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
-          Every figure below is a count of records this archive holds. It
-          measures <strong className="font-medium text-foreground">coverage</strong>, not
-          quality: a destination with fewer rows filled in is not a lesser
-          place, it is one less of which has been catalogued and reviewed.
-          &ldquo;Not yet available&rdquo; means no such dataset exists here — it does
-          not mean zero.
+          Pick two or three destinations and see what each offers for history,
+          heritage, culture, nature, architecture and religious heritage.
+          Counts show how much has been documented, not which place is better.
         </p>
 
         {/* Column picker. A GET form, so a comparison is a shareable URL. */}
         <form method="get" action="/destinations/compare" className="mt-8 rounded-xl border border-border bg-surface p-5">
           <fieldset className="min-w-0">
             <legend className="font-mono text-eyebrow tracking-widest text-primary uppercase">
-              Destinations to compare
+              Choose destinations
             </legend>
             <p className="mt-2 text-caption text-muted">
-              Only destinations with verified content are offered. The other{" "}
-              {coverage.length - comparable.length} are registered and empty, and
-              comparing them would be comparing nothing.
+              Tick two or three.
+              {coverage.length - comparable.length > 0
+                ? ` ${coverage.length - comparable.length} ${coverage.length - comparable.length === 1 ? "destination is" : "destinations are"} still being catalogued and cannot be compared yet.`
+                : ""}
             </p>
             <div className="mt-3 flex flex-wrap gap-2">
               {comparable.map((entry) => (
@@ -202,11 +200,11 @@ export default async function ComparePage({
               return (
                 <section className="mt-10" aria-labelledby="strongest-for">
                   <h2 id="strongest-for" className="font-display text-h3 text-balance-heading">
-                    Strongest for
+                    Where each one is strongest
                   </h2>
                   <p className="mt-1 max-w-2xl text-caption text-muted">
-                    Which of these holds the most catalogued records for each interest. Counted from
-                    the records, not rated — the exact figures are in the table.
+                    For each interest, the destination with the most documented places for it.
+                    Counted, not rated — every figure is in the table below.
                   </p>
                   <dl className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
                     {leaders.map(({ interest, tied, top, alone }) => (
@@ -225,6 +223,37 @@ export default async function ComparePage({
                       </div>
                     ))}
                   </dl>
+
+                  {/*
+                    WHY EACH MAY SUIT YOU — derived from the same leaders, so it
+                    is explainable by construction: a destination is named for
+                    exactly the interests where it holds the most documented
+                    places among those compared, with the counts.
+                  */}
+                  <h3 className="mt-8 font-display text-h4">Why each may suit you</h3>
+                  <ul className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {columns.map((entry) => {
+                      const leads = leaders.filter(({ tied }) =>
+                        tied.some((c) => c.entry.destination.id === entry.destination.id),
+                      );
+                      return (
+                        <li key={entry.destination.id} className="rounded-xl border border-border bg-surface p-4">
+                          <p className="font-medium">{entry.destination.name}</p>
+                          <p className="mt-1 text-caption leading-relaxed text-muted">
+                            {leads.length > 0
+                              ? `Strongest for ${leads.map(({ interest, top, tied }) => `${INTEREST_LABEL[interest].toLowerCase()} (${top} ${top === 1 ? "place" : "places"}${tied.length > 1 ? ", tied" : ""})`).join(", ")}.`
+                              : `Documented for the same interests, with fewer places for each than the others here — a smaller archive, not a lesser place.`}
+                          </p>
+                          <Link
+                            href={`/destinations/${entry.destination.id}`}
+                            className="mt-3 inline-flex min-h-11 items-center text-small font-medium text-primary hover:underline focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                          >
+                            Explore {entry.destination.name}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </section>
               );
             })()

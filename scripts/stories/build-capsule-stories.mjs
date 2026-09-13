@@ -51,15 +51,18 @@ const ALSO_KNOWN_AS = {
   kolkata: ["Calcutta", "Bengal", "Bengali"],
   jaipur: ["Rajasthan", "Rajasthani"],
   mumbai: ["Bombay", "Maharashtra"],
-  "new-york-city": ["New York", "Manhattan", "Brooklyn"],
-  istanbul: ["Constantinople", "Ottoman", "Turkish"],
-  kyoto: ["Kansai", "Japanese"],
   delhi: ["Mughal", "Punjabi"],
   hyderabad: ["Deccan", "Telangana", "Nizam"],
   agra: ["Mughal"],
-  paris: ["French", "Parisian"],
-  rome: ["Roman", "Italian"],
   goa: ["Goan", "Konkan"],
+  amritsar: ["Punjab", "Punjabi", "Sikh"],
+  ahmedabad: ["Ahmadabad", "Gujarat", "Gujarati"],
+  lucknow: ["Awadh", "Awadhi", "Lucknowi", "Nawab"],
+  pune: ["Poona", "Maratha", "Marathi", "Maharashtrian", "Peshwa"],
+  mysuru: ["Mysore", "Karnataka", "Kannada", "Wadiyar"],
+  madurai: ["Tamil", "Pandya", "Nayak"],
+  bhubaneswar: ["Odisha", "Odia", "Orissa", "Kalinga"],
+  srinagar: ["Kashmir", "Kashmiri"],
 };
 
 /** A paragraph that begins mid-sentence is a fragment, not prose. */

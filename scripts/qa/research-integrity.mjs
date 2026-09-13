@@ -61,7 +61,11 @@ const DOC = {
 };
 const TASK = { id: "t1", category: "history", question: "q", expectedClaimType: "documented history", acceptableTiers: ["encyclopedia"] };
 const SIKKIM = getDestination("sikkim");
-const KYOTO = getDestination("kyoto");
+const KOCHI = getDestination("kochi");
+/* No registered destination is outside India any more, so the country-scope
+   negative is exercised on a synthetic record that shares nothing with any
+   real one: the rule under test reads only `country.code`. */
+const ELSEWHERE = { ...KOCHI, id: "elsewhere", name: "Elsewhere", country: { code: "ZZ", name: "Nowhere" } };
 
 const propose = (over) => ({
   statement: "Pemayangtse Monastery was founded in 1705 by Lhatsun Chempo.",
@@ -82,11 +86,13 @@ check("Job ids are deterministic from their inputs",
   jobId("sikkim", ["history"], "rule-based") === jobId("sikkim", ["history"], "rule-based"),
   "same inputs, same id");
 check("Job id changes with destination",
-  jobId("sikkim", ["history"], "rule-based") !== jobId("kyoto", ["history"], "rule-based"));
+  jobId("sikkim", ["history"], "rule-based") !== jobId("kochi", ["history"], "rule-based"));
 check("Job id is category-order independent",
   jobId("sikkim", ["a", "b"], "p") === jobId("sikkim", ["b", "a"], "p"),
   "reuse is not defeated by argument order");
-check("All 15 destinations resolve", listDestinations().length === 15, `${listDestinations().length}`);
+check("All 18 destinations resolve", listDestinations().length === 18, `${listDestinations().length}`);
+check("Every registered destination is in India", listDestinations().every((d) => d.country?.code === "IN"),
+  listDestinations().filter((d) => d.country?.code !== "IN").map((d) => d.id).join(", ") || "18/18");
 
 let rejectedHostile = 0;
 for (const bad of ["../../etc/passwd", "sikkim/../delhi", "http://evil", "", "SIKKIM"]) {
@@ -102,13 +108,14 @@ section("3-5. Source validation, scoping, retrieval method");
 check("Registered source is recognised", knownSource("wikipedia"));
 check("Unregistered source is refused", !knownSource("totally-made-up-source"));
 check("Global source is in scope for Sikkim", sourceInScope("wikipedia", SIKKIM));
-check("Global source is in scope for Kyoto", sourceInScope("wikipedia", KYOTO));
+check("Global source is in scope for Kochi", sourceInScope("wikipedia", KOCHI));
 check("Sikkim-scoped source is in scope for Sikkim", sourceInScope("sikkim-tourism-portal", SIKKIM));
-check("Sikkim-scoped source is NOT in scope for Kyoto",
-  !sourceInScope("sikkim-tourism-portal", KYOTO),
+check("Sikkim-scoped source is NOT in scope for Kochi",
+  !sourceInScope("sikkim-tourism-portal", KOCHI),
   "cross-destination evidence leak blocked");
 check("India-scoped source is in scope for Jaipur (IN)", sourceInScope("utsav-gov-in", getDestination("jaipur")));
-check("India-scoped source is NOT in scope for Kyoto (JP)", !sourceInScope("utsav-gov-in", KYOTO));
+check("India-scoped source is in scope for Kochi (IN)", sourceInScope("utsav-gov-in", KOCHI));
+check("India-scoped source is NOT in scope outside India (ZZ)", !sourceInScope("utsav-gov-in", ELSEWHERE));
 
 const sourcesSrc = readFileSync("src/data/sources.ts", "utf8");
 const recs = [...sourcesSrc.matchAll(/^  "([a-z0-9-]+)": \{(.*?)^  \},/gms)];
@@ -240,10 +247,10 @@ check("Conflicts are never auto-resolved",
 
 const falsePositive = detectConflicts({
   claims: [
-    mk("c3", "The oldest restaurant in Kyoto is Honke Owariya which was founded in 1465."),
+    mk("c3", "The oldest European church in Kochi is St Francis Church which was built in 1503."),
     mk("c4", "The city's landmarks are spread across districts established in 1868."),
   ],
-  destination: KYOTO,
+  destination: KOCHI,
 });
 check("Unrelated claims sharing only a stopword are NOT reported as conflicting",
   falsePositive.conflicts.length === 0, `${falsePositive.conflicts.length} conflicts`);
@@ -327,7 +334,7 @@ check("A second source is merged as corroboration, not discarded",
 check("Fingerprints ignore punctuation and case",
   claimFingerprint("sikkim", "Founded in 1705.") === claimFingerprint("sikkim", "founded in 1705"));
 check("Fingerprints are destination-scoped",
-  claimFingerprint("sikkim", "Founded in 1705.") !== claimFingerprint("kyoto", "Founded in 1705."));
+  claimFingerprint("sikkim", "Founded in 1705.") !== claimFingerprint("kochi", "Founded in 1705."));
 check("Failed jobs are not reused as answers",
   /existing\.job\?\.status === "pending-review"/.test(pipelineSrc),
   "only completed jobs are cached");

@@ -52,7 +52,6 @@ const ALLOWED_HOSTS = new Set([
   "whc.unesco.org",
   /* Phase 4: official destination organisations, each verified by hand
      before being added here and in scripts/research/source-registry.mjs. */
-  "kyoto.travel",
 ]);
 
 /**
@@ -62,7 +61,7 @@ const ALLOWED_HOSTS = new Set([
  * added by suffix rather than opening `.jp`, which would allow anything.
  */
 const ALLOWED_SUFFIXES = [
-  ".gov.in", ".nic.in", ".go.jp", ".lg.jp", ".pref.kyoto.jp",
+  ".gov.in", ".nic.in", ".go.jp", ".lg.jp",
   ".gouv.fr", ".gov.it", ".gov.tr", ".edu", ".ac.uk", ".ac.jp",
 ];
 

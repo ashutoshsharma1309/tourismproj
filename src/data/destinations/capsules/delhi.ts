@@ -361,6 +361,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-hyatt-regency-delhi-wikidata",
+      title: "Hyatt Regency Delhi (Q12459704)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q12459704",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-maidens-hotel-delhi",
       title: "Maidens Hotel, Delhi",
       publisher: "Wikipedia",
@@ -994,7 +1003,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/delhi/stay-hyatt-regency-delhi.jpg",
       imageAlt: "Hyatt Regency Delhi, Delhi",
       website: "https://delhi.regency.hyatt.com/",
-      sourceIds: ["stay-hyatt-regency-delhi"],
+      sourceIds: ["stay-hyatt-regency-delhi", "stay-hyatt-regency-delhi-wikidata"],
     },
     {
       id: "stay-maidens-hotel-delhi",

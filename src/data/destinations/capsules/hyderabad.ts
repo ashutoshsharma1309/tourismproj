@@ -316,6 +316,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-park-hyatt-hyderabad-wikidata",
+      title: "Park Hyatt Hyderabad (Q17082600)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q17082600",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-hill-fort-palace",
       title: "Hill Fort Palace",
       publisher: "Wikipedia",
@@ -888,7 +897,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/hyderabad/stay-park-hyatt-hyderabad.jpg",
       imageAlt: "Park Hyatt Hyderabad, Hyderabad",
       website: "http://hyderabad.park.hyatt.com/en/hotel/home.html",
-      sourceIds: ["stay-park-hyatt-hyderabad"],
+      sourceIds: ["stay-park-hyatt-hyderabad", "stay-park-hyatt-hyderabad-wikidata"],
     },
     {
       id: "stay-hill-fort-palace",

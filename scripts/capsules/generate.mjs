@@ -642,7 +642,11 @@ async function vendor(record, place, slot = place.id) {
 
   return {
     localPath,
-    key: `capsule/${record.destinationId}/${place.id}`,
+    /* Keyed by SLOT, not record id. A stay and a place can share an id
+       (Mysuru's Lalitha Mahal is both), and keying on the id let the stay's
+       credit overwrite the place's — a photograph on the page with no
+       licence row behind it. The slot carries the kind prefix. */
+    key: `capsule/${record.destinationId}/${slot}`,
     sourceUrl: place.image.url,
     commonsFilePage: place.image.commonsFilePage,
     license: place.image.license,
@@ -967,7 +971,7 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
           ? `\n      image: ${quote(images.get(`stay-${entry.id}`).localPath)},\n      imageAlt: ${quote(`${entry.title}, ${destinationName}`)},`
           : "\n      /* No freely licensed photograph was found, so none is shown. */"
       }${stayContact(record.destinationId, `stay-${entry.id}`)}
-      sourceIds: [${quote(`stay-${entry.id}`)}],
+      sourceIds: [${[quote(`stay-${entry.id}`), ...(stayContact(record.destinationId, `stay-${entry.id}`) && entry.wikidata?.url ? [quote(`stay-${entry.id}-wikidata`)] : [])].join(", ")}],
     },`);
 
   /* One citation per retrieved article, on the same terms as a place's. */
@@ -1048,7 +1052,7 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     if (seenSourceIds.has(id)) return false;
     seenSourceIds.add(id);
     return true;
-  }).map(({ id, entry }) => `    {
+  }).flatMap(({ id, entry }) => [`    {
       id: ${quote(id)},
       title: ${quote(entry.title)},
       publisher: "Wikipedia",
@@ -1056,7 +1060,23 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
       retrievedAt: ${quote(culture.retrievedAt ?? record.retrievedAt)},
       confidence: "medium",
       retrievalMethod: "web-search",
-    },`);
+    },`,
+    /* A website or telephone number on a stay came from Wikidata (P856 /
+       P1329, via enrich-stays.mjs), not from the Wikipedia article — so the
+       Wikidata item is cited beside it. A phone with only a Wikipedia
+       citation was a claim whose source did not publish it. */
+    ...(id.startsWith("stay-") && entry.wikidata?.url && stayContact(record.destinationId, id)
+      ? [`    {
+      id: ${quote(`${id}-wikidata`)},
+      title: ${quote(`${entry.title} (${entry.wikidata.id})`)},
+      publisher: "Wikidata",
+      url: ${quote(entry.wikidata.url)},
+      retrievedAt: ${quote(culture.retrievedAt ?? record.retrievedAt)},
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },`]
+      : []),
+  ]);
 
   return `import type { DestinationCapsule } from "@/types/capsule";
 

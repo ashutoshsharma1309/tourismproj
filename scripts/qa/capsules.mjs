@@ -86,7 +86,7 @@ for (const id of CAPSULES) {
       (registry.includes(`${id}: () => import("./${id}")`) ||
         registry.includes(`"${id}": () => import("./${id}")`)));
   /* PHASE B: a capsule destination may declare a HIGHER depth when it also
-     holds reviewed research — Jaipur declares "curated", Kyoto "researched".
+     holds reviewed research — Jaipur declares "curated".
      What it may never declare is "planned" while holding records. */
   const record = new RegExp(`id: "${id}",[\\s\\S]{0,600}?depth: "([a-z]+)"`).exec(planned);
   check(`${id}: declares a depth its records support`,
@@ -106,14 +106,14 @@ check(`All ${CAPSULES.length} hubs serve`, CAPSULES.every((id) => hub[id].status
  * one of them must still do is state a depth from the shared vocabulary and
  * say what it offers.
  */
-const DEPTH_WORDS = /Tourism capsule|Curated|Researched|Deep archive/;
+const DEPTH_WORDS = /Documented|Well documented|Researched|Deeply documented/;
 check("Every hub states a depth from the shared vocabulary",
   CAPSULES.every((id) => DEPTH_WORDS.test(text(hub[id].body))),
   CAPSULES.filter((id) => !DEPTH_WORDS.test(text(hub[id].body))).join(", ") || `${CAPSULES.length}/${CAPSULES.length}`);
 check("Every hub says what it offers",
-  CAPSULES.every((id) => /Explore this destination through/.test(text(hub[id].body))));
+  CAPSULES.every((id) => /What you can explore here/.test(text(hub[id].body))));
 check("Sikkim still declares deep, and says so",
-  /Deep archive/.test(text((await get(`${BASE}/destinations/sikkim`)).body)));
+  /Deeply documented/.test(text((await get(`${BASE}/destinations/sikkim`)).body)));
 
 /* ========================================================================
    3. NO SIKKIM CONTENT UNDER ANOTHER DESTINATION
@@ -360,8 +360,8 @@ const matched = text(globalDiscover.body);
 check("Capsule destinations appear in interest-first discovery",
   CAPSULES.filter((id) => matched.toLowerCase().includes(id.replace("-", " "))).length >= 5,
   CAPSULES.filter((id) => matched.toLowerCase().includes(id.replace("-", " "))).join(", "));
-check("They are described as coverage, not ranked",
-  /coverage, not quality/i.test(matched) && !/\bbest\b|\bmost beautiful\b/i.test(matched));
+check("They are described as what each offers, not ranked",
+  /how much each destination actually offers/i.test(matched) && !/\bbest\b|\bmost beautiful\b/i.test(matched));
 
 const compare = await get(`${BASE}/destinations/compare?ids=sikkim,delhi,agra`);
 check("Capsule destinations can be compared", compare.status === 200 &&

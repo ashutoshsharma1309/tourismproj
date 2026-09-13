@@ -40,7 +40,7 @@ check("Pre-flight reports a specific blocking stage rather than failing vaguely"
 check("Pre-flight does not spend tokens when the credential is missing",
   pf.ok || pf.stage === "credential", "checks the key before calling the API");
 
-for (const d of ["sikkim", "jaipur", "kyoto"]) {
+for (const d of ["sikkim", "jaipur", "kochi"]) {
   const r = await runLive({ destinationId: d });
   check(`  ${d}: live run reports executed=${r.executed} honestly`,
     r.executed === anthropic.available,
@@ -71,7 +71,7 @@ check("Curated facts are parsed from the archive", facts.length === 15, `${facts
 check("Every curated fact carries its subject, year and origin",
   facts.every((f) => f.subject && f.year && f.source));
 check("Destinations without a curated archive have nothing to protect",
-  curatedFacts("jaipur").length === 0 && curatedFacts("kyoto").length === 0);
+  curatedFacts("jaipur").length === 0 && curatedFacts("kochi").length === 0);
 
 const contradicting = { id: "bad1", statement: "Rumtek Monastery was founded in 1740 by the twelfth Karmapa." };
 const agreeing = { id: "ok1", statement: "Rumtek Monastery was founded in 1966 by the sixteenth Karmapa." };
@@ -123,9 +123,9 @@ section("3. Publication gate");
 
 const sikkim = publishDestination("sikkim");
 const jaipur = publishDestination("jaipur");
-const kyoto = publishDestination("kyoto");
+const kochi = publishDestination("kochi");
 
-for (const [name, d] of [["sikkim", sikkim], ["jaipur", jaipur], ["kyoto", kyoto]]) {
+for (const [name, d] of [["sikkim", sikkim], ["jaipur", jaipur], ["kochi", kochi]]) {
   check(`  ${name}: every published claim is validated`,
     d.categories.flatMap((c) => c.claims).every((c) => c.sources.length > 0));
   check(`  ${name}: every narrative block carries provenance`,
@@ -154,7 +154,7 @@ check("The deterministic provider is labelled as itself, not as AI",
 check("Depth is unchanged by any narrative outcome",
   published?.destinations?.sikkim?.depth?.depth === "deep" &&
   published?.destinations?.jaipur?.depth?.depth === "curated" &&
-  published?.destinations?.kyoto?.depth?.depth === "researched");
+  Object.entries(published?.destinations ?? {}).every(([id, d]) => id === "sikkim" || d?.depth?.depth !== "deep"));
 
 const docs = existsSync("docs/phase-9-ai-publication-decision.md")
   ? readFileSync("docs/phase-9-ai-publication-decision.md", "utf8")

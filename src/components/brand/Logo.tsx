@@ -63,8 +63,8 @@ export function Logo({ className, compact = false }: LogoProps) {
           {/*
             PHASE 20: the wordmark reads from the constant rather than being
             typed here. It said "Sikkim Darshan" on every page of a product
-            that now covers fifteen destinations in six countries — the mark
-            in the corner of Paris's page named a different place.
+            that had grown to many destinations — the mark in the corner of
+            every other destination's page named a different place.
 
             The geometry above is unchanged and deliberately so: it is drawn
             from a Sikkim gompa's torana arch, and the archive that geometry

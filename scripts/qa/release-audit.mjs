@@ -60,7 +60,7 @@ const meta = (html, prop) =>
   null;
 
 /**
- * The fifteen registered destinations and the identity each must publish.
+ * The eighteen registered destinations and the identity each must publish.
  *
  * Written out here on purpose. Deriving the expected values from the same
  * registry the application reads would assert that the registry equals itself,
@@ -69,21 +69,24 @@ const meta = (html, prop) =>
  * that lands inside the right country.
  */
 const DESTINATIONS = [
-  { id: "sikkim", name: "Sikkim", country: "India", region: "Sikkim", tz: "Asia/Kolkata", lat: [27, 28], lng: [88, 89], depth: "Deep archive" },
-  { id: "jaipur", name: "Jaipur", country: "India", region: "Rajasthan", tz: "Asia/Kolkata", lat: [26, 27], lng: [75, 76], depth: "Curated" },
-  { id: "kyoto", name: "Kyoto", country: "Japan", region: "Kyoto Prefecture", tz: "Asia/Tokyo", lat: [34, 36], lng: [135, 136], depth: "Researched" },
-  { id: "delhi", name: "Delhi", country: "India", region: "Delhi", tz: "Asia/Kolkata", lat: [28, 29], lng: [76, 78], depth: "Tourism capsule" },
-  { id: "varanasi", name: "Varanasi", country: "India", region: "Uttar Pradesh", tz: "Asia/Kolkata", lat: [25, 26], lng: [82, 84], depth: "Tourism capsule" },
-  { id: "agra", name: "Agra", country: "India", region: "Uttar Pradesh", tz: "Asia/Kolkata", lat: [27, 28], lng: [77, 79], depth: "Tourism capsule" },
-  { id: "mumbai", name: "Mumbai", country: "India", region: "Maharashtra", tz: "Asia/Kolkata", lat: [18, 20], lng: [72, 73], depth: "Tourism capsule" },
-  { id: "kolkata", name: "Kolkata", country: "India", region: "West Bengal", tz: "Asia/Kolkata", lat: [22, 23], lng: [88, 89], depth: "Tourism capsule" },
-  { id: "hyderabad", name: "Hyderabad", country: "India", region: "Telangana", tz: "Asia/Kolkata", lat: [17, 18], lng: [78, 79], depth: "Tourism capsule" },
-  { id: "kochi", name: "Kochi", country: "India", region: "Kerala", tz: "Asia/Kolkata", lat: [9, 11], lng: [76, 77], depth: "Tourism capsule" },
-  { id: "goa", name: "Goa", country: "India", region: "Goa", tz: "Asia/Kolkata", lat: [15, 16], lng: [73, 75], depth: "Tourism capsule" },
-  { id: "paris", name: "Paris", country: "France", region: "Île-de-France", tz: "Europe/Paris", lat: [48, 49], lng: [2, 3], depth: "Tourism capsule" },
-  { id: "rome", name: "Rome", country: "Italy", region: "Lazio", tz: "Europe/Rome", lat: [41, 42], lng: [12, 13], depth: "Tourism capsule" },
-  { id: "istanbul", name: "Istanbul", country: "Türkiye", region: "Istanbul Province", tz: "Europe/Istanbul", lat: [40, 42], lng: [28, 30], depth: "Tourism capsule" },
-  { id: "new-york-city", name: "New York City", country: "United States", region: "New York", tz: "America/New_York", lat: [40, 41], lng: [-75, -73], depth: "Tourism capsule" },
+  { id: "sikkim", name: "Sikkim", country: "India", region: "Sikkim", tz: "Asia/Kolkata", lat: [27, 28], lng: [88, 89], depth: "Deeply documented" },
+  { id: "jaipur", name: "Jaipur", country: "India", region: "Rajasthan", tz: "Asia/Kolkata", lat: [26, 27], lng: [75, 76], depth: "Well documented" },
+  { id: "delhi", name: "Delhi", country: "India", region: "Delhi", tz: "Asia/Kolkata", lat: [28, 29], lng: [76, 78], depth: "Documented" },
+  { id: "varanasi", name: "Varanasi", country: "India", region: "Uttar Pradesh", tz: "Asia/Kolkata", lat: [25, 26], lng: [82, 84], depth: "Documented" },
+  { id: "agra", name: "Agra", country: "India", region: "Uttar Pradesh", tz: "Asia/Kolkata", lat: [27, 28], lng: [77, 79], depth: "Documented" },
+  { id: "mumbai", name: "Mumbai", country: "India", region: "Maharashtra", tz: "Asia/Kolkata", lat: [18, 20], lng: [72, 73], depth: "Documented" },
+  { id: "kolkata", name: "Kolkata", country: "India", region: "West Bengal", tz: "Asia/Kolkata", lat: [22, 23], lng: [88, 89], depth: "Documented" },
+  { id: "hyderabad", name: "Hyderabad", country: "India", region: "Telangana", tz: "Asia/Kolkata", lat: [17, 18], lng: [78, 79], depth: "Documented" },
+  { id: "kochi", name: "Kochi", country: "India", region: "Kerala", tz: "Asia/Kolkata", lat: [9, 11], lng: [76, 77], depth: "Documented" },
+  { id: "goa", name: "Goa", country: "India", region: "Goa", tz: "Asia/Kolkata", lat: [15, 16], lng: [73, 75], depth: "Documented" },
+  { id: "amritsar", name: "Amritsar", country: "India", region: "Punjab", tz: "Asia/Kolkata", lat: [31, 32], lng: [74, 75], depth: "Documented" },
+  { id: "ahmedabad", name: "Ahmedabad", country: "India", region: "Gujarat", tz: "Asia/Kolkata", lat: [22, 24], lng: [72, 73], depth: "Documented" },
+  { id: "lucknow", name: "Lucknow", country: "India", region: "Uttar Pradesh", tz: "Asia/Kolkata", lat: [26, 27], lng: [80, 81], depth: "Documented" },
+  { id: "pune", name: "Pune", country: "India", region: "Maharashtra", tz: "Asia/Kolkata", lat: [18, 19], lng: [73, 74], depth: "Documented" },
+  { id: "mysuru", name: "Mysuru", country: "India", region: "Karnataka", tz: "Asia/Kolkata", lat: [12, 13], lng: [76, 77], depth: "Documented" },
+  { id: "madurai", name: "Madurai", country: "India", region: "Tamil Nadu", tz: "Asia/Kolkata", lat: [9, 10], lng: [78, 79], depth: "Documented" },
+  { id: "bhubaneswar", name: "Bhubaneswar", country: "India", region: "Odisha", tz: "Asia/Kolkata", lat: [20, 21], lng: [85, 86], depth: "Documented" },
+  { id: "srinagar", name: "Srinagar", country: "India", region: "Jammu and Kashmir", tz: "Asia/Kolkata", lat: [34, 35], lng: [74, 75], depth: "Documented" },
 ];
 
 /* ========================================================================

@@ -53,7 +53,9 @@ const KINDS = new Set(["food", "festival", "craft"]);
 const LOOKS_LIKE_A_DATE = /\b(\d{1,2}\s+(January|February|March|April|May|June|July|August|September|October|November|December)|\d{1,2}\/\d{1,2}\/\d{2,4})\b/;
 
 const files = readdirSync(DIR).filter((f) => f.endsWith(".ts") && !f.startsWith("_") && f !== "ids.ts" && f !== "index.ts");
-check("Every capsule destination is present", files.length === 14, `${files.length}`);
+/* Counted from ids.ts, not typed: 14 became 17 in the India-only expansion. */
+const CAPSULE_COUNT = (readFileSync("src/data/destinations/capsules/ids.ts", "utf8").match(/^\s+"[a-z-]+",$/gm) ?? []).length;
+check("Every capsule destination is present", files.length === CAPSULE_COUNT, `${files.length}`);
 
 let total = 0, linked = 0;
 for (const file of files) {

@@ -162,12 +162,20 @@ function firstSentence(text) {
   return m ? m[1].trim() : text.trim().slice(0, 200);
 }
 
+/* `--only=a,b` limits the run to those destinations. Added for the India-only
+   expansion so the eight new cities could be retrieved without re-fetching —
+   and re-dating — the records the other destinations already publish. */
+const ONLY = (process.argv.find((a) => a.startsWith("--only="))?.split("=")[1] ?? "")
+  .split(",").map((s) => s.trim()).filter(Boolean);
+const wanted = (id) => ONLY.length === 0 || ONLY.includes(id);
+
 mkdirSync(OUT, { recursive: true });
 const summary = [];
 
 for (const file of readdirSync(SRC).filter((f) => f.endsWith(".json"))) {
   const store = JSON.parse(readFileSync(join(SRC, file), "utf8"));
   const destinationId = store.destinationId;
+  if (!wanted(destinationId)) continue;
   const stories = [];
   const dropped = [];
 

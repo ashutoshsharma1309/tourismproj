@@ -27,7 +27,9 @@ const check = (name, ok, detail = "") => {
 /* `search.json` lives here too — a flat slice for the palette, not a
    destination's stories. Reading it as one crashed this suite on `content`. */
 const files = readdirSync(DIR).filter((f) => f.endsWith(".json") && f !== "search.json");
-check("Editorial stories exist for the capsule destinations", files.length === 14, `${files.length} files`);
+/* Counted from ids.ts, not typed: 14 became 17 in the India-only expansion. */
+const CAPSULE_COUNT = (readFileSync("src/data/destinations/capsules/ids.ts", "utf8").match(/^\s+"[a-z-]+",$/gm) ?? []).length;
+check("Editorial stories exist for the capsule destinations", files.length === CAPSULE_COUNT, `${files.length} files`);
 
 const destinations = new Set(files.map((f) => f.replace(/\.json$/, "")));
 const allSlugs = new Set();

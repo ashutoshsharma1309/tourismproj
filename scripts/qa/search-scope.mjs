@@ -115,15 +115,15 @@ check(
  */
 const PROBES = [
   ["varanasi", /monaster/i, "Sikkim's vocabulary"],
-  ["kyoto", /monaster/i, "Sikkim's vocabulary"],
-  ["paris", /monaster/i, "Sikkim's vocabulary"],
-  ["new-york-city", /monaster/i, "Sikkim's vocabulary"],
+  ["kochi", /monaster/i, "Sikkim's vocabulary"],
+  ["agra", /monaster/i, "Sikkim's vocabulary"],
+  ["hyderabad", /monaster/i, "Sikkim's vocabulary"],
   ["jaipur", /\bghat/i, "Varanasi's vocabulary"],
-  ["kyoto", /\bghat/i, "Varanasi's vocabulary"],
+  ["kochi", /\bghat/i, "Varanasi's vocabulary"],
   ["sikkim", /\bghat/i, "Varanasi's vocabulary"],
-  ["rome", /ryokan/i, "Kyoto's vocabulary"],
-  ["paris", /ryokan/i, "Kyoto's vocabulary"],
-  ["paris", /\bghat|ryokan|monaster/i, "any foreign vocabulary"],
+  ["delhi", /synagogue|fishing net/i, "Kochi's vocabulary"],
+  ["agra", /synagogue|fishing net/i, "Kochi's vocabulary"],
+  ["agra", /\bghat|synagogue|monaster/i, "any foreign vocabulary"],
 ];
 const byId = new Map(scoped.map((g) => [g.destinationId, g]));
 for (const [destinationId, term, why] of PROBES) {
@@ -152,9 +152,10 @@ check("Positive control: sikkim + monaster matches its own records", sikkimHits 
 
 /* ------------------------------------------------------- every destination */
 
-const ids = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa", "kyoto", "paris", "rome", "istanbul", "new-york-city"];
+const ids = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
 const absent = ids.filter((id) => !byId.has(id));
-check("All fifteen destinations have a scoped index group", absent.length === 0, absent.join(", ") || "15/15");
+check("All eighteen destinations have a scoped index group", absent.length === 0, absent.join(", ") || "18/18");
 
 const failed = results.filter((r) => !r.pass);
 console.log(`\n${results.length - failed.length} passed, ${failed.length} failed\n`);

@@ -94,28 +94,32 @@ await step("1 · Homepage", async () => {
   await page.goto(`${BASE}/`, { waitUntil: "domcontentloaded" });
 });
 const homeText = await mainText();
-/* The headline is now "Discover the stories behind the places", over a mosaic
-   of six destinations from six countries rather than one Sikkim photograph. */
+/* The headline is now "Discover the stories behind the places", over a
+   rotation of destination photographs rather than one Sikkim photograph. */
 check("Step 1: the first viewport names the product and what it does",
-  /TerraStory/.test(homeText) && /Discover the stories behind the places/.test(homeText));
+  /TerraStory/.test(homeText) && /Cultural tourism and heritage discovery for India/.test(homeText) && /Discover the stories behind India's places/.test(homeText));
 check("Step 1: the three primary actions are present",
-  await page.getByRole("link", { name: "Explore destinations" }).first().isVisible() &&
-  await page.getByRole("link", { name: "Discover by interest" }).first().isVisible() &&
-  await page.getByRole("link", { name: "Plan a journey" }).first().isVisible());
+  /* One primary action ("Explore India"), one personal one ("Find my
+     destination"), and the guide reachable from the header — the hierarchy
+     the first-time-user pass established. */
+  await page.getByRole("link", { name: "Explore India" }).first().isVisible() &&
+  await page.getByRole("link", { name: "Find my destination" }).first().isVisible() &&
+  await page.getByRole("button", { name: "Ask the guide" }).first().isVisible());
 /*
- * The hero states scale as a counted stat block rather than a chip: "15
- * destinations / 6 countries / 220 catalogued places". Same guarantee — the
- * numbers are shown, not implied — read from the new markup.
+ * The hero states scale as a counted stat block rather than a chip: "18
+ * Indian destinations / N states and territories / 220 catalogued places".
+ * Same guarantee — the numbers are shown, not implied — read from the new
+ * markup. Every destination is in India, so the second figure is states.
  */
 check("Step 1: the scale of the platform is stated, not implied",
-  /\b15\b[\s\S]{0,40}destinations/.test(homeText) &&
-    /\b6\b[\s\S]{0,40}countries/.test(homeText) &&
+  /\b18\b[\s\S]{0,40}Indian destinations/.test(homeText) &&
+    /\b\d+\b[\s\S]{0,40}states/.test(homeText) &&
     /catalogued places/.test(homeText),
   homeText.match(/\d+\s*destinations/)?.[0] ?? "not found");
 
 /* --- STEP 2 · interest-first entry ------------------------------------- */
-await step("2 · Discover by interest", async () => {
-  await page.getByRole("link", { name: "Discover by interest" }).first().click();
+await step("2 · Find my destination", async () => {
+  await page.getByRole("link", { name: "Find my destination" }).first().click();
 }, "**/discover");
 check("Step 2: lands on the interest-first entry", path().startsWith("/discover"), path());
 check("Step 2: asks what the visitor is curious about",
@@ -127,7 +131,7 @@ await step("3 · Choose History + Heritage + Culture", async () => {
     /* The checkbox is sr-only; the card that wraps it is the visible control. */
     await page.locator(`input[name="interests"][value="${interest}"]`).first().check({ force: true });
   }
-  await page.getByRole("button", { name: /Show destinations/i }).first().click();
+  await page.getByRole("button", { name: /Find destinations for me/i }).first().click();
 }, (url) => url.searchParams.getAll("interests").length >= 2);
 const matchText = await mainText();
 check("Step 3: the choice is carried in the URL, not in hidden state",
@@ -144,9 +148,9 @@ await step("4 · Open Sikkim", async () => {
 }, "**/destinations/sikkim");
 const sikkimText = await mainText();
 check("Step 4: lands on Sikkim's hub", path() === "/destinations/sikkim", path());
-check("Step 4: the hub states its depth", /Deep archive/.test(sikkimText));
+check("Step 4: the hub states its depth", /Deeply documented/.test(sikkimText));
 check("Step 4: the hub lists what can be explored",
-  /Explore this destination through/.test(sikkimText));
+  /What you can explore here/.test(sikkimText) && /Explore \d+ places/.test(sikkimText));
 
 /* --- STEP 5 · discovery ------------------------------------------------ */
 await step("5 · Discover Sikkim", async () => {
@@ -265,42 +269,42 @@ await step("11 · Return to all destinations", async () => {
 }, "**/destinations");
 const worldText = await mainText();
 check("Step 11: lands on the global gateway", path() === "/destinations", path());
-check("Step 11: destinations are grouped by country",
-  /India/.test(worldText) && /France/.test(worldText) && /Japan/.test(worldText));
+check("Step 11: destinations are listed with their states",
+  /India/.test(worldText) && /Rajasthan/.test(worldText) && /Kerala/.test(worldText));
 check("Step 11: the list works without the map",
-  await page.locator('a[href="/destinations/paris"]').count() > 0,
+  await page.locator('a[href="/destinations/varanasi"]').count() > 0,
   "every destination is a link in the list");
 
 /* --- STEP 12 · same engine, different depth ----------------------------- */
-await step("12 · Open Paris", async () => {
-  await page.locator('a[href="/destinations/paris"]').first().click();
-}, "**/destinations/paris");
-const parisText = await mainText();
-check("Step 12: Paris opens with the same structure",
-  /Tourism capsule/.test(parisText) && /Explore this destination through/.test(parisText));
+await step("12 · Open Varanasi", async () => {
+  await page.locator('a[href="/destinations/varanasi"]').first().click();
+}, "**/destinations/varanasi");
+const varanasiText = await mainText();
+check("Step 12: Varanasi opens with the same structure",
+  /* textContent joins "Varanasi" and the badge with no boundary, so no \b. */
+  /Documented/.test(varanasiText) && /What you can explore here/.test(varanasiText));
 /*
  * A hub does not list place names — it states depth, interests and sections.
  * The records live one click further in, on the destination's discovery page,
- * which is also where the presenter goes next. Checking the hub for "Eiffel"
- * failed a page that was correct.
+ * which is also where the presenter goes next. Checking the hub for a place
+ * name failed a page that was correct.
  */
-await step("12 · Discover Paris", async () => {
-  await page.locator('a[href^="/destinations/paris/discover"]').first().click();
-}, "**/destinations/paris/discover**");
-const parisRecords = await mainText();
-check("Step 12: Paris shows its own records",
-  /Eiffel|Louvre|Versailles|Notre-Dame/.test(parisRecords),
-  "a Paris record is named");
+await step("12 · Discover Varanasi", async () => {
+  await page.locator('a[href^="/destinations/varanasi/discover"]').first().click();
+}, "**/destinations/varanasi/discover**");
+const varanasiRecords = await mainText();
+check("Step 12: Varanasi shows its own records",
+  /Dashashwamedh|Kashi Vishwanath|Sarnath|Manikarnika/.test(varanasiRecords),
+  "a Varanasi record is named");
 check("Step 12: and none of Sikkim's",
-  !/Rumtek|Pemayangtse|Tsomgo|Yuksom/.test(parisRecords));
+  !/Rumtek|Pemayangtse|Tsomgo|Yuksom/.test(varanasiRecords));
 
 /* The depth ladder, which is the scalability argument. */
 const DEPTHS = [
-  ["sikkim", "Deep archive"],
-  ["jaipur", "Curated"],
-  ["kyoto", "Researched"],
-  ["delhi", "Tourism capsule"],
-  ["rome", "Tourism capsule"],
+  ["sikkim", "Deeply documented"],
+  ["jaipur", "Well documented"],
+  ["delhi", "Documented"],
+  ["agra", "Documented"],
 ];
 for (const [id, badge] of DEPTHS) {
   await page.goto(`${BASE}/destinations/${id}`, { waitUntil: "domcontentloaded" });
@@ -356,7 +360,7 @@ const FORBIDDEN = [
   /\bmust[- ]visit\b/i,
 ];
 const SURFACES = ["/", "/destinations", "/discover", "/destinations/compare",
-  "/destinations/sikkim", "/destinations/paris", "/destinations/sikkim/discover",
+  "/destinations/sikkim", "/destinations/varanasi", "/destinations/sikkim/discover",
   "/destinations/sikkim/plan"];
 /*
  * A NEGATED PHRASE IS THE OPPOSITE OF A CLAIM.

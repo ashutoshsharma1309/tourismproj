@@ -141,10 +141,21 @@ for (const stay of allStays) {
   byName.get(key).add(stay.destinationId);
 }
 const shared = [...byName].filter(([, dests]) => dests.size > 1);
+/* A chain hotel is registered under the same brand in more than one city
+   ("COURTYARD BY MARRIOTT" in Agra and Amritsar on the NIDHI+ register); each
+   is a different property with its own address and number. Shared names are
+   reported; the failure condition is a shared name whose ADDRESS is also the
+   same, which would be one property published twice. */
+const sharedSameAddress = shared.filter(([key]) => {
+  const rows = allStays.filter((s) => s.name?.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() === key);
+  const addresses = new Set(rows.map((s) => (s.address ?? "").toLowerCase().trim()).filter(Boolean));
+  return rows.length > 1 && addresses.size < rows.length && addresses.size > 0;
+});
 check(
-  "No property appears under two destinations",
-  shared.length === 0,
-  shared.map(([name, d]) => `"${name}" in ${[...d].join("+")}`).join("; "),
+  "No single property is published under two destinations",
+  sharedSameAddress.length === 0,
+  sharedSameAddress.map(([k, d]) => `"${k}" in ${[...d].join("+")}`).join("; ") ||
+    (shared.length ? `${shared.length} chain name(s) shared across cities, each a distinct property` : "no shared names"),
 );
 
 /* ------------------------------------------- what must never be published */

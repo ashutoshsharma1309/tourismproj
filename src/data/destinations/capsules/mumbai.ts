@@ -325,6 +325,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-taj-mahal-palace-hotel-wikidata",
+      title: "Taj Mahal Palace Hotel (Q19104)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q19104",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-trident-hotel-nariman-point",
       title: "Trident Hotel, Nariman Point",
       publisher: "Wikipedia",
@@ -343,6 +352,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-grand-hyatt-mumbai-wikidata",
+      title: "Grand Hyatt Mumbai (Q17053931)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q17053931",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-four-seasons-hotel-mumbai",
       title: "Four Seasons Hotel Mumbai",
       publisher: "Wikipedia",
@@ -350,6 +368,15 @@ export const capsule: DestinationCapsule = {
       retrievedAt: "2026-09-10",
       confidence: "medium",
       retrievalMethod: "web-search",
+    },
+    {
+      id: "stay-four-seasons-hotel-mumbai-wikidata",
+      title: "Four Seasons Hotel Mumbai (Q5475514)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q5475514",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
     },
     {
       id: "stay-nidhi-7e63da8a",
@@ -932,7 +959,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/mumbai/stay-taj-mahal-palace-hotel.jpg",
       imageAlt: "Taj Mahal Palace Hotel, Mumbai",
       website: "https://taj.tajhotels.com/en-in/taj-mahal-palace-mumbai/",
-      sourceIds: ["stay-taj-mahal-palace-hotel"],
+      sourceIds: ["stay-taj-mahal-palace-hotel", "stay-taj-mahal-palace-hotel-wikidata"],
     },
     {
       id: "stay-trident-hotel-nariman-point",
@@ -955,7 +982,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/mumbai/stay-grand-hyatt-mumbai.jpg",
       imageAlt: "Grand Hyatt Mumbai, Mumbai",
       website: "https://www.hyatt.com/grand-hyatt/en-US/mumgh-grand-hyatt-mumbai",
-      sourceIds: ["stay-grand-hyatt-mumbai"],
+      sourceIds: ["stay-grand-hyatt-mumbai", "stay-grand-hyatt-mumbai-wikidata"],
     },
     {
       id: "stay-four-seasons-hotel-mumbai",
@@ -967,7 +994,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/mumbai/stay-four-seasons-hotel-mumbai.jpg",
       imageAlt: "Four Seasons Hotel Mumbai, Mumbai",
       website: "http://www.fourseasons.com/mumbai/",
-      sourceIds: ["stay-four-seasons-hotel-mumbai"],
+      sourceIds: ["stay-four-seasons-hotel-mumbai", "stay-four-seasons-hotel-mumbai-wikidata"],
     },
     {
       id: "stay-nidhi-7e63da8a",

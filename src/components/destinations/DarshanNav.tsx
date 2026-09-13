@@ -83,7 +83,7 @@ export async function DarshanNav({
       : []),
     ...(culture.some((c) => c.kind === "craft") ? [{ hash: "craft", label: t("section.crafts") }] : []),
     ...(stays.length > 0 ? [{ hash: "stays", label: t("section.stays") }] : []),
-    ...(hasKnowledge ? [{ hash: "evidence", label: "Evidence" }] : []),
+    ...(hasKnowledge ? [{ hash: "evidence", label: "Sources" }] : []),
   ];
 
   /*

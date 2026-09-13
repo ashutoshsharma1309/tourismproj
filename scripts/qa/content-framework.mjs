@@ -124,7 +124,7 @@ check("Depth levels are ordered, and the order is explicit",
   /DATA_DEPTH_ORDER/.test(types) && /capsule: 1/.test(types));
 check("Every level has a label and a summary of what it promises",
   /DATA_DEPTH_LABEL/.test(types) && /DATA_DEPTH_SUMMARY/.test(types) &&
-  /capsule: "Tourism capsule"/.test(types));
+  /capsule: "Documented"/.test(types));
 check("The badge renders every level",
   /capsule:/.test(mustRead("src/components/ui/DepthBadge.tsx")));
 check("Depth is never used to rank destinations for a visitor",
@@ -362,9 +362,9 @@ for (const [name, expected] of Object.entries(BASELINE)) {
 const sikkimHub = await get(`${BASE}/destinations/sikkim`);
 const jaipurHub = await get(`${BASE}/destinations/jaipur`);
 check("A deep destination states what deep means",
-  /Deep archive/.test(text(sikkimHub.body)) && /Complete heritage intelligence/.test(text(sikkimHub.body)));
+  /Deeply documented/.test(text(sikkimHub.body)) && /Fully catalogued/.test(text(sikkimHub.body)));
 check("A curated destination states what curated means",
-  /Curated/.test(text(jaipurHub.body)) && /Reviewer-approved knowledge/.test(text(jaipurHub.body)));
+  /Well documented/.test(text(jaipurHub.body)) && /Reviewer-approved knowledge/.test(text(jaipurHub.body)));
 /*
  * PHASE 19 TOOK THIS SUITE'S EMPTY DESTINATION AWAY.
  *
@@ -385,8 +385,8 @@ check("A curated destination states what curated means",
  * content. That is a product decision, and it is written up in
  * docs/phase-19-global-capsules.md rather than decided here.
  */
-check("The planned-depth copy still says nothing has been researched",
-  /Nothing has been researched for it yet, and nothing is shown/.test(
+check("The planned-depth copy still says nothing is shown without a source",
+  /Nothing is shown until it has a source/.test(
     mustRead("src/types/destination.ts")),
   "DATA_DEPTH_SUMMARY.planned");
 /*
@@ -399,7 +399,7 @@ check("The planned-depth copy still says nothing has been researched",
 const jaipurDiscover = await get(`${BASE}/destinations/jaipur/discover`);
 check("A destination's discovery page serves its own records",
   jaipurDiscover.status === 200 &&
-    !/Rumtek|Pemayangtse|Eiffel|Colosseum/.test(text(jaipurDiscover.body)),
+    !/Rumtek|Pemayangtse|Charminar|Dashashwamedh/.test(text(jaipurDiscover.body)),
   `HTTP ${jaipurDiscover.status}`);
 /*
  * Paris used to be the fixture here too. With no empty destination left, the

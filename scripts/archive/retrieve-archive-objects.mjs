@@ -104,16 +104,27 @@ const plain = (html) =>
 
 mkdirSync(OUT, { recursive: true });
 
+/* `--only=a,b` limits the run to those destinations. Added for the India-only
+   expansion so the eight new cities could be retrieved without re-fetching —
+   and re-dating — the records the other destinations already publish. */
+const ONLY = (process.argv.find((a) => a.startsWith("--only="))?.split("=")[1] ?? "")
+  .split(",").map((s) => s.trim()).filter(Boolean);
+const wanted = (id) => ONLY.length === 0 || ONLY.includes(id);
+
 const REGISTRY = JSON.parse(readFileSync(".data/history-manifest.json", "utf8"));
+/* The name Commons categories use. Mysuru's categories are still titled
+   "Mysore", which is the register's own spelling and not a claim of ours. */
 const NAMES = {
   agra: "Agra", delhi: "Delhi", goa: "Goa", hyderabad: "Hyderabad",
-  istanbul: "Istanbul", jaipur: "Jaipur", kochi: "Kochi", kolkata: "Kolkata",
-  kyoto: "Kyoto", mumbai: "Mumbai", "new-york-city": "New York City",
-  paris: "Paris", rome: "Rome", varanasi: "Varanasi",
+  jaipur: "Jaipur", kochi: "Kochi", kolkata: "Kolkata", mumbai: "Mumbai",
+  varanasi: "Varanasi", amritsar: "Amritsar", ahmedabad: "Ahmedabad",
+  lucknow: "Lucknow", pune: "Pune", mysuru: "Mysore", madurai: "Madurai",
+  bhubaneswar: "Bhubaneswar", srinagar: "Srinagar",
 };
 
 let grand = 0;
 for (const id of Object.keys(REGISTRY)) {
+  if (!wanted(id)) continue;
   const name = NAMES[id];
   if (!name) continue;
 

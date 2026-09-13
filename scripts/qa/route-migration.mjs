@@ -491,17 +491,17 @@ check("Sikkim still prerenders its full pre-migration content set",
 /* ========================================================================
    17-18. OTHER DESTINATIONS WORK
    ======================================================================== */
-section("17-18. Jaipur and Kyoto");
+section("17-18. Jaipur and Kochi");
 
 /* Read the document title and the destination's own metadata rather than
    scanning the whole file. Every page embeds the GLOBAL search index, which
-   indexes all 15 destinations by design — matching raw HTML for "Rumtek"
+   indexes all 18 destinations by design — matching raw HTML for "Rumtek"
    therefore flags the search payload, not leaked Sikkim content.
 
    Read these from a CLEAN build: a running server can re-render and overwrite
    a prerendered .html, and the re-rendered shell carries the layout's default
    title rather than the page's own. */
-const NAMES = { jaipur: "Jaipur", kyoto: "Kyoto" };
+const NAMES = { jaipur: "Jaipur", kochi: "Kochi" };
 for (const [id, name] of Object.entries(NAMES)) {
   const path = join(OUT, "destinations", `${id}.html`);
   check(`${id} prerenders its destination page`, existsSync(path));
@@ -515,10 +515,10 @@ for (const [id, name] of Object.entries(NAMES)) {
   check(`${id} declares a canonical URL for its own destination`,
     !new RegExp(`rel="canonical"[^>]*/destinations/(?!${id})`).test(html));
   /*
-   * `stories` is no longer a Sikkim-only sub-tree — fourteen destinations
+   * `stories` is no longer a Sikkim-only sub-tree — the other destinations
    * have their own articles, and ownership is asserted by slug further up.
    * `monasteries` still is, and always should be: it is Sikkim's word for a
-   * kind of site, and its appearance under Kyoto would mean the old defect
+   * kind of site, and its appearance under Kochi would mean the old defect
    * had come back.
    */
   check(`${id} prerenders no Sikkim content sub-tree`,
@@ -614,7 +614,7 @@ const ogAlt = (html) => html.match(/<meta property="og:image:alt" content="([^"]
 const destHtml = existsSync(join(OUT, "destinations"))
   ? readdirSync(join(OUT, "destinations")).filter((f) => f.endsWith(".html"))
   : [];
-check("Every registered destination prerenders a page", destHtml.length === 15,
+check("Every registered destination prerenders a page", destHtml.length === 18,
   `${destHtml.length} pages`);
 
 /*
@@ -691,7 +691,7 @@ if (existsSync(sitemapXml)) {
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const hubs = locs.filter((u) => /\/destinations\/[a-z-]+$/.test(u));
   check("The sitemap lists every destination's hub page",
-    hubs.length === 15, `${hubs.length} hub pages`);
+    hubs.length === 18, `${hubs.length} hub pages`);
 
   /* The check that matters: a destination without a capability must not be
      advertised as having one. Before this phase the sitemap could not have

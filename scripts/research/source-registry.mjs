@@ -95,36 +95,6 @@ export const OFFICIAL_SOURCES = {
       rendersServerSide: true,
     },
   ],
-  kyoto: [
-    {
-      url: "https://kyoto.travel/en/",
-      title: "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
-      publisher: "Kyoto City Tourism Association",
-      tier: "official-tourism",
-      type: "government",
-      sourceRegistryId: "kyoto-city-tourism",
-      format: "html",
-      rationale: "The city's official destination marketing organisation.",
-      verified: "2026-08-25",
-      verifiedStatus: 200,
-      rendersServerSide: true,
-    },
-    {
-      url: "https://www.pref.kyoto.jp/en/index.html",
-      title: "Kyoto Prefecture — Official Multilingual Site",
-      publisher: "Kyoto Prefectural Government",
-      tier: "official-government",
-      type: "government",
-      sourceRegistryId: "kyoto-prefecture",
-      format: "html",
-      rationale: "Prefectural government portal.",
-      verified: "2026-08-25",
-      verifiedStatus: 200,
-      /* Resolves, but the English index is largely navigation — kept at its
-         true tier and allowed to yield little rather than being oversold. */
-      rendersServerSide: true,
-    },
-  ],
 };
 
 /**

@@ -14,8 +14,8 @@ import type { CapsuleCultureKind } from "@/types/capsule";
  * Paris would reproduce the "Monasteries for Paris" defect one floor down.
  *
  * So a shelf exists when a destination has records for it, and its ORDER is
- * the destination's own too: Kyoto leads on crafts, Jaipur on festivals,
- * Rome on food, because that is what each holds most of. Nothing is ranked by
+ * the destination's own too: one destination leads on crafts, another on
+ * festivals, another on food, because that is what each holds most of. Nothing is ranked by
  * a table written here.
  *
  * WHY THE STORY LINK MATTERS

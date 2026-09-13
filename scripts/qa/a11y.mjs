@@ -67,23 +67,23 @@ const ROUTES = [
   "/destinations/sikkim/stays/may-fair-resort",
   "/destinations/sikkim/culture",
   /*
-   * PHASE 19 — the global capsules. A capsule page is a different shape from
+   * The capsule destinations. A capsule page is a different shape from
    * Sikkim's: quoted history entries, citation lists, a card grid with
-   * photographs, and place names carrying diacritics and non-Latin letters.
-   * None of that had been through axe before, and "it looks like the Sikkim
-   * pages" is not an accessibility result.
+   * photographs, and place names carrying diacritics and transliterated
+   * letters. None of that had been through axe before, and "it looks like
+   * the Sikkim pages" is not an accessibility result.
    */
-  "/destinations/paris",
-  "/destinations/rome/discover",
-  "/destinations/istanbul/discover",
-  "/destinations/new-york-city/plan",
+  "/destinations/varanasi",
+  "/destinations/agra/discover",
+  "/destinations/hyderabad/discover",
+  "/destinations/mumbai/plan",
   /* PHASE 21 — a step of the demonstration flow that had never been audited:
      the dated event a story links back to. */
   "/destinations/sikkim/history/yuksom-coronation-1642",
   "/discover",
   "/discover?interests=history&interests=heritage",
   "/discover?theme=buddhist-heritage",
-  "/destinations/compare?ids=sikkim,jaipur,kyoto",
+  "/destinations/compare?ids=sikkim,jaipur,kochi",
   "/destinations/sikkim/discover",
   "/destinations/sikkim/discover?interest=nature",
   "/destinations/jaipur/discover",

@@ -178,7 +178,7 @@ export function websiteSchema(): Record<string, unknown> {
     inLanguage: "en",
     about: {
       "@type": "Thing",
-      name: "Buddhist monasteries and cultural heritage of Sikkim, India",
+      name: "Cultural heritage and tourism knowledge of India's destinations",
     },
   };
 }

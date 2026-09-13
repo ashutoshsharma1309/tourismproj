@@ -98,10 +98,8 @@ export default async function GlobalDiscoverPage({
           What do you want to experience?
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
-          Choose an interest and TerraStory shows which destinations have
-          verified coverage of it, what that coverage consists of, and where it
-          runs out. Nothing here is a recommendation of one place over another
-          — it is a measurement of what has been catalogued and reviewed.
+          Pick what you want to experience and we&rsquo;ll show the destinations
+          that match — with what each one actually offers for it.
         </p>
 
         {/* Interest picker — a plain GET form, so the whole state is the URL. */}
@@ -111,9 +109,8 @@ export default async function GlobalDiscoverPage({
               Interests
             </legend>
             <p className="mt-2 text-caption text-muted">
-              {offered.length} of the {ALL_INTERESTS.length} interests this system knows about are
-              represented somewhere in the registry. The rest are not offered,
-              because no destination could answer them.
+              Choose one or more. We&rsquo;ll use your interests to find the destinations
+              that match what you want to experience.
             </p>
             {/*
               SELECTABLE CARDS, NOT A ROW OF CHECKBOXES.
@@ -159,7 +156,7 @@ export default async function GlobalDiscoverPage({
               type="submit"
               className="focus-visible:ring-primary rounded-full bg-primary px-5 py-2.5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:outline-none"
             >
-              Show destinations
+              Find destinations for me
             </button>
             <a
               href="/discover"
@@ -179,18 +176,17 @@ export default async function GlobalDiscoverPage({
           <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2">
             <h2 id="matches-heading" className="font-display text-h2 text-balance-heading">
               {interests.length === 0
-                ? "Destinations with verified coverage"
-                : `Destinations covering ${interests.map((i) => INTEREST_LABEL[i]).join(" + ")}`}
+                ? "Destinations for you"
+                : `Destinations for ${interests.map((i) => INTEREST_LABEL[i].toLowerCase()).join(" + ")}`}
             </h2>
             <p className="text-caption text-muted">
-              {matches.length} of {registered} registered
+              {matches.length} {matches.length === 1 ? "match" : "matches"}
             </p>
           </div>
           <p className="mt-2 max-w-prose text-body text-muted">
-            Ordered by how much verified material this archive holds on what you
-            selected — <strong className="font-medium text-foreground">coverage, not quality</strong>.
-            A destination lower down is not a lesser place; it is one this
-            archive has covered less.
+            {interests.length === 0
+              ? "Pick at least one interest above and we will order these by how well each destination matches it."
+              : "Ordered by how much each destination actually offers for what you picked."}
           </p>
 
           <ol className="mt-6 space-y-4">
@@ -218,12 +214,21 @@ export default async function GlobalDiscoverPage({
                           )}
                         </p>
                       </div>
-                      <div className="flex flex-wrap items-center gap-2">
-                        <DepthBadge depth={match.coverage.depth} />
-                        <span className="font-mono text-caption text-subtle" data-numeric>
-                          coverage {match.score}/100
-                        </span>
-                      </div>
+                      {/* What it is strong for, in words — the score and the
+                          tier badge were internal measures a traveller could
+                          not read. The arithmetic stays open below. */}
+                      {match.coverage.covered.length > 0 ? (
+                        <p className="text-caption text-muted">
+                          <span className="font-medium text-foreground">Strong for:</span>{" "}
+                          {(interests.length > 0
+                            ? match.coverage.covered.filter((i) => interests.includes(i))
+                            : match.coverage.covered
+                          )
+                            .slice(0, 4)
+                            .map((i) => INTEREST_LABEL[i])
+                            .join(", ")}
+                        </p>
+                      ) : null}
                     </div>
 
                     {/* Why it matched — one line per interest, each countable. */}
@@ -305,8 +310,12 @@ export default async function GlobalDiscoverPage({
                     {/* The arithmetic, open to inspection. */}
                     <details className="mt-4">
                       <summary className="cursor-pointer text-caption font-medium text-primary">
-                        How this coverage figure was calculated
+                        How we match this
                       </summary>
+                      <p className="mt-2 text-caption text-muted">
+                        Matches are based on how much verified content each destination
+                        has for your interests, not on ratings.
+                      </p>
                       <ul className="mt-2 space-y-1">
                         {match.components.map((component) => (
                           <li key={component.label} className="text-caption text-muted">

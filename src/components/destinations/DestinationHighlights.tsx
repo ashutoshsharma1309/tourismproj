@@ -148,6 +148,12 @@ export async function DestinationHighlights({
                         {place.description}
                       </span>
                     ) : null}
+                    {/* The whole card is the link; this names the action so a
+                        visitor knows what a tap does before tapping. */}
+                    <span className="mt-auto inline-flex items-center gap-1.5 pt-3 text-small font-medium text-primary">
+                      Explore place
+                      <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                    </span>
                   </span>
                 </Link>
               </li>

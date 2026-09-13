@@ -9,6 +9,8 @@ import { useJourney } from "@/lib/journey/JourneyProvider";
 interface Coverage {
   name: string;
   country: string;
+  /** The state or union territory, for the "across N states" line. */
+  region: string;
   places: number;
   stories: number;
   history: number;
@@ -41,16 +43,15 @@ export function JourneySummary({ coverage }: { coverage: Record<string, Coverage
   if (journey.destinations.length === 0) {
     return (
       <>
-        <h1 className="font-display text-h1 text-balance-heading">No journey yet</h1>
+        <h1 className="font-display text-h1 text-balance-heading">Your journey is empty</h1>
         <p className="mt-4 max-w-2xl text-body-lg leading-relaxed text-muted">
-          Choose destinations on the homepage and they will appear here, in the
-          order you picked them, with what each one holds.
+          Your journey is the list of destinations you want to explore. Add one from any destination card or page and it will appear here, in the order you chose.
         </p>
         <Link
-          href="/#destinations"
+          href="/destinations"
           className="mt-7 inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90"
         >
-          Choose destinations
+          Explore destinations
           <ArrowRight className="size-4" aria-hidden />
         </Link>
       </>
@@ -70,7 +71,7 @@ export function JourneySummary({ coverage }: { coverage: Record<string, Coverage
     },
     { places: 0, stories: 0, history: 0 },
   );
-  const countries = new Set(chosen.map((id) => coverage[id]?.country).filter(Boolean));
+  const states = new Set(chosen.map((id) => coverage[id]?.region).filter(Boolean));
 
   return (
     <>
@@ -85,7 +86,7 @@ export function JourneySummary({ coverage }: { coverage: Record<string, Coverage
       <p className="mt-4 max-w-2xl text-body-lg leading-relaxed text-muted">
         {chosen.length === 1
           ? "One destination, in the order you chose."
-          : `${chosen.length} destinations across ${countries.size} ${countries.size === 1 ? "country" : "countries"}, in the order you chose them.`}
+          : `${chosen.length} destinations across ${states.size} ${states.size === 1 ? "state" : "states"}, in the order you chose them.`}
       </p>
 
       <ol className="mt-10 space-y-3">

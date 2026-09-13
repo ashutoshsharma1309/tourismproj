@@ -1,6 +1,8 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 
+import { listDestinations } from "@/lib/destinations/registry";
+
 /**
  * Shared 404.
  *
@@ -20,9 +22,9 @@ export default function NotFound() {
         This trail hasn&apos;t been laid.
       </h1>
       <p className="max-w-md text-body text-muted">
-        There is no page at this address. The archive itself is here — fifteen
-        destinations, each with its places, stories, culture, history and
-        catalogued objects.
+        There is no page at this address. The archive itself is here —{" "}
+        {listDestinations().length} Indian destinations, each with its places,
+        stories, culture, history and catalogued objects.
       </p>
       <div className="flex flex-wrap items-center justify-center gap-3">
         <Link

@@ -3,6 +3,7 @@
 import { Check, Plus } from "lucide-react";
 
 import { useJourney } from "@/lib/journey/JourneyProvider";
+import { MAX_JOURNEY_DESTINATIONS } from "@/lib/journey/state";
 
 /**
  * The control that puts one destination into a journey.
@@ -49,7 +50,7 @@ export function SelectDestination({
           ? `Remove ${destinationName} from your journey`
           : `Add ${destinationName} to your journey`
       }
-      title={blocked ? "A journey holds up to 15 destinations" : undefined}
+      title={blocked ? `A journey holds up to ${MAX_JOURNEY_DESTINATIONS} destinations` : undefined}
       className={`inline-flex scroll-mt-24 items-center gap-1.5 rounded-full border px-3 py-1.5 text-caption font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none disabled:opacity-50 ${
         selected
           ? "border-primary bg-primary text-primary-foreground"
@@ -61,7 +62,7 @@ export function SelectDestination({
       ) : (
         <Plus className="size-3.5" aria-hidden />
       )}
-      {selected ? "In your journey" : "Add to journey"}
+      {selected ? "Added to your journey" : "Add to my journey"}
     </button>
   );
 }

@@ -388,6 +388,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-great-eastern-hotel-kolkata-wikidata",
+      title: "Great Eastern Hotel, Kolkata (Q15217311)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q15217311",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-elgin-fairlawn-kolkata",
       title: "Elgin Fairlawn, Kolkata",
       publisher: "Wikipedia",
@@ -395,6 +404,15 @@ export const capsule: DestinationCapsule = {
       retrievedAt: "2026-09-10",
       confidence: "medium",
       retrievalMethod: "web-search",
+    },
+    {
+      id: "stay-elgin-fairlawn-kolkata-wikidata",
+      title: "Elgin Fairlawn, Kolkata (Q55610732)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q55610732",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
     },
     {
       id: "stay-grand-hotel-kolkata",
@@ -1019,7 +1037,7 @@ export const capsule: DestinationCapsule = {
       imageAlt: "Great Eastern Hotel, Kolkata, Kolkata",
       website: "https://www.thelalit.com/the-lalit-kolkata/",
       phone: "+91-33-4444-7777",
-      sourceIds: ["stay-great-eastern-hotel-kolkata"],
+      sourceIds: ["stay-great-eastern-hotel-kolkata", "stay-great-eastern-hotel-kolkata-wikidata"],
     },
     {
       id: "stay-elgin-fairlawn-kolkata",
@@ -1030,7 +1048,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/kolkata/stay-elgin-fairlawn-kolkata.jpg",
       imageAlt: "Elgin Fairlawn, Kolkata, Kolkata",
       website: "https://www.elginhotels.com/fairlawn.php",
-      sourceIds: ["stay-elgin-fairlawn-kolkata"],
+      sourceIds: ["stay-elgin-fairlawn-kolkata", "stay-elgin-fairlawn-kolkata-wikidata"],
     },
     {
       id: "stay-grand-hotel-kolkata",

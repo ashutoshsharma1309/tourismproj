@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { WorldMap } from "@/components/destinations/WorldMap";
@@ -8,8 +10,10 @@ import { destinationLocationLine } from "@/lib/destinations/location";
 import { allCoverage } from "@/lib/global/coverage";
 import { DepthBadge } from "@/components/ui/DepthBadge";
 import { getPublishedKnowledge } from "@/data/published-knowledge";
-import { buildDestinationMarkers, groupByCountry } from "@/lib/destinations";
+import { buildDestinationMarkers, groupByCountry, listDestinations, listRegionNames } from "@/lib/destinations";
 import { allDestinationCounts } from "@/lib/discovery";
+import { getPlaces } from "@/lib/destinations/content";
+import { focalClassFor } from "@/lib/media/focal";
 
 /**
  * Global exploration — the way into TerraStory.
@@ -18,15 +22,16 @@ import { allDestinationCounts } from "@/lib/discovery";
  * way to see where in the world these places are; the list is the way that
  * works on a phone, from a keyboard, and for anyone who would rather read
  * than aim. Forcing a visitor through a map to reach a page is a discovery
- * pattern that excludes people, so both routes carry all fifteen.
+ * pattern that excludes people, so both routes carry every destination.
  *
  * force-dynamic is not needed: destination metadata is build-time data, so
  * this page prerenders like every other.
  */
+/* Counted from the registry, never typed: the description is only ever as
+   wrong as the registry is. */
 export const metadata: Metadata = {
   title: "Explore destinations",
-  description:
-    "Fifteen destinations across six countries, each opening into its places, stories, culture, history and archive — and each stating how much has actually been verified.",
+  description: `${listDestinations().length} Indian destinations across ${listRegionNames().length} states and union territories, each opening into its places, stories, culture, history and archive — and each stating how much has actually been verified.`,
 };
 
 export default async function DestinationsPage() {
@@ -55,6 +60,17 @@ export default async function DestinationsPage() {
   const keywordsById = buildDestinationKeywords(coverage);
   const documentedCount = coverage.filter((entry) => !entry.empty).length;
   const comparable = counts.filter((entry) => !entry.empty);
+  /* One photograph per card: the destination's own first catalogued place
+     that has one. A destination without any keeps a neutral panel rather
+     than another destination's picture. */
+  const heroByDestination = new Map(
+    await Promise.all(
+      listDestinations().map(async (destination) => {
+        const places = await getPlaces(destination.id);
+        return [destination.id, places.find((place) => place.image)] as const;
+      }),
+    ),
+  );
 
 
 
@@ -65,129 +81,108 @@ export default async function DestinationsPage() {
           TerraStory
         </p>
         <h1 className="mt-3 font-display text-h1 text-balance-heading">
-          Explore a place through what is known about it
+          Explore {markers.length} Indian destinations
         </h1>
         <p className="mt-3 max-w-2xl text-body-lg text-muted">
-          Not a directory of descriptions. Each destination opens into its history,
-          heritage and culture — and every fact names the source it came from.
-          Where nothing has been verified yet, the page says so.
+          Each destination opens into its places, history, stories, culture, food,
+          festivals and crafts — every fact traced to its source. Pick one below,
+          or let your interests choose.
         </p>
 
-        {/* PHASE 15 — the interest-first door, offered before the map. */}
         <p className="mt-6 flex flex-wrap gap-3">
           <Link
             href="/discover"
             prefetch={false}
-            className="focus-visible:ring-primary inline-flex items-center rounded-full bg-primary px-5 py-2.5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:outline-none"
+            className="focus-visible:ring-primary inline-flex min-h-11 items-center rounded-full bg-primary px-5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:outline-none"
           >
-            Start from what you want to experience
+            Find my destination
           </Link>
           <Link
             href="/destinations/compare"
             prefetch={false}
-            className="focus-visible:ring-primary inline-flex items-center rounded-full border border-border px-5 py-2.5 text-small font-medium transition-colors hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:outline-none"
+            className="focus-visible:ring-primary inline-flex min-h-11 items-center rounded-full border border-border px-5 text-small font-medium transition-colors hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:outline-none"
           >
-            Compare coverage
+            Compare destinations
           </Link>
         </p>
 
-        <WorldMap destinations={markers} documentedCount={documentedCount} />
-
         {/*
-          The list is not a fallback for the map. It is the equal path, and it
-          is the one that works without a pointer.
+          CARDS FIRST, MAP SECOND.
+          The page opened on a world map with a legend of data-model tiers
+          ("Deep archive", "Tourism capsule") and put the list of destinations
+          below it. A first-time visitor could not tell this was the list of
+          eighteen Indian destinations. The cards now lead — photograph, name,
+          state, what the place is known for, what you can do there — and the
+          map follows as a way to pick by geography.
         */}
-        <h2 className="mt-16 font-display text-h2">All destinations</h2>
-        <p className="mt-2 max-w-2xl text-body text-muted">
-          {documentedCount} of {markers.length} carry catalogued records you can
-          explore. Any destination still empty is registered and says so.
-        </p>
-
-        {/*
-          Country navigation, from the registry's own codes.
-
-          These are in-page jumps rather than a query filter, and that is a
-          deliberate trade: reading `searchParams` here would make this page
-          server-rendered on every request, and it is the global entry —
-          three QA suites assert it is prerendered, and it was measured at a
-          16 ms TTFB static. With fifteen destinations across a handful of
-          countries, jumping to a section shows the same thing a filter would
-          and costs nothing.
-        */}
-        <nav aria-label="Jump to a country" className="mt-6">
-          <ul className="flex flex-wrap gap-2">
-            {countries.map((group) => (
-              <li key={group.code}>
-                <a
-                  href={`#country-${group.code}`}
-                  className="focus-visible:ring-primary inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-small font-medium transition-colors hover:border-primary focus-visible:ring-2 focus-visible:outline-none"
-                >
-                  {group.country}
-                  <span className="text-caption text-subtle">{group.destinations.length}</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {countries.map((group) => (
-          <section key={group.code} id={`country-${group.code}`} className="mt-10 scroll-mt-24">
-            <h3 className="font-display text-h3">{group.country}</h3>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {group.destinations.map((destination) => {
-                const marker = markers.find((m) => m.id === destination.id);
-                return (
-                  <li key={destination.id}>
-                    <Link
-                      href={`/destinations/${destination.id}`}
-                      className="focus-visible:ring-primary block h-full rounded-xl border border-border bg-surface p-4 transition-colors hover:border-primary focus-visible:ring-2 focus-visible:outline-none"
-                    >
-                      <span className="flex items-center justify-between gap-3">
-                        <span className="font-medium">{destination.name}</span>
-                        <DepthBadge depth={marker?.depth ?? destination.depth} />
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3" aria-label="All destinations">
+          {countries
+            .flatMap((group) => group.destinations)
+            .map((destination) => {
+              const entry = byId.get(destination.id);
+              const keywords = keywordsById.get(destination.id);
+              const hero = heroByDestination.get(destination.id);
+              const empty = !entry || entry.empty;
+              return (
+                <li key={destination.id}>
+                  <Link
+                    href={`/destinations/${destination.id}`}
+                    className="tile group flex h-full flex-col overflow-hidden hover:border-primary hover:shadow-soft focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
+                  >
+                    {hero?.image ? (
+                      <span className="relative block aspect-16/10 overflow-hidden bg-surface-muted">
+                        <Image
+                          src={hero.image}
+                          alt={hero.imageAlt ?? `${hero.name}, ${destination.name}`}
+                          fill
+                          sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 92vw"
+                          className={`media-zoom object-cover group-hover:scale-[1.04] ${focalClassFor(hero.image)}`}
+                        />
                       </span>
-                      <span className="mt-1 block text-caption text-muted">
-                        {destinationLocationLine(
-                          destination.name,
-                          destination.region?.name,
-                          destination.country.name,
-                        )}
+                    ) : (
+                      <span className="block aspect-16/10 bg-surface-muted" aria-hidden />
+                    )}
+                    <span className="flex flex-1 flex-col p-4">
+                      <span className="font-display text-h4">{destination.name}</span>
+                      <span className="mt-0.5 block text-caption text-muted">
+                        {destinationLocationLine(destination.name, destination.region?.name, destination.country.name)}
                       </span>
-
-                      {/* Three words, derived from the interests this
-                          destination's own records carry — never typed. */}
-                      {/* One text line, not three pills. Forty-five styled
-                          chips cost ~9 KB of duplicated class strings across
-                          the document and its flight payload, which broke this
-                          page's payload ceiling. The words are the content;
-                          the pills were decoration. */}
-                      {(() => {
-                        const keywords = keywordsById.get(destination.id);
-                        if (keywords.length === 0) return null;
-                        return (
-                          <span className="mt-2 block text-caption text-foreground/80">
-                            {keywords.join(", ")}
-                          </span>
-                        );
-                      })()}
-                      {/* What a visitor can actually do here — or nothing, said plainly. */}
+                      {/* Three words, derived from the interests this destination's
+                          own records carry — never typed. */}
+                      {keywords.length > 0 ? (
+                        <span className="mt-2 block text-caption text-foreground/80">
+                          {keywords.join(" · ")}
+                        </span>
+                      ) : null}
                       <span className="mt-2 block text-caption text-subtle">
-                        {(() => {
-                          const entry = byId.get(destination.id);
-                          if (!entry || entry.empty) return "Research not yet available";
-                          if (entry.experiences > 0) {
-                            return `${entry.experiences} visitable record${entry.experiences === 1 ? "" : "s"} · ${entry.sectionCount} section${entry.sectionCount === 1 ? "" : "s"}`;
-                          }
-                          return `${entry.approvedClaims} verified fact${entry.approvedClaims === 1 ? "" : "s"}, no visitable record yet`;
-                        })()}
+                        {empty
+                          ? "Being catalogued — explore what is here so far"
+                          : entry.experiences > 0
+                            ? `${entry.experiences} ${entry.experiences === 1 ? "place" : "places"} to explore · ${entry.sectionCount} ${entry.sectionCount === 1 ? "section" : "sections"}`
+                            : `${entry.approvedClaims} verified ${entry.approvedClaims === 1 ? "fact" : "facts"}, no visitable record yet`}
                       </span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        ))}
+                      <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-small font-medium text-primary">
+                        Explore {destination.name}
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                      </span>
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+        </ul>
+
+        <section className="mt-16" aria-labelledby="where-heading">
+          <h2 id="where-heading" className="font-display text-h2">Where they are</h2>
+          <p className="mt-2 max-w-2xl text-body text-muted">
+            {documentedCount} of {markers.length} carry places you can explore today. Pick a
+            marker to open a destination.
+          </p>
+          <div className="mt-6">
+            <WorldMap destinations={markers} documentedCount={documentedCount} />
+          </div>
+        </section>
+
         {/*
           A comparison, not a ranking.
 

@@ -35,7 +35,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -60,7 +60,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -85,7 +85,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -105,7 +105,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -125,7 +125,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -150,7 +150,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -170,7 +170,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -190,7 +190,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -210,7 +210,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -230,7 +230,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -250,7 +250,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Sikkim — Wikipedia",
+                  "title": "Sikkim \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "encyclopedia",
@@ -270,7 +270,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -290,7 +290,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -310,7 +310,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -330,7 +330,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -350,7 +350,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Sikkim — Wikivoyage",
+                  "title": "Sikkim \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
                   "tier": "other-public",
@@ -407,7 +407,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikipedia",
+              "title": "Sikkim \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -422,7 +422,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikivoyage",
+              "title": "Sikkim \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -437,7 +437,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikivoyage",
+              "title": "Sikkim \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -452,7 +452,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikivoyage",
+              "title": "Sikkim \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -467,7 +467,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikipedia",
+              "title": "Sikkim \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -482,7 +482,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikivoyage",
+              "title": "Sikkim \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -497,7 +497,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikipedia",
+              "title": "Sikkim \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -512,7 +512,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikipedia",
+              "title": "Sikkim \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -527,7 +527,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Sikkim — Wikipedia",
+              "title": "Sikkim \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim"
             }
@@ -571,14 +571,14 @@
       "sourcesUsed": [
         {
           "sourceId": "wikipedia",
-          "title": "Sikkim — Wikipedia",
+          "title": "Sikkim \u2014 Wikipedia",
           "publisher": "Wikimedia Foundation",
           "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
           "tier": "encyclopedia"
         },
         {
           "sourceId": "wikivoyage",
-          "title": "Sikkim — Wikivoyage",
+          "title": "Sikkim \u2014 Wikivoyage",
           "publisher": "Wikimedia Foundation",
           "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Sikkim",
           "tier": "other-public"
@@ -630,7 +630,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -650,7 +650,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -670,7 +670,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -695,7 +695,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -707,7 +707,7 @@
             {
               "id": "claim_1df98c2099ba1648",
               "category": "festivals",
-              "statement": "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+              "statement": "In some form or the other, it is celebrated all over Rajasthan. \u201cGan\u201d is a synonym for Lord Shiva & \u201cGauri\u201d or \u201cGaur\u201d stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
               "claimType": "documented history",
               "confidence": "high",
               "approvedBy": "s.sinha",
@@ -715,11 +715,11 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
-                  "quote": "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+                  "quote": "In some form or the other, it is celebrated all over Rajasthan. \u201cGan\u201d is a synonym for Lord Shiva & \u201cGauri\u201d or \u201cGaur\u201d stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
                   "retrievedAt": "2026-08-25T06:00:41.234Z"
                 }
               ]
@@ -735,7 +735,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -747,7 +747,7 @@
             {
               "id": "claim_c627820e48332d96",
               "category": "festivals",
-              "statement": "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses.",
+              "statement": "This festival is celebrated especially by women, who worship clay idols of \u201cGan\u201d & \u201cGauri\u201d in their houses.",
               "claimType": "documented history",
               "confidence": "high",
               "approvedBy": "s.sinha",
@@ -755,11 +755,11 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
-                  "quote": "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses.",
+                  "quote": "This festival is celebrated especially by women, who worship clay idols of \u201cGan\u201d & \u201cGauri\u201d in their houses.",
                   "retrievedAt": "2026-08-25T06:00:41.234Z"
                 }
               ]
@@ -775,7 +775,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -800,7 +800,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -820,7 +820,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -840,7 +840,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -860,7 +860,7 @@
               "sources": [
                 {
                   "sourceId": "incredible-india-jaipur",
-                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
                   "publisher": "Ministry of Tourism, Government of India",
                   "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
                   "tier": "official-tourism",
@@ -880,7 +880,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -892,7 +892,7 @@
             {
               "id": "claim_83b31aa6df83abeb",
               "category": "heritage",
-              "statement": "Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
+              "statement": "Jain temple in Shivdaspura, well known as \u201cBara Padampura\u201d, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
               "claimType": "documented history",
               "confidence": "unverified",
               "approvedBy": "s.sinha",
@@ -900,11 +900,11 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
-                  "quote": "Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
+                  "quote": "Jain temple in Shivdaspura, well known as \u201cBara Padampura\u201d, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains).",
                   "retrievedAt": "2026-08-25T06:00:44.571Z"
                 }
               ]
@@ -925,7 +925,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -945,7 +945,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -965,7 +965,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -985,7 +985,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -1005,7 +1005,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -1025,7 +1025,7 @@
               "sources": [
                 {
                   "sourceId": "rajasthan-tourism-jaipur",
-                  "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+                  "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
                   "publisher": "Government of Rajasthan",
                   "url": "https://tourism.rajasthan.gov.in/jaipur.html",
                   "tier": "official-government",
@@ -1045,7 +1045,7 @@
               "sources": [
                 {
                   "sourceId": "incredible-india-jaipur",
-                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
                   "publisher": "Ministry of Tourism, Government of India",
                   "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
                   "tier": "official-tourism",
@@ -1065,7 +1065,7 @@
               "sources": [
                 {
                   "sourceId": "incredible-india-jaipur",
-                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
                   "publisher": "Ministry of Tourism, Government of India",
                   "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
                   "tier": "official-tourism",
@@ -1085,7 +1085,7 @@
               "sources": [
                 {
                   "sourceId": "incredible-india-jaipur",
-                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
                   "publisher": "Ministry of Tourism, Government of India",
                   "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
                   "tier": "official-tourism",
@@ -1105,7 +1105,7 @@
               "sources": [
                 {
                   "sourceId": "incredible-india-jaipur",
-                  "title": "Jaipur — Incredible India, Ministry of Tourism",
+                  "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
                   "publisher": "Ministry of Tourism, Government of India",
                   "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
                   "tier": "official-tourism",
@@ -1125,7 +1125,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1145,7 +1145,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1165,7 +1165,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1185,7 +1185,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1205,7 +1205,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1225,7 +1225,7 @@
               "sources": [
                 {
                   "sourceId": "wikipedia",
-                  "title": "Jaipur — Wikipedia",
+                  "title": "Jaipur \u2014 Wikipedia",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "encyclopedia",
@@ -1245,7 +1245,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -1265,7 +1265,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -1285,7 +1285,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -1305,7 +1305,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -1325,7 +1325,7 @@
               "sources": [
                 {
                   "sourceId": "wikivoyage",
-                  "title": "Jaipur — Wikivoyage",
+                  "title": "Jaipur \u2014 Wikivoyage",
                   "publisher": "Wikimedia Foundation",
                   "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
                   "tier": "other-public",
@@ -1376,7 +1376,7 @@
           "mode": "HERITAGE",
           "category": "heritage",
           "claimType": "documented history",
-          "text": "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur. The main temple, Galtaji, is constructed in pink stone. Jain temple in Shivdaspura, well known as “Bara Padampura”, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains). Jaipur is the only city that is home to three forts , and more than five palaces. A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace. Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
+          "text": "Located deep within the walled city, the City Palace Complex was conceived and built by Maharaja Sawai Jai Singh II, the founder of Jaipur. The main temple, Galtaji, is constructed in pink stone. Jain temple in Shivdaspura, well known as \u201cBara Padampura\u201d, famous in north India for its very beautiful statue of God Padamprabhu (The 6th Teerthankar for Jains). Jaipur is the only city that is home to three forts , and more than five palaces. A beautiful fusion of Mughal and Rajput architecture, the palace is still home to the last ruling royal family which lives in a private section of the palace. Now a UNESCO World Heritage Site, Jantar Mantar in Jaipur is considered to be the largest of the five astronomical observatories built by Maharaja Sawai Jai Singh II, the founder of Jaipur.",
           "claimIds": [
             "claim_596ff46a7347eecf",
             "claim_4b8d8d2299935398",
@@ -1400,7 +1400,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1415,7 +1415,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
               "publisher": "Ministry of Tourism, Government of India",
               "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
             }
@@ -1430,7 +1430,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikivoyage",
+              "title": "Jaipur \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1445,7 +1445,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1460,7 +1460,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
               "publisher": "Ministry of Tourism, Government of India",
               "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
             }
@@ -1475,7 +1475,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
               "publisher": "Ministry of Tourism, Government of India",
               "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
             }
@@ -1490,7 +1490,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1505,7 +1505,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikivoyage",
+              "title": "Jaipur \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1520,7 +1520,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1535,7 +1535,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1550,7 +1550,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikivoyage",
+              "title": "Jaipur \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1565,7 +1565,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikivoyage",
+              "title": "Jaipur \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1580,7 +1580,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Incredible India, Ministry of Tourism",
+              "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
               "publisher": "Ministry of Tourism, Government of India",
               "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur"
             }
@@ -1595,7 +1595,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1610,7 +1610,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1625,7 +1625,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1640,7 +1640,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikivoyage",
+              "title": "Jaipur \u2014 Wikivoyage",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1655,7 +1655,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1670,7 +1670,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+              "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
               "publisher": "Government of Rajasthan",
               "url": "https://tourism.rajasthan.gov.in/jaipur.html"
             }
@@ -1685,7 +1685,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1700,7 +1700,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1715,7 +1715,7 @@
           "claimType": "documented history",
           "sources": [
             {
-              "title": "Jaipur — Wikipedia",
+              "title": "Jaipur \u2014 Wikipedia",
               "publisher": "Wikimedia Foundation",
               "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur"
             }
@@ -1809,8 +1809,8 @@
             "claim_c627820e48332d96"
           ],
           "statements": [
-            "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
-            "This festival is celebrated especially by women, who worship clay idols of “Gan” & “Gauri” in their houses."
+            "In some form or the other, it is celebrated all over Rajasthan. \u201cGan\u201d is a synonym for Lord Shiva & \u201cGauri\u201d or \u201cGaur\u201d stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+            "This festival is celebrated especially by women, who worship clay idols of \u201cGan\u201d & \u201cGauri\u201d in their houses."
           ]
         },
         {
@@ -1820,7 +1820,7 @@
             "claim_ec3120b724a30022"
           ],
           "statements": [
-            "In some form or the other, it is celebrated all over Rajasthan. “Gan” is a synonym for Lord Shiva & “Gauri” or “Gaur” stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
+            "In some form or the other, it is celebrated all over Rajasthan. \u201cGan\u201d is a synonym for Lord Shiva & \u201cGauri\u201d or \u201cGaur\u201d stands for Goddess Parvati, the heavenly consort of Lord Shiva.",
             "The festivals are dedicated, in many parts of India, to Goddess Parvati, also known as Teej Mata."
           ]
         },
@@ -1839,28 +1839,28 @@
       "sourcesUsed": [
         {
           "sourceId": "rajasthan-tourism-jaipur",
-          "title": "Jaipur — Department of Tourism, Government of Rajasthan",
+          "title": "Jaipur \u2014 Department of Tourism, Government of Rajasthan",
           "publisher": "Government of Rajasthan",
           "url": "https://tourism.rajasthan.gov.in/jaipur.html",
           "tier": "official-government"
         },
         {
           "sourceId": "incredible-india-jaipur",
-          "title": "Jaipur — Incredible India, Ministry of Tourism",
+          "title": "Jaipur \u2014 Incredible India, Ministry of Tourism",
           "publisher": "Ministry of Tourism, Government of India",
           "url": "https://www.incredibleindia.gov.in/en/rajasthan/jaipur",
           "tier": "official-tourism"
         },
         {
           "sourceId": "wikipedia",
-          "title": "Jaipur — Wikipedia",
+          "title": "Jaipur \u2014 Wikipedia",
           "publisher": "Wikimedia Foundation",
           "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
           "tier": "encyclopedia"
         },
         {
           "sourceId": "wikivoyage",
-          "title": "Jaipur — Wikivoyage",
+          "title": "Jaipur \u2014 Wikivoyage",
           "publisher": "Wikimedia Foundation",
           "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Jaipur",
           "tier": "other-public"
@@ -1874,586 +1874,6 @@
         "narrativeWithheld": 0,
         "timelineEntries": 22,
         "connections": 8
-      },
-      "withheld": [],
-      "withheldNarrative": []
-    },
-    "kyoto": {
-      "destinationId": "kyoto",
-      "claimSetVersion": "9c561e7bde377ca7",
-      "depth": {
-        "depth": "researched",
-        "basis": "earned",
-        "note": null,
-        "earned": "researched",
-        "metrics": {
-          "approvedClaims": 15,
-          "categories": 4,
-          "higherTierClaims": 1,
-          "distinctSources": 3
-        },
-        "reasons": [
-          "15 approved claims (needs 20)"
-        ]
-      },
-      "categories": [
-        {
-          "category": "culture",
-          "claims": [
-            {
-              "id": "claim_cc5dd8aa193739aa",
-              "category": "culture",
-              "statement": "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
-              "claimType": "documented history",
-              "confidence": "unverified",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.976Z",
-              "sources": [
-                {
-                  "sourceId": "wikivoyage",
-                  "title": "Kyoto — Wikivoyage",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "other-public",
-                  "quote": "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
-                  "retrievedAt": "2026-08-25T06:01:08.561Z"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "festivals",
-          "claims": [
-            {
-              "id": "claim_7eda36c79dc56459",
-              "category": "festivals",
-              "statement": "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.978Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_fe2576f2163ad1b5",
-              "category": "festivals",
-              "statement": "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.978Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "heritage",
-          "claims": [
-            {
-              "id": "claim_ae64783b4fb47538",
-              "category": "heritage",
-              "statement": "Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
-              "claimType": "documented history",
-              "confidence": "high",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.975Z",
-              "sources": [
-                {
-                  "sourceId": "kyoto-city-tourism",
-                  "title": "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
-                  "publisher": "Kyoto City Tourism Association",
-                  "url": "https://kyoto.travel/en/",
-                  "tier": "official-tourism",
-                  "quote": "Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
-                  "retrievedAt": "2026-08-25T06:00:48.467Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_545a4a7f02704ef4",
-              "category": "heritage",
-              "statement": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.976Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_86c29eeaeb0dc37d",
-              "category": "heritage",
-              "statement": "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
-              "claimType": "documented history",
-              "confidence": "unverified",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.976Z",
-              "sources": [
-                {
-                  "sourceId": "wikivoyage",
-                  "title": "Kyoto — Wikivoyage",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "other-public",
-                  "quote": "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
-                  "retrievedAt": "2026-08-25T06:01:08.561Z"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "category": "history",
-          "claims": [
-            {
-              "id": "claim_411cac0099d86494",
-              "category": "history",
-              "statement": "The modern municipality of Kyoto was established in 1889.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.972Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "The modern municipality of Kyoto was established in 1889.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_9977e201cbbed73c",
-              "category": "history",
-              "statement": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.973Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_5a1f01cf4b9b6365",
-              "category": "history",
-              "statement": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.974Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_f4db56648382a157",
-              "category": "history",
-              "statement": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.974Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_c7453fa2c19711c6",
-              "category": "history",
-              "statement": "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.974Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_7a313002ce176672",
-              "category": "history",
-              "statement": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
-              "claimType": "documented history",
-              "confidence": "medium",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.975Z",
-              "sources": [
-                {
-                  "sourceId": "wikipedia",
-                  "title": "Kyoto — Wikipedia",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "encyclopedia",
-                  "quote": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
-                  "retrievedAt": "2026-08-25T06:01:07.270Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_2afb2b3ef37b93fc",
-              "category": "history",
-              "statement": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
-              "claimType": "documented history",
-              "confidence": "unverified",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.975Z",
-              "sources": [
-                {
-                  "sourceId": "wikivoyage",
-                  "title": "Kyoto — Wikivoyage",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "other-public",
-                  "quote": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
-                  "retrievedAt": "2026-08-25T06:01:08.561Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_f49f89cbbaa6f42a",
-              "category": "history",
-              "statement": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
-              "claimType": "documented history",
-              "confidence": "unverified",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.975Z",
-              "sources": [
-                {
-                  "sourceId": "wikivoyage",
-                  "title": "Kyoto — Wikivoyage",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "other-public",
-                  "quote": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
-                  "retrievedAt": "2026-08-25T06:01:08.561Z"
-                }
-              ]
-            },
-            {
-              "id": "claim_6ec4b0bc70768e1e",
-              "category": "history",
-              "statement": "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-              "claimType": "documented history",
-              "confidence": "unverified",
-              "approvedBy": "s.sinha",
-              "approvedAt": "2026-08-25T06:01:08.975Z",
-              "sources": [
-                {
-                  "sourceId": "wikivoyage",
-                  "title": "Kyoto — Wikivoyage",
-                  "publisher": "Wikimedia Foundation",
-                  "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-                  "tier": "other-public",
-                  "quote": "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-                  "retrievedAt": "2026-08-25T06:01:08.561Z"
-                }
-              ]
-            }
-          ]
-        }
-      ],
-      "narrative": [
-        {
-          "id": "narr_948318292ba26070",
-          "mode": "HISTORICAL",
-          "category": "history",
-          "claimType": "documented history",
-          "text": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period. The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts: Nestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo. Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890. The modern municipality of Kyoto was established in 1889. The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto. Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
-          "claimIds": [
-            "claim_9977e201cbbed73c",
-            "claim_411cac0099d86494",
-            "claim_f4db56648382a157",
-            "claim_c7453fa2c19711c6",
-            "claim_7a313002ce176672",
-            "claim_2afb2b3ef37b93fc",
-            "claim_f49f89cbbaa6f42a",
-            "claim_6ec4b0bc70768e1e",
-            "claim_5a1f01cf4b9b6365"
-          ],
-          "sentenceCount": 6,
-          "generatedBy": "rule-based",
-          "verifiedAt": "2026-08-25T06:55:40.088Z"
-        },
-        {
-          "id": "narr_dd51ebe09b9708ec",
-          "mode": "HERITAGE",
-          "category": "heritage",
-          "claimType": "documented history",
-          "text": "These include the Kamo Shrines (Kami and Shimo), Kyō-ō-Gokokuji (Tō-ji), Kiyomizu-dera, Daigo-ji, Ninna-ji, Saihō-ji (Kokedera), Tenryū-ji, Rokuon-ji (Kinkaku-ji), Jishō-ji (Ginkaku-ji), Ryōan-ji, Hongan-ji, Kōzan-ji, and the Nijō Castle, primarily built by the Tokugawa shōguns. At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds. Three mountains collectively known as the Sanbi are known for their temples and lush greenery.",
-          "claimIds": [
-            "claim_545a4a7f02704ef4",
-            "claim_86c29eeaeb0dc37d",
-            "claim_ae64783b4fb47538"
-          ],
-          "sentenceCount": 3,
-          "generatedBy": "rule-based",
-          "verifiedAt": "2026-08-25T06:55:40.089Z"
-        }
-      ],
-      "timeline": [
-        {
-          "claimId": "claim_9977e201cbbed73c",
-          "year": 1603,
-          "endYear": null,
-          "title": "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikipedia",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_f49f89cbbaa6f42a",
-          "year": 1868,
-          "endYear": null,
-          "title": "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikivoyage",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_5a1f01cf4b9b6365",
-          "year": 1885,
-          "endYear": 1890,
-          "title": "Lake Biwa Canal: Construction of the Lake Biwa Canal began in 1885 and was completed on 9 April 1890.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikipedia",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_411cac0099d86494",
-          "year": 1889,
-          "endYear": null,
-          "title": "The modern municipality of Kyoto was established in 1889.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikipedia",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_7a313002ce176672",
-          "year": 1895,
-          "endYear": null,
-          "title": "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikipedia",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_f4db56648382a157",
-          "year": 1895,
-          "endYear": null,
-          "title": "Kyoto National Museum: It was completed in 1895 and was built in a French Second Empire style.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikipedia",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        },
-        {
-          "claimId": "claim_2afb2b3ef37b93fc",
-          "year": 2023,
-          "endYear": null,
-          "title": "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
-          "category": "history",
-          "claimType": "documented history",
-          "sources": [
-            {
-              "title": "Kyoto — Wikivoyage",
-              "publisher": "Wikimedia Foundation",
-              "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto"
-            }
-          ]
-        }
-      ],
-      "connections": [
-        {
-          "subject": "Kyoto",
-          "claimIds": [
-            "claim_411cac0099d86494",
-            "claim_c7453fa2c19711c6",
-            "claim_7a313002ce176672",
-            "claim_f49f89cbbaa6f42a",
-            "claim_6ec4b0bc70768e1e",
-            "claim_86c29eeaeb0dc37d",
-            "claim_fe2576f2163ad1b5"
-          ],
-          "statements": [
-            "The modern municipality of Kyoto was established in 1889.",
-            "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-            "The Heian Jingū is a Shinto shrine, built in 1895, celebrating the imperial family and commemorating the first and last emperors to reside in Kyoto.",
-            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
-            "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-            "At the bottom of the price scale, many temples in Kyoto own and run their own lodging complex known as shukubō (宿坊), usually on or near temple grounds.",
-            "Kyoto marks the Bon Festival with the Gozan no Okuribi, lighting fires on mountains to guide the spirits home on August 16."
-          ]
-        },
-        {
-          "subject": "Japan",
-          "claimIds": [
-            "claim_2afb2b3ef37b93fc",
-            "claim_f49f89cbbaa6f42a",
-            "claim_7eda36c79dc56459"
-          ],
-          "statements": [
-            "Kyōto (京都) was the capital of Japan for over a millennium, and carries a reputation as the nation's most beautiful city and its cultural capital - even the national government's Agency for Cultural Affairs moved there in 2023.",
-            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo.",
-            "The Gion Matsuri known as one of the 3 great festivals of Japan, culminating in a massive parade on July 17."
-          ]
-        },
-        {
-          "subject": "Japanese",
-          "claimIds": [
-            "claim_c7453fa2c19711c6",
-            "claim_cc5dd8aa193739aa",
-            "claim_6ec4b0bc70768e1e"
-          ],
-          "statements": [
-            "As a result, Kyoto is one of the few Japanese cities that still have an abundance of prewar buildings, such as the traditional townhouses known as machiya.",
-            "Funaoka Onsen is the oldest of these and dubbed \"king of sentō\", but newer bath houses and super sentō are just as much part of the Japanese bathing culture.",
-            "Kyoto was among the few Japanese cities that escaped the allied bombings of World War II and so still has an abundance of prewar buildings, such as the traditional townhouses known as machiya."
-          ]
-        },
-        {
-          "subject": "Tokyo",
-          "claimIds": [
-            "claim_9977e201cbbed73c",
-            "claim_f49f89cbbaa6f42a"
-          ],
-          "statements": [
-            "In 1603, the Tokugawa Shogunate was established at Edo (present-day Tokyo), marking the beginning of the Edo period.",
-            "The city's numerous palaces, shrines, temples and other landmarks are spread out over the following districts:\nNestled among the mountains of the Kansai region of Western Honshu, Kyoto was the capital of Japan and the residence of the Emperor from 794 until the Meiji Restoration of 1868, when the capital was moved to Tokyo."
-          ]
-        }
-      ],
-      "sourcesUsed": [
-        {
-          "sourceId": "wikipedia",
-          "title": "Kyoto — Wikipedia",
-          "publisher": "Wikimedia Foundation",
-          "url": "https://en.wikipedia.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-          "tier": "encyclopedia"
-        },
-        {
-          "sourceId": "wikivoyage",
-          "title": "Kyoto — Wikivoyage",
-          "publisher": "Wikimedia Foundation",
-          "url": "https://en.wikivoyage.org/w/api.php?action=query&prop=extracts&explaintext=1&redirects=1&format=json&formatversion=2&titles=Kyoto",
-          "tier": "other-public"
-        },
-        {
-          "sourceId": "kyoto-city-tourism",
-          "title": "Kyoto City Official Travel Guide — Kyoto City Tourism Association",
-          "publisher": "Kyoto City Tourism Association",
-          "url": "https://kyoto.travel/en/",
-          "tier": "official-tourism"
-        }
-      ],
-      "stats": {
-        "approved": 15,
-        "published": 15,
-        "withheld": 0,
-        "narrativeBlocks": 2,
-        "narrativeWithheld": 0,
-        "timelineEntries": 7,
-        "connections": 4
       },
       "withheld": [],
       "withheldNarrative": []

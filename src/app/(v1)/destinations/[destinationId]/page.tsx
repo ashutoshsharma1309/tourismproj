@@ -9,9 +9,9 @@ import { destinationOpenGraph } from "@/lib/destinations/social-card";
 /**
  * One destination shell, for every destination.
  *
- * THIS FILE IS THE ARCHITECTURE TEST. There is no SikkimPage, no KyotoPage,
- * no ParisPage — one route renders all fifteen, and `npm run build`
- * prerendering fifteen pages from it is the proof that the destination model
+ * THIS FILE IS THE ARCHITECTURE TEST. There is no SikkimPage, no JaipurPage,
+ * no VaranasiPage — one route renders every destination, and `npm run build`
+ * prerendering one page per registered id is the proof that the destination model
  * holds without duplicating the application. If a destination could not be
  * represented by the shared abstraction, this build would fail.
  *

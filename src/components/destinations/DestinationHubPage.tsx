@@ -1,3 +1,4 @@
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -10,6 +11,7 @@ import { DestinationHero } from "@/components/destinations/DestinationHero";
 import { translator, type LanguageCode } from "@/lib/i18n";
 import { DestinationAudio } from "@/components/destinations/DestinationAudio";
 import { DestinationCoverage } from "@/components/destinations/DestinationCoverage";
+import { DestinationExploreTiers } from "@/components/destinations/DestinationExploreTiers";
 import { DestinationCulture } from "@/components/destinations/DestinationCulture";
 import { DestinationGallery } from "@/components/destinations/DestinationGallery";
 import { DestinationMapSection } from "@/components/destinations/DestinationMapSection";
@@ -23,9 +25,7 @@ import { RelatedDestinations } from "@/components/global/RelatedDestinations";
 import { availableCapabilities, getDestinationSummary } from "@/lib/destinations";
 import { getCapsuleStays, getPlaces } from "@/lib/destinations/content";
 import { capabilitySectionPath } from "@/lib/destinations/sections";
-import { destinationPath } from "@/lib/destinations/resolve";
 import { getPublishedKnowledge } from "@/data/published-knowledge";
-import { discoveryGroups, experiencesFor } from "@/lib/discovery";
 import { CAPABILITY_LABEL, DIVISION_KIND_LABEL } from "@/types/destination";
 
 /**
@@ -119,16 +119,6 @@ export async function DestinationHubPage({
   const knowledge = getPublishedKnowledge(destinationId);
 
   /*
-   * The discovery summary: what a visitor can explore here, with counts
-   * measured from the records themselves. A group appears only where records
-   * carry it, so this section cannot advertise a way in that opens onto
-   * nothing.
-   */
-  const experiences = capabilities.experiences ? await experiencesFor(destinationId) : [];
-  const groups = discoveryGroups(experiences).slice(0, 6);
-  const historyEdges = experiences.reduce((total, e) => total + e.historyRefs.length, 0);
-  const storyEdges = experiences.reduce((total, e) => total + e.storyRefs.length, 0);
-  /*
    * The badge shows EARNED depth once research has been reviewed and
    * published, not the static value in the registry record. Otherwise a
    * destination could say "35 approved facts across 4 topics" beneath a badge
@@ -187,27 +177,18 @@ export async function DestinationHubPage({
         ) : null}
 
         {/*
-          The planner's entry point. It sits above the section list because
-          planning a journey is what a visitor came to do, and it appears only
-          where the `experiences` capability resolved — so it can never lead to
-          a planner with nothing to plan.
+          WHAT YOU CAN EXPLORE HERE — the hub's one navigation block.
+          It replaced a "Discover Jaipur" button on Jaipur's own page, a
+          "through" chip row and an "Explore" grid of capability names: three
+          lists of the same words with no hierarchy. See the component.
         */}
-        {capabilities.experiences ? (
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link
-              href={destinationPath(destinationId, "discover")}
-              className="focus-visible:ring-primary inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:outline-none"
-            >
-              {t("dest.discover")} {destination.name}
-            </Link>
-            <Link
-              href={destinationPath(destinationId, "plan")}
-              className="focus-visible:ring-primary inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-small font-medium transition-colors hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:outline-none"
-            >
-              {t("dest.planJourney")}
-            </Link>
-          </div>
-        ) : null}
+        <DestinationExploreTiers
+          destinationId={destinationId}
+          destinationName={destination.name}
+          capabilities={capabilities}
+          hasKnowledge={Boolean(knowledge)}
+          audioLanguages={destination.languages.length}
+        />
 
         {/*
           WHAT THIS DESTINATION HOLDS, COUNTED.
@@ -218,79 +199,23 @@ export async function DestinationHubPage({
         */}
         <DestinationCoverage destinationId={destinationId} />
 
-        {groups.length > 0 ? (
-          <section className="mt-12" aria-labelledby="discover-through">
-            <h2 id="discover-through" className="font-display text-h3">
-              Explore this destination through
-            </h2>
-            <p className="mt-2 max-w-prose text-body text-muted">
-              {experiences.length} catalogued {experiences.length === 1 ? "record" : "records"} you
-              can visit, carrying {historyEdges} links to dated historical events and {storyEdges}{" "}
-              links to archive stories. Every number here is counted from the
-              records, not estimated.
-            </p>
-            <ul className="mt-4 flex flex-wrap gap-2">
-              {groups.map((group) => (
-                <li key={group.interest}>
-                  <Link
-                    href={`${destinationPath(destinationId, "discover")}?interest=${group.interest}`}
-                    className="focus-visible:ring-primary inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-small font-medium transition-colors hover:border-primary hover:text-primary focus-visible:ring-2 focus-visible:outline-none"
-                  >
-                    {group.label}
-                    <span className="text-caption text-subtle">{group.count}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ) : null}
-
-        {hasContent ? (
-          <section className="mt-10">
-            <h2 className="font-display text-h3">Explore</h2>
-            <p className="mt-2 text-body text-muted">
-              Only sections with content are listed. Nothing here links to an
-              empty page.
-            </p>
-            <ul className="mt-4 grid gap-3 sm:grid-cols-2">
-              {available.map((capability) => {
-                const href = capabilitySectionPath(destinationId, capability);
-                if (!href) return null;
-                return (
-                  <li key={capability}>
-                    <Link
-                      href={href}
-                      className="focus-visible:ring-primary block rounded-xl border border-border bg-surface px-4 py-3 transition-colors hover:border-primary focus-visible:ring-2 focus-visible:outline-none"
-                    >
-                      {CAPABILITY_LABEL[capability]}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        ) : knowledge ? null : (
+        {!hasContent && !knowledge ? (
           <section className="mt-10 rounded-xl border border-border bg-surface-muted p-6">
-            <h2 className="font-display text-h3">Not yet available</h2>
+            <h2 className="font-display text-h3">We are still cataloguing {destination.name}</h2>
             <p className="mt-2 max-w-prose text-body text-muted">
-              {destination.name} is registered in the destination architecture,
-              but no content has been researched for it. Rather than fill this
-              page with generated descriptions or placeholder listings, it says
-              nothing — the same rule that governs every other claim in this
-              archive: if it is not sourced, it does not ship.
-            </p>
-            <p className="mt-3 max-w-prose text-body text-muted">
-              Sikkim is the reference implementation and shows what a completed
-              destination looks like.
+              Nothing is shown here until it has a source — no generated
+              descriptions, no placeholder listings. Places, stories and culture
+              appear as they are verified.
             </p>
             <Link
-              href="/destinations/sikkim"
-              className="mt-4 inline-block font-medium text-primary hover:underline"
+              href="/destinations"
+              className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-small font-medium text-primary-foreground transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:outline-none"
             >
-              See Sikkim
+              Explore other destinations
+              <ArrowRight className="size-4" aria-hidden />
             </Link>
           </section>
-        )}
+        ) : null}
 
         {/*
           The experience, in the order a visitor discovers a place: told about
@@ -349,9 +274,30 @@ export async function DestinationHubPage({
           language={language}
         />
 
-        {knowledge ? <PublishedKnowledge knowledge={knowledge} /> : null}
-        {knowledge ? <DestinationTimeline entries={knowledge.timeline} /> : null}
-        {knowledge ? <StoryConnections connections={knowledge.connections} /> : null}
+        {/*
+          THE EVIDENCE LAYER, FOLDED.
+          Reviewed knowledge, the verified-fact table, the timeline and the
+          thread of connections ran to five and a half thousand pixels on
+          Jaipur's hub. They are the archive's proof and they stay on the
+          page — behind one disclosure a visitor opens when they want the
+          sources, rather than scrolls past when they want a place to go.
+        */}
+        {knowledge ? (
+          <details id="evidence" className="group mt-14 scroll-mt-20 rounded-xl border border-border bg-surface-muted/40 p-5">
+            <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+              <span className="block font-display text-h3">Researched knowledge and sources</span>
+              <span className="mt-1 block text-body text-muted">
+                Every reviewed fact about {destination.name}, its dated timeline and the
+                threads that connect them — with the source each came from.{" "}
+                <span className="font-medium text-primary group-open:hidden">Open</span>
+                <span className="hidden font-medium text-primary group-open:inline">Close</span>
+              </span>
+            </summary>
+            <PublishedKnowledge knowledge={knowledge} />
+            <DestinationTimeline entries={knowledge.timeline} />
+            <StoryConnections connections={knowledge.connections} />
+          </details>
+        ) : null}
 
         {firstDivision ? (
           <section className="mt-10">

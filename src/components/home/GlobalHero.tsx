@@ -5,14 +5,14 @@ import { suitsWideFrame } from "@/lib/media/focal";
 import { HeroRotator, type HeroSlide } from "./HeroRotator";
 
 /**
- * The first viewport: fifteen destinations, one at a time.
+ * The first viewport: every destination, one at a time.
  *
  * WHAT CHANGED, AND WHY
  * ---------------------
  * This was a split frame — copy on solid ground, one photograph beside it —
  * which fixed a real problem (a six-image collage where nothing was legible
  * as a place) but left another: the hero showed ONE destination for the life
- * of the build, so a fifteen-destination product opened on a single city and
+ * of the build, so a many-destination product opened on a single city and
  * a rail of five names. The remaining nine existed only as a number.
  *
  * It is now full-bleed and rotating. Breadth is demonstrated rather than
@@ -84,11 +84,11 @@ async function heroSlides(): Promise<HeroSlide[]> {
 
 export async function GlobalHero({
   destinationCount,
-  countryCount,
+  stateCount,
   placeCount,
 }: {
   destinationCount: number;
-  countryCount: number;
+  stateCount: number;
   placeCount: number;
 }) {
   const slides = await heroSlides();
@@ -97,7 +97,7 @@ export async function GlobalHero({
     <HeroRotator
       slides={slides}
       destinationCount={destinationCount}
-      countryCount={countryCount}
+      stateCount={stateCount}
       placeCount={placeCount}
     />
   );

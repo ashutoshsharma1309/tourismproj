@@ -221,8 +221,8 @@ section("17-18. Regression");
 check("Depth is unchanged by any of this",
   published?.destinations?.sikkim?.depth?.depth === "deep" &&
   published?.destinations?.jaipur?.depth?.depth === "curated" &&
-  published?.destinations?.kyoto?.depth?.depth === "researched",
-  `${published?.destinations?.sikkim?.depth?.depth}/${published?.destinations?.jaipur?.depth?.depth}/${published?.destinations?.kyoto?.depth?.depth}`);
+  Object.entries(published?.destinations ?? {}).every(([id, d]) => id === "sikkim" || d?.depth?.depth !== "deep"),
+  Object.entries(published?.destinations ?? {}).map(([id, d]) => `${id}=${d?.depth?.depth}`).join("/"));
 check("Sikkim's curated records are untouched",
   readFileSync("src/data/monasteries.ts", "utf8").includes("const SEEDS: MonasterySeed[]"));
 

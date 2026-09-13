@@ -261,112 +261,6 @@ export const PLAN = [
      that Versailles is not in Paris, because the alternative is a capsule
      that quietly annexes a town 20 km away.
      --------------------------------------------------------------------- */
-  {
-    id: "paris",
-    /* Stated rather than derived: "new-york-city" does not title-case into
-       "New York City", and an image alt text is not the place to find out. */
-    name: "Paris",
-    scope: "Landmarks of the capital, and the royal court at Versailles that shaped it",
-    places: [
-      { id: "eiffel-tower", title: "Eiffel Tower", category: "Tower", themes: ["architecture", "heritage", "history"] },
-      { id: "louvre", title: "Louvre", category: "Museum", themes: ["museums", "art", "heritage"] },
-      { id: "notre-dame", title: "Notre-Dame de Paris", category: "Cathedral", themes: ["architecture", "sacred", "heritage", "history"] },
-      { id: "arc-de-triomphe", title: "Arc de Triomphe", category: "Monument", themes: ["architecture", "heritage", "history"] },
-      { id: "montmartre", title: "Montmartre", category: "District", themes: ["art", "culture", "local"] },
-      { id: "versailles", title: "Palace of Versailles", category: "Palace", themes: ["heritage", "architecture", "history"] },
-      /* PHASE B added these as records only. The final visual pass turns
-         their photographs on: a tourism product whose places have no picture
-         is a catalogue, and 58% of them had none. Every image is a freely
-         licensed Commons file, vendored with its licence and attribution. */
-      { id: "sainte-chapelle", title: "Sainte-Chapelle", category: "Chapel", themes: ["sacred", "architecture", "heritage"] },
-      { id: "pantheon-paris", title: "Panthéon", category: "Monument", themes: ["architecture", "history", "heritage"] },
-      { id: "musee-dorsay", title: "Musée d'Orsay", category: "Museum", themes: ["museums", "art", "architecture"] },
-      { id: "place-concorde", title: "Place de la Concorde", category: "Square", themes: ["history", "heritage", "architecture"] },
-      { id: "les-invalides", title: "Les Invalides", category: "Monument", themes: ["history", "architecture", "museums"] },
-      { id: "centre-pompidou", title: "Centre Pompidou", category: "Museum", themes: ["museums", "art", "architecture"] },
-      { id: "pere-lachaise", title: "Père Lachaise Cemetery", category: "Cemetery", themes: ["heritage", "history", "culture"] },
-    ],
-  },
-  {
-    id: "rome",
-    /* Stated rather than derived: "new-york-city" does not title-case into
-       "New York City", and an image alt text is not the place to find out. */
-    name: "Rome",
-    scope: "The ancient city, its temples and its Baroque squares",
-    places: [
-      { id: "colosseum", title: "Colosseum", category: "Amphitheatre", themes: ["heritage", "architecture", "history"] },
-      { id: "roman-forum", title: "Roman Forum", category: "Archaeological site", themes: ["heritage", "history", "architecture"] },
-      { id: "pantheon", title: "Pantheon, Rome", category: "Temple", themes: ["architecture", "heritage", "sacred", "history"] },
-      { id: "trevi-fountain", title: "Trevi Fountain", category: "Fountain", themes: ["architecture", "culture", "heritage"] },
-      { id: "vatican-museums", title: "Vatican Museums", category: "Museum", themes: ["museums", "art", "heritage"] },
-      { id: "piazza-navona", title: "Piazza Navona", category: "Square", themes: ["architecture", "culture", "local"] },
-      /* PHASE B added these as records only. The final visual pass turns
-         their photographs on: a tourism product whose places have no picture
-         is a catalogue, and 58% of them had none. Every image is a freely
-         licensed Commons file, vendored with its licence and attribution. */
-      { id: "castel-santangelo", title: "Castel Sant'Angelo", category: "Fort", themes: ["heritage", "history", "architecture"] },
-      { id: "palatine-hill", title: "Palatine Hill", category: "Archaeological site", themes: ["heritage", "history", "architecture"] },
-      { id: "baths-caracalla", title: "Baths of Caracalla", category: "Archaeological site", themes: ["heritage", "history", "architecture"] },
-      { id: "spanish-steps", title: "Spanish Steps", category: "Landmark", themes: ["architecture", "culture", "local"] },
-      { id: "trastevere", title: "Trastevere", category: "District", themes: ["culture", "local", "heritage"] },
-      { id: "capitoline-museums", title: "Capitoline Museums", category: "Museum", themes: ["museums", "art", "heritage"] },
-      { id: "st-peters", title: "St. Peter's Basilica", category: "Basilica", themes: ["sacred", "architecture", "heritage"] },
-    ],
-  },
-  {
-    id: "istanbul",
-    /* Stated rather than derived: "new-york-city" does not title-case into
-       "New York City", and an image alt text is not the place to find out. */
-    name: "Istanbul",
-    scope: "Byzantine and Ottoman monuments of the historic peninsula",
-    places: [
-      { id: "hagia-sophia", title: "Hagia Sophia", category: "Mosque", themes: ["heritage", "architecture", "sacred", "history"] },
-      /* The article's own title. "Sultan Ahmed Mosque" redirects here, and a
-         capsule cites the page it actually retrieved. */
-      { id: "blue-mosque", title: "Blue Mosque, Istanbul", category: "Mosque", themes: ["sacred", "architecture", "heritage"] },
-      { id: "topkapi-palace", title: "Topkapı Palace", category: "Palace", themes: ["heritage", "architecture", "history"] },
-      { id: "grand-bazaar", title: "Grand Bazaar, Istanbul", category: "Market", themes: ["culture", "local", "heritage"] },
-      { id: "basilica-cistern", title: "Basilica Cistern", category: "Cistern", themes: ["heritage", "architecture", "history"] },
-      { id: "galata-tower", title: "Galata Tower", category: "Tower", themes: ["architecture", "heritage", "history"] },
-      /* PHASE B added these as records only. The final visual pass turns
-         their photographs on: a tourism product whose places have no picture
-         is a catalogue, and 58% of them had none. Every image is a freely
-         licensed Commons file, vendored with its licence and attribution. */
-      { id: "suleymaniye", title: "Süleymaniye Mosque", category: "Mosque", themes: ["sacred", "architecture", "heritage"] },
-      { id: "chora", title: "The Chora", category: "Church", themes: ["sacred", "art", "heritage"] },
-      { id: "dolmabahce", title: "Dolmabahçe Palace", category: "Palace", themes: ["heritage", "architecture", "history"] },
-      { id: "rustem-pasha", title: "Rüstem Pasha Mosque", category: "Mosque", themes: ["sacred", "architecture", "art"] },
-      { id: "archaeology-museums", title: "Istanbul Archaeology Museums", category: "Museum", themes: ["museums", "heritage", "history"] },
-      { id: "spice-bazaar", title: "Spice Bazaar", category: "Market", themes: ["culture", "local", "heritage"] },
-      { id: "bosphorus", title: "Bosporus", category: "Strait", themes: ["nature", "history", "local"] },
-    ],
-  },
-  {
-    id: "new-york-city",
-    /* Stated rather than derived: "new-york-city" does not title-case into
-       "New York City", and an image alt text is not the place to find out. */
-    name: "New York City",
-    scope: "The harbour monuments, bridges and museums of the city",
-    places: [
-      { id: "statue-of-liberty", title: "Statue of Liberty", category: "Monument", themes: ["heritage", "architecture", "history"] },
-      { id: "ellis-island", title: "Ellis Island", category: "Historic site", themes: ["history", "heritage", "culture"] },
-      { id: "empire-state-building", title: "Empire State Building", category: "Skyscraper", themes: ["architecture", "heritage", "history"] },
-      { id: "central-park", title: "Central Park", category: "Urban park", themes: ["nature", "culture", "local"] },
-      { id: "brooklyn-bridge", title: "Brooklyn Bridge", category: "Bridge", themes: ["architecture", "heritage", "history"] },
-      { id: "met-museum", title: "Metropolitan Museum of Art", category: "Museum", themes: ["museums", "art", "culture"] },
-      /* PHASE B added these as records only. The final visual pass turns
-         their photographs on: a tourism product whose places have no picture
-         is a catalogue, and 58% of them had none. Every image is a freely
-         licensed Commons file, vendored with its licence and attribution. */
-      { id: "one-wtc", title: "One World Trade Center", category: "Skyscraper", themes: ["architecture", "history", "heritage"] },
-      { id: "grand-central", title: "Grand Central Terminal", category: "Railway station", themes: ["architecture", "heritage", "history"] },
-      { id: "times-square", title: "Times Square", category: "Square", themes: ["culture", "local", "history"] },
-      { id: "amnh", title: "American Museum of Natural History", category: "Museum", themes: ["museums", "culture", "nature"] },
-      { id: "moma", title: "Museum of Modern Art", category: "Museum", themes: ["museums", "art", "culture"] },
-      { id: "high-line", title: "High Line", category: "Urban park", themes: ["nature", "architecture", "local"] },
-      { id: "rockefeller-center", title: "Rockefeller Center", category: "Landmark", themes: ["architecture", "culture", "heritage"] },
-    ],
-  },
   /* ---------------------------------------------------------------------
      Phase B — the two destinations that held reviewed knowledge and nothing
      to visit.
@@ -402,30 +296,184 @@ export const PLAN = [
       { id: "central-park-jaipur", title: "Central Park, Jaipur", category: "Park", themes: ["nature", "local"] },
     ],
   },
+  /*
+   * INDIA-ONLY (SIH 2026 final). Eight more Indian cities, chosen to widen
+   * the kinds of cultural tourism the archive can show — Sikh, Awadhi,
+   * Maratha, Wadiyar, Tamil temple, Kalinga temple, Kashmiri and the
+   * walled-city textile heritage of Gujarat. As above: this file names pages
+   * to read and nothing else. A title that turns out not to exist is dropped
+   * by retrieve.mjs and reported, never invented.
+   */
   {
-    id: "kyoto",
-    scope: "The imperial capital's temples, shrines and garden architecture",
+    id: "amritsar",
+    scope: "The Golden Temple city — Sikh heritage, Partition memory and Punjabi food",
     places: [
-      { id: "kinkakuji", title: "Kinkaku-ji", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "ginkakuji", title: "Ginkaku-ji", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "fushimi-inari", title: "Fushimi Inari-taisha", category: "Shrine", themes: ["sacred", "heritage", "culture"] },
-      { id: "kiyomizudera", title: "Kiyomizu-dera", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "nijo-castle", title: "Nijō Castle", category: "Castle", themes: ["heritage", "history", "architecture"] },
-      { id: "ryoanji", title: "Ryōan-ji", category: "Temple", themes: ["sacred", "heritage", "nature"] },
-      { id: "toji", title: "Tō-ji", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "sanjusangendo", title: "Sanjūsangen-dō", category: "Temple", themes: ["sacred", "art", "heritage"] },
-      { id: "arashiyama", title: "Arashiyama", category: "District", themes: ["nature", "culture", "local"] },
-      { id: "heian-shrine", title: "Heian Shrine", category: "Shrine", themes: ["sacred", "heritage", "architecture"] },
-      /* The final transformation topped these four destinations up toward the
-         12-15 target. Every title was resolved against Wikipedia before being
-         written here: four proposed places for Jaipur and one for Kochi were
-         dropped because no article exists, which is why the counts below are
-         not round. */
-      { id: "nanzen-ji", title: "Nanzen-ji", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "daitoku-ji", title: "Daitoku-ji", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
-      { id: "philosophers-walk", title: "Philosopher's Walk", category: "Walk", themes: ["nature", "culture", "local"] },
-      { id: "nishiki-market", title: "Nishiki Market", category: "Market", themes: ["food", "local", "culture"] },
-      { id: "kyoto-imperial-palace", title: "Kyoto Imperial Palace", category: "Palace", themes: ["heritage", "history", "architecture"] },
+      { id: "golden-temple", title: "Golden Temple", category: "Gurdwara", themes: ["sacred", "heritage", "architecture"] },
+      { id: "akal-takht", title: "Akal Takht", category: "Gurdwara", themes: ["sacred", "heritage", "history"] },
+      { id: "jallianwala-bagh", title: "Jallianwala Bagh", category: "Memorial", themes: ["history", "heritage"] },
+      { id: "partition-museum", title: "Partition Museum", category: "Museum", themes: ["museums", "history"] },
+      { id: "gobindgarh-fort", title: "Gobindgarh Fort", category: "Fort", themes: ["heritage", "history", "architecture"] },
+      { id: "durgiana-temple", title: "Durgiana Temple", category: "Temple", themes: ["sacred", "architecture"] },
+      { id: "wagah", title: "Wagah", category: "Border crossing", themes: ["culture", "history", "local"] },
+      { id: "khalsa-college", title: "Khalsa College, Amritsar", category: "College", themes: ["architecture", "heritage", "history"] },
+      { id: "gurdwara-baba-atal", title: "Gurdwara Baba Atal", category: "Gurdwara", themes: ["sacred", "architecture", "heritage"] },
+      { id: "central-sikh-museum", title: "Central Sikh Museum", category: "Museum", themes: ["museums", "history", "sacred"] },
+      { id: "pul-kanjari", title: "Pul Kanjri", category: "Heritage site", themes: ["heritage", "history"] },
+      { id: "guru-nanak-dev-university", title: "Guru Nanak Dev University", category: "University", themes: ["culture", "architecture"] },
+    ],
+  },
+  {
+    id: "ahmedabad",
+    scope: "The walled city and its pols, stepwells, mosques and textile heritage",
+    places: [
+      { id: "sabarmati-ashram", title: "Sabarmati Ashram", category: "Heritage site", themes: ["history", "heritage", "culture"] },
+      { id: "adalaj-stepwell", title: "Adalaj Stepwell", category: "Stepwell", themes: ["heritage", "architecture", "history"] },
+      { id: "sidi-saiyyed-mosque", title: "Sidi Saiyyed Mosque", category: "Mosque", themes: ["architecture", "heritage", "sacred"] },
+      { id: "jama-masjid-ahmedabad", title: "Jama Masjid, Ahmedabad", category: "Mosque", themes: ["sacred", "architecture", "heritage"] },
+      { id: "bhadra-fort", title: "Bhadra Fort", category: "Fort", themes: ["heritage", "history", "architecture"] },
+      { id: "jhulta-minar", title: "Jhulta Minar", category: "Monument", themes: ["architecture", "heritage"] },
+      { id: "calico-museum", title: "Calico Museum of Textiles", category: "Museum", themes: ["museums", "art", "culture"] },
+      { id: "hutheesing-jain-temple", title: "Hutheesing Jain Temple", category: "Temple", themes: ["sacred", "architecture", "heritage"] },
+      { id: "sarkhej-roza", title: "Sarkhej Roza", category: "Mausoleum", themes: ["heritage", "architecture", "sacred"] },
+      { id: "kankaria-lake", title: "Kankaria Lake", category: "Lake", themes: ["nature", "local", "history"] },
+      { id: "manek-chowk", title: "Manek Chowk (Ahmedabad)", category: "Market", themes: ["food", "local", "culture"] },
+      { id: "teen-darwaza", title: "Teen Darwaza", category: "Gateway", themes: ["heritage", "architecture", "history"] },
+      { id: "dada-harir-stepwell", title: "Dada Harir Stepwell", category: "Stepwell", themes: ["heritage", "architecture", "history"] },
+      { id: "rani-no-hajiro", title: "Rani no Hajiro", category: "Mausoleum", themes: ["heritage", "architecture", "local"] },
+      { id: "lalbhai-dalpatbhai-museum", title: "Lalbhai Dalpatbhai Museum", category: "Museum", themes: ["museums", "art", "heritage"] },
+      { id: "swaminarayan-kalupur", title: "Swaminarayan Temple, Ahmedabad", category: "Temple", themes: ["sacred", "architecture", "heritage"] },
+      { id: "sabarmati-riverfront", title: "Sabarmati Riverfront", category: "Riverfront", themes: ["local", "nature"] },
+    ],
+  },
+  {
+    id: "lucknow",
+    scope: "The Nawabi capital — Awadhi architecture, Urdu literature, chikankari and its cuisine",
+    places: [
+      { id: "bara-imambara", title: "Bara Imambara", category: "Imambara", themes: ["heritage", "architecture", "history"] },
+      { id: "chota-imambara", title: "Chota Imambara", category: "Imambara", themes: ["heritage", "architecture", "sacred"] },
+      { id: "rumi-darwaza", title: "Rumi Darwaza", category: "Gateway", themes: ["architecture", "heritage", "history"] },
+      { id: "the-residency", title: "The Residency, Lucknow", category: "Heritage site", themes: ["history", "heritage", "architecture"] },
+      { id: "la-martiniere", title: "La Martinière College", category: "College", themes: ["architecture", "heritage", "history"] },
+      { id: "hussainabad-clock-tower", title: "Husainabad Clock Tower", category: "Monument", themes: ["architecture", "heritage"] },
+      { id: "dilkusha-kothi", title: "Dilkusha Kothi", category: "Palace", themes: ["heritage", "history", "architecture"] },
+      { id: "chattar-manzil", title: "Chattar Manzil", category: "Palace", themes: ["heritage", "architecture", "history"] },
+      { id: "ambedkar-memorial-park", title: "Ambedkar Memorial Park", category: "Memorial", themes: ["architecture", "culture"] },
+      { id: "state-museum-lucknow", title: "State Museum Lucknow", category: "Museum", themes: ["museums", "history", "art"] },
+      { id: "qaisar-bagh", title: "Qaisar Bagh", category: "Palace", themes: ["heritage", "history", "architecture"] },
+      { id: "hazratganj", title: "Hazratganj", category: "Market", themes: ["local", "food", "culture"] },
+      { id: "shah-najaf-imambara", title: "Shah Najaf Imambara", category: "Imambara", themes: ["sacred", "heritage", "history"] },
+      { id: "sikandar-bagh", title: "Sikandar Bagh", category: "Garden", themes: ["history", "heritage", "nature"] },
+      { id: "charbagh-station", title: "Lucknow Charbagh railway station", category: "Railway station", themes: ["architecture", "heritage"] },
+    ],
+  },
+  {
+    id: "pune",
+    scope: "The Peshwa capital — Maratha history, its wadas, museums and institutions of learning",
+    places: [
+      { id: "shaniwar-wada", title: "Shaniwar Wada", category: "Fort", themes: ["heritage", "history", "architecture"] },
+      { id: "aga-khan-palace", title: "Aga Khan Palace", category: "Palace", themes: ["history", "heritage", "architecture"] },
+      { id: "sinhagad", title: "Sinhagad", category: "Fort", themes: ["history", "heritage", "nature"] },
+      { id: "kelkar-museum", title: "Raja Dinkar Kelkar Museum", category: "Museum", themes: ["museums", "art", "culture"] },
+      { id: "dagadusheth-temple", title: "Dagadusheth Halwai Ganapati Temple", category: "Temple", themes: ["sacred", "culture", "local"] },
+      { id: "pataleshwar-caves", title: "Pataleshwar Caves, Pune", category: "Cave temple", themes: ["heritage", "sacred", "history"] },
+      { id: "lal-mahal", title: "Lal Mahal", category: "Palace", themes: ["history", "heritage"] },
+      { id: "vishrambaug-wada", title: "Vishrambaug Wada", category: "Palace", themes: ["heritage", "architecture", "history"] },
+      { id: "parvati-hill", title: "Parvati Hill", category: "Hill", themes: ["sacred", "nature", "history"] },
+      { id: "fergusson-college", title: "Fergusson College", category: "College", themes: ["heritage", "architecture", "culture"] },
+      { id: "deccan-college", title: "Deccan College Post-Graduate and Research Institute", category: "Institute", themes: ["heritage", "history", "culture"] },
+      { id: "bhandarkar-institute", title: "Bhandarkar Oriental Research Institute", category: "Institute", themes: ["culture", "history", "heritage"] },
+      { id: "shinde-chhatri", title: "Shinde Chhatri", category: "Memorial", themes: ["heritage", "architecture", "history"] },
+      { id: "tulshibaug", title: "Tulshibaug", category: "Market", themes: ["local", "culture", "sacred"] },
+      { id: "chaturshringi-temple", title: "Chaturshringi Temple", category: "Temple", themes: ["sacred", "local"] },
+    ],
+  },
+  {
+    id: "mysuru",
+    scope: "The Wadiyar capital — palace architecture, Dasara, sandalwood and silk",
+    places: [
+      { id: "mysore-palace", title: "Mysore Palace", category: "Palace", themes: ["heritage", "architecture", "history"] },
+      { id: "chamundi-hills", title: "Chamundi Hills", category: "Hill", themes: ["sacred", "nature", "heritage"] },
+      { id: "chamundeshwari-temple", title: "Chamundeshwari Temple", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "brindavan-gardens", title: "Brindavan Gardens", category: "Garden", themes: ["nature", "local"] },
+      { id: "st-philomenas", title: "St. Philomena's Cathedral, Mysore", category: "Church", themes: ["sacred", "architecture", "heritage"] },
+      { id: "jaganmohan-palace", title: "Jaganmohan Palace", category: "Palace", themes: ["art", "museums", "heritage"] },
+      { id: "lalitha-mahal", title: "Lalitha Mahal", category: "Palace", themes: ["heritage", "architecture", "history"] },
+      { id: "mysore-zoo", title: "Sri Chamarajendra Zoological Gardens", category: "Zoo", themes: ["nature", "local"] },
+      { id: "devaraja-market", title: "Devaraja Market", category: "Market", themes: ["local", "food", "culture"] },
+      { id: "rail-museum-mysore", title: "Railway Museum, Mysore", category: "Museum", themes: ["museums", "heritage"] },
+      { id: "karanji-lake", title: "Karanji Lake", category: "Lake", themes: ["nature", "local"] },
+      { id: "somanathapura", title: "Chennakeshava Temple, Somanathapura", category: "Temple", themes: ["heritage", "architecture", "sacred"] },
+      { id: "ranganathaswamy-srirangapatna", title: "Ranganathaswamy Temple, Srirangapatna", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "daria-daulat-bagh", title: "Daria Daulat Bagh", category: "Palace", themes: ["heritage", "history", "art"] },
+      { id: "gumbaz", title: "Gumbaz, Srirangapatna", category: "Mausoleum", themes: ["heritage", "history", "architecture"] },
+      { id: "krs-dam", title: "Krishna Raja Sagara", category: "Dam", themes: ["nature", "history"] },
+      { id: "oriental-research-institute", title: "Oriental Research Institute Mysore", category: "Institute", themes: ["culture", "history", "heritage"] },
+    ],
+  },
+  {
+    id: "madurai",
+    scope: "The temple city — Meenakshi, Tamil literature, Sangam heritage and its street food",
+    places: [
+      { id: "meenakshi-temple", title: "Meenakshi Temple", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "thirumalai-nayakkar-mahal", title: "Thirumalai Nayakkar Mahal", category: "Palace", themes: ["heritage", "architecture", "history"] },
+      { id: "koodal-azhagar", title: "Koodal Azhagar Temple", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "kallazhagar-temple", title: "Kallazhagar Temple", category: "Temple", themes: ["sacred", "heritage", "nature"] },
+      { id: "thiruparankundram", title: "Subramaniya Swamy Temple, Thiruparankundram", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "teppakulam", title: "Vandiyur Mariamman Teppakulam", category: "Temple tank", themes: ["sacred", "culture", "heritage"] },
+      { id: "pazhamudircholai", title: "Pazhamudircholai Murugan Temple", category: "Temple", themes: ["sacred", "nature"] },
+      { id: "samanar-hills", title: "Samanar Hills", category: "Heritage site", themes: ["heritage", "history", "sacred"] },
+      { id: "goripalayam-dargah", title: "Goripalayam Mosque", category: "Shrine", themes: ["sacred", "heritage", "history"] },
+      { id: "st-marys-cathedral-madurai", title: "St. Mary's Cathedral, Madurai", category: "Church", themes: ["sacred", "architecture"] },
+      { id: "keeladi", title: "Keeladi excavation site", category: "Archaeological site", themes: ["history", "heritage"] },
+      /* "Gandhi Memorial Museum" alone resolves to Delhi's National Gandhi
+         Museum — the distance check caught it. The Madurai museum has its
+         own article under the disambiguated title. */
+      { id: "gandhi-memorial-museum", title: "Gandhi Memorial Museum, Madurai", category: "Museum", themes: ["museums", "history"] },
+      { id: "yanaimalai", title: "Yanaimalai", category: "Hill", themes: ["heritage", "nature", "sacred"] },
+    ],
+  },
+  {
+    id: "bhubaneswar",
+    scope: "The temple city of Kalinga — Odia temple architecture, rock-cut caves and Pattachitra",
+    places: [
+      { id: "lingaraja-temple", title: "Lingaraja Temple", category: "Temple", themes: ["sacred", "heritage", "architecture"] },
+      { id: "mukteshvara-temple", title: "Mukteshvara Temple, Bhubaneswar", category: "Temple", themes: ["heritage", "architecture", "sacred"] },
+      { id: "rajarani-temple", title: "Rajarani Temple", category: "Temple", themes: ["heritage", "architecture", "art"] },
+      { id: "parashurameshvara-temple", title: "Parashurameshvara Temple", category: "Temple", themes: ["heritage", "architecture", "history"] },
+      { id: "udayagiri-khandagiri", title: "Udayagiri and Khandagiri Caves", category: "Cave complex", themes: ["heritage", "history", "sacred"] },
+      { id: "dhauli", title: "Dhauli", category: "Heritage site", themes: ["history", "heritage", "sacred"] },
+      { id: "brahmeswara-temple", title: "Brahmeswara Temple", category: "Temple", themes: ["heritage", "architecture", "sacred"] },
+      { id: "ananta-vasudeva-temple", title: "Ananta Vasudeva Temple", category: "Temple", themes: ["sacred", "heritage", "food"] },
+      { id: "bindu-sagar", title: "Bindusagar Lake", category: "Tank", themes: ["sacred", "heritage", "local"] },
+      { id: "odisha-state-museum", title: "Odisha State Museum", category: "Museum", themes: ["museums", "history", "art"] },
+      { id: "nandankanan", title: "Nandankanan Zoological Park", category: "Zoo", themes: ["nature", "local"] },
+      { id: "ekamra-kshetra", title: "Ekamra Kshetra", category: "Heritage site", themes: ["sacred", "heritage", "history"] },
+      { id: "chausathi-jogini-hirapur", title: "Chausathi Jogini Temple, Hirapur", category: "Temple", themes: ["heritage", "sacred", "art"] },
+      { id: "ekamra-haat", title: "Ekamra Haat", category: "Market", themes: ["local", "art", "food"] },
+      { id: "kedar-gouri-temple", title: "Kedar Gouri Temple", category: "Temple", themes: ["sacred", "heritage"] },
+    ],
+  },
+  {
+    id: "srinagar",
+    scope: "The lake city of Kashmir — Mughal gardens, houseboats, shrines and its crafts",
+    places: [
+      { id: "dal-lake", title: "Dal Lake", category: "Lake", themes: ["nature", "culture", "local"] },
+      { id: "shalimar-bagh", title: "Shalimar Bagh, Srinagar", category: "Garden", themes: ["heritage", "architecture", "nature"] },
+      { id: "nishat-bagh", title: "Nishat Bagh", category: "Garden", themes: ["heritage", "architecture", "nature"] },
+      { id: "chashme-shahi", title: "Chashme Shahi", category: "Garden", themes: ["heritage", "nature"] },
+      { id: "pari-mahal", title: "Pari Mahal", category: "Garden", themes: ["heritage", "history", "architecture"] },
+      { id: "hazratbal-shrine", title: "Hazratbal Shrine", category: "Shrine", themes: ["sacred", "heritage", "architecture"] },
+      { id: "jamia-masjid-srinagar", title: "Jamia Masjid, Srinagar", category: "Mosque", themes: ["sacred", "architecture", "heritage"] },
+      { id: "shankaracharya-temple", title: "Shankaracharya Temple", category: "Temple", themes: ["sacred", "heritage", "nature"] },
+      { id: "hari-parbat", title: "Hari Parbat", category: "Fort", themes: ["heritage", "history", "sacred"] },
+      { id: "khanqah-e-moula", title: "Khanqah-e-Moula", category: "Shrine", themes: ["sacred", "architecture", "heritage"] },
+      { id: "nigeen-lake", title: "Nigeen Lake", category: "Lake", themes: ["nature", "local"] },
+      { id: "sps-museum", title: "SPS Museum", category: "Museum", themes: ["museums", "history", "art"] },
+      { id: "tulip-garden", title: "Indira Gandhi Memorial Tulip Garden", category: "Garden", themes: ["nature", "local"] },
+      { id: "char-chinar", title: "Char Chinar", category: "Island", themes: ["nature", "heritage"] },
+      { id: "pathar-masjid", title: "Pathar Masjid", category: "Mosque", themes: ["architecture", "heritage", "history"] },
+      { id: "burzahom", title: "Burzahom archaeological site", category: "Archaeological site", themes: ["history", "heritage"] },
+      { id: "kheer-bhawani", title: "Kheer Bhawani", category: "Temple", themes: ["sacred", "culture"] },
     ],
   },
 ];

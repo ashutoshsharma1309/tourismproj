@@ -289,6 +289,15 @@ export const capsule: DestinationCapsule = {
       retrievalMethod: "web-search",
     },
     {
+      id: "stay-grand-hyatt-goa-wikidata",
+      title: "Grand Hyatt Goa (Q16982459)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q16982459",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },
+    {
       id: "stay-planet-hollywood-goa",
       title: "Planet Hollywood Goa",
       publisher: "Wikipedia",
@@ -296,6 +305,15 @@ export const capsule: DestinationCapsule = {
       retrievedAt: "2026-09-10",
       confidence: "medium",
       retrievalMethod: "web-search",
+    },
+    {
+      id: "stay-planet-hollywood-goa-wikidata",
+      title: "Planet Hollywood Goa (Q24906376)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q24906376",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
     },
     {
       id: "stay-ronil-royale",
@@ -314,6 +332,15 @@ export const capsule: DestinationCapsule = {
       retrievedAt: "2026-09-10",
       confidence: "medium",
       retrievalMethod: "web-search",
+    },
+    {
+      id: "stay-taj-fort-aguada-resort-wikidata",
+      title: "Taj Fort Aguada Resort (Q7767915)",
+      publisher: "Wikidata",
+      url: "https://www.wikidata.org/wiki/Q7767915",
+      retrievedAt: "2026-09-10",
+      confidence: "medium",
+      retrievalMethod: "agent-api",
     },
     {
       id: "stay-nidhi-10e9420e",
@@ -858,7 +885,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/goa/stay-grand-hyatt-goa.jpg",
       imageAlt: "Grand Hyatt Goa, Goa",
       website: "http://goa.grand.hyatt.com",
-      sourceIds: ["stay-grand-hyatt-goa"],
+      sourceIds: ["stay-grand-hyatt-goa", "stay-grand-hyatt-goa-wikidata"],
     },
     {
       id: "stay-planet-hollywood-goa",
@@ -868,7 +895,7 @@ export const capsule: DestinationCapsule = {
       coordinates: { lat: 15.3168, lng: 73.8997 },
       /* No freely licensed photograph was found, so none is shown. */
       website: "http://www.planethollywoodgoa.com/",
-      sourceIds: ["stay-planet-hollywood-goa"],
+      sourceIds: ["stay-planet-hollywood-goa", "stay-planet-hollywood-goa-wikidata"],
     },
     {
       id: "stay-ronil-royale",
@@ -889,7 +916,7 @@ export const capsule: DestinationCapsule = {
       image: "/images/capsule/goa/stay-taj-fort-aguada-resort.jpg",
       imageAlt: "Taj Fort Aguada Resort, Goa",
       website: "https://www.tajhotels.com/en-in/taj/taj-fort-aguada-goa/",
-      sourceIds: ["stay-taj-fort-aguada-resort"],
+      sourceIds: ["stay-taj-fort-aguada-resort", "stay-taj-fort-aguada-resort-wikidata"],
     },
     {
       id: "stay-nidhi-10e9420e",

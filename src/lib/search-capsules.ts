@@ -1,17 +1,20 @@
 import { capsule as agra } from "@/data/destinations/capsules/agra";
+import { capsule as amritsar } from "@/data/destinations/capsules/amritsar";
+import { capsule as ahmedabad } from "@/data/destinations/capsules/ahmedabad";
+import { capsule as lucknow } from "@/data/destinations/capsules/lucknow";
+import { capsule as pune } from "@/data/destinations/capsules/pune";
+import { capsule as mysuru } from "@/data/destinations/capsules/mysuru";
+import { capsule as madurai } from "@/data/destinations/capsules/madurai";
+import { capsule as bhubaneswar } from "@/data/destinations/capsules/bhubaneswar";
+import { capsule as srinagar } from "@/data/destinations/capsules/srinagar";
 import storySearch from "@/data/generated/stories/search.json";
 import { capsule as delhi } from "@/data/destinations/capsules/delhi";
 import { capsule as goa } from "@/data/destinations/capsules/goa";
 import { capsule as hyderabad } from "@/data/destinations/capsules/hyderabad";
-import { capsule as istanbul } from "@/data/destinations/capsules/istanbul";
 import { capsule as jaipur } from "@/data/destinations/capsules/jaipur";
 import { capsule as kochi } from "@/data/destinations/capsules/kochi";
 import { capsule as kolkata } from "@/data/destinations/capsules/kolkata";
-import { capsule as kyoto } from "@/data/destinations/capsules/kyoto";
 import { capsule as mumbai } from "@/data/destinations/capsules/mumbai";
-import { capsule as newYorkCity } from "@/data/destinations/capsules/new-york-city";
-import { capsule as paris } from "@/data/destinations/capsules/paris";
-import { capsule as rome } from "@/data/destinations/capsules/rome";
 import { capsule as varanasi } from "@/data/destinations/capsules/varanasi";
 import { getDestination } from "@/lib/destinations/registry";
 import type { DestinationCapsule } from "@/types/capsule";
@@ -34,12 +37,12 @@ import type { DestinationCapsule } from "@/types/capsule";
  * when exploring Delhi, visible in global search with Delhi's name against
  * them, and never presented as another destination's.
  *
- * It is also what makes "Colosseum" resolve to Rome and "Hagia Sophia" to
- * Istanbul without a line of code that knows either name.
+ * It is also what makes "Charminar" resolve to Hyderabad and "Hawa Mahal"
+ * to Jaipur without a line of code that knows either name.
  */
 const CAPSULES: DestinationCapsule[] = [
-  agra, delhi, goa, hyderabad, istanbul, jaipur, kochi,
-  kolkata, kyoto, mumbai, newYorkCity, paris, rome, varanasi,
+  agra, ahmedabad, amritsar, bhubaneswar, delhi, goa, hyderabad, jaipur, kochi,
+  kolkata, lucknow, madurai, mumbai, mysuru, pune, srinagar, varanasi,
 ];
 
 export interface CapsuleSearchGroup {

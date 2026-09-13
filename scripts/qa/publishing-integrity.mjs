@@ -158,20 +158,17 @@ check("TEST G  500 official-tier claims still cannot produce `deep`",
 check("TEST G  Jaipur is not deep",
   published?.destinations?.jaipur?.depth?.depth !== "deep",
   published?.destinations?.jaipur?.depth?.depth ?? "n/a");
-check("TEST H  Kyoto is not deep",
-  published?.destinations?.kyoto?.depth?.depth !== "deep",
-  published?.destinations?.kyoto?.depth?.depth ?? "n/a");
+check("TEST H  No published destination other than Sikkim is deep",
+  Object.entries(published?.destinations ?? {}).every(([id, d]) => id === "sikkim" || d?.depth?.depth !== "deep"),
+  Object.entries(published?.destinations ?? {}).map(([id, d]) => `${id}=${d?.depth?.depth}`).join("/"));
 check("Sikkim's depth is declared, not earned from research",
   published?.destinations?.sikkim?.depth?.basis === "declared" &&
   published?.destinations?.sikkim?.depth?.earned !== "deep",
   `earned would be "${published?.destinations?.sikkim?.depth?.earned}"`);
-check("Depth differs across the three pilots, honestly",
-  new Set([
-    published?.destinations?.sikkim?.depth?.depth,
-    published?.destinations?.jaipur?.depth?.depth,
-    published?.destinations?.kyoto?.depth?.depth,
-  ]).size === 3,
-  `${published?.destinations?.sikkim?.depth?.depth}/${published?.destinations?.jaipur?.depth?.depth}/${published?.destinations?.kyoto?.depth?.depth}`);
+check("Depth differs between the declared archive and the earned tier, honestly",
+  published?.destinations?.sikkim?.depth?.depth === "deep" &&
+    published?.destinations?.jaipur?.depth?.depth === "curated",
+  `${published?.destinations?.sikkim?.depth?.depth}/${published?.destinations?.jaipur?.depth?.depth}`);
 
 /* Depth is not inherited through any shared attribute. */
 check("Sharing a country does not confer depth",
@@ -190,12 +187,14 @@ check("One approved claim does not make a destination curated",
   }).depth === "researched");
 
 /* TEST H: content isolation. */
-const kyotoClaims = published?.destinations?.kyoto?.categories.flatMap((c) => c.claims) ?? [];
+const otherClaims = Object.entries(published?.destinations ?? {})
+  .filter(([id]) => id !== "sikkim")
+  .flatMap(([, d]) => (d?.categories ?? []).flatMap((c) => c.claims));
 const SIKKIM_MARKERS = ["Rumtek", "Pemayangtse", "Gangtok", "Gyalshing", "Nyingma", "Chogyal"];
-check("TEST H  No Sikkim content appears in Kyoto's published knowledge",
-  !kyotoClaims.some((c) => SIKKIM_MARKERS.some((m) => c.statement.includes(m))));
-check("TEST H  No Kyoto claim cites a Sikkim-scoped source",
-  kyotoClaims.every((c) => c.sources.every((s) => !s.sourceId.startsWith("sikkim-"))));
+check("TEST H  No Sikkim content appears in another destination's published knowledge",
+  !otherClaims.some((c) => SIKKIM_MARKERS.some((m) => c.statement.includes(m))), `${otherClaims.length} claims`);
+check("TEST H  No other destination's claim cites a Sikkim-scoped source",
+  otherClaims.every((c) => c.sources.every((s) => !s.sourceId.startsWith("sikkim-"))));
 const jaipurClaims = allClaims;
 check("TEST G  No Sikkim content appears in Jaipur's published knowledge",
   !jaipurClaims.some((c) => SIKKIM_MARKERS.some((m) => c.statement.includes(m))));
