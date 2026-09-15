@@ -59,6 +59,18 @@ const COLUMNS = [
       { href: "/plan", label: "Plan a trip" },
     ],
   },
+  /*
+   * The commercial door. Hotels, homestays and heritage properties reach the
+   * partner programme from here on every page; travellers see one quiet link
+   * and nothing about accounts, because they need none.
+   */
+  {
+    heading: "For properties",
+    links: [
+      { href: "/partner", label: "Partner with TerraStory" },
+      { href: "/partner/apply", label: "List your property" },
+    ],
+  },
 ] as const;
 
 /*

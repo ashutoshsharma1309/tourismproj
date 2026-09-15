@@ -3,6 +3,7 @@ import { focalClassFor } from "@/lib/media/focal";
 import Image from "next/image";
 import Link from "next/link";
 
+import { ReferralLink } from "@/components/partners/ReferralLink";
 import { getCapsuleStays } from "@/lib/destinations/content";
 import { translator, type LanguageCode } from "@/lib/i18n";
 
@@ -148,37 +149,43 @@ export async function DestinationStays({
                   <ArrowRight className="size-3.5" aria-hidden />
                 </Link>
                 {stay.coordinates ? (
-                  <a
+                  <ReferralLink
                     href={`https://www.google.com/maps?q=${stay.coordinates.lat},${stay.coordinates.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="MAPS"
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <MapPin className="size-3.5" aria-hidden />
                     Open in Google Maps
                     <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.website ? (
-                  <a
+                  <ReferralLink
                     href={stay.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="OFFICIAL_WEBSITE"
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <Globe className="size-3.5" aria-hidden />
                     Official website
                     <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.phone ? (
-                  <a
+                  <ReferralLink
                     href={`tel:${stay.phone.replace(/[^\d+]/g, "")}`}
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="CALL"
+                    newTab={false}
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <Phone className="size-3.5" aria-hidden />
                     <span data-numeric>{stay.phone}</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.email ? (
                   <a href={`mailto:${stay.email}`} className="inline-flex items-center gap-1 text-muted hover:text-primary">
@@ -276,37 +283,43 @@ export async function DestinationStays({
                   <ArrowRight className="size-3.5" aria-hidden />
                 </Link>
                 {stay.coordinates ? (
-                  <a
+                  <ReferralLink
                     href={`https://www.google.com/maps?q=${stay.coordinates.lat},${stay.coordinates.lng}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="MAPS"
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <MapPin className="size-3.5" aria-hidden />
                     Open in Google Maps
                     <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.website ? (
-                  <a
+                  <ReferralLink
                     href={stay.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="OFFICIAL_WEBSITE"
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <Globe className="size-3.5" aria-hidden />
                     Official website
                     <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.phone ? (
-                  <a
+                  <ReferralLink
                     href={`tel:${stay.phone.replace(/[^\d+]/g, "")}`}
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="CALL"
+                    newTab={false}
                     className="inline-flex items-center gap-1 text-muted hover:text-primary"
                   >
                     <Phone className="size-3.5" aria-hidden />
                     <span data-numeric>{stay.phone}</span>
-                  </a>
+                  </ReferralLink>
                 ) : null}
                 {stay.email ? (
                   <a href={`mailto:${stay.email}`} className="inline-flex items-center gap-1 text-muted hover:text-primary">

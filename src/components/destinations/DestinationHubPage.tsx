@@ -17,6 +17,7 @@ import { DestinationGallery } from "@/components/destinations/DestinationGallery
 import { DestinationMapSection } from "@/components/destinations/DestinationMapSection";
 import { DestinationHighlights } from "@/components/destinations/DestinationHighlights";
 import { DestinationStays } from "@/components/destinations/DestinationStays";
+import { PartnerStays } from "@/components/partners/PartnerStays";
 import { DestinationTimeline } from "@/components/destinations/DestinationTimeline";
 import { PublishedKnowledge } from "@/components/destinations/PublishedKnowledge";
 import { StoryConnections } from "@/components/destinations/StoryConnections";
@@ -251,6 +252,8 @@ export async function DestinationHubPage({
           destinationName={destination.name}
           language={language}
         />
+        {/* Verified partner properties, kept apart from the curated records. */}
+        <PartnerStays destinationId={destinationId} destinationName={destination.name} />
 
         {/* The archive shown the other way round: photographs first. */}
         <DestinationGallery

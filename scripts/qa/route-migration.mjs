@@ -212,7 +212,22 @@ check("The resolver 404s rather than falling back to a default destination",
   /notFound\(\)/.test(resolveSrc) && !/DEFAULT_DESTINATION_ID/.test(codeOf(resolveSrc)));
 
 const routePages = SRC_FILES.filter((f) => f.startsWith(APP) && /page\.tsx$/.test(f));
-const undeclared = routePages.filter((f) => !/dynamicParams\s*=\s*false/.test(readFileSync(f, "utf8")));
+/*
+ * One named exception, and only while it keeps its own guard. The partner
+ * stay page's second segment is a database row a reviewer publishes after
+ * the build (docs/business-model.md), so generated params cannot list it and
+ * dynamicParams = false would 404 every published partner. It stays exempt
+ * only if it still resolves the destination through the canonical resolver,
+ * 404s, and renders dynamically; qa:partners asserts the 404s at runtime for
+ * an unknown destination, a removed one, and an unpublished property.
+ */
+const RUNTIME_PUBLISHED = new Set([`${APP}/partner-stays/[propertyId]/page.tsx`]);
+const runtimeGuarded = (f) => {
+  const s = codeOf(readFileSync(f, "utf8"));
+  return /resolveDestinationOrNull|resolveDestination\(/.test(s) && /notFound\(\)/.test(s) && /dynamic\s*=\s*"force-dynamic"/.test(s);
+};
+const undeclared = routePages.filter((f) =>
+  !/dynamicParams\s*=\s*false/.test(readFileSync(f, "utf8")) && !(RUNTIME_PUBLISHED.has(f) && runtimeGuarded(f)));
 check("Every destination route refuses params it did not generate",
   routePages.length > 0 && undeclared.length === 0,
   undeclared.length ? undeclared.join(", ") : `dynamicParams = false on ${routePages.length} pages`);

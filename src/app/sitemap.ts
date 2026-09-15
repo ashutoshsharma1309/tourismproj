@@ -116,6 +116,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    /* The partner programme's public door. Its private surfaces (sign-in,
+       dashboard, review console) are noindex and disallowed in robots.ts. */
+    { url: `${SITE_URL}/partner`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   for (const registered of listDestinations()) {

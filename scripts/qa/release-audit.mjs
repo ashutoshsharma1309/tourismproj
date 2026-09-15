@@ -42,12 +42,21 @@ const check = (name, ok, detail = "") => {
 };
 const section = (t) => console.log(`\n-- ${t} --`);
 
-async function get(url) {
+/*
+ * One retry, on a NETWORK error only. The file scans between two probes can
+ * outlast the server's keep-alive timeout, and the next fetch then reuses a
+ * socket the server already closed: ECONNRESET, reported as status 0, which
+ * the debug-route check read as "reachable". Measured on the partner-programme
+ * build. An HTTP status of any kind is returned as-is and never retried, so a
+ * route that really answers 200 still fails.
+ */
+async function get(url, attempt = 0) {
   try {
     const response = await fetch(url, { redirect: "manual" });
     const body = await response.text();
     return { status: response.status, body, location: response.headers.get("location") };
   } catch {
+    if (attempt === 0) return get(url, 1);
     return { status: 0, body: "", location: null };
   }
 }
@@ -274,6 +283,14 @@ for (const file of htmlFiles) {
        from. */
     if (TRACEABLE.test(body)) continue;
     if (BUDGET_SURFACE.test(file)) continue;         // the visitor is setting a budget
+    /*
+     * The partner page's worked example (lib/partners/scenario.ts) is not an
+     * offer: it is required to exist, and required to be labelled as an
+     * assumption. It is exempt only where BOTH hold — the page carries the
+     * scenario's own heading and this figure's window says "illustrative" —
+     * so an unlabelled rate anywhere, including on /partner, still fails.
+     */
+    if (/Illustrative business scenario/.test(body) && /\billustrative\b/i.test(window)) continue;
     untraceable.push(`${file.replace(OUT, "")} :: ${hit[0]}`);
   }
 }

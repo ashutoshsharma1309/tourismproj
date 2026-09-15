@@ -27,7 +27,10 @@ export const userRole = pgEnum("user_role", [
 
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
-  phone: text("phone").notNull().unique(),
+  /* Nullable since the partner programme: a hotel's contact signs in with an
+     e-mail one-time code (CLAUDE.md §3 names Google as the secondary sign-in,
+     which has no phone either). Still unique where present. */
+  phone: text("phone").unique(),
   email: text("email"),
   fullName: text("full_name"),
   locale: text("locale").notNull().default("en"),
