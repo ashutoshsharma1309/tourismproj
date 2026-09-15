@@ -1,8 +1,11 @@
 "use server";
 
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
+import { safeNextPath } from "@/lib/account/next";
 import { createSupabaseServerClient } from "@/lib/auth/server";
 import { SITE_URL } from "@/lib/constants";
 import { consumeSubmissionQuota } from "@/lib/rate-limit";
@@ -15,12 +18,8 @@ export interface LoginState {
 
 const emailSchema = z.string().trim().toLowerCase().email().max(254);
 const codeSchema = z.string().trim().regex(/^\d{6,8}$/, "Enter the code from the e-mail");
-const nextSchema = z.string().regex(/^\/(?!\/)[^\s]*$/).max(200);
-
 function safeNext(value: FormDataEntryValue | null): string {
-  const parsed = nextSchema.safeParse(typeof value === "string" ? value : "");
-  const { success, data: path } = parsed;
-  return success ? path : "/partner/dashboard";
+  return safeNextPath(value, "/partner/dashboard");
 }
 
 /**
@@ -70,11 +69,13 @@ export async function verifyCode(_prev: LoginState, formData: FormData): Promise
   if (error) {
     return { step: "code", email: address, message: "That code was not accepted. Codes expire after a few minutes — request a new one." };
   }
+  (await cookies()).set(SIGNED_IN_HINT, "1", HINT_COOKIE_OPTIONS);
   redirect(safeNext(formData.get("next")));
 }
 
 export async function signOut(): Promise<void> {
   const supabase = await createSupabaseServerClient();
   if (supabase) await supabase.auth.signOut();
+  (await cookies()).set(SIGNED_IN_HINT, "", { ...HINT_COOKIE_OPTIONS, maxAge: 0 });
   redirect("/");
 }

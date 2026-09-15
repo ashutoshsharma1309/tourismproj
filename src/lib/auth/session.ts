@@ -1,4 +1,5 @@
 import { eq } from "drizzle-orm";
+import { redirect } from "next/navigation";
 
 import { db, hasDatabase } from "@/db";
 import { partners, users } from "@/db/schema";
@@ -26,6 +27,50 @@ export interface SessionUser {
   id: string;
   email: string;
   isAdmin: boolean;
+  /** The name given at sign-up (Supabase user metadata), if any. */
+  name: string | null;
+  /** The e-mail address has been confirmed. */
+  emailConfirmed: boolean;
+  /** How this session was established ("password", "otp", ...). */
+  methods: string[];
+  /** When a one-time code or e-mail link (including a reset link) last proved the inbox, in ms. */
+  inboxProvenAt: number | null;
+}
+
+/**
+ * The inbox was proven within `windowMs`: a code or e-mail link used recently.
+ * Supabase records a password-reset link as "otp", the same as a sign-in code,
+ * so this is what "opened from a reset e-mail" means for setting a password.
+ */
+export function recentInboxProof(session: SessionUser, windowMs = 15 * 60 * 1000): boolean {
+  return session.inboxProvenAt !== null && Date.now() - session.inboxProvenAt <= windowMs;
+}
+
+/**
+ * A session that proves control of the inbox: a confirmed address signed in
+ * with a one-time code or e-mail link. Reviewer rights and partner records
+ * are granted only to these. A password alone never reaches them, so someone
+ * who registers another person's address with a password first cannot
+ * inherit that person's partner or reviewer access.
+ */
+export function provesInbox(session: SessionUser): boolean {
+  return session.emailConfirmed && session.methods.some((method) => method === "otp" || method === "magiclink");
+}
+
+/** Authentication methods (and when) named in the session's access token (validated by getUser). */
+function methodsFromToken(token: string | undefined): { method: string; at: number | null }[] {
+  if (!token) return [];
+  try {
+    const payload = JSON.parse(Buffer.from(token.split(".")[1] ?? "", "base64url").toString("utf8")) as { amr?: unknown };
+    if (!Array.isArray(payload.amr)) return [];
+    return payload.amr.flatMap((entry) => {
+      if (typeof entry === "string") return [{ method: entry, at: null }];
+      const { method, timestamp } = (entry ?? {}) as { method?: unknown; timestamp?: unknown };
+      return typeof method === "string" ? [{ method, at: typeof timestamp === "number" ? timestamp * 1000 : null }] : [];
+    });
+  } catch {
+    return [];
+  }
 }
 
 function adminEmails(): Set<string> {
@@ -44,7 +89,25 @@ export async function currentUser(): Promise<SessionUser | null> {
   const user = data.user;
   if (!user?.email) return null;
   const email = user.email.toLowerCase();
-  return { id: user.id, email, isAdmin: adminEmails().has(email) };
+  const metaName = (user.user_metadata as { full_name?: unknown } | null)?.full_name;
+  /* getUser() above validated this session's token with Supabase; reading its
+     claims adds no trust, only which method issued it. */
+  const { data: current } = await supabase.auth.getSession();
+  const session: SessionUser = {
+    id: user.id,
+    email,
+    isAdmin: false,
+    name: typeof metaName === "string" && metaName.trim() ? metaName.trim().slice(0, 80) : null,
+    emailConfirmed: Boolean(user.email_confirmed_at),
+    methods: [],
+    inboxProvenAt: null,
+  };
+  const entries = methodsFromToken(current.session?.access_token);
+  session.methods = entries.map((entry) => entry.method);
+  const proofs = entries.filter((entry) => (entry.method === "otp" || entry.method === "magiclink") && entry.at !== null);
+  session.inboxProvenAt = proofs.length > 0 ? Math.max(...proofs.map((entry) => entry.at as number)) : null;
+  session.isAdmin = adminEmails().has(email) && provesInbox(session);
+  return session;
 }
 
 /**
@@ -54,12 +117,27 @@ export async function currentUser(): Promise<SessionUser | null> {
  * reviewer's `reviewer_id` / audit `actor_id` all point at the same identity
  * the session carries. Phone is null for e-mail sign-ins.
  */
+/** User ids whose row this process has already ensured; bounded. */
+const ENSURED = new Set<string>();
+
+/** After an account is deleted, its id must be ensured afresh if it ever returns. */
+export function forgetEnsuredUser(userId: string): void {
+  ENSURED.delete(userId);
+}
+
 export async function ensureUserRow(session: SessionUser): Promise<void> {
-  if (!hasDatabase) return;
+  if (!hasDatabase || ENSURED.has(session.id)) return;
   await db
     .insert(users)
-    .values({ id: session.id, email: session.email, role: session.isAdmin ? "ADMIN" : "TRAVELLER" })
+    .values({
+      id: session.id,
+      email: session.email,
+      fullName: session.name,
+      role: session.isAdmin ? "ADMIN" : "TRAVELLER",
+    })
     .onConflictDoNothing({ target: users.id });
+  if (ENSURED.size > 10_000) ENSURED.clear();
+  ENSURED.add(session.id);
 }
 
 export interface PartnerSession extends SessionUser {
@@ -74,7 +152,7 @@ export interface PartnerSession extends SessionUser {
  * the `owner_user_id` column and the e-mail no longer matters.
  */
 export async function partnerFor(session: SessionUser): Promise<PartnerSession | null> {
-  if (!hasDatabase) return null;
+  if (!hasDatabase || !provesInbox(session)) return null;
   await ensureUserRow(session);
   const [owned] = await db
     .select({ id: partners.id })
@@ -96,6 +174,26 @@ export async function partnerFor(session: SessionUser): Promise<PartnerSession |
 export async function requireAdmin(): Promise<SessionUser | null> {
   const session = await currentUser();
   if (!session?.isAdmin) return null;
+  await ensureUserRow(session);
+  return session;
+}
+
+/**
+ * A signed-in traveller for an account PAGE: redirects to sign-in otherwise,
+ * with `next` so they return where they were going. Creates the `users` row
+ * on first sight.
+ */
+export async function requireTraveller(next: string): Promise<SessionUser> {
+  const session = await currentUser();
+  if (!session) redirect(`/login?next=${encodeURIComponent(next)}`);
+  await ensureUserRow(session);
+  return session;
+}
+
+/** A signed-in traveller for an account API route, or null (the route answers 401). */
+export async function travellerForApi(): Promise<SessionUser | null> {
+  const session = await currentUser();
+  if (!session) return null;
   await ensureUserRow(session);
   return session;
 }

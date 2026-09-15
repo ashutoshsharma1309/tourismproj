@@ -18,6 +18,9 @@ import { cn } from "@/lib/cn";
 import { onGuideOpen } from "@/lib/guide-events";
 import type { GuideIndex } from "@/lib/guide-index";
 import { respond } from "@/lib/guide-respond";
+import { sendEvent } from "@/lib/account/client";
+import { clearSignedInHint, hasSignedInHint } from "@/lib/account/hint";
+import { isNextIntent, personalBlocks, type RecommendationsBody } from "@/lib/personalization/guide";
 import type { GuideBlock, GuideChip } from "@/lib/guide-respond";
 
 /**
@@ -188,6 +191,8 @@ export function TripGuide({
   }, [open, index, loadFailed]);
 
   const nextId = useRef(1);
+  /* One AI_GUIDE_USED per page load; the server also de-duplicates. */
+  const guideUseRecorded = useRef(false);
   const scroller = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLInputElement>(null);
 
@@ -239,6 +244,54 @@ export function TripGuide({
       }
 
       push({ role: "visitor", text: clean });
+
+      /* A signed-in traveller's guide use is history (that it was used, and
+         where — never what was asked). The server keeps one per half hour. */
+      if (hasSignedInHint() && !guideUseRecorded.current) {
+        guideUseRecorded.current = true;
+        void sendEvent({ type: "AI_GUIDE_USED", destinationId: destinationId ?? null, entityId: null });
+      }
+
+      /* "What should I explore next?" — answered from the traveller's own
+         signals when signed in. Facts and reasons come from the account
+         recommendations endpoint, which builds them from TerraStory records. */
+      if (isNextIntent(clean)) {
+        if (hasSignedInHint()) {
+          push({ role: "guide", blocks: [{ kind: "note", text: "Checking your interests and what you've explored…" }] });
+          void (async () => {
+            try {
+              const scoped = destinationId ? `?destination=${encodeURIComponent(destinationId)}` : "";
+              let response = await fetch(`/api/account/recommendations${scoped}`, { credentials: "same-origin" });
+              if (response.status === 401) {
+                clearSignedInHint();
+                push({ role: "guide", blocks: [{ kind: "text", text: "Log in and I can suggest what to explore next from your interests and history." }, { kind: "link", href: "/login", label: "Log in" }] });
+                return;
+              }
+              let body = (await response.json()) as RecommendationsBody;
+              if (destinationId && body.hasSignal && (body.places ?? []).length === 0) {
+                response = await fetch("/api/account/recommendations", { credentials: "same-origin" });
+                body = (await response.json()) as RecommendationsBody;
+                push({ role: "guide", blocks: personalBlocks(body, null) });
+                return;
+              }
+              push({ role: "guide", blocks: personalBlocks(body, destinationId ? destinationName : null) });
+            } catch {
+              push({ role: "guide", blocks: [{ kind: "note", text: "I couldn't reach your account just now. Try again in a moment." }] });
+            }
+          })();
+          return;
+        }
+        push({
+          role: "guide",
+          blocks: [
+            { kind: "text", text: "I can suggest destinations from your interests and what you've explored once you log in. Without that, I won't guess what you like." },
+            { kind: "link", href: "/login", label: "Log in" },
+            { kind: "link", href: "/discover", label: "Or choose interests on For you" },
+          ],
+        });
+        return;
+      }
+
       if (!index) {
         push({
           role: "guide",
@@ -267,7 +320,7 @@ export function TripGuide({
         startPlan();
       }
     },
-    [index, loadFailed, push, startPlan, destinationId],
+    [index, loadFailed, push, startPlan, destinationId, destinationName],
   );
 
   const submit = (e: React.FormEvent) => {

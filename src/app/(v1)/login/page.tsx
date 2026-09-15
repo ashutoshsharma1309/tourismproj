@@ -1,54 +1,58 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { redirect } from "next/navigation";
 
-import { Footer } from "@/components/layout/Footer";
-import { LoginForm } from "@/components/partners/LoginForm";
+import { AuthShell } from "@/components/account/AuthShell";
+import { SignInForm } from "@/components/account/AuthForms";
+import { safeNextPath } from "@/lib/account/next";
 import { authConfigured } from "@/lib/auth/server";
 import { currentUser } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
-  title: "Sign in",
-  description: "Sign in to follow a partnership request or review the partner queue.",
+  title: "Log in",
+  description: "Log in to continue your travel history, journeys and recommendations on TerraStory.",
   robots: { index: false, follow: false },
 };
 
 export const dynamic = "force-dynamic";
 
 /**
- * Sign-in for partners and reviewers. Travellers need no account: every
- * traveller-facing feature works without one, and nothing here is offered
- * in the traveller navigation.
+ * Log in. Exploring TerraStory never needs this page: an account adds
+ * memory — history, journeys, interests — to a product that already works
+ * without one.
  */
-export default async function LoginPage({
-  searchParams,
-}: {
-  searchParams: Promise<{ next?: string }>;
-}) {
+export default async function LoginPage({ searchParams }: { searchParams: Promise<{ next?: string }> }) {
   const { next } = await searchParams;
-  const safeNext = next && /^\/(?!\/)[^\s]*$/.test(next) ? next : "/partner/dashboard";
-
-  const session = await currentUser();
-  if (session) redirect(safeNext);
+  const target = safeNextPath(next);
+  if (await currentUser()) redirect(target);
 
   return (
-    <>
-      <main id="main" className="mx-auto max-w-3xl px-4 pt-28 pb-20 md:px-6">
-        <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">Partners and reviewers</p>
-        <h1 className="mt-3 font-display text-h1 text-balance-heading">Sign in</h1>
-        <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
-          A one-time code by e-mail, no password. Exploring TerraStory never needs an account.
-        </p>
-        <div className="mt-8">
-          {authConfigured() ? (
-            <LoginForm next={safeNext} />
-          ) : (
-            <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
-              Sign-in is not configured on this deployment.
-            </p>
-          )}
+    <AuthShell
+      title="Welcome back."
+      footer={
+        <div className="flex flex-col gap-2">
+          <p>
+            Don&rsquo;t have an account?{" "}
+            <Link href={`/signup${next ? `?next=${encodeURIComponent(target)}` : ""}`} className="font-medium text-primary hover:underline">
+              Create account
+            </Link>
+          </p>
+          <p>
+            Hotel partner or reviewer?{" "}
+            <Link href={`/login/code?next=${encodeURIComponent(next ? target : "/partner/dashboard")}`} className="font-medium text-primary hover:underline">
+              Sign in with a one-time code
+            </Link>
+          </p>
         </div>
-      </main>
-      <Footer />
-    </>
+      }
+    >
+      {authConfigured() ? (
+        <SignInForm next={target} />
+      ) : (
+        <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
+          Accounts are not available on this deployment. Everything on TerraStory can still be explored without one.
+        </p>
+      )}
+    </AuthShell>
   );
 }

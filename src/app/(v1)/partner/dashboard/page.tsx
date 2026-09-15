@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-import { signOut } from "@/app/(v1)/login/actions";
+import { SignOutButton } from "@/components/account/SignOutButton";
 import { Footer } from "@/components/layout/Footer";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
@@ -13,7 +13,7 @@ import {
   propertiesForPartner,
   referralSummaryForPartner,
 } from "@/db/queries/partners";
-import { currentUser, partnerFor } from "@/lib/auth/session";
+import { currentUser, partnerFor, provesInbox } from "@/lib/auth/session";
 import { getDestination } from "@/lib/destinations/registry";
 import { formatINR } from "@/lib/money";
 import { PROPERTY_STATUS_LABEL, PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
@@ -43,6 +43,29 @@ export default async function PartnerDashboardPage() {
   const session = await currentUser();
   if (!session) redirect("/login?next=/partner/dashboard");
 
+  /* Partner records open only to a session that proved the inbox: a
+     confirmed address signed in with a one-time code or e-mail link. */
+  if (!provesInbox(session)) {
+    return (
+      <>
+        <main id="main" className="mx-auto max-w-3xl px-4 pt-28 pb-20 md:px-6">
+          <h1 className="font-display text-h1 text-balance-heading">Sign in with a one-time code</h1>
+          <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
+            The partner dashboard opens with a code sent to your business e-mail, so only someone who can read
+            that inbox reaches the property&rsquo;s records.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href="/login/code?next=/partner/dashboard" className={buttonClasses({ variant: "primary", size: "md" })}>
+              Send me a code
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </>
+    );
+  }
+
   const partnerSession = await partnerFor(session);
   if (!partnerSession) {
     return (
@@ -58,9 +81,7 @@ export default async function PartnerDashboardPage() {
               List your property
               <ArrowRight className="size-4" aria-hidden />
             </Link>
-            <form action={signOut}>
-              <button type="submit" className={buttonClasses({ variant: "secondary", size: "md" })}>Sign out</button>
-            </form>
+            <SignOutButton />
           </div>
         </main>
         <Footer />
@@ -89,9 +110,7 @@ export default async function PartnerDashboardPage() {
               {partner.contactName} · {partner.email}{partner.phone ? ` · ${partner.phone}` : ""}
             </p>
           </div>
-          <form action={signOut}>
-            <button type="submit" className={buttonClasses({ variant: "secondary", size: "sm" })}>Sign out</button>
-          </form>
+          <SignOutButton />
         </div>
 
         {/* ---------------------------------------------------- properties */}

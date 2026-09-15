@@ -18,6 +18,7 @@ import { DestinationMapSection } from "@/components/destinations/DestinationMapS
 import { DestinationHighlights } from "@/components/destinations/DestinationHighlights";
 import { DestinationStays } from "@/components/destinations/DestinationStays";
 import { PartnerStays } from "@/components/partners/PartnerStays";
+import { PersonalPlaces } from "@/components/account/PersonalPlaces";
 import { DestinationTimeline } from "@/components/destinations/DestinationTimeline";
 import { PublishedKnowledge } from "@/components/destinations/PublishedKnowledge";
 import { StoryConnections } from "@/components/destinations/StoryConnections";
@@ -190,6 +191,10 @@ export async function DestinationHubPage({
           hasKnowledge={Boolean(knowledge)}
           audioLanguages={destination.languages.length}
         />
+
+        {/* For a signed-in traveller: this destination's places that match their
+            interests, with reasons. Fetched after load; nothing for visitors. */}
+        <PersonalPlaces destinationId={destinationId} destinationName={destination.name} />
 
         {/*
           WHAT THIS DESTINATION HOLDS, COUNTED.

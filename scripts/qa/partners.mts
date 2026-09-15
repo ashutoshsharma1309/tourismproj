@@ -283,7 +283,8 @@ if (!home) {
   const dbOn = /name="organizationName"/.test(ab);
   check("/partner/apply shows the form, or says requests are not accepted here", dbOn || /not being accepted/.test(ab));
   if (dbOn) {
-    check("the form asks for no payment details", !/card number|cvv|upi|ifsc|bank account|pan number|gst/i.test(ab));
+    /* Whole words: Next's own markup contains "data-dgst". */
+    check("the form asks for no payment details", !/\b(card number|cvv|upi|ifsc|bank account|pan number|gst(in)?)\b/i.test(ab));
     check("the form carries the honeypot and the authorisation box", /website_confirm/.test(ab) && /name="authorised"/.test(ab));
     check("the destination select lists 18 destinations", (ab.match(/<option value="[a-z-]+">/g) ?? []).filter((o) => !/value="(HOTEL|HERITAGE|HOMESTAY|GUEST_HOUSE|RESORT|HOSTEL|OTHER)"/.test(o)).length === 18);
     check("the form says submitting does not create a listing", /does not create a listing/.test(ab));
@@ -300,7 +301,9 @@ if (!home) {
     `HTTP ${dash?.status} → ${dash?.headers.get("location")}`);
   const login = await fetchText(`${BASE}/login`);
   check("/login serves and is noindex", login?.status === 200 && /noindex/.test(login.body), `HTTP ${login?.status}`);
-  check("/login asks for nothing but an e-mail", login !== null && /name="email"/.test(login.body) && !/name="password"/.test(login.body));
+  check("/login offers partners the one-time-code sign-in", login !== null && /\/login\/code/.test(login.body));
+  const codeLogin = await fetchText(`${BASE}/login/code`);
+  check("/login/code asks for nothing but an e-mail", codeLogin !== null && codeLogin.status === 200 && /name="email"/.test(codeLogin.body) && !/name="password"/.test(codeLogin.body));
   const evilNext = await fetchText(`${BASE}/auth/callback?next=https://evil.example/`);
   check("/auth/callback refuses an off-site next", evilNext !== null && !/evil\.example/.test(evilNext.headers.get("location") ?? ""), evilNext?.headers.get("location") ?? "");
 
@@ -390,7 +393,11 @@ async function runFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl }: { a
     if (link.data.user && !authIds.includes(link.data.user.id)) authIds.push(link.data.user.id);
     const context = await browser.newContext({ viewport: { width: 1280, height: 900 } });
     const page = await context.newPage();
-    await page.goto(`${BASE}/auth/callback?token_hash=${encodeURIComponent(link.data.properties.hashed_token)}&type=magiclink&next=${encodeURIComponent(next)}`, { waitUntil: "domcontentloaded" });
+    await page.goto(`${BASE}/auth/callback?token_hash=${encodeURIComponent(link.data.properties.hashed_token)}&type=magiclink&next=${encodeURIComponent(next)}`, { waitUntil: "load" });
+    /* An e-mail link never signs in on a page load; it needs one deliberate click. */
+    await page.waitForURL(/\/auth\/continue/, { timeout: 30_000 });
+    await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL((url) => !url.pathname.startsWith("/auth/"), { timeout: 30_000 });
     return { context, page };
   };
 
@@ -627,7 +634,7 @@ async function runFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl }: { a
     /* Sign-out really ends the session. */
     const c = await signIn(partnerA, "/partner/dashboard");
     await c.page.waitForURL(/\/partner\/dashboard/, { timeout: 30_000 });
-    await c.page.click("text=Sign out");
+    await c.page.getByRole("button", { name: "Log out" }).first().click();
     await c.page.waitForURL((u) => !u.pathname.startsWith("/partner/dashboard"), { timeout: 30_000 });
     const after = await c.page.goto(`${BASE}/partner/dashboard`, { waitUntil: "domcontentloaded" });
     check("F23 after sign-out the dashboard is no longer reachable", (after?.url() ?? "").includes("/login"), after?.url());

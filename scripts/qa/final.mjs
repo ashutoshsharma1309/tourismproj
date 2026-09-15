@@ -90,6 +90,10 @@ const SUITES = [
      Supabase are configured — the whole apply → review → publish → referral
      flow. A TypeScript suite, run through tsx like qa:india. */
   { name: "qa:partners", script: "scripts/qa/partners.mts", reads: "server", runner: "tsx" },
+  /* Accounts, travel history and personalization: the engine on real
+     knowledge, event mapping, code guarantees, signed-out boundaries, and
+     with a database the full traveller flow including user-to-user isolation. */
+  { name: "qa:accounts", script: "scripts/qa/accounts.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

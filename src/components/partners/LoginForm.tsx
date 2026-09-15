@@ -4,6 +4,7 @@ import { useActionState } from "react";
 
 import { requestCode, verifyCode, type LoginState } from "@/app/(v1)/login/actions";
 import { buttonClasses } from "@/components/ui/Button";
+import { allowMergeOnLogin } from "@/lib/account/client";
 
 /**
  * E-mail one-time code sign-in, in two steps and no password.
@@ -26,7 +27,7 @@ export function LoginForm({ next }: { next: string }) {
 
   if (step === "code") {
     return (
-      <form action={verifyAction} className="flex flex-col gap-4">
+      <form action={verifyAction} onSubmit={() => allowMergeOnLogin()} className="flex flex-col gap-4">
         <p className="text-body text-muted">
           We sent a code to <strong className="font-medium text-foreground">{email}</strong>. Enter it below.
         </p>

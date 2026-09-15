@@ -94,7 +94,8 @@
     "qa:media-provenance": "node scripts/qa/media-provenance.mjs",
     "qa:guide": "tsx scripts/qa/guide-scope.mts",
     "qa:india": "tsx scripts/qa/india-only.mts",
-    "qa:partners": "tsx scripts/qa/partners.mts"
+    "qa:partners": "tsx scripts/qa/partners.mts",
+    "qa:accounts": "tsx scripts/qa/accounts.mts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

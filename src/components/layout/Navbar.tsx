@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { NavLanguage } from "@/components/i18n/NavLanguage";
+import { AccountLink } from "@/components/account/AccountLink";
 import { AskGuideButton } from "@/components/layout/AskGuideButton";
 import { openSearch } from "@/components/search/CommandPalette";
 import { cn } from "@/lib/cn";
@@ -142,6 +143,10 @@ export function Navbar(_props: { destinationSections?: DestinationNavMap }) {
           */}
           <NavLanguage className="hidden sm:block" />
 
+          {/* The optional account: "Log in" for visitors, "My TerraStory" once
+              signed in. Exploring never requires it. */}
+          <AccountLink className="hidden border border-foreground-inverse/25 text-muted-inverse hover:border-foreground-inverse/60 hover:text-foreground-inverse sm:inline-flex" />
+
           <button
             type="button"
             onClick={() => setMenuOpen(true)}
@@ -201,6 +206,13 @@ export function Navbar(_props: { destinationSections?: DestinationNavMap }) {
                 the drawer is covering. A capture-phase handler on a wrapper
                 was tried and the guide never opened — the drawer unmounted
                 under the click before the button's own handler ran. */}
+            <div className="mt-2">
+              <AccountLink
+                onNavigate={() => setMenuOpen(false)}
+                className="w-full rounded-lg px-3 py-3 text-body text-foreground-inverse/85 hover:bg-foreground-inverse/10"
+              />
+            </div>
+
             <div className="mt-2">
               <AskGuideButton
                 onBeforeOpen={() => setMenuOpen(false)}

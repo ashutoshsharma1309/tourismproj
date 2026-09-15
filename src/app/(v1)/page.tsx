@@ -5,6 +5,7 @@ import { GlobalHero } from "@/components/home/GlobalHero";
 import { GlobalMapSection } from "@/components/home/GlobalMapSection";
 import { GlobalStories } from "@/components/home/GlobalStories";
 import { HowItWorks } from "@/components/home/HowItWorks";
+import { HomeWelcome } from "@/components/account/HomeWelcome";
 import { JourneyTray } from "@/components/journey-select/JourneyTray";
 import { Footer } from "@/components/layout/Footer";
 import { JsonLd, websiteSchema } from "@/components/seo/JsonLd";
@@ -59,6 +60,9 @@ export default async function HomePage() {
           stateCount={stateCount}
           placeCount={placeCount}
         />
+
+        {/* A signed-in traveller's "continue exploring" line; nothing for visitors. */}
+        <HomeWelcome />
 
         <HowItWorks />
 

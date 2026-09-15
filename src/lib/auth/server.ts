@@ -1,6 +1,10 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
+import { SESSION_COOKIE_OPTIONS } from "@/lib/auth/cookies";
+
+export { SESSION_COOKIE_OPTIONS };
+
 /**
  * Supabase Auth on the server, sessions in cookies.
  *
@@ -15,6 +19,9 @@ import { cookies } from "next/headers";
  * Returns null when the deployment has no Supabase configured — sign-in is
  * then reported as unavailable rather than failing at request time.
  *
+ * Travellers use the same client since the account layer: e-mail and
+ * password sign-in, sessions refreshed by src/proxy.ts on account routes.
+ *
  * Only the publishable key is used here. The service-role key never leaves
  * src/db and src/lib/payments (CLAUDE.md §8).
  */
@@ -26,6 +33,7 @@ export async function createSupabaseServerClient() {
 
   const cookieStore = await cookies();
   return createServerClient(url, key, {
+    cookieOptions: SESSION_COOKIE_OPTIONS,
     cookies: {
       getAll() {
         return cookieStore.getAll();

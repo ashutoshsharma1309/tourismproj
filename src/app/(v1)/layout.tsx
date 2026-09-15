@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import type { ReactNode } from "react";
 
 import { TripGuide } from "@/components/guide/TripGuide";
+import { ActivityRecorder } from "@/components/account/ActivityRecorder";
+import { JourneyAccountSync } from "@/components/account/JourneyAccountSync";
 import { Navbar } from "@/components/layout/Navbar";
 import { JourneyProvider } from "@/lib/journey/JourneyProvider";
 import { listDestinations } from "@/lib/destinations/registry";
@@ -113,6 +116,17 @@ export default async function V1Layout({ children }: { children: ReactNode }) {
         >
         <Navbar destinationSections={await destinationNavMap()} />
         {children}
+        {/*
+          The account layer's two quiet listeners. The recorder turns
+          meaningful page views into travel history (signed in) or this tab
+          session's buffer (signed out); the sync keeps a signed-in
+          traveller's saved journey and this device's journey in step. Both
+          render nothing, and neither makes a page per-request.
+        */}
+        <Suspense fallback={null}>
+          <ActivityRecorder />
+        </Suspense>
+        <JourneyAccountSync />
         {/*
           Bottom-right: the guide. The ambient-sound mixer that held the
           bottom-LEFT corner is gone — it was a background-noise toggle with

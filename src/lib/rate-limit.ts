@@ -88,3 +88,47 @@ export async function consumeSubmissionQuota(): Promise<RateLimitResult> {
   bucket.count += 1;
   return { ok: true, retryAfterSeconds: 0 };
 }
+
+/* ------------------------------------------------------------- named quotas */
+
+const SCOPED = new Map<string, Bucket>();
+
+/**
+ * A quota in its own bucket, so sign-in attempts, account-activity beacons
+ * and public form submissions do not spend each other's allowance.
+ *
+ * `key` defaults to the client address; pass a user id to limit per account
+ * instead (activity beacons, where one household may share an address).
+ * In-memory and per process like the submission quota: a deterrent on a
+ * single server, not a distributed guarantee — see docs/accounts.md.
+ */
+export async function consumeQuota(
+  scope: string,
+  limit: number,
+  windowMs: number,
+  key?: string,
+): Promise<RateLimitResult> {
+  let subject = key;
+  if (!subject) {
+    const headerList = await headers();
+    subject =
+      (headerList.get("x-forwarded-for") ?? "").split(",")[0]?.trim() ||
+      headerList.get("x-real-ip")?.trim() ||
+      "unattributed";
+  }
+  const id = `${scope}:${subject}`;
+  const now = Date.now();
+  if (SCOPED.size > 10_000) {
+    for (const [k, bucket] of SCOPED) if (bucket.resetAt <= now) SCOPED.delete(k);
+  }
+  const bucket = SCOPED.get(id);
+  if (!bucket || bucket.resetAt <= now) {
+    SCOPED.set(id, { count: 1, resetAt: now + windowMs });
+    return { ok: true, retryAfterSeconds: 0 };
+  }
+  if (bucket.count >= limit) {
+    return { ok: false, retryAfterSeconds: Math.max(1, Math.ceil((bucket.resetAt - now) / 1000)) };
+  }
+  bucket.count += 1;
+  return { ok: true, retryAfterSeconds: 0 };
+}
