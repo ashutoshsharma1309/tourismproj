@@ -12,7 +12,16 @@
  * is far better to propose twelve and keep seven than to propose seven and
  * quietly ship five.
  */
-export const CANDIDATES = {
+/**
+ * PHASE D — A SECOND SOURCE OF SUBJECTS.
+ *
+ * Everything below was written by a person. `candidates-discovered.mjs` holds
+ * subjects found by `discover-culture.mjs` in the categories the encyclopedia
+ * maintains for each destination. Kept in separate files; merged at the end.
+ */
+import { DISCOVERED_CULTURE } from "./candidates-discovered.mjs";
+
+const CURATED = {
   delhi: {
     food: ["Chaat", "Butter chicken", "Nihari", "Mughlai cuisine", "Chole bhature", "Paratha", "Jalebi", "Daulat ki chaat", "Delhi cuisine"],
     festival: ["Diwali", "Holi", "Dussehra", "Eid al-Fitr", "Guru Nanak Gurpurab", "Republic Day (India)"],
@@ -122,3 +131,15 @@ export const CANDIDATES = {
     stay: [],
   },
 };
+
+/** The curated subjects, then the discovered ones, per kind, without repeats. */
+export const CANDIDATES = Object.fromEntries(
+  Object.entries(CURATED).map(([destinationId, kinds]) => {
+    const found = DISCOVERED_CULTURE[destinationId] ?? {};
+    const merged = { ...kinds };
+    for (const [kind, titles] of Object.entries(found)) {
+      merged[kind] = [...new Set([...(merged[kind] ?? []), ...titles])];
+    }
+    return [destinationId, merged];
+  }),
+);

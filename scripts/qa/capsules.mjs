@@ -218,14 +218,19 @@ for (const id of CAPSULES) {
   check(`${id}: no source is model-proposed`,
     capsule.sources.every((source) => source.retrievalMethod !== "model-proposed"));
   /*
- * PHASE B raised the contract: 10-20 catalogued places, up to 15 dated events
- * and up to 15 stories. Still bounded on both sides — the upper bound is what
- * keeps a "capsule" from quietly becoming an unreviewed archive, and the lower
- * one is what keeps it from thinning out.
+ * PHASE B bounded a capsule at 10-20 places, 15 events and 15 stories, to
+ * stop one quietly becoming an unreviewed archive.
+ *
+ * PHASE D raises the ceiling deliberately. These destinations are being taken
+ * TO a documented archive: every added record is an article with a published
+ * coordinate near the destination, retrieved and cited by the same pipeline,
+ * and `earned-depth.ts` grades what results from the records rather than from
+ * a label. The lower bound stays — thinning out is still a failure — and the
+ * new ceiling is the size of the reference archive, Sikkim's 53 places.
  */
-  check(`${id}: within the capsule size limits`,
-    capsule.places.length >= 5 && capsule.places.length <= 20 &&
-      capsule.history.length <= 15 && capsule.stories.length <= 15,
+  check(`${id}: within the archive size limits`,
+    capsule.places.length >= 5 && capsule.places.length <= 60 &&
+      capsule.history.length <= 60 && capsule.stories.length <= 60,
     `${capsule.places.length} places, ${capsule.history.length} history, ${capsule.stories.length} stories`);
 
   const discover = await get(`${BASE}/destinations/${id}/discover`);

@@ -37,7 +37,43 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "premamati-mosque-16th-century",
+    "destinationId": "hyderabad",
+    "sortYear": 16,
+    "yearLabel": "AD 16",
+    "title": "Premamati Mosque, 16th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "The Premamati Mosque (also known as Pema Mati Mosque, Ibrahim Bagh Mosque, or Qutb Shahi Masjid) is a 16th-century mosque located in the Ibrahim Bagh area of Hyderabad, India.",
+    "description": [
+      "The mosque was commissioned during the reign of Ibrahim Quli Qutb Shah (r. 1550–1580). It was originally intended to serve as the Jama Masjid (congregational mosque) for a new city planned in the Ibrahim Bagh area, west of Golconda Fort. However, the plan for the new city was abandoned due to the lack of a sustainable water source. This eventually led his successor, Muhammad Quli Qutb Shah, to establish the city of Hyderabad further east on the banks of the Musi River in 1591.",
+      "While the primary structure of the mosque was built in the 1560s, the mosque remained in a state of semi-completion for decades as the new city of Hyderabad was being built a few kilometres away. It was not until the early 17th century that the mosque was finalised for use, when it was completed to serve as a scaled-down prototype of the monumental Makkah Masjid whose construction started in 1617. The royal architects used the Ibrahim Bagh site to test the structural integrity of massive granite arches and vast, dome-less vaulted ceilings before committing resources to the much larger Makkah Masjid project in the city center of Hyderabad.",
+      "The mosque was renovated by the Telangana Department of Archaeology and Museums in 2016 at an expense of Rs. 50 lakhs. The renovation included repairs to the roof, platform, and cellar, and the installation of lights to illuminate the mosque’s facade at night."
+    ],
+    "keyFacts": [
+      "This eventually led his successor, Muhammad Quli Qutb Shah, to establish the city of Hyderabad further east on the banks of the Musi River in 1591.",
+      "The mosque was renovated by the Telangana Department of Archaeology and Museums in 2016 at an expense of Rs."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "premamati-mosque"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Premamati Mosque",
+        "url": "https://en.wikipedia.org/wiki/Premamati_Mosque",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -73,7 +109,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -113,7 +149,41 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "toli-masjid-1671",
+    "destinationId": "hyderabad",
+    "sortYear": 1671,
+    "yearLabel": "AD 1671",
+    "title": "Toli Masjid, 1671",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It was constructed during the Qutb Shahi period and completed in 1082 AH (1671/1672 CE).",
+    "description": [
+      "The mosque was commissioned by Musa Khan during the reign of Abdullah Qutb Shah, and completed in 1671 CE. Musa Khan was the mahaldar (chamberlain) of Abdullah, as well as a minister and general. According to the historical record Gulzar-e-Asafiyah, when Musa Khan held the construction charge for the Mecca Masjid, he was provided with a discount of one damri per rupee from the building expenditure. He used this amount to construct the Toli Masjid, hence the name.",
+      "The mosque is located at Karwan, on the road which connects Golconda Fort to Purana Pul.  This road is historically significant as it connected the citadel of Golconda to the newly established city of Hyderabad. It is listed as a state protected monument. The lands endowed to the mosque have been encroached, and the mosque is in a neglected condition."
+    ],
+    "keyFacts": [
+      "The mosque was commissioned by Musa Khan during the reign of Abdullah Qutb Shah, and completed in 1671 CE."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "toli-masjid"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Toli Masjid",
+        "url": "https://en.wikipedia.org/wiki/Toli_Masjid",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -150,7 +220,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -179,7 +249,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -217,8 +287,66 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "csi-garrison-wesley-church-1881",
+    "destinationId": "hyderabad",
+    "sortYear": 1881,
+    "yearLabel": "AD 1881",
+    "title": "CSI Garrison Wesley Church, 1881",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Though the Sunday Mass was begun initially in accordance with the Wesleyan Methodist traditions since the beginnings in 1881, it now follows the Church of South India liturgy as the Wesleyan Methodist Missionary Society (WMMS), the co-founders of the church, had unionized itself into the Church of South India that was formed on 27 September 1947 at CSI–St. George's Cathedral, Chennai.",
+    "detailHref": "/destinations/hyderabad/history#csi-garrison-wesley-church-1881",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "csi-garrison-wesley-church"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — CSI Garrison Wesley Church, 1881",
+        "url": "https://en.wikipedia.org/wiki/CSI_Garrison_Wesley_Church",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "saidani-ma-tomb-1883",
+    "destinationId": "hyderabad",
+    "sortYear": 1883,
+    "yearLabel": "AD 1883",
+    "title": "Saidani Ma Tomb, 1883",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The tomb in Mughal and Qutb Shahi styles with elaborate stucco decorations and fretwork screens (jalis) was built by Nawab Abdul Haq Diler Jung, one of the richest nobles of the time, in memory of his mother Hazrath Saidani Ma Saheba in 1883, during the reign of Asaf Jah VI.",
+    "detailHref": "/destinations/hyderabad/history#saidani-ma-tomb-1883",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "saidani-ma-tomb"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Saidani Ma Tomb, 1883",
+        "url": "https://en.wikipedia.org/wiki/Saidani_Ma_Tomb",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "falaknuma-1893",
@@ -256,8 +384,104 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "fox-sagar-lake-1897",
+    "destinationId": "hyderabad",
+    "sortYear": 1897,
+    "yearLabel": "AD 1897",
+    "title": "Fox Sagar Lake, 1897",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The lake which is located Jeedimetla near Kompally was built in 1897 by  Mahbub Ali Khan, Asaf Jah VI and as per some sources the lake occupies a surface area of 2 square kilometres (490 acres) and some sources claim that it is the second biggest lake in Hyderabad and was a popular spot for picnics.",
+    "detailHref": "/destinations/hyderabad/history#fox-sagar-lake-1897",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "fox-sagar-lake"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Fox Sagar Lake, 1897",
+        "url": "https://en.wikipedia.org/wiki/Fox_Sagar_Lake",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "osmania-university-1917",
+    "destinationId": "hyderabad",
+    "sortYear": 1917,
+    "yearLabel": "AD 1917",
+    "title": "Osmania University, 1917",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Mir Osman Ali Khan, the 7th Nizam of Hyderabad, issued a firman calling for its creation on 29 August 1917.",
+    "description": [
+      "In 1917, Sir Akbar Hydari, in a memorandum to the Education Minister, emphasised the need to establish a university in Hyderabad with Urdu as the medium of instruction, \"as it is the language of the widest currency in the state\". On 26 April 1917, the Nizam of Hyderabad Mir Osman Ali Khan issued a firman to establish the Osmania University.",
+      "The university began functioning in 1918 in a building adjacent to the Nizam College at Basheerbagh. Arts and theology were the only two faculties offered, and the first batch consisted of 225 students and 25 faculty members.",
+      "The government invited the Scottish urban planner Patrick Geddes and the Belgian architect Ernest Jaspar to establish a permanent campus. Geddes surveyed prospective locations and presented his report in 1923. Jasper drew up the building plans and the Nizam laid the foundation stone for the campus on 5 July 1934. After Jasper left Hyderabad, the state architect Zain Yar Jung supervised the construction of the campus.",
+      "After independence and the accession of Hyderabad State in 1948, the university fell under the purview of the state government. After the election of the first state government, the central government announced plans to convert Osmania University into a central university with Hindi as the medium of instructions. However, this led to protests and with pressure from the Mulki agitation, the plan was dropped. Eventually, English replaced Urdu as the medium of instruction, and the Nizam's crown was also removed from the university seal."
+    ],
+    "keyFacts": [
+      "On 26 April 1917, the Nizam of Hyderabad Mir Osman Ali Khan issued a firman to establish the Osmania University.",
+      "The university began functioning in 1918 in a building adjacent to the Nizam College at Basheerbagh.",
+      "Geddes surveyed prospective locations and presented his report in 1923."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "osmania-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Osmania University",
+        "url": "https://en.wikipedia.org/wiki/Osmania_University",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "the-nizam-s-museum-1936",
+    "destinationId": "hyderabad",
+    "sortYear": 1936,
+    "yearLabel": "AD 1936",
+    "title": "The Nizam's Museum, 1936",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The museum is a repository mainly of souvenirs, gifts and mementos presented by dignitaries to the last Nizam on the occasion of the silver jubilee celebrations in 1936.",
+    "detailHref": "/destinations/hyderabad/history#the-nizam-s-museum-1936",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "the-nizam-s-museum"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — The Nizam's Museum, 1936",
+        "url": "https://en.wikipedia.org/wiki/The_Nizam's_Museum",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "birla-mandir-hyd-1976",
@@ -285,7 +509,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -325,7 +549,150 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "lumbini-park-1994",
+    "destinationId": "hyderabad",
+    "sortYear": 1994,
+    "yearLabel": "AD 1994",
+    "title": "Lumbini Park, 1994",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Constructed in 1994, the park is named after the former Chief Minister of Andhra Pradesh T. Anjaiah.",
+    "description": [
+      "In 1994, Lumbini Park was constructed at a cost of ₹23.5 million (equivalent to ₹150 million or US$1.6 million in 2023) on 3 hectares (7.5 acres) of land adjacent to Hussain Sagar. In 2000, the Buddha Purnima Project Authority (BPPA) was established to maintain specially designated development areas in Hyderabad. Among tourist attractions such as Necklace Road and NTR Gardens, Lumbini Park is being maintained by BPPA. To enhance the inflow of visitors, it constructed additional facilities for laser auditorium, boating facilities among other visually appealing features such as gardens and musical fountains.",
+      "In 2006, the park was renamed after T. Anjaiah, the former Chief Minister of Andhra Pradesh.",
+      "On 25 August 2007, two bomb blasts in Hyderabad killed 44 people and injured 60. One of the two blasts occurred during the evening hours in the laser auditorium that housed about 500 people at the time of the incident. After a few days of being cordoned off for crime scene investigation, the park was reopened to public after the installation of metal detectors."
+    ],
+    "keyFacts": [
+      "In 1994, Lumbini Park was constructed at a cost of ₹23.5 million (equivalent to ₹150 million or US$1.6 million in 2023) on 3 hectares (7.5 acres) of land adjacent to Hussain Sagar.",
+      "In 2000, the Buddha Purnima Project Authority (BPPA) was established to maintain specially designated development areas in Hyderabad.",
+      "On 25 August 2007, two bomb blasts in Hyderabad killed 44 people and injured 60."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "lumbini-park"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Lumbini Park",
+        "url": "https://en.wikipedia.org/wiki/Lumbini_Park",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "ntr-gardens-1995",
+    "destinationId": "hyderabad",
+    "sortYear": 1995,
+    "yearLabel": "AD 1995",
+    "title": "NTR Gardens, 1995",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "NTR Gardens is a small public, urban park of 15 hectares (36 acres) adjacent to Hussain Sagar lake in Hyderabad, where earlier a thermal power station building stood until 1995.",
+    "description": [
+      "The land for the garden was cleared in 1995 after demolishing Hussain Sagar Thermal Power Station.  In 1999, a land of 2.0 hectares (5 acres) from a 22 hectares (55 acres) plot was utilised for erecting a memorial for N. T. Rama Rao, the former Chief Minister of unbifurcated Andhra Pradesh. It was inaugurated by N. Chandrababu Naidu. It was planned to further expand this area, which has since been referred to as NTR Gardens, by constructing a museum about N. T. Rama Rao. This memorial was a part of the Buddha Purnima Project that was being handled by Hyderabad Urban Development Authority (HUDA) for the beautification and development of the Hussain Sagar lake and its surroundings as a major tourist attraction.",
+      "In 2000, the Government of Andhra Pradesh expressed its plans to develop this area with several projects such the NTR Gardens itself, a rock garden and an IMAX theatre. A few days later, a government official firstly said that the rock garden will be taken up by Dubai-based NRIs at a cost of ₹270 million (equivalent to ₹1.1 billion or US$12 million in 2023). Secondly the IMAX theatre project, which was said to cost ₹520 million (equivalent to ₹2.1 billion or US$22 million in 2023) was allotted to a private firm. Both these projects were to be executed in the same 22-hectare (55-acre) plot which housed the memorial.",
+      "Upon the beginning of work at these gardens in January 2000, a petition by two non-profit organisations sought an immediate halt of construction activity at the gardens. They contended that regulations showed the area around the lake as a recreation zone which must be kept away from all constructions for commercial or residential purposes. Since they claimed that these proposed projects violated all these, they sought a public hearing and an environment impact assessment before allowing these projects to continue. Accordingly, the local apex court instructed the authorities to stop the construction until further orders.",
+      "A media report suggested that according to the 1980 HUDA Master Plan, the area where the NTR Gardens are located originally was a water body, but a gazetted notification in 1994 could allow such construction activities.",
+      "In 2001, the extensive work at 14 hectares (34 acres) of gardens was completed at a cost of ₹400 million (equivalent to ₹1.6 billion or US$17 million in 2023). Besides a variety of plants, the gardens also house a souvenir complex, a visitors train, restaurants and a waterfall."
+    ],
+    "keyFacts": [
+      "The land for the garden was cleared in 1995 after demolishing Hussain Sagar Thermal Power Station.",
+      "In 1999, a land of 2.0 hectares (5 acres) from a 22 hectares (55 acres) plot was utilised for erecting a memorial for N.",
+      "In 2000, the Government of Andhra Pradesh expressed its plans to develop this area with several projects such the NTR Gardens itself, a rock garden and an IMAX theatre."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "ntr-gardens"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — NTR Gardens",
+        "url": "https://en.wikipedia.org/wiki/NTR_Gardens",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "kasu-brahmananda-reddy-national-park-1998",
+    "destinationId": "hyderabad",
+    "sortYear": 1998,
+    "yearLabel": "AD 1998",
+    "title": "Kasu Brahmananda Reddy National Park, 1998",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was declared as a National park by the Andhra Pradesh state government after getting approval from the central government in the year 1998.",
+    "detailHref": "/destinations/hyderabad/history#kasu-brahmananda-reddy-national-park-1998",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "kasu-brahmananda-reddy-national-park"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Kasu Brahmananda Reddy National Park, 1998",
+        "url": "https://en.wikipedia.org/wiki/Kasu_Brahmananda_Reddy_National_Park",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "bhagyalakshmi-temple-2012",
+    "destinationId": "hyderabad",
+    "sortYear": 2012,
+    "yearLabel": "AD 2012",
+    "title": "Bhagyalakshmi Temple, 2012",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "In 2012, Telangana High Court stopped any further expansion of the temple.",
+    "description": [
+      "As per the local Telangana history and the Telugu name in the temple name board in View of Historic Charminar image, Bhagyalakshmi Goddess is worshipped as or along with Charminar Maisamma(in the stone form) and every year Bonalu is offered to her in the Ashada Masam.",
+      "According to the Muslim Priest of Charminar altar, the original stone in question was a guard stone placed near the corner to protect the walls of charminar from automobiles.",
+      "In 2012, Times of India reported citing old people that in the late 1960s, the temple building was built on the east side of Charminar and opened for visits by devotees. Times of India referred to the popular folklore that the holy stone was laid at the site several years ago at an unknown date, most likely since the Quli Qutub Shah period. The stone was worshipped as a sign of prosperity by residents. Others insist that the temple did not exist there until it was erected a few decades back and called the claims of the temple being \"as old as the Charminar\" as completely 'baseless' claims.",
+      "Claims of newer origins of temple are proposed by historians such as Narendra Luther, who claim the temple did not exist until the 1960s when it was erected un-necessarily by some locals. According to historians, one of the guard stone similar in shape to a milestone near Charminar was painted with saffron color in 1965, and an old woman became the person in-charge of this shrine. After an Andhra Pradesh State Road Transport Corporation bus collided with the stone and damaged it, a pucca structure was created at the site. An idol of the goddess Lakshmi replaced the stone.",
+      "A case was filed in the High court, opposing the encroachment of Charminar by the temple authorities. High court ordered to maintain the status quo and banned any further construction of the temple.",
+      "Local Congress leader G. Niranjan considers the co-existence of the two structures as a reflection of the \"composite culture\" of Hyderabad. He claimed that Charminar had places of worship for both communities for several centuries and it was sending a message to the entire world about rich secular traditions and the Ganga-Jamuni tehzeeb (\"composite culture\") of Hyderabad.  A book sources the name of the shrine in the memory of the Queen Bhagmati (or Bhagyavati)."
+    ],
+    "keyFacts": [
+      "In 2012, Times of India reported citing old people that in the late 1960s, the temple building was built on the east side of Charminar and opened for visits by devotees."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "bhagyalakshmi-temple"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Bhagyalakshmi Temple",
+        "url": "https://en.wikipedia.org/wiki/Bhagyalakshmi_Temple",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -366,7 +733,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -403,8 +770,37 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "deccan-college-of-medical-sciences-2016",
+    "destinationId": "hyderabad",
+    "sortYear": 2016,
+    "yearLabel": "AD 2016",
+    "title": "Deccan College of Medical Sciences, 2016",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The college is affiliated to the KNR University of Health Sciences, Warangal from the academic year 2016-17 onwards.",
+    "detailHref": "/destinations/hyderabad/history#deccan-college-of-medical-sciences-2016",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "deccan-college-of-medical-sciences"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Deccan College of Medical Sciences, 2016",
+        "url": "https://en.wikipedia.org/wiki/Deccan_College_of_Medical_Sciences",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "qutb-shahi-tombs-2026",
@@ -440,7 +836,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   }
 ]

@@ -380,7 +380,13 @@ function summaryOf(place) {
  * Where the two disagree, the Wikidata date is simply not published. Nothing
  * is reconciled and nothing is averaged.
  */
-function historyOf(record, limit = 12) {
+/*
+ * PHASE D: twelve became twenty-four. The cap exists so one place with a
+ * long article cannot fill a timeline, which the round-robin below already
+ * prevents; twelve was sized for a capsule of six places, and these archives
+ * now hold thirty. A deep archive is graded at fifteen dated events.
+ */
+function historyOf(record, limit = 24) {
   const queues = record.places.map((place) => {
     const stated = new Set(
       (place.wikidata?.dates ?? []).map((entry) => entry.year).filter((year) => Number.isFinite(year)),
@@ -481,7 +487,8 @@ function historyOf(record, limit = 12) {
  * since Phase 19, sentences dated only to a century, which used to slip
  * through and appear as "cultural notes" about the 6th century.
  */
-function storiesOf(record, limit = 8) {
+/* PHASE D: eight became twenty, for the same reason as the history cap. */
+function storiesOf(record, limit = 20) {
   const candidates = record.places.flatMap((place) =>
     sentencesOf(place.lead)
       .filter(publishable)
@@ -867,7 +874,24 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     },`,
   );
 
-  const historyBlocks = history.map(
+  /*
+   * A SENTENCE IS PUBLISHED ONCE.
+   *
+   * `validateCapsule` refuses a capsule where two history entries or stories
+   * carry the same summary, and it compares the EMITTED summary — two
+   * different source sentences can still normalise to the same text, which is
+   * what two neighbouring monuments' shared opening line did for Delhi and
+   * Bhubaneswar. Dropping the later one keeps the earlier, better-dated entry.
+   */
+  const publishedSummaries = new Set();
+  const historyEntries = history.filter((entry) => {
+    const summary = entry.summary.trim();
+    if (publishedSummaries.has(summary)) return false;
+    publishedSummaries.add(summary);
+    return true;
+  });
+
+  const historyBlocks = historyEntries.map(
     (entry) => `    {
       id: ${quote(entry.id)},${
         entry.year === undefined
@@ -882,7 +906,14 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     },`,
   );
 
-  const stories = storiesOf(record).map(
+  const stories = storiesOf(record)
+    .filter((entry) => {
+      const summary = entry.summary.trim();
+      if (publishedSummaries.has(summary)) return false;
+      publishedSummaries.add(summary);
+      return true;
+    })
+    .map(
     (story) => `    {
       id: ${quote(story.id)},
       title: ${quote(story.title)},

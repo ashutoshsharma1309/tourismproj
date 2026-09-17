@@ -32,9 +32,21 @@
  * docs/phase-19-global-capsules.md; nothing that changed was a component.
  */
 
+import { DISCOVERED } from "./plan-discovered.mjs";
+
 /** @typedef {{id:string,title:string,category:string,themes:string[],image?:false}} PlannedPlace */
 
-export const PLAN = [
+/**
+ * PHASE D — A SECOND SOURCE OF PLANNED PAGES.
+ *
+ * Everything below this line was chosen by a person. `plan-discovered.mjs`
+ * holds places found by `discover-places.mjs` instead: articles that publish
+ * a coordinate near the destination's own registry centre and whose Wikidata
+ * type is a kind of place this archive catalogues. The two are kept in
+ * separate files so it is always clear which is which, and concatenated at
+ * the bottom of this one.
+ */
+const CURATED = [
   {
     id: "delhi",
     scope: "Mughal and colonial monuments of the capital",
@@ -477,3 +489,14 @@ export const PLAN = [
     ],
   },
 ];
+
+/**
+ * The curated pages, then the discovered ones for the same destination. A
+ * discovered place whose id a curator already planned is dropped: the
+ * curator's entry wins, because it carries their category and themes.
+ */
+export const PLAN = CURATED.map((entry) => {
+  const planned = new Set(entry.places.map((place) => place.id));
+  const discovered = (DISCOVERED[entry.id] ?? []).filter((place) => !planned.has(place.id));
+  return { ...entry, places: [...entry.places, ...discovered] };
+});

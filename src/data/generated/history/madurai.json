@@ -34,7 +34,99 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "thirupparankundram-rock-cut-cave-and-inscription-8th-century",
+    "destinationId": "madurai",
+    "sortYear": 8,
+    "yearLabel": "AD 8",
+    "title": "Thirupparankundram Rock-cut Cave and Inscription, 8th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "It consists of several layers of construction, the earliest is dated to the 8th-century early Pandya period, and the last to the 13th century.",
+    "detailHref": "/destinations/madurai/history#thirupparankundram-rock-cut-cave-and-inscription-8th-century",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "thirupparankundram-rock-cut-cave-and-inscription"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Thirupparankundram Rock-cut Cave and Inscription, 8th century",
+        "url": "https://en.wikipedia.org/wiki/Thirupparankundram_Rock-cut_Cave_and_Inscription",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "kazimar-big-mosque-13th-century",
+    "destinationId": "madurai",
+    "sortYear": 13,
+    "yearLabel": "AD 13",
+    "title": "Kazimar Big Mosque, 13th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "The mosque was founded by Kazi Syed Tajuddin, a descendant of the Islamic prophet Muhammad, who came from Yemen during 13th century and received this land from the King Kulasekara Ku(n) Pandiyan.",
+    "detailHref": "/destinations/madurai/history#kazimar-big-mosque-13th-century",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "kazimar-big-mosque"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Kazimar Big Mosque, 13th century",
+        "url": "https://en.wikipedia.org/wiki/Kazimar_Big_Mosque",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "thiruparankundram-dargah-14th-century",
+    "destinationId": "madurai",
+    "sortYear": 14,
+    "yearLabel": "AD 14",
+    "title": "Thiruparankundram Dargah, 14th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "Located on the northeastern side of the Tirupparankundram hillock, the complex was built in the 14th century CE as a memorial for Sikandar Shah, the last ruler of the Madurai Sultanate, and was expanded in the later years.",
+    "description": [
+      "Sikandar Shah, the last ruler of the Madurai Sultanate, was killed by Kumara Kampana in the war with the Vijayanagara Empire in the 14th century CE. After the war, the followers of Shah, who was believed to be a Sufi mystic, built a memorial for him atop the hill, which was expanded in the later years.",
+      "While the hill and the surrounding areas, which also hosts several Hindu temples including the Murugan Temple complex, and Jain relics, has seen coexistence of various religious practices over the years, it been a subject of occasional dispute since the early 20th century. Adjudicating in a related dispute, in October 2025, the Madras High Court declared that the hill was a protected monument as declared by the Archaeological Survey of India in 1908 and 1923, and affirmed the ownership of the hill to the temple excluding the 0.33 acres (0.13 ha) of land on which the dargah is located. It also upheld a ruling that banned animal sacrifice at the site, while permitting the annual Santhanakoodu festival, and restricted prayers at the dargah to the occasions of Eid and Ramadan."
+    ],
+    "keyFacts": [
+      "Sikandar Shah, the last ruler of the Madurai Sultanate, was killed by Kumara Kampana in the war with the Vijayanagara Empire in the 14th century CE."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "thiruparankundram-dargah"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Thiruparankundram Dargah",
+        "url": "https://en.wikipedia.org/wiki/Thiruparankundram_Dargah",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -68,7 +160,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -95,7 +187,9 @@
     "relatedPlaces": [
       "meenakshi-temple"
     ],
-    "relatedStories": [],
+    "relatedStories": [
+      "festival-meenakshi-tirukalyanam"
+    ],
     "sources": [
       {
         "name": "Wikipedia — Meenakshi Temple",
@@ -105,7 +199,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -132,7 +226,9 @@
     "relatedPlaces": [
       "meenakshi-temple"
     ],
-    "relatedStories": [],
+    "relatedStories": [
+      "festival-meenakshi-tirukalyanam"
+    ],
     "sources": [
       {
         "name": "Wikipedia — Meenakshi Temple",
@@ -142,8 +238,66 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "narasingam-yoga-narasimha-perumal-temple-ad-770",
+    "destinationId": "madurai",
+    "sortYear": 770,
+    "yearLabel": "AD 770",
+    "title": "Narasingam Yoga Narasimha Perumal Temple, AD 770",
+    "era": "Medieval",
+    "eraId": "medieval",
+    "shortDescription": "This temple was constructed in 770 CE by Madurakavi alias Marankaari who was the minister of the Madurai King Parantaka Nedunjadaiyan.",
+    "detailHref": "/destinations/madurai/history#narasingam-yoga-narasimha-perumal-temple-ad-770",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "narasingam-yoga-narasimha-perumal-temple"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Narasingam Yoga Narasimha Perumal Temple, AD 770",
+        "url": "https://en.wikipedia.org/wiki/Narasingam_Yoga_Narasimha_Perumal_Temple",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "kazimar-big-mosque-1285",
+    "destinationId": "madurai",
+    "sortYear": 1285,
+    "yearLabel": "AD 1285",
+    "title": "Kazimar Big Mosque, 1285",
+    "era": "Medieval",
+    "eraId": "medieval",
+    "shortDescription": "The mosque was constructed in 683 AH (1284/1285 CE) and is the oldest mosque in the city.",
+    "detailHref": "/destinations/madurai/history#kazimar-big-mosque-1285",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "kazimar-big-mosque"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Kazimar Big Mosque, 1285",
+        "url": "https://en.wikipedia.org/wiki/Kazimar_Big_Mosque",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "thirumalai-nayakkar-mahal-1623",
@@ -178,7 +332,102 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "sungam-mosque-1840",
+    "destinationId": "madurai",
+    "sortYear": 1840,
+    "yearLabel": "AD 1840",
+    "title": "Sungam Mosque, 1840",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The mosque was founded by Muslim Jamath people, and was completed in 1840 in the Mughal style.",
+    "detailHref": "/destinations/madurai/history#sungam-mosque-1840",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "sungam-mosque"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Sungam Mosque, 1840",
+        "url": "https://en.wikipedia.org/wiki/Sungam_Mosque",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "lady-doak-college-1948",
+    "destinationId": "madurai",
+    "sortYear": 1948,
+    "yearLabel": "AD 1948",
+    "title": "Lady Doak College, 1948",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was founded in 1948 by Katie Wilcox, an American missionary near Tallakulam in Madurai.",
+    "detailHref": "/destinations/madurai/history#lady-doak-college-1948",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "lady-doak-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Lady Doak College, 1948",
+        "url": "https://en.wikipedia.org/wiki/Lady_Doak_College",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "madurai-medical-college-1954",
+    "destinationId": "madurai",
+    "sortYear": 1954,
+    "yearLabel": "AD 1954",
+    "title": "Madurai Medical College, 1954",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The hospital was established in 1842 and became a teaching hospital in 1954.",
+    "description": [
+      "The college was inaugurated on 2 August 1954 by the then chief minister K. Kamaraj and the union health minister Rajkumari Amrit Kaur. K. P. Sarathy was the first special officer and Sarah J. Sowri was the first principal. The college was affiliated to the  University of Madras and permanent recognition was accorded in 1954. Subsequently, the recognition of Medical Council of India (now National Medical Commission) came in 1961.",
+      "The college was then situated at the old Taluk building, Fair Weather road. The present building was occupied in 1958. In 1963, Dr. C. K. Padmanabha Menon became its first dean. It celebrated the Silver Jubilee in 1979 and Golden Jubilee in 2004.",
+      "When the Madurai Kamaraj University was established, the college was affiliated to it. When the Tamil Nadu Dr. M.G.R. Medical University was started, the college like other medical colleges in the state was affiliated to it."
+    ],
+    "keyFacts": [
+      "The college was inaugurated on 2 August 1954 by the then chief minister K.",
+      "The college was affiliated to the  University of Madras and permanent recognition was accorded in 1954.",
+      "Subsequently, the recognition of Medical Council of India (now National Medical Commission) came in 1961."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "madurai-medical-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Madurai Medical College",
+        "url": "https://en.wikipedia.org/wiki/Madurai_Medical_College",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -207,7 +456,36 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "madurai-kamaraj-university-1966",
+    "destinationId": "madurai",
+    "sortYear": 1966,
+    "yearLabel": "AD 1966",
+    "title": "Madurai Kamaraj University, 1966",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Madurai Kamaraj University (MKU) is a public state university located in Madurai city, in southern Tamil Nadu, India, that was established in 1966.",
+    "detailHref": "/destinations/madurai/history#madurai-kamaraj-university-1966",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "madurai-kamaraj-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Madurai Kamaraj University, 1966",
+        "url": "https://en.wikipedia.org/wiki/Madurai_Kamaraj_University",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -236,7 +514,36 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "yadava-college-1969",
+    "destinationId": "madurai",
+    "sortYear": 1969,
+    "yearLabel": "AD 1969",
+    "title": "Yadava College, 1969",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The college was established in 1969 by the Yadava community, led by the late Shri.",
+    "detailHref": "/destinations/madurai/history#yadava-college-1969",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "yadava-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Yadava College, 1969",
+        "url": "https://en.wikipedia.org/wiki/Yadava_College",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -263,7 +570,9 @@
     "relatedPlaces": [
       "meenakshi-temple"
     ],
-    "relatedStories": [],
+    "relatedStories": [
+      "festival-meenakshi-tirukalyanam"
+    ],
     "sources": [
       {
         "name": "Wikipedia — Meenakshi Temple",
@@ -273,7 +582,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -300,7 +609,9 @@
     "relatedPlaces": [
       "meenakshi-temple"
     ],
-    "relatedStories": [],
+    "relatedStories": [
+      "festival-meenakshi-tirukalyanam"
+    ],
     "sources": [
       {
         "name": "Wikipedia — Meenakshi Temple",
@@ -310,7 +621,100 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "madurai-kamaraj-university-2021",
+    "destinationId": "madurai",
+    "sortYear": 2021,
+    "yearLabel": "AD 2021",
+    "title": "Madurai Kamaraj University, 2021",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "In 2021, the university was awarded an 'A++' grade from the National Assessment and Accreditation Council (NAAC) in its 4th cycle.",
+    "detailHref": "/destinations/madurai/history#madurai-kamaraj-university-2021",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "madurai-kamaraj-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Madurai Kamaraj University, 2021",
+        "url": "https://en.wikipedia.org/wiki/Madurai_Kamaraj_University",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "lady-doak-college-2023",
+    "destinationId": "madurai",
+    "sortYear": 2023,
+    "yearLabel": "AD 2023",
+    "title": "Lady Doak College, 2023",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The college celebrated its 75th anniversary on 14 July 2023.",
+    "detailHref": "/destinations/madurai/history#lady-doak-college-2023",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "lady-doak-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Lady Doak College, 2023",
+        "url": "https://en.wikipedia.org/wiki/Lady_Doak_College",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "thiagarajar-college-2024",
+    "destinationId": "madurai",
+    "sortYear": 2024,
+    "yearLabel": "AD 2024",
+    "title": "Thiagarajar College, 2024",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It is affiliated with Madurai Kamaraj University and is ranked 15th among colleges in India by the National Institutional Ranking Framework (NIRF) in 2024.",
+    "description": [
+      "The college was established in 1949 by Kalaithanthai Karumuttu Thiagarajan Chettiar, a 20th-century South Indian philanthropist. The college was formally declared open by the Krishna Kumarsinhji Bhavsinhji, Maharaja of Bhavnagar, the then Governor of Madras, on 12 October 1949. Its mission is to provide quality higher education to the rural masses to realize the vision of Mahatma Gandhi. The college was originally affiliated to the Madras University, for undergraduate degrees in arts and science streams. In 1960, the state government's proposed acquisition of land for the college's expansion became the subject of correspondence between Madras minister C. Subramaniam and Prime Minister Jawaharlal Nehru, with A.S. Subbaraj (A. S. Subbaraj), a local MLA whose family owned a portion of the land mentioned."
+    ],
+    "keyFacts": [
+      "The college was established in 1949 by Kalaithanthai Karumuttu Thiagarajan Chettiar, a 20th-century South Indian philanthropist.",
+      "The college was formally declared open by the Krishna Kumarsinhji Bhavsinhji, Maharaja of Bhavnagar, the then Governor of Madras, on 12 October 1949.",
+      "In 1960, the state government's proposed acquisition of land for the college's expansion became the subject of correspondence between Madras minister C."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "thiagarajar-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Thiagarajar College",
+        "url": "https://en.wikipedia.org/wiki/Thiagarajar_College",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   }
 ]

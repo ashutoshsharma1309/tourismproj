@@ -25,7 +25,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -54,8 +54,48 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "king-george-s-medical-university-1250",
+    "destinationId": "lucknow",
+    "sortYear": 1250,
+    "yearLabel": "AD 1250",
+    "title": "King George's Medical University, 1250",
+    "era": "Medieval",
+    "eraId": "medieval",
+    "shortDescription": "The university has about 1250 undergraduate students (including 280 dental students) and 450 postgraduate students.",
+    "description": [
+      "King George's Medical College (University) was founded on the initiative of His Highness Raja Sir Tassaduq Rasul Khan, , of Jahangirabad Raj, United Provinces to commemorate the 1905 visit to India of King George V. The foundation stone was laid by King George V in 1906; the first session started in October 1911, and the hospital's construction was completed in 1913 at a total cost of ₹30 lakhs. The first batch of students qualified as doctors in 1916. The college was initially affiliated with the University of Allahabad until 1921.",
+      "The King George's Medical College, along with Canning College and Isabella Thoburn College, became the constituent institutions of the University of Lucknow in 1921. In 1983, the Government of Uttar Pradesh took over the college under The King George's Medical College and the Gandhi Memorial and Associated Hospitals (Taking Over) Act, 1983 (U.P. Act No. 10 of 1983). The takeover was repealed in 1998, and the college was re-transferred to the University of Lucknow on 28 March 1998 through U.P. Act No. 15 of 1998. It was subsequently separated from the University of Lucknow and elevated to the status of a state university in 2002.",
+      "In 2002 the Government of Uttar Pradesh, led by Mayawati of the Bahujan Samaj Party (BSP), granted university status the college and renamed it Chhatrapati Shahuji Maharaj Medical University (CSMMU), under the Uttar Pradesh Chhatrapati Shahuji Medical University Act, 2002. In August 2003 Mulayam Singh Yadav of the Samajwadi Party (SP) replaced Mayawati and became Chief Minister of Uttar Pradesh. Two months later, in October 2003, the name of the university was changed to King George's Medical University (KGMU) by the Uttar Pradesh Chhartrapati Shahuji Maharaj Medical University (Second Amendment) Act, 2003.",
+      "Name-changing continued. In 2007, after the BSP won the Uttar Pradesh Legislative Assembly election and Mayawati returned to office, the name of the institution reverted to CSMMU. When control returned to the SP in the 2012 election, Akhilesh Yadav's government returned the name of the university the current \"King George Medical University\".",
+      "Similar changes occurred for the dental faculty. The faculty was established in 1949 as a section of the ENT department; raised to a separate department in 1950, it moved to a new building in 1952. When the university was established in 2002, the dental department became the Dental College, a constituent college of the university. Two years later, under the Uttar Pradesh King George's University of Dental Science Act, 2004, the Dental College was raised to the status of a state university named the \"U.P. King George's University of Dental Science\". In 2007, the government reverted this decision and the U.P. King George's University of Dental Science again became simply a Faculty of Dental Sciences, as it was at the establishment of the university.",
+      "After attaining university status, it also functioned as an affiliating university for several medical colleges, including Autonomous Medical College, Bahraich, until the academic year 2021–2022, after which the affiliated colleges were transferred to the newly established Atal Bihari Vajpayee Medical University."
+    ],
+    "keyFacts": [
+      "The foundation stone was laid by King George V in 1906; the first session started in October 1911, and the hospital's construction was completed in 1913 at a total cost of ₹30 lakhs.",
+      "The first batch of students qualified as doctors in 1916.",
+      "The college was initially affiliated with the University of Allahabad until 1921."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "king-george-s-medical-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — King George's Medical University",
+        "url": "https://en.wikipedia.org/wiki/King_George's_Medical_University",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
   },
   {
     "slug": "bara-imambara-1784",
@@ -88,7 +128,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -117,7 +157,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -146,7 +186,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -175,7 +215,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -204,7 +244,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -241,66 +281,8 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
-  },
-  {
-    "slug": "la-martiniere-1857",
-    "destinationId": "lucknow",
-    "sortYear": 1857,
-    "yearLabel": "AD 1857",
-    "title": "La Martinière College, 1857",
-    "era": "Modern",
-    "eraId": "modern",
-    "shortDescription": "La Martinière College, Lucknow was awarded a Battle Honour – 'Defense of Lucknow' for the part the staff and pupils played in the Defence of the Residency at Lucknow during the Sepoy Mutiny of 1857 – the only school in the world so distinguished.",
-    "detailHref": "/destinations/lucknow/history#la-martiniere-1857",
-    "keyFacts": [],
-    "imageKey": null,
-    "relatedMonasteries": [],
-    "relatedPlaces": [
-      "la-martiniere"
-    ],
-    "relatedStories": [],
-    "sources": [
-      {
-        "name": "Wikipedia — La Martinière College, 1857",
-        "url": "https://en.wikipedia.org/wiki/La_Martini%C3%A8re_College",
-        "type": "encyclopedia",
-        "covers": "The summary on the timeline."
-      }
-    ],
-    "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
-    "readingMinutes": null
-  },
-  {
-    "slug": "qaisar-bagh-1857",
-    "destinationId": "lucknow",
-    "sortYear": 1857,
-    "yearLabel": "AD 1857",
-    "title": "Qaisar Bagh, 1857",
-    "era": "Modern",
-    "eraId": "modern",
-    "shortDescription": "During the Indian Rebellion of 1857, it was used as a stronghold of Begum Hazrat Mahal the Begum of Awadh, who played a leading role in the uprising.",
-    "detailHref": "/destinations/lucknow/history#qaisar-bagh-1857",
-    "keyFacts": [],
-    "imageKey": null,
-    "relatedMonasteries": [],
-    "relatedPlaces": [
-      "qaisar-bagh"
-    ],
-    "relatedStories": [],
-    "sources": [
-      {
-        "name": "Wikipedia — Qaisar Bagh, 1857",
-        "url": "https://en.wikipedia.org/wiki/Qaisar_Bagh",
-        "type": "encyclopedia",
-        "covers": "The summary on the timeline."
-      }
-    ],
-    "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
-    "readingMinutes": null
   },
   {
     "slug": "rumi-darwaza-1857",
@@ -328,7 +310,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -367,7 +349,450 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "university-of-lucknow-1864",
+    "destinationId": "lucknow",
+    "sortYear": 1864,
+    "yearLabel": "AD 1864",
+    "title": "University of Lucknow, 1864",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Founded in 1864 in Lucknow as Canning College, it is one of the India’s 17 oldest universities established during British India, the 10th oldest university in present-day India, the fourth-oldest university in Uttar Pradesh, and the first state university in Uttar Pradesh.",
+    "description": [
+      "The British, during the colonial period, transformed the Indian educational system, transitioning Indian education from the traditional Gurukul system to schools, colleges, and universities. Educational institutions established during the colonial period are still operational today, and Lucknow University is one of them.",
+      "In the summer of 1862, the first Viceroy of British India, Charles John Canning, died in London. For his loyalty during the Indian Rebellion of 1857, commonly referred to as the Mutiny, he was rewarded with a taluk (subdivision of a district). In his posthumous memory, a group of his loyal talukdars in Awadh decided to donate eight annas (half a rupee) from their annual income to run the school, and the scheme also received government support. Just two years later, on 1 May 1864, Canning High School was established with 200 students. It initially operated from two rooms of a mansion in Khayaliganj, Aminabad, before shifting to the Aminuddaulah Palace in Aminabad. The palace, which now houses the Central Hotel near Jagat Cinema and Amin-ud-daula Park, served as the school's premises, where it provided education up to the high school level.",
+      "The Canning High School was upgraded to the status of a full-fledged college in 1866, and its name was changed to Canning College. In its early years, the college had no building of its own and shifted between several locations. In 1866, it moved from the Aminuddaulah Palace to the Lal Baradari in Kaiserbagh (now the site of the Uttar Pradesh State Lalit Kala Academy), where it remained for two years, during which its first batch of intermediate students graduated. Owing to an increase in student enrolment, the college was subsequently shifted to its own building at Pari Khana in Kaisar Bagh, the site now occupied by the Rai Umanath Bali Auditorium and Bhatkhande Sanskriti Vishwavidyalaya (formerly the Marris College of Music).",
+      "Owing to an increase in student enrolment, the management of Canning College sought a larger site for the institution. The provincial government agreed to purchase the college's building at Kaiserbagh for ₹2,10,000 to accommodate the Provincial Museum (now the State Museum, Lucknow). Consequently, the college planned its relocation to Badshah Bagh, which would become its permanent campus.",
+      "The foundation stone of the new college building at Badshah Bagh was laid by Sir John Lawrence, the Viceroy of India, on 13 November 1867. Designed in the Indo-Saracenic style, the building featured high ceilings and wooden staircases. Construction took about eleven years, and the new campus was formally inaugurated on 15 November 1878 by Sir George Couper, Lieutenant-Governor of the North-Western Provinces and Chief Commissioner of Oudh. Following the completion of the building, Canning College shifted from Kaiserbagh to Badshah Bagh, where the University of Lucknow's main campus is located today.The Badshah Bagh estate originally formed part of the estates associated with the Maharaja of Kapurthala. In 1905, the estate was transferred to the management of Canning College, further consolidating the institution's presence on the site.",
+      "Before the establishment of the University of Lucknow in 1920, higher education institutions in Lucknow were affiliated with existing universities. Canning College was affiliated with the University of Calcutta from 1867 until 1887. In 1888, it came under the jurisdiction of the University of Allahabad, with which it remained affiliated until the establishment of the University of Lucknow in 1920."
+    ],
+    "keyFacts": [
+      "In the summer of 1862, the first Viceroy of British India, Charles John Canning, died in London.",
+      "For his loyalty during the Indian Rebellion of 1857, commonly referred to as the Mutiny, he was rewarded with a taluk (subdivision of a district).",
+      "Just two years later, on 1 May 1864, Canning High School was established with 200 students."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "university-of-lucknow"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — University of Lucknow",
+        "url": "https://en.wikipedia.org/wiki/University_of_Lucknow",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "isabella-thoburn-college-1869",
+    "destinationId": "lucknow",
+    "sortYear": 1869,
+    "yearLabel": "AD 1869",
+    "title": "Isabella Thoburn College, 1869",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The Isabella Thoburn College (formerly the Lucknow Women's College and often called informally IT College) is a private multidisciplinary (humanities, social sciences, sciences, commerce, management and engineering) college for women in Lucknow, India, named after its founder, Isabella Thoburn, the first woman American missionary of the Methodist Episcopal Church to sail in India 1869.",
+    "description": [
+      "The origin of the college was in a school for girls opened by Isabella Thoburn on 18 April 1870 in one room in Aminabad bazaar of Lucknow. There were then just six girls. By 1871, the school had expanded and moved to occupy a house named Lal Bagh, which had been lived in by the treasurer of the last Nawab of Awadh.",
+      "On 12 July 1886 Miss Thoburn's school was renamed as the Lucknow Women's College and began to teach Fine Arts classes under the supervision of the University of Calcutta. In 1894, this connection was abandoned in favour of a new one with Allahabad University. Following the death of Miss Thoburn in 1901, the college, still at Lal Bagh, was given its present name in her honour. In 1923, it moved to the Chand Bagh estate of almost 32 acres, where it has remained until the present day. Chand Bagh means \"moon garden\". The property was once a royal garden. After its affiliation to Lucknow University it found requisite support and guidance from Nirmal Chandra Chaturvedi, a renowned educationist and member of the university Executive Council.",
+      "The college's Principal Sarah Chakko (1905–1954) was the first woman president of the World Council of Churches."
+    ],
+    "keyFacts": [
+      "The origin of the college was in a school for girls opened by Isabella Thoburn on 18 April 1870 in one room in Aminabad bazaar of Lucknow.",
+      "By 1871, the school had expanded and moved to occupy a house named Lal Bagh, which had been lived in by the treasurer of the last Nawab of Awadh.",
+      "On 12 July 1886 Miss Thoburn's school was renamed as the Lucknow Women's College and began to teach Fine Arts classes under the supervision of the University of Calcutta."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "isabella-thoburn-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Isabella Thoburn College",
+        "url": "https://en.wikipedia.org/wiki/Isabella_Thoburn_College",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "faculty-of-fine-arts-university-of-lucknow-1911",
+    "destinationId": "lucknow",
+    "sortYear": 1911,
+    "yearLabel": "AD 1911",
+    "title": "Faculty of Fine Arts, University of Lucknow, 1911",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Faculty of Fine Arts, University of Lucknow, also known as the Lucknow College of Arts and Crafts (LCAC) or Government College of Arts and Crafts (GCAC) or simply the College of Arts and Crafts (CAC), is an art college for advanced training in visual arts established in 1911.",
+    "description": [
+      "The school was established as the School of Industrial Design on 1 November 1892. Initially located at Wingfield Manzil, it moved to Aminabad and later to Baans Mandi. A purpose-built structure was started in 1909 and inaugurated in 1911. Nathanial Herd was the first principal. The school was renamed as Government College School of Arts and Crafts in 1917.",
+      "Asit Kumar Haldar was the first Indian to be appointed as a principal of the Lucknow College of Arts and Crafts. He occupied his position until he was superannuated at 55 in 1945. Prof. Sukhvir Sanghal, an eminent artist, was also the principal and professor at his alma mater, Lucknow School of Arts, Lucknow. He devotedly served the school throughout his career.",
+      "The Indian school of painting was brought to the curriculum in 1925, and graphic arts courses were introduced in 1963. Former principal Jai Kishan Agarwal received the International Print Biannale Florence Italy award in 1974. In 1975 the college merged with the University of Lucknow as a constituent college and its three National diploma courses were converted into degree courses."
+    ],
+    "keyFacts": [
+      "The school was established as the School of Industrial Design on 1 November 1892.",
+      "A purpose-built structure was started in 1909 and inaugurated in 1911.",
+      "The school was renamed as Government College School of Arts and Crafts in 1917."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "faculty-of-fine-arts-university-of-lucknow"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Faculty of Fine Arts, University of Lucknow",
+        "url": "https://en.wikipedia.org/wiki/Faculty_of_Fine_Arts%2C_University_of_Lucknow",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "nawab-wajid-ali-shah-prani-udyan-1921",
+    "destinationId": "lucknow",
+    "sortYear": 1921,
+    "yearLabel": "AD 1921",
+    "title": "Nawab Wajid Ali Shah Prani Udyan, 1921",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The Prince of Wales Zoological Gardens was established in the year 1921 to commemorate the visit of the Prince of Wales, later King Edward VIII, to Lucknow.",
+    "detailHref": "/destinations/lucknow/history#nawab-wajid-ali-shah-prani-udyan-1921",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "nawab-wajid-ali-shah-prani-udyan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Nawab Wajid Ali Shah Prani Udyan, 1921",
+        "url": "https://en.wikipedia.org/wiki/Nawab_Wajid_Ali_Shah_Prani_Udyan",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "bhatkhande-sanskriti-vishwavidyalaya-1926",
+    "destinationId": "lucknow",
+    "sortYear": 1926,
+    "yearLabel": "AD 1926",
+    "title": "Bhatkhande Sanskriti Vishwavidyalaya, 1926",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Bhatkhande Sanskriti Vishwavidyalaya (BSV), formerly Bhatkhande Music Institute Deemed University (2000-2022), Bhatkhande College of Hindustani Music (1966-2000) and Marris College of Music (1926-1966), is a state university in Lucknow.",
+    "description": [
+      "The Institute finds its origin in the Marris College of Music, established in 1926 by renowned classical singer and musicologist, Vishnu Narayan Bhatkhande and Rai Umanath Bali with the help of Dr. Raja Rai Rajeshwar Bali (OBE, Ex MLC), taluqdar ruler of Rampur-Dariyabad state (U.P.) and then Minister of Education, Medical Relief & Public Health and Local Self-Government (UP Assembly) of United Provinces, the institution was formally inaugurated by then Governor of United Provinces, Sir William Sinclair Marris, and was also named after him.",
+      "Later, on 26 March 1966, the Government of Uttar Pradesh took over the college and renamed it after its founder as Bhatkhande Music College of Hindustani Music, later  and now Bhatkhande Music Institute Deemed University, after Government of India through a notification on 24 October 2000, declared the institute a deemed university.",
+      "During the 1970s and 1980s, the institute organised annual festivals in which the most eminent of the country's musicians performed.  Some of the memorable concerts, that included performances by stars like Ravi Shankar, Amjad Ali Khan, Ustad Zakir Hussain, N Rajam, V.J Jog, Sitara Devi, etc. were part of the Lucknow Festival in the 1970s.  During the same period various new courses, like \"Thumri\" (singer Mrs. Begum Akhtar was the honorary faculty), were introduced.",
+      "In 2005, it organised a three-day classical music festival part of the Lucknow Mahotsav.",
+      "Primarily teaching vocal, dance, musicology and applied music in Hindustani classical music, the institute also started teaching western classical music in 2009, a move that didn't go well with some chauvinists (not musicians or affiliated to the Institute), who feared that addition of Western classical music could later lead to replacement of Bharatnatyam courses by 'belly dancing.'",
+      "In 2022 it was upgraded into a teaching and affiliating state University, and name was changed into Bhatkhande Sanskriti Vishwavidyalaya."
+    ],
+    "keyFacts": [
+      "In 2005, it organised a three-day classical music festival part of the Lucknow Mahotsav.",
+      "In 2022 it was upgraded into a teaching and affiliating state University, and name was changed into Bhatkhande Sanskriti Vishwavidyalaya."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "bhatkhande-sanskriti-vishwavidyalaya"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Bhatkhande Sanskriti Vishwavidyalaya",
+        "url": "https://en.wikipedia.org/wiki/Bhatkhande_Sanskriti_Vishwavidyalaya",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "central-institute-of-medicinal-and-aromatic-plants-1959",
+    "destinationId": "lucknow",
+    "sortYear": 1959,
+    "yearLabel": "AD 1959",
+    "title": "Central Institute of Medicinal and Aromatic Plants, 1959",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Established originally as Central Indian Medicinal Plants Organisation (CIMPO) in 1959, CIMAP is steering multidisciplinary research in biological and chemical sciences and extending technologies and services to the farmers and entrepreneurs of medicinal and aromatic plants (MAPs).",
+    "description": [
+      "Recognizing the urgent need for stimulating research on medicinal plants in the country and for coordinating and consolidating some work already done by organizations like the Indian council of Agricultural Research, Indian Council of Medical Research, Tropical School of Medicine of Culcutta and various States Governments and Individual workers, the Council Scientific and Industrial Research approved in 1957 the establishment of the Central Indian Medicinal Plants Organization (CIMPO) with the following objectives. ‘To co-ordinate and channelise along fruitful directions the present activities in the field of medicinal plants carried out by the various agencies, State Governments etc., to develop the already existing medicinal plants resources of India, to bring under cultivation some of the important medicinal plants in great demand and also to introduce the cultivation into the country of exotic medicinal plants of high yielding active principal content’ It was further decide that as the work on all aspects of cultivation of aromatics plants was identical with all the cultivation of medicinal plants, the aromatic plants should also be covered within the scope of CIMPO. The Essential Oils Research Committee functioning under the Council of Scientific & Industrial Research was then dissolved and its activities taken over by CIMPO. The Organization started functioning with effect from 26 March 1959 with the appointment of late Shri P.M. Nabar its first Officer Incharge.",
+      "In February 2024, CIMAP announced that it will set up a unit for the development of a synthetic biology platform for high-value phytomolecules."
+    ],
+    "keyFacts": [
+      "The Organization started functioning with effect from 26 March 1959 with the appointment of late Shri P.M.",
+      "In February 2024, CIMAP announced that it will set up a unit for the development of a synthetic biology platform for high-value phytomolecules."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "central-institute-of-medicinal-and-aromatic-plants"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Central Institute of Medicinal and Aromatic Plants",
+        "url": "https://en.wikipedia.org/wiki/Central_Institute_of_Medicinal_and_Aromatic_Plants",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "sanjay-gandhi-postgraduate-institute-of-medical-sciences-1983",
+    "destinationId": "lucknow",
+    "sortYear": 1983,
+    "yearLabel": "AD 1983",
+    "title": "Sanjay Gandhi Postgraduate Institute of Medical Sciences, 1983",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was established in 1983 and is named after Sanjay Gandhi.",
+    "detailHref": "/destinations/lucknow/history#sanjay-gandhi-postgraduate-institute-of-medical-sciences-1983",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "sanjay-gandhi-postgraduate-institute-of-medical-sciences"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Sanjay Gandhi Postgraduate Institute of Medical Sciences, 1983",
+        "url": "https://en.wikipedia.org/wiki/Sanjay_Gandhi_Postgraduate_Institute_of_Medical_Sciences",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "indian-institute-of-management-lucknow-1984",
+    "destinationId": "lucknow",
+    "sortYear": 1984,
+    "yearLabel": "AD 1984",
+    "title": "Indian Institute of Management Lucknow, 1984",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Established in 1984, it is the fourth of the Indian Institutes of Management and was declared an Institute of National Importance under the Indian Institutes of Management Act, 2017.",
+    "description": [
+      "IIM Lucknow was established in 1984 and is currently a centrally funded institution. It is the fourth Indian Institute of Management to be established in India (after IIM Calcutta, IIM Ahmedabad, and IIM Bangalore). Noted academic Ishwar Dayal played a significant role in setting up the institution; he served as the founding director of IIM Lucknow for four years. Industrialist Hari Shankar Singhania, who took over as the chairman of Board of Governors in 1992, served until 2007.",
+      "The Post Graduate Programme (PGP) was started in 1985–86 with 30 students. When the institute was established, classes were held in rented rooms at Butler Palace and subsequently moved to Giri Institute of Developmental Studies. The current campus was built in 1992 in the outskirts of Lucknow.",
+      "Links were made with three foreign universities in 2001 to start the student exchange program. The Agribusiness Course was started in 2004 with 13 students.",
+      "In 2005, IIM Lucknow established a second campus at Noida near Delhi. The Noida campus was established exclusively for executive education. Additionally, in 2015, PGP Sustainable Management (PGP-SM) Program was started from the Noida Campus. IIM Lucknow is the first IIM in the country to start an additional campus."
+    ],
+    "keyFacts": [
+      "IIM Lucknow was established in 1984 and is currently a centrally funded institution.",
+      "Industrialist Hari Shankar Singhania, who took over as the chairman of Board of Governors in 1992, served until 2007.",
+      "The Post Graduate Programme (PGP) was started in 1985–86 with 30 students."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "indian-institute-of-management-lucknow"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Indian Institute of Management Lucknow",
+        "url": "https://en.wikipedia.org/wiki/Indian_Institute_of_Management_Lucknow",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "babasaheb-bhimrao-ambedkar-university-1996",
+    "destinationId": "lucknow",
+    "sortYear": 1996,
+    "yearLabel": "AD 1996",
+    "title": "Babasaheb Bhimrao Ambedkar University, 1996",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The university was established on 10 January 1996.",
+    "detailHref": "/destinations/lucknow/history#babasaheb-bhimrao-ambedkar-university-1996",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "babasaheb-bhimrao-ambedkar-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Babasaheb Bhimrao Ambedkar University, 1996",
+        "url": "https://en.wikipedia.org/wiki/Babasaheb_Bhimrao_Ambedkar_University",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "integral-university-2004",
+    "destinationId": "lucknow",
+    "sortYear": 2004,
+    "yearLabel": "AD 2004",
+    "title": "Integral University, 2004",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Integral University, the first enacted Minority University in the country, started functioning from 1 April 2004.",
+    "description": [
+      "The foundation stone was laid on 3 November 1993 by Abul Hasan Ali Hasani Nadwi, rector of Darul-uloom Nadwatul Ulama at the Institute of Integral Technology, Lucknow. The main building was inaugurated by the then governor of Uttar Pradesh Motilal Vora on 14 January 1996. An engineering college was simultaneously established by the Islamic Council for Productive Education (ICPE) in 1997, which started functioning in 1998 with two courses; Computer Science Engineering, and Electronics Engineering. Later other courses like Architecture, Information Technology, Mechanical Engineering, Civil Engineering, and Master of Computer Application  were added. Atal Bihari Vajpayee, the then prime minister of India, laid the foundation stone of a residential complex on 30 June 1999. During his speech, he expressed his hope that the Institute of Integral Technology, Lucknow having the abbreviation IIT will maintain the same standard as the other IITs do. The Institute is then affiliated to Uttar Pradesh Technical University."
+    ],
+    "keyFacts": [
+      "The foundation stone was laid on 3 November 1993 by Abul Hasan Ali Hasani Nadwi, rector of Darul-uloom Nadwatul Ulama at the Institute of Integral Technology, Lucknow.",
+      "The main building was inaugurated by the then governor of Uttar Pradesh Motilal Vora on 14 January 1996.",
+      "Atal Bihari Vajpayee, the then prime minister of India, laid the foundation stone of a residential complex on 30 June 1999."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "integral-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Integral University",
+        "url": "https://en.wikipedia.org/wiki/Integral_University",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "national-institute-of-pharmaceutical-education-and-research--2008",
+    "destinationId": "lucknow",
+    "sortYear": 2008,
+    "yearLabel": "AD 2008",
+    "title": "National Institute of Pharmaceutical Education and Research, Raebareli, 2008",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "National Institute of Pharmaceutical Education and Research, Raebareli (NIPER-Raebareli) established 2008, is an Indian public pharmacy research university running from a transit campus at Lucknow, Uttar Pradesh.",
+    "detailHref": "/destinations/lucknow/history#national-institute-of-pharmaceutical-education-and-research--2008",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "national-institute-of-pharmaceutical-education-and-research-"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — National Institute of Pharmaceutical Education and Research, Raebareli, 2008",
+        "url": "https://en.wikipedia.org/wiki/National_Institute_of_Pharmaceutical_Education_and_Research%2C_Raebareli",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "khwaja-moinuddin-chishti-language-university-2009",
+    "destinationId": "lucknow",
+    "sortYear": 2009,
+    "yearLabel": "AD 2009",
+    "title": "Khwaja Moinuddin Chishti Language University, 2009",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Established in 2009, the university is named after Sufi saint Mu'in al-Din Chishti.",
+    "description": [
+      "The university was established in 2009 as \"Uttar Pradesh Arabi Pharsi University\", under the Uttar Pradesh Arabi Pharsi University Act, 2009. In 2010 the act was repealed and the university was reintroduced as \"Uttar Pradesh Urdu, Arabi-Farsi University\" under Uttar Pradesh State Universities (Amendment) Act, 2010. It was renamed \"Manyavar Shri Kanshi Ram Ji Urdu, Arabi-Farsi University\" in 2011 under Uttar Pradesh State Universities (Amendment) Act, 2011, to honor the politician and social reformer Kanshi Ram. About a year later it was renamed again \"Khwaja Moinuddin Chishti Urdu, Arabi-Farsi University\" in 2012, under Uttar Pradesh State Universities (Amendment) Act, 2012, in honor of Sufi saint Mu'in al-Din Chishti. In 2020, it was renamed a final time \"Khwaja Moinuddin Chishti Language University\" under Uttar Pradesh State Universities (Amendment) Act, 2020.",
+      "Anis Ansari was appointed the founder vice-chancellor (VC) of the university in April 2010. Mahrukh Mirza was appointed VC in October 2017. After vacating the position in October 2020, in January 2021, after all candidates for the VC position have been rejected, Vinay Kumar Pathak was appointed VC as an additional charge. Anil Kumar Shukla was appointed VC in April 2021. In January 2022, Alok Kumar Rai, VC of Lucknow University, was appointed VC as KMCLU as an additional charge.",
+      "Prof. Masood Alam was appointed as Vice Chancellor on 25.10.2020 and he was on the post till 22.12.2020."
+    ],
+    "keyFacts": [
+      "The university was established in 2009 as \"Uttar Pradesh Arabi Pharsi University\", under the Uttar Pradesh Arabi Pharsi University Act, 2009.",
+      "In 2010 the act was repealed and the university was reintroduced as \"Uttar Pradesh Urdu, Arabi-Farsi University\" under Uttar Pradesh State Universities (Amendment) Act, 2010.",
+      "In 2020, it was renamed a final time \"Khwaja Moinuddin Chishti Language University\" under Uttar Pradesh State Universities (Amendment) Act, 2020."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "khwaja-moinuddin-chishti-language-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Khwaja Moinuddin Chishti Language University",
+        "url": "https://en.wikipedia.org/wiki/Khwaja_Moinuddin_Chishti_Language_University",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "era-university-2016",
+    "destinationId": "lucknow",
+    "sortYear": 2016,
+    "yearLabel": "AD 2016",
+    "title": "Era University, 2016",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Era University is a private university established in 2016 by the Era Educational Trust in Lucknow, Uttar Pradesh.",
+    "detailHref": "/destinations/lucknow/history#era-university-2016",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "era-university"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Era University, 2016",
+        "url": "https://en.wikipedia.org/wiki/Era_University",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   }
 ]

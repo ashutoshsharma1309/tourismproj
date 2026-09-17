@@ -25,7 +25,36 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "kalki-mandir-18th-century",
+    "destinationId": "jaipur",
+    "sortYear": 18,
+    "yearLabel": "AD 18",
+    "title": "Kalki Mandir, 18th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "Kalki Mandir (Sanskrit: कल्कि मंदिर) is a Hindu temple in Jaipur, Rajasthan, India, which was built by Jai Singh II in the 18th century.",
+    "detailHref": "/destinations/jaipur/history#kalki-mandir-18th-century",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "kalki-mandir"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Kalki Mandir, 18th century",
+        "url": "https://en.wikipedia.org/wiki/Kalki_Mandir",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -60,7 +89,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -96,8 +125,37 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "shila-devi-1604",
+    "destinationId": "jaipur",
+    "sortYear": 1604,
+    "yearLabel": "AD 1604",
+    "title": "Shila Devi, 1604",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It was established in 1604 CE by Raja Man Singh I, the general of Mughal Emperor Akbar, who brought the idol from Jessore (present-day Bangladesh) after a military expedition.",
+    "detailHref": "/destinations/jaipur/history#shila-devi-1604",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "shila-devi"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Shila Devi, 1604",
+        "url": "https://en.wikipedia.org/wiki/Shila_Devi",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "city-palace-jaipur-1727",
@@ -133,8 +191,70 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "tarkeshwar-nath-temple-1727",
+    "destinationId": "jaipur",
+    "sortYear": 1727,
+    "yearLabel": "AD 1727",
+    "title": "Tarkeshwar Nath Temple, 1727",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It is believed that the temple dates back to the time of the establishment of Jaipur city (around 1727 CE) or possibly even earlier.",
+    "description": [
+      "According to legend, the area was once a forest of palm trees. It is said that after a battle between a lion and a goat, a divine voice emerged from the ground, and upon excavation, a self-manifested Shivalinga was discovered, leading to the temple's name.",
+      "The initial structure of the temple is believed to have been built during the establishment of Jaipur city, and it was later designed by Vidhyadhar Bhattacharya. The responsibility for the temple's service and worship was entrusted to priests from the Vyas family, who were brought from Amer, and they have been carrying out these duties since then.",
+      "The Tadkeshwar Nath Mahadev Temple is a significant center for the celebration of festivals like Mahashivaratri and the Mondays of the Shravan month."
+    ],
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "tarkeshwar-nath-temple"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Tarkeshwar Nath Temple",
+        "url": "https://en.wikipedia.org/wiki/Tarkeshwar_Nath_Temple",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "sisodiya-rani-bagh-1728",
+    "destinationId": "jaipur",
+    "sortYear": 1728,
+    "yearLabel": "AD 1728",
+    "title": "Sisodiya Rani Bagh, 1728",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It was built by Maharaja Sawai Jai Singh II as a gift of love for his 2nd queen in 1728 .",
+    "detailHref": "/destinations/jaipur/history#sisodiya-rani-bagh-1728",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "sisodiya-rani-bagh"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Sisodiya Rani Bagh, 1728",
+        "url": "https://en.wikipedia.org/wiki/Sisodiya_Rani_Bagh",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "city-palace-jaipur-1732",
@@ -170,7 +290,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -199,7 +319,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -228,44 +348,122 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
-    "slug": "city-palace-jaipur-1949",
+    "slug": "jaipur-zoo-1877",
     "destinationId": "jaipur",
-    "sortYear": 1949,
-    "yearLabel": "AD 1949",
-    "title": "City Palace, Jaipur, 1949",
-    "era": "Contemporary",
-    "eraId": "contemporary",
-    "shortDescription": "Jaipur remained the capital of the kingdom until 1949—when it became the capital of the present-day Indian state of Rajasthan—with the City Palace functioning as the ceremonial and administrative seat of the Maharaja of Jaipur.",
-    "description": [
-      "The palace complex lies in the heart of Jaipur city,  to the northeast of the very centre, located at 26.9255°N 75.8236°E﻿ / 26.9255; 75.8236. The site for the palace was located on the site of a royal hunting lodge on a plain land encircled by a rocky hill range, five miles south of Amber. The history of the city palace is closely linked with the history of Jaipur city and its rulers, starting with Maharaja Sawai Jai Singh II who ruled from 1699 to 1744. He is credited with initiating construction of the city complex by building the outer wall of the complex spreading over many acres. Initially, he ruled from his capital at Amber, which lies at a distance of 11 kilometres (6.8 mi) from Jaipur. He shifted his capital from Amber to Jaipur in 1727 because of an increase in population in Jaipur and water shortages in Amber. He planned Jaipur city in six blocks separated by broad avenues, on the classical basis of principales of Vastushastra and another similar classical treatise under the architectural guidance of Vidyadar Bhattacharya, a Bengali architect from Naihati of present-day West Bengal who was initially an accounts-clerk in the Amber treasury, and later promoted to the office of Chief Architect by the King.",
-      "Following Jai Singh's death in 1744, there were internecine wars among the Rajput kings of the region but cordial relations were maintained with the British Raj. Maharaja Ram Singh sided with the British in the Sepoy Mutiny or Uprising of 1857 and established himself with the Imperial rulers. It is to his credit that the city of Jaipur and all of its monuments (including the City Palace) are stucco painted pink, and since then the city has been called the \"Pink City\". The change in the colour scheme was as an honor of the hospitality extended to the Prince of Wales (who later became King Edward VII) on his visit. This color scheme has since then become a trademark of the Jaipur city.",
-      "Man Singh II, the adopted son of Maharaja Madho Singh II, was the last Maharaja of Jaipur to rule from the Chandra Mahal palace, in Jaipur. This palace, however, continued to be a residence of the royal family even after the Jaipur kingdom merged with the Indian Union in 1949 (after Indian independence in August 1947) along with other Rajput states of Jodhpur, Jaisalmer and Bikaner. Jaipur became the capital of the Indian state of Rajasthan and Man Singh II had the distinction of becoming the Rajapramukh (present-day Governor of the state) for a time, and later was the Ambassador of India to Spain."
-    ],
-    "keyFacts": [
-      "The history of the city palace is closely linked with the history of Jaipur city and its rulers, starting with Maharaja Sawai Jai Singh II who ruled from 1699 to 1744.",
-      "He shifted his capital from Amber to Jaipur in 1727 because of an increase in population in Jaipur and water shortages in Amber.",
-      "Following Jai Singh's death in 1744, there were internecine wars among the Rajput kings of the region but cordial relations were maintained with the British Raj."
-    ],
+    "sortYear": 1877,
+    "yearLabel": "AD 1877",
+    "title": "Jaipur Zoo, 1877",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The zoo was opened in 1877 and is located near to the Albert Hall Museum and Ram Nivas Garden.",
+    "detailHref": "/destinations/jaipur/history#jaipur-zoo-1877",
+    "keyFacts": [],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "city-palace-jaipur"
+      "jaipur-zoo"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — City Palace, Jaipur",
-        "url": "https://en.wikipedia.org/wiki/City_Palace%2C_Jaipur",
+        "name": "Wikipedia — Jaipur Zoo, 1877",
+        "url": "https://en.wikipedia.org/wiki/Jaipur_Zoo",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "university-of-rajasthan-1947",
+    "destinationId": "jaipur",
+    "sortYear": 1947,
+    "yearLabel": "AD 1947",
+    "title": "University of Rajasthan, 1947",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was established as the University of Rajputana on 8 January 1947 and was renamed the University of Rajasthan in 1956.",
+    "description": [
+      "The origins of the University of Rajasthan can be traced to proposals for a separate university serving the princely states of Rajputana during the 1920s. The issue arose partly from changes in the conditions of affiliation associated with Allahabad University, to which colleges in Jaipur, Jodhpur and Ajmer were affiliated.",
+      "The question of establishing a university for Rajputana was discussed at a meeting of the ruling princes and chiefs held at Mount Abu on 20 June 1924. The proposal was subsequently reconsidered during the 1940s. In 1942, Sir Mirza Ismail, then Prime Minister of Jaipur State, appointed J. C. Rollo as Special Education Officer to examine the establishment of a university.",
+      "In December 1946, representatives of Jaipur, Jodhpur, Udaipur, Bikaner and Alwar discussed the establishment of a university at Jaipur. Legislation was promulgated on 8 January 1947, and the colleges of the participating states were formally federated into the University of Rajputana. The university came into existence in July 1947.",
+      "Dr G. S. Mahajani, then principal of Fergusson College, Poona (now Pune), became the university's first vice-chancellor.",
+      "The University of Rajasthan Act, 1946, provided the statutory framework for the university. The Act was subsequently amended by state legislation, and the name of the institution was changed from the University of Rajputana to the University of Rajasthan by the University of Rajputana (Change of Name) Act, 1956.",
+      "The university's first office was established temporarily at Kesargarh Fort. The Maharaja of Jaipur State subsequently made available a site of more than 300 acres for the development of the university campus.",
+      "The foundation stone of the university campus was laid by C. Rajagopalachari on 20 February 1949.",
+      "During its early years, the university functioned primarily as an affiliating institution. Its jurisdiction initially extended across the Rajputana region and subsequently encompassed the state of Rajasthan after its formation. The university later developed into a teaching and affiliating university with an expanding network of academic departments and colleges.",
+      "The University of Rajasthan has subsequently developed into a multi-faculty institution offering undergraduate, postgraduate and doctoral programmes as well as certificate and diploma-level programmes."
+    ],
+    "keyFacts": [
+      "The question of establishing a university for Rajputana was discussed at a meeting of the ruling princes and chiefs held at Mount Abu on 20 June 1924.",
+      "In 1942, Sir Mirza Ismail, then Prime Minister of Jaipur State, appointed J.",
+      "In December 1946, representatives of Jaipur, Jodhpur, Udaipur, Bikaner and Alwar discussed the establishment of a university at Jaipur."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "university-of-rajasthan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — University of Rajasthan",
+        "url": "https://en.wikipedia.org/wiki/University_of_Rajasthan",
         "type": "encyclopedia",
         "covers": "The account on this page, quoted under CC BY-SA 4.0."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "university-of-rajasthan-1956",
+    "destinationId": "jaipur",
+    "sortYear": 1956,
+    "yearLabel": "AD 1956",
+    "title": "University of Rajasthan, 1956",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The university is recognised by the University Grants Commission under sections 2(f) and 12(B) of the UGC Act, 1956.",
+    "description": [
+      "The origins of the University of Rajasthan can be traced to proposals for a separate university serving the princely states of Rajputana during the 1920s. The issue arose partly from changes in the conditions of affiliation associated with Allahabad University, to which colleges in Jaipur, Jodhpur and Ajmer were affiliated.",
+      "The question of establishing a university for Rajputana was discussed at a meeting of the ruling princes and chiefs held at Mount Abu on 20 June 1924. The proposal was subsequently reconsidered during the 1940s. In 1942, Sir Mirza Ismail, then Prime Minister of Jaipur State, appointed J. C. Rollo as Special Education Officer to examine the establishment of a university.",
+      "In December 1946, representatives of Jaipur, Jodhpur, Udaipur, Bikaner and Alwar discussed the establishment of a university at Jaipur. Legislation was promulgated on 8 January 1947, and the colleges of the participating states were formally federated into the University of Rajputana. The university came into existence in July 1947.",
+      "Dr G. S. Mahajani, then principal of Fergusson College, Poona (now Pune), became the university's first vice-chancellor.",
+      "The University of Rajasthan Act, 1946, provided the statutory framework for the university. The Act was subsequently amended by state legislation, and the name of the institution was changed from the University of Rajputana to the University of Rajasthan by the University of Rajputana (Change of Name) Act, 1956.",
+      "The university's first office was established temporarily at Kesargarh Fort. The Maharaja of Jaipur State subsequently made available a site of more than 300 acres for the development of the university campus.",
+      "The foundation stone of the university campus was laid by C. Rajagopalachari on 20 February 1949.",
+      "During its early years, the university functioned primarily as an affiliating institution. Its jurisdiction initially extended across the Rajputana region and subsequently encompassed the state of Rajasthan after its formation. The university later developed into a teaching and affiliating university with an expanding network of academic departments and colleges.",
+      "The University of Rajasthan has subsequently developed into a multi-faculty institution offering undergraduate, postgraduate and doctoral programmes as well as certificate and diploma-level programmes."
+    ],
+    "keyFacts": [
+      "The question of establishing a university for Rajputana was discussed at a meeting of the ruling princes and chiefs held at Mount Abu on 20 June 1924.",
+      "In 1942, Sir Mirza Ismail, then Prime Minister of Jaipur State, appointed J.",
+      "In December 1946, representatives of Jaipur, Jodhpur, Udaipur, Bikaner and Alwar discussed the establishment of a university at Jaipur."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "university-of-rajasthan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — University of Rajasthan",
+        "url": "https://en.wikipedia.org/wiki/University_of_Rajasthan",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -294,37 +492,164 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
-    "slug": "hawa-mahal-2006",
+    "slug": "jaipur-zoo-1999",
     "destinationId": "jaipur",
-    "sortYear": 2006,
-    "yearLabel": "AD 2006",
-    "title": "Hawa Mahal, 2006",
+    "sortYear": 1999,
+    "yearLabel": "AD 1999",
+    "title": "Jaipur Zoo, 1999",
     "era": "Contemporary",
     "eraId": "contemporary",
-    "shortDescription": "In 2006, renovation works on the Mahal were undertaken, after a gap of 50 years, to give a facelift to the monument at an estimated cost of Rs 4.568  million.",
-    "detailHref": "/destinations/jaipur/history#hawa-mahal-2006",
+    "shortDescription": "In 1999, the ghariyal breeding farm was established which is fourth largest breeding farm in India.",
+    "detailHref": "/destinations/jaipur/history#jaipur-zoo-1999",
     "keyFacts": [],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "hawa-mahal"
+      "jaipur-zoo"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — Hawa Mahal, 2006",
-        "url": "https://en.wikipedia.org/wiki/Hawa_Mahal",
+        "name": "Wikipedia — Jaipur Zoo, 1999",
+        "url": "https://en.wikipedia.org/wiki/Jaipur_Zoo",
         "type": "encyclopedia",
         "covers": "The summary on the timeline."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "lnm-institute-of-information-technology-2002",
+    "destinationId": "jaipur",
+    "sortYear": 2002,
+    "yearLabel": "AD 2002",
+    "title": "LNM Institute of Information Technology, 2002",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The institute was founded in 2002 by the LNM Foundation, a philanthropic organization established by steel magnate Lakshmi Niwas Mittal.",
+    "description": [
+      "LNMIIT  (also commonly referred to as IIIT- Jaipur in Rajasthan) was founded in 2002 under the Public–private partnership deemed university model between the Ministry of Human Resource Development of the Govt of Rajasthan and Lakshmi Niwas & Usha Mittal Foundation with the state govt providing the land and the grant for buildings. The structure of formation of LNMIIT is same as an International Institute of Information Technology like IIIT, Hyderabad and IIIT, Bangalore which is of a research university formed  by a partnership between the state govt and Industry partner. As  special Officers of LNMIIT, the chief secretary of the Govt of Rajasthan Anil Vaish and Principal Secretary of Govt of Rajasthan Ram Lubhaya represented the govt in the partnership. The Governing body of LNMIIT was headed by Narayanan Vaghul, Chairman of ICICI Bank and Lakshmi Mittal. Vishwanathan Sinha, former Deputy director of IIT Kanpur served as its founding director."
+    ],
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "lnm-institute-of-information-technology"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — LNM Institute of Information Technology",
+        "url": "https://en.wikipedia.org/wiki/LNM_Institute_of_Information_Technology",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "anokhi-museum-of-hand-printing-2005",
+    "destinationId": "jaipur",
+    "sortYear": 2005,
+    "yearLabel": "AD 2005",
+    "title": "Anokhi Museum of Hand Printing, 2005",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Opened in 2005, the museum is an initiative of the founders of Anokhi, an Indian retail brand of block-printed clothes.",
+    "description": [
+      "The museum is situated in the Anokhi Haveli, a 16th-century mansion located near Amber Fort. The mansion previously known as the Chanwar Palkiwalon ki Haveli was bought in a dilapidated condition by Pritam Singh's father, John Singh, towards the end of 1970s. It was renovated over a period of three years from 1989 onwards. The building received UNESCO's Cultural Heritage Conservation Award in 2000 for its sustainable process of renovation. The restoration process took place under the guidance of architects Nimish Patel and Parul Zaveri of Abhikram. Whereas, the interior of the museum was designed by French architect Stephane Paumier.",
+      "Rachel and Pritam decided to dedicate the space to showcase block printing. Storage facilities were improved to house the Anokhi Archives. After the revamp was completed, the opening exhibition on Print Progress - Innovation & Revival 1970-2005 was organised. Today, the museum is spread over three floors of the mansion, which showcases the history, processes, and styles of hand-block printing. Rachel highlights,\"Until the museum opened there was no simple way for people to observe a block printer or carver at work.\""
+    ],
+    "keyFacts": [
+      "The museum is situated in the Anokhi Haveli, a 16th-century mansion located near Amber Fort.",
+      "It was renovated over a period of three years from 1989 onwards.",
+      "The building received UNESCO's Cultural Heritage Conservation Award in 2000 for its sustainable process of renovation."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "anokhi-museum-of-hand-printing"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Anokhi Museum of Hand Printing",
+        "url": "https://en.wikipedia.org/wiki/Anokhi_Museum_of_Hand_Printing",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "diocese-of-jaipur-2005",
+    "destinationId": "jaipur",
+    "sortYear": 2005,
+    "yearLabel": "AD 2005",
+    "title": "Diocese of Jaipur, 2005",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The Roman Catholic Diocese of Jaipur (Dioecesis Iaipurensis) in India was created on 20 July 2005, when the Diocese of Ajmer and Jaipur was split.",
+    "detailHref": "/destinations/jaipur/history#diocese-of-jaipur-2005",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "diocese-of-jaipur"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Diocese of Jaipur, 2005",
+        "url": "https://en.wikipedia.org/wiki/Diocese_of_Jaipur",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "lnm-institute-of-information-technology-2006",
+    "destinationId": "jaipur",
+    "sortYear": 2006,
+    "yearLabel": "AD 2006",
+    "title": "LNM Institute of Information Technology, 2006",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "In 2006, it was declared a deemed university under the De-Novo category of the UGC Act.",
+    "description": [
+      "LNMIIT  (also commonly referred to as IIIT- Jaipur in Rajasthan) was founded in 2002 under the Public–private partnership deemed university model between the Ministry of Human Resource Development of the Govt of Rajasthan and Lakshmi Niwas & Usha Mittal Foundation with the state govt providing the land and the grant for buildings. The structure of formation of LNMIIT is same as an International Institute of Information Technology like IIIT, Hyderabad and IIIT, Bangalore which is of a research university formed  by a partnership between the state govt and Industry partner. As  special Officers of LNMIIT, the chief secretary of the Govt of Rajasthan Anil Vaish and Principal Secretary of Govt of Rajasthan Ram Lubhaya represented the govt in the partnership. The Governing body of LNMIIT was headed by Narayanan Vaghul, Chairman of ICICI Bank and Lakshmi Mittal. Vishwanathan Sinha, former Deputy director of IIT Kanpur served as its founding director."
+    ],
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "lnm-institute-of-information-technology"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — LNM Institute of Information Technology",
+        "url": "https://en.wikipedia.org/wiki/LNM_Institute_of_Information_Technology",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "amber-fort-2007",
@@ -359,43 +684,102 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
-    "slug": "amber-fort-2013",
+    "slug": "mahatma-jyoti-rao-phoole-university-2009",
     "destinationId": "jaipur",
-    "sortYear": 2013,
-    "yearLabel": "AD 2013",
-    "title": "Amber Fort, 2013",
+    "sortYear": 2009,
+    "yearLabel": "AD 2009",
+    "title": "Mahatma Jyoti Rao Phoole University, 2009",
     "era": "Contemporary",
     "eraId": "contemporary",
-    "shortDescription": "At the 37th session of the World Heritage Committee held in Phnom Penh, Cambodia, in 2013, Amer Fort, along with five other forts of Rajasthan, was declared a UNESCO World Heritage Site as part of the group Hill Forts of Rajasthan.",
-    "description": [
-      "Amber was a Meena state, ruled by a Susawat clan. After Kakil Deo defeated the Susawats he made Amber the capital of Dhundhar after Khoh. Kakil Deo was a son of Dulherai.",
-      "In early times, the state of Jaipur was known as Amber or Dhundhar and was controlled by Meena chiefs of five different tribes.  They were under suzerainty of the Bargurjar Rajput Raja of Deoti. Later a Kachhwaha prince, Dulha Rai, destroyed the sovereignty of Meenas and also defeated Bargurjars of Deoli and took Dhundhar fully under  Kachwaha rule.",
-      "The Amber Fort was originally built by Raja Man Singh. Jai Singh I expanded it in the early 1600's. Improvements and additions were made by successive rulers over the next 150 years, until the Kachwahas shifted their capital to Jaipur during the time of Sawai Jai Singh II, in 1727.",
-      "In the medieval period, Amer was known as Dhundar (meaning attributed to a sacrificial mount in the western frontiers) and ruled by the Kachwahas from the 11th century onwards – between 1037 and 1727 AD, until the capital was moved from Amer to Jaipur. The history of Amer is indelibly linked to these rulers as they founded their empire at Amer."
-    ],
-    "keyFacts": [
-      "Improvements and additions were made by successive rulers over the next 150 years, until the Kachwahas shifted their capital to Jaipur during the time of Sawai Jai Singh II, in 1727."
-    ],
+    "shortDescription": "It was established by The Mahatma Jyoti Rao Phoole University Act, 2009 of Rajasthan Legislative Assembly.",
+    "detailHref": "/destinations/jaipur/history#mahatma-jyoti-rao-phoole-university-2009",
+    "keyFacts": [],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "amber-fort"
+      "mahatma-jyoti-rao-phoole-university"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — Amber Fort",
-        "url": "https://en.wikipedia.org/wiki/Amber_Fort",
+        "name": "Wikipedia — Mahatma Jyoti Rao Phoole University, 2009",
+        "url": "https://en.wikipedia.org/wiki/Mahatma_Jyoti_Rao_Phoole_University",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "haridev-joshi-university-of-journalism-and-mass-communicatio-2012",
+    "destinationId": "jaipur",
+    "sortYear": 2012,
+    "yearLabel": "AD 2012",
+    "title": "Haridev Joshi University of Journalism and Mass Communication, 2012",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "In similar name, but slightly different abbreviation of HJUJ, a university was established in 2012 by the Congress govt through an Act of the Government of Rajasthan which was closed in 2015 by the next BJP govt.",
+    "description": [
+      "HJU, the new university, was established on March 1, 2019. This was one of the new decisions taken by the Ashok Gehlot administration in the beginning of his third tenure. It was again named after the journalist and former Chief Minister of Rajasthan, Haridev Joshi.",
+      "Following the 2013 Rajasthan Legislative Assembly election and the rise of the Vasundhara Raje administration, a cabinet sub-committee recommended the closure HJUJ as well as two other institutes, Rajiv Gandhi Tribal University (RGTU) and Dr Bhimrao Ambedkar Law University. In July 2015 the new administration renamed and moved RGTU and stopped the admission process for the following year in HJUJ redirecting students to the journalism department in Rajasthan University. This was done to \"ensure that a new batch of students was not affected\" by future decisions. In November 2015 Dr Bhimrao Ambedkar Law University became the first university to ever be closed in India and in January 2016 the cabinet has decided to merge HJUJ with Rajasthan University. In March 2017 a repeal bill for the closure of the university was introduced to the Rajasthan Legislative Assembly, putting an end to the possibility of reopening of the bill and HJUJ became the second university to be closed in India. The courses which were taught under HJUJ have been running under Rajasthan University's centre of mass communication since then.",
+      "Following the 2018 Rajasthan Legislative Assembly election and the rise of the Third Ashok Gehlot ministry in late 2018, the cabinet decided to open a journalism university afresh under the similar name. Haridev Joshi University of Journalism and Mass Communication, Jaipur Bill, 2019 was introduced on 11 February 2019 and passed on 13 February. On 8 March 2019 newspaper editor Om Thanvi was appointed its first vice-chancellor (VC). The university opened its gates in the academic year 2019–2020. In August 2022, Prof. Sudhi Rajiv was appointed VC."
+    ],
+    "keyFacts": [
+      "HJU, the new university, was established on March 1, 2019.",
+      "Haridev Joshi University of Journalism and Mass Communication, Jaipur Bill, 2019 was introduced on 11 February 2019 and passed on 13 February.",
+      "On 8 March 2019 newspaper editor Om Thanvi was appointed its first vice-chancellor (VC)."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "haridev-joshi-university-of-journalism-and-mass-communicatio"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Haridev Joshi University of Journalism and Mass Communication",
+        "url": "https://en.wikipedia.org/wiki/Haridev_Joshi_University_of_Journalism_and_Mass_Communication",
         "type": "encyclopedia",
         "covers": "The account on this page, quoted under CC BY-SA 4.0."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "indian-institute-of-information-technology-kota-2017",
+    "destinationId": "jaipur",
+    "sortYear": 2017,
+    "yearLabel": "AD 2017",
+    "title": "Indian Institute of Information Technology, Kota, 2017",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "First batch of IIIT Kota has graduated in the year 2017.",
+    "detailHref": "/destinations/jaipur/history#indian-institute-of-information-technology-kota-2017",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "indian-institute-of-information-technology-kota"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Indian Institute of Information Technology, Kota, 2017",
+        "url": "https://en.wikipedia.org/wiki/Indian_Institute_of_Information_Technology%2C_Kota",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   }
 ]

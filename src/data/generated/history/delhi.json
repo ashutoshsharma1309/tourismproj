@@ -30,7 +30,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -59,8 +59,75 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "sunder-nursery-16th-century",
+    "destinationId": "delhi",
+    "sortYear": 16,
+    "yearLabel": "AD 16",
+    "title": "Sunder Nursery, 16th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "Sunder Nursery, formerly called Azim Bagh or Bagh-e-Azeem, is a 16th-century heritage park complex adjacent to the Humayun's Tomb, a UNESCO World Heritage Site in Delhi.",
+    "detailHref": "/destinations/delhi/history#sunder-nursery-16th-century",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "sunder-nursery"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Sunder Nursery, 16th century",
+        "url": "https://en.wikipedia.org/wiki/Sunder_Nursery",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "ayurvedic-and-unani-tibbia-college-19th-century",
+    "destinationId": "delhi",
+    "sortYear": 19,
+    "yearLabel": "AD 19",
+    "title": "Ayurvedic and Unani Tibbia College, 19th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "The institution, which offers education and training in ayurvedic and Unani medicine, has its origins in the late 19th century.",
+    "description": [
+      "It was first established by Hakim Abdul Majeed in 1882 in Gali Qasim Jan, a locality in Chandni Chowk, one of the oldest and busiest markets in New Delhi, India. In 1889, after inauguration by a local commissioner, it was referred to as Madrasa Tibbia that functioned under the Anjuman-e-Tibbia society. After the death of Majeed in 1901, his younger brother Hakim Wasil took over the Madrasa and in 1903, Masih-ul-Mulk Mohammad Ajmal Khan (1863-1927 CE), better known as Hakim Ajmal Khan raised the quality of the institution. The efforts of Hakim Ajmal Khan helped extend the site over an area more than of 50 acres including a garden of herbs (Jadi Booti Bagh) across the road. At present is named after Hakim Ajmal Khan as \"Ajmal Khan Park\" maintained by MCD. The road has also been named after Hakim Ajmal Khan as \"Ajmal Khan Road\", a popular shopping area of Delhi.",
+      "After its foundation laid down by Lord Hardinge, the then Viceroy of India on 29 March 1916, the college had buildings that housed classrooms, laboratories, hospital pharmacies, hostels, office and staff quarters. A mix of classical, colonial, Mughul and Indian architecture was utilized for constructing the College buildings. This institution was the first architectural marvel in the newly founded capital of India.It came into existence much before the parliament, north and south avenues, India Gate etc. This institution was inaugurated by Father of the Nation Mahatma Gandhi on 13 February 1921.",
+      "Ajmal Khan previously corresponded with Mahatma Gandhi during the Khilafat Movement, a political campaign launched mainly by Muslims in British India in the aftermath of the World War I and because of his close association with Gandhi, on 13 February 1921, the latter formally inaugurated the college.",
+      "The Partition Riots which spread to Delhi in September 1947 affected the functioning of the college. The refugees who settled in Karol Bagh took possession of the college building and its all furniture was disposed of, its property was ransacked and its boarding house was also occupied. This whole episode severely affected the working of the college. A majority of members of the governing body and students were Muslims, and many of them including Ajmal khan family members of the founder Hakim Ajmal Khan migrated to Pakistan in December 1947."
+    ],
+    "keyFacts": [
+      "It was first established by Hakim Abdul Majeed in 1882 in Gali Qasim Jan, a locality in Chandni Chowk, one of the oldest and busiest markets in New Delhi, India.",
+      "In 1889, after inauguration by a local commissioner, it was referred to as Madrasa Tibbia that functioned under the Anjuman-e-Tibbia society.",
+      "This institution was inaugurated by Father of the Nation Mahatma Gandhi on 13 February 1921."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "ayurvedic-and-unani-tibbia-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Ayurvedic and Unani Tibbia College",
+        "url": "https://en.wikipedia.org/wiki/Ayurvedic_and_Unani_Tibbia_College",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "qutub-minar-1190",
@@ -98,46 +165,48 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
-    "slug": "qutub-minar-1368",
+    "slug": "tughlaqabad-fort-1321",
     "destinationId": "delhi",
-    "sortYear": 1368,
-    "yearLabel": "AD 1368",
-    "title": "Qutb Minar, 1368",
+    "sortYear": 1321,
+    "yearLabel": "AD 1321",
+    "title": "Tughlaqabad Fort, 1321",
     "era": "Medieval",
     "eraId": "medieval",
-    "shortDescription": "Successive dynasties of the Delhi Sultanate continued the construction, and, in 1368, Firuz Shah Tughlaq rebuilt the top parts and added a cupola.",
+    "shortDescription": "Ghiyath al-Din Tughluq, the founder of the Tughlaq dynasty and ruler of the Delhi Sultanate, constructed it in 1321 when he established the third historic city of Delhi.",
     "description": [
-      "The Qutb Minar was built over the ruins of the Lal Kot, the citadel of Dhillika. Qutb Minar was begun after the Quwwat-ul-Islam Mosque. Drawing references from their Ghurid homeland, Qutub-ud-Din Aibak and Shamsu’d-Din Iltutmish constructed a minar (minaret) at the south-eastern corner of the Quwwatu’l-Islam between 1199 and 1503.    It is usually thought that the tower is named for Qutb-ud-din Aibak, who began it. It is also possible that it is named after Khwaja Qutbuddin Bakhtiar Kaki a 13th-century sufi saint, because Shamsuddin Iltutmish was a devotee of his.",
-      "The Minar is surrounded by several historically significant monuments of the Qutb complex. Quwwat-ul-Islam Mosque, to the north-east of the Minar was built by Qutub-ud-Din Aibak in A.D. 1199. It is the earliest extant mosque built by the Delhi Sultans. It consists of a rectangular courtyard enclosed by cloisters, erected with the carved columns and architectural members of 27 Jain and Hindu temples, which were demolished by Qutub-ud-Din Aibak as recorded in his inscription on the main eastern entrance. Later, a lofty arched screen was erected, and the mosque was enlarged by Shams-ud- Din Itutmish (A.D. 1210–35) and Ala-ud-Din Khalji. The Iron Pillar in the courtyard bears an inscription in Sanskrit in Brahmi script of fourth century A.D., according to which the pillar was set up as a Vishnudhvaja (standard of god Vishnu) on the hill known as Vishnupada in memory of a mighty king named Chandra.",
-      "The mosque complex is one of the earliest that survives in the Indian subcontinent.",
-      "The nearby pillared cupola known as \"Smith's Folly\" is a remnant of the tower's 19th century restoration, which included an ill-advised attempt to add some more stories.",
-      "In 1505, an earthquake damaged the Qutb Minar; it was repaired by Sikander Lodi. On 1 September 1803, a major earthquake caused serious damage. Major Robert Smith of the British Indian Army renovated the tower in 1828 and installed a pillared cupola over the fifth story, creating a sixth. The cupola was taken down in 1848, under instructions from The Viscount Hardinge, the Governor General of India at the time. It was reinstalled at the ground level to the east of Qutb Minar, where it remains. This is known as \"Smith's Folly\"."
+      "Ghazi Malik was a feudatory of the Khalji rulers of Delhi, India. The Khaliji dynasty is a Turk-Afghan dynasty that ruled India. Once, while on a walk with his Khalji master, Ghazi Malik suggested that the king build a fort on a hillock in the southern portion of Delhi. The king jokingly told Ghazi Malik to build the fort himself when he would become king.",
+      "In 1321, Ghazi Malik drove away the Khaljis and assumed the title of Ghiyath al-Din Tughluq, commencing the Tughlaq dynasty. He promptly ordered the construction of his legendary city, envisioning it as a beautiful yet impregnable fortress that would ward off Mongol marauders. However, destiny would not be as he would have liked.",
+      "During the construction of Tughlaqabad Fort in 1321, Ghiyath al-Din Tughluq encountered a conflict with the revered Sufi saint Hazrat Nizamuddin Auliya. While the ruler sought to mobilise all labourers for his fort's construction, many were also working on a stepwell (baoli) in nighttime for Nizamuddin at his residence. In an effort to compel the workers to abandon the baoli project, Tughlaq banned the sale of kerosene, aiming to prevent them from lighting lamps at night.",
+      "Angered by the ruler's actions, Nizamuddin Auliya pronounced a curse: \"Ya rahe ujjar, ya base Gujjar,\" meaning \"Either it remains a ruin or may the nomadic and peasant Gujjars live there.\"",
+      "During a military campaign in Bengal, Tughlaq learned that laborers at his newly constructed Fort were defying his orders by working on the (baoli). He vowed to punish the saint upon his return to Delhi. In response, Nizamuddin Auliya remarked, \"Hunuz Dilli dur ast,\" meaning \"Delhi is still far off,\" suggesting that the Sultan's plans would be thwarted.",
+      "As the curse began to take effect, Tughlaq and his younger son met a tragic fate on their journey back. A pavilion, erected to celebrate the Sultan's military success, collapsed, resulting in their deaths. This incident underscored the belief that Nizamuddin's curse had manifested, leading to the eventual abandonment of Tughlaqabad Fort shortly after its completion.",
+      "Another of the saint's curses was \"Hunuz Dilli door ast\" (Delhi is still far away). The Emperor was engrossed in a campaign in Bengal at this time. He was successful and was on his way to Delhi. However, his son, Muhammad bin Tughluq, met him at Kara in Uttar Pradesh. Allegedly at the prince's orders, a Shamiana (Tent) was made to fall on the Emperor, who was crushed to death (1324)."
     ],
     "keyFacts": [
-      "It is also possible that it is named after Khwaja Qutbuddin Bakhtiar Kaki a 13th-century sufi saint, because Shamsuddin Iltutmish was a devotee of his.",
-      "The nearby pillared cupola known as \"Smith's Folly\" is a remnant of the tower's 19th century restoration, which included an ill-advised attempt to add some more stories.",
-      "In 1505, an earthquake damaged the Qutb Minar; it was repaired by Sikander Lodi."
+      "In 1321, Ghazi Malik drove away the Khaljis and assumed the title of Ghiyath al-Din Tughluq, commencing the Tughlaq dynasty.",
+      "During the construction of Tughlaqabad Fort in 1321, Ghiyath al-Din Tughluq encountered a conflict with the revered Sufi saint Hazrat Nizamuddin Auliya.",
+      "Allegedly at the prince's orders, a Shamiana (Tent) was made to fall on the Emperor, who was crushed to death (1324)."
     ],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "qutub-minar"
+      "tughlaqabad-fort"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — Qutb Minar",
-        "url": "https://en.wikipedia.org/wiki/Qutb_Minar",
+        "name": "Wikipedia — Tughlaqabad Fort",
+        "url": "https://en.wikipedia.org/wiki/Tughlaqabad_Fort",
         "type": "encyclopedia",
         "covers": "The account on this page, quoted under CC BY-SA 4.0."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -175,7 +244,47 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "salimgarh-fort-1546",
+    "destinationId": "delhi",
+    "sortYear": 1546,
+    "yearLabel": "AD 1546",
+    "title": "Salimgarh Fort, 1546",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "Salimgarh Fort (also known as Salim's Fort) was built in 1546 CE in Old Delhi, on what was then an island of the Yamuna River, by Salim Shah Suri, the son of Sher Shah Suri.",
+    "description": [
+      "The location chosen for building the fortification was in the Delhi plains, with an elevation ranging between 80–110 feet (24–34 m), bordered by the Yamuna River on one side and the northern spur of the Aravalli range on the other. This topography—with exposed rock formations at the fort site, proximity to the northeast-trending ridge, and alignment with the Jama Masjid—was seen as ideal for protection against erosion by the Yamuna. Moreover, the combination of a river on one side and a mountain ridge on the other provided a natural defensive barrier, compelling any invading force to follow the river course. Considering these strategic advantages, Salimgarh Fort was constructed in 1546.",
+      "After regaining his empire, Humayun renamed Salimgarh Fort as Nurghar, since Sher Shah Suri—the founder of the Sur Empire and father of Salim Shah Suri, who built the fort—had earlier ousted Humayun from his kingdom in 1540 CE. As a result, Humayun decreed that the fort's original name should not be used in his court.",
+      "During British rule, the Indian Rebellion of 1857, which was eventually suppressed by 1858, led to significant activity at the fort. The last Mughal emperor, Bahadur Shah Zafar II, was taken prisoner at Humayun's Tomb. During the rebellion, Salimgarh Fort became a centre of wartime operations. From the British perspective, Bahadur Shah Zafar's \"complicity with the mutinous soldiers was obvious.\" He is said to have operated from this fort and convened meetings in August and early September 1857 to discuss war strategy. He reportedly observed artillery fire against the British Indian Army from the fort's ramparts.",
+      "On one occasion, when approached by army officers requesting their salaries, he made a symbolic gesture by offering to pawn his crown jewels and even sacrifice his life for the cause. The officers declined his offer, trusting the Emperor's sincerity. Subsequently, proclamations were issued declaring that the Emperor would lead an assault against the British and urging people of all castes and creeds to join the resistance.",
+      "By mid-September 1857, however, British troops were advancing on the fort. At that point, Bahadur Shah's trusted aide, Bakht Khan, advised him to retreat and prepare for guerrilla warfare in the open countryside. The Emperor, however, refused to flee. While he permitted his forces to evacuate, he himself relocated to Humayun's Tomb. The British Fourth Infantry eventually entered Salimgarh Fort through a single entry point. Similar circumstances were reported when the Punjab Fourth Infantry Regiment had earlier entered the Red Fort via the Lahore Gate.",
+      "After the rebellion was quelled, the British initially used Salimgarh Fort as a military camp, housing artillery units. From 1945 onwards, it was repurposed as a penitentiary to hold prisoners of the Indian National Army (INA)."
+    ],
+    "keyFacts": [
+      "Considering these strategic advantages, Salimgarh Fort was constructed in 1546.",
+      "During British rule, the Indian Rebellion of 1857, which was eventually suppressed by 1858, led to significant activity at the fort.",
+      "By mid-September 1857, however, British troops were advancing on the fort."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "salimgarh-fort"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Salimgarh Fort",
+        "url": "https://en.wikipedia.org/wiki/Salimgarh_Fort",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -213,8 +322,37 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "chhatta-chowk-1646",
+    "destinationId": "delhi",
+    "sortYear": 1646,
+    "yearLabel": "AD 1646",
+    "title": "Chhatta Chowk, 1646",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It was inspired by another covered bazaar in Peshawar, built by leading noble Ali Mardan Khan, which Shah Jahan had seen in 1646; the emperor subsequently instructed that the plans of the bazaar be sent to Makramat Khan, supervisor of the fort's construction, to build a similar bazaar in the fort.",
+    "detailHref": "/destinations/delhi/history#chhatta-chowk-1646",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "chhatta-chowk"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Chhatta Chowk, 1646",
+        "url": "https://en.wikipedia.org/wiki/Chhatta_Chowk",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "jama-masjid-1656",
@@ -252,7 +390,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 3
   },
   {
@@ -281,46 +419,8 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-12",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
-  },
-  {
-    "slug": "red-fort-1739",
-    "destinationId": "delhi",
-    "sortYear": 1739,
-    "yearLabel": "AD 1739",
-    "title": "Red Fort, 1739",
-    "era": "Early modern",
-    "eraId": "early-modern",
-    "shortDescription": "During the invasion by Nadir Shah of the Afsharid Empire in 1739, the fort was plundered and stripped of its artwork and jewels.",
-    "description": [
-      "Emperor Shah Jahan commissioned the construction of the Red Fort on 12 May 1639, following his decision to shift his capital from Agra to Delhi. The design of the Red Fort is attributed to the architect Ustad Ahmad Lahori, renowned for his work on the Taj Mahal. It straddles the Yamuna River, which once fed the moats surrounding most of the walls. Construction began in the sacred Islamic month of Muharram, on 13 May 1638. Supervised by Shah Jahan, it was completed on 6 April 1648. The fort was originally adorned in red and white. Unlike other Mughal forts, the Red Fort's boundary walls are asymmetrical to contain and subsume the older Salimgarh Fort. The fortress-palace served as the centrepiece of Shahjahanabad, the city now known as Old Delhi. Shah Jahan's successor, Emperor Aurangzeb, enhanced the Red Fort by adding the Moti Masjid (Pearl Mosque) to the emperor's private quarters. He also constructed barbicans in front of the two main gates to create a more circuitous approach to the palace.",
-      "Following the death of Emperor Aurangzeb, the administrative and fiscal structure of the Mughal dynasty experienced decline, leading to the degeneration of the palace during the 18th century. In 1712, Jahandar Shah was crowned the Mughal Emperor. Within a year of beginning his rule, Shah was murdered and replaced by Farrukhsiyar. In 1739, the Persian emperor Nadir Shah decisively defeated the Mughal army, despite its considerable strength of approximately 200,000 soldiers. Following his victory, he plundered the Red Fort, seizing its treasures, including the legendary Peacock Throne. After three months, Nadir Shah returned to Persia. His invasion left the city significantly damaged, and the Mughal Empire, under the next Mughal emperor Muhammad Shah's reign, was severely weakened. The internal weaknesses of the Mughal Empire reduced the Mughals to titular rulers of Delhi. A treaty signed in 1752 established the Marathas as the protectors of the throne in Delhi. The 1758 Maratha victory over the Afghans at Sirhind, followed by their defeat at Panipat, catapulted them into further conflict with Ahmad Shah Durrani.",
-      "In 1760, the Marathas stripped and melted the silver ceiling of the Diwan-i-Khas to raise funds for the defence of Delhi from the armies of Ahmed Shah Durrani. In 1761, after the Marathas lost the third battle of Panipat, Delhi was raided by Durrani. Ten years later, the Marathas, acting at the behest of the exiled Emperor Shah Alam II, recaptured Delhi from the Rohilla Afghans. Mahadaji Shinde, the commander of the Maratha Army, restored Shah Alam II to the throne.",
-      "In 1764, the Jat ruler of Bharatpur, Maharaja Jawahar Singh, attacked Delhi, and eventually captured the Red Fort of Delhi on 5 February 1765. Two days later, after exacting tribute from the Mughals, the Jats withdrew their forces from the Red Fort, seizing the Mughal throne. The throne now adorns the palace at Deeg, serving as a historical centrepiece. The doors of the fort are located in the Lohagarh Fort of Bharatpur."
-    ],
-    "keyFacts": [
-      "Emperor Shah Jahan commissioned the construction of the Red Fort on 12 May 1639, following his decision to shift his capital from Agra to Delhi.",
-      "Construction began in the sacred Islamic month of Muharram, on 13 May 1638.",
-      "Supervised by Shah Jahan, it was completed on 6 April 1648."
-    ],
-    "imageKey": null,
-    "relatedMonasteries": [],
-    "relatedPlaces": [
-      "red-fort"
-    ],
-    "relatedStories": [],
-    "sources": [
-      {
-        "name": "Wikipedia — Red Fort",
-        "url": "https://en.wikipedia.org/wiki/Red_Fort",
-        "type": "encyclopedia",
-        "covers": "The account on this page, quoted under CC BY-SA 4.0."
-      }
-    ],
-    "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
-    "readingMinutes": 2
   },
   {
     "slug": "safdarjung-tomb-1754",
@@ -357,8 +457,111 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "gurdwara-sis-ganj-sahib-1783",
+    "destinationId": "delhi",
+    "sortYear": 1783,
+    "yearLabel": "AD 1783",
+    "title": "Gurdwara Sis Ganj Sahib, 1783",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It was first constructed in 1783 as a small shrine by Baghel Singh to commemorate the martyrdom site of the ninth Sikh Guru, Tegh Bahadur and was probably expanded after Indian Rebellion of 1857 or after Partition of India.",
+    "description": [
+      "The ninth Sikh Guru, Guru Tegh Bahadur was beheaded here on 24 November 1675 on the orders of the Mughal Emperor Aurangzeb. However, before the Guru's body could be quartered and exposed to public view, it was taken under the cover of darkness by Lakhi Shah Vanjara who then burnt his own house to cremate Guru's body; today, at this site stands Gurdwara Rakab Ganj Sahib.",
+      "The severed head (\"Sis\" in Hindi or Punjabi) of Guru Tegh Bahadur was brought to Anandpur Sahib by Bhai Jaita, another disciple of the Guru. Another gurudwara by the same name, Gurudwara Sisganj Sahib at Anandpur Sahib in Punjab, marks this site, where, in November 1675, the head of the martyred Guru Teg Bahadur, brought by Bhai Jaita (renamed Bhai Jivan Singh according to Sikh rites), in defiance of the Mughal authorities, was cremated.",
+      "The trunk of the tree beneath which the head of the Guru was severed and the well used by him for taking bath during his prison term have been preserved in the shrine. Also, adjoining the gurudwara, stands the Kotwali (police station), where Guru was imprisoned and his disciples were tortured. Located close to it is the Sunehri Masjid (Chandni Chowk).",
+      "On 11 March 1783, Sikh military leader Baghel Singh (1730–1802) of the Karora Misl marched into Delhi along with his army. He occupied the Diwan-i-Am, the Mughal emperor Shah Alam II made a settlement with them agreeing to allow Baghel Singh to raise gurudwaras on Sikh historical sites in the city and receive six annas in a rupee (37.5%) of all the octroi duties in the capital. Sis Ganj was one of the shrines built by him (with eight Sikh shrines connected to the Sikh gurus being constructed in the city by him), within the time span of eight months, from April to November 1783.",
+      "Baghel Singh did not actually know the exact location that the guru's beheading had taken place, only knowing that the place was somewhere near a mosque in Chandni Chowk. A local, elderly Muslim woman belonging to the water-carrier caste got in-contact with him and revealed that her father had actually been the one who had cleaned the site of the guru's execution after the event and he was an eye-witness to the execution itself. She explained that the guru at the time of his beheading had been seated upon a wooden chauki (seat) that faced in the eastern direction of the compound wall of the mosque. A part of this very wall was then removed and a shrine was then constructed in the compound.",
+      "However, due to volatile political climate in the coming century, the site alternated between being a mosque and a gurudwara. It became a site of dispute between two communities, and litigation followed. Eventually, after prolonged ligation the Privy Council during British Raj ruled in the favour of the Sikh litigants and the present structure was added in 1930; gold gild of the domes was added in the coming years. The Mughal-era Kotwali was handed over to the Delhi Sikh Gurdwara Management Committee around 1971."
+    ],
+    "keyFacts": [
+      "The ninth Sikh Guru, Guru Tegh Bahadur was beheaded here on 24 November 1675 on the orders of the Mughal Emperor Aurangzeb.",
+      "On 11 March 1783, Sikh military leader Baghel Singh (1730–1802) of the Karora Misl marched into Delhi along with his army.",
+      "However, due to volatile political climate in the coming century, the site alternated between being a mosque and a gurudwara."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "gurdwara-sis-ganj-sahib"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Gurdwara Sis Ganj Sahib",
+        "url": "https://en.wikipedia.org/wiki/Gurdwara_Sis_Ganj_Sahib",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "flagstaff-tower-1828",
+    "destinationId": "delhi",
+    "sortYear": 1828,
+    "yearLabel": "AD 1828",
+    "title": "Flagstaff Tower, 1828",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Flagstaff Tower is a one-room, castellated tower, built around 1828 as a signal tower, located in Kamla Nehru Ridge near the present-day North Campus of Delhi University in Delhi, India.",
+    "description": [
+      "Flagstaff Tower played an important role during the Indian Rebellion of 1857, when Delhi was captured by the rebellious East India Company forces. On the morning of 11 May 1857, when the sepoys started hunting for and killing European personnel and Christian Indians in the  Cantonment, Civil Lines and the walled city of Delhi, the survivors started fleeing towards the Tower.",
+      "A month later the Company army returned to capture Delhi, which was now with the sepoys. On 7 June, they faced stiff resistance from the sepoys at the Flagstaff Tower. A fierce battle followed which led to the killing and wounding of a great number of soldiers. However, by five in the evening the ridge had been recaptured and was now under British control."
+    ],
+    "keyFacts": [
+      "Flagstaff Tower played an important role during the Indian Rebellion of 1857, when Delhi was captured by the rebellious East India Company forces."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "flagstaff-tower"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Flagstaff Tower",
+        "url": "https://en.wikipedia.org/wiki/Flagstaff_Tower",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "urdu-bazaar-1857",
+    "destinationId": "delhi",
+    "sortYear": 1857,
+    "yearLabel": "AD 1857",
+    "title": "Urdu Bazaar, 1857",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The original market was destroyed in the aftermath of the Indian Rebellion of 1857 along with the Mughal soldiery ceased to exist, but its name survives as a location near the Jama Masjid.",
+    "detailHref": "/destinations/delhi/history#urdu-bazaar-1857",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "urdu-bazaar"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Urdu Bazaar, 1857",
+        "url": "https://en.wikipedia.org/wiki/Urdu_Bazaar",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "india-gate-1914",
@@ -396,7 +599,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -434,7 +637,219 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "jaipur-column-1930",
+    "destinationId": "delhi",
+    "sortYear": 1930,
+    "yearLabel": "AD 1930",
+    "title": "Jaipur Column, 1930",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "The structure was completed in 1930, it was contracted by Sir Sobha Singh.",
+    "detailHref": "/destinations/delhi/history#jaipur-column-1930",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "jaipur-column"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Jaipur Column, 1930",
+        "url": "https://en.wikipedia.org/wiki/Jaipur_Column",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "teen-murti-bhavan-1930",
+    "destinationId": "delhi",
+    "sortYear": 1930,
+    "yearLabel": "AD 1930",
+    "title": "Teen Murti Bhavan, 1930",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Teen Murti Bhavan was built in 1930 as part of the new imperial capital of India, New Delhi, as the residence of the Commander-in-Chief of the British Indian Army.",
+    "description": [
+      "In 1911, the decision was made to transfer the winter capital of British India from Calcutta to Delhi (Simla remained the summer capital for the remainder of colonial rule). The slow, decades-long process of constructing the imperial complex in New Delhi commenced shortly thereafter.",
+      "Inaugurated as 'Flagstaff House' in 1930, the building was the winter headquarters and residence of the Commander-in-Chief of Forces in India who maintained unified command of the British Indian Army, British Army, and princely states forces. The road on which it stood was named after the 1st Earl Roberts, the Commander-in-Chief for over seven years between 1885 and 1893.",
+      "After independence in August 1947, the house became the year-round official residence and workplace of the Prime Minister, and Field Marshal Sir Claude Auchinleck relocated.",
+      "Following Jawarharlal's Nehru's death in office in May 1964, the house was converted into a national memorial to him comprising a library and a museum. Today, in a ground floor room of the Nehru Museum, his South Block office in the Ministry of External Affairs has been 'recreated' with the same furniture and other articles he used, along with several mementos, objects and manuscripts.",
+      "The complex has the headquarters of the Jawaharlal Nehru Memorial Fund, established in November 1964, Nehru Memorial Library, and also the Jawaharlal Nehru Fellowship. The Nehru Memorial Library is one of the finest ones for information on modern Indian history. Started in 1966, it functioned from the main building itself, till its present building was inaugurated within the complex grounds, in 1974.",
+      "Situated in a 12-hectare estate, the building is constructed of white stone and stucco, and faces the south side of Viceroy's House, known since 1950 as Rashtrapati Bhavan (President's House).  It has an arched entrance, recessed windows, and the first floor has a pillared veranda on the back of the building, which overlooks the lawns.",
+      "One of the four Nehru Planetariums in India, is also situated in Teen Murti House grounds. It was inaugurated by the then Prime Minister (and Nehru's daughter), Indira Gandhi, on 6 February 1984. The planetarium's sky theatre is used for screening shows and as a gallery. The planetarium was reopened in September 2010, after renovations worth  Rs. 11 crore, ahead of the 2010 Commonwealth Games and received Queen's Baton. It now has 'Definiti optical star projector \"Megastar\" that can show 2 million stars.",
+      "Close to the Nehru Planetarium within the Bhavan complex, stands the Shikargah, also known as Kushak Mahal, the hunting lodge of 14th-century ruler of the Sultanate of Delhi, Firoz Shah Tughlaq (r. 1351–1388 AD). Built on a high platform of rubble masonry accessed by stairs, the near square structure contains three open bays, containing arches, with each bay further divided into three compartments. Firoz Shah's fort, Firoz Shah Kotla was situated far away on the banks of Yamuna River. Though, the 1912 map of Delhi shows a stream flowing near it towards the Yamuna. The monument is today protected by Archaeological Survey of India (ASI), and the nearby Kushak Road is named after it."
+    ],
+    "keyFacts": [
+      "In 1911, the decision was made to transfer the winter capital of British India from Calcutta to Delhi (Simla remained the summer capital for the remainder of colonial rule).",
+      "The road on which it stood was named after the 1st Earl Roberts, the Commander-in-Chief for over seven years between 1885 and 1893.",
+      "After independence in August 1947, the house became the year-round official residence and workplace of the Prime Minister, and Field Marshal Sir Claude Auchinleck relocated."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "teen-murti-bhavan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Teen Murti Bhavan",
+        "url": "https://en.wikipedia.org/wiki/Teen_Murti_Bhavan",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "department-of-east-asian-studies-university-of-delhi-1964",
+    "destinationId": "delhi",
+    "sortYear": 1964,
+    "yearLabel": "AD 1964",
+    "title": "Department of East Asian Studies, University of Delhi, 1964",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Department of East Asian Studies (informally called as DEAS, DU), established in 1964 under the aegis of the University of Delhi, offers various courses related to East Asian studies and East Asian languages.",
+    "detailHref": "/destinations/delhi/history#department-of-east-asian-studies-university-of-delhi-1964",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "department-of-east-asian-studies-university-of-delhi"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Department of East Asian Studies, University of Delhi, 1964",
+        "url": "https://en.wikipedia.org/wiki/Department_of_East_Asian_Studies%2C_University_of_Delhi",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "maitreyi-college-1967",
+    "destinationId": "delhi",
+    "sortYear": 1967,
+    "yearLabel": "AD 1967",
+    "title": "Maitreyi College, 1967",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was established in July 1967 and named after the Vedic sage Maitreyi.",
+    "detailHref": "/destinations/delhi/history#maitreyi-college-1967",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "maitreyi-college"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Maitreyi College, 1967",
+        "url": "https://en.wikipedia.org/wiki/Maitreyi_College",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "indian-institute-of-planning-and-management-1973",
+    "destinationId": "delhi",
+    "sortYear": 1973,
+    "yearLabel": "AD 1973",
+    "title": "Indian Institute of Planning and Management, 1973",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Founded in 1973, the institute used to offer undergraduate, postgraduate and doctoral programmes in national economic planning and entrepreneurship, and international and fellowship programmes.",
+    "description": [
+      "IIPM was founded in 1973 in New Delhi. According to the institute its first residential, full-time, post-graduate diploma programme began in 1974. IIPM had 18 branches across India; in New Delhi, Mumbai, Gurgaon, Noida, Bangalore, Chennai, Ahmedabad, Kolkata, Chandigarh, Hyderabad, Pune, Lucknow, Indore, Bhubaneshwar, Bhopal, Jaipur, Dehradun, and Cochin.",
+      "IIPM was barred by the UGC from offering among other degrees, MBA or BBA programs after irregularities surfaced on its claims and functioning. IIPM then closed all its branches save for a research and training institute in Delhi. A UGC notice marks IIPM Delhi as unrecognized. The founding director of IIPM is Dr. M. K. Chaudhuri, and the honorary dean is Arindam Chaudhuri.",
+      "In 2005, the acting chairman of UGC, Prof V N Rajshekharan Pillai, said that IIPM's advertisements could be misleading. In June 2008, the Delhi High Court advised the UGC and IIPM to settle the matter amicably through an out-of-court settlement. According to the institute, it had not sought de jure recognition from any statutory body or accrediting authority. UGC and AICTE listed IIPM as a \"fake university\" and said it was not permitted to confer MBA and BBA degrees or authorised to operate as a university in India. IIPM filed a lawsuit in response. In June 2008, UGC and IIPM reached an agreement in the Delhi High Court. UGC agreed to remove IIPM's name from its list of fake universities and IIPM agreed to clarify that it offers only \"certificate courses\".",
+      "The institute says it is an academically independent and autonomous body without affiliation to any university and its programs do not fall under the purview of AIU, AICTE, UGC, or similar government-established regulatory bodies. The Uttarakhand University Registrar in February 2010 said that IIPM was running MBA and BBA degree programs without UGC and AICTE affiliations and that IIPM's continuing operation would be detrimental to institutions that operate with affiliations.",
+      "In July 2010, UGC issued a notice to IIPM after the Andhra Pradesh State Council of Higher Education questioned IIPM on the authenticity of its courses at its Hyderabad campus. UGC Chairman Ved Prakash said that IIPM was advertising its programs using the names of UGC, HRD Ministry and AICTE, and that \"it is indulging in cheating.\" IIPM Group President for Corporate Affairs Amit Saxena said the institute was not a university, was not empowered to award degrees on its own and was doing neither, and that IIPM was \"on-site academic partner of Manonmaniam Sundaranar University which grants its degrees to IIPM students.\" Saxena also said that IIPM had made representations to UGC and Andhra Pradesh State Council of Higher Education to clarify its position and that the subject was sub judice at the Delhi High Court. The registrar of Manonmaniam Sundaranar University confirmed that IIPM was authorized to offer Manonmaniam Sundaranar University's MBA/BBA programs in all of IIPM's 18 branches. Students of IIPM's Indian School of Business and Economics (ISBE) were informed by Manonmaniam Sundaranar University that theirs is a distance-learning degree arrangement.",
+      "In July 2019, the Supreme Court of India decided that AICTE has no jurisdiction over MBA education and that IIPM can conduct MBA education without AICTE's permission."
+    ],
+    "keyFacts": [
+      "According to the institute its first residential, full-time, post-graduate diploma programme began in 1974.",
+      "In 2005, the acting chairman of UGC, Prof V N Rajshekharan Pillai, said that IIPM's advertisements could be misleading.",
+      "In June 2008, the Delhi High Court advised the UGC and IIPM to settle the matter amicably through an out-of-court settlement."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "indian-institute-of-planning-and-management"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Indian Institute of Planning and Management",
+        "url": "https://en.wikipedia.org/wiki/Indian_Institute_of_Planning_and_Management",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 3
+  },
+  {
+    "slug": "rashtrapati-bhavan-museum-2014",
+    "destinationId": "delhi",
+    "sortYear": 2014,
+    "yearLabel": "AD 2014",
+    "title": "Rashtrapati Bhavan Museum, 2014",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "It was established on 25 July 2014 by Pranab Mukherjee, who served as the president of India at the time.",
+    "description": [
+      "On 25 July 2014, upon completing two years of his tenure, Indian president Pranab Mukherjee inaugurated a museum with fiber glass statues of all the former presidents in the Rashtrapati Bhavan. Built at a cost of ₹80 crore (equivalent to ₹128 crore or US$13 million in 2023), it was inaugurated by prime minister Narendra Modi.",
+      "I dedicate the Rashtrapati Bhavan Museum to the nation. I am sure this museum will enable the people of our nation obtain an inside view of Rashtrapati Bhavan, its art, architecture and vibrant community as well as educate them on the lives of various Presidents.",
+      "Apart from the inauguration of the museum, the completion of the second year of his presidency was also celebrated with a dinner for the council of ministers and the release of three books. The museum displayed the gifts received by the presidents of India during their tenure, which were previously stored in the Toshakhana. Pankaj Protim Bordoloi served as the first museologist.",
+      "The next phase of the Rashtrapati Bhavan Museum opened on 26 July 2016, marking the completion of four years of presidency by Mukherjee. Similar to the first phase, the second phase was also built at a cost of ₹80 crore (equivalent to ₹128 crore or US$13 million in 2023), in the location that was previously the garage for the Rashtrapati Bhavan. Prime minister Modi inaugurated the second phase of the museum in present of president Mukherjee and vice-president Mohammad Hamid Ansari.",
+      "Built on an area of 10,000 square metres (110,000 sq ft), the Garage Museum was made to showcase the history behind the development of the Rashtrapati Bhavan, the British viceroys who inhabited the building, the independence and declaration of India as a republic nation, the lives and contributions of the presidents of India, and the life inside the Rashtrapati Bhavan.",
+      "The biggest point of my happiness is that my political background is different, his is different. But in a democracy, people brought up in different political ideologies too can work shoulder to shoulder, this I can feel every moment I work with him.",
+      "President Mukherjee also launched a section within the official Rashtrapati Bhavan website dedicated to information and services for the museum and the Amrit Udyan garden outside the presidential palace.",
+      "As a final step, the museum was opened for the public on 2 October 2016, covering 12,000 square metres (130,000 sq ft) in area with its entry and exit gates on Mother Teresa Crescent Road. At the inauguration, the museum was finally opened for the public. Other than the presidents and important personalities associated with the Indian independence movement, the museum also displayed silicon sculptures of people associated with the construction of the Rashtrapati Bhavan.",
+      "During the initial days of the tenure of the President, he wanted to know and explain to the public the specific details about President's house and about the important treaties which took place here. This place came into being due to his deep interest in history. Our aim is to take people on a tour of history and turning Rashtrapati Bhawan from a high-security region to a visitor-friendly place."
+    ],
+    "keyFacts": [
+      "Built at a cost of ₹80 crore (equivalent to ₹128 crore or US$13 million in 2023), it was inaugurated by prime minister Narendra Modi.",
+      "The next phase of the Rashtrapati Bhavan Museum opened on 26 July 2016, marking the completion of four years of presidency by Mukherjee.",
+      "As a final step, the museum was opened for the public on 2 October 2016, covering 12,000 square metres (130,000 sq ft) in area with its entry and exit gates on Mother Teresa Crescent Road."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "rashtrapati-bhavan-museum"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Rashtrapati Bhavan Museum",
+        "url": "https://en.wikipedia.org/wiki/Rashtrapati_Bhavan_Museum",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 3
   }
 ]
