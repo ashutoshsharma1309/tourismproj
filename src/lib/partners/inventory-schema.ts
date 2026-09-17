@@ -2,6 +2,7 @@ import { z } from "zod";
 
 import { isKnownDestination } from "@/lib/destinations/registry";
 import type { PartnerMessageKey } from "@/lib/i18n/partner-messages";
+import { rupeesToPaise } from "@/lib/booking/stay";
 import { ACCOMMODATION_TYPES } from "@/lib/partners/schema";
 
 /**
@@ -70,10 +71,22 @@ export type NewListing = z.infer<typeof newListingSchema>;
 const int = (min: number, max: number, message: PartnerMessageKey) =>
   z.coerce.number({ message }).int(message).min(min, message).max(max, message);
 
+/**
+ * A nightly rate typed in rupees — "2500" or "2,500.50" — parsed to paise as
+ * a string, never through a float. Empty means "no rate": the room type then
+ * cannot be booked, and nothing fills the gap.
+ */
+const optionalRupees = z
+  .string()
+  .trim()
+  .refine((v) => v === "" || rupeesToPaise(v) !== null, key("error.price"))
+  .transform((v) => (v === "" ? null : rupeesToPaise(v)));
+
 export const unitSchema = z.object({
   name: z.string().trim().min(2, key("error.unitName")).max(80, key("error.unitName")),
   capacity: int(1, 50, "error.capacity"),
   totalQuantity: int(1, 500, "error.quantity"),
+  basePrice: optionalRupees,
 });
 export type UnitInput = z.infer<typeof unitSchema>;
 
@@ -83,6 +96,8 @@ export const availabilitySchema = z.object({
   to: z.string().trim(),
   mode: z.enum(["open", "close"]),
   rooms: int(0, 500, "error.rooms"),
+  /* Optional: a rate for these dates only, replacing the room type's rate. */
+  price: optionalRupees,
 });
 export type AvailabilityInput = z.infer<typeof availabilitySchema>;
 

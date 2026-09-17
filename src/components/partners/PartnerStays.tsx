@@ -63,7 +63,7 @@ export function PartnerStays({
       </div>
       <p className="mt-2 max-w-2xl text-body text-muted">
         Properties whose owners partnered with TerraStory, each verified by a reviewer before it
-        appeared here. You book with the property directly, through its own website or telephone.
+        appeared here. Where a property has set rooms and rates, you can reserve them here; otherwise you book through its own website or telephone.
       </p>
 
       <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -120,6 +120,11 @@ export function PartnerStays({
           );
         })}
       </ul>
+      <p className="mt-4 text-small">
+        <Link href={`/search?destination=${destinationId}`} prefetch={false} className="font-medium text-primary hover:underline">
+          Search rooms and dates at verified stays in {destinationName}
+        </Link>
+      </p>
     </section>
   );
 }

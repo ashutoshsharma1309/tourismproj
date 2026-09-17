@@ -79,7 +79,12 @@ export async function moveListingAction(_prev: WorkspaceState, formData: FormDat
 }
 
 function unitValues(formData: FormData) {
-  return { name: text(formData, "name"), capacity: text(formData, "capacity"), totalQuantity: text(formData, "totalQuantity") };
+  return {
+    name: text(formData, "name"),
+    capacity: text(formData, "capacity"),
+    totalQuantity: text(formData, "totalQuantity"),
+    basePrice: text(formData, "basePrice"),
+  };
 }
 
 export async function createUnitAction(_prev: WorkspaceState, formData: FormData): Promise<WorkspaceState> {

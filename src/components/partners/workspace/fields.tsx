@@ -28,9 +28,10 @@ export function useWorkspaceForm(action: (prev: WorkspaceState, form: FormData) 
 const control = "w-full rounded-lg border bg-surface px-3 py-2.5 text-small focus:border-primary focus:outline-none";
 
 export function Field({
-  name, label, hint, error, required, as, type = "text", rows, defaultValue, min, max, requiredLabel, id,
+  name, label, hint, error, required, as, type = "text", rows, defaultValue, min, max, requiredLabel, id, inputMode,
 }: {
   name: string; label: string; hint?: string; error?: string; required?: boolean; requiredLabel?: string;
+  inputMode?: "decimal" | "numeric" | "text";
   as?: "textarea"; type?: string; rows?: number; defaultValue?: string; min?: number | string; max?: number | string; id?: string;
 }) {
   const fieldId = id ?? name;
@@ -51,7 +52,7 @@ export function Field({
         {label}
         {required ? <span className="text-error" aria-label={requiredLabel}> *</span> : null}
       </label>
-      {as === "textarea" ? <textarea {...shared} rows={rows ?? 4} /> : <input {...shared} type={type} min={min} max={max} />}
+      {as === "textarea" ? <textarea {...shared} rows={rows ?? 4} /> : <input {...shared} type={type} min={min} max={max} inputMode={inputMode} />}
       {hint ? <span id={hintId} className="text-caption leading-relaxed text-subtle">{hint}</span> : null}
       {error ? <span id={errorId} className="text-caption text-error">{error}</span> : null}
     </div>

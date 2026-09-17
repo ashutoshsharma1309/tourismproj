@@ -20,6 +20,7 @@ const STATE_CLASS = {
   past: "bg-surface-muted/40 text-subtle",
   "not-set": "border border-dashed border-border text-muted",
   closed: "bg-error-soft/60 text-error",
+  full: "bg-warning-soft text-warning",
   open: "bg-success-soft text-success",
 } as const;
 
@@ -107,6 +108,7 @@ export default async function PartnerCalendarPage({ searchParams }: { searchPara
                         const label =
                           state === "open" ? t("calendar.openOf", { open: row?.unitsOpen ?? 0, total: chosen.unit.totalQuantity })
                           : state === "closed" ? t("calendar.closed")
+                          : state === "full" ? t("calendar.full")
                           : state === "past" ? t("calendar.legendPast")
                           : t("calendar.notSet");
                         return (
@@ -131,6 +133,7 @@ export default async function PartnerCalendarPage({ searchParams }: { searchPara
               <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-caption text-muted" aria-label={t("calendar.legend")}>
                 <li className="flex items-center gap-1.5"><span className={cn("size-3 rounded-sm", STATE_CLASS.open)} aria-hidden />{t("calendar.legendOpen")}</li>
                 <li className="flex items-center gap-1.5"><span className={cn("size-3 rounded-sm", STATE_CLASS.closed)} aria-hidden />{t("calendar.legendClosed")}</li>
+                <li className="flex items-center gap-1.5"><span className={cn("size-3 rounded-sm", STATE_CLASS.full)} aria-hidden />{t("calendar.legendFull")}</li>
                 <li className="flex items-center gap-1.5"><span className={cn("size-3 rounded-sm", STATE_CLASS["not-set"])} aria-hidden />{t("calendar.legendNotSet")}</li>
                 <li className="flex items-center gap-1.5"><span className={cn("size-3 rounded-sm", STATE_CLASS.past)} aria-hidden />{t("calendar.legendPast")}</li>
               </ul>
@@ -138,7 +141,7 @@ export default async function PartnerCalendarPage({ searchParams }: { searchPara
 
             <aside>
               <AvailabilityForm
-                copy={copyFor(t, ["calendar.update", "calendar.from", "calendar.to", "calendar.action", "calendar.actionOpen", "calendar.actionClose", "calendar.rooms", "calendar.apply", "calendar.applying"])}
+                copy={copyFor(t, ["calendar.update", "calendar.from", "calendar.to", "calendar.action", "calendar.actionOpen", "calendar.actionClose", "calendar.rooms", "calendar.price", "calendar.priceHint", "calendar.apply", "calendar.applying"])}
                 unitId={chosen.unit.id}
                 today={today}
                 maxDay={addDays(today, HORIZON_DAYS)}

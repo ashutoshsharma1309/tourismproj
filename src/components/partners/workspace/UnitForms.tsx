@@ -15,11 +15,13 @@ export function AddUnitForm({ copy, listingId }: { copy: Copy; listingId: string
   return (
     <form action={formAction} onSubmit={onSubmit} noValidate className="rounded-xl border border-dashed border-border-strong p-4" aria-label={say(copy, "detail.addUnit")}>
       <input type="hidden" name="listingId" value={listingId} />
-      <div key={generation} className="grid gap-4 sm:grid-cols-[2fr_1fr_1fr]">
+      <div key={generation} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.2fr]">
         <Field id="new-unit-name" name="name" label={say(copy, "field.unitName")} hint={say(copy, "field.unitNameHint")} required defaultValue={values.name} error={errors.name} />
         <Field id="new-unit-capacity" name="capacity" type="number" min={1} max={50} label={say(copy, "field.capacity")} required defaultValue={values.capacity ?? "2"} error={errors.capacity} />
         <Field id="new-unit-quantity" name="totalQuantity" type="number" min={1} max={500} label={say(copy, "field.quantity")} required defaultValue={values.totalQuantity ?? "1"} error={errors.totalQuantity} />
+        <Field id="new-unit-price" name="basePrice" inputMode="decimal" label={say(copy, "field.basePrice")} defaultValue={values.basePrice} error={errors.basePrice} />
       </div>
+      <p className="mt-2 text-caption leading-relaxed text-subtle">{say(copy, "field.basePriceHint")}</p>
       <div className="mt-4 flex flex-wrap items-center gap-4">
         <button type="submit" disabled={pending} className={buttonClasses({ variant: "primary", size: "sm" })}>
           {pending ? say(copy, "detail.adding") : say(copy, "detail.addUnit")}
@@ -35,19 +37,21 @@ export function EditUnitForm({
   unit,
 }: {
   copy: Copy;
-  unit: { id: string; name: string; capacity: number; totalQuantity: number };
+  unit: { id: string; name: string; capacity: number; totalQuantity: number; basePrice: string };
 }) {
   const { state, formAction, pending, onSubmit } = useWorkspaceForm(updateUnitAction);
-  const values = state.values ?? { name: unit.name, capacity: String(unit.capacity), totalQuantity: String(unit.totalQuantity) };
+  const values = state.values ?? { name: unit.name, capacity: String(unit.capacity), totalQuantity: String(unit.totalQuantity), basePrice: unit.basePrice };
   const errors = state.errors ?? {};
   return (
     <form action={formAction} onSubmit={onSubmit} noValidate className="rounded-xl border border-border bg-surface p-4" data-unit={unit.id}>
       <input type="hidden" name="unitId" value={unit.id} />
-      <div className="grid gap-4 sm:grid-cols-[2fr_1fr_1fr]">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1.2fr]">
         <Field id={`unit-${unit.id}-name`} name="name" label={say(copy, "field.unitName")} required defaultValue={values.name} error={errors.name} />
         <Field id={`unit-${unit.id}-capacity`} name="capacity" type="number" min={1} max={50} label={say(copy, "field.capacity")} required defaultValue={values.capacity} error={errors.capacity} />
         <Field id={`unit-${unit.id}-quantity`} name="totalQuantity" type="number" min={1} max={500} label={say(copy, "field.quantity")} required defaultValue={values.totalQuantity} error={errors.totalQuantity} />
+        <Field id={`unit-${unit.id}-price`} name="basePrice" inputMode="decimal" label={say(copy, "field.basePrice")} defaultValue={values.basePrice} error={errors.basePrice} />
       </div>
+      {!values.basePrice ? <p className="mt-2 text-caption text-warning">{say(copy, "detail.noRate")}</p> : null}
       <div className="mt-4 flex flex-wrap items-center gap-3">
         <button type="submit" name="intent" value="save" disabled={pending} className={buttonClasses({ variant: "outline", size: "sm" })}>
           {say(copy, "detail.saveUnit")}

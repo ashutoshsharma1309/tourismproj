@@ -51,8 +51,9 @@ export function AvailabilityForm({
         </div>
       </fieldset>
       {mode === "open" ? (
-        <div className="mt-4 max-w-40">
+        <div className="mt-4 grid gap-4 sm:grid-cols-2">
           <Field name="rooms" type="number" min={1} max={totalQuantity} label={say(copy, "calendar.rooms")} required defaultValue={values.rooms ?? String(totalQuantity)} error={errors.rooms} />
+          <Field name="price" inputMode="decimal" label={say(copy, "calendar.price")} hint={say(copy, "calendar.priceHint")} defaultValue={values.price} error={errors.price} />
         </div>
       ) : null}
       <div className="mt-5 flex flex-wrap items-center gap-4">

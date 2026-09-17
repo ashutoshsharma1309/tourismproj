@@ -96,7 +96,8 @@
     "qa:guide": "tsx scripts/qa/guide-scope.mts",
     "qa:india": "tsx scripts/qa/india-only.mts",
     "qa:partners": "tsx scripts/qa/partners.mts",
-    "qa:accounts": "tsx scripts/qa/accounts.mts"
+    "qa:accounts": "tsx scripts/qa/accounts.mts",
+    "qa:booking": "tsx scripts/qa/booking.mts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

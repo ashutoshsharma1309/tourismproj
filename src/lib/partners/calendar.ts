@@ -83,10 +83,16 @@ export function rangeProblem(from: string, to: string, today: string): "invalid"
   return null;
 }
 
-export type DayState = "past" | "not-set" | "closed" | "open";
+export type DayState = "past" | "not-set" | "closed" | "full" | "open";
 
-export function dayState(day: string, today: string, row: { unitsOpen: number } | undefined): DayState {
+export function dayState(
+  day: string,
+  today: string,
+  row: { unitsOpen: number; closed?: boolean; unitsHeld?: number; unitsBooked?: number } | undefined,
+): DayState {
   if (day < today) return "past";
   if (!row) return "not-set";
-  return row.unitsOpen > 0 ? "open" : "closed";
+  if (row.closed) return "closed";
+  if (row.unitsOpen > 0) return "open";
+  return (row.unitsHeld ?? 0) + (row.unitsBooked ?? 0) > 0 ? "full" : "closed";
 }

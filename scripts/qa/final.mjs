@@ -94,6 +94,9 @@ const SUITES = [
      knowledge, event mapping, code guarantees, signed-out boundaries, and
      with a database the full traveller flow including user-to-user isolation. */
   { name: "qa:accounts", script: "scripts/qa/accounts.mts", reads: "server", runner: "tsx" },
+  /* Booking: stay and money rules, the hold engine under real parallel
+     transactions, expiry, and search → listing → hold → checkout in a browser. */
+  { name: "qa:booking", script: "scripts/qa/booking.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

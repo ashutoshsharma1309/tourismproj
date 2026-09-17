@@ -6,6 +6,7 @@ import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
 import { WorkspaceShell } from "@/components/partners/workspace/WorkspaceShell";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
+import { heldRoomsByListing } from "@/db/queries/booking";
 import { listingSummariesForPartner } from "@/db/queries/partner-inventory";
 import { agreementsForPartner, referralSummaryForPartner } from "@/db/queries/partners";
 import { getDestination } from "@/lib/destinations/registry";
@@ -29,8 +30,8 @@ export const dynamic = "force-dynamic";
  * whether its rooms and calendar are set up, referral activity and commercial
  * terms. The partner comes from the session (`partnerAccess` → `partnerFor`),
  * never from the URL, and every number is a count of real rows or absent.
- * Bookings are not shown because none exist yet; this page will not
- * pretend otherwise.
+ * Confirmed bookings are not shown because payment is not connected yet;
+ * rooms travellers are holding are, because those rows are real.
  */
 export default async function PartnerDashboardPage() {
   const t = partnerTranslator(await partnerLanguage());
@@ -44,6 +45,7 @@ export default async function PartnerDashboardPage() {
     agreementsForPartner(partner.id),
     referralSummaryForPartner(partner.id),
   ]);
+  const held = await heldRoomsByListing(summaries.map((s) => s.listing.id));
   const vendorStatus = partner.status as VendorStatus;
   const verified = isVerifiedVendor(vendorStatus);
   const activeAgreements = agreements.filter((a) => a.status === "ACTIVE");
@@ -116,6 +118,9 @@ export default async function PartnerDashboardPage() {
                     <p className="mt-1 text-small text-muted" data-testid="inventory-summary">
                       {units === 0 ? t("overview.noUnits") : t("overview.unitsSummary", { units, days: openDays })}
                     </p>
+                    {(held.get(listing.id) ?? 0) > 0 ? (
+                      <p className="mt-1 text-small text-warning" data-testid="held-summary">{t("overview.holds", { rooms: held.get(listing.id) ?? 0 })}</p>
+                    ) : null}
                   </div>
                   <div>
                     <p className="text-caption text-subtle">{t("overview.referrals")}</p>

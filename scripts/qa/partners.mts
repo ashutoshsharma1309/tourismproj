@@ -284,20 +284,22 @@ check("a non-date is refused", rangeProblem("2026-02-30", "2026-03-01", "2026-01
 check("a valid range passes", rangeProblem("2026-09-17", "2026-09-30", "2026-09-17") === null);
 
 check("a room type needs a name, 1–50 guests and 1–500 rooms",
-  unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "4" }).success
-  && !unitSchema.safeParse({ name: "S", capacity: "2", totalQuantity: "4" }).success
-  && !unitSchema.safeParse({ name: "Standard room", capacity: "0", totalQuantity: "4" }).success
-  && !unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "501" }).success
-  && !unitSchema.safeParse({ name: "Standard room", capacity: "2.5", totalQuantity: "4" }).success);
+  unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "4", basePrice: "" }).success
+  && !unitSchema.safeParse({ name: "S", capacity: "2", totalQuantity: "4", basePrice: "" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "0", totalQuantity: "4", basePrice: "" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "501", basePrice: "" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "2.5", totalQuantity: "4", basePrice: "" }).success);
 check("availability needs a unit id and a whole number of rooms",
-  availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2" }).success
-  && !availabilitySchema.safeParse({ unitId: "x", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2" }).success
-  && !availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "-1" }).success);
+  availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2", price: "" }).success
+  && !availabilitySchema.safeParse({ unitId: "x", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2", price: "" }).success
+  && !availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "-1", price: "" }).success);
 check("a new listing refuses an unknown destination and a bad time",
   !newListingSchema.safeParse({ name: "QA", type: "HOTEL", destinationId: "atlantis", address: "somewhere long enough", area: "", mapsUrl: "", officialWebsite: "", bookingUrl: "", description: "", localCharacter: "", amenities: "", checkInFrom: "", checkOutBy: "", houseRules: "", cancellationTerms: "" }).success
   && !listingDetailsSchema.safeParse({ description: "", localCharacter: "", amenities: "", checkInFrom: "25:00", checkOutBy: "", houseRules: "", cancellationTerms: "" }).success);
-check("inventory schemas carry no price, rate, card or bank field",
-  ![...Object.keys(newListingSchema.shape), ...Object.keys(unitSchema.shape), ...Object.keys(availabilitySchema.shape)].some((k) => /price|rate|card|bank|upi|paise|amount/i.test(k)));
+check("inventory schemas carry no card, bank or payment field; rates arrive only as partner-typed rupees",
+  ![...Object.keys(newListingSchema.shape), ...Object.keys(unitSchema.shape), ...Object.keys(availabilitySchema.shape)].some((k) => /card|bank|upi|account|amount/i.test(k))
+  && unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "4", basePrice: "2500" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "4", basePrice: "free" }).success);
 
 const WORKSPACE_PAGES = [
   "src/app/(v1)/partner/dashboard/page.tsx",
@@ -322,16 +324,16 @@ check("partner writes match the record against the session's partner in the quer
 check("every workspace action goes through the session preamble",
   ["src/app/(v1)/partner/listings/actions.ts", "src/app/(v1)/partner/calendar/actions.ts", "src/app/(v1)/partner/verification/actions.ts"]
     .every((f) => (read(f).match(/export async function/g) ?? []).length === (read(f).match(/await workspaceAction\(\)/g) ?? []).length));
-check("the calendar locks the room type and writes only units_open",
-  /ownedUnit\(tx, scope, input\.unitId\)/.test(inventoryStore) && /\.for\("update"/.test(inventoryStore) && /DO UPDATE SET units_open = EXCLUDED\.units_open/.test(inventoryStore) && !/units_held\s*=|units_booked\s*=/.test(inventoryStore));
+check("the calendar locks the room type and never writes held or booked rooms",
+  /ownedUnit\(tx, scope, input\.unitId\)/.test(inventoryStore) && /\.for\("update"/.test(inventoryStore) && /DO UPDATE SET units_open = EXCLUDED\.units_open, closed = EXCLUDED\.closed/.test(inventoryStore) && !/units_held\s*=|units_booked\s*=/.test(inventoryStore));
 check("store transitions are idempotent", /if \(from === input\.to\)/.test(read("src/lib/partners/store.ts")) && /if \(from === to\) return \{ ok: true/.test(inventoryStore));
 const migration = read("drizzle/sql/0002_partner_inventory.sql");
 check("the database refuses to publish for an unverified vendor", /CREATE TRIGGER partner_properties_require_verified_vendor/.test(migration) && /status IN \('VERIFIED', 'APPROVED'\)/.test(migration));
 check("the database unpublishes a vendor's listings when it loses verification", /CREATE TRIGGER partners_unpublish_on_deverification/.test(migration));
 check("the database keeps held + booked + open within the unit's quantity", /CREATE TRIGGER availability_within_quantity/.test(migration) && /CREATE TRIGGER listing_units_quantity_covers_commitments/.test(migration));
 check("public partner stays require a still-verified vendor", /vendorIsVerified = inArray\(partners\.status, \["VERIFIED", "APPROVED"\]\)/.test(read("src/db/queries/partners.ts")));
-check("no public surface reads rooms or availability",
-  walk("src/app").filter((f) => !f.includes("/partner/") && !f.includes("/admin/")).every((f) => !/partner-inventory|availabilityForPartnerUnit|listingUnits/.test(read(f))));
+check("no public surface reads the partner's private inventory queries",
+  walk("src/app").filter((f) => !f.includes("/partner/") && !f.includes("/admin/")).every((f) => !/partner-inventory|availabilityForPartnerUnit/.test(read(f))));
 check("vendor documents are private: signed links only, business documents only",
   /createSignedUrl/.test(read("src/db/storage.ts")) && !/getPublicUrl/.test(read("src/db/storage.ts")) && /UPLOADABLE_DOCUMENT_KINDS = \["GOVT_REG", "PROPERTY_PROOF", "GST"\]/.test(read("src/lib/partners/inventory-schema.ts")));
 check("robots disallows the partner workspace", ["/partner/verification", "/partner/listings", "/partner/calendar"].every((p) => read("src/app/robots.ts").includes(`"${p}"`)));
@@ -919,8 +921,14 @@ async function runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseU
     await aPage.reload({ waitUntil: "load" });
     const editForm = aPage.locator(`form[data-unit="${unitId}"]`);
     await editForm.locator('input[name="totalQuantity"]').fill("4");
+    await editForm.locator('input[name="basePrice"]').fill("2,500 rupees");
     reply = await submitAndRead(aPage, editForm, () => editForm.locator('button[value="save"]').click());
-    check("G4 a partner updates their own room count", (await sql`select total_quantity from listing_units where id = ${unitId}`)[0]?.total_quantity === 4, reply);
+    check("G4 a rate that is not a rupee amount is refused", (await editForm.locator("text=Enter a rate in rupees").count()) > 0 && (await sql`select base_price_paise from listing_units where id = ${unitId}`)[0]?.base_price_paise === null, reply);
+    await editForm.locator('input[name="basePrice"]').fill("2500.50");
+    reply = await submitAndRead(aPage, editForm, () => editForm.locator('button[value="save"]').click());
+    const [unitAfter] = await sql`select total_quantity, base_price_paise from listing_units where id = ${unitId}`;
+    check("G4 a partner updates their own room count and nightly rate, stored as exact paise",
+      unitAfter?.total_quantity === 4 && unitAfter.base_price_paise === "250050", `${reply} · ${JSON.stringify(unitAfter)}`);
     check("G4 room changes are audited", (await auditActions(unitId)).join(",") === "listing_unit.created,listing_unit.updated", (await auditActions(unitId)).join(","));
 
     /* ---- G5. The calendar persists, and the database holds the ceiling. */
@@ -929,19 +937,23 @@ async function runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseU
     const d3 = addDays(today, 4);
     await aPage.goto(`${BASE}/partner/calendar?unit=${unitId}&month=${d1.slice(0, 7)}`, { waitUntil: "load" });
     const calForm = aPage.locator('form[aria-labelledby="availability-form-title"]');
-    const setRange = async (from: string, to: string, mode: "open" | "close", rooms?: string) => {
+    const setRange = async (from: string, to: string, mode: "open" | "close", rooms?: string, price = "") => {
       await calForm.locator('input[name="from"]').fill(from);
       await calForm.locator('input[name="to"]').fill(to);
       await calForm.locator(`input[name="mode"][value="${mode}"]`).check();
       if (rooms !== undefined) await calForm.locator('input[name="rooms"]').fill(rooms);
+      if (mode === "open") await calForm.locator('input[name="price"]').fill(price);
       return submitAndRead(aPage, calForm, () => calForm.locator('button[type="submit"]').click());
     };
-    reply = await setRange(d1, d3, "open", "2");
-    let days = await sql`select date::text as date, units_open from availability where listing_unit_id = ${unitId} order by date`;
-    check("G5 opening three dates writes three rows of two rooms", days.length === 3 && days.every((d) => d.units_open === 2) && /Saved 3 dates/.test(reply), `${reply} · ${JSON.stringify(days)}`);
+    reply = await setRange(d1, d3, "open", "2", "3000");
+    let days = await sql`select date::text as date, units_open, price_paise_override, closed from availability where listing_unit_id = ${unitId} order by date`;
+    check("G5 opening three dates writes three rows of two rooms at the date rate",
+      days.length === 3 && days.every((d) => d.units_open === 2 && d.price_paise_override === "300000" && d.closed === false) && /Saved 3 dates/.test(reply), `${reply} · ${JSON.stringify(days)}`);
     reply = await setRange(addDays(today, 3), addDays(today, 3), "close");
     days = await sql`select date::text as date, units_open from availability where listing_unit_id = ${unitId} order by date`;
-    check("G5 closing a date sets it to zero and leaves its neighbours", days.map((d) => d.units_open).join(",") === "2,0,2", `${reply} · ${JSON.stringify(days)}`);
+    check("G5 closing a date sets it to zero, marks it closed and leaves its neighbours",
+      days.map((d) => d.units_open).join(",") === "2,0,2" && (await sql`select closed from availability where listing_unit_id = ${unitId} and date = ${addDays(today, 3)}`)[0]?.closed === true,
+      `${reply} · ${JSON.stringify(days)}`);
     reply = await setRange(d1, d1, "open", "9");
     check("G5 opening more rooms than exist is refused and changes nothing",
       /more rooms than this room type has/.test(reply) && (await sql`select units_open from availability where listing_unit_id = ${unitId} and date = ${d1}`)[0]?.units_open === 2, reply);
@@ -1067,7 +1079,11 @@ async function runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseU
     const pub = await fetch(`${BASE}/destinations/varanasi/partner-stays/${newId}`, { redirect: "manual" });
     check("G9 a valid published listing is public", pub.status === 200, `HTTP ${pub.status}`);
     const pubBody = await pub.text();
-    check("G9 the public page shows no rooms, dates or house policies", !/Standard Room|No smoking|units_open|rooms open/i.test(pubBody));
+    check("G9 without dates the public page prices nothing and shows the partner's own house information",
+      !/units_open|per room for|data-reserve=/i.test(pubBody) && /Choose your dates to see which rooms are open/.test(pubBody) && /No smoking/.test(pubBody));
+    const datedPub = await (await fetch(`${BASE}/destinations/varanasi/partner-stays/${newId}?checkIn=${d1}&checkOut=${addDays(d1, 1)}&guests=2`)).text();
+    check("G9 with an open date the partner's rate and room appear, from the partner's own rows",
+      /Standard Room/.test(datedPub) && /₹3,000 per room for 1 night/.test(datedPub) && (datedPub.match(/data-reserve=/g) ?? []).length === 1);
 
     reply = await decide("SUSPENDED", "Suspended for the QA check (QA synthetic).");
     const [suspended] = await sql`select p.status as vendor, l.status as listing from partners p join partner_properties l on l.partner_id = p.id where l.id = ${newId}`;

@@ -164,6 +164,11 @@ export async function editListingDetails(scope: Scope, listingId: string, patch:
 
 /* -------------------------------------------------------------- room types */
 
+/** Audit rows are JSON: paise travel as strings. */
+function unitAudit(input: UnitInput) {
+  return { name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity, basePricePaise: input.basePrice?.toString() ?? null };
+}
+
 export async function createUnit(scope: Scope, listingId: string, input: UnitInput): Promise<InventoryResult<{ unitId: string }>> {
   if (!hasDatabase) return { ok: false, error: "error.generic" };
   try {
@@ -172,10 +177,10 @@ export async function createUnit(scope: Scope, listingId: string, input: UnitInp
       if (!listing) return { ok: false, error: "error.notFound" };
       const [unit] = await tx
         .insert(listingUnits)
-        .values({ listingId, name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity })
+        .values({ listingId, name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity, basePricePaise: input.basePrice })
         .returning({ id: listingUnits.id });
       if (!unit) return { ok: false, error: "error.generic" };
-      await audit(tx, scope, "listing_unit.created", "listing_unit", unit.id, null, { listingId, ...input });
+      await audit(tx, scope, "listing_unit.created", "listing_unit", unit.id, null, unitAudit(input));
       return { ok: true, data: { unitId: unit.id } };
     });
   } catch (error) {
@@ -190,13 +195,14 @@ export async function updateUnit(scope: Scope, unitId: string, input: UnitInput)
     return await db.transaction(async (tx) => {
       const unit = await ownedUnit(tx, scope, unitId);
       if (!unit) return { ok: false, error: "error.notFound" };
-      const before = { name: unit.name, capacity: unit.capacity, totalQuantity: unit.totalQuantity };
-      if (JSON.stringify(before) === JSON.stringify(input)) return { ok: true, data: null };
+      const before = unitAudit({ name: unit.name, capacity: unit.capacity, totalQuantity: unit.totalQuantity, basePrice: unit.basePricePaise });
+      const after = unitAudit(input);
+      if (JSON.stringify(before) === JSON.stringify(after)) return { ok: true, data: null };
       await tx
         .update(listingUnits)
-        .set({ name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity, updatedAt: new Date() })
+        .set({ name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity, basePricePaise: input.basePrice, updatedAt: new Date() })
         .where(eq(listingUnits.id, unitId));
-      await audit(tx, scope, "listing_unit.updated", "listing_unit", unitId, before, { ...input });
+      await audit(tx, scope, "listing_unit.updated", "listing_unit", unitId, before, after);
       return { ok: true, data: null };
     });
   } catch (error) {
@@ -249,18 +255,24 @@ export async function setAvailability(scope: Scope, input: AvailabilityInput, to
       if (!unit) return { ok: false, error: "error.notFound" };
       if (rooms > unit.totalQuantity) return { ok: false, error: "error.exceedsQuantity" };
 
+      const closed = input.mode === "close";
+      const price = closed ? null : input.price;
       await tx.execute(sql`
-        INSERT INTO availability (listing_unit_id, date, units_open)
-        SELECT ${input.unitId}::uuid, day::date, ${rooms}
+        INSERT INTO availability (listing_unit_id, date, units_open, closed, price_paise_override)
+        SELECT ${input.unitId}::uuid, day::date, ${rooms}, ${closed}, ${price === null ? null : price.toString()}::bigint
         FROM generate_series(${input.from}::date, ${input.to}::date, interval '1 day') AS day
         ON CONFLICT (listing_unit_id, date)
-        DO UPDATE SET units_open = EXCLUDED.units_open, updated_at = now()
+        DO UPDATE SET units_open = EXCLUDED.units_open, closed = EXCLUDED.closed,
+          price_paise_override = CASE WHEN EXCLUDED.closed THEN availability.price_paise_override ELSE EXCLUDED.price_paise_override END,
+          updated_at = now()
       `);
       const days = spanDays(input.from, input.to);
       await audit(tx, scope, input.mode === "close" ? "availability.closed" : "availability.opened", "listing_unit", input.unitId, null, {
         from: input.from,
         to: input.to,
         unitsOpen: rooms,
+        closed,
+        pricePaiseOverride: price === null ? null : price.toString(),
         days,
       });
       return { ok: true, data: { days } };

@@ -20,6 +20,7 @@ export async function setAvailabilityAction(_prev: WorkspaceState, formData: For
     to: text(formData, "to"),
     mode: text(formData, "mode"),
     rooms: text(formData, "mode") === "close" ? "0" : text(formData, "rooms"),
+    price: text(formData, "mode") === "close" ? "" : text(formData, "price"),
   };
   const parsed = availabilitySchema.safeParse(values);
   if (!parsed.success) return { status: "error", values, errors: translateKeys(t, fieldKeys(parsed.error)), message: t("error.invalid") };

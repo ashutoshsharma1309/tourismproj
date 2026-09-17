@@ -136,8 +136,7 @@ Everything is removed afterwards.
 
 ## Not in Phase 1
 
-- **Prices and booking.** No rate is collected; `availability.price_paise_override` stays unused until checkout (Phase 2).
-- **Public rooms and dates.** Availability is private to the partner. The public page is unchanged.
+- **Prices and booking.** Added in Phase 2 (`docs/booking.md`): nightly rates per room type, date rates and closed dates in the calendar, and public rooms for travellers who choose dates.
 - **Listing photographs.** No upload path exists yet; partner photographs need a licence statement and moderation before they can appear.
 - **Other vendor types.** Taxi, guide and experience operators share the vendor, unit and calendar model, but onboarding asks only for stays.
 - **Per-document review.** Reviewers see documents but record decisions for the organisation, not for each file.

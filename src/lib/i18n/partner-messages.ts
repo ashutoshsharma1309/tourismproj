@@ -188,6 +188,9 @@ const en = {
   "field.unitNameHint": "For example: Standard room, Family suite, Dormitory bed.",
   "field.capacity": "Guests per room",
   "field.quantity": "Number of rooms",
+  "field.basePrice": "Nightly rate per room (₹)",
+  "field.basePriceHint": "Leave empty until you are ready to take bookings: a room type without a rate cannot be booked.",
+  "detail.noRate": "No rate set, so travellers cannot book this room type.",
   "field.notGiven": "Not given",
   "field.required": "required",
   "field.choose": "Choose…",
@@ -219,6 +222,11 @@ const en = {
   "calendar.actionOpen": "Open rooms",
   "calendar.actionClose": "Close dates",
   "calendar.rooms": "Rooms open",
+  "calendar.price": "Rate for these dates (₹, optional)",
+  "calendar.priceHint": "Leave empty to use the room type's nightly rate.",
+  "calendar.full": "Fully held or booked",
+  "calendar.legendFull": "Full",
+  "overview.holds": "{rooms} rooms held by travellers awaiting payment",
   "calendar.apply": "Apply",
   "calendar.applying": "Saving…",
   "calendar.applied": "Saved {days} dates.",
@@ -252,6 +260,7 @@ const en = {
   "error.destination": "Choose one of TerraStory's destinations.",
   "error.type": "Choose an accommodation type.",
   "error.long": "That is too long.",
+  "error.price": "Enter a rate in rupees, such as 2500 or 2500.50.",
 } as const;
 
 export type PartnerMessageKey = keyof typeof en;

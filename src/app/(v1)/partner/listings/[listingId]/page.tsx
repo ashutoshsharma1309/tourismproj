@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { copyFor } from "@/components/partners/workspace/copy";
+import { paiseToRupeeInput } from "@/lib/booking/stay";
 import { ListingDetailsForm, MoveListingForm } from "@/components/partners/workspace/ListingForms";
 import { AddUnitForm, EditUnitForm } from "@/components/partners/workspace/UnitForms";
 import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
@@ -28,7 +29,7 @@ const DETAIL_KEYS = [
 ] as const;
 const UNIT_KEYS = [
   "field.unitName", "field.unitNameHint", "field.capacity", "field.quantity", "detail.addUnit", "detail.adding",
-  "detail.saveUnit", "detail.deleteUnit",
+  "detail.saveUnit", "detail.deleteUnit", "field.basePrice", "field.basePriceHint", "detail.noRate",
 ] as const;
 
 function Fact({ label, value, missing }: { label: string; value: string | null; missing: string }) {
@@ -135,7 +136,7 @@ export default async function PartnerListingPage({ params }: { params: Promise<{
         <ul className="mt-4 space-y-3">
           {units.map((unit) => (
             <li key={unit.id}>
-              <EditUnitForm copy={copyFor(t, UNIT_KEYS)} unit={{ id: unit.id, name: unit.name, capacity: unit.capacity, totalQuantity: unit.totalQuantity }} />
+              <EditUnitForm copy={copyFor(t, UNIT_KEYS)} unit={{ id: unit.id, name: unit.name, capacity: unit.capacity, totalQuantity: unit.totalQuantity, basePrice: paiseToRupeeInput(unit.basePricePaise) }} />
             </li>
           ))}
         </ul>

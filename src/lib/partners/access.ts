@@ -1,12 +1,12 @@
 import "server-only";
 
-import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
 import { hasDatabase } from "@/db";
 import { partnerById, type PartnerRow } from "@/db/queries/partners";
 import { currentUser, partnerFor, provesInbox, type SessionUser } from "@/lib/auth/session";
-import { DEFAULT_LANGUAGE, isLanguageCode, type LanguageCode } from "@/lib/i18n";
+import type { LanguageCode } from "@/lib/i18n";
+import { requestLanguage } from "@/lib/i18n/request";
 
 /**
  * Who may use the partner workspace, resolved once per request.
@@ -48,16 +48,7 @@ export async function partnerForAction(): Promise<{ session: SessionUser; partne
   return partner ? { session, partner } : null;
 }
 
-/**
- * The workspace language. The partner surface is rendered per request and is
- * never shared as a link, so the browser's own preference decides; English
- * when it names nothing this product speaks.
- */
+/** The workspace language: the browser's preference (lib/i18n/request.ts). */
 export async function partnerLanguage(): Promise<LanguageCode> {
-  const accept = (await headers()).get("accept-language") ?? "";
-  for (const part of accept.split(",")) {
-    const code = part.split(";")[0]?.trim().slice(0, 2).toLowerCase();
-    if (code && isLanguageCode(code)) return code;
-  }
-  return DEFAULT_LANGUAGE;
+  return requestLanguage();
 }
