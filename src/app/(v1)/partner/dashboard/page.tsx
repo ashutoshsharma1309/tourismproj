@@ -1,23 +1,21 @@
 import type { Metadata } from "next";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
-import { redirect } from "next/navigation";
 
-import { SignOutButton } from "@/components/account/SignOutButton";
-import { Footer } from "@/components/layout/Footer";
+import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
+import { WorkspaceShell } from "@/components/partners/workspace/WorkspaceShell";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
-import {
-  agreementsForPartner,
-  partnerById,
-  propertiesForPartner,
-  referralSummaryForPartner,
-} from "@/db/queries/partners";
-import { currentUser, partnerFor, provesInbox } from "@/lib/auth/session";
+import { listingSummariesForPartner } from "@/db/queries/partner-inventory";
+import { agreementsForPartner, referralSummaryForPartner } from "@/db/queries/partners";
 import { getDestination } from "@/lib/destinations/registry";
+import { partnerTranslator } from "@/lib/i18n/partner-messages";
 import { formatINR } from "@/lib/money";
-import { PROPERTY_STATUS_LABEL, PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
+import { partnerAccess, partnerLanguage } from "@/lib/partners/access";
+import { todayInKolkata } from "@/lib/partners/calendar";
+import { PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
+import { isVerifiedVendor, type VendorStatus } from "@/lib/partners/vendor";
 
 export const metadata: Metadata = {
   title: "Partner dashboard",
@@ -26,195 +24,152 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-const EVENT_LABEL: Record<string, string> = {
-  OFFICIAL_WEBSITE: "Official website",
-  BOOKING_LINK: "Booking page",
-  CALL: "Telephone",
-  MAPS: "Map",
-};
-
 /**
- * A partner's own view: profile, verification status, listing status,
- * referral activity and commercial terms. Every row comes from queries
- * scoped by the partner id the session resolved to — never from a
- * parameter — and every number is a count of real events or plainly absent.
+ * A partner's overview: organisation status, each listing's review status,
+ * whether its rooms and calendar are set up, referral activity and commercial
+ * terms. The partner comes from the session (`partnerAccess` → `partnerFor`),
+ * never from the URL, and every number is a count of real rows or absent.
+ * Bookings are not shown because none exist yet; this page will not
+ * pretend otherwise.
  */
 export default async function PartnerDashboardPage() {
-  const session = await currentUser();
-  if (!session) redirect("/login?next=/partner/dashboard");
+  const t = partnerTranslator(await partnerLanguage());
+  const access = await partnerAccess("/partner/dashboard");
+  if (access.kind !== "ok") return <WorkspaceGate access={access} t={t} next="/partner/dashboard" />;
+  const { partner } = access;
 
-  /* Partner records open only to a session that proved the inbox: a
-     confirmed address signed in with a one-time code or e-mail link. */
-  if (!provesInbox(session)) {
-    return (
-      <>
-        <main id="main" className="mx-auto max-w-3xl px-4 pt-28 pb-20 md:px-6">
-          <h1 className="font-display text-h1 text-balance-heading">Sign in with a one-time code</h1>
-          <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
-            The partner dashboard opens with a code sent to your business e-mail, so only someone who can read
-            that inbox reaches the property&rsquo;s records.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/login/code?next=/partner/dashboard" className={buttonClasses({ variant: "primary", size: "md" })}>
-              Send me a code
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
-
-  const partnerSession = await partnerFor(session);
-  if (!partnerSession) {
-    return (
-      <>
-        <main id="main" className="mx-auto max-w-3xl px-4 pt-28 pb-20 md:px-6">
-          <h1 className="font-display text-h1 text-balance-heading">No partnership request yet</h1>
-          <p className="mt-3 max-w-2xl text-body-lg leading-relaxed text-muted">
-            No partnership request is linked to <strong className="font-medium text-foreground">{session.email}</strong>.
-            If you applied from a different address, sign in with that one; otherwise, list your property to begin.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/partner/apply" className={buttonClasses({ variant: "primary", size: "md" })}>
-              List your property
-              <ArrowRight className="size-4" aria-hidden />
-            </Link>
-            <SignOutButton />
-          </div>
-        </main>
-        <Footer />
-      </>
-    );
-  }
-
-  const [partner, properties, agreements, referrals] = await Promise.all([
-    partnerById(partnerSession.partnerId),
-    propertiesForPartner(partnerSession.partnerId),
-    agreementsForPartner(partnerSession.partnerId),
-    referralSummaryForPartner(partnerSession.partnerId),
+  const today = todayInKolkata(new Date());
+  const [summaries, agreements, referrals] = await Promise.all([
+    listingSummariesForPartner(partner.id, today),
+    agreementsForPartner(partner.id),
+    referralSummaryForPartner(partner.id),
   ]);
-  if (!partner) redirect("/partner/apply");
-
+  const vendorStatus = partner.status as VendorStatus;
+  const verified = isVerifiedVendor(vendorStatus);
   const activeAgreements = agreements.filter((a) => a.status === "ACTIVE");
 
   return (
-    <>
-      <main id="main" className="mx-auto max-w-4xl px-4 pt-28 pb-20 md:px-6">
-        <div className="flex flex-wrap items-start justify-between gap-4">
-          <div>
-            <p className="font-mono text-eyebrow tracking-widest text-primary uppercase">Partner dashboard</p>
-            <h1 className="mt-3 font-display text-h1 text-balance-heading">{partner.organizationName}</h1>
-            <p className="mt-2 text-body text-muted">
-              {partner.contactName} · {partner.email}{partner.phone ? ` · ${partner.phone}` : ""}
-            </p>
-          </div>
-          <SignOutButton />
-        </div>
+    <WorkspaceShell partner={partner} current="/partner/dashboard" t={t} title={t("overview.title")}>
+      <section aria-labelledby="organisation" className="rounded-xl border border-border bg-surface p-5">
+        <h2 id="organisation" className="text-small font-medium text-muted">{t("overview.verification")}</h2>
+        <p className="mt-2 font-display text-h3">{t(`vendor.${vendorStatus}`)}</p>
+        <p className="mt-1 max-w-prose text-body leading-relaxed text-muted">{t(`vendor.${vendorStatus}.detail`)}</p>
+        {partner.verificationNote ? (
+          <p className="mt-3 rounded-lg border border-border bg-surface-muted/40 p-3 text-small leading-relaxed">
+            <span className="font-medium">{t("overview.reviewerNote")}</span> {partner.verificationNote}
+          </p>
+        ) : null}
+        <Link href="/partner/verification" className="mt-3 inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline">
+          {t("overview.manageVerification")}
+          <ArrowRight className="size-4" aria-hidden />
+        </Link>
+      </section>
 
-        {/* ---------------------------------------------------- properties */}
-        <section className="mt-10" aria-labelledby="properties">
-          <div className="flex flex-wrap items-baseline justify-between gap-3">
-            <h2 id="properties" className="font-display text-h2">Your properties</h2>
-            <Link href="/partner/apply" className="text-small font-medium text-primary hover:underline">
-              Add another property
-            </Link>
-          </div>
-          <ul className="mt-4 space-y-4">
-            {properties.map((property) => {
-              const status = property.status as PropertyStatus;
-              const destination = getDestination(property.destinationId);
-              const clicks = referrals.filter((r) => r.propertyId === property.id);
-              return (
-                <li key={property.id} className="rounded-xl border border-border bg-surface p-5">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <h3 className="font-display text-h3">{property.name}</h3>
-                    <Badge tone={PROPERTY_STATUS_TONE[status]}>{PROPERTY_STATUS_LABEL[status].label}</Badge>
-                  </div>
-                  <p className="mt-1 text-caption text-muted">
-                    {ACCOMMODATION_LABEL[property.type]} · {destination?.name ?? property.destinationId}
-                    {property.area ? ` · ${property.area}` : ""}
+      <section className="mt-10" aria-labelledby="properties">
+        <div className="flex flex-wrap items-baseline justify-between gap-3">
+          <h2 id="properties" className="font-display text-h2">{t("overview.listings")}</h2>
+          <Link href={verified ? "/partner/listings/new" : "/partner/apply"} className="text-small font-medium text-primary hover:underline">
+            {verified ? t("overview.addListing") : t("overview.addProperty")}
+          </Link>
+        </div>
+        {summaries.length === 0 ? <p className="mt-4 text-body text-muted">{t("overview.noListings")}</p> : null}
+        <ul className="mt-4 space-y-4">
+          {summaries.map(({ listing, units, openDays }) => {
+            const status = listing.status as PropertyStatus;
+            const destination = getDestination(listing.destinationId);
+            const clicks = referrals.filter((r) => r.propertyId === listing.id);
+            return (
+              <li key={listing.id} className="rounded-xl border border-border bg-surface p-5">
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="font-display text-h3">{listing.name}</h3>
+                  <Badge tone={PROPERTY_STATUS_TONE[status]}>{t(`listing.${status}`)}</Badge>
+                </div>
+                <p className="mt-1 text-caption text-muted">
+                  {ACCOMMODATION_LABEL[listing.type]}, {destination?.name ?? listing.destinationId}
+                  {listing.area ? `, ${listing.area}` : ""}
+                </p>
+                <p className="mt-3 max-w-prose text-body leading-relaxed text-muted">{t(`listing.${status}.detail`)}</p>
+                {listing.reviewNote ? (
+                  <p className="mt-2 rounded-lg border border-border bg-surface-muted/40 p-3 text-small leading-relaxed">
+                    <span className="font-medium">{t("overview.reviewerNote")}</span> {listing.reviewNote}
                   </p>
-                  <p className="mt-3 max-w-prose text-body leading-relaxed text-muted">
-                    {PROPERTY_STATUS_LABEL[status].detail}
-                  </p>
-                  {property.reviewNote ? (
-                    <p className="mt-2 rounded-lg border border-border bg-surface-muted/40 p-3 text-small leading-relaxed">
-                      <span className="font-medium">Reviewer&rsquo;s note:</span> {property.reviewNote}
-                    </p>
-                  ) : null}
+                ) : null}
+
+                <div className="mt-4 flex flex-wrap gap-3">
+                  <Link href={`/partner/listings/${listing.id}`} className={buttonClasses({ variant: "outline", size: "sm" })}>
+                    {t("overview.manage")}
+                  </Link>
                   {status === "PUBLISHED" ? (
                     <Link
-                      href={`/destinations/${property.destinationId}/partner-stays/${property.id}`}
-                      className="mt-3 inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
+                      href={`/destinations/${listing.destinationId}/partner-stays/${listing.id}`}
+                      className="inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
                     >
-                      See it as travellers do
+                      {t("overview.seePublic")}
                       <ArrowRight className="size-4" aria-hidden />
                     </Link>
                   ) : null}
+                </div>
 
-                  <div className="mt-4 border-t border-border pt-4">
-                    <p className="text-caption text-subtle">Referral activity</p>
+                <div className="mt-4 grid gap-4 border-t border-border pt-4 sm:grid-cols-2">
+                  <div>
+                    <p className="text-caption text-subtle">{t("overview.inventory")}</p>
+                    <p className="mt-1 text-small text-muted" data-testid="inventory-summary">
+                      {units === 0 ? t("overview.noUnits") : t("overview.unitsSummary", { units, days: openDays })}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-caption text-subtle">{t("overview.referrals")}</p>
                     {clicks.length === 0 ? (
-                      <p className="mt-1 text-small text-muted">No referral activity yet.</p>
+                      <p className="mt-1 text-small text-muted">{t("overview.noReferrals")}</p>
                     ) : (
-                      <dl className="mt-2 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-4">
+                      <dl className="mt-1 grid grid-cols-2 gap-x-6 gap-y-2">
                         {clicks.map((row) => (
                           <div key={row.eventType}>
-                            <dt className="text-caption text-subtle">{EVENT_LABEL[row.eventType] ?? row.eventType}</dt>
+                            <dt className="text-caption text-subtle">{t(`event.${row.eventType as "OFFICIAL_WEBSITE" | "BOOKING_LINK" | "CALL" | "MAPS"}`)}</dt>
                             <dd className="font-mono text-body" data-numeric>
-                              {row.clicks} {row.clicks === 1 ? "click" : "clicks"}
+                              {row.clicks} {row.clicks === 1 ? t("overview.click") : t("overview.clicks")}
                             </dd>
                           </div>
                         ))}
                       </dl>
                     )}
-                    <p className="mt-2 text-caption text-subtle">
-                      Outbound clicks to your channels, counted from real events. A click is not a booking.
-                    </p>
+                    <p className="mt-2 text-caption text-subtle">{t("overview.referralsNote")}</p>
                   </div>
-                </li>
-              );
-            })}
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+
+      <section className="mt-10" aria-labelledby="terms">
+        <h2 id="terms" className="font-display text-h2">{t("overview.terms")}</h2>
+        {activeAgreements.length === 0 ? (
+          <p className="mt-3 max-w-prose text-body leading-relaxed text-muted">{t("overview.noTerms")}</p>
+        ) : (
+          <ul className="mt-4 space-y-3">
+            {activeAgreements.map((a) => (
+              <li key={a.id} className="rounded-xl border border-border bg-surface p-4 text-body">
+                <p className="font-medium">{a.type.replace(/_/g, " ").toLowerCase()}</p>
+                <p className="mt-1 text-small text-muted">
+                  {[
+                    a.commissionBps !== null ? t("overview.commission", { percent: a.commissionBps / 100 }) : null,
+                    a.feePaise !== null ? t("overview.fee", { amount: formatINR(a.feePaise) }) : null,
+                    a.validUntil ? t("overview.validUntil", { date: a.validUntil.toISOString().slice(0, 10) }) : null,
+                  ]
+                    .filter(Boolean)
+                    .join(", ")}
+                </p>
+              </li>
+            ))}
           </ul>
-        </section>
+        )}
+      </section>
 
-        {/* ---------------------------------------------------- agreements */}
-        <section className="mt-10" aria-labelledby="terms">
-          <h2 id="terms" className="font-display text-h2">Commercial terms</h2>
-          {activeAgreements.length === 0 ? (
-            <p className="mt-3 max-w-prose text-body leading-relaxed text-muted">
-              No commercial agreement is in place. Being listed costs nothing; commission or referral
-              fees apply only under terms you sign. We will propose terms once the property is published.
-            </p>
-          ) : (
-            <ul className="mt-4 space-y-3">
-              {activeAgreements.map((a) => (
-                <li key={a.id} className="rounded-xl border border-border bg-surface p-4 text-body">
-                  <p className="font-medium">{a.type.replace(/_/g, " ").toLowerCase()}</p>
-                  <p className="mt-1 text-small text-muted">
-                    {a.commissionBps !== null ? `${a.commissionBps / 100}% commission` : ""}
-                    {a.feePaise !== null ? `${formatINR(a.feePaise)} per qualifying referral` : ""}
-                    {a.validUntil ? ` · valid until ${a.validUntil.toISOString().slice(0, 10)}` : ""}
-                  </p>
-                </li>
-              ))}
-            </ul>
-          )}
-        </section>
-
-        <section className="mt-10" aria-labelledby="what-next">
-          <h2 id="what-next" className="font-display text-h3">What happens next</h2>
-          <p className="mt-2 max-w-prose text-body leading-relaxed text-muted">
-            A reviewer verifies the property against public records and your official channels, then
-            approves and publishes it. Travellers exploring your destination reach your own website,
-            booking page or telephone from the page; TerraStory counts the click and takes nothing
-            in between.
-          </p>
-        </section>
-      </main>
-      <Footer />
-    </>
+      <section className="mt-10" aria-labelledby="what-next">
+        <h2 id="what-next" className="font-display text-h3">{t("overview.next")}</h2>
+        <p className="mt-2 max-w-prose text-body leading-relaxed text-muted">{t("overview.nextBody")}</p>
+      </section>
+    </WorkspaceShell>
   );
 }

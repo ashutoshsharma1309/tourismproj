@@ -55,6 +55,14 @@ export const partnershipRequestSchema = z.object({
     .refine((v) => v === "" || /^\+?[\d][\d\s().-]{5,}$/.test(v), "Enter a telephone number with country code, e.g. +91 98765 43210")
     .transform((v) => (v === "" ? null : v)),
 
+  /* A tourism-department registration or trade licence reference. */
+  registrationInfo: z
+    .string()
+    .trim()
+    .max(160)
+    .optional()
+    .transform((v) => (v ? v : null)),
+
   /* Property */
   propertyName: trimmed(160, 2),
   type: z.enum(ACCOMMODATION_TYPES),

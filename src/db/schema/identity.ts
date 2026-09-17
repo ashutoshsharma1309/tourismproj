@@ -63,6 +63,12 @@ export const verificationStatus = pgEnum("verification_status", [
 
 export const planTier = pgEnum("plan_tier", ["FREE", "GROWTH", "PRO"]);
 
+/**
+ * @deprecated RETIRED — the vendor organisation is the `partners` row
+ * (partners.ts), which carries ownership, verification and the audit trail.
+ * Retained only while the deployed build still reads it; see
+ * docs/partner-inventory.md.
+ */
 export const vendors = pgTable("vendors", {
   id: uuid("id").primaryKey().defaultRandom(),
   ownerUserId: uuid("owner_user_id")
@@ -108,19 +114,6 @@ export const documentStatus = pgEnum("document_status", [
   "REJECTED",
 ]);
 
-export const vendorDocuments = pgTable("vendor_documents", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  vendorId: uuid("vendor_id")
-    .notNull()
-    .references(() => vendors.id, { onDelete: "cascade" }),
-  kind: documentKind("kind").notNull(),
-  /* A path in a PRIVATE bucket. Never a public URL — these are identity
-     documents, served through short-lived signed links only. */
-  fileUrl: text("file_url").notNull(),
-  status: documentStatus("status").notNull().default("PENDING"),
-  reviewerId: uuid("reviewer_id").references(() => users.id),
-  reviewNote: text("review_note"),
-  reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
-});
+/* `vendor_documents` lives in partners.ts: its vendor is a partner organisation. */
 
 export const isPublishedDefault = boolean("is_published").notNull().default(false);

@@ -11,7 +11,7 @@ const text = (form: FormData, key: string): string => {
 };
 
 const FIELDS = [
-  "organizationName", "contactName", "email", "phone", "propertyName", "type", "destinationId",
+  "organizationName", "contactName", "email", "phone", "registrationInfo", "propertyName", "type", "destinationId",
   "address", "area", "mapsUrl", "officialWebsite", "bookingUrl", "description", "localCharacter", "amenities",
 ] as const;
 

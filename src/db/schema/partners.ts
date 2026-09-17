@@ -13,21 +13,24 @@ import {
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
-import { users } from "@/db/schema/identity";
+import { documentKind, documentStatus, users, vendorType } from "@/db/schema/identity";
 
 /**
  * The hotel partner programme — a partnership and referral layer, not an OTA.
  *
- * WHY THESE ARE NOT `vendors` + `listings`
- * ----------------------------------------
- * `listings` is priced inventory: a base price in paise, units, availability
- * rows, a hold-and-confirm booking path. None of that exists for a partner
- * property today and none of it is fabricated here. A partner property is a
- * verified record of a real place to stay — name, type, address, official
- * website, official booking route — that TerraStory sends qualified
- * travellers to through the property's own legitimate channel. When direct
- * booking is integrated, a property can gain a listing; until then it has
- * none, and the schema says so by having no price column anywhere.
+ * ONE SUPPLY MODEL
+ * ----------------
+ * A `partners` row is the vendor: the organisation that is verified, owns
+ * listings and (later) gets paid. A `partner_properties` row is a listing: a
+ * verified record of a real place to stay. The commerce tables hang off
+ * these — `listing_units` and `availability` (commerce.ts) are a listing's
+ * rooms and calendar, and booking items, payouts and reviews reference the
+ * same two rows. The older `vendors` and `listings` tables described the same
+ * supply a second time with nothing behind them, and are retired
+ * (drizzle/sql/0002_partner_inventory.sql, docs/partner-inventory.md).
+ *
+ * Still no price column here: rooms and dates are inventory, and a rate
+ * arrives with checkout, on the availability row, not on the listing.
  *
  * WHY `destination_id` IS A TEXT SLUG, NOT A FOREIGN KEY
  * ------------------------------------------------------
@@ -114,6 +117,18 @@ export const partners = pgTable(
     /* Linked when the contact first signs in; null until then. Ownership of
        a property is resolved through this, never through the e-mail alone. */
     ownerUserId: uuid("owner_user_id").references(() => users.id),
+    /* What the organisation operates. Stays today; transport, guides and
+       experiences use the same verification, units and calendar. */
+    vendorType: vendorType("vendor_type").notNull().default("STAY"),
+    /* A tourism-department registration or trade licence reference, in the
+       partner's own words. A reviewer checks it; nothing here validates it
+       against a register. */
+    registrationInfo: text("registration_info"),
+    /* The latest vendor-level decision: who made it, when, and why. The full
+       history is the audit log. */
+    verifiedBy: uuid("verified_by").references(() => users.id),
+    verifiedAt: timestamp("verified_at", { withTimezone: true }),
+    verificationNote: text("verification_note"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
@@ -145,6 +160,11 @@ export const partnerProperties = pgTable(
        partner, verified by a reviewer, never generated. */
     localCharacter: text("local_character"),
     amenities: text("amenities").array(),
+    /* House policies, as the partner states them. Times are "HH:MM". */
+    checkInFrom: text("check_in_from"),
+    checkOutBy: text("check_out_by"),
+    houseRules: text("house_rules"),
+    cancellationTerms: text("cancellation_terms"),
     status: propertyStatus("status").notNull().default("PENDING"),
     /* Where the record came from. Partner submissions say so; a reviewer's
        verification adds what was checked and when. */
@@ -200,6 +220,38 @@ export const partnerAgreements = pgTable(
     check("partner_agreements_bps_range", sql`${table.commissionBps} IS NULL OR (${table.commissionBps} >= 0 AND ${table.commissionBps} <= 10000)`),
     check("partner_agreements_fee_non_negative", sql`${table.feePaise} IS NULL OR ${table.feePaise} >= 0`),
   ],
+);
+
+/**
+ * Supporting documents for a vendor's verification: a registration
+ * certificate, proof of the right to operate the property.
+ *
+ * `vendor_id` names the partner organisation — "vendor" is the commerce
+ * vocabulary for the same row. `file_url` is a path in the PRIVATE
+ * `vendor-docs` bucket, never a public URL; a reviewer opens it through a
+ * signed link that expires in minutes. No personal identity document is
+ * requested: the business is verified, not the person.
+ */
+export const vendorDocuments = pgTable(
+  "vendor_documents",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    vendorId: uuid("vendor_id")
+      .notNull()
+      .references(() => partners.id, { onDelete: "cascade" }),
+    kind: documentKind("kind").notNull(),
+    fileUrl: text("file_url").notNull(),
+    fileName: text("file_name"),
+    contentType: text("content_type"),
+    sizeBytes: integer("size_bytes"),
+    uploadedBy: uuid("uploaded_by").references(() => users.id),
+    status: documentStatus("status").notNull().default("PENDING"),
+    reviewerId: uuid("reviewer_id").references(() => users.id),
+    reviewNote: text("review_note"),
+    reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index("vendor_documents_vendor_idx").on(table.vendorId)],
 );
 
 /**

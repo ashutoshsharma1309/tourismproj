@@ -41,6 +41,15 @@ import {
 } from "@/lib/partners/lifecycle";
 import { ILLUSTRATIVE_SCENARIO, illustrativeScenario } from "@/lib/partners/scenario";
 import { partnershipRequestSchema, referralEventSchema } from "@/lib/partners/schema";
+import { addDays, monthGrid, rangeProblem, todayInKolkata } from "@/lib/partners/calendar";
+import { availabilitySchema, listingDetailsSchema, newListingSchema, unitSchema } from "@/lib/partners/inventory-schema";
+import {
+  canVendorTransition,
+  isVerifiedVendor,
+  partnerMayMove,
+  vendorStatusAfterPropertyReview,
+  VENDOR_STATUSES,
+} from "@/lib/partners/vendor";
 
 const BASE = process.env.QA_BASE_URL ?? "http://localhost:3000";
 
@@ -222,7 +231,8 @@ check("every admin page and action requires an allowlisted reviewer",
 check("admin pages answer 404, not 403, to outsiders",
   ["src/app/(v1)/admin/partners/page.tsx", "src/app/(v1)/admin/partners/[propertyId]/page.tsx"].every((f) => /if \(!admin\) notFound\(\)/.test(read(f))));
 check("the dashboard scopes by the session's partner, never a parameter",
-  /partnerFor\(session\)/.test(read("src/app/(v1)/partner/dashboard/page.tsx")) && !/searchParams|params/.test(read("src/app/(v1)/partner/dashboard/page.tsx")));
+  /partnerAccess\(/.test(read("src/app/(v1)/partner/dashboard/page.tsx")) && /partnerFor\(session\)/.test(read("src/lib/partners/access.ts"))
+  && !/searchParams|params/.test(read("src/app/(v1)/partner/dashboard/page.tsx")));
 check("public partner pages read only PUBLISHED rows",
   /eq\(partnerProperties\.status, "PUBLISHED"\)/.test(read("src/db/queries/partners.ts")));
 check("the referral route hashes a random cookie, not the client address",
@@ -237,6 +247,94 @@ check("robots disallows the private surfaces", /\/admin\//.test(read("src/app/ro
 const curatedStayDetail = read("src/app/(v1)/destinations/[destinationId]/stays/[slug]/page.tsx");
 check("curated stay CTAs count referrals by stay reference", (curatedStayDetail.match(/<ReferralLink/g) ?? []).length >= 3 && /stayRef=/.test(curatedStayDetail));
 check("curated stays still never carry a price", !/₹|per night|pricePaise|ratePaise|nightly/.test(strip(read("src/components/destinations/DestinationStays.tsx"))));
+
+
+/* ======================================================================
+   D2. PHASE 1 — vendor verification, listings, rooms and the calendar
+   ====================================================================== */
+section("D2. Vendor verification, inventory and calendar");
+
+check("vendor: PENDING → UNDER_REVIEW → VERIFIED → APPROVED is allowed",
+  canVendorTransition("PENDING", "UNDER_REVIEW") && canVendorTransition("UNDER_REVIEW", "VERIFIED") && canVendorTransition("VERIFIED", "APPROVED"));
+check("vendor: nothing skips review", !canVendorTransition("PENDING", "VERIFIED") && !canVendorTransition("PENDING", "APPROVED") && !canVendorTransition("REJECTED", "VERIFIED"));
+check("vendor: UNDER_REVIEW → REJECTED, and a suspended vendor can be reinstated or rejected",
+  canVendorTransition("UNDER_REVIEW", "REJECTED") && canVendorTransition("SUSPENDED", "VERIFIED") && canVendorTransition("SUSPENDED", "REJECTED"));
+check("vendor: only VERIFIED and APPROVED count as verified", VENDOR_STATUSES.filter(isVerifiedVendor).join() === "VERIFIED,APPROVED");
+check("vendor: no status transitions to itself", VENDOR_STATUSES.every((v) => !canVendorTransition(v, v)));
+check("a listing review promotes its vendor forward", vendorStatusAfterPropertyReview("PENDING", "VERIFIED") === "VERIFIED" && vendorStatusAfterPropertyReview("VERIFIED", "APPROVED") === "APPROVED");
+check("a second listing entering review never demotes a verified vendor",
+  vendorStatusAfterPropertyReview("VERIFIED", "UNDER_REVIEW") === null && vendorStatusAfterPropertyReview("APPROVED", "VERIFIED") === null);
+check("rejecting a listing rejects only a not-yet-verified vendor",
+  vendorStatusAfterPropertyReview("UNDER_REVIEW", "REJECTED") === "REJECTED" && vendorStatusAfterPropertyReview("VERIFIED", "REJECTED") === null);
+check("no listing review lifts a suspension", (["UNDER_REVIEW", "VERIFIED", "APPROVED", "PUBLISHED"] as const).every((to) => vendorStatusAfterPropertyReview("SUSPENDED", to) === null));
+check("a partner may only publish or unpublish, never review",
+  partnerMayMove("APPROVED", "PUBLISHED") && partnerMayMove("PUBLISHED", "UNPUBLISHED") && partnerMayMove("UNPUBLISHED", "PUBLISHED")
+  && !partnerMayMove("PENDING", "UNDER_REVIEW") && !partnerMayMove("UNDER_REVIEW", "VERIFIED") && !partnerMayMove("VERIFIED", "APPROVED") && !partnerMayMove("PENDING", "PUBLISHED"));
+
+check("today is today in Asia/Kolkata, not UTC", todayInKolkata(new Date("2026-09-16T20:00:00Z")) === "2026-09-17");
+const september = monthGrid("2026-09");
+check("the month grid starts on Monday and keeps whole weeks",
+  september[0]?.[0] === null && september[0]?.[1] === "2026-09-01" && september.every((w) => w.length === 7) && september.flat().filter(Boolean).length === 30);
+check("the month grid handles a leap February", monthGrid("2028-02").flat().filter(Boolean).length === 29);
+check("addDays crosses a month and a year without a timezone shift", addDays("2026-12-31", 1) === "2027-01-01" && addDays("2026-03-01", -1) === "2026-02-28");
+check("a range starting before today is refused", rangeProblem("2026-09-16", "2026-09-20", "2026-09-17") === "past");
+check("a reversed range is refused", rangeProblem("2026-09-20", "2026-09-18", "2026-09-17") === "reversed");
+check("a range over a year is refused", rangeProblem("2026-09-17", "2027-09-18", "2026-09-17") === "too-long");
+check("a non-date is refused", rangeProblem("2026-02-30", "2026-03-01", "2026-01-01") === "invalid");
+check("a valid range passes", rangeProblem("2026-09-17", "2026-09-30", "2026-09-17") === null);
+
+check("a room type needs a name, 1–50 guests and 1–500 rooms",
+  unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "4" }).success
+  && !unitSchema.safeParse({ name: "S", capacity: "2", totalQuantity: "4" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "0", totalQuantity: "4" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "2", totalQuantity: "501" }).success
+  && !unitSchema.safeParse({ name: "Standard room", capacity: "2.5", totalQuantity: "4" }).success);
+check("availability needs a unit id and a whole number of rooms",
+  availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2" }).success
+  && !availabilitySchema.safeParse({ unitId: "x", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "2" }).success
+  && !availabilitySchema.safeParse({ unitId: "123e4567-e89b-12d3-a456-426614174000", from: "2026-09-17", to: "2026-09-18", mode: "open", rooms: "-1" }).success);
+check("a new listing refuses an unknown destination and a bad time",
+  !newListingSchema.safeParse({ name: "QA", type: "HOTEL", destinationId: "atlantis", address: "somewhere long enough", area: "", mapsUrl: "", officialWebsite: "", bookingUrl: "", description: "", localCharacter: "", amenities: "", checkInFrom: "", checkOutBy: "", houseRules: "", cancellationTerms: "" }).success
+  && !listingDetailsSchema.safeParse({ description: "", localCharacter: "", amenities: "", checkInFrom: "25:00", checkOutBy: "", houseRules: "", cancellationTerms: "" }).success);
+check("inventory schemas carry no price, rate, card or bank field",
+  ![...Object.keys(newListingSchema.shape), ...Object.keys(unitSchema.shape), ...Object.keys(availabilitySchema.shape)].some((k) => /price|rate|card|bank|upi|paise|amount/i.test(k)));
+
+const WORKSPACE_PAGES = [
+  "src/app/(v1)/partner/dashboard/page.tsx",
+  "src/app/(v1)/partner/verification/page.tsx",
+  "src/app/(v1)/partner/listings/page.tsx",
+  "src/app/(v1)/partner/listings/new/page.tsx",
+  "src/app/(v1)/partner/listings/[listingId]/page.tsx",
+  "src/app/(v1)/partner/calendar/page.tsx",
+];
+check("every workspace page resolves the partner from the session", WORKSPACE_PAGES.every((f) => /await partnerAccess\(/.test(read(f))));
+check("every workspace page takes its words from the partner catalogue", WORKSPACE_PAGES.every((f) => /partnerTranslator\(/.test(read(f))));
+check("no workspace page renders a hard-coded English sentence",
+  WORKSPACE_PAGES.every((f) => !/>\s*[A-Z][a-z]+(?: [a-z]+){2,}[.!]?\s*</.test(strip(read(f)))),
+  WORKSPACE_PAGES.filter((f) => />\s*[A-Z][a-z]+(?: [a-z]+){2,}[.!]?\s*</.test(strip(read(f)))).join(", "));
+const inventoryStore = read("src/lib/partners/inventory.ts");
+check("the inventory store is server-only", /^import "server-only";/m.test(inventoryStore));
+const exportedWrites = (strip(inventoryStore).match(/export async function \w+/g) ?? []).length;
+const auditedWrites = (strip(inventoryStore).match(/await audit\(|insert\(auditLogs\)/g) ?? []).length;
+check("every inventory write is audited", exportedWrites > 0 && auditedWrites >= exportedWrites, `${auditedWrites} audit writes for ${exportedWrites} write functions`);
+check("partner writes match the record against the session's partner in the query",
+  /eq\(partnerProperties\.partnerId, scope\.partnerId\)/.test(inventoryStore) && (inventoryStore.match(/ownedListing\(tx, scope|ownedUnit\(tx, scope/g) ?? []).length >= 5);
+check("every workspace action goes through the session preamble",
+  ["src/app/(v1)/partner/listings/actions.ts", "src/app/(v1)/partner/calendar/actions.ts", "src/app/(v1)/partner/verification/actions.ts"]
+    .every((f) => (read(f).match(/export async function/g) ?? []).length === (read(f).match(/await workspaceAction\(\)/g) ?? []).length));
+check("the calendar locks the room type and writes only units_open",
+  /ownedUnit\(tx, scope, input\.unitId\)/.test(inventoryStore) && /\.for\("update"/.test(inventoryStore) && /DO UPDATE SET units_open = EXCLUDED\.units_open/.test(inventoryStore) && !/units_held\s*=|units_booked\s*=/.test(inventoryStore));
+check("store transitions are idempotent", /if \(from === input\.to\)/.test(read("src/lib/partners/store.ts")) && /if \(from === to\) return \{ ok: true/.test(inventoryStore));
+const migration = read("drizzle/sql/0002_partner_inventory.sql");
+check("the database refuses to publish for an unverified vendor", /CREATE TRIGGER partner_properties_require_verified_vendor/.test(migration) && /status IN \('VERIFIED', 'APPROVED'\)/.test(migration));
+check("the database unpublishes a vendor's listings when it loses verification", /CREATE TRIGGER partners_unpublish_on_deverification/.test(migration));
+check("the database keeps held + booked + open within the unit's quantity", /CREATE TRIGGER availability_within_quantity/.test(migration) && /CREATE TRIGGER listing_units_quantity_covers_commitments/.test(migration));
+check("public partner stays require a still-verified vendor", /vendorIsVerified = inArray\(partners\.status, \["VERIFIED", "APPROVED"\]\)/.test(read("src/db/queries/partners.ts")));
+check("no public surface reads rooms or availability",
+  walk("src/app").filter((f) => !f.includes("/partner/") && !f.includes("/admin/")).every((f) => !/partner-inventory|availabilityForPartnerUnit|listingUnits/.test(read(f))));
+check("vendor documents are private: signed links only, business documents only",
+  /createSignedUrl/.test(read("src/db/storage.ts")) && !/getPublicUrl/.test(read("src/db/storage.ts")) && /UPLOADABLE_DOCUMENT_KINDS = \["GOVT_REG", "PROPERTY_PROOF", "GST"\]/.test(read("src/lib/partners/inventory-schema.ts")));
+check("robots disallows the partner workspace", ["/partner/verification", "/partner/listings", "/partner/calendar"].every((p) => read("src/app/robots.ts").includes(`"${p}"`)));
 
 /* ======================================================================
    E. SERVER — public pages and boundaries
@@ -292,6 +390,11 @@ if (!home) {
   check("/partner/apply is noindex", /noindex/.test(ab));
 
   const admin = await fetchText(`${BASE}/admin/partners`);
+  for (const route of ["/partner/verification", "/partner/listings", "/partner/listings/new", "/partner/calendar"]) {
+    const r = await fetchText(`${BASE}${route}`);
+    check(`${route} redirects an outsider to sign-in`,
+      r !== null && [302, 303, 307, 308].includes(r.status) && /\/login/.test(r.headers.get("location") ?? ""), `HTTP ${r?.status}`);
+  }
   check("/admin/partners is 404 to an outsider", admin?.status === 404, `HTTP ${admin?.status}`);
   const adminItem = await fetchText(`${BASE}/admin/partners/123e4567-e89b-12d3-a456-426614174000`);
   check("/admin/partners/[id] is 404 to an outsider", adminItem?.status === 404, `HTTP ${adminItem?.status}`);
@@ -368,6 +471,14 @@ if (!home) {
       const err = e as Error;
       const where = (err.stack ?? "").split("\n").find((l) => /partners\.mts/.test(l))?.trim() ?? "";
       check("F  the flow ran to completion", false, `${err.message.split("\n")[0]} ${where}`);
+    }
+    section("G. Phase 1 — verification → listing → rooms → calendar, with boundaries");
+    try {
+      await runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl });
+    } catch (e) {
+      const err = e as Error;
+      const where = (err.stack ?? "").split("\n").find((l) => /partners\.mts/.test(l))?.trim() ?? "";
+      check("G  the flow ran to completion", false, `${err.message.split("\n")[0]} ${where}`);
     }
   }
 }
@@ -665,6 +776,345 @@ async function runFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl }: { a
     }
     await browser.close().catch(() => undefined);
     await Promise.race([sql.end(), new Promise((resolve) => setTimeout(resolve, 5_000))]);
+  }
+}
+
+/**
+ * Phase 1, end to end: an unverified vendor cannot publish; a reviewer
+ * verifies it; the verified vendor adds a listing, rooms and dates; partner B
+ * can neither read nor write any of it, even with forged ids; suspension takes
+ * everything down. All QA rows are synthetic, named "(QA synthetic)", never
+ * published beyond the check that needs it, and removed in `finally`.
+ */
+async function runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl }: { adminEmail: string; supabaseUrl: string; serviceKey: string; databaseUrl: string }) {
+  const { chromium } = await import("playwright");
+  const { createClient } = await import("@supabase/supabase-js");
+  const postgres = (await import("postgres")).default;
+
+  const sql = postgres(databaseUrl, { ssl: "require", max: 1, prepare: false, onnotice: () => undefined });
+  const admin = createClient(supabaseUrl, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
+  const stamp = Date.now().toString(36);
+  const emailA = `qa-inventory-a-${stamp}@terrastory.test`;
+  const emailB = `qa-inventory-b-${stamp}@terrastory.test`;
+  const authIds: string[] = [];
+  const storedPaths: string[] = [];
+  const browser = await chromium.launch();
+  let ip = 20;
+
+  const signIn = async (email: string, next: string, viewport = { width: 1280, height: 900 }) => {
+    const created = await admin.auth.admin.createUser({ email, email_confirm: true });
+    if (created.data.user) authIds.push(created.data.user.id);
+    const link = await admin.auth.admin.generateLink({ type: "magiclink", email });
+    if (link.error || !link.data.properties?.hashed_token) throw new Error(`generateLink failed for ${email}: ${link.error?.message}`);
+    if (link.data.user && !authIds.includes(link.data.user.id)) authIds.push(link.data.user.id);
+    ip += 1;
+    const context = await browser.newContext({ viewport, extraHTTPHeaders: { "x-forwarded-for": `10.77.0.${ip}` } });
+    const page = await context.newPage();
+    await page.goto(`${BASE}/auth/callback?token_hash=${encodeURIComponent(link.data.properties.hashed_token)}&type=magiclink&next=${encodeURIComponent(next)}`, { waitUntil: "load" });
+    await page.waitForURL(/\/auth\/continue/, { timeout: 30_000 });
+    await page.getByRole("button", { name: "Continue" }).click();
+    await page.waitForURL((url) => !url.pathname.startsWith("/auth/"), { timeout: 60_000 });
+    return { context, page };
+  };
+
+  /* Submit a form and wait for ITS OWN reply to change. */
+  const submitAndRead = async (page: import("playwright").Page, form: import("playwright").Locator, click: () => Promise<void>) => {
+    const before = (await form.locator('p[role="status"], p[role="alert"]').allTextContents()).join("|");
+    await click();
+    await page.waitForFunction(
+      ({ prev, handle }) => {
+        const el = (handle as HTMLElement).querySelector('p[role="status"], p[role="alert"]');
+        return el !== null && el.textContent !== "" && el.textContent !== prev;
+      },
+      { prev: before, handle: await form.elementHandle() },
+      { timeout: 45_000 },
+    );
+    return (await form.locator('p[role="status"], p[role="alert"]').allTextContents()).join("|");
+  };
+  const overflow = (page: import("playwright").Page) => page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  const auditActions = async (entityId: string) => (await sql`select action from audit_logs where entity_id = ${entityId} order by at asc`).map((r) => r.action as string);
+
+  try {
+    /* ---- Synthetic fixtures: vendor A unverified with an APPROVED listing; vendor B verified with one room type. */
+    const [a] = await sql`insert into partners (organization_name, contact_name, email, status)
+      values ('QA Inventory Trust A (QA synthetic)', 'QA Owner A', ${emailA}, 'PENDING') returning id`;
+    const [aSeed] = await sql`insert into partner_properties (partner_id, destination_id, name, type, address, status, reviewed_at, source)
+      values (${a.id}, 'jaipur', ${`QA Seed Haveli ${stamp} (QA synthetic)`}, 'HERITAGE', '1 QA Street, Jaipur 302001', 'APPROVED', now(), 'qa-synthetic') returning id`;
+    const [b] = await sql`insert into partners (organization_name, contact_name, email, status)
+      values ('QA Inventory Trust B (QA synthetic)', 'QA Owner B', ${emailB}, 'VERIFIED') returning id`;
+    const [bListing] = await sql`insert into partner_properties (partner_id, destination_id, name, type, address, status, source)
+      values (${b.id}, 'agra', ${`QA B Lodge ${stamp} (QA synthetic)`}, 'GUEST_HOUSE', '2 QA Road, Agra 282001', 'PENDING', 'qa-synthetic') returning id`;
+    const [bUnit] = await sql`insert into listing_units (listing_id, name, capacity, total_quantity) values (${bListing.id}, 'QA B room', 2, 2) returning id`;
+
+    /* ---- G1. An unverified vendor cannot publish or add listings. */
+    const vendorA = await signIn(emailA, "/partner/listings");
+    await vendorA.page.waitForURL(/\/partner\/listings/, { timeout: 30_000 });
+    const aPage = vendorA.page;
+    check("G1 an unverified vendor sees why new listings are locked", /New listings open once you are verified/.test(await aPage.locator("main").innerText()) && (await aPage.locator('a[href="/partner/listings/new"]').count()) === 0);
+    await aPage.goto(`${BASE}/partner/listings/new`, { waitUntil: "load" });
+    check("G1 the new-listing form is not offered to an unverified vendor", (await aPage.locator('form [name="destinationId"]').count()) === 0);
+    await aPage.goto(`${BASE}/partner/listings/${aSeed.id}`, { waitUntil: "load" });
+    check("G1 an approved listing of an unverified vendor offers no Publish", (await aPage.locator('button[name="to"][value="PUBLISHED"]').count()) === 0 && /Publishing opens when/.test(await aPage.locator("main").innerText()));
+    let refused = "";
+    try {
+      await sql`update partner_properties set status = 'PUBLISHED' where id = ${aSeed.id}`;
+    } catch (e) {
+      refused = (e as Error).message;
+    }
+    check("G1 the database refuses to publish for an unverified vendor", /not verified/.test(refused), refused || "the update succeeded");
+    const [stillApproved] = await sql`select status from partner_properties where id = ${aSeed.id}`;
+    check("G1 the listing is still APPROVED and not public", stillApproved?.status === "APPROVED" && (await fetch(`${BASE}/destinations/jaipur/partner-stays/${aSeed.id}`, { redirect: "manual" })).status === 404);
+
+    /* ---- G2. A reviewer verifies the organisation, idempotently and on the record. */
+    const reviewer = await signIn(adminEmail, `/admin/partners/${aSeed.id}`);
+    const landed = reviewer.page.url();
+    const console404 = await reviewer.page.goto(`${BASE}/admin/partners/${aSeed.id}`, { waitUntil: "load" });
+    check("G2 the reviewer reaches the organisation's review page", console404?.status() === 200, `landed on ${landed}, then HTTP ${console404?.status()}`);
+    const decide = async (to: string, note?: string) => {
+      await reviewer.page.goto(`${BASE}/admin/partners/${aSeed.id}`, { waitUntil: "load" });
+      const form = reviewer.page.locator("form[data-vendor-controls]");
+      if (note) await form.locator('textarea[name="note"]').fill(note);
+      return submitAndRead(reviewer.page, form, () => form.locator(`button[value="vendor:${to}"]`).click());
+    };
+    check("G2 a PENDING organisation offers review or rejection, not suspension or verification",
+      (await reviewer.page.locator('form[data-vendor-controls] button[name="decision"]').evaluateAll((els) => els.map((e) => (e as HTMLButtonElement).value).join())) === "vendor:UNDER_REVIEW,vendor:REJECTED");
+    let reply = await decide("UNDER_REVIEW");
+    reply = await decide("VERIFIED", "Registration checked (QA synthetic).");
+    const [aVerified] = await sql`select status, verified_by, verified_at, verification_note from partners where id = ${a.id}`;
+    check("G2 the organisation is VERIFIED with reviewer, time and reason recorded",
+      aVerified?.status === "VERIFIED" && aVerified.verified_by !== null && aVerified.verified_at !== null && /QA synthetic/.test(aVerified.verification_note ?? ""), `${reply} · ${JSON.stringify(aVerified)}`);
+    check("G2 each decision is audited once", (await auditActions(a.id)).join(",") === "partner.under_review,partner.verified", (await auditActions(a.id)).join(","));
+
+    /* ---- G3. The verified vendor creates a listing through the form. */
+    await aPage.goto(`${BASE}/partner/listings/new`, { waitUntil: "load" });
+    const newName = `QA New Homestay ${stamp} (QA synthetic)`;
+    await aPage.fill("#name", newName);
+    await aPage.selectOption("#type", "HOMESTAY");
+    await aPage.selectOption("#destinationId", "varanasi");
+    await aPage.fill("#address", "3 QA Lane, Varanasi 221001");
+    await aPage.fill("#houseRules", "No smoking indoors (QA synthetic).");
+    await aPage.fill("#cancellationTerms", "Free cancellation up to 48 hours before arrival (QA synthetic).");
+    await aPage.click('button[type="submit"]:has-text("Submit listing for review")');
+    await aPage.waitForURL(/\/partner\/listings\/[0-9a-f-]{36}$/, { timeout: 60_000 });
+    const newId = aPage.url().split("/").pop() ?? "";
+    const [created] = await sql`select status, partner_id, source, house_rules from partner_properties where id = ${newId}`;
+    check("G3 a verified vendor creates a listing, in review and owned by them",
+      created?.status === "PENDING" && created.partner_id === a.id && created.source === "partner-workspace" && /No smoking/.test(created.house_rules ?? ""), JSON.stringify(created));
+    check("G3 the new listing is audited and not public",
+      (await auditActions(newId))[0] === "partner_property.submitted" && (await fetch(`${BASE}/destinations/varanasi/partner-stays/${newId}`, { redirect: "manual" })).status === 404);
+
+    /* ---- G4. Rooms. */
+    const addUnit = async (name: string, quantity: string) => {
+      const form = aPage.locator('form[aria-label="Add room type"]');
+      await form.locator("#new-unit-name").fill(name);
+      await form.locator("#new-unit-quantity").fill(quantity);
+      return submitAndRead(aPage, form, () => form.locator('button[type="submit"]').click());
+    };
+    reply = await addUnit("Standard Room", "3");
+    const units = await sql`select id, name, total_quantity from listing_units where listing_id = ${newId}`;
+    check("G4 a partner adds a room type", units.length === 1 && units[0]?.name === "Standard Room" && units[0]?.total_quantity === 3, `${reply} · ${JSON.stringify(units)}`);
+    const unitId: string = units[0]?.id;
+    reply = await addUnit("Standard Room", "2");
+    check("G4 a duplicate room type name is refused", /already has a room type/.test(reply) && (await sql`select count(*)::int n from listing_units where listing_id = ${newId}`)[0]?.n === 1, reply);
+    await aPage.reload({ waitUntil: "load" });
+    const editForm = aPage.locator(`form[data-unit="${unitId}"]`);
+    await editForm.locator('input[name="totalQuantity"]').fill("4");
+    reply = await submitAndRead(aPage, editForm, () => editForm.locator('button[value="save"]').click());
+    check("G4 a partner updates their own room count", (await sql`select total_quantity from listing_units where id = ${unitId}`)[0]?.total_quantity === 4, reply);
+    check("G4 room changes are audited", (await auditActions(unitId)).join(",") === "listing_unit.created,listing_unit.updated", (await auditActions(unitId)).join(","));
+
+    /* ---- G5. The calendar persists, and the database holds the ceiling. */
+    const today = todayInKolkata(new Date());
+    const d1 = addDays(today, 2);
+    const d3 = addDays(today, 4);
+    await aPage.goto(`${BASE}/partner/calendar?unit=${unitId}&month=${d1.slice(0, 7)}`, { waitUntil: "load" });
+    const calForm = aPage.locator('form[aria-labelledby="availability-form-title"]');
+    const setRange = async (from: string, to: string, mode: "open" | "close", rooms?: string) => {
+      await calForm.locator('input[name="from"]').fill(from);
+      await calForm.locator('input[name="to"]').fill(to);
+      await calForm.locator(`input[name="mode"][value="${mode}"]`).check();
+      if (rooms !== undefined) await calForm.locator('input[name="rooms"]').fill(rooms);
+      return submitAndRead(aPage, calForm, () => calForm.locator('button[type="submit"]').click());
+    };
+    reply = await setRange(d1, d3, "open", "2");
+    let days = await sql`select date::text as date, units_open from availability where listing_unit_id = ${unitId} order by date`;
+    check("G5 opening three dates writes three rows of two rooms", days.length === 3 && days.every((d) => d.units_open === 2) && /Saved 3 dates/.test(reply), `${reply} · ${JSON.stringify(days)}`);
+    reply = await setRange(addDays(today, 3), addDays(today, 3), "close");
+    days = await sql`select date::text as date, units_open from availability where listing_unit_id = ${unitId} order by date`;
+    check("G5 closing a date sets it to zero and leaves its neighbours", days.map((d) => d.units_open).join(",") === "2,0,2", `${reply} · ${JSON.stringify(days)}`);
+    reply = await setRange(d1, d1, "open", "9");
+    check("G5 opening more rooms than exist is refused and changes nothing",
+      /more rooms than this room type has/.test(reply) && (await sql`select units_open from availability where listing_unit_id = ${unitId} and date = ${d1}`)[0]?.units_open === 2, reply);
+    reply = await setRange(addDays(today, -1), d1, "open", "1");
+    check("G5 a range in the past is refused", /up to a year, starting today/.test(reply), reply);
+    await aPage.reload({ waitUntil: "load" });
+    const openCells = await aPage.locator(`td[data-day="${d1}"][data-state="open"]`).count();
+    const closedCells = await aPage.locator(`td[data-day="${addDays(today, 3)}"][data-state="closed"]`).count();
+    check("G5 availability persists across a reload", openCells === 1 && closedCells === 1 || d1.slice(0, 7) !== addDays(today, 3).slice(0, 7), `open ${openCells}, closed ${closedCells}`);
+    let ceiling = "";
+    try {
+      await sql`update availability set units_open = 5 where listing_unit_id = ${unitId} and date = ${d1}`;
+    } catch (e) {
+      ceiling = (e as Error).message;
+    }
+    check("G5 the database refuses open + held + booked above the room count", /exceeds its quantity/.test(ceiling), ceiling || "the update succeeded");
+    check("G5 calendar changes are audited", (await auditActions(unitId)).filter((x) => x.startsWith("availability.")).join(",") === "availability.opened,availability.closed", (await auditActions(unitId)).join(","));
+    for (const width of [375, 390, 768, 1440]) {
+      await aPage.setViewportSize({ width, height: 900 });
+      for (const route of ["/partner/dashboard", "/partner/listings", `/partner/listings/${newId}`, `/partner/calendar?unit=${unitId}`, "/partner/verification"]) {
+        await aPage.goto(`${BASE}${route}`, { waitUntil: "load" });
+        const over = await overflow(aPage);
+        check(`G6 ${route.replace(newId, "[id]").replace(unitId, "[unit]")} fits ${width}px`, over <= 1, `${over}px over`);
+      }
+    }
+    await aPage.setViewportSize({ width: 1280, height: 900 });
+    await aPage.goto(`${BASE}/partner/dashboard`, { waitUntil: "load" });
+    check("G6 the overview shows verification, listing and inventory status from real rows",
+      /Verified/.test(await aPage.locator("main").innerText()) && (await aPage.locator("main").innerText()).includes(newName) && /1 room types · open on 2 of the next 30 days/.test(await aPage.locator("main").innerText()));
+    check("G6 the overview shows no bookings, because none exist", !/booking(s)? (confirmed|received)|revenue earned/i.test(await aPage.locator("main").innerText()));
+    await aPage.keyboard.press("Tab");
+    let focusedNav = false;
+    for (let i = 0; i < 25 && !focusedNav; i += 1) {
+      focusedNav = await aPage.evaluate(() => Boolean(document.activeElement?.closest('nav[aria-label="Partner workspace"]')));
+      if (!focusedNav) await aPage.keyboard.press("Tab");
+    }
+    const ring = await aPage.evaluate(() => {
+      const el = document.activeElement as HTMLElement | null;
+      if (!el) return "";
+      const style = getComputedStyle(el);
+      return `${style.outlineStyle} ${style.outlineWidth} ${style.boxShadow}`;
+    });
+    check("G6 the workspace navigation is keyboard reachable with a visible focus ring", focusedNav && !/^none 0px none$/.test(ring), ring);
+    check("G6 the current section is announced", (await aPage.locator('nav[aria-label="Partner workspace"] a[aria-current="page"]').count()) === 1);
+
+    /* ---- G7. Supporting documents: private, typed by content, audited. */
+    await aPage.goto(`${BASE}/partner/verification`, { waitUntil: "load" });
+    const uploadForm = aPage.locator("form:has(#document-file)");
+    if ((await uploadForm.count()) === 1) {
+      const pdf = Buffer.from("%PDF-1.4\n% QA synthetic document\n1 0 obj<<>>endobj\ntrailer<<>>\n%%EOF\n");
+      await uploadForm.locator('select[name="kind"]').selectOption("GOVT_REG");
+      await uploadForm.locator("#document-file").setInputFiles({ name: "qa-registration.pdf", mimeType: "application/pdf", buffer: pdf });
+      reply = await submitAndRead(aPage, uploadForm, () => uploadForm.locator('button[type="submit"]').click());
+      const docs = await sql`select id, file_url, kind, status from vendor_documents where vendor_id = ${a.id}`;
+      for (const d of docs) storedPaths.push(d.file_url);
+      check("G7 a partner uploads a document to private storage", docs.length === 1 && docs[0]?.kind === "GOVT_REG" && docs[0]?.file_url.startsWith(`${a.id}/`) && !/^https?:/.test(docs[0]?.file_url), `${reply} · ${JSON.stringify(docs)}`);
+      check("G7 the upload is audited", Boolean(docs[0]) && (await auditActions(docs[0]?.id)).join() === "vendor_document.uploaded");
+      await aPage.reload({ waitUntil: "load" });
+      const uploadAgain = aPage.locator("form:has(#document-file)");
+      await uploadAgain.locator('select[name="kind"]').selectOption("PROPERTY_PROOF");
+      await uploadAgain.locator("#document-file").setInputFiles({ name: "not-really.pdf", mimeType: "application/pdf", buffer: Buffer.from("<script>alert(1)</script>") });
+      reply = await submitAndRead(aPage, uploadAgain, () => uploadAgain.locator('button[type="submit"]').click());
+      check("G7 a file whose content is not what its type claims is refused", /PDF, JPEG or PNG/.test(reply) && (await sql`select count(*)::int n from vendor_documents where vendor_id = ${a.id}`)[0]?.n === 1, reply);
+      const publicUrl = `${supabaseUrl}/storage/v1/object/public/vendor-docs/${docs[0]?.file_url}`;
+      check("G7 the stored document has no public URL", (await fetch(publicUrl)).status >= 400);
+      await reviewer.page.goto(`${BASE}/admin/partners/${aSeed.id}`, { waitUntil: "load" });
+      const signed = await reviewer.page.locator('a[href*="/object/sign/vendor-docs/"]').first().getAttribute("href");
+      check("G7 the reviewer gets a short-lived signed link", Boolean(signed) && /token=/.test(signed ?? ""));
+    } else {
+      console.log("SKIP  G7 — document storage is not configured on this server");
+    }
+
+    /* ---- G8. Partner B can neither see nor change partner A's records. */
+    const vendorB = await signIn(emailB, `/partner/listings/${newId}`);
+    const bLanding = await vendorB.page.goto(`${BASE}/partner/listings/${newId}`, { waitUntil: "load" });
+    check("G8 partner B gets 404 on partner A's listing", bLanding?.status() === 404, `HTTP ${bLanding?.status()}`);
+    await vendorB.page.goto(`${BASE}/partner/calendar?unit=${unitId}`, { waitUntil: "load" });
+    const bOptions = await vendorB.page.locator("select#unit option").evaluateAll((els) => els.map((e) => (e as HTMLOptionElement).value));
+    check("G8 partner B's calendar ignores A's unit id and lists only B's rooms", bOptions.length === 1 && bOptions[0] === bUnit.id && !(await vendorB.page.locator("main").innerText()).includes("Standard Room"), JSON.stringify(bOptions));
+    const bCal = vendorB.page.locator('form[aria-labelledby="availability-form-title"]');
+    await bCal.locator('input[name="unitId"]').evaluate((el, id) => { (el as HTMLInputElement).value = id; }, unitId);
+    await bCal.locator('input[name="from"]').fill(d1);
+    await bCal.locator('input[name="to"]').fill(d1);
+    await bCal.locator('input[name="rooms"]').fill("1");
+    reply = await submitAndRead(vendorB.page, bCal, () => bCal.locator('button[type="submit"]').click());
+    check("G8 a forged room-type id from partner B changes nothing of A's", /not yours/.test(reply) && (await sql`select units_open from availability where listing_unit_id = ${unitId} and date = ${d1}`)[0]?.units_open === 2, reply);
+    await vendorB.page.goto(`${BASE}/partner/listings/${bListing.id}`, { waitUntil: "load" });
+    const bDetails = vendorB.page.locator("form:has(textarea[name=houseRules])");
+    await bDetails.locator('input[name="listingId"]').evaluate((el, id) => { (el as HTMLInputElement).value = id; }, newId);
+    await bDetails.locator('textarea[name="houseRules"]').fill("Overwritten by partner B");
+    reply = await submitAndRead(vendorB.page, bDetails, () => bDetails.locator('button[type="submit"]').click());
+    check("G8 a forged listing id from partner B changes nothing of A's", /not yours/.test(reply) && /No smoking/.test((await sql`select house_rules from partner_properties where id = ${newId}`)[0]?.house_rules ?? ""), reply);
+    const bUnitForm = vendorB.page.locator(`form[data-unit="${bUnit.id}"]`);
+    await bUnitForm.locator('input[name="unitId"]').evaluate((el, id) => { (el as HTMLInputElement).value = id; }, unitId);
+    reply = await submitAndRead(vendorB.page, bUnitForm, () => bUnitForm.locator('button[value="delete"]').click());
+    check("G8 partner B cannot delete A's room type", /not yours/.test(reply) && (await sql`select count(*)::int n from listing_units where id = ${unitId}`)[0]?.n === 1, reply);
+    const bAdmin = await vendorB.page.goto(`${BASE}/admin/partners/${aSeed.id}`, { waitUntil: "load" });
+    check("G8 partner B gets 404 on the review console", bAdmin?.status() === 404);
+    await vendorB.context.close();
+
+    /* A signed-in traveller with no partner record reaches no workspace. */
+    const traveller = await signIn(`qa-inventory-t-${stamp}@terrastory.test`, "/partner/calendar");
+    await traveller.page.goto(`${BASE}/partner/calendar`, { waitUntil: "load" });
+    check("G8 a signed-in traveller without a partner record sees the empty state, not a workspace",
+      /No partnership request yet/.test(await traveller.page.locator("main").innerText()) && (await traveller.page.locator("select#unit").count()) === 0);
+    await traveller.context.close();
+
+    /* ---- G9. Review → partner publish → public; suspension takes it down. */
+    const press = async (id: string, to: string) => {
+      await reviewer.page.goto(`${BASE}/admin/partners/${id}`, { waitUntil: "load" });
+      const form = reviewer.page.locator("form", { has: reviewer.page.locator('button[name="to"]') }).first();
+      return submitAndRead(reviewer.page, form, () => form.locator(`button[value="${to}"]`).click());
+    };
+    for (const to of ["UNDER_REVIEW", "VERIFIED", "APPROVED"]) await press(newId, to);
+    check("G9 the reviewer approves the new listing", (await sql`select status from partner_properties where id = ${newId}`)[0]?.status === "APPROVED");
+    await aPage.goto(`${BASE}/partner/listings/${newId}`, { waitUntil: "load" });
+    const moveForm = aPage.locator("form:has(button[name='to'])");
+    reply = await submitAndRead(aPage, moveForm, () => moveForm.locator('button[value="PUBLISHED"]').click());
+    const [published] = await sql`select status, reviewer_id, published_at from partner_properties where id = ${newId}`;
+    check("G9 the verified vendor publishes their approved listing", published?.status === "PUBLISHED" && published.published_at !== null, `${reply} · ${JSON.stringify(published)}`);
+    const trail = await sql`select action, after from audit_logs where entity_id = ${newId} and action = 'partner_property.published'`;
+    check("G9 the partner's publish is audited as the partner's", trail.length === 1 && trail[0]?.after?.by === "partner");
+    const pub = await fetch(`${BASE}/destinations/varanasi/partner-stays/${newId}`, { redirect: "manual" });
+    check("G9 a valid published listing is public", pub.status === 200, `HTTP ${pub.status}`);
+    const pubBody = await pub.text();
+    check("G9 the public page shows no rooms, dates or house policies", !/Standard Room|No smoking|units_open|rooms open/i.test(pubBody));
+
+    reply = await decide("SUSPENDED", "Suspended for the QA check (QA synthetic).");
+    const [suspended] = await sql`select p.status as vendor, l.status as listing from partners p join partner_properties l on l.partner_id = p.id where l.id = ${newId}`;
+    check("G9 suspending the vendor unpublishes its listings in the database", suspended?.vendor === "SUSPENDED" && suspended.listing === "UNPUBLISHED", `${reply} · ${JSON.stringify(suspended)}`);
+    const gone = await fetch(`${BASE}/destinations/varanasi/partner-stays/${newId}`, { redirect: "manual" });
+    check("G9 a suspended vendor's listing is no longer public", gone.status === 404, `HTTP ${gone.status}`);
+    await aPage.goto(`${BASE}/partner/listings/${newId}`, { waitUntil: "load" });
+    check("G9 a suspended vendor is offered no Publish", (await aPage.locator('button[value="PUBLISHED"]').count()) === 0);
+    /* Replay the same decision, as a double-submit or a retried request would. */
+    await reviewer.page.goto(`${BASE}/admin/partners/${aSeed.id}`, { waitUntil: "load" });
+    const replay = reviewer.page.locator("form[data-vendor-controls]");
+    await replay.locator('textarea[name="note"]').fill("again");
+    await replay.locator('button[name="decision"]').first().evaluate((el) => { (el as HTMLButtonElement).value = "vendor:SUSPENDED"; });
+    reply = await submitAndRead(reviewer.page, replay, () => replay.locator('button[name="decision"]').first().click());
+    check("G9 a repeated decision is idempotent", /nothing changed/.test(reply) && (await auditActions(a.id)).filter((x) => x === "partner.suspended").length === 1, (await auditActions(a.id)).join(","));
+    await reviewer.context.close();
+    await vendorA.context.close();
+  } finally {
+    /* A long browser wait can outlive the pooler's idle timeout; clean up on a fresh connection. */
+    await Promise.race([sql.end(), new Promise((resolve) => setTimeout(resolve, 5_000))]);
+    const sqlClean = postgres(databaseUrl, { ssl: "require", max: 1, prepare: false, onnotice: () => undefined });
+    try {
+      const sql = sqlClean;
+      const ids = (await sql`select id from partners where email in (${emailA}, ${emailB})`).map((r) => r.id);
+      if (ids.length) {
+        const listings = (await sql`select id from partner_properties where partner_id in ${sql(ids)}`).map((r) => r.id);
+        const unitIds = listings.length ? (await sql`select id from listing_units where listing_id in ${sql(listings)}`).map((r) => r.id) : [];
+        const docIds = (await sql`select id, file_url from vendor_documents where vendor_id in ${sql(ids)}`);
+        for (const d of docIds) if (!storedPaths.includes(d.file_url)) storedPaths.push(d.file_url);
+        const entityIds = [...ids, ...listings, ...unitIds, ...docIds.map((d) => d.id)];
+        if (entityIds.length) await sql`delete from audit_logs where entity_id in ${sql(entityIds)}`;
+        await sql`delete from partners where id in ${sql(ids)}`;
+      }
+      if (storedPaths.length) await admin.storage.from("vendor-docs").remove(storedPaths);
+      for (const id of authIds) {
+        await sql`update partner_properties set reviewer_id = null where reviewer_id = ${id}`;
+        await sql`update partners set verified_by = null where verified_by = ${id}`;
+        await sql`update vendor_documents set uploaded_by = null where uploaded_by = ${id}`;
+        await sql`update audit_logs set actor_id = null where actor_id = ${id}`;
+        await sql`delete from users where id = ${id}`;
+        await admin.auth.admin.deleteUser(id);
+      }
+    } catch (e) {
+      console.log(`WARN  inventory cleanup incomplete: ${(e as Error).message}`);
+    }
+    await browser.close().catch(() => undefined);
+    await Promise.race([sqlClean.end(), new Promise((resolve) => setTimeout(resolve, 5_000))]);
   }
 }
 

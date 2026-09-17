@@ -55,7 +55,9 @@ export async function computeCoverage(destinationId: string, tier: Tier): Promis
     SELECT
       (SELECT count(*)::int FROM sites  WHERE destination_id = ${destinationId} AND is_published) AS sites,
       (SELECT count(*)::int FROM stories WHERE destination_id = ${destinationId} AND published_at IS NOT NULL) AS stories,
-      (SELECT count(*)::int FROM listings WHERE destination_id = ${destinationId} AND status = 'ACTIVE') AS stays,
+      /* Bookable stays are partner listings keyed by registry destination, not
+         by this district id (drizzle/sql/0002); none belong to a district. */
+      0::int AS stays,
       (SELECT count(*)::int FROM media m JOIN sites s ON s.id = m.owner_id
          WHERE m.owner_type = 'SITE' AND s.destination_id = ${destinationId}) AS photos,
       (SELECT count(DISTINCT a.locale)::int FROM audio_guides a JOIN sites s ON s.id = a.site_id

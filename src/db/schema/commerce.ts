@@ -17,6 +17,7 @@ import { sql } from "drizzle-orm";
 
 import { destinations } from "@/db/schema/content";
 import { users, vendorType, vendors } from "@/db/schema/identity";
+import { partnerProperties, partners } from "@/db/schema/partners";
 
 /**
  * Commerce — inventory, money, and the one table the whole product turns on.
@@ -41,6 +42,13 @@ export const cancellationPolicy = pgEnum("cancellation_policy", [
   "STRICT",
 ]);
 
+/**
+ * @deprecated RETIRED — no inventory is written here. Listings are partner
+ * properties (partners.ts); units, availability, booking items, payouts and
+ * reviews reference those. The table stays only because the build already
+ * deployed on this database still counts it; drop it once that build is
+ * replaced (docs/partner-inventory.md).
+ */
 export const listings = pgTable(
   "listings",
   {
@@ -81,17 +89,34 @@ export const listings = pgTable(
   ],
 );
 
-export const listingUnits = pgTable("listing_units", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  listingId: uuid("listing_id")
-    .notNull()
-    .references(() => listings.id, { onDelete: "cascade" }),
-  /* "Deluxe double", "Innova 6-seater", "Morning batch" — the thing that is
-     actually countable. A listing is a shopfront; a unit is inventory. */
-  name: text("name").notNull(),
-  capacity: integer("capacity").notNull().default(2),
-  totalQuantity: integer("total_quantity").notNull().default(1),
-});
+/**
+ * The countable thing a listing sells: "Deluxe double", "Innova 6-seater",
+ * "Morning batch". A listing is a shopfront; a unit is inventory.
+ *
+ * `listing_id` names a partner property — the verified listing a partner
+ * owns (partners.ts). It once pointed at `listings`, which no code wrote;
+ * both models described the same supply, so inventory now hangs off the one
+ * that has verification, ownership and review behind it.
+ */
+export const listingUnits = pgTable(
+  "listing_units",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    listingId: uuid("listing_id")
+      .notNull()
+      .references(() => partnerProperties.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    capacity: integer("capacity").notNull().default(2),
+    totalQuantity: integer("total_quantity").notNull().default(1),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [
+    unique("listing_units_listing_name_unique").on(table.listingId, table.name),
+    check("listing_units_capacity_range", sql`${table.capacity} BETWEEN 1 AND 50`),
+    check("listing_units_quantity_range", sql`${table.totalQuantity} BETWEEN 1 AND 500`),
+  ],
+);
 
 /**
  * ★ THE BOOKING ENGINE.
@@ -129,6 +154,7 @@ export const availability = pgTable(
     unitsHeld: integer("units_held").notNull().default(0),
     unitsBooked: integer("units_booked").notNull().default(0),
     pricePaiseOverride: bigint("price_paise_override", { mode: "bigint" }),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (table) => [
     unique("availability_unit_date_unique").on(table.listingUnitId, table.date),
@@ -188,13 +214,13 @@ export const bookingItems = pgTable(
       .references(() => bookings.id, { onDelete: "cascade" }),
     listingId: uuid("listing_id")
       .notNull()
-      .references(() => listings.id),
+      .references(() => partnerProperties.id),
     listingUnitId: uuid("listing_unit_id")
       .notNull()
       .references(() => listingUnits.id),
     vendorId: uuid("vendor_id")
       .notNull()
-      .references(() => vendors.id),
+      .references(() => partners.id),
     startDate: date("start_date").notNull(),
     endDate: date("end_date").notNull(),
     qty: integer("qty").notNull().default(1),
@@ -246,7 +272,7 @@ export const payouts = pgTable("payouts", {
   id: uuid("id").primaryKey().defaultRandom(),
   vendorId: uuid("vendor_id")
     .notNull()
-    .references(() => vendors.id),
+    .references(() => partners.id),
   bookingItemId: uuid("booking_item_id")
     .notNull()
     .references(() => bookingItems.id, { onDelete: "cascade" }),
@@ -270,7 +296,7 @@ export const reviews = pgTable(
       .references(() => bookingItems.id, { onDelete: "cascade" }),
     listingId: uuid("listing_id")
       .notNull()
-      .references(() => listings.id, { onDelete: "cascade" }),
+      .references(() => partnerProperties.id, { onDelete: "cascade" }),
     userId: uuid("user_id")
       .notNull()
       .references(() => users.id),

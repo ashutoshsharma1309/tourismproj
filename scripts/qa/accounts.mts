@@ -217,7 +217,7 @@ check("an e-mail token link is exchanged only by a same-origin POST",
   /export async function POST/.test(read("src/app/auth/callback/route.ts")) && /isSameOrigin\(request\)/.test(read("src/app/auth/callback/route.ts")) && !/verifyOtp[\s\S]*export async function POST/.test(read("src/app/auth/callback/route.ts")));
 check("a password can be set without the old one only after recent inbox proof", /recentInboxProof\(session\)/.test(read("src/app/(v1)/login/account-actions.ts")) && /recentInboxProof/.test(read("src/app/(v1)/reset-password/page.tsx")));
 check("account deletion handles every table that references users",
-  ["partners", "partnerProperties", "vendorDocuments", "auditLogs", "reviews", "permitApplications", "trips", "bookings", "vendors"].every((table) => new RegExp(`\\b${table}\\b`).test(strip(read("src/lib/account/store.ts")).split("export async function deleteAccountData")[1] ?? "")));
+  ["partners", "partnerProperties", "vendorDocuments", "auditLogs", "reviews", "permitApplications", "trips", "bookings"].every((table) => new RegExp(`\\b${table}\\b`).test(strip(read("src/lib/account/store.ts")).split("export async function deleteAccountData")[1] ?? "")));
 check("no src/app file contains the research-firewall text", walk("src/app").filter((f) => !/\/review\//.test(f)).every((f) => !read(f).includes(".data")));
 
 /* ======================================================================

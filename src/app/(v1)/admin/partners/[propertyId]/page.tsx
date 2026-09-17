@@ -5,12 +5,16 @@ import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/layout/Footer";
 import { EditControls, ReviewControls } from "@/components/partners/ReviewControls";
+import { VendorDecisionControls } from "@/components/partners/VendorDecisionControls";
 import { Badge } from "@/components/ui/Badge";
+import { documentsForPartner, unitsForPartnerListing, vendorTrailForReviewer } from "@/db/queries/partner-inventory";
 import { auditTrailFor, referralCountsForProperty, reviewItem } from "@/db/queries/partners";
+import { signedVendorDocumentUrl } from "@/db/storage";
 import { requireAdmin } from "@/lib/auth/session";
 import { getDestination } from "@/lib/destinations/registry";
 import { PROPERTY_STATUS_LABEL, PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
+import { VENDOR_STATUS_TONE, type VendorStatus } from "@/lib/partners/vendor";
 
 export const metadata: Metadata = { title: "Review property", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -61,7 +65,16 @@ export default async function AdminPropertyPage({ params }: { params: Promise<{ 
   if (!item) notFound();
   const { property, partner } = item;
   const status = property.status as PropertyStatus;
-  const [trail, referrals] = await Promise.all([auditTrailFor(propertyId), referralCountsForProperty(propertyId)]);
+  const [trail, referrals, documents, vendorTrail, units] = await Promise.all([
+    auditTrailFor(propertyId),
+    referralCountsForProperty(propertyId),
+    documentsForPartner(partner.id),
+    vendorTrailForReviewer(partner.id),
+    unitsForPartnerListing(partner.id, propertyId),
+  ]);
+  /* Signed links expire in minutes; they are minted per page view, never stored. */
+  const documentLinks = await Promise.all(documents.map(async (doc) => ({ doc, url: await signedVendorDocumentUrl(doc.fileUrl) })));
+  const vendorStatus = partner.status as VendorStatus;
   const destination = getDestination(property.destinationId);
   const checks = property.provenance?.checks ?? [];
 
@@ -146,6 +159,52 @@ export default async function AdminPropertyPage({ params }: { params: Promise<{ 
 
           <aside>
             <ReviewControls propertyId={property.id} status={status} />
+            <section className="mt-6 rounded-xl border border-border p-5" aria-labelledby="vendor">
+              <div className="flex flex-wrap items-center gap-2">
+                <h2 id="vendor" className="font-display text-h4">Organisation</h2>
+                <Badge tone={VENDOR_STATUS_TONE[vendorStatus]}>{vendorStatus.toLowerCase().replace(/_/g, " ")}</Badge>
+              </div>
+              <dl className="mt-3 space-y-2">
+                <Row label="Operates" value={partner.vendorType.toLowerCase()} />
+                <Row label="Registration reference" value={partner.registrationInfo} />
+                <Row label="Latest organisation note" value={partner.verificationNote} />
+              </dl>
+              <p className="mt-4 text-small font-medium">Supporting documents</p>
+              {documentLinks.length === 0 ? (
+                <p className="mt-1 text-small text-muted">None uploaded.</p>
+              ) : (
+                <ul className="mt-1 space-y-1.5">
+                  {documentLinks.map(({ doc, url }) => (
+                    <li key={doc.id} className="text-small break-words">
+                      {url ? (
+                        <a href={url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          {doc.kind.toLowerCase().replace(/_/g, " ")}: {doc.fileName ?? "file"}
+                        </a>
+                      ) : (
+                        <span>{doc.kind.toLowerCase().replace(/_/g, " ")}: storage unavailable</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <p className="mt-4 text-small font-medium">Rooms on this listing</p>
+              <p className="mt-1 text-small text-muted">
+                {units.length === 0 ? "None set up." : units.map((u) => `${u.name} (${u.totalQuantity})`).join(", ")}
+              </p>
+              {vendorTrail.length > 0 ? (
+                <ol className="mt-4 space-y-1">
+                  {vendorTrail.map((entry) => (
+                    <li key={entry.id} className="flex flex-wrap gap-x-2 text-caption">
+                      <span className="font-mono text-subtle" data-numeric>{entry.at.toISOString().replace("T", " ").slice(0, 16)}</span>
+                      <span>{entry.action}</span>
+                    </li>
+                  ))}
+                </ol>
+              ) : null}
+            </section>
+            <div className="mt-6">
+              <VendorDecisionControls partnerId={partner.id} propertyId={property.id} status={vendorStatus} />
+            </div>
             <section className="mt-6 rounded-xl border border-border p-5" aria-labelledby="refs">
               <h2 id="refs" className="font-display text-h4">Referral activity</h2>
               {referrals.length === 0 ? (

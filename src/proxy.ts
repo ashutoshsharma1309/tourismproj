@@ -54,6 +54,9 @@ export const config = {
     "/forgot-password",
     "/reset-password",
     "/partner/dashboard",
+    "/partner/verification",
+    "/partner/listings/:path*",
+    "/partner/calendar",
     "/admin/:path*",
     /* Not /api/account: those route handlers validate the session themselves
        and can write refreshed cookies, so a proxy pass would only repeat the

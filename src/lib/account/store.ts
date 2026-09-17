@@ -1,6 +1,6 @@
 import "server-only";
 
-import { and, desc, eq, gt, lt, ne, notInArray, or, sql } from "drizzle-orm";
+import { and, desc, eq, gt, inArray, lt, ne, notInArray, or, sql } from "drizzle-orm";
 
 import { db, hasDatabase } from "@/db";
 import {
@@ -11,7 +11,6 @@ import {
   reviews,
   trips,
   vendorDocuments,
-  vendors,
   partnerProperties,
   partners,
   travelEvents,
@@ -371,7 +370,12 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
   /* Financial and business records are not erased by a self-service click:
      a booking (with its payment) or an operator business needs a person. */
   const [booking] = await db.select({ id: bookings.id }).from(bookings).where(eq(bookings.userId, userId)).limit(1);
-  const [vendor] = await db.select({ id: vendors.id }).from(vendors).where(eq(vendors.ownerUserId, userId)).limit(1);
+  const [vendor] = await db
+    .select({ id: partners.id })
+    .from(partners)
+    .innerJoin(partnerProperties, eq(partnerProperties.partnerId, partners.id))
+    .where(and(eq(partners.ownerUserId, userId), inArray(partnerProperties.status, ["APPROVED", "PUBLISHED", "UNPUBLISHED"])))
+    .limit(1);
   if (booking || vendor) {
     return { ok: false, error: "This account holds bookings or an operator business, which we must close with you. Please contact TerraStory from the About page." };
   }
@@ -380,6 +384,8 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
     await tx.update(partners).set({ ownerUserId: null }).where(eq(partners.ownerUserId, userId));
     await tx.update(partnerProperties).set({ reviewerId: null }).where(eq(partnerProperties.reviewerId, userId));
     await tx.update(vendorDocuments).set({ reviewerId: null }).where(eq(vendorDocuments.reviewerId, userId));
+    await tx.update(vendorDocuments).set({ uploadedBy: null }).where(eq(vendorDocuments.uploadedBy, userId));
+    await tx.update(partners).set({ verifiedBy: null }).where(eq(partners.verifiedBy, userId));
     await tx.update(auditLogs).set({ actorId: null }).where(eq(auditLogs.actorId, userId));
     /* Personal records: delete (trip days and stops cascade from trips). */
     await tx.delete(reviews).where(eq(reviews.userId, userId));

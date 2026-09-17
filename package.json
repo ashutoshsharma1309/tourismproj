@@ -70,6 +70,7 @@
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
     "db:seed": "tsx --env-file=.env.local scripts/seed.ts",
+    "db:constraints": "tsx --env-file=.env.local scripts/db/apply-constraints.mts",
     "media:widths": "node scripts/media/upgrade-capsule-images.mjs",
     "media:places": "node scripts/media/refetch-capsule-images.mjs",
     "media:culture": "node scripts/media/refetch-culture-images.mjs",

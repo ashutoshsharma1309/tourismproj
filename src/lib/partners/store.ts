@@ -6,6 +6,12 @@ import { db, hasDatabase } from "@/db";
 import { partnerProperties, partners, referralEvents } from "@/db/schema";
 import { auditLogs } from "@/db/schema/ops";
 import { canTransition, type PropertyStatus } from "@/lib/partners/lifecycle";
+import {
+  isVerifiedVendor,
+  partnerMayMove,
+  vendorStatusAfterPropertyReview,
+  type VendorStatus,
+} from "@/lib/partners/vendor";
 import type { PartnershipRequest, ReferralEventInput } from "@/lib/partners/schema";
 
 /**
@@ -37,6 +43,7 @@ export async function createPartnershipRequest(
         contactName: input.contactName,
         email: input.email,
         phone: input.phone,
+        registrationInfo: input.registrationInfo,
       })
       .onConflictDoUpdate({
         target: partners.email,
@@ -46,6 +53,7 @@ export async function createPartnershipRequest(
           /* A later request that leaves the telephone blank must not erase
              the one already on file: a reviewer may have verified it. */
           phone: sql`coalesce(excluded.phone, ${partners.phone})`,
+          registrationInfo: sql`coalesce(excluded.registration_info, ${partners.registrationInfo})`,
           updatedAt: new Date(),
         },
       })
@@ -108,74 +116,124 @@ export interface TransitionInput {
   note?: string | null;
   /** What the reviewer confirmed, appended to provenance on VERIFIED. */
   checks?: { field: string; method: string }[];
+  /**
+   * Who is moving it. A reviewer may make any move the lifecycle allows. A
+   * partner may only publish or unpublish their OWN listing (`partnerId` must
+   * match), and only while their organisation is verified.
+   */
+  by?: { role: "reviewer" } | { role: "partner"; partnerId: string };
+}
+
+/** Postgres raised one of the partner invariants from drizzle/sql/0002. */
+function violated(error: unknown, constraint: string): boolean {
+  const e = error as { constraint_name?: string; message?: string; cause?: { constraint_name?: string; message?: string } };
+  const name = e?.constraint_name ?? e?.cause?.constraint_name;
+  return name === constraint || (e?.message ?? "").includes(constraint) || (e?.cause?.message ?? "").includes(constraint);
 }
 
 /**
  * Move a property along its lifecycle. Refuses a transition the machine
  * does not allow, and records who did what.
+ *
+ * IDEMPOTENT: asking for the status a property already has changes nothing
+ * and writes no audit row, so a double-click or a replayed request cannot
+ * stack decisions.
  */
-export async function transitionProperty(input: TransitionInput): Promise<StoreResult<{ status: PropertyStatus; destinationId: string }>> {
+export async function transitionProperty(input: TransitionInput): Promise<StoreResult<{ status: PropertyStatus; destinationId: string; changed: boolean }>> {
   if (!hasDatabase) return { ok: false, error: "No database on this deployment." };
+  const by = input.by ?? { role: "reviewer" as const };
 
-  return db.transaction(async (tx) => {
-    const [row] = await tx
-      .select()
-      .from(partnerProperties)
-      .where(eq(partnerProperties.id, input.propertyId))
-      .limit(1)
-      .for("update");
-    if (!row) return { ok: false, error: "No such property." };
-    const from = row.status as PropertyStatus;
-    if (!canTransition(from, input.to)) {
-      return { ok: false, error: `A property that is ${from} cannot become ${input.to}.` };
-    }
+  try {
+    return await db.transaction(async (tx) => {
+      const [row] = await tx
+        .select()
+        .from(partnerProperties)
+        .where(eq(partnerProperties.id, input.propertyId))
+        .limit(1)
+        .for("update");
+      if (!row || (by.role === "partner" && row.partnerId !== by.partnerId)) {
+        return { ok: false, error: "No such property." };
+      }
+      const from = row.status as PropertyStatus;
+      if (from === input.to) {
+        return { ok: true, data: { status: from, destinationId: row.destinationId, changed: false } };
+      }
+      if (!canTransition(from, input.to) || (by.role === "partner" && !partnerMayMove(from, input.to))) {
+        return { ok: false, error: `A property that is ${from} cannot become ${input.to}.` };
+      }
 
-    const now = new Date();
-    const provenance = row.provenance ?? { submittedAt: row.createdAt.toISOString(), checks: [] };
-    const checks =
-      input.to === "VERIFIED"
-        ? [
-            ...(provenance.checks ?? []),
-            ...(input.checks ?? []).map((c) => ({ ...c, at: now.toISOString() })),
-          ]
-        : provenance.checks ?? [];
+      const [vendor] = await tx
+        .select({ status: partners.status })
+        .from(partners)
+        .where(eq(partners.id, row.partnerId))
+        .limit(1)
+        .for("update");
+      const vendorStatus = (vendor?.status ?? "PENDING") as VendorStatus;
+      if (by.role === "partner" && input.to === "PUBLISHED" && !isVerifiedVendor(vendorStatus)) {
+        return { ok: false, error: "The organisation must be verified before a listing is published." };
+      }
 
-    await tx
-      .update(partnerProperties)
-      .set({
-        status: input.to,
-        reviewerId: input.actorId,
-        reviewNote: input.note ?? row.reviewNote,
-        reviewedAt: now,
-        publishedAt: input.to === "PUBLISHED" ? now : row.publishedAt,
-        provenance: { ...provenance, checks },
-        updatedAt: now,
-      })
-      .where(eq(partnerProperties.id, input.propertyId));
+      const now = new Date();
+      const provenance = row.provenance ?? { submittedAt: row.createdAt.toISOString(), checks: [] };
+      const checks =
+        input.to === "VERIFIED"
+          ? [
+              ...(provenance.checks ?? []),
+              ...(input.checks ?? []).map((c) => ({ ...c, at: now.toISOString() })),
+            ]
+          : provenance.checks ?? [];
 
-    /* The partner record follows its first property forward, so a dashboard
-       can say "verified" or "approved" at the organisation level. */
-    const partnerStatus =
-      input.to === "REJECTED" ? "REJECTED"
-      : input.to === "UNDER_REVIEW" ? "UNDER_REVIEW"
-      : input.to === "VERIFIED" ? "VERIFIED"
-      : input.to === "APPROVED" || input.to === "PUBLISHED" || input.to === "UNPUBLISHED" ? "APPROVED"
-      : null;
-    if (partnerStatus) {
-      await tx.update(partners).set({ status: partnerStatus, updatedAt: now }).where(eq(partners.id, row.partnerId));
-    }
+      /* The vendor follows its property's review forward — never backward,
+         never out of suspension (lib/partners/vendor.ts). A partner's own
+         publish is not a review and moves nothing. The promotion is written
+         BEFORE the property, so the database's verified-vendor trigger sees
+         the vendor a reviewer has just approved. */
+      const promoted = by.role === "reviewer" ? vendorStatusAfterPropertyReview(vendorStatus, input.to) : null;
+      if (promoted) {
+        await tx
+          .update(partners)
+          .set({ status: promoted, verifiedBy: input.actorId, verifiedAt: now, updatedAt: now })
+          .where(eq(partners.id, row.partnerId));
+        await tx.insert(auditLogs).values({
+          actorId: input.actorId,
+          action: `partner.${promoted.toLowerCase()}`,
+          entityType: "partner",
+          entityId: row.partnerId,
+          before: { status: vendorStatus },
+          after: { status: promoted, via: "property_review", propertyId: input.propertyId },
+        });
+      }
 
-    await tx.insert(auditLogs).values({
-      actorId: input.actorId,
-      action: `partner_property.${input.to.toLowerCase()}`,
-      entityType: "partner_property",
-      entityId: input.propertyId,
-      before: { status: from },
-      after: { status: input.to, note: input.note ?? null, checks: input.checks ?? [] },
+      await tx
+        .update(partnerProperties)
+        .set({
+          status: input.to,
+          ...(by.role === "reviewer"
+            ? { reviewerId: input.actorId, reviewNote: input.note ?? row.reviewNote, reviewedAt: now }
+            : {}),
+          publishedAt: input.to === "PUBLISHED" ? now : row.publishedAt,
+          provenance: { ...provenance, checks },
+          updatedAt: now,
+        })
+        .where(eq(partnerProperties.id, input.propertyId));
+
+      await tx.insert(auditLogs).values({
+        actorId: input.actorId,
+        action: `partner_property.${input.to.toLowerCase()}`,
+        entityType: "partner_property",
+        entityId: input.propertyId,
+        before: { status: from },
+        after: { status: input.to, by: by.role, note: input.note ?? null, checks: input.checks ?? [] },
+      });
+
+      return { ok: true, data: { status: input.to, destinationId: row.destinationId, changed: true } };
     });
-
-    return { ok: true, data: { status: input.to, destinationId: row.destinationId } };
-  });
+  } catch (error) {
+    if (violated(error, "partner_properties_vendor_verified")) {
+      return { ok: false, error: "The organisation must be verified before a listing is published." };
+    }
+    throw error;
+  }
 }
 
 /** Correct a verified field. Audited with before/after. */

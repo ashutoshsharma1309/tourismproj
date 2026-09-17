@@ -13,8 +13,8 @@ import { ACCOMMODATION_LABEL, ACCOMMODATION_TYPES } from "@/lib/partners/schema"
 /**
  * The partnership request form.
  *
- * Only what verification needs. No payment details, no documents, no room
- * counts. The destination is a fixed list — the eighteen TerraStory covers —
+ * Only what verification needs. No payment details and no room counts;
+ * supporting documents are uploaded after sign-in, on /partner/verification. The destination is a fixed list — the eighteen TerraStory covers —
  * because a property outside them has no page to appear on.
  */
 export function PartnerApplyForm({
@@ -83,6 +83,10 @@ export function PartnerApplyForm({
         <Field name="contactName" label="Contact person" required defaultValue={values.contactName} error={errors.contactName} />
         <Field name="email" label="Business e-mail" type="email" required defaultValue={values.email} error={errors.email} hint="The reviewer replies here, and you sign in with it." />
         <Field name="phone" label="Telephone" type="tel" defaultValue={values.phone} error={errors.phone} hint="The number guests call. Shown to travellers once the property is published." />
+        <div className="sm:col-span-2">
+          <Field name="registrationInfo" label="Tourism registration or trade licence reference" defaultValue={values.registrationInfo} error={errors.registrationInfo}
+            hint="Optional. The reference as it appears on your certificate; you can upload the document after signing in." />
+        </div>
       </fieldset>
 
       <fieldset className="grid gap-5 sm:grid-cols-2">

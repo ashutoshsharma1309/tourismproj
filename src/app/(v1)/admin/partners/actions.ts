@@ -5,7 +5,9 @@ import { z } from "zod";
 
 import { requireAdmin } from "@/lib/auth/session";
 import { PROPERTY_STATUSES } from "@/lib/partners/lifecycle";
+import { decideVendor } from "@/lib/partners/inventory";
 import { editProperty, transitionProperty } from "@/lib/partners/store";
+import { VENDOR_STATUSES } from "@/lib/partners/vendor";
 
 export interface ReviewState {
   status: "idle" | "ok" | "error";
@@ -48,6 +50,7 @@ export async function reviewTransition(_prev: ReviewState, formData: FormData): 
   });
   if (!result.ok) return { status: "error", message: result.error };
   const { data: moved } = result;
+  if (!moved.changed) return { status: "ok", message: `Already ${moved.status.toLowerCase().replace(/_/g, " ")}; nothing changed.` };
 
   revalidatePath("/admin/partners");
   revalidatePath(`/admin/partners/${input.propertyId}`);
@@ -98,4 +101,40 @@ export async function reviewEdit(_prev: ReviewState, formData: FormData): Promis
   if (!result.ok) return { status: "error", message: result.error };
   revalidatePath(`/admin/partners/${propertyId}`);
   return { status: "ok", message: "Saved." };
+}
+
+const vendorDecisionSchema = z.object({
+  partnerId: z.string().uuid(),
+  propertyId: z.string().uuid(),
+  to: z.enum(VENDOR_STATUSES),
+  note: z.string().trim().max(1000).optional(),
+});
+
+/**
+ * A decision about the ORGANISATION — verify, suspend, reinstate, reject.
+ * Admin only, idempotent, audited by the store. Suspension unpublishes every
+ * listing the vendor has, in the database.
+ */
+export async function vendorDecision(_prev: ReviewState, formData: FormData): Promise<ReviewState> {
+  const admin = await requireAdmin();
+  if (!admin) return { status: "error", message: "Not permitted." };
+  const parsed = vendorDecisionSchema.safeParse({
+    partnerId: formData.get("partnerId"),
+    propertyId: formData.get("propertyId"),
+    to: String(formData.get("decision") ?? "").replace(/^vendor:/, ""),
+    note: typeof formData.get("note") === "string" ? formData.get("note") : undefined,
+  });
+  if (!parsed.success) return { status: "error", message: "Invalid request." };
+  const { data: input } = parsed;
+  const result = await decideVendor({ actorId: admin.id }, input.partnerId, input.to, input.note || null);
+  if (!result.ok) return { status: "error", message: result.error };
+  const { data: decided } = result;
+  revalidatePath(`/admin/partners/${input.propertyId}`);
+  revalidatePath("/admin/partners");
+  return {
+    status: "ok",
+    message: decided.changed
+      ? `Organisation now ${decided.status.toLowerCase().replace(/_/g, " ")}.`
+      : `Organisation already ${decided.status.toLowerCase().replace(/_/g, " ")}; nothing changed.`,
+  };
 }
