@@ -79,7 +79,7 @@ export interface SearchGroupIndex {
    *
    * PHASE 14, OBJECTIVE 19: a global result has to say where it comes from,
    * or a Kyoto claim surfaced while reading about Sikkim reads as Sikkim's.
-   * The name sits on the GROUP for the same reason the id does — fifteen
+   * The name sits on the GROUP for the same reason the id does — a set of
    * strings for the whole index instead of one per record.
    */
   destinationName: string | null;
@@ -127,10 +127,10 @@ const DESTINATIONS: SearchItem[] = [
   /*
    * The "Go to" shortcuts were seven Sikkim routes with global-sounding
    * labels — "Digital Heritage Archive", "Book a stay", "Explore monasteries"
-   * — offered in the palette on every page of a fifteen-destination product.
+   * — offered in the palette on every page of a many-destination product.
    * The product's own routes lead now; Sikkim's remain, and say whose they are.
    */
-  { label: "All destinations", sublabel: "Fifteen, across six countries", href: "/destinations", group: "Go to", icon: "compass" },
+  { label: "All destinations", sublabel: "Across India, state by state", href: "/destinations", group: "Go to", icon: "compass" },
   { label: "Discover by interest", sublabel: "Architecture, food, faith, nature…", href: "/discover", group: "Go to", icon: "compass" },
   { label: "Every story", sublabel: "The cultural archive, searchable", href: "/stories", group: "Go to", icon: "book" },
   { label: "One chronology", sublabel: "Every destination's history, dated", href: "/history", group: "Go to", icon: "scroll" },
@@ -205,7 +205,13 @@ export function buildSearchIndex(): SearchIndex {
       group: "Stays" as const,
       icon: "bed" as const,
     })),
-    ...DESTINATIONS,
+    /*
+     * The "Go to" shortcuts are NOT spread in here. They live in the
+     * navigation group below, which belongs to no destination and is admitted
+     * into every scope — so listing them here too put every shortcut in the
+     * palette twice on Sikkim's pages (30 rows, 15 distinct) and doubled them
+     * again in global search. Measured by qa:india's search section.
+     */
   ];
 
   /*

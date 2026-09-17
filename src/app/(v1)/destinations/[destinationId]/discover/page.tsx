@@ -91,7 +91,7 @@ export default async function DiscoverPage({ params, searchParams }: PageProps) 
    *
    * Every record carries a `typeLabel` — "Temple", "Ghat", "Museum" — which
    * is its source's classification. Counting those across THIS destination's
-   * records yields its vocabulary: Kyoto offers Temple / Shrine / Garden,
+   * records yields its vocabulary: Jaipur offers Fort / Palace / Museum,
    * Varanasi offers Ghat / Temple / Mosque, and neither is asked to use the
    * other's. Nothing here is a global list; a kind appears only because a
    * record of that kind exists. The filter composes with the interest filter

@@ -5,10 +5,10 @@ import { SITE_URL } from "@/lib/constants";
 /**
  * robots.txt.
  *
- * The curator review queue used to be disallowed here — it published
- * contributors' names and had no authentication. Both the queue and its
- * sign-in have been removed from the product entirely, so there is nothing
- * left to hide from a crawler and the disallow list is empty.
+ * The partner programme's private surfaces — sign-in, the partner
+ * dashboard, the review console — are authenticated and carry `noindex`
+ * too; listing them here keeps a crawler from even requesting them. The
+ * public partner page (/partner) stays crawlable: it is the pitch.
  */
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -16,6 +16,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
+        disallow: ["/admin/", "/login", "/signup", "/forgot-password", "/reset-password", "/account", "/partner/dashboard", "/auth/", "/api/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

@@ -36,7 +36,8 @@ for (const f of readdirSync(CAP).filter((n) => n.endsWith(".ts") && !["_template
 const register = JSON.parse(read("src/data/generated/curated-stays.json"));
 const audit = existsSync(".data/stays-verification.json") ? JSON.parse(read(".data/stays-verification.json")) : { destinations: {} };
 
-const order = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa", "kyoto", "paris", "rome", "istanbul", "new-york-city"];
+const order = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
 const rows = [];
 let totals = { cands: 0, verified: 0, published: 0, image: 0, website: 0, phone: 0, address: 0 };
 for (const id of order) {
@@ -76,7 +77,7 @@ A telephone number is published only where a source publishes one as a structure
 
 ## Why some destinations are below target
 
-Discovery reads English Wikipedia (hotel categories, \`{{Infobox hotel}}\` search) and Wikidata's geospatial index within 25 km of each centre (Goa 120). Where English Wikipedia documents few hotels in a city — Kyoto's ryokans, Varanasi, Agra — the verified pool is small, and the pool is what is published. Filling to twelve from unverified sources is the one thing this pipeline will not do.
+Discovery reads English Wikipedia (hotel categories, \`{{Infobox hotel}}\` search) and Wikidata's geospatial index within 25 km of each centre (Goa 120). Where English Wikipedia documents few hotels in a city — Varanasi, Agra — the verified pool is small, and the pool is what is published. Filling to twelve from unverified sources is the one thing this pipeline will not do.
 
 ## Rules applied (every run)
 

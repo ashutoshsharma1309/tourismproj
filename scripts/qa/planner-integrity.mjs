@@ -83,8 +83,8 @@ check("Sikkim's planner loads", sikkim.status === 200, `HTTP ${sikkim.status}`);
 const jaipur = await get(PLAN("jaipur"));
 check("Jaipur's planner loads", jaipur.status === 200, `HTTP ${jaipur.status}`);
 
-const kyoto = await get(PLAN("kyoto"));
-check("Kyoto's planner loads", kyoto.status === 200, `HTTP ${kyoto.status}`);
+const kochi = await get(PLAN("kochi"));
+check("Kochi's planner loads", kochi.status === 200, `HTTP ${kochi.status}`);
 
 for (const id of ["unknown", "..%2f..%2fsikkim", "sikkim%00", "SIKKIM"]) {
   const response = await get(PLAN(id));
@@ -96,9 +96,9 @@ for (const id of ["unknown", "..%2f..%2fsikkim", "sikkim%00", "SIKKIM"]) {
    capsule. No registered destination is empty any more, so what is asserted
    is the guarantee that survives — an unregistered id gets no planner route,
    rather than one assembled on demand. */
-const paris = await get(PLAN("atlantis"));
-check("An unregistered destination has no planner route", paris.status === 404,
-  `HTTP ${paris.status}`);
+const unregistered = await get(PLAN("atlantis"));
+check("An unregistered destination has no planner route", unregistered.status === 404,
+  `HTTP ${unregistered.status}`);
 
 /* ========================================================================
    5-8. INPUTS CHANGE THE OUTPUT, DETERMINISTICALLY
@@ -234,7 +234,7 @@ section("14. Sparse destinations");
 const PLANNER_MAX_DAYS = 7;
 let sparseId = null;
 let sparseText = "";
-for (const id of ["agra", "goa", "varanasi", "kyoto", "hyderabad", "mumbai", "jaipur", "kochi"]) {
+for (const id of ["agra", "goa", "varanasi", "hyderabad", "mumbai", "jaipur", "kochi", "delhi", "kolkata"]) {
   const page = await get(`${BASE}/destinations/${id}/plan?days=${PLANNER_MAX_DAYS}&pace=intensive`);
   const body = text(page.body);
   if (/Only \d+ days? of verified experiences (?:is|are) currently available/i.test(body)) {
@@ -261,21 +261,20 @@ check("A destination still reports the verified knowledge it holds",
    shipped once here: `PublishedDestination.stats` is typed
    `Record<string, number>`, so `stats.approvedClaims` compiled fine and
    rendered "Jaipur has undefined reviewer-approved facts". */
-for (const [id, page] of [["sikkim", sikkim], ["jaipur", jaipur], ["kyoto", kyoto]]) {
+for (const [id, page] of [["sikkim", sikkim], ["jaipur", jaipur], ["kochi", kochi]]) {
   const rendered = text(page.body);
   check(`${id}'s planner renders no undefined or NaN value`,
     !/\b(undefined|NaN|\[object Object\])\b/.test(rendered),
     (rendered.match(/\b(undefined|NaN|\[object Object\])\b/) ?? [])[0] ?? "clean");
 }
 
-/* Kyoto held research and nothing to visit; Phase B gave it ten catalogued
-   places, so it now plans like any other destination — and its sparse branch
-   fires the same way Kochi's does when the days outrun the records. */
-const kyotoSparse = await get(`${BASE}/destinations/kyoto/plan?days=7&pace=intensive`);
-check("Kyoto, with the same shape of data, behaves the same way",
-  /Only \d+ days? of verified experiences (?:is|are) currently available/i.test(text(kyotoSparse.body)) &&
-    stopsOf(kyoto.body).length > 0,
-  `${stopsOf(kyoto.body).length} stops from its own records`);
+/* The destination whose records ran short above still plans from its OWN
+   records at the default length: a sparse branch is a shorter plan, never an
+   empty one and never one padded from another destination's corpus. */
+const sparseDefault = sparseId ? await get(PLAN(sparseId)) : { status: 0, body: "" };
+check("A destination that runs short still plans from its own records",
+  sparseId !== null && sparseDefault.status === 200 && stopsOf(sparseDefault.body).length > 0,
+  sparseId ? `${sparseId}: ${stopsOf(sparseDefault.body).length} stops from its own records` : "no sparse destination found");
 
 /* The shortfall path, exercised on a real destination: remove almost the
    whole corpus and ask for seven days. Sikkim has enough records that the

@@ -45,6 +45,13 @@ const client =
      reaches it because every caller is gated on `hasDatabase` first. */
   postgres(connectionString ?? "postgres://unset@127.0.0.1:5432/unset", {
     max: process.env.VERCEL ? 1 : 5,
+    /* DATABASE_URL is Supabase's transaction-mode pooler (port 6543), which
+       cannot hold named prepared statements across the backends it hands a
+       client. With them on, a long-lived process's SECOND transaction was
+       acknowledged to the client yet never reached the database — the partner
+       review flow "verified" a property that stayed under review. Supabase's
+       own guidance for postgres-js on the transaction pooler is this flag. */
+    prepare: false,
     /* Dates come back as strings so a `date` column is never silently shifted
        into the server's timezone. Calendar days are not instants. */
     types: { date: { to: 1082, from: [1082], serialize: (v: string) => v, parse: (v: string) => v } },

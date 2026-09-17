@@ -134,8 +134,10 @@ for (const file of files) {
  * URL, an international telephone number. Nothing templated, nothing partial.
  */
 let websites = 0, phones = 0;
+const capsuleSources = [];
 for (const file of files) {
   const src = readFileSync(`${CAPSULE_DIR}/${file}`, "utf8");
+  capsuleSources.push(src);
   const id = file.replace(/\.ts$/, "");
   for (const m of src.matchAll(/website: "([^"]+)"/g)) {
     websites += 1;
@@ -148,8 +150,23 @@ for (const file of files) {
       /^\+?[\d][\d\s().-]{5,}$/.test(m[1]) && !/x{3,}|0{6,}|1234567/i.test(m[1]));
   }
 }
-check("Most stays have NO telephone number, which is the honest state",
-  phones < totalStays / 2, `${phones} of ${totalStays} stays`);
+/* A telephone number appears only where a source publishes one: the NIDHI+
+   register carries the number the unit registered, and Wikidata's P1329 is
+   the only other. Since the register arrived, MOST stays legitimately carry
+   a number; the honest-state check is therefore "no phone without a
+   publishing source", not "most have none". */
+let unsourcedPhones = [];
+for (const src of capsuleSources) {
+  for (const block of src.matchAll(/\n    \{\n      id: "(stay-[^"]+)",([\s\S]*?)\n    \},/g)) {
+    if (!/phone: "/.test(block[2])) continue;
+    const sourceId = /sourceIds: \["([^"]+)"/.exec(block[2])?.[1];
+    const at = sourceId ? src.indexOf(`id: "${sourceId}"`) : -1;
+    const sourceText = at === -1 ? "" : src.slice(at, at + 600);
+    if (!/NIDHI\+/.test(sourceText) && !/wikidata\.org/.test(sourceText)) unsourcedPhones.push(block[1]);
+  }
+}
+check("No stay carries a telephone number its source did not publish",
+  unsourcedPhones.length === 0, unsourcedPhones.join(", ") || `${phones} phones, each from the register or Wikidata`);
 check("Contact details were emitted at all", websites > 0, `${websites} websites`);
 
 /* The type itself must not be able to express them. */
@@ -333,7 +350,7 @@ const OUT = ".next/server/app/destinations";
 const prerendered = existsSync(OUT)
   ? readdirSync(OUT).filter((f) => f.endsWith(".html")).length
   : 0;
-check("All fifteen English hubs are still prerendered", prerendered === 15, `${prerendered}/15`);
+check("All eighteen English hubs are still prerendered", prerendered === 18, `${prerendered}/18`);
 
 const translatedOut = ".next/server/app/l";
 const translatedCount = existsSync(translatedOut)
@@ -343,12 +360,12 @@ const translatedCount = existsSync(translatedOut)
     }, 0)
   : 0;
 /*
- * Derived, not hardcoded. This said 165 — fifteen destinations times eleven
+ * Derived, not hardcoded. This said 165 — fifteen destinations (then) times eleven
  * non-English languages — and broke the moment the interface went from twelve
  * languages to twenty. The invariant being asserted is "every translated hub
  * is prerendered", which is a product of the two registries, not a number.
  */
-const expectedTranslated = (codes.length - 1) * 15;
+const expectedTranslated = (codes.length - 1) * 18;
 check("The translated hubs are prerendered too, not rendered on demand",
   translatedCount === expectedTranslated, `${translatedCount}/${expectedTranslated}`);
 

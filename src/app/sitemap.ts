@@ -116,6 +116,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    /* The partner programme's public door. Its private surfaces (sign-in,
+       dashboard, review console) are noindex and disallowed in robots.ts. */
+    { url: `${SITE_URL}/partner`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ];
 
   for (const registered of listDestinations()) {
@@ -130,7 +133,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       /*
        * Equal priority. This gave Sikkim 0.9 and every other destination 0.7
        * — a stated preference for one destination in the one file search
-       * engines read for exactly that signal. All fifteen are documented;
+       * engines read for exactly that signal. All of them are documented;
        * none is the product's preferred one.
        */
       priority: 0.8,

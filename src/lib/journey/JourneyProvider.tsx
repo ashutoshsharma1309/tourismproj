@@ -67,6 +67,11 @@ interface JourneyContextValue {
   current: string | null;
   nextAfter: (id: string) => string | null;
   finished: boolean;
+  /**
+   * Put a journey saved to the traveller's account onto this device.
+   * Unknown ids are dropped by the store's sanitise-on-read.
+   */
+  replace: (next: { destinations: string[]; completed: string[] }) => void;
 }
 
 const JourneyContext = createContext<JourneyContextValue | null>(null);
@@ -119,6 +124,7 @@ export function JourneyProvider({
       current: currentDestination(journey),
       nextAfter: (id) => nextDestination(journey, id),
       finished: journeyComplete(journey),
+      replace: (next) => store.set({ ...journey, destinations: next.destinations, completed: next.completed }),
     }),
     [journey, hydrated, store],
   );

@@ -27,10 +27,21 @@ export const userRole = pgEnum("user_role", [
 
 export const users = pgTable("users", {
   id: uuid("id").primaryKey().defaultRandom(),
-  phone: text("phone").notNull().unique(),
+  /* Nullable since the partner programme: a hotel's contact signs in with an
+     e-mail one-time code (CLAUDE.md §3 names Google as the secondary sign-in,
+     which has no phone either). Still unique where present. */
+  phone: text("phone").unique(),
   email: text("email"),
   fullName: text("full_name"),
+  /* The traveller's preferred interface language (a LanguageCode). */
   locale: text("locale").notNull().default("en"),
+  /* Privacy control: when false, exploration is not recorded to the account
+     (journeys and interests the traveller saves on purpose still are). */
+  historyEnabled: boolean("history_enabled").notNull().default(true),
+  /* When history was last cleared. An event that happened before it (a beacon
+     still in flight during the clear) is refused, so cleared history cannot
+     trickle back. */
+  historyClearedAt: timestamp("history_cleared_at", { withTimezone: true }),
   role: userRole("role").notNull().default("TRAVELLER"),
   createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
 });

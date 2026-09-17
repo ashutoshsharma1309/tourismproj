@@ -126,12 +126,17 @@ for (const m of registrySrc.matchAll(/id:\s*"([a-z-]+)",\s*\n\s*name:\s*"([^"]+)
 }
 const seen = new Set();
 const REGISTRY = DESTINATIONS.filter((d) => (seen.has(d.id) ? false : seen.add(d.id)));
-if (REGISTRY.length !== 15) {
-  console.error(`Parsed ${REGISTRY.length} destinations (expected 15): ${REGISTRY.map((d) => d.id).join(", ")} — refusing to run.`);
+/* Eighteen since the India-only re-aim (SIH 2026 final): Sikkim plus the
+   seventeen in planned.ts. The count is asserted rather than trusted because
+   this parses TypeScript with a regular expression, and a record the pattern
+   misses would be a destination silently skipped. */
+const EXPECTED_DESTINATIONS = 18;
+if (REGISTRY.length !== EXPECTED_DESTINATIONS) {
+  console.error(`Parsed ${REGISTRY.length} destinations (expected ${EXPECTED_DESTINATIONS}): ${REGISTRY.map((d) => d.id).join(", ")} — refusing to run.`);
   process.exit(2);
 }
 const DIAL = { IN: "91", JP: "81", FR: "33", IT: "39", TR: "90", US: "1" };
-const EXTRA_CATEGORIES = { kyoto: ["Category:Ryokan"] };
+const EXTRA_CATEGORIES = {};
 
 /* --------------------------------------------------------------- http */
 

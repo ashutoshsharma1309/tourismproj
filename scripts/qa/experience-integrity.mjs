@@ -144,7 +144,7 @@ check("Only reviewer-approved knowledge is searchable",
 
 /* Cross-destination content isolation in published output. */
 const SIKKIM_MARKERS = ["Rumtek", "Pemayangtse", "Gangtok", "Gyalshing", "Nyingma", "Chogyal"];
-for (const id of ["jaipur", "kyoto"]) {
+for (const id of Object.keys(destinations).filter((id) => id !== "sikkim")) {
   const d = destinations[id];
   if (!d) continue;
   const text = JSON.stringify([d.categories, d.narrative, d.timeline, d.connections]);
@@ -165,7 +165,7 @@ check("Provider failure records and continues", /provider-failure/.test(njSrc));
    routes arrived; both routes render it. Same assertion, current file. */
 const hubSrc = readFileSync("src/components/destinations/DestinationHubPage.tsx", "utf8");
 check("The page renders knowledge whether or not narrative exists",
-  /knowledge \? <PublishedKnowledge/.test(hubSrc));
+  /knowledge \? \([\s\S]{0,1200}?<PublishedKnowledge/.test(hubSrc));
 const knowledgeSrc = readFileSync("src/components/destinations/PublishedKnowledge.tsx", "utf8");
 check("The narrative section is conditional",
   /\{intro \? \(/.test(knowledgeSrc) && /otherNarrative\.length > 0 \?/.test(knowledgeSrc));
@@ -201,11 +201,12 @@ check("Sikkim remains deep, by declaration",
   destinations.sikkim?.depth?.depth === "deep" && destinations.sikkim?.depth?.basis === "declared");
 check("Richer storytelling did not raise Jaipur's authority",
   destinations.jaipur?.depth?.depth !== "deep", destinations.jaipur?.depth?.depth);
-check("Richer storytelling did not raise Kyoto's authority",
-  destinations.kyoto?.depth?.depth !== "deep", destinations.kyoto?.depth?.depth);
-check("The three pilots remain honestly distinct",
-  new Set([destinations.sikkim?.depth?.depth, destinations.jaipur?.depth?.depth, destinations.kyoto?.depth?.depth]).size === 3,
-  `${destinations.sikkim?.depth?.depth}/${destinations.jaipur?.depth?.depth}/${destinations.kyoto?.depth?.depth}`);
+check("Richer storytelling raised no other destination to deep",
+  Object.entries(destinations).every(([id, d]) => id === "sikkim" || d?.depth?.depth !== "deep"),
+  Object.entries(destinations).map(([id, d]) => `${id}=${d?.depth?.depth}`).join("/"));
+check("Depth stays honestly distinct between the declared archive and the earned tier",
+  destinations.sikkim?.depth?.depth === "deep" && destinations.jaipur?.depth?.depth === "curated",
+  `${destinations.sikkim?.depth?.depth}/${destinations.jaipur?.depth?.depth}`);
 check("Sikkim's curated records are untouched",
   readFileSync("src/data/monasteries.ts", "utf8").includes("const SEEDS: MonasterySeed[]"));
 
@@ -215,7 +216,7 @@ const DEMO_ROUTES = [
   ["/destinations", "destinations.html"],
   ["/destinations/sikkim", "destinations/sikkim.html"],
   ["/destinations/jaipur", "destinations/jaipur.html"],
-  ["/destinations/kyoto", "destinations/kyoto.html"],
+  ["/destinations/kochi", "destinations/kochi.html"],
   /* Phase 11: Sikkim's content is destination-native. The demo walks the
      canonical routes; the legacy URLs remain reachable by 301. */
   ["/destinations/sikkim/monasteries/rumtek", "destinations/sikkim/monasteries/rumtek.html"],
@@ -229,8 +230,8 @@ if (existsSync(OUT)) {
     !readdirSync(OUT).some((f) => /^demo|^presentation|^pitch/.test(f)),
     "every step is real product functionality");
 }
-check("Destinations is reachable from the primary navigation",
-  /href: "\/destinations", label: "Destinations"/.test(readFileSync("src/lib/constants.ts", "utf8")));
+check("The destinations index is reachable from the primary navigation",
+  /href: "\/destinations", label: "Explore"/.test(readFileSync("src/lib/constants.ts", "utf8")));
 
 console.log(`\n${pass} passed, ${fail} failed\n`);
 process.exit(fail === 0 ? 0 : 1);

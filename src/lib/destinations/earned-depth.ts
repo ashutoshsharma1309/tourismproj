@@ -106,8 +106,8 @@ export function gradeCoverage(
    * TWO ROUTES, AND THE HIGHER ONE WINS.
    *
    * A catalogued archive and reviewed research are different ways of knowing a
-   * place, and a destination can hold both — Kyoto now has ten catalogued
-   * places AND fifteen reviewer-approved claims. An if/else chain graded it by
+   * place, and a destination can hold both — Jaipur holds catalogued places
+   * AND reviewer-approved claims. An if/else chain graded it by
    * whichever branch happened to come first, which quietly discarded the
    * research and called it a capsule. Take the better of the two.
    */

@@ -36,6 +36,7 @@ export default async function JourneyPage() {
           {
             name: destination.name,
             country: destination.country.name,
+            region: destination.region?.name ?? destination.country.name,
             places: dimensions.places,
             stories: dimensions.stories,
             history: dimensions.history,

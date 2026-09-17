@@ -14,8 +14,8 @@ import { DEFAULT_LANGUAGE, resolveLanguage, type LanguageCode } from "./language
  * the canonical URL of every page stays exactly what it has always been and a
  * shared English link never grows a marker.
  *
- *   withLanguage("/destinations/paris", "ja")  ->  "/l/ja/destinations/paris"
- *   withLanguage("/l/ja/destinations/paris", "en")  ->  "/destinations/paris"
+ *   withLanguage("/destinations/jaipur", "hi")  ->  "/l/hi/destinations/jaipur"
+ *   withLanguage("/l/hi/destinations/jaipur", "en")  ->  "/destinations/jaipur"
  *
  * Any query string on the way in is preserved, so switching language on a
  * filtered discovery page keeps the filter.

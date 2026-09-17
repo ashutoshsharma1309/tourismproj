@@ -270,6 +270,63 @@
     ]
   },
   {
+    "slug": "craft-zari",
+    "destinationId": "agra",
+    "title": "Zari",
+    "dek": "Zari is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani garments, especially as brocade in saris etc.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Zari is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani garments, especially as brocade in saris etc. This thread is woven into fabrics, primarily silk, to make intricate patterns and elaborate designs of embroidery called zardozi. Zari was popularised during the Moghul era; the port of Surat was linked to the Meccan pilgrimage route which served as a major factor for re-introducing this ancient craft in India.",
+    "content": [
+      "Zari (in Persian: زری) ([ˈzəɾiː]) is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani  garments, especially as brocade in saris etc. This thread is woven into fabrics, primarily silk, to make intricate patterns and elaborate designs of embroidery called zardozi. Zari was popularised during the Moghul era; the port of Surat was linked to the Meccan pilgrimage route which served as a major factor for re-introducing this ancient craft in India.",
+      "Zari is the main decorative material in most silk saris and ghararas.  It is also used in other garments made of silk, like lehengas (skirts), cholis (blouses), kurtas, and dhotis.",
+      "Zari is basically a brocade of tinsel thread meant for weaving and embroidery. It is manufactured by winding or wrapping (covering) a flattened metallic strip made from pure gold, silver or slit metallised polyester film, on a core yarn, usually of pure silk, viscose, cotton, nylon, polyester, P.P., mono/multi filament, wire, etc. Nowadays, it can broadly be divided into three types. Real zari, imitation zari, and metallic zari.",
+      "Real zari is made from fine silver or gold thread is drawn from silver or gold alloys, which is flattened by passing it under equal pressure rotating rollers. The flattened silver threads are wound on the base yarn that is usually made of silk. These spools with silk and silver threads are further flattened for electroplating. The threads are then plated with gold by the process of electroplating. The lustre of the gilded threads is further increased by passing them through a brightener. These threads are then wound on a reel.",
+      "In ancient times, when precious metals were cheaply and easily available, only real zari threads were produced. Due to the industrial revolution and the invention of the electroplating process, imitation techniques came into existence to cut the cost of precious metals. As copper is the most malleable and ductile metal after gold and silver, silver electroplated copper wire replaced pure silver. Various modern colours and chemicals are used to create/impart a golden hue instead of pure gold. The precious metals and copper too became dearer due to huge demand in various modern industries. Thus, a cheap and durable alternative was invented with non-tarnishing properties. Metallic zari came into vogue replacing traditional metals like gold, silver & copper. This non-genuine modern zari is light in weight & more durable than earlier editions. Also, it has the sought after properties of resistance to tarnishing and knotting.",
+      "Imitation zari is made when copper wires are drawn from copper alloys. It then undergoes a similar process, except in this case, they are electroplated with silver and then wound around the base yarn, and reeled. This type of zari is less expensive than pure zari, as silver electroplated copper is more economical.",
+      "Metallic sari is a modernized version of zari and it replaces traditional metals like gold, silver and copper. It is resistant, durable and light in weight. It is non-tarnishing and maintains its lustre for a considerable period.",
+      "Zari is used in various forms such as Zardozi, Kataoki Bel, Mukaish, Tilla or Marori Work, Gota Work, and Kinari Work.",
+      "Kalabattun is an ancient term for metallic threads, such as gold-wrapped threads, that are used in a variety of brocade and embroidery arts.",
+      "245 grams of zari is called one mark.  It contains 191 grams of silver (78 percent), 51.55 grams of silk (21 percent), and 2.45 grams of gold (1 percent)."
+    ],
+    "keyFacts": [
+      "there are approximately 100,000 child laborers producing zari in India, sometimes (but not always) under conditions of debt bondage or otherwise unpaid work.",
+      "It contains 191 grams of silver (78 percent), 51.55 grams of silk (21 percent), and 2.45 grams of gold (1 percent)."
+    ],
+    "local": false,
+    "heroImage": "/images/capsule/agra/craft-zari.jpg",
+    "heroAlt": "Zari, Agra",
+    "imageCredit": {
+      "file": "File:'Sari'_from_Varanasi_(north-central_India),_silk_and_gold-wrapped_silk_yarn_with_supplementary_weft_brocade.jpg",
+      "url": "/images/capsule/agra/craft-zari.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:'Sari'_from_Varanasi_(north-central_India)%2C_silk_and_gold-wrapped_silk_yarn_with_supplementary_weft_brocade.jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-pietra-dura"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Zari",
+        "url": "https://en.wikipedia.org/wiki/Zari",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 3,
+    "tags": [
+      "craft",
+      "art & craft"
+    ]
+  },
+  {
     "slug": "festival-holi",
     "destinationId": "agra",
     "title": "Holi",
@@ -322,60 +379,6 @@
     "tags": [
       "festival",
       "festivals"
-    ]
-  },
-  {
-    "slug": "craft-zari",
-    "destinationId": "agra",
-    "title": "Zari",
-    "dek": "Zari is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani garments, especially as brocade in saris etc.",
-    "category": "Art & Craft",
-    "claimType": "documented history",
-    "communities": [],
-    "summary": "Zari is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani garments, especially as brocade in saris etc. This thread is woven into fabrics, primarily silk, to make intricate patterns and elaborate designs of embroidery called zardozi. Zari was popularised during the Moghul era; the port of Surat was linked to the Meccan pilgrimage route which served as a major factor for re-introducing this ancient craft in India.",
-    "content": [
-      "Zari (in Persian: زری) ([ˈzəɾiː]) is an even thread traditionally made of fine gold or silver used in traditional Indian, Bangladeshi and Pakistani  garments, especially as brocade in saris etc. This thread is woven into fabrics, primarily silk, to make intricate patterns and elaborate designs of embroidery called zardozi. Zari was popularised during the Moghul era; the port of Surat was linked to the Meccan pilgrimage route which served as a major factor for re-introducing this ancient craft in India.",
-      "Zari is the main decorative material in most silk saris and ghararas.  It is also used in other garments made of silk, like lehengas (skirts), cholis (blouses), kurtas, and dhotis.",
-      "Zari is basically a brocade of tinsel thread meant for weaving and embroidery. It is manufactured by winding or wrapping (covering) a flattened metallic strip made from pure gold, silver or slit metallised polyester film, on a core yarn, usually of pure silk, viscose, cotton, nylon, polyester, P.P., mono/multi filament, wire, etc. Nowadays, it can broadly be divided into three types. Real zari, imitation zari, and metallic zari.",
-      "Real zari is made from fine silver or gold thread is drawn from silver or gold alloys, which is flattened by passing it under equal pressure rotating rollers. The flattened silver threads are wound on the base yarn that is usually made of silk. These spools with silk and silver threads are further flattened for electroplating. The threads are then plated with gold by the process of electroplating. The lustre of the gilded threads is further increased by passing them through a brightener. These threads are then wound on a reel.",
-      "In ancient times, when precious metals were cheaply and easily available, only real zari threads were produced. Due to the industrial revolution and the invention of the electroplating process, imitation techniques came into existence to cut the cost of precious metals. As copper is the most malleable and ductile metal after gold and silver, silver electroplated copper wire replaced pure silver. Various modern colours and chemicals are used to create/impart a golden hue instead of pure gold. The precious metals and copper too became dearer due to huge demand in various modern industries. Thus, a cheap and durable alternative was invented with non-tarnishing properties. Metallic zari came into vogue replacing traditional metals like gold, silver & copper. This non-genuine modern zari is light in weight & more durable than earlier editions. Also, it has the sought after properties of resistance to tarnishing and knotting.",
-      "Imitation zari is made when copper wires are drawn from copper alloys. It then undergoes a similar process, except in this case, they are electroplated with silver and then wound around the base yarn, and reeled. This type of zari is less expensive than pure zari, as silver electroplated copper is more economical.",
-      "Metallic sari is a modernized version of zari and it replaces traditional metals like gold, silver and copper. It is resistant, durable and light in weight. It is non-tarnishing and maintains its lustre for a considerable period.",
-      "Zari is used in various forms such as Zardozi, Kataoki Bel, Mukaish, Tilla or Marori Work, Gota Work, and Kinari Work.",
-      "Kalabattun is an ancient term for metallic threads, such as gold-wrapped threads, that are used in a variety of brocade and embroidery arts.",
-      "245 grams of zari is called one mark.  It contains 191 grams of silver (78 percent), 51.55 grams of silk (21 percent), and 2.45 grams of gold (1 percent)."
-    ],
-    "keyFacts": [
-      "there are approximately 100,000 child laborers producing zari in India, sometimes (but not always) under conditions of debt bondage or otherwise unpaid work.",
-      "It contains 191 grams of silver (78 percent), 51.55 grams of silk (21 percent), and 2.45 grams of gold (1 percent)."
-    ],
-    "local": false,
-    "imageCredit": {
-      "file": "File:'Sari'_from_Varanasi_(north-central_India),_silk_and_gold-wrapped_silk_yarn_with_supplementary_weft_brocade.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:'Sari'_from_Varanasi_(north-central_India)%2C_silk_and_gold-wrapped_silk_yarn_with_supplementary_weft_brocade.jpg",
-      "license": "Public domain",
-      "attribution": "Unknown authorUnknown author"
-    },
-    "relatedMonasteries": [],
-    "relatedPlaces": [],
-    "relatedStories": [
-      "craft-pietra-dura"
-    ],
-    "sources": [
-      {
-        "name": "Wikipedia — Zari",
-        "url": "https://en.wikipedia.org/wiki/Zari",
-        "type": "encyclopedia",
-        "retrievedAt": "2026-09-09",
-        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
-      }
-    ],
-    "verificationStatus": "verified",
-    "lastVerified": "2026-09-09",
-    "readingMinutes": 3,
-    "tags": [
-      "craft",
-      "art & craft"
     ]
   },
   {

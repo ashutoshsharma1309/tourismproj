@@ -15,8 +15,12 @@ import { ALL_INTERESTS, INTEREST_LABEL } from "@/lib/planner/types";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 
 import { cn } from "@/lib/cn";
+import { onGuideOpen } from "@/lib/guide-events";
 import type { GuideIndex } from "@/lib/guide-index";
 import { respond } from "@/lib/guide-respond";
+import { sendEvent } from "@/lib/account/client";
+import { clearSignedInHint, hasSignedInHint } from "@/lib/account/hint";
+import { isNextIntent, personalBlocks, type RecommendationsBody } from "@/lib/personalization/guide";
 import type { GuideBlock, GuideChip } from "@/lib/guide-respond";
 
 /**
@@ -62,44 +66,48 @@ const DURATIONS = [3, 4, 5, 7, 10, 14] as const;
 
 /*
  * The greeting knows where it is. It opened with "Tashi delek" and "the
- * Sikkim archive" on every page of a fifteen-destination product — the AI
+ * Sikkim archive" on every page of a many-destination product — the AI
  * defaulting to one destination as though it were the product. Inside a
  * destination it names that destination; outside one it names the product.
  */
-function opening(destinationName: string | null, destinationId: string | null): GuideBlock[] {
+function opening(
+  destinationName: string | null,
+  destinationId: string | null,
+  destinationCount: number,
+): GuideBlock[] {
   const sikkim = destinationId === "sikkim";
   return [
     {
       kind: "text",
       text: destinationName
-        ? `I answer from ${destinationName}'s catalogued records — its places, stories, culture and history — and I can point you to any of the other destinations by name.`
-        : "I answer from the catalogued records of fifteen destinations — their places, stories, culture and history — and I write nothing myself.",
+        ? `Ask me anything about ${destinationName} — its places, history, food, festivals and where to stay. I answer only from verified records, so I have no prices, opening hours or forecasts, and I'll say so rather than guess.`
+        : `Ask me about any of ${destinationCount} Indian destinations — their places, history, food, festivals and where to stay. I answer only from verified records, so I have no prices, opening hours or forecasts, and I'll say so rather than guess.`,
     },
-  {
-    kind: "note",
-    text: "I answer only from catalogued records and I write nothing myself — so I have no opening hours, prices or forecasts, and I'll say so rather than guess.",
-  },
     {
       kind: "chips",
       chips: sikkim
+        /* Example questions, phrased the way a traveller asks them, so the
+           empty panel teaches how the guide works instead of staring back. */
         ? [
-            { label: "Plan my trip", send: "__plan__" },
-            { label: "Monasteries near Pelling", send: "monasteries in Pelling" },
+            { label: "What should I see in Sikkim?", send: "what should I see" },
+            { label: "Which monasteries are near Pelling?", send: "monasteries in Pelling" },
             { label: "Do I need a permit?", send: "permits" },
-            { label: "What does it cost?", send: "fees" },
+            { label: "What does it cost to visit?", send: "fees" },
+            { label: "Plan my trip", send: "__plan__" },
           ]
         : destinationName
           ? [
+              { label: `What should I explore in ${destinationName}?`, send: "what should I see" },
+              { label: "What should I explore if I like history?", send: "history" },
+              { label: "What local food should I try?", send: "food and festivals" },
+              { label: "Where can I stay?", send: "where to stay" },
               { label: "Plan my trip", send: "__plan__" },
-              { label: `What should I see in ${destinationName}?`, send: "what should I see" },
-              { label: "What is the history here?", send: "history" },
-              { label: "Food and festivals", send: "food and festivals" },
             ]
           : [
-              { label: "Tell me about Kyoto", send: "Kyoto" },
-              { label: "Tell me about Paris", send: "Paris" },
+              { label: "Tell me about Jaipur", send: "Jaipur" },
               { label: "Tell me about Varanasi", send: "Varanasi" },
-              { label: "Compare two destinations", send: "compare" },
+              { label: "Tell me about Kochi", send: "Kochi" },
+              { label: "Which destination fits me?", send: "compare" },
             ],
     },
   ];
@@ -132,13 +140,13 @@ function scopeLine(
       ? `Answers from ${destinationName}'s ${parts.join(", ")}. Nothing invented.`
       : `Answers only from ${destinationName}'s catalogued records. Nothing invented.`;
   }
-  return `Answers from the catalogued records of ${(index.destinations ?? []).length} destinations. Nothing invented.`;
+  return `Answers from the catalogued records of ${(index.destinations ?? []).length} Indian destinations. Nothing invented.`;
 }
 
 export function TripGuide({
   destinationNames = {},
 }: {
-  /** id -> display name for every destination. Fifteen strings from the
+  /** id -> display name for every destination. One string each from the
       server, so the registry itself never reaches the client bundle. */
   destinationNames?: Record<string, string>;
 }) {
@@ -151,7 +159,7 @@ export function TripGuide({
   const [index, setIndex] = useState<GuideIndex | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
   const [turns, setTurns] = useState<Turn[]>(() => [
-    { id: 0, role: "guide", blocks: opening(destinationName, destinationId) },
+    { id: 0, role: "guide", blocks: opening(destinationName, destinationId, Object.keys(destinationNames).length) },
   ]);
   const [draft, setDraft] = useState("");
   const [plan, setPlan] = useState<{
@@ -159,6 +167,11 @@ export function TripGuide({
     duration?: number;
     interests: string[];
   } | null>(null);
+
+  /* The header's "Ask the guide" control and the how-it-works strip open
+     the panel through a DOM event (lib/guide-events.ts), so nothing outside
+     this component has to hold its state. */
+  useEffect(() => onGuideOpen(() => setOpen(true)), []);
 
   /* Fetch the knowledge base once, the first time the guide is opened. */
   useEffect(() => {
@@ -178,6 +191,8 @@ export function TripGuide({
   }, [open, index, loadFailed]);
 
   const nextId = useRef(1);
+  /* One AI_GUIDE_USED per page load; the server also de-duplicates. */
+  const guideUseRecorded = useRef(false);
   const scroller = useRef<HTMLDivElement>(null);
   const input = useRef<HTMLInputElement>(null);
 
@@ -229,6 +244,54 @@ export function TripGuide({
       }
 
       push({ role: "visitor", text: clean });
+
+      /* A signed-in traveller's guide use is history (that it was used, and
+         where — never what was asked). The server keeps one per half hour. */
+      if (hasSignedInHint() && !guideUseRecorded.current) {
+        guideUseRecorded.current = true;
+        void sendEvent({ type: "AI_GUIDE_USED", destinationId: destinationId ?? null, entityId: null });
+      }
+
+      /* "What should I explore next?" — answered from the traveller's own
+         signals when signed in. Facts and reasons come from the account
+         recommendations endpoint, which builds them from TerraStory records. */
+      if (isNextIntent(clean)) {
+        if (hasSignedInHint()) {
+          push({ role: "guide", blocks: [{ kind: "note", text: "Checking your interests and what you've explored…" }] });
+          void (async () => {
+            try {
+              const scoped = destinationId ? `?destination=${encodeURIComponent(destinationId)}` : "";
+              let response = await fetch(`/api/account/recommendations${scoped}`, { credentials: "same-origin" });
+              if (response.status === 401) {
+                clearSignedInHint();
+                push({ role: "guide", blocks: [{ kind: "text", text: "Log in and I can suggest what to explore next from your interests and history." }, { kind: "link", href: "/login", label: "Log in" }] });
+                return;
+              }
+              let body = (await response.json()) as RecommendationsBody;
+              if (destinationId && body.hasSignal && (body.places ?? []).length === 0) {
+                response = await fetch("/api/account/recommendations", { credentials: "same-origin" });
+                body = (await response.json()) as RecommendationsBody;
+                push({ role: "guide", blocks: personalBlocks(body, null) });
+                return;
+              }
+              push({ role: "guide", blocks: personalBlocks(body, destinationId ? destinationName : null) });
+            } catch {
+              push({ role: "guide", blocks: [{ kind: "note", text: "I couldn't reach your account just now. Try again in a moment." }] });
+            }
+          })();
+          return;
+        }
+        push({
+          role: "guide",
+          blocks: [
+            { kind: "text", text: "I can suggest destinations from your interests and what you've explored once you log in. Without that, I won't guess what you like." },
+            { kind: "link", href: "/login", label: "Log in" },
+            { kind: "link", href: "/discover", label: "Or choose interests on For you" },
+          ],
+        });
+        return;
+      }
+
       if (!index) {
         push({
           role: "guide",
@@ -243,9 +306,9 @@ export function TripGuide({
         });
         return;
       }
-      /* The page's destination is the default scope: on Kyoto, "temples"
-         means Kyoto's temples. A destination named in the question still
-         wins, so "tell me about Paris" works from anywhere. */
+      /* The page's destination is the default scope: on Varanasi, "temples"
+         means Varanasi's temples. A destination named in the question still
+         wins, so "tell me about Jaipur" works from anywhere. */
       const reply = respond(clean, index, { destinationId });
       /* The engine can request the guided flow rather than answer in prose. */
       const wantsPlan = reply.blocks.some(
@@ -257,7 +320,7 @@ export function TripGuide({
         startPlan();
       }
     },
-    [index, loadFailed, push, startPlan, destinationId],
+    [index, loadFailed, push, startPlan, destinationId, destinationName],
   );
 
   const submit = (e: React.FormEvent) => {
@@ -371,10 +434,13 @@ export function TripGuide({
           aria-controls={panelId}
           aria-label="Ask the guide"
           title="Ask the guide"
-          className="fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 grid size-12 place-items-center rounded-full border border-accent/50 bg-surface-inverse/95 text-accent shadow-overlay backdrop-blur transition-[transform,border-color,color] hover:border-accent hover:text-foreground-inverse motion-safe:hover:scale-105 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:outline-none sm:size-14"
+          className="fixed right-[max(1rem,env(safe-area-inset-right))] bottom-[max(1rem,env(safe-area-inset-bottom))] z-50 flex size-12 items-center justify-center gap-2 rounded-full border border-accent/50 bg-surface-inverse/95 text-accent shadow-overlay backdrop-blur transition-[transform,border-color,color] hover:border-accent hover:text-foreground-inverse motion-safe:hover:scale-105 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-surface focus-visible:outline-none sm:h-12 sm:w-auto sm:px-4"
         >
-          <Compass className="size-5 sm:size-6" aria-hidden />
-          <span className="sr-only">Ask the guide</span>
+          <Compass className="size-5" aria-hidden />
+          {/* A circle on a phone, where it must not claim a strip of the
+              viewport; a labelled pill on wider screens, where a newcomer
+              could not tell what the circle was for. */}
+          <span className="sr-only sm:not-sr-only sm:text-small sm:font-medium">Ask the guide</span>
         </button>
       ) : null}
 
@@ -391,7 +457,7 @@ export function TripGuide({
             <div className="min-w-0">
               <p className="flex items-center gap-2 font-display text-body text-foreground-inverse">
                 <Compass className="size-4 shrink-0 text-accent" aria-hidden />
-                Trip guide
+                {destinationName ? `Ask about ${destinationName}` : "Ask about any destination"}
               </p>
               {/*
                 This line is not decoration. A floating chat bubble is read as a
@@ -407,7 +473,7 @@ export function TripGuide({
               type="button"
               onClick={() => setOpen(false)}
               aria-label="Close the trip guide"
-              className="-mr-1 -mt-1 flex size-8 shrink-0 items-center justify-center rounded-full text-foreground-inverse/60 transition-colors hover:bg-white/5 hover:text-foreground-inverse"
+              className="-mr-2 -mt-2 flex size-11 shrink-0 items-center justify-center rounded-full text-foreground-inverse/60 transition-colors hover:bg-white/5 hover:text-foreground-inverse"
             >
               <X className="size-4" aria-hidden />
             </button>

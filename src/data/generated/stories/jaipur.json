@@ -90,8 +90,8 @@
     "relatedPlaces": [],
     "relatedStories": [
       "craft-kundan",
-      "craft-leheriya",
-      "craft-minakari"
+      "craft-minakari",
+      "craft-leheriya"
     ],
     "sources": [
       {
@@ -269,8 +269,8 @@
     "relatedPlaces": [],
     "relatedStories": [
       "craft-bandhani",
-      "craft-leheriya",
-      "craft-minakari"
+      "craft-minakari",
+      "craft-leheriya"
     ],
     "sources": [
       {
@@ -342,6 +342,60 @@
     "tags": [
       "food",
       "food & flavours"
+    ]
+  },
+  {
+    "slug": "craft-minakari",
+    "destinationId": "jaipur",
+    "title": "Mīnākārī",
+    "dek": "Minakari or Meenakari is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran.",
+    "category": "Art & Craft",
+    "claimType": "documented history",
+    "communities": [],
+    "summary": "Minakari or Meenakari is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran. It is practiced as an art form, and commercially produced mainly in Iran, India, Afghanistan, and Pakistan. Minakari art usually involves intricate designs, and is applied as a decorative feature to serving dishes, containers, vases, frames, display ornaments, and jewelry.",
+    "content": [
+      "Minakari or Meenakari (Persian: میناکاری) is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran. It is practiced as an art form, and commercially produced mainly in Iran, India, Afghanistan, and Pakistan. Minakari art usually involves intricate designs (mainly using geometric shapes and designs), and is applied as a decorative feature to serving dishes, containers, vases, frames, display ornaments, and jewelry.",
+      "The word Mīnākārī is a compound word, composed of the words mīnā and kārī. Mīnā is a feminine variation of the word mīnū, which means paradise or heaven. Kārī means to do or place something onto something else. Together, the word Mīnākārī means to place paradise onto an object.",
+      "The art of enameling metal for ornamental reasons has been traced back to the Parthian and Sasanian eras of Iranian history. However, the meticulous ornamental work seen today can be traced back to Safavid Iran around the 15th century. The Mughals introduced it to India and perfected the technique, making the designs applied on objects more intricate. The craft reached its peak in Iran during the eighteenth and nineteenth centuries. In the twentieth century, Iranian artisans specialising in meenakari were invited to other regions to assist with training local craftsmen. In India, Rajasthan and Gujarat are most famous for their Mīnākārī artifacts and jewelry.",
+      "The process usually includes the fusing of coloured powder glass onto a substrate (metal, glass or ceramics) through intense heat (usually between 750-850°C or 1382-1562°F). The powder melts and cures to a smooth, durable, glassy coating on metal, glass or ceramics."
+    ],
+    "keyFacts": [
+      "However, the meticulous ornamental work seen today can be traced back to Safavid Iran around the 15th century.",
+      "In the twentieth century, Iranian artisans specialising in meenakari were invited to other regions to assist with training local craftsmen.",
+      "The process usually includes the fusing of coloured powder glass onto a substrate (metal, glass or ceramics) through intense heat (usually between 750-850°C or 1382-1562°F)."
+    ],
+    "local": true,
+    "heroImage": "/images/capsule/jaipur/craft-minakari.jpg",
+    "heroAlt": "Mīnākārī, Jaipur",
+    "imageCredit": {
+      "file": "File:Meenakaari_art_from_Iran.jpg",
+      "url": "/images/capsule/jaipur/craft-minakari.jpg",
+      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Meenakaari_art_from_Iran.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Interesting009"
+    },
+    "relatedMonasteries": [],
+    "relatedPlaces": [],
+    "relatedStories": [
+      "craft-bandhani",
+      "craft-kundan",
+      "craft-leheriya"
+    ],
+    "sources": [
+      {
+        "name": "Wikipedia — Mīnākārī",
+        "url": "https://en.wikipedia.org/wiki/M%C4%ABn%C4%81k%C4%81r%C4%AB",
+        "type": "encyclopedia",
+        "retrievedAt": "2026-09-09",
+        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verificationStatus": "verified",
+    "lastVerified": "2026-09-09",
+    "readingMinutes": 2,
+    "tags": [
+      "craft",
+      "art & craft"
     ]
   },
   {
@@ -505,57 +559,6 @@
     ]
   },
   {
-    "slug": "craft-minakari",
-    "destinationId": "jaipur",
-    "title": "Mīnākārī",
-    "dek": "Minakari or Meenakari is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran.",
-    "category": "Art & Craft",
-    "claimType": "documented history",
-    "communities": [],
-    "summary": "Minakari or Meenakari is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran. It is practiced as an art form, and commercially produced mainly in Iran, India, Afghanistan, and Pakistan. Minakari art usually involves intricate designs, and is applied as a decorative feature to serving dishes, containers, vases, frames, display ornaments, and jewelry.",
-    "content": [
-      "Minakari or Meenakari (Persian: میناکاری) is the process of painting and colouring the surfaces of metals and ceramic tiles through enameling, originating in Safavid Iran. It is practiced as an art form, and commercially produced mainly in Iran, India, Afghanistan, and Pakistan. Minakari art usually involves intricate designs (mainly using geometric shapes and designs), and is applied as a decorative feature to serving dishes, containers, vases, frames, display ornaments, and jewelry.",
-      "The word Mīnākārī is a compound word, composed of the words mīnā and kārī. Mīnā is a feminine variation of the word mīnū, which means paradise or heaven. Kārī means to do or place something onto something else. Together, the word Mīnākārī means to place paradise onto an object.",
-      "The art of enameling metal for ornamental reasons has been traced back to the Parthian and Sasanian eras of Iranian history. However, the meticulous ornamental work seen today can be traced back to Safavid Iran around the 15th century. The Mughals introduced it to India and perfected the technique, making the designs applied on objects more intricate. The craft reached its peak in Iran during the eighteenth and nineteenth centuries. In the twentieth century, Iranian artisans specialising in meenakari were invited to other regions to assist with training local craftsmen. In India, Rajasthan and Gujarat are most famous for their Mīnākārī artifacts and jewelry.",
-      "The process usually includes the fusing of coloured powder glass onto a substrate (metal, glass or ceramics) through intense heat (usually between 750-850°C or 1382-1562°F). The powder melts and cures to a smooth, durable, glassy coating on metal, glass or ceramics."
-    ],
-    "keyFacts": [
-      "However, the meticulous ornamental work seen today can be traced back to Safavid Iran around the 15th century.",
-      "In the twentieth century, Iranian artisans specialising in meenakari were invited to other regions to assist with training local craftsmen.",
-      "The process usually includes the fusing of coloured powder glass onto a substrate (metal, glass or ceramics) through intense heat (usually between 750-850°C or 1382-1562°F)."
-    ],
-    "local": true,
-    "imageCredit": {
-      "file": "File:Meenakaari_art_from_Iran.jpg",
-      "descriptionUrl": "https://commons.wikimedia.org/wiki/File:Meenakaari_art_from_Iran.jpg",
-      "license": "CC BY-SA 4.0",
-      "attribution": "Interesting009"
-    },
-    "relatedMonasteries": [],
-    "relatedPlaces": [],
-    "relatedStories": [
-      "craft-bandhani",
-      "craft-kundan",
-      "craft-leheriya"
-    ],
-    "sources": [
-      {
-        "name": "Wikipedia — Mīnākārī",
-        "url": "https://en.wikipedia.org/wiki/M%C4%ABn%C4%81k%C4%81r%C4%AB",
-        "type": "encyclopedia",
-        "retrievedAt": "2026-09-09",
-        "covers": "The narrative on this page, quoted under CC BY-SA 4.0."
-      }
-    ],
-    "verificationStatus": "verified",
-    "lastVerified": "2026-09-09",
-    "readingMinutes": 2,
-    "tags": [
-      "craft",
-      "art & craft"
-    ]
-  },
-  {
     "slug": "festival-diwali",
     "destinationId": "jaipur",
     "title": "Diwali",
@@ -647,7 +650,7 @@
     "relatedStories": [
       "craft-bandhani",
       "craft-kundan",
-      "craft-leheriya"
+      "craft-minakari"
     ],
     "sources": [
       {

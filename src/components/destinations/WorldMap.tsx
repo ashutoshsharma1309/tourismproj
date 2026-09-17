@@ -19,7 +19,7 @@ const LeafletMap = dynamic(() => import("@/components/maps/LeafletMap"), {
 });
 
 /**
- * The world view: fifteen destinations, one interaction, no invented content.
+ * The map view: every destination, one interaction, no invented content.
  *
  * TWO THINGS THIS COMPONENT WILL NOT DO
  * -------------------------------------
@@ -91,7 +91,7 @@ export function WorldMap({
              * frames Europe and Asia pushes New York off the left edge on a
              * 390px screen, so a destination becomes unreachable without
              * panning — on the one page whose job is that every destination
-             * is discoverable. Fitting keeps all fifteen in frame at any
+             * is discoverable. Fitting keeps every destination in frame at any
              * width, and it keeps working when a sixteenth is added.
              */
             fitToMarkers
@@ -163,7 +163,7 @@ export function WorldMap({
               <h3 className="font-display text-h3">Choose a destination</h3>
               <p className="mt-2 text-body text-muted">
                 Select a marker to see what has been verified about a place — or use
-                the list below, which holds the same fifteen.
+                the list below, which holds the same destinations.
               </p>
               <p className="mt-4 text-caption text-subtle">
                 Marker colour shows how much verified knowledge exists, not how

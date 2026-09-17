@@ -1,3 +1,4 @@
+import { listDestinations } from "@/lib/destinations/registry";
 import type { JourneyInterest } from "@/lib/planner/types";
 
 /**
@@ -10,7 +11,7 @@ import type { JourneyInterest } from "@/lib/planner/types";
  * other piece belongs to one page. A journey does not: it is built on the
  * homepage, added to from a destination page, and read on a page that has not
  * been written yet. Threading it through query parameters would put a
- * fifteen-item list in every link on the site.
+ * whole-registry list in every link on the site.
  *
  * WHAT IT IS DELIBERATELY NOT
  * ---------------------------
@@ -49,8 +50,12 @@ export interface JourneyState {
 
 export const EMPTY_JOURNEY: JourneyState = { destinations: [], interests: [], completed: [] };
 
-/** How many destinations a single journey may hold. */
-export const MAX_JOURNEY_DESTINATIONS = 15;
+/**
+ * How many destinations a single journey may hold: every registered one.
+ * Read from the registry rather than typed, so adding a destination never
+ * leaves a visitor unable to select the last card.
+ */
+export const MAX_JOURNEY_DESTINATIONS = listDestinations().length;
 
 /**
  * The storage key, versioned.

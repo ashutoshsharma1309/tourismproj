@@ -380,7 +380,13 @@ function summaryOf(place) {
  * Where the two disagree, the Wikidata date is simply not published. Nothing
  * is reconciled and nothing is averaged.
  */
-function historyOf(record, limit = 12) {
+/*
+ * PHASE D: twelve became twenty-four. The cap exists so one place with a
+ * long article cannot fill a timeline, which the round-robin below already
+ * prevents; twelve was sized for a capsule of six places, and these archives
+ * now hold thirty. A deep archive is graded at fifteen dated events.
+ */
+function historyOf(record, limit = 24) {
   const queues = record.places.map((place) => {
     const stated = new Set(
       (place.wikidata?.dates ?? []).map((entry) => entry.year).filter((year) => Number.isFinite(year)),
@@ -481,7 +487,8 @@ function historyOf(record, limit = 12) {
  * since Phase 19, sentences dated only to a century, which used to slip
  * through and appear as "cultural notes" about the 6th century.
  */
-function storiesOf(record, limit = 8) {
+/* PHASE D: eight became twenty, for the same reason as the history cap. */
+function storiesOf(record, limit = 20) {
   const candidates = record.places.flatMap((place) =>
     sentencesOf(place.lead)
       .filter(publishable)
@@ -642,7 +649,11 @@ async function vendor(record, place, slot = place.id) {
 
   return {
     localPath,
-    key: `capsule/${record.destinationId}/${place.id}`,
+    /* Keyed by SLOT, not record id. A stay and a place can share an id
+       (Mysuru's Lalitha Mahal is both), and keying on the id let the stay's
+       credit overwrite the place's — a photograph on the page with no
+       licence row behind it. The slot carries the kind prefix. */
+    key: `capsule/${record.destinationId}/${slot}`,
     sourceUrl: place.image.url,
     commonsFilePage: place.image.commonsFilePage,
     license: place.image.license,
@@ -863,7 +874,24 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     },`,
   );
 
-  const historyBlocks = history.map(
+  /*
+   * A SENTENCE IS PUBLISHED ONCE.
+   *
+   * `validateCapsule` refuses a capsule where two history entries or stories
+   * carry the same summary, and it compares the EMITTED summary — two
+   * different source sentences can still normalise to the same text, which is
+   * what two neighbouring monuments' shared opening line did for Delhi and
+   * Bhubaneswar. Dropping the later one keeps the earlier, better-dated entry.
+   */
+  const publishedSummaries = new Set();
+  const historyEntries = history.filter((entry) => {
+    const summary = entry.summary.trim();
+    if (publishedSummaries.has(summary)) return false;
+    publishedSummaries.add(summary);
+    return true;
+  });
+
+  const historyBlocks = historyEntries.map(
     (entry) => `    {
       id: ${quote(entry.id)},${
         entry.year === undefined
@@ -878,7 +906,14 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     },`,
   );
 
-  const stories = storiesOf(record).map(
+  const stories = storiesOf(record)
+    .filter((entry) => {
+      const summary = entry.summary.trim();
+      if (publishedSummaries.has(summary)) return false;
+      publishedSummaries.add(summary);
+      return true;
+    })
+    .map(
     (story) => `    {
       id: ${quote(story.id)},
       title: ${quote(story.title)},
@@ -967,7 +1002,7 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
           ? `\n      image: ${quote(images.get(`stay-${entry.id}`).localPath)},\n      imageAlt: ${quote(`${entry.title}, ${destinationName}`)},`
           : "\n      /* No freely licensed photograph was found, so none is shown. */"
       }${stayContact(record.destinationId, `stay-${entry.id}`)}
-      sourceIds: [${quote(`stay-${entry.id}`)}],
+      sourceIds: [${[quote(`stay-${entry.id}`), ...(stayContact(record.destinationId, `stay-${entry.id}`) && entry.wikidata?.url ? [quote(`stay-${entry.id}-wikidata`)] : [])].join(", ")}],
     },`);
 
   /* One citation per retrieved article, on the same terms as a place's. */
@@ -1048,7 +1083,7 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
     if (seenSourceIds.has(id)) return false;
     seenSourceIds.add(id);
     return true;
-  }).map(({ id, entry }) => `    {
+  }).flatMap(({ id, entry }) => [`    {
       id: ${quote(id)},
       title: ${quote(entry.title)},
       publisher: "Wikipedia",
@@ -1056,7 +1091,23 @@ function emit(record, images, destinationName, culture = { culture: [], stays: [
       retrievedAt: ${quote(culture.retrievedAt ?? record.retrievedAt)},
       confidence: "medium",
       retrievalMethod: "web-search",
-    },`);
+    },`,
+    /* A website or telephone number on a stay came from Wikidata (P856 /
+       P1329, via enrich-stays.mjs), not from the Wikipedia article — so the
+       Wikidata item is cited beside it. A phone with only a Wikipedia
+       citation was a claim whose source did not publish it. */
+    ...(id.startsWith("stay-") && entry.wikidata?.url && stayContact(record.destinationId, id)
+      ? [`    {
+      id: ${quote(`${id}-wikidata`)},
+      title: ${quote(`${entry.title} (${entry.wikidata.id})`)},
+      publisher: "Wikidata",
+      url: ${quote(entry.wikidata.url)},
+      retrievedAt: ${quote(culture.retrievedAt ?? record.retrievedAt)},
+      confidence: "medium",
+      retrievalMethod: "agent-api",
+    },`]
+      : []),
+  ]);
 
   return `import type { DestinationCapsule } from "@/types/capsule";
 

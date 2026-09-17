@@ -77,8 +77,8 @@ export async function resolveDestination(destinationId: string): Promise<Resolve
  * Resolve a destination that must have a given capability, or 404.
  *
  * This is what makes routes capability-gated rather than uniform.
- * /destinations/kyoto/monasteries does not render an empty page explaining
- * that Kyoto has no monasteries — it does not exist, because Kyoto has no
+ * /destinations/jaipur/monasteries does not render an empty page explaining
+ * that Jaipur has no monasteries — it does not exist, because Jaipur has no
  * monastery corpus and a route that renders nothing is a route that should
  * not have been generated.
  */

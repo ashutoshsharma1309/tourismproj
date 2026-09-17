@@ -83,9 +83,9 @@ check(
 );
 
 const jaipur = await get(DISCOVER("jaipur"));
-const kyoto = await get(DISCOVER("kyoto"));
+const kochi = await get(DISCOVER("kochi"));
 check("Jaipur discovery loads", jaipur.status === 200, `HTTP ${jaipur.status}`);
-check("Kyoto discovery loads", kyoto.status === 200, `HTTP ${kyoto.status}`);
+check("Kochi discovery loads", kochi.status === 200, `HTTP ${kochi.status}`);
 
 /*
  * PHASE B CHANGED WHAT THIS ASSERTED, ON PURPOSE.
@@ -100,7 +100,7 @@ check("Kyoto discovery loads", kyoto.status === 200, `HTTP ${kyoto.status}`);
  * protecting: a destination renders its OWN records, and it never renders an
  * empty container in place of content it lacks.
  */
-for (const [id, page] of [["jaipur", jaipur], ["kyoto", kyoto]]) {
+for (const [id, page] of [["jaipur", jaipur], ["kochi", kochi]]) {
   const rendered = text(page.body);
   check(
     `${id} now offers the experiences its records support`,

@@ -1,7 +1,7 @@
 import type { Destination } from "@/types/destination";
 
 /**
- * The fourteen destinations TerraStory is designed to reach.
+ * The seventeen destinations TerraStory reaches besides Sikkim — all of them in India.
  *
  * WHAT THESE RECORDS DELIBERATELY DO NOT CONTAIN
  * ----------------------------------------------
@@ -132,58 +132,97 @@ export const plannedDestinations: Destination[] = [
     taxonomies: [],
     languages: [],
   },
+  /*
+   * INDIA-ONLY (SIH 2026 final). The five international destinations that
+   * Phase 19 added to test whether the model bends — it did — were removed
+   * when the product was re-aimed as an India-first platform, and these
+   * eight Indian cities took their place. Centre coordinates are the ones
+   * Wikipedia publishes for each city article, read on 2026-09-12; as ever
+   * a centre is where a viewport points, not a claim about a place.
+   */
   {
-    id: "kyoto",
-    name: "Kyoto",
-    country: { code: "JP", name: "Japan" },
-    /* Kyoto Prefecture — "prefecture", not "district". The vocabulary
-       distinction this model exists to preserve. */
-    region: { name: "Kyoto Prefecture", kind: "prefecture" },
-    geography: { centre: { lat: 35.0116, lng: 135.7681 }, timezone: "Asia/Tokyo" },
-    depth: "researched",
-    divisions: [],
-    taxonomies: [],
-    languages: [],
-  },
-  {
-    id: "paris",
-    name: "Paris",
-    country: { code: "FR", name: "France" },
-    region: { name: "Île-de-France", kind: "region" },
-    geography: { centre: { lat: 48.8566, lng: 2.3522 }, timezone: "Europe/Paris" },
+    id: "amritsar",
+    name: "Amritsar",
+    country: { code: "IN", name: "India" },
+    region: { name: "Punjab", kind: "region" },
+    geography: { centre: { lat: 31.64, lng: 74.86 }, timezone: "Asia/Kolkata" },
     depth: "capsule",
     divisions: [],
     taxonomies: [],
     languages: [],
   },
   {
-    id: "rome",
-    name: "Rome",
-    country: { code: "IT", name: "Italy" },
-    region: { name: "Lazio", kind: "region" },
-    geography: { centre: { lat: 41.9028, lng: 12.4964 }, timezone: "Europe/Rome" },
+    id: "ahmedabad",
+    name: "Ahmedabad",
+    country: { code: "IN", name: "India" },
+    region: { name: "Gujarat", kind: "region" },
+    geography: { centre: { lat: 23.0225, lng: 72.5714 }, timezone: "Asia/Kolkata" },
     depth: "capsule",
     divisions: [],
     taxonomies: [],
     languages: [],
   },
   {
-    id: "istanbul",
-    name: "Istanbul",
-    country: { code: "TR", name: "Türkiye" },
-    region: { name: "Istanbul Province", kind: "province" },
-    geography: { centre: { lat: 41.0082, lng: 28.9784 }, timezone: "Europe/Istanbul" },
+    id: "lucknow",
+    name: "Lucknow",
+    country: { code: "IN", name: "India" },
+    region: { name: "Uttar Pradesh", kind: "region" },
+    geography: { centre: { lat: 26.85, lng: 80.95 }, timezone: "Asia/Kolkata" },
     depth: "capsule",
     divisions: [],
     taxonomies: [],
     languages: [],
   },
   {
-    id: "new-york-city",
-    name: "New York City",
-    country: { code: "US", name: "United States" },
-    region: { name: "New York", kind: "region" },
-    geography: { centre: { lat: 40.7128, lng: -74.006 }, timezone: "America/New_York" },
+    id: "pune",
+    name: "Pune",
+    country: { code: "IN", name: "India" },
+    region: { name: "Maharashtra", kind: "region" },
+    geography: { centre: { lat: 18.5211, lng: 73.8553 }, timezone: "Asia/Kolkata" },
+    depth: "capsule",
+    divisions: [],
+    taxonomies: [],
+    languages: [],
+  },
+  {
+    id: "mysuru",
+    name: "Mysuru",
+    country: { code: "IN", name: "India" },
+    region: { name: "Karnataka", kind: "region" },
+    geography: { centre: { lat: 12.3086, lng: 76.6531 }, timezone: "Asia/Kolkata" },
+    depth: "capsule",
+    divisions: [],
+    taxonomies: [],
+    languages: [],
+  },
+  {
+    id: "madurai",
+    name: "Madurai",
+    country: { code: "IN", name: "India" },
+    region: { name: "Tamil Nadu", kind: "region" },
+    geography: { centre: { lat: 9.9252, lng: 78.1198 }, timezone: "Asia/Kolkata" },
+    depth: "capsule",
+    divisions: [],
+    taxonomies: [],
+    languages: [],
+  },
+  {
+    id: "bhubaneswar",
+    name: "Bhubaneswar",
+    country: { code: "IN", name: "India" },
+    region: { name: "Odisha", kind: "region" },
+    geography: { centre: { lat: 20.27, lng: 85.84 }, timezone: "Asia/Kolkata" },
+    depth: "capsule",
+    divisions: [],
+    taxonomies: [],
+    languages: [],
+  },
+  {
+    id: "srinagar",
+    name: "Srinagar",
+    country: { code: "IN", name: "India" },
+    region: { name: "Jammu and Kashmir", kind: "region" },
+    geography: { centre: { lat: 34.09, lng: 74.79 }, timezone: "Asia/Kolkata" },
     depth: "capsule",
     divisions: [],
     taxonomies: [],

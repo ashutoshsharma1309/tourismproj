@@ -21,9 +21,10 @@ const COLUMNS = [
   {
     heading: "Explore",
     links: [
-      { href: "/discover", label: "Start from an interest" },
-      { href: "/destinations", label: "All destinations" },
-      { href: "/destinations/compare", label: "Compare coverage" },
+      { href: "/destinations", label: "Explore India" },
+      { href: "/discover", label: "Find my destination" },
+      { href: "/journey", label: "View my journey" },
+      { href: "/destinations/compare", label: "Compare destinations" },
     ],
   },
   {
@@ -45,12 +46,29 @@ const COLUMNS = [
       { href: "/destinations/sikkim/responsible", label: "Responsible travel" },
     ],
   },
+  /*
+   * Stories, History and Plan left the header so it could carry the four
+   * actions a newcomer needs. They are still the product's global index
+   * pages, and this is where they are named.
+   */
   {
-    heading: "How this works",
+    heading: "Read and plan",
     links: [
-      { href: "/destinations/compare", label: "What is known, side by side" },
-      { href: "/history", label: "One chronology, six countries" },
       { href: "/stories", label: "Every story" },
+      { href: "/history", label: "One chronology, every destination" },
+      { href: "/plan", label: "Plan a trip" },
+    ],
+  },
+  /*
+   * The commercial door. Hotels, homestays and heritage properties reach the
+   * partner programme from here on every page; travellers see one quiet link
+   * and nothing about accounts, because they need none.
+   */
+  {
+    heading: "For properties",
+    links: [
+      { href: "/partner", label: "Partner with TerraStory" },
+      { href: "/partner/apply", label: "List your property" },
     ],
   },
 ] as const;

@@ -34,7 +34,47 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "churches-and-convents-of-goa-16th-century",
+    "destinationId": "goa",
+    "sortYear": 16,
+    "yearLabel": "AD 16",
+    "title": "Churches and convents of Goa, 16th century",
+    "era": "Ancient",
+    "eraId": "ancient",
+    "shortDescription": "Goa was the capital of Portuguese India and Asia and an evangelization center from the 16th century.",
+    "description": [
+      "The city of Goa was founded in the fifteenth century by the Muslim Sultanate of Bijapur as a port on the banks of the Mandovi river. The city was taken in 1510 by Afonso de Albuquerque with the help of the Goan Hindu privateer Timoja, remaining continuously under Portuguese rule until the twentieth century. The city was recorded as having over 200,000 inhabitants at its peak and was known by the title 'Rome of the East', specifically for its splendid and numerous Catholic religious buildings.",
+      "The first converts to Christianity in Goa were native Goan women who married Portuguese men that arrived with Afonso de Albuquerque during the Portuguese conquest of Goa in 1510.",
+      "During the mid-16th century, the city of Goa, was the center of Christianization in the East. Jesuits, Franciscans, Dominicans and other Catholic religious orders settled in Goa from the sixteenth century. They used the city as their base for the spread of Catholicism in India. The sixteenth and seventeenth centuries were the Golden Age of Goa, which ran a flourishing trade and came to have administrative privileges similar to those of Lisbon.",
+      "In the first two centuries of the Portuguese presence  most of the churches and monasteries were erected that still populate the city, earning the admiration of travelers who pass through Goa. These monuments reflect the cultural exchange and legacy of the Portuguese: while the architectural forms follow the European canon, the internal decoration of altars, altarpieces, paintings and furniture reflect the labour, the work of local artists. This was made possible by the presence of native Goan artists and labourers, which made it not necessary to import European artists or African slave labour (unlike in contemporary colonial Brazil).",
+      "From the late seventeenth century, trade competition with Dutch and British led to the economic decline of the city of Goa. Several epidemics ravaged the city and the river Mandovi became inadequate for the more modern ships. The Viceroy moved to Pangim (Nova Goa) in 1759, and Velha Goa lost its capital status officially in 1843.",
+      "The Republic of India invaded and annexed Goa in 1961, ending more than 451 years of continuous Portuguese rule. However, the cultural influence continues to this day and it is evident in the religious monuments of Goa, declared a world heritage site by UNESCO in 1986."
+    ],
+    "keyFacts": [
+      "The city of Goa was founded in the fifteenth century by the Muslim Sultanate of Bijapur as a port on the banks of the Mandovi river.",
+      "The city was taken in 1510 by Afonso de Albuquerque with the help of the Goan Hindu privateer Timoja, remaining continuously under Portuguese rule until the twentieth century.",
+      "The first converts to Christianity in Goa were native Goan women who married Portuguese men that arrived with Afonso de Albuquerque during the Portuguese conquest of Goa in 1510."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "churches-and-convents-of-goa"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Churches and convents of Goa",
+        "url": "https://en.wikipedia.org/wiki/Churches_and_convents_of_Goa",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -63,7 +103,72 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "arch-of-the-viceroys-1498",
+    "destinationId": "goa",
+    "sortYear": 1498,
+    "yearLabel": "AD 1498",
+    "title": "Arch of the Viceroys, 1498",
+    "era": "Medieval",
+    "eraId": "medieval",
+    "shortDescription": "It was erected to commemorate Vasco da Gama’s arrival in India in 1498.",
+    "description": [
+      "The Arch of the Viceroys was constructed in 1599 AD under Francisco da Gama, who was a Viceroy of Portuguese India from 1597 to 1600. It replaces existing Adil Shah arch which acts as a gateway for Adil Shah palace. It was erected to commemorate his grandfather Vasco da Gama, who discovered ocean route to India in 1498. Old Goa was the capital of Portuguese India, and every viceroy entering India will walk through this arch in a ceremonial parades. It was later integrated into the Adil Shah Palace gates, it linked Portugal’s rule to the Bijapur Sultanate’s reign before them. A carving was marked on the arch date back to 1640, which marks the Portugal was bifurcated from Spain.",
+      "The material used for the construction of arch is laterite stone with green granite facing the river, on the top of the arch, there is Baroque flair with carvings like a deer from Vasco’s crest. A statue of Vasco da Gama in kingly robes topped it. A St. Catherine figure, tied to Portuguese triumphs was added to the arch but were later removed. The arch got crumbled in 1948, worn down by monsoons and time. The Portuguese government patched it up in 1954, keeping the core design, though St. Catherine’s statue moved to a museum."
+    ],
+    "keyFacts": [
+      "The Arch of the Viceroys was constructed in 1599 AD under Francisco da Gama, who was a Viceroy of Portuguese India from 1597 to 1600.",
+      "It was erected to commemorate his grandfather Vasco da Gama, who discovered ocean route to India in 1498.",
+      "A carving was marked on the arch date back to 1640, which marks the Portugal was bifurcated from Spain."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "arch-of-the-viceroys"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Arch of the Viceroys",
+        "url": "https://en.wikipedia.org/wiki/Arch_of_the_Viceroys",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "chapel-of-our-lady-of-the-mount-1510",
+    "destinationId": "goa",
+    "sortYear": 1510,
+    "yearLabel": "AD 1510",
+    "title": "Chapel of Our Lady of the Mount, 1510",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "It is one of the oldest churches in the city and was built between 1510 and 1519.",
+    "detailHref": "/destinations/goa/history#chapel-of-our-lady-of-the-mount-1510",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "chapel-of-our-lady-of-the-mount"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Chapel of Our Lady of the Mount, 1510",
+        "url": "https://en.wikipedia.org/wiki/Chapel_of_Our_Lady_of_the_Mount",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -92,7 +197,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -121,7 +226,36 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "fort-santo-estevao-1550",
+    "destinationId": "goa",
+    "sortYear": 1550,
+    "yearLabel": "AD 1550",
+    "title": "Fort Santo Estevão, 1550",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "Built on the highest point of Santo Estevão Island, it was originally built as a watchtower to guard the Mandovi River, in 1550.",
+    "detailHref": "/destinations/goa/history#fort-santo-estevao-1550",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "fort-santo-estevao"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Fort Santo Estevão, 1550",
+        "url": "https://en.wikipedia.org/wiki/Fort_Santo_Estev%C3%A3o",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -152,8 +286,44 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "arch-of-the-viceroys-1599",
+    "destinationId": "goa",
+    "sortYear": 1599,
+    "yearLabel": "AD 1599",
+    "title": "Arch of the Viceroys, 1599",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The Arch of the Viceroys (Portuguese: Arco dos Vice-Reis), also known as Viceroy's Arch, was erected in 1599 in Goa, India, by Viceroy Francisco da Gama.",
+    "description": [
+      "The Arch of the Viceroys was constructed in 1599 AD under Francisco da Gama, who was a Viceroy of Portuguese India from 1597 to 1600. It replaces existing Adil Shah arch which acts as a gateway for Adil Shah palace. It was erected to commemorate his grandfather Vasco da Gama, who discovered ocean route to India in 1498. Old Goa was the capital of Portuguese India, and every viceroy entering India will walk through this arch in a ceremonial parades. It was later integrated into the Adil Shah Palace gates, it linked Portugal’s rule to the Bijapur Sultanate’s reign before them. A carving was marked on the arch date back to 1640, which marks the Portugal was bifurcated from Spain.",
+      "The material used for the construction of arch is laterite stone with green granite facing the river, on the top of the arch, there is Baroque flair with carvings like a deer from Vasco’s crest. A statue of Vasco da Gama in kingly robes topped it. A St. Catherine figure, tied to Portuguese triumphs was added to the arch but were later removed. The arch got crumbled in 1948, worn down by monsoons and time. The Portuguese government patched it up in 1954, keeping the core design, though St. Catherine’s statue moved to a museum."
+    ],
+    "keyFacts": [
+      "The Arch of the Viceroys was constructed in 1599 AD under Francisco da Gama, who was a Viceroy of Portuguese India from 1597 to 1600.",
+      "It was erected to commemorate his grandfather Vasco da Gama, who discovered ocean route to India in 1498.",
+      "A carving was marked on the arch date back to 1640, which marks the Portugal was bifurcated from Spain."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "arch-of-the-viceroys"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Arch of the Viceroys",
+        "url": "https://en.wikipedia.org/wiki/Arch_of_the_Viceroys",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "fort-aguada-1612",
@@ -181,8 +351,42 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "ponte-conde-de-linhares-1633",
+    "destinationId": "goa",
+    "sortYear": 1633,
+    "yearLabel": "AD 1633",
+    "title": "Ponte Conde de Linhares, 1633",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "The Ponte Conde de Linhares was built in 1633–34 under the direction of the then Viceroy of Portuguese India, Miguel de Noronha, 4th Count of Linhares, after whom it is named.",
+    "description": [
+      "The original structure of the bridge was designed and built by the Jesuits of the College of St. Paul in Old Goa. It was built on alluvial soil and stabilised with the trunk of the iliadola briformis, a tree called Benth, locally known as Zambo. Laterite stone was used in the construction of the bridge superstructure. It was built to handle the load of horse drawn carriages of its time but has handled the load of heavy motor vehicles since then.",
+      "The causeway is supported by three arches on the eastern side, while thirty-eight arches support it on the western side. It was built at a cost of £3,333. A local tradition states that the bridge was built by the Jesuits in a single night using the light of a single lamp. On 22 June 1634, the bridge, as well as the surrounding land was handed over to the municipal chamber of the city for its maintenance and upkeep."
+    ],
+    "keyFacts": [
+      "On 22 June 1634, the bridge, as well as the surrounding land was handed over to the municipal chamber of the city for its maintenance and upkeep."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "ponte-conde-de-linhares"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Ponte Conde de Linhares",
+        "url": "https://en.wikipedia.org/wiki/Ponte_Conde_de_Linhares",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "church-st-francis-assisi-1661",
@@ -210,7 +414,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -246,8 +450,37 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "fort-santo-estevao-1666",
+    "destinationId": "goa",
+    "sortYear": 1666,
+    "yearLabel": "AD 1666",
+    "title": "Fort Santo Estevão, 1666",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "After the first Maratha incursions against Goa, in 1666-1668, The structure was expanded into a small fort.",
+    "detailHref": "/destinations/goa/history#fort-santo-estevao-1666",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "fort-santo-estevao"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Fort Santo Estevão, 1666",
+        "url": "https://en.wikipedia.org/wiki/Fort_Santo_Estev%C3%A3o",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "basilica-bom-jesus-1946",
@@ -275,7 +508,65 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "shree-betal-temple-1950",
+    "destinationId": "goa",
+    "sortYear": 1950,
+    "yearLabel": "AD 1950",
+    "title": "Shree Betal temple, 1950",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The temple's construction prior to 1950 was funded by the Late Shri.",
+    "detailHref": "/destinations/goa/history#shree-betal-temple-1950",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "shree-betal-temple"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Shree Betal temple, 1950",
+        "url": "https://en.wikipedia.org/wiki/Shree_Betal_temple",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "birla-institute-of-technology-and-science-pilani-goa-campus-2011",
+    "destinationId": "goa",
+    "sortYear": 2011,
+    "yearLabel": "AD 2011",
+    "title": "Birla Institute of Technology and Science, Pilani – Goa Campus, 2011",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "In April 2011, following the August 2008 death of the Chancellor, Krishna Kumar Birla, the campus was renamed as Birla Institute of Technology and Science, Pilani K. K. Birla Goa Campus in his memory.",
+    "detailHref": "/destinations/goa/history#birla-institute-of-technology-and-science-pilani-goa-campus-2011",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "birla-institute-of-technology-and-science-pilani-goa-campus"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Birla Institute of Technology and Science, Pilani – Goa Campus, 2011",
+        "url": "https://en.wikipedia.org/wiki/Birla_Institute_of_Technology_and_Science%2C_Pilani_%E2%80%93_Goa_Campus",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -312,8 +603,102 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
+  },
+  {
+    "slug": "museum-of-goa-2015",
+    "destinationId": "goa",
+    "sortYear": 2015,
+    "yearLabel": "AD 2015",
+    "title": "Museum of Goa, 2015",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Founded in 2015, it is 1,500 square meters in size.",
+    "description": [
+      "Kerkar had purchased this land more than 20 years ago when the government was trying to attract people to set up industries in the area. Later, when he got a notice from the government since his land was not utilized, he decided to start the museum. For this, he sold another piece of land and received INR 3.5 crore that was used to create the museum.",
+      "The three-storey gallery building was designed by Dean D'Cruz, and was completed in 2015 on the site of Kerkar's former studio. A sculpture garden at the site is present. Mog, the acronym for the museum, and a Konkani word, translates to \"love\".",
+      "The gallery opened on 6 November 2015 with an exhibition entitled 'Gopalapatanam', of work by 20 Indian artists – including Kerkar – on the topic of Goan history. Invitations to visit MOG were mailed to schools and colleges in the city."
+    ],
+    "keyFacts": [
+      "The three-storey gallery building was designed by Dean D'Cruz, and was completed in 2015 on the site of Kerkar's former studio.",
+      "The gallery opened on 6 November 2015 with an exhibition entitled 'Gopalapatanam', of work by 20 Indian artists – including Kerkar – on the topic of Goan history."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "museum-of-goa"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Museum of Goa",
+        "url": "https://en.wikipedia.org/wiki/Museum_of_Goa",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "iit-goa-2016",
+    "destinationId": "goa",
+    "sortYear": 2016,
+    "yearLabel": "AD 2016",
+    "title": "IIT Goa, 2016",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Ever since an IIT was allotted to Goa by the Central government in 2014, the new Indian Institute of Technology (IIT) at Goa started functioning from July, 2016 in a temporary campus housed at Goa Engineering College (GEC).",
+    "detailHref": "/destinations/goa/history#iit-goa-2016",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "iit-goa"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — IIT Goa, 2016",
+        "url": "https://en.wikipedia.org/wiki/IIT_Goa",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "national-institute-of-water-sports-2016",
+    "destinationId": "goa",
+    "sortYear": 2016,
+    "yearLabel": "AD 2016",
+    "title": "National Institute of Water Sports, 2016",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "From Academic Year 2016, MBA- Tourism (Tourism & Travel) has been introduced & PhD in Tourism & Travel commenced in July 2018 at its state-of-the art campus.",
+    "detailHref": "/destinations/goa/history#national-institute-of-water-sports-2016",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "national-institute-of-water-sports"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — National Institute of Water Sports, 2016",
+        "url": "https://en.wikipedia.org/wiki/National_Institute_of_Water_Sports",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "shanta-durga-2016",
@@ -341,7 +726,36 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "new-zuari-bridge-2022",
+    "destinationId": "goa",
+    "sortYear": 2022,
+    "yearLabel": "AD 2022",
+    "title": "New Zuari Bridge, 2022",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Opened in 2022, with a total length of 640 metres (2,100 ft), New Zuari Bridge is the second longest cable-stayed bridge in India.",
+    "detailHref": "/destinations/goa/history#new-zuari-bridge-2022",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "new-zuari-bridge"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — New Zuari Bridge, 2022",
+        "url": "https://en.wikipedia.org/wiki/New_Zuari_Bridge",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   }
 ]

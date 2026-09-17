@@ -22,11 +22,8 @@ const check = (name, ok, detail = "") => {
 };
 const section = (t) => console.log(`\n── ${t} ──`);
 
-const EXPECTED = [
-  "sikkim", "delhi", "jaipur", "varanasi", "agra", "mumbai", "kolkata",
-  "hyderabad", "kochi", "goa", "kyoto", "paris", "rome", "istanbul",
-  "new-york-city",
-];
+const EXPECTED = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
 
 const OUT = ".next/server/app";
 const worldMapSrc = readFileSync("src/components/destinations/WorldMap.tsx", "utf8");
@@ -42,7 +39,7 @@ const textOf = (html) => mainOf(html).replace(/<[^>]+>/g, " ").replace(/\s+/g, "
 section("1-3. Destinations and the canonical registry");
 
 const registered = listDestinations();
-check("All 15 destinations are registered", registered.length === 15, `${registered.length}`);
+check("All 18 destinations are registered", registered.length === 18, `${registered.length}`);
 check("The registry holds exactly the expected ids",
   EXPECTED.every((id) => registered.some((d) => d.id === id)));
 
@@ -50,7 +47,7 @@ const badCoords = registered.filter(
   (d) => !d.country || typeof d.name !== "string" || !d.name,
 );
 check("Every destination has identity metadata", badCoords.length === 0,
-  badCoords.map((d) => d.id).join(", ") || "15/15");
+  badCoords.map((d) => d.id).join(", ") || "18/18");
 
 /* Coordinates live in the destination records, and nowhere else. */
 const plannedSrc = readFileSync("src/data/destinations/planned.ts", "utf8");
@@ -58,7 +55,7 @@ const sikkimSrc = readFileSync("src/data/destinations/sikkim.ts", "utf8");
 const coordCount =
   [...plannedSrc.matchAll(/centre:\s*\{\s*lat:/g)].length +
   [...sikkimSrc.matchAll(/centre:\s*\{\s*lat:/g)].length;
-check("Every destination declares exactly one centre coordinate", coordCount === 15, `${coordCount}`);
+check("Every destination declares exactly one centre coordinate", coordCount === 18, `${coordCount}`);
 
 check("The map component defines no coordinates of its own",
   !/lat:\s*-?\d/.test(worldMapSrc.replace(/lat:\s*d\.lat/g, "")),
@@ -108,7 +105,7 @@ check("The global page is prerendered", globalHtml.length > 0);
 if (globalHtml) {
   const linked = EXPECTED.filter((id) => globalHtml.includes(`/destinations/${id}`));
   check("Every destination is linked from the global page without using the map",
-    linked.length === 15, `${linked.length}/15 as plain links`);
+    linked.length === 18, `${linked.length}/18 as plain links`);
   check("The map is present", /leaflet|WorldMap|World map/i.test(globalHtml));
   /* The map is `ssr: false`, so its accessible name is applied on hydration
      and is not in the prerendered HTML. It is passed as the `ariaLabel` prop
@@ -118,8 +115,10 @@ if (globalHtml) {
     /ariaLabel="World map of TerraStory destinations/.test(worldMapSrc));
   check("The preview region is labelled",
     /aria-label="Selected destination"/.test(globalHtml));
-  check("The list is described as an equal path, not a fallback",
-    /All destinations/.test(textOf(globalHtml)));
+  /* The cards now lead the page and the map follows; the list is the primary
+     path and is labelled as such on the element rather than in a heading. */
+  check("The list is the primary path, labelled for assistive technology",
+    /aria-label="All destinations"/.test(globalHtml) && /Where they are/.test(textOf(globalHtml)));
 }
 
 /* Every destination route exists. */
@@ -161,7 +160,7 @@ const allIds = [...readFileSync("src/data/destinations/planned.ts", "utf8")
   .matchAll(/^\s{4}id: "([a-z-]+)",/gm)].map((m) => m[1]);
 
 /* The depth badge each destination is entitled to claim. */
-const DEPTH_COPY = /Deep archive|Curated|Researched|Tourism capsule|Not yet available|not yet been researched/;
+const DEPTH_COPY = /Deeply documented|Well documented|Researched|Documented|Being catalogued|still cataloguing/;
 for (const id of allIds) {
   const page = existsSync(join(OUT, "destinations", `${id}.html`))
     ? readFileSync(join(OUT, "destinations", `${id}.html`), "utf8")
@@ -191,8 +190,10 @@ if (globalHtml) {
     JSON.parse(readFileSync("src/data/generated/published-knowledge.json", "utf8")).destinations ?? {},
   );
   const withContent = new Set([...capsuled, ...published, "sikkim"]);
-  const expected = 15 - withContent.size;
-  const marked = (textOf(globalHtml).match(/Research not yet available/g) ?? []).length;
+  const registeredCount = [...readFileSync("src/data/destinations/planned.ts", "utf8").matchAll(/^\s+id: "([a-z-]+)",$/gm)].length + 1;
+  const expected = registeredCount - withContent.size;
+  /* The card phrase, not the map legend's "Being catalogued" entry. */
+  const marked = (textOf(globalHtml).match(/Being catalogued — explore/g) ?? []).length;
   check("The global list marks unresearched destinations honestly",
     marked === expected, `${marked} marked, ${expected} have no content`);
 }
@@ -200,7 +201,7 @@ if (globalHtml) {
 /* ========================================================================
    9-11. THE THREE PILOTS
    ======================================================================== */
-section("9-11. Sikkim, Jaipur, Kyoto");
+section("9-11. Sikkim, Jaipur and the other published destinations");
 
 const PUB = "src/data/generated/published-knowledge.json";
 const published = existsSync(PUB) ? JSON.parse(readFileSync(PUB, "utf8")) : null;
@@ -222,15 +223,16 @@ for (const route of ["monasteries.html", "stories.html", "history.html", "cultur
 check("Jaipur resolves through the same system, no custom component",
   published?.destinations?.jaipur?.depth?.depth === "curated" &&
   !existsSync("src/components/destinations/Jaipur.tsx"));
-check("Kyoto resolves through the same system, no custom component",
-  published?.destinations?.kyoto?.depth?.depth === "researched" &&
-  !existsSync("src/components/destinations/Kyoto.tsx"));
-check("The three pilots remain honestly distinct",
-  new Set([
-    published?.destinations?.sikkim?.depth?.depth,
-    published?.destinations?.jaipur?.depth?.depth,
-    published?.destinations?.kyoto?.depth?.depth,
-  ]).size === 3);
+const publishedIds = Object.keys(published?.destinations ?? {});
+check("Every published destination is a registered one",
+  publishedIds.every((id) => EXPECTED.includes(id)),
+  publishedIds.filter((id) => !EXPECTED.includes(id)).join(", ") || publishedIds.join(", "));
+check("No destination resolves through a custom component",
+  registered.every((d) => !existsSync(`src/components/destinations/${d.name.replace(/\s+/g, "")}.tsx`)));
+check("Depth stays honestly distinct: the declared archive above the earned tier, nothing else deep",
+  published?.destinations?.sikkim?.depth?.depth === "deep" &&
+  published?.destinations?.jaipur?.depth?.depth === "curated" &&
+  publishedIds.every((id) => id === "sikkim" || published?.destinations?.[id]?.depth?.depth !== "deep"));
 
 /* ========================================================================
    12-13. SEARCH
@@ -255,7 +257,7 @@ check("Only reviewer-approved knowledge is searchable",
 section("14-16. Accessibility, security, scale");
 
 check("Destinations are reachable without a pointer",
-  globalHtml.includes('href="/destinations/new-york-city"'),
+  globalHtml.includes('href="/destinations/srinagar"'),
   "plain anchors, not map-only interaction");
 check("Marker state is not carried by colour alone",
   /DATA_DEPTH_LABEL/.test(worldMapSrc), "each state has a text label");
@@ -280,8 +282,8 @@ check("Coordinates come from the registry, never from a URL",
 
 /* Adding a destination must not need new components. */
 check("Adding a destination requires a registry entry, not a component",
-  !/case "sikkim"|case "jaipur"|case "kyoto"/.test(worldMapSrc) &&
-  !/if \(destinationId === "(jaipur|kyoto)"\)/.test(pageSrc),
+  !/case "sikkim"|case "jaipur"|case "kochi"/.test(worldMapSrc) &&
+  !/if \(destinationId === "(jaipur|kochi)"\)/.test(pageSrc),
   "no per-destination branching in the UI");
 
 /* ========================================================================

@@ -51,6 +51,16 @@ const TARGETS = [
   { destinationId: "hyderabad", state: "TS", cities: ["Hyderabad", "Secunderabad"] },
   { destinationId: "kochi", state: "KL", cities: ["Kochi", "Cochin", "Ernakulam", "Fort Kochi"] },
   { destinationId: "goa", state: "GA", cities: [] /* whole state */ },
+  /* INDIA-ONLY (SIH 2026 final): the eight added cities. Odisha's code on
+     the register is OD, not OR; Mysuru is registered under both spellings. */
+  { destinationId: "amritsar", state: "PB", cities: ["Amritsar"] },
+  { destinationId: "ahmedabad", state: "GJ", cities: ["Ahmedabad", "Ahmadabad"] },
+  { destinationId: "lucknow", state: "UP", cities: ["Lucknow"] },
+  { destinationId: "pune", state: "MH", cities: ["Pune", "Poona"] },
+  { destinationId: "mysuru", state: "KA", cities: ["Mysuru", "Mysore"] },
+  { destinationId: "madurai", state: "TN", cities: ["Madurai"] },
+  { destinationId: "bhubaneswar", state: "OD", cities: ["Bhubaneswar", "Bhubaneshwar"] },
+  { destinationId: "srinagar", state: "JK", cities: ["Srinagar"] },
 ];
 const LODGING = new Set(["Hotel", "Heritage", "Homestay", "Guest House", "Bed and Breakfast", "Apartment Hotel", "Lodge and Tourist Home", "Legacy Vintage", "Motel", "Resort", "Farm Stay", "House Boat", "Tented Accommodation", "Camping Site"]);
 

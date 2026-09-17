@@ -70,14 +70,23 @@ const navHrefs = (html) => {
   const nav = html.match(/<nav aria-label="Primary"[^>]*>([\s\S]*?)<\/nav>/)?.[1] ?? "";
   return [...nav.matchAll(/href="([^"]+)"/g)].map((m) => m[1]);
 };
+/*
+ * A destination's sections no longer ride in the header. The first-time-user
+ * pass moved them onto the hub itself — the tiered "What you can explore
+ * here" block and the sticky in-page bar — so the header reads the same on
+ * every page. The section guarantee is now read from the hub's <main>.
+ */
+const sectionHrefs = (html, id) => [
+  ...new Set([...mainOf(html).matchAll(/href="(\/destinations\/[a-z-]+\/[a-z-]+)(?:[#?][^"]*)?"/g)]
+    .map((m) => m[1]).filter((h) => h.startsWith(`/destinations/${id}/`))),
+];
 
 /* The four states the product must render differently and intentionally. */
 const STATES = [
-  { id: "sikkim", name: "Sikkim", badge: "Deep archive", kind: "deep" },
-  { id: "jaipur", name: "Jaipur", badge: "Curated", kind: "knowledge-only" },
-  { id: "kyoto", name: "Kyoto", badge: "Researched", kind: "knowledge-only" },
-  { id: "paris", name: "Paris", badge: "Tourism capsule", kind: "capsule" },
-  { id: "delhi", name: "Delhi", badge: "Tourism capsule", kind: "capsule" },
+  { id: "sikkim", name: "Sikkim", badge: "Deeply documented", kind: "deep" },
+  { id: "jaipur", name: "Jaipur", badge: "Well documented", kind: "knowledge-only" },
+  { id: "varanasi", name: "Varanasi", badge: "Documented", kind: "capsule" },
+  { id: "delhi", name: "Delhi", badge: "Documented", kind: "capsule" },
 ];
 
 const hub = {};
@@ -100,15 +109,15 @@ check("Every audited hub serves",
  * The header is the product's, not a destination's. Checked on a destination
  * that is NOT Sikkim, because that is where the old wordmark was wrong.
  */
-const parisHead = hub.paris.body.slice(0, hub.paris.body.indexOf("<main"));
+const varanasiHead = hub.varanasi.body.slice(0, hub.varanasi.body.indexOf("<main"));
 check("The header names the product, not one destination",
-  /TerraStory/.test(parisHead) && !/Sikkim Darshan/.test(parisHead.replace(/<title>[\s\S]*?<\/title>/, "")),
+  /TerraStory/.test(varanasiHead) && !/Sikkim Darshan/.test(varanasiHead.replace(/<title>[\s\S]*?<\/title>/, "")),
   "header chrome on a non-Sikkim destination");
 check("The page title names the product",
-  /<title>[^<]*·\s*TerraStory<\/title>/.test(hub.paris.body),
-  hub.paris.body.match(/<title>([^<]*)<\/title>/)?.[1] ?? "no title");
+  /<title>[^<]*·\s*TerraStory<\/title>/.test(hub.varanasi.body),
+  hub.varanasi.body.match(/<title>([^<]*)<\/title>/)?.[1] ?? "no title");
 check("og:site_name is the product",
-  /og:site_name" content="TerraStory"/.test(hub.paris.body));
+  /og:site_name" content="TerraStory"/.test(hub.varanasi.body));
 
 /*
  * THE CHECK THIS SUITE EXISTS FOR.
@@ -135,7 +144,7 @@ for (const state of STATES) {
  * shows the product links and NOTHING destination-specific. Only the expected
  * list moved.
  */
-const globalOnly = ["Destinations", "Discover", "Stories", "History", "Plan", "Compare"];
+const globalOnly = ["Explore", "For you", "Journey", "Compare"];
 check("A page that is not a destination shows the product links alone",
   JSON.stringify(navLabels(destinations.body)) === JSON.stringify(globalOnly),
   navLabels(destinations.body).join(", "));
@@ -146,8 +155,8 @@ check("Comparison is reachable from every page",
   navHrefs(destinations.body).includes("/destinations/compare"));
 
 /* A destination's nav must not promise a page that does not exist. */
-const sikkimNav = navHrefs(hub.sikkim.body).filter((h) => h.startsWith("/destinations/sikkim/"));
-check("Sikkim keeps a full section bar", sikkimNav.length >= 10, `${sikkimNav.length} sections`);
+const sikkimNav = sectionHrefs(hub.sikkim.body, "sikkim");
+check("Sikkim's hub offers its full set of sections", sikkimNav.length >= 10, `${sikkimNav.length} sections`);
 let brokenNav = [];
 for (const href of sikkimNav.slice(0, 14)) {
   const response = await get(`${BASE}${href}`);
@@ -156,17 +165,17 @@ for (const href of sikkimNav.slice(0, 14)) {
 check("Every section the navigation offers resolves",
   brokenNav.length === 0, brokenNav.join(", ") || `${sikkimNav.length} checked`);
 
-const parisNav = navHrefs(hub.paris.body).filter((h) => h.startsWith("/destinations/paris/"));
+const varanasiNav = sectionHrefs(hub.varanasi.body, "varanasi");
 check("A capsule destination gets its own sections, not Sikkim's",
-  parisNav.length >= 1 && parisNav.every((h) => h.startsWith("/destinations/paris/")),
-  parisNav.join(", ") || "none");
+  varanasiNav.length >= 1 && varanasiNav.every((h) => h.startsWith("/destinations/varanasi/")),
+  varanasiNav.join(", ") || "none");
 
 /* ========================================================================
    2. DEPTH — ONE VOCABULARY, STATED EVERYWHERE
    ======================================================================== */
 section("2. Depth is stated, in one vocabulary");
 
-const DEPTH_WORDS = ["Deep archive", "Curated", "Researched", "Tourism capsule", "Not yet available"];
+const DEPTH_WORDS = ["Deeply documented", "Well documented", "Researched", "Documented", "Being catalogued"];
 /*
  * The depth badge sits in the hero, beside the destination's name. Reading
  * the WHOLE page for depth words fails on the product rather than on a
@@ -196,7 +205,7 @@ check("Every depth word used is from the shared vocabulary",
 /* No ranking language, anywhere a visitor lands. */
 const RANKING = /\b(best destination|most beautiful|top destination|number one|must[- ]visit|must[- ]see|better than)\b/i;
 for (const [label, page] of [["home", home], ["destinations", destinations], ["discover", discover],
-  ["sikkim", hub.sikkim], ["paris", hub.paris]]) {
+  ["sikkim", hub.sikkim], ["varanasi", hub.varanasi]]) {
   const hit = text(page.body).match(RANKING);
   check(`${label}: presents no ranking claim`, !hit, hit ? `found "${hit[0]}"` : "clean");
 }
@@ -212,19 +221,35 @@ section("3. Counts agree across surfaces");
  * defensible in isolation; together they were a product that contradicts
  * itself in two clicks.
  */
-for (const state of [STATES[0], STATES[3], STATES[4]]) {
+for (const state of [STATES[0], STATES[2], STATES[3]]) {
   const card = text(destinations.body).match(
-    new RegExp(`${state.name}[^·]*·?[^0-9]*?(\\d+) visitable record[s]? · (\\d+) section`),
+    new RegExp(`${state.name}[^·]*·?[^0-9]*?(\\d+) places? to explore · (\\d+) section`),
   );
-  const navCount = navHrefs(hub[state.id].body).filter((h) =>
-    h.startsWith(`/destinations/${state.id}/`)).length;
-  check(`${state.id}: the sections figure on /destinations matches the navigation`,
-    card !== null && Number(card[2]) === navCount,
-    card ? `card says ${card[2]}, nav shows ${navCount}` : "no card figure found");
+  /* The hub's section links are a subset of its capabilities — the tiers
+     show what a traveller opens, and the in-page bar lists the rest — so
+     the card figure must be at least the number of distinct section routes
+     the hub actually links, never fewer. */
+  /* Count CAPABILITIES the hub links, not URLs: /discover and /plan are one
+     capability (experiences) with two routes, and a place's detail route is
+     not a section at all. Mirrors CAPABILITY_SECTION in lib/destinations/sections.ts. */
+  const SEGMENT_CAPABILITY = {
+    discover: "experiences", plan: "experiences", monasteries: "sites", stories: "storyPages",
+    history: "historyPages", culture: "culture", archive: "archive", explore: "map", hotels: "stays",
+    industry: "trade", permits: "permits", responsible: "responsible", preservation: "preservation",
+    planner: "tripPlanner",
+  };
+  const navCount = new Set(
+    sectionHrefs(hub[state.id].body, state.id)
+      .map((h) => SEGMENT_CAPABILITY[h.split("/")[3]])
+      .filter(Boolean),
+  ).size;
+  check(`${state.id}: the sections figure on /destinations covers the hub's section links`,
+    card !== null && Number(card[2]) >= navCount && navCount > 0,
+    card ? `card says ${card[2]}, hub links ${navCount} capabilities` : "no card figure found");
 }
 
 check("No page renders a placeholder value",
-  ![home, destinations, discover, hub.sikkim, hub.paris, hub.jaipur].some((p) =>
+  ![home, destinations, discover, hub.sikkim, hub.varanasi, hub.jaipur].some((p) =>
     /\bundefined\b|\bNaN\b|\[object /.test(text(p.body))));
 
 /* ========================================================================
@@ -233,12 +258,12 @@ check("No page renders a placeholder value",
 section("4. Deep, capsule and knowledge-only states");
 
 check("A deep destination offers its full range",
-  navHrefs(hub.sikkim.body).filter((h) => h.startsWith("/destinations/sikkim/")).length >= 10);
+  sectionHrefs(hub.sikkim.body, "sikkim").length >= 10);
 check("A capsule destination offers a route into its content",
-  /\/destinations\/paris\/discover/.test(hub.paris.body));
+  /\/destinations\/varanasi\/discover/.test(hub.varanasi.body));
 check("A capsule destination does not look unfinished",
-  /Tourism capsule/.test(text(hub.paris.body)) &&
-    /Explore this destination through/.test(text(hub.paris.body)),
+  /\bDocumented\b/.test(text(hub.varanasi.body)) &&
+    /What you can explore here/.test(text(hub.varanasi.body)),
   "depth badge and an interest summary");
 
 /*
@@ -254,7 +279,7 @@ check("A capsule destination does not look unfinished",
  * protecting: a destination renders its OWN records, and it never renders an
  * empty container in place of content it lacks.
  */
-for (const id of ["jaipur", "kyoto"]) {
+for (const id of ["jaipur", "kochi"]) {
   const discovery = await get(`${BASE}/destinations/${id}/discover`);
   check(`${id}: discovery serves its own records`,
     discovery.status === 200 && text(discovery.body).length > 500,
@@ -262,7 +287,7 @@ for (const id of ["jaipur", "kyoto"]) {
   check(`${id}: does not render an empty grid`,
     !/(<ul[^>]*>\s*<\/ul>)|(<ol[^>]*>\s*<\/ol>)/.test(mainOf(discovery.body)));
   check(`${id}: renders no other destination's record`,
-    !/Rumtek|Pemayangtse|Tsomgo|Eiffel|Colosseum/.test(text(discovery.body)));
+    !/Rumtek|Pemayangtse|Tsomgo|Charminar|Dashashwamedh/.test(text(discovery.body)));
 }
 
 /* An unregistered destination is a 404, not an empty page. */
@@ -333,7 +358,7 @@ for (const state of STATES) {
    ======================================================================== */
 section("7. The discovery to planner flow");
 
-const interest = await get(`${BASE}/destinations/paris/discover?interest=architecture`);
+const interest = await get(`${BASE}/destinations/varanasi/discover?interest=architecture`);
 check("An interest can be selected on a capsule destination",
   interest.status === 200, `HTTP ${interest.status}`);
 check("The selected interest is stated back to the visitor",
@@ -351,16 +376,16 @@ check("Discovery cards carry an action that leads somewhere",
 if (addLinks.length > 0) {
   const target = addLinks[0].replace(/&amp;/g, "&");
   check("Add-to-trip stays inside the destination",
-    target.startsWith("/destinations/paris"), target.slice(0, 80));
+    target.startsWith("/destinations/varanasi"), target.slice(0, 80));
   const planned = await get(`${BASE}${target}`);
   check("Following it reaches a working page", planned.status === 200, `HTTP ${planned.status}`);
   check("The chosen place survives the journey into the plan",
-    /Eiffel|Louvre|Notre-Dame|Arc de Triomphe|Montmartre|Versailles/.test(text(planned.body)),
-    "a Paris record is named in the plan");
+    /Dashashwamedh|Kashi Vishwanath|Sarnath|Manikarnika|Ramnagar|Assi Ghat/.test(text(planned.body)),
+    "a Varanasi record is named in the plan");
 }
 
 /* The planner states what it cannot know rather than inventing it. */
-const plan = await get(`${BASE}/destinations/paris/plan`);
+const plan = await get(`${BASE}/destinations/varanasi/plan`);
 check("The planner serves", plan.status === 200, `HTTP ${plan.status}`);
 check("The planner says what it does not know",
   /not verified for these records, so none are shown/i.test(text(plan.body)));
@@ -436,7 +461,7 @@ check("Map attribution names OpenStreetMap",
     .some((f) => /openstreetmap\.org\/copyright/.test(readFileSync(`${chunkDir}/${f}`, "utf8"))),
   "attribution ships with the map component");
 check("The destination list works without the map",
-  text(mapPage.body).includes("All destinations") &&
+  /aria-label="All destinations"/.test(mapPage.body) &&
     /href="\/destinations\/sikkim"/.test(mapPage.body),
   "every destination is reachable from the list");
 
@@ -453,13 +478,13 @@ if (!process.argv.includes("--no-browser")) {
     "/",
     "/destinations",
     "/discover",
-    "/destinations/compare?ids=sikkim,paris,delhi",
+    "/destinations/compare?ids=sikkim,varanasi,delhi",
     "/destinations/sikkim",
     "/destinations/jaipur",
-    "/destinations/paris",
-    "/destinations/paris/discover",
+    "/destinations/varanasi",
+    "/destinations/varanasi/discover",
     "/destinations/sikkim/discover",
-    "/destinations/paris/plan",
+    "/destinations/varanasi/plan",
     "/destinations/sikkim/stories/the-throne-of-stone-at-norbugang",
     "/destinations/sikkim/places/tsomgo-lake",
   ];
@@ -483,6 +508,10 @@ if (!process.argv.includes("--no-browser")) {
   await page.goto(`${BASE}/destinations/jaipur`, { waitUntil: "domcontentloaded" });
   /* The FIRST claim group, not the first <details> on the page: the language
      switcher is a disclosure widget too, and it sits above these. */
+  /* The evidence layer is folded on the hub by design (first-time-user
+     pass): open it first, then exercise a claim group inside it. */
+  const evidence = page.locator("details#evidence > summary").first();
+  if (await evidence.count()) { await evidence.click(); await page.waitForTimeout(150); }
   const claimGroup = page.locator("details[data-claim-group]").first();
   const summary = claimGroup.locator("summary").first();
   const before = await page.locator("details[open]").count();
@@ -502,15 +531,17 @@ if (!process.argv.includes("--no-browser")) {
   /* Mobile navigation must reach the destination's own sections. */
   const mobile = await browser.newContext({ viewport: { width: 390, height: 844 } });
   const mobilePage = await mobile.newPage();
-  await mobilePage.goto(`${BASE}/destinations/paris`, { waitUntil: "domcontentloaded" });
+  await mobilePage.goto(`${BASE}/destinations/varanasi`, { waitUntil: "domcontentloaded" });
   await mobilePage.getByRole("button", { name: "Open menu" }).click();
-  await mobilePage.waitForTimeout(300);
+  /* The drawer is a client component: wait for it to be in the DOM rather
+     than for a fixed 300ms, which raced hydration on a cold dev server. */
+  await mobilePage.locator('nav[aria-label="Mobile"] a').first().waitFor({ timeout: 5000 }).catch(() => {});
   const drawer = await mobilePage.locator('nav[aria-label="Mobile"] a').allInnerTexts();
   check("The mobile drawer opens and lists navigation", drawer.length >= 3, drawer.join(", "));
   const drawerHrefs = await mobilePage.locator('nav[aria-label="Mobile"] a').evaluateAll((els) =>
     els.map((e) => e.getAttribute("href")));
   const foreignDrawer = drawerHrefs.filter(
-    (h) => h?.startsWith("/destinations/") && h !== "/destinations/compare" && !h.startsWith("/destinations/paris"),
+    (h) => h?.startsWith("/destinations/") && h !== "/destinations/compare" && !h.startsWith("/destinations/varanasi"),
   );
   check("The mobile drawer offers no other destination's section",
     foreignDrawer.length === 0, foreignDrawer.join(", ") || "clean");

@@ -3,7 +3,7 @@ import { getPublishedKnowledge } from "@/data/published-knowledge";
 import { buildDestinationMarkers } from "./registry";
 
 /**
- * Map markers for all fifteen destinations.
+ * Map markers for every destination.
  *
  * WHY THIS ONE-LINE MODULE EXISTS
  * -------------------------------

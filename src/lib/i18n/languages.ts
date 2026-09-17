@@ -54,8 +54,8 @@ export const LANGUAGES: readonly LanguageMeta[] = [
   { code: "bn", endonym: "বাংলা",     english: "Bengali",   dir: "ltr" },
   { code: "ne", endonym: "नेपाली",    english: "Nepali",    dir: "ltr" },
   /* The eight added to reach twenty. India is the product's primary tourism
-     market and ten of the fifteen destinations are Indian, so the languages
-     its visitors actually read come before the international set. */
+     market and every destination is Indian, so the languages its visitors
+     actually read come before the international set. */
   { code: "ta", endonym: "தமிழ்",     english: "Tamil",     dir: "ltr" },
   { code: "te", endonym: "తెలుగు",    english: "Telugu",    dir: "ltr" },
   { code: "kn", endonym: "ಕನ್ನಡ",     english: "Kannada",   dir: "ltr" },

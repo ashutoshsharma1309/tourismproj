@@ -92,9 +92,13 @@
     "qa:visual": "node scripts/qa/visual-capture.mjs",
     "archive:vendor": "node scripts/archive/vendor-archive-images.mjs",
     "qa:media-provenance": "node scripts/qa/media-provenance.mjs",
-    "qa:guide": "tsx scripts/qa/guide-scope.mts"
+    "qa:guide": "tsx scripts/qa/guide-scope.mts",
+    "qa:india": "tsx scripts/qa/india-only.mts",
+    "qa:partners": "tsx scripts/qa/partners.mts",
+    "qa:accounts": "tsx scripts/qa/accounts.mts"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.112.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -106,7 +110,9 @@
     "postgres": "^3.4.9",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "tailwind-merge": "^2.6.0"
+    "server-only": "^0.0.1",
+    "tailwind-merge": "^2.6.0",
+    "zod": "^4.6.4"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.120.0",

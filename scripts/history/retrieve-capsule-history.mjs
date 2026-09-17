@@ -126,12 +126,20 @@ function keyFacts(paras) {
  * of 165 events whose field order it had not anticipated and reported the
  * result as though those events did not exist.
  */
+/* `--only=a,b` limits the run to those destinations. Added for the India-only
+   expansion so the eight new cities could be retrieved without re-fetching —
+   and re-dating — the records the other destinations already publish. */
+const ONLY = (process.argv.find((a) => a.startsWith("--only="))?.split("=")[1] ?? "")
+  .split(",").map((s) => s.trim()).filter(Boolean);
+const wanted = (id) => ONLY.length === 0 || ONLY.includes(id);
+
 const MANIFEST = JSON.parse(readFileSync(".data/history-manifest.json", "utf8"));
 
 mkdirSync(OUT, { recursive: true });
 let grand = 0;
 
 for (const [id, events] of Object.entries(MANIFEST)) {
+  if (!wanted(id)) continue;
   const enriched = [];
   const dropped = [];
 

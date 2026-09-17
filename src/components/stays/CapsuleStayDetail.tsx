@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { DestinationBreadcrumb } from "@/components/destinations/DestinationBreadcrumb";
+import { ReferralLink } from "@/components/partners/ReferralLink";
 import { buttonClasses } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
 import { objectPositionFor } from "@/lib/media/focal";
@@ -161,16 +162,17 @@ export function CapsuleStayDetail({
             <p className="mt-2 text-caption text-subtle">No coordinate is published for this property.</p>
           )}
           {mapsUrl ? (
-            <a
+            <ReferralLink
               href={mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              destinationId={destinationId}
+              stayRef={`${destinationId}/${stay.id}`}
+              eventType="MAPS"
               className={cn(buttonClasses({ size: "sm" }), "mt-4")}
             >
               <MapPin className="size-4" aria-hidden />
               Open in Google Maps
               <span className="sr-only"> (opens in a new tab)</span>
-            </a>
+            </ReferralLink>
           ) : null}
         </div>
         <div className="rounded-xl border border-border p-5">
@@ -179,24 +181,32 @@ export function CapsuleStayDetail({
             <ul className="mt-2 space-y-2 text-body">
               {stay.website ? (
                 <li>
-                  <a
+                  <ReferralLink
                     href={stay.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="OFFICIAL_WEBSITE"
                     className="inline-flex items-center gap-2 font-medium text-primary hover:underline"
                   >
                     <Globe className="size-4" aria-hidden />
                     Official website
                     <span className="sr-only"> (opens in a new tab)</span>
-                  </a>
+                  </ReferralLink>
                 </li>
               ) : null}
               {stay.phone && telHref ? (
                 <li>
-                  <a href={telHref} className="inline-flex items-center gap-2 hover:text-primary">
+                  <ReferralLink
+                    href={telHref}
+                    destinationId={destinationId}
+                    stayRef={`${destinationId}/${stay.id}`}
+                    eventType="CALL"
+                    newTab={false}
+                    className="inline-flex items-center gap-2 hover:text-primary"
+                  >
                     <Phone className="size-4" aria-hidden />
                     <span data-numeric>{stay.phone}</span>
-                  </a>
+                  </ReferralLink>
                 </li>
               ) : null}
               {stay.email ? (

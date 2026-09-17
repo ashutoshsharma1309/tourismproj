@@ -45,15 +45,12 @@ const check = (name, pass, detail = "") => {
 const section = (title) => console.log(`\n── ${title} ──`);
 
 /* =========================================================================
-   The fifteen destinations this suite exists to guarantee.
+   The eighteen Indian destinations this suite exists to guarantee.
    Hard-coded on purpose: if the registry silently loses one, the test must
    fail rather than quietly validate a shorter list.
    ========================================================================= */
-const EXPECTED = [
-  "sikkim", "delhi", "jaipur", "varanasi", "agra", "mumbai", "kolkata",
-  "hyderabad", "kochi", "goa", "kyoto", "paris", "rome", "istanbul",
-  "new-york-city",
-];
+const EXPECTED = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
 
 /** Every destination other than the deep reference implementation. */
 const NON_SIKKIM = EXPECTED.filter((id) => id !== "sikkim");
@@ -135,7 +132,9 @@ function parseRecords(src, indent) {
 const records = [...parseRecords(sikkimSrc, 2), ...parseRecords(plannedSrc, 4)];
 const ids = records.map((r) => r.id);
 
-check("All 15 destinations registered", ids.length === 15, `found ${ids.length}: ${ids.join(", ")}`);
+check("All 18 destinations registered", ids.length === 18, `found ${ids.length}: ${ids.join(", ")}`);
+check("No unexpected destination is registered", ids.every((id) => EXPECTED.includes(id)),
+  ids.filter((id) => !EXPECTED.includes(id)).join(", ") || "none");
 check(
   "Registry contains exactly the expected ids",
   EXPECTED.every((id) => ids.includes(id)),
@@ -148,7 +147,7 @@ check("No duplicate destination ids", new Set(ids).size === ids.length,
    outside this shape could reach a path or a module specifier. */
 const BAD_ID = ids.filter((id) => !/^[a-z0-9][a-z0-9-]*$/.test(id));
 check("All destination ids are URL-safe (lowercase, no traversal)", BAD_ID.length === 0,
-  BAD_ID.join(", ") || "15/15 safe");
+  BAD_ID.join(", ") || "18/18 safe");
 
 const IANA = /^[A-Za-z]+\/[A-Za-z_]+(?:\/[A-Za-z_]+)?$/;
 for (const rec of records) {
@@ -263,9 +262,9 @@ check("Build output present (run `npm run build` first)", built.length > 0,
   built.length ? `${built.length} pages` : "no .next output found");
 
 if (built.length) {
-  check("All 15 destination routes resolve to a prerendered page",
+  check("All 18 destination routes resolve to a prerendered page",
     EXPECTED.every((id) => built.includes(id)),
-    EXPECTED.filter((id) => !built.includes(id)).join(", ") || "15/15");
+    EXPECTED.filter((id) => !built.includes(id)).join(", ") || "18/18");
   check("No extra destination routes beyond the registry",
     built.every((id) => EXPECTED.includes(id)),
     built.filter((id) => !EXPECTED.includes(id)).join(", ") || "no strays");

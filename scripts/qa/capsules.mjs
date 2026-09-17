@@ -86,7 +86,7 @@ for (const id of CAPSULES) {
       (registry.includes(`${id}: () => import("./${id}")`) ||
         registry.includes(`"${id}": () => import("./${id}")`)));
   /* PHASE B: a capsule destination may declare a HIGHER depth when it also
-     holds reviewed research — Jaipur declares "curated", Kyoto "researched".
+     holds reviewed research — Jaipur declares "curated".
      What it may never declare is "planned" while holding records. */
   const record = new RegExp(`id: "${id}",[\\s\\S]{0,600}?depth: "([a-z]+)"`).exec(planned);
   check(`${id}: declares a depth its records support`,
@@ -106,14 +106,14 @@ check(`All ${CAPSULES.length} hubs serve`, CAPSULES.every((id) => hub[id].status
  * one of them must still do is state a depth from the shared vocabulary and
  * say what it offers.
  */
-const DEPTH_WORDS = /Tourism capsule|Curated|Researched|Deep archive/;
+const DEPTH_WORDS = /Documented|Well documented|Researched|Deeply documented/;
 check("Every hub states a depth from the shared vocabulary",
   CAPSULES.every((id) => DEPTH_WORDS.test(text(hub[id].body))),
   CAPSULES.filter((id) => !DEPTH_WORDS.test(text(hub[id].body))).join(", ") || `${CAPSULES.length}/${CAPSULES.length}`);
 check("Every hub says what it offers",
-  CAPSULES.every((id) => /Explore this destination through/.test(text(hub[id].body))));
+  CAPSULES.every((id) => /What you can explore here/.test(text(hub[id].body))));
 check("Sikkim still declares deep, and says so",
-  /Deep archive/.test(text((await get(`${BASE}/destinations/sikkim`)).body)));
+  /Deeply documented/.test(text((await get(`${BASE}/destinations/sikkim`)).body)));
 
 /* ========================================================================
    3. NO SIKKIM CONTENT UNDER ANOTHER DESTINATION
@@ -218,14 +218,19 @@ for (const id of CAPSULES) {
   check(`${id}: no source is model-proposed`,
     capsule.sources.every((source) => source.retrievalMethod !== "model-proposed"));
   /*
- * PHASE B raised the contract: 10-20 catalogued places, up to 15 dated events
- * and up to 15 stories. Still bounded on both sides — the upper bound is what
- * keeps a "capsule" from quietly becoming an unreviewed archive, and the lower
- * one is what keeps it from thinning out.
+ * PHASE B bounded a capsule at 10-20 places, 15 events and 15 stories, to
+ * stop one quietly becoming an unreviewed archive.
+ *
+ * PHASE D raises the ceiling deliberately. These destinations are being taken
+ * TO a documented archive: every added record is an article with a published
+ * coordinate near the destination, retrieved and cited by the same pipeline,
+ * and `earned-depth.ts` grades what results from the records rather than from
+ * a label. The lower bound stays — thinning out is still a failure — and the
+ * new ceiling is the size of the reference archive, Sikkim's 53 places.
  */
-  check(`${id}: within the capsule size limits`,
-    capsule.places.length >= 5 && capsule.places.length <= 20 &&
-      capsule.history.length <= 15 && capsule.stories.length <= 15,
+  check(`${id}: within the archive size limits`,
+    capsule.places.length >= 5 && capsule.places.length <= 60 &&
+      capsule.history.length <= 60 && capsule.stories.length <= 60,
     `${capsule.places.length} places, ${capsule.history.length} history, ${capsule.stories.length} stories`);
 
   const discover = await get(`${BASE}/destinations/${id}/discover`);
@@ -360,8 +365,8 @@ const matched = text(globalDiscover.body);
 check("Capsule destinations appear in interest-first discovery",
   CAPSULES.filter((id) => matched.toLowerCase().includes(id.replace("-", " "))).length >= 5,
   CAPSULES.filter((id) => matched.toLowerCase().includes(id.replace("-", " "))).join(", "));
-check("They are described as coverage, not ranked",
-  /coverage, not quality/i.test(matched) && !/\bbest\b|\bmost beautiful\b/i.test(matched));
+check("They are described as what each offers, not ranked",
+  /how much each destination actually offers/i.test(matched) && !/\bbest\b|\bmost beautiful\b/i.test(matched));
 
 const compare = await get(`${BASE}/destinations/compare?ids=sikkim,delhi,agra`);
 check("Capsule destinations can be compared", compare.status === 200 &&

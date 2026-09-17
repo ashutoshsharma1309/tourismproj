@@ -19,7 +19,7 @@ import type { DataDepth, Destination } from "@/types/destination";
  *     carrying that interest through their own type or through the events and
  *     stories that name them. Sikkim has these.
  *   - **Knowledge coverage** — reviewer-approved claims in that category.
- *     Jaipur and Kyoto have these and nothing else.
+ *     Jaipur held these and nothing else before it gained a capsule.
  *
  * They are counted separately and rendered separately, because collapsing
  * them would let "35 approved facts about Jaipur" read as "35 things to do in
@@ -28,7 +28,7 @@ import type { DataDepth, Destination } from "@/types/destination";
  * yet available*.
  *
  * COVERAGE IS NOT QUALITY. Every number here measures how much of THIS
- * ARCHIVE stands behind a destination. Sikkim has more records than Kyoto
+ * ARCHIVE stands behind a destination. Sikkim has more records than Jaipur
  * because more of Sikkim has been catalogued — that is a fact about the
  * archive, not about the two places, and every surface that renders these
  * numbers says so.

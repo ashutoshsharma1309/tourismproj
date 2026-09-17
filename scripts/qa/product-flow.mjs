@@ -61,7 +61,7 @@ section("0. The landing page, read cold");
   const text = await bodyText(page);
 
   check("It says what the product is, not which destination it started as",
-    /TerraStory/.test(text) && /Discover the stories behind the places/.test(text));
+    /TerraStory/.test(text) && /Discover the stories behind India's places/.test(text));
   check("It does not present itself as a Sikkim site",
     !/^\s*Sikkim Darshan/.test(text) && !/Digitizing the Sacred Heritage of Sikkim/.test(text.slice(0, 600)),
     "the first screenful is about the platform");
@@ -71,32 +71,37 @@ section("0. The landing page, read cold");
     await page.locator('a[href^="/discover?interests="]').count() >= 5,
     `${await page.locator('a[href^="/discover?interests="]').count()} interests offered`);
   check("Door 2 — every registered destination is linked from the landing page",
-    await page.locator('a[href^="/destinations/"]').count() >= 15,
+    await page.locator('a[href^="/destinations/"]').count() >= 18,
     `${await page.locator('a[href^="/destinations/"]').count()} destination links`);
   check("Door 3 — search is reachable without opening a menu",
     await page.getByRole("button", { name: /Search \(Command K\)/ }).first().isVisible());
 
-  /* All fifteen, by name, so a missing one cannot hide behind a count. */
-  const IDS = ["sikkim", "jaipur", "kyoto", "delhi", "varanasi", "agra", "mumbai", "kolkata",
-    "hyderabad", "kochi", "goa", "paris", "rome", "istanbul", "new-york-city"];
+  /* All eighteen, by name, so a missing one cannot hide behind a count. */
+  const IDS = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
   const missing = [];
   for (const id of IDS) {
     if (await page.locator(`a[href="/destinations/${id}"]`).count() === 0) missing.push(id);
   }
-  check("All 15 destinations are discoverable from the landing page",
-    missing.length === 0, missing.join(", ") || "15/15");
+  check("All 18 destinations are discoverable from the landing page",
+    missing.length === 0, missing.join(", ") || "18/18");
 
   /* Depth is stated on the landing page, so nothing is oversold. */
-  check("The landing page states each destination's depth",
-    /Deep archive/.test(text) && /Tourism capsule/.test(text) && /Curated/.test(text),
-    "the depth vocabulary is visible before the click");
-  check("It does not claim every destination is deep",
-    (text.match(/Deep archive/g) ?? []).length <= 3,
-    `"Deep archive" appears ${(text.match(/Deep archive/g) ?? []).length}×`);
+  /* The tier badge left the landing cards in the first-time-user pass: a
+     traveller could not read "Tourism capsule". Each card now says what can
+     be done there in plain words, and a destination still being catalogued
+     says so instead of borrowing a badge. */
+  check("The landing page says what each destination offers, in plain words",
+    /places to explore/.test(text) || /Being catalogued/.test(text),
+    "a plain-words line is visible before the click");
+  check("It does not claim every destination is deeply documented",
+    (text.match(/Deeply documented/g) ?? []).length <= 3,
+    `"Deeply documented" appears ${(text.match(/Deeply documented/g) ?? []).length}×`);
 
   /* The four stages name real routes. */
-  check("The four stages are explained and each names a route",
-    /Discover/.test(text) && /Explore/.test(text) && /Understand/.test(text) && /Plan/.test(text));
+  check("The four steps are explained and each names a route",
+    /Choose what interests you/.test(text) && /Explore a destination/.test(text) &&
+      /Ask the guide/.test(text) && /Build your journey and compare/.test(text));
 
   check("No claim the implementation cannot support",
     !/\bAI[- ](?:powered|generated)\b/i.test(text) &&
@@ -125,7 +130,7 @@ section("A. Interest first");
   const results = await bodyText(page);
   check("A2 · the chosen interest is carried in the URL, not hidden state",
     path(page) === href, `${href} → ${path(page)}`);
-  check("A3 · destinations that cover it are listed", /Sikkim|Delhi|Paris|Rome/.test(results));
+  check("A3 · destinations that cover it are listed", /Sikkim|Delhi|Jaipur|Agra/.test(results));
   check("A4 · each match explains why it matched",
     /coverage figure was calculated|reviewer-approved|catalogued record/i.test(results));
 
@@ -159,26 +164,26 @@ section("B. Destination first");
 
   /* A capsule destination on purpose: the shallow end of the depth ladder is
      where a broken experience would show first. */
-  await page.locator('a[href="/destinations/rome"]').first().click();
-  await page.waitForURL("**/destinations/rome");
+  await page.locator('a[href="/destinations/agra"]').first().click();
+  await page.waitForURL("**/destinations/agra");
   const hub = await bodyText(page);
   check("B1 · a destination card from the landing page opens its hub",
-    path(page) === "/destinations/rome", path(page));
+    path(page) === "/destinations/agra", path(page));
   check("B2 · the hub states its depth and what it holds",
-    /Tourism capsule/.test(hub) && /Explore this destination through/.test(hub));
+    /Documented/.test(hub) && /What you can explore here/.test(hub));
 
-  await page.locator('a[href^="/destinations/rome/discover"]').first().click();
-  await page.waitForURL("**/destinations/rome/discover**");
+  await page.locator('a[href^="/destinations/agra/discover"]').first().click();
+  await page.waitForURL("**/destinations/agra/discover**");
   const discovery = await bodyText(page);
-  check("B3 · its experiences open", path(page).startsWith("/destinations/rome/discover"), path(page));
-  check("B4 · it shows Rome's own records", /Colosseum|Pantheon|Trevi/.test(discovery));
+  check("B3 · its experiences open", path(page).startsWith("/destinations/agra/discover"), path(page));
+  check("B4 · it shows Agra's own records", /Taj Mahal|Agra Fort|Fatehpur Sikri/.test(discovery));
   check("B5 · and none of Sikkim's", !/Rumtek|Pemayangtse|Tsomgo|Yuksom/.test(discovery));
 
   /* "Add to trip" was removed; the flow continues through the planner route. */
   check("B6 · no add-to-trip is offered",
     (await page.locator('a[href*="pin="]').count()) === 0);
-  await page.goto(`${BASE}/destinations/rome/plan`, { waitUntil: "domcontentloaded" });
-  check("B7 · the planner keeps the destination", path(page).startsWith("/destinations/rome/"), path(page));
+  await page.goto(`${BASE}/destinations/agra/plan`, { waitUntil: "domcontentloaded" });
+  check("B7 · the planner keeps the destination", path(page).startsWith("/destinations/agra/"), path(page));
   const plan = await bodyText(page);
   check("B8 · the plan explains itself and states what it cannot know",
     /in a straight line/i.test(plan) && /not verified for these records/i.test(plan));
@@ -199,19 +204,19 @@ section("C. Search first");
   await box.waitFor({ state: "visible", timeout: 10_000 });
   check("C1 · search opens from the landing page", await box.isVisible());
 
-  await box.fill("Colosseum");
-  const option = page.locator('[role="option"]', { hasText: "Colosseum" }).first();
+  await box.fill("Charminar");
+  const option = page.locator('[role="option"]', { hasText: "Charminar" }).first();
   const found = await option.waitFor({ timeout: 10_000 }).then(() => true).catch(() => false);
-  check("C2 · a place in a capsule destination is findable", found, "Colosseum");
+  check("C2 · a place in a capsule destination is findable", found, "Charminar");
 
   if (found) {
-    /* Ownership: the result must belong to Rome, not to whoever indexed it. */
+    /* Ownership: the result must belong to Hyderabad, not to whoever indexed it. */
     const label = (await option.textContent()) ?? "";
-    check("C3 · the result names its owning destination", /Rome/.test(label), label.replace(/\s+/g, " ").slice(0, 60));
+    check("C3 · the result names its owning destination", /Hyderabad/.test(label), label.replace(/\s+/g, " ").slice(0, 60));
     await option.click();
-    await page.waitForURL("**/destinations/rome/**");
-    check("C4 · following it lands inside Rome", path(page).startsWith("/destinations/rome/"), path(page));
-    check("C5 · the record is on the page", /Colosseum/.test(await bodyText(page)));
+    await page.waitForURL("**/destinations/hyderabad/**");
+    check("C4 · following it lands inside Hyderabad", path(page).startsWith("/destinations/hyderabad/"), path(page));
+    check("C5 · the record is on the page", /Charminar/.test(await bodyText(page)));
   }
 
   /* And the corpus is still fetched rather than inlined. */
@@ -236,9 +241,8 @@ section("D. Mobile, 390px");
   check("D1 · the landing page does not scroll sideways", overflow <= 1, `${overflow}px`);
 
   check("D2 · the three primary actions are reachable without a menu",
-    await page.getByRole("link", { name: "Explore destinations" }).first().isVisible() &&
-      await page.getByRole("link", { name: "Discover by interest" }).first().isVisible() &&
-      await page.getByRole("link", { name: "Plan a journey" }).first().isVisible());
+    await page.getByRole("link", { name: "Explore India" }).first().isVisible() &&
+      await page.getByRole("link", { name: "Find my destination" }).first().isVisible());
   check("D3 · search is in the header at 390px",
     await page.getByRole("button", { name: /Search \(Command K\)/ }).first().isVisible());
 
@@ -246,7 +250,7 @@ section("D. Mobile, 390px");
   await page.waitForTimeout(300);
   const drawer = await page.locator('nav[aria-label="Mobile"] a').allInnerTexts();
   check("D4 · the drawer lists the product's sections",
-    drawer.some((t) => /Destinations/i.test(t)) && drawer.some((t) => /Discover/i.test(t)),
+    drawer.some((t) => /^Explore$/i.test(t.trim())) && drawer.some((t) => /For you/i.test(t)),
     drawer.join(", "));
 
   /* Interests must be tappable, not merely present. */

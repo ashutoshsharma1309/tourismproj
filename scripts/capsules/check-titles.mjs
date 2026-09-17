@@ -30,8 +30,28 @@ async function resolveBatch(titles) {
   const url = `${API}?action=query&format=json&redirects=1&prop=pageprops&ppprop=disambiguation&titles=${
     titles.map(encodeURIComponent).join("|")
   }`;
-  const response = await fetch(url, { headers: { "user-agent": UA } });
-  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  /*
+   * Wikimedia rate-limits an anonymous caller hard, and a thousand titles is
+   * enough to meet it: a 429 used to end the run with four hundred resolved
+   * and nothing written. Back off and ask again.
+   */
+  let response;
+  for (let attempt = 0; attempt < 6; attempt += 1) {
+    try {
+      response = await fetch(url, { headers: { "user-agent": UA } });
+    } catch (error) {
+      await sleep(10_000 * (attempt + 1));
+      continue;
+    }
+    if (response.status === 429 || response.status >= 500) {
+      const wait = response.status === 429 ? 60_000 * (attempt + 1) : 5_000 * (attempt + 1);
+      console.log(`  (HTTP ${response.status}, waiting ${wait / 1000}s)`);
+      await sleep(wait);
+      continue;
+    }
+    break;
+  }
+  if (!response || !response.ok) throw new Error(`HTTP ${response?.status ?? "no response"}`);
   const data = await response.json();
   const query = data.query ?? {};
 
@@ -75,7 +95,7 @@ for (let i = 0; i < flat.length; i += BATCH) {
   const resolved = await resolveBatch(slice.map((entry) => entry.title));
   slice.forEach((entry, index) => results.push({ ...entry, ...resolved[index] }));
   console.log(`  ${Math.min(i + BATCH, flat.length)}/${flat.length}`);
-  await sleep(700);
+  await sleep(1500);
 }
 
 /*

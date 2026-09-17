@@ -25,7 +25,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -62,7 +62,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -101,45 +101,37 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
-    "slug": "elephanta-caves-ad-550",
+    "slug": "bombay-castle-1554",
     "destinationId": "mumbai",
-    "sortYear": 550,
-    "yearLabel": "AD 550",
-    "title": "Elephanta Caves, AD 550",
-    "era": "Medieval",
-    "eraId": "medieval",
-    "shortDescription": "Many scholars consider them to have been completed by about 550 CE.\nThey were named Elefante—which morphed to \"Elephanta\"—by the colonial Portuguese who found elephant statues in the caves.",
-    "description": [
-      "The ancient history of the island is unknown in both Hindu or Buddhist records. Archeological studies have uncovered many remains that suggest the small island had a rich cultural past, with evidence of human settlement by possibly the 2nd century BC. The Elephanta site was first occupied by Hinayana Buddhists, before the arrival of the Brahmans to the island, to raise a large stupa to the Buddha with seven smaller stupas around it, probably around the 2nd century BCE. Coins of the Kshatrapas (Western Satraps) dating to the 4th century CE were found on the island. The regional history is first recorded in the Gupta Empire era, but these do not explicitly mention these caves. This has made the origins and the century in which Elephanta caves were built a subject of a historic dispute. They have been variously dated, mostly between from late 5th to late 8th century AD, largely based on the dating of other cave temples in the Deccan region. Colonial era historians suggested that the caves were built by the Rashtrakutas in 7th century or after, a hypothesis primarily based on some similarities with the Ellora Caves, but this theory has been discredited by later findings.",
-      "According to Archaeological Survey of India and UNESCO, the site was settled in ancient times and the cave temples were built between 5th and 6th century. Contemporary scholars generally place the completion of the temples to the second quarter of the 6th century and as a continuation of the period of artistic flowering in the Gupta Empire era. These scholars attribute these Cave temples to king Krishnaraja of the Kalachuri dynasty. The dating to a mid 6th century completion and it being a predominantly Shiva monument built by a Hindu Kalachuri king is based on numismatic evidence, inscriptions, construction style and better dating of other Deccan cave temples including the Ajanta Caves, and the more firm dating of Dandin's Dasakumaracarita.",
-      "According to Charles Collins, the significance of the Elephanta Caves is better understood by studying them in the context of ancient and early medieval Hindu literature, as well as in the context of other Buddhist, Hindu and Jain cave temples on the subcontinent. The historic Elephanta artwork was inspired by the legends, concepts and spiritual ideas found in the Vedic texts on Rudra and later Shiva, the epics, the Puranas and the Pashupata Shaivism literature corpus of Hinduism composed by the 5th-century. The panels reflect the ideas and stories widely accepted and well known to the artists and cave architects of India by about 525 CE. The accounts varies significantly in these texts and has been much distorted by later interpolations, but the Elephanta Cave panels represent the narrative version most significant in the 6th century. The panels and artwork express through their eclecticism, flux and motion the influence of Vedic and post-Vedic religious thought on Hindu culture in mid 1st millennium CE."
-    ],
-    "keyFacts": [
-      "Archeological studies have uncovered many remains that suggest the small island had a rich cultural past, with evidence of human settlement by possibly the 2nd century BC.",
-      "Coins of the Kshatrapas (Western Satraps) dating to the 4th century CE were found on the island.",
-      "This has made the origins and the century in which Elephanta caves were built a subject of a historic dispute."
-    ],
+    "sortYear": 1554,
+    "yearLabel": "AD 1554",
+    "title": "Bombay Castle, 1554",
+    "era": "Early modern",
+    "eraId": "early-modern",
+    "shortDescription": "Orta had leased the island of Bombay from the King of Portugal between 1554 and 1570.",
+    "detailHref": "/destinations/mumbai/history#bombay-castle-1554",
+    "keyFacts": [],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "elephanta-caves"
+      "bombay-castle"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — Elephanta Caves",
-        "url": "https://en.wikipedia.org/wiki/Elephanta_Caves",
+        "name": "Wikipedia — Bombay Castle, 1554",
+        "url": "https://en.wikipedia.org/wiki/Bombay_Castle",
         "type": "encyclopedia",
-        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+        "covers": "The summary on the timeline."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
-    "readingMinutes": 2
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
   },
   {
     "slug": "asiatic-society-1804",
@@ -167,7 +159,103 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "aga-khan-s-maqbara-1840",
+    "destinationId": "mumbai",
+    "sortYear": 1840,
+    "yearLabel": "AD 1840",
+    "title": "Aga Khan's Maqbara, 1840",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Aga Khan I first visited the site in 1840.",
+    "detailHref": "/destinations/mumbai/history#aga-khan-s-maqbara-1840",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "aga-khan-s-maqbara"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Aga Khan's Maqbara, 1840",
+        "url": "https://en.wikipedia.org/wiki/Aga_Khan's_Maqbara",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "afghan-church-1847",
+    "destinationId": "mumbai",
+    "sortYear": 1847,
+    "yearLabel": "AD 1847",
+    "title": "Afghan Church, 1847",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Located in Mumbai, Maharashtra, India, it was built by the British between 1847 and 1858 to commemorate the dead of the First Afghan War and the disastrous 1842 retreat from Kabul.",
+    "description": [
+      ". There were no chairs, and patrons had to bring their own. Later, the government released a new patch of land for the setting up the church with the hope that the church's spire would serve as a useful landmark for ships in the harbour.",
+      "The construction of a new more permanent church in the 1840s was led by the Rev. George Pigott, Chaplain to the East India Company in Bombay. The immediate impetus for fundraising and construction was for the church to serve as the principal memorial to the casualties of the First Anglo-Afghan War. The Rev. Pigott had previously served as chaplain to the Bombay Army as troops advanced on Kabul in 1838 under the direction of Lord Keane. The subsequent retreat of the British forces from Kabul in 1842 was described at the time as the worst disaster suffered by the British in India. Many of the casualties of the conflict came from the East India Company's Bombay Army and military establishments located in proximity to the present church site.",
+      "In March 1843, the Oxford Society for Promoting the Study of Gothic Architecture (later the Oxford Architectural and Historical Society) received a request from the Rev. Piggot asking for a design for the new church.  The English architect John Macduff Derick presented his designs to the Society in November of the same year, and they met with the Society's approval.  However, in June 1845 word came from India that the designs were unfit for the purpose and the building would cost too much. Eventually, plans for the quintessentially English Gothic Revival architecture of the church were submitted in 1847 by city engineer Henry Conybeare and approved.",
+      "The foundation stone of the church was laid on 4 December 1847 by Sir George Russell Clerk, Governor. When Conybeare stood down as town engineer in 1850, Captain C.W. Tremenheere of the Royal Engineers took on the role of superintending architect modifying certain aspects of the approved design such as reducing the pitch of the roof and height of the tower. Architect William Butterfield in conjunction with students from the Sir Jamsetjee Jeejeebhoy School of Art designed the decorative tile reredos. The Afghan War Memorial mosaics, the polychrome floor tiles, choir stalls, screen and pews were also produced to Butterfield's designs.  The church was consecrated on 7 January 1858, by Bishop of Bombay, John Harding. The spire cost a sum of Rs 5,65,000 and was finished on 10 June 1865. Sir Cowasji Jehangir contributed a sum of Rs 7,500 to help complete the building."
+    ],
+    "keyFacts": [
+      "Pigott had previously served as chaplain to the Bombay Army as troops advanced on Kabul in 1838 under the direction of Lord Keane.",
+      "The subsequent retreat of the British forces from Kabul in 1842 was described at the time as the worst disaster suffered by the British in India.",
+      "In March 1843, the Oxford Society for Promoting the Study of Gothic Architecture (later the Oxford Architectural and Historical Society) received a request from the Rev."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "afghan-church"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Afghan Church",
+        "url": "https://en.wikipedia.org/wiki/Afghan_Church",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "jijamata-udyaan-1861",
+    "destinationId": "mumbai",
+    "sortYear": 1861,
+    "yearLabel": "AD 1861",
+    "title": "Jijamata Udyaan, 1861",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "In 1861, construction of a new garden was commenced on 33 acres in the Mount Estate, Mazgaon (now included in Byculla).",
+    "detailHref": "/destinations/mumbai/history#jijamata-udyaan-1861",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "jijamata-udyaan"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Jijamata Udyaan, 1861",
+        "url": "https://en.wikipedia.org/wiki/Jijamata_Udyaan",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -203,7 +291,42 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "maharashtra-police-headquarters-1870",
+    "destinationId": "mumbai",
+    "sortYear": 1870,
+    "yearLabel": "AD 1870",
+    "title": "Maharashtra Police Headquarters, 1870",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Royal Alfred Sailors' Home, the previous occupant of the building, was named after Prince Alfred, the second son of Queen Victoria and Prince Albert, who visited Bombay in 1870.",
+    "description": [
+      "The historic structure called Royal Alfred Sailors' Home was built at the height of maritime trade in Bombay, which had become a busy port during the British Raj. It was designed by Frederick William Stevens, an engineer with the Indian Public Works Department, and named after the \"sailor prince\" Alfred, Duke of Saxe-Coburg and Gotha, the second son of Queen Victoria and Prince Albert who had visited Bombay in 1870. It could accommodate 20 officers and 100 sea men. The Maharaja of Baroda Khanderao II Gaekwad contributed ₹2,00,000 towards the construction of the building.",
+      "The building was Stevens's first important commission in the city and he was supervised by James Augustus Fuller. His efforts were described as \"an early attempt to infuse Gothic architecture with Muslim nuances\". It was acquired by the Government of India in 1928 from the Committee of Royal Alfred Sailors' Home. It then served as the Legislative Assembly and the Bombay Council Hall, until the new council hall was built in 1982. Following the departure, Maharashtra Police moved into the building and currently occupies the site."
+    ],
+    "keyFacts": [
+      "It was acquired by the Government of India in 1928 from the Committee of Royal Alfred Sailors' Home.",
+      "It then served as the Legislative Assembly and the Bombay Council Hall, until the new council hall was built in 1982."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "maharashtra-police-headquarters"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Maharashtra Police Headquarters",
+        "url": "https://en.wikipedia.org/wiki/Maharashtra_Police_Headquarters",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -242,47 +365,113 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 3
   },
   {
-    "slug": "cst-1888",
+    "slug": "all-saints-church-malabar-hill-1881",
     "destinationId": "mumbai",
-    "sortYear": 1888,
-    "yearLabel": "AD 1888",
-    "title": "Chhatrapati Shivaji Terminus, 1888",
+    "sortYear": 1881,
+    "yearLabel": "AD 1881",
+    "title": "All Saints' Church, Malabar Hill, 1881",
     "era": "Modern",
     "eraId": "modern",
-    "shortDescription": "The station was inaugurated to the general public on 20 May 1888.",
-    "description": [
-      "This famous landmark which has become a symbol of the city, was built as the headquarters of the Great Indian Peninsular Railway.",
-      "The railway station was built to replace the Bori Bunder railway station, in the Bori Bunder area of Bombay, a prominent port and warehouse area known for its imports and exports. Since Bombay became a major port city at the time, a bigger station was built to meet its demands, and was named Victoria Terminus, after the then reigning Empress of India, Queen Victoria. The station was designed by Frederick William Stevens, a British engineer architect, attached to the Bombay office of the Indian colonial Public Works Department. Work began in 1878. He received ₹1,614,000 (US$17,000) as the payment for his services. Stevens earned the commission to construct the station after a masterpiece watercolour sketch by draughtsman Axel Haig. The design has been compared to George Gilbert Scott's 1873 St Pancras railway station in London, also in an exuberant Italian Gothic style, but it is far closer to Scott's second prize winning entry for Berlin's parliament building, exhibited in London in 1875, which featured numerous towers and turrets, and a large central ribbed dome. The style of the station is also similar to other public buildings of the 1870s in Mumbai, such as Elphinstone College but especially the buildings of the University of Mumbai, also designed by G Scott.",
-      "The station took ten years to complete, the longest for any building of that era in Mumbai.",
-      "During its construction, a marble statue of Queen Victoria was installed in the main façade of the building, in a canopy under the clock. In the 1950s, authorities had begun to remove statues of the British figures from government buildings and public spaces based on a directive from the Government of India. Most of the statues, including that of Queen Victoria, were sent to Victoria Gardens (later renamed Rani Baug, then Jijamata Udyan) where they were left lying on the grass in the open until at least the 1980s. A Right to Information report was filed, but had no records of the missing statue being exported out of India. Historians now believe that the statue was smuggled out, sold by politicians, or destroyed. The symbol of Progress, another statue, featured on the top of the dome, is often mistaken for that of Queen Victoria.",
-      "The station has been renamed several times. It was built to replace Bori Bunder, the terminus of the Great Indian Peninsula Railway from 1853 to 1888 and was named Victoria Terminus to commemorate the Golden Jubilee of Queen Victoria. In 1996, the station was renamed to Chhatrapati Shivaji Terminus in honour of Shivaji, the founder and first Chhatrapati of the Maratha Empire.",
-      "In December 2016, the Fadnavis Ministry passed a resolution to change the name to Chhatrapati Shivaji Maharaj Terminus in the Maharashtra Assembly and on June 28, 2017, the home ministry officially sent a letter to the state government denoting the name change, following which the station was yet again renamed as the Chhatrapati Shivaji Maharaj Terminus. However, both the former names \"VT\" as well as \"CST\" along with the current name \"CSMT\" are popularly used."
-    ],
-    "keyFacts": [
-      "It was built to replace Bori Bunder, the terminus of the Great Indian Peninsula Railway from 1853 to 1888 and was named Victoria Terminus to commemorate the Golden Jubilee of Queen Victoria.",
-      "In 1996, the station was renamed to Chhatrapati Shivaji Terminus in honour of Shivaji, the founder and first Chhatrapati of the Maratha Empire."
-    ],
+    "shortDescription": "It was built in 1881 as an Anglican church for the local congregation that had to earlier travel some 8 kilometres to St. Thomas Cathedral in Fort.",
+    "detailHref": "/destinations/mumbai/history#all-saints-church-malabar-hill-1881",
+    "keyFacts": [],
     "imageKey": null,
     "relatedMonasteries": [],
     "relatedPlaces": [
-      "cst"
+      "all-saints-church-malabar-hill"
     ],
     "relatedStories": [],
     "sources": [
       {
-        "name": "Wikipedia — Chhatrapati Shivaji Terminus",
-        "url": "https://en.wikipedia.org/wiki/Chhatrapati_Shivaji_Terminus",
+        "name": "Wikipedia — All Saints' Church, Malabar Hill, 1881",
+        "url": "https://en.wikipedia.org/wiki/All_Saints'_Church%2C_Malabar_Hill",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "knesset-eliyahoo-synagogue-1884",
+    "destinationId": "mumbai",
+    "sortYear": 1884,
+    "yearLabel": "AD 1884",
+    "title": "Knesset Eliyahoo Synagogue, 1884",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "Completed in 1884, it is the second oldest Sephardic synagogue in Mumbai.",
+    "description": [
+      "Prior to the arrival of Baghdadi Jews in India, the Jews residing in Bombay — the name then used for Mumbai — had settled in the towns of India, living peacefully with other communities in India. Harry D. Wall, in an interview to the New York Times, has said that among the Jews who now remain in Mumbai are a group of Jews known as Bene Jews or Bene Israel who were reportedly descendants of seven tribes of Israel who, in the 2nd century BC, were shipwrecked on India's Konkan coast while escaping persecution in the Galilee. They found that living in India, amidst a cosmopolitan community consisting of Hindus, Buddhists, Jains, and, much later, Muslims, was a very cordial environment, totally free of anti-Semitic feelings.",
+      "The Jewish merchant community, which played a significant role in the commercial development of then Bombay (now Mumbai), consisted of Jews from Iraq, Syria, and other Middle Eastern countries who immigrated in the late 18th century under the threat of persecution. They found the environment conducive to continuing their trade and settled in the city, becoming prosperous in business ventures such as textile mills and international trading. In 1784, the British government took over the East India Company. With this change, many business opportunities emerged in India, and Bombay in particular, encouraging immigrants to set up businesses. In 1790, one such business magnate was Shalom ben Ovadiah HaCohen, a Baghdadi Jew who had migrated from Aleppo (Halab), in Syria to Bombay; other Jewish businessmen from Baghdad, Basra, and Yemen followed him.",
+      "In 1832, David Sassoon immigrated to Bombay and established himself as a magistrate of the cotton industry. He built the Magen David Synagogue in Byculla. Mumbai in 1864; this was in addition to the older Magen Hasidim synagogue. His son, Albert Sassoon, transformed the weaving industry in Bombay. To cater to the increasing need of the Baghdadi Jews, Knesset Eliyahoo Synagogue was constructed on a premium piece of land in the hub of Bombay's commercial area by Jacob Sassoon, grandson of David Sassoon, commemorating his father, Eliyahoo Sassoon. It was established in 1884.",
+      "More Jews came from Bukhara, Persia, and, following the Farhud pogrom in Iraq in 1941, many more immigrants shifted to Bombay. They all used to assemble in the Knesset Eliyahoo Synagogue in large numbers during festival days and on Rosh Hashana and Yom Kippur. On many such occasions, in view of the large crowd of devotees, overflow prayer services were held in the neighbouring Cawasjee Jehangir Public Hall.",
+      "In 1985, President Giani Zail Singh visited the site to honour the centennial of the synagogue's construction. India Post issued a commemorative stamp in honour of the centennial.",
+      "The first-ever terrorist attack on Jews in Mumbai occurred on 26 November 2008. Rabbi Gavriel Holtzberg, who had conducted Sabbath services on the previous day and also held religious discourses at the Knesset Eliyahoo Synagogue, was killed, along with his wife and a few other Jews at the Nariman House, a community center operated by Chabad. Whilst there was no specific attack on the Knesset Eliyahoo Synagogue or its congregation, the terrorists' actions sowed fear among the Jewish community members residing in Mumbai, and also forged a closer bond between the city's Baghdadi and Bene Israel Jews."
+    ],
+    "keyFacts": [
+      "In 1784, the British government took over the East India Company.",
+      "In 1832, David Sassoon immigrated to Bombay and established himself as a magistrate of the cotton industry.",
+      "Mumbai in 1864; this was in addition to the older Magen Hasidim synagogue."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "knesset-eliyahoo-synagogue"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Knesset Eliyahoo Synagogue",
+        "url": "https://en.wikipedia.org/wiki/Knesset_Eliyahoo_Synagogue",
         "type": "encyclopedia",
         "covers": "The account on this page, quoted under CC BY-SA 4.0."
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 3
+  },
+  {
+    "slug": "haffkine-institute-1899",
+    "destinationId": "mumbai",
+    "sortYear": 1899,
+    "yearLabel": "AD 1899",
+    "title": "Haffkine Institute, 1899",
+    "era": "Modern",
+    "eraId": "modern",
+    "shortDescription": "It was established on 10 August 1899 by Dr. Waldemar Mordechai Haffkine, as a bacteriology research centre called the \"Plague Research Laboratory\".",
+    "description": [
+      "Dr. Waldemar Haffkine, an orthodox Jewish Ukrainian (born: Odessa, Russian Empire) scientist assigned by the Pasteur Institute to work in India, is recognized as the microbiologist who first developed and used vaccines against cholera and bubonic plague. In October 1896, an epidemic of bubonic plague struck Bombay (now Mumbai) and the government asked Haffkine to help. He embarked upon the development of a vaccine in a makeshift laboratory in a corridor of Grant Medical College. In three months of persistent work (one of his assistants experienced a nervous breakdown, two others quit), a form of vaccine was ready for human trials.  On 10 January 1897, Haffkine tested it on himself. The vaccines that Haffkine prepared had remarkable results.",
+      "Sans Pareil was once the official residence of the governor of Bombay. This mansion, which was originally a Jesuit chapel, was built as part of the Jesuit monastery on Parel Island in 1673. William Hornby (1771–1784) was the first governor to take up residence at the mansion. The governor's residence moved to its present site on Malabar Hill in 1883 and the property was used by the Bombay Presidency Recorders. Haffkine moved into the building to set up the \"Plague Research Laboratory\" in 1899, the laboratory being formally opened by the then governor of Bombay, Lord Sandhurst. The Institute was renamed \"Bombay Bacteriology Laboratory\" in 1906 and finally as \"Haffkine Institute\" in 1925."
+    ],
+    "keyFacts": [
+      "In October 1896, an epidemic of bubonic plague struck Bombay (now Mumbai) and the government asked Haffkine to help.",
+      "On 10 January 1897, Haffkine tested it on himself.",
+      "This mansion, which was originally a Jesuit chapel, was built as part of the Jesuit monastery on Parel Island in 1673."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "haffkine-institute"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Haffkine Institute",
+        "url": "https://en.wikipedia.org/wiki/Haffkine_Institute",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "gateway-of-india-1924",
@@ -310,7 +499,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
   },
   {
@@ -339,8 +528,160 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": null
+  },
+  {
+    "slug": "basilica-of-our-lady-of-the-mount-bandra-1954",
+    "destinationId": "mumbai",
+    "sortYear": 1954,
+    "yearLabel": "AD 1954",
+    "title": "Basilica of Our Lady of the Mount, Bandra, 1954",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Pope Pius XII granted a decree of canonical coronation to the shrine's reverenced Marian icon on 21 October 1954, both signed and notarised by Cardinal Giovanni Battista Montini of the Sacred Congregation of Rites.",
+    "detailHref": "/destinations/mumbai/history#basilica-of-our-lady-of-the-mount-bandra-1954",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "basilica-of-our-lady-of-the-mount-bandra"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Basilica of Our Lady of the Mount, Bandra, 1954",
+        "url": "https://en.wikipedia.org/wiki/Basilica_of_Our_Lady_of_the_Mount%2C_Bandra",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "cirus-reactor-1954",
+    "destinationId": "mumbai",
+    "sortYear": 1954,
+    "yearLabel": "AD 1954",
+    "title": "CIRUS reactor, 1954",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "CIRUS was supplied by Canada in 1954, but used heavy water (deuterium oxide) supplied by the United States.",
+    "detailHref": "/destinations/mumbai/history#cirus-reactor-1954",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "cirus-reactor"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — CIRUS reactor, 1954",
+        "url": "https://en.wikipedia.org/wiki/CIRUS_reactor",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "antarang-museum-2002",
+    "destinationId": "mumbai",
+    "sortYear": 2002,
+    "yearLabel": "AD 2002",
+    "title": "Antarang Museum, 2002",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The museum was founded in Mumbai in 2002 as a result of the joint efforts of the Municipal Corporation of Greater Mumbai (MCGM) and the Mumbai District Aids Control Society (MDACS) & Dr Prakash Sarang following an increase in AIDS cases.",
+    "detailHref": "/destinations/mumbai/history#antarang-museum-2002",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "antarang-museum"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Antarang Museum, 2002",
+        "url": "https://en.wikipedia.org/wiki/Antarang_Museum",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "shreepati-arcade-2002",
+    "destinationId": "mumbai",
+    "sortYear": 2002,
+    "yearLabel": "AD 2002",
+    "title": "Shreepati Arcade, 2002",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Shreepati Arcade is a residential skyscraper which was completed in 2002.",
+    "detailHref": "/destinations/mumbai/history#shreepati-arcade-2002",
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "shreepati-arcade"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Shreepati Arcade, 2002",
+        "url": "https://en.wikipedia.org/wiki/Shreepati_Arcade",
+        "type": "encyclopedia",
+        "covers": "The summary on the timeline."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": null
+  },
+  {
+    "slug": "bandra-worli-sea-link-2009",
+    "destinationId": "mumbai",
+    "sortYear": 2009,
+    "yearLabel": "AD 2009",
+    "title": "Bandra–Worli Sea Link, 2009",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "The first four of the eight lanes of the bridge were opened to the public on 30 June 2009.",
+    "description": [
+      "Mahim Causeway was the only road connecting the western suburbs to Mumbai's central business district. This north-southwestern corridor became a bottleneck and was highly congested at peak hours. The Western Freeway project was proposed to span the entire western coastline of Mumbai to ease congestion. The Bandra–Worli Sea Link, a bridge over Mahim Bay, was proposed as the first phase of this freeway system, offering an alternative route to the Mahim Causeway.",
+      "The bridge connects the intersection of the Western Express Highway and Swami Vivekanand Road, in Bandra to the Khan Abdul Ghaffar Khan Road in Worli. From Worli Seaface, it connects to Mumbai's arterial Annie Besant Road.",
+      "The project was commissioned by the Maharashtra State Road Development Corporation Limited (MSRDC). The contract for construction was awarded to the Hindustan Construction Company (HCC), with project management led by the UK offices of Dar Al-Handasah.",
+      "The foundation stone was laid in 1999 by Basitt Acharwala. The original plan estimated the cost at ₹6.6 billion (US$69 million) to be completed in five years. But the project was subject to numerous public interest litigations, with the 5-year delay resulting in the cost escalating to ₹16 billion (US$170 million), with the additional interest cost alone accounting for ₹7 billion (US$73 million)."
+    ],
+    "keyFacts": [
+      "The foundation stone was laid in 1999 by Basitt Acharwala."
+    ],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "bandra-worli-sea-link"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Bandra–Worli Sea Link",
+        "url": "https://en.wikipedia.org/wiki/Bandra%E2%80%93Worli_Sea_Link",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
   },
   {
     "slug": "bombay-high-court-2018",
@@ -377,7 +718,7 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   },
   {
@@ -412,7 +753,39 @@
       }
     ],
     "verification": "verified",
-    "lastVerifiedAt": "2026-09-09",
+    "lastVerifiedAt": "2026-09-16",
+    "readingMinutes": 2
+  },
+  {
+    "slug": "mumbai-trans-harbour-link-2024",
+    "destinationId": "mumbai",
+    "sortYear": 2024,
+    "yearLabel": "AD 2024",
+    "title": "Mumbai Trans Harbour Link, 2024",
+    "era": "Contemporary",
+    "eraId": "contemporary",
+    "shortDescription": "Construction on the bridge began in April 2018, and was inaugurated by Prime Minister Narendra Modi on 12 January 2024.",
+    "description": [
+      "The MTHL is 21.8 km long, including 16.5 km sea bridge and 5.5 km of viaducts on land on either end of the bridge. It was constructed in three sections. Construction of the bridge required the use of 165,000 tonnes of reinforcement steel, 96,250 tonnes of structural steel, and 830,000 cubic metres of concrete. The bridge features the first use of orthotropic decks in India. The special steel decks enable the bridge to have longer spans than possible with regular girders. A total of 70 orthotropic decks were used on the bridge, requiring about 96,250 tonnes of steel. The steel spans weigh up to 2,600 tonnes and make up 4.7 km of the bridge length, while the rest of the bridge is made up of 60 metre-long concrete spans weighing up to 130 tonnes each. This 4.7 km section sits at the highest point of the MTHL and includes a 180-metre-long steel span, which is the longest steel span in India. The shortest steel span on the MTHL is 110 meters long. The MMRDA chose to use steel spans in these sections to eliminate the need to construct pillars to support the bridge, which would hinder the movement of ships in the area.",
+      "Only about 3% of the bridge structure was built on-site, including the foundations and pouring cement over metal girders. The rest of the bridge was pre-fabricated and then transported to the construction site for installation. The parts for the orthotropic decks were manufactured in Japan, Myanmar, Taiwan, and Vietnam and shipped to Karanja Port in Uran for assembly. The decks were carried to the construction site by barge, and each deck required about 3 days to install in place. A programmed self-propelled transporter was utilized to load the deck onto the barge, and computer-controlled jacks were utilized to install it on the bridge within a precision band of 5 mm. The barge used to transport the decks was specifically built for the MTHL project by Larsen & Toubro at its Kattupalli Shipyard. The concrete section of the bridge is made up of over 12,000 concrete boxes that were pre-cast in a casting yard. The concrete segments were joined to form 60 metre-long spans, and the concrete spans were then installed on the bridge's pillars using a mobile gantry. The foundations for the MTHL are 47 metres at its deepest points, to support the weight of the bridge. An automated girder launching system was utilized to lay the bridge's foundation, marking the first time the system was used in India. The Reverse Circulation Drilling (RCD) construction technique was also utilized for the first time in India, to reduce disturbance to migratory birds."
+    ],
+    "keyFacts": [],
+    "imageKey": null,
+    "relatedMonasteries": [],
+    "relatedPlaces": [
+      "mumbai-trans-harbour-link"
+    ],
+    "relatedStories": [],
+    "sources": [
+      {
+        "name": "Wikipedia — Mumbai Trans Harbour Link",
+        "url": "https://en.wikipedia.org/wiki/Mumbai_Trans_Harbour_Link",
+        "type": "encyclopedia",
+        "covers": "The account on this page, quoted under CC BY-SA 4.0."
+      }
+    ],
+    "verification": "verified",
+    "lastVerifiedAt": "2026-09-16",
     "readingMinutes": 2
   }
 ]

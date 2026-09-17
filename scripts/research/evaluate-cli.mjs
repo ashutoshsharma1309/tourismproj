@@ -35,7 +35,7 @@ if (process.argv.includes("--preflight")) {
 
 if (process.argv.includes("--live")) {
   console.log("LIVE MODE — measures the model\n");
-  for (const d of ["sikkim", "jaipur", "kyoto"]) {
+  for (const d of ["sikkim", "jaipur"]) {
     const m = await runLive({ destinationId: d });
     if (!m.executed) {
       console.log(`  ${d.padEnd(8)} NOT EXECUTED — ${m.reason}`);

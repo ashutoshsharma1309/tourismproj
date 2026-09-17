@@ -4,3 +4,5 @@ export * from "@/db/schema/content";
 export * from "@/db/schema/commerce";
 export * from "@/db/schema/trip";
 export * from "@/db/schema/ops";
+export * from "@/db/schema/partners";
+export * from "@/db/schema/travel";

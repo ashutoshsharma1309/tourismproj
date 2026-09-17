@@ -10,7 +10,8 @@
  */
 import { writeFileSync } from "node:fs";
 import { listDestinations } from "@/lib/destinations/registry";
-import { getHistory, getPlaces } from "@/lib/destinations/content";
+import { capsuleHistory, capsulePlaces } from "@/lib/destinations/capsule";
+import { getCapsule } from "@/lib/destinations/content";
 
 /** "179 BC" -> -179, "AD 126" -> 126, "1163" -> 1163. */
 function toYear(label: string): number | null {
@@ -23,11 +24,22 @@ function toYear(label: string): number | null {
 const manifest: Record<string, unknown[]> = {};
 for (const d of listDestinations()) {
   if (d.id === "sikkim") continue;
-  const events = (await getHistory(d.id)) as {
+  /*
+   * READ THE CAPSULE, NOT THE SITE.
+   *
+   * `getHistory` returns the EDITORIAL events this pipeline itself produced
+   * where they exist, so building the manifest from it froze every
+   * destination at the twelve events of the first run: new dated places could
+   * never reach the timeline. The capsule is the source; the editorial layer
+   * is what this pipeline writes from it.
+   */
+  const capsule = await getCapsule(d.id);
+  if (!capsule) continue;
+  const events = capsuleHistory(capsule) as unknown as {
     slug: string; title: string; yearLabel: string;
     shortDescription: string; relatedPlaces: string[];
   }[];
-  const places = (await getPlaces(d.id)) as { slug: string; wikipediaUrl?: string }[];
+  const places = capsulePlaces(capsule) as unknown as { slug: string; wikipediaUrl?: string }[];
   const urlOf = new Map(places.map((p) => [p.slug, p.wikipediaUrl]));
 
   manifest[d.id] = events.map((event) => ({

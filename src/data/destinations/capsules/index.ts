@@ -32,26 +32,29 @@ type CapsuleImporter = () => Promise<{ capsule: DestinationCapsule }>;
 /**
  * Registered capsules, by destination id.
  *
- * PHASE 18 registered eight Indian destinations, PHASE 19 four global ones,
- * PHASE B the two that held research and no records.
- * Each entry is a lazy importer, so a capsule's bytes reach only the pages of
- * the destination it belongs to — Rome's capsule is not in Delhi's page, and
- * the four cities added in Phase 19 cost every other destination nothing.
+ * PHASE 18 registered eight Indian destinations, PHASE B Jaipur, and the
+ * India-only re-aim for SIH 2026 replaced the four global capsules with eight
+ * more Indian cities. Each entry is a lazy importer, so a capsule's bytes
+ * reach only the pages of the destination it belongs to — Srinagar's capsule
+ * is not in Delhi's page, and a new city costs every other destination nothing.
  */
 const CAPSULES: Record<string, CapsuleImporter> = {
   agra: () => import("./agra"),
+  ahmedabad: () => import("./ahmedabad"),
+  amritsar: () => import("./amritsar"),
+  bhubaneswar: () => import("./bhubaneswar"),
   delhi: () => import("./delhi"),
   goa: () => import("./goa"),
   hyderabad: () => import("./hyderabad"),
-  istanbul: () => import("./istanbul"),
   jaipur: () => import("./jaipur"),
   kochi: () => import("./kochi"),
   kolkata: () => import("./kolkata"),
-  kyoto: () => import("./kyoto"),
+  lucknow: () => import("./lucknow"),
+  madurai: () => import("./madurai"),
   mumbai: () => import("./mumbai"),
-  "new-york-city": () => import("./new-york-city"),
-  paris: () => import("./paris"),
-  rome: () => import("./rome"),
+  mysuru: () => import("./mysuru"),
+  pune: () => import("./pune"),
+  srinagar: () => import("./srinagar"),
   varanasi: () => import("./varanasi"),
 };
 

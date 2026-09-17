@@ -249,7 +249,7 @@ check("Destination scope is the default", /useState\(false\)/.test(paletteSrc));
 const fakeIndex = [
   { destinationId: null, items: [{ label: "Explore monasteries", sublabel: "nav", href: "/monasteries", group: "Go to", icon: "compass" }] },
   { destinationId: "sikkim", items: [{ label: "Rumtek Monastery", sublabel: "Karma Kagyu · Gangtok", href: "/monasteries/rumtek", group: "Monasteries", icon: "landmark" }] },
-  { destinationId: "kyoto", items: [{ label: "Kyoto temple record", sublabel: "Heritage · kyoto", href: "/destinations/kyoto", group: "Places", icon: "compass" }] },
+  { destinationId: "kochi", items: [{ label: "Kochi synagogue record", sublabel: "Heritage · kochi", href: "/destinations/kochi", group: "Places", icon: "compass" }] },
   { destinationId: "jaipur", items: [{ label: "Jaipur was founded in 1727", sublabel: "History · jaipur", href: "/destinations/jaipur", group: "Places", icon: "compass" }] },
 ];
 /* itemsInScope lives in TypeScript and cannot be imported under bare node,
@@ -261,19 +261,19 @@ const scopeFilter = (index, scope) =>
     ? index.flatMap((g) => g.items)
     : index.filter((g) => g.destinationId === scope.destinationId || g.destinationId === null).flatMap((g) => g.items);
 
-const kyotoScoped = scopeFilter(fakeIndex, { kind: "destination", destinationId: "kyoto" });
-check("TEST A  Exploring Kyoto, a search for 'monastery' returns no Sikkim content",
-  !kyotoScoped.some((i) => i.label.includes("Rumtek")),
-  `${kyotoScoped.length} items in Kyoto scope`);
-check("TEST D  Kyoto scope leaks no Sikkim claims",
-  kyotoScoped.every((i) => !i.href.startsWith("/monasteries/")));
+const kochiScoped = scopeFilter(fakeIndex, { kind: "destination", destinationId: "kochi" });
+check("TEST A  Exploring Kochi, a search for 'monastery' returns no Sikkim content",
+  !kochiScoped.some((i) => i.label.includes("Rumtek")),
+  `${kochiScoped.length} items in Kochi scope`);
+check("TEST D  Kochi scope leaks no Sikkim claims",
+  kochiScoped.every((i) => !i.href.startsWith("/monasteries/")));
 const global = scopeFilter(fakeIndex, { kind: "global" });
 check("TEST B  Global search can return Sikkim content",
   global.some((i) => i.label.includes("Rumtek")));
 check("TEST C  Global search returns Jaipur content",
   global.some((i) => i.label.includes("Jaipur")));
 check("Global navigation is visible in every scope",
-  kyotoScoped.some((i) => i.group === "Go to") && global.some((i) => i.group === "Go to"));
+  kochiScoped.some((i) => i.group === "Go to") && global.some((i) => i.group === "Go to"));
 
 /* ========================================================================
    20. DEPTH AND SIKKIM REGRESSION
@@ -285,8 +285,8 @@ const published = existsSync(PUB) ? JSON.parse(readFileSync(PUB, "utf8")) : null
 check("Narrative success did not change any destination's depth",
   published?.destinations?.sikkim?.depth?.depth === "deep" &&
   published?.destinations?.jaipur?.depth?.depth !== "deep" &&
-  published?.destinations?.kyoto?.depth?.depth !== "deep",
-  `${published?.destinations?.sikkim?.depth?.depth}/${published?.destinations?.jaipur?.depth?.depth}/${published?.destinations?.kyoto?.depth?.depth}`);
+  Object.entries(published?.destinations ?? {}).every(([id, d]) => id === "sikkim" || d?.depth?.depth !== "deep"),
+  Object.entries(published?.destinations ?? {}).map(([id, d]) => `${id}=${d?.depth?.depth}`).join("/"));
 check("Depth remains evidence-driven, not narrative-driven",
   published?.destinations?.jaipur?.depth?.basis === "earned");
 check("Sikkim's curated records are untouched",

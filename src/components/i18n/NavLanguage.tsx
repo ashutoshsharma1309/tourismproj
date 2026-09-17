@@ -50,7 +50,7 @@ export function NavLanguage({ className }: { className?: string }) {
       /*
        * The hub path, deliberately not the current path. `withLanguage` will
        * turn this into `/l/<code>/destinations/<id>`, which is a page that
-       * exists for all fifteen destinations and all eleven non-English
+       * exists for every destination and all eleven non-English
        * languages. Handing it `pathname` would produce the 404 above.
        */
       path={`/destinations/${target.destinationId}`}

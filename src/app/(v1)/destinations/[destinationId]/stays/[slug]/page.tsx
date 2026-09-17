@@ -18,6 +18,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { CapsuleStayDetail } from "@/components/stays/CapsuleStayDetail";
+import { ReferralLink } from "@/components/partners/ReferralLink";
 import credits from "@/data/generated/image-credits.json";
 import { getCapsule, getCapsuleStays, getPlaces } from "@/lib/destinations/content";
 import { getDestination } from "@/lib/destinations/registry";
@@ -250,34 +251,42 @@ export default async function StayPage({ params }: PageProps) {
 
         {/* --------------------------------------------------------- actions */}
         <div className="mt-6 flex flex-wrap items-center gap-3">
+          {/* Each action is a ReferralLink: the traveller reaches the
+              property's own channel and TerraStory counts that it sent them. */}
           {stay.phone ? (
-            <a
+            <ReferralLink
               href={`tel:${dialable(stay.phone)}`}
+              destinationId={destinationId}
+              stayRef={`${destinationId}/${stay.slug}`}
+              eventType="CALL"
+              newTab={false}
               className={buttonClasses({ variant: "primary", size: "md" })}
             >
               <Phone className="size-4" aria-hidden />
               Call to book
-            </a>
+            </ReferralLink>
           ) : null}
-          <a
+          <ReferralLink
             href={stay.mapsUrl}
-            target="_blank"
-            rel="noreferrer"
+            destinationId={destinationId}
+            stayRef={`${destinationId}/${stay.slug}`}
+            eventType="MAPS"
             className={buttonClasses({ variant: "secondary", size: "md" })}
           >
             <MapPin className="size-4" aria-hidden />
             {stay.mapsIsExact ? "Open location in Maps" : "Find on Google Maps"}
-          </a>
+          </ReferralLink>
           {stay.officialWebsite ? (
-            <a
+            <ReferralLink
               href={stay.officialWebsite}
-              target="_blank"
-              rel="noreferrer"
+              destinationId={destinationId}
+              stayRef={`${destinationId}/${stay.slug}`}
+              eventType="OFFICIAL_WEBSITE"
               className="inline-flex items-center gap-1.5 text-small font-medium text-primary hover:underline"
             >
               Official website
               <ExternalLink className="size-3.5" aria-hidden />
-            </a>
+            </ReferralLink>
           ) : null}
         </div>
 
@@ -290,6 +299,10 @@ export default async function StayPage({ params }: PageProps) {
           {stay.phone
             ? "The number is the one on the state register. No online booking route could be verified for this property — no licensed rates feed is connected and no property page could be confirmed on a booking platform — so calling the hotel is the route this page offers."
             : "The register records no telephone number for this property. Use the map to locate it, or the official website where one exists."}
+        </p>
+        <p className="mt-2 text-caption text-subtle">
+          Do you own or run this property?{" "}
+          <Link href="/partner" className="font-medium text-primary hover:underline">Partner with TerraStory</Link>.
         </p>
 
         {/* -------------------------------------------------------- register */}

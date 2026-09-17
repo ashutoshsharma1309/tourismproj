@@ -1,6 +1,7 @@
 "use client";
 
 import { RotateCcw } from "lucide-react";
+import Link from "next/link";
 import { useEffect } from "react";
 
 interface ErrorPageProps {
@@ -21,11 +22,11 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         Something went wrong
       </p>
       <h1 className="font-display text-h2 text-balance-heading">
-        The mountain view clouded over.
+        This page could not load.
       </h1>
       <p className="max-w-md text-body text-muted">
-        An unexpected error interrupted the page. Try again — if it keeps
-        happening, come back in a little while.
+        Something interrupted it on our side, not yours. Try again, or go back
+        to the destinations and pick up from there.
       </p>
       <button
         type="button"
@@ -35,6 +36,9 @@ export default function ErrorPage({ error, reset }: ErrorPageProps) {
         <RotateCcw className="size-4" aria-hidden />
         Try again
       </button>
+      <Link href="/destinations" className="text-small font-medium text-primary underline-offset-4 hover:underline">
+        Explore destinations
+      </Link>
     </main>
   );
 }

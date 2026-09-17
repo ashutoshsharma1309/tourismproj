@@ -85,6 +85,15 @@ const SUITES = [
    * exemption is gone. Nothing in this runner is pre-excused today.
    */
   { name: "qa:stories-map", script: "scripts/qa/stories-map-flows.mjs", reads: "server" },
+  /* The partner programme: lifecycle, commission arithmetic, validation,
+     security boundaries against the server, and — when a database and
+     Supabase are configured — the whole apply → review → publish → referral
+     flow. A TypeScript suite, run through tsx like qa:india. */
+  { name: "qa:partners", script: "scripts/qa/partners.mts", reads: "server", runner: "tsx" },
+  /* Accounts, travel history and personalization: the engine on real
+     knowledge, event mapping, code guarantees, signed-out boundaries, and
+     with a database the full traveller flow including user-to-user isolation. */
+  { name: "qa:accounts", script: "scripts/qa/accounts.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */
@@ -137,7 +146,12 @@ for (const suite of selected) {
    * suite must take its own children with it, or one stall becomes three
    * failures and the table lies about where the problem is.
    */
-  const run = spawnSync("node", [suite.script], {
+  /* A `.mts` suite runs through tsx (path aliases, TypeScript); the rest
+     through node, as before. */
+  const [command, args] = suite.runner === "tsx"
+    ? ["node_modules/.bin/tsx", [suite.script]]
+    : ["node", [suite.script]];
+  const run = spawnSync(command, args, {
     encoding: "utf8",
     env: { ...process.env, QA_BASE_URL: BASE },
     maxBuffer: 32 * 1024 * 1024,

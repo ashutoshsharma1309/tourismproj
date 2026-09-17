@@ -19,6 +19,7 @@ export {
   isKnownDestination,
   listAvailableDestinations,
   listDestinations,
+  listRegionNames,
 } from "@/lib/destinations/registry";
 
 export {

@@ -28,7 +28,7 @@ import {
  * grid say "this is a destination" rather than "this is a list of buildings",
  * and it is a rule a reader can see rather than an edit somebody made.
  */
-const SLOTS = 12;
+const SLOTS = 8;
 
 export async function DestinationGallery({
   destinationId,

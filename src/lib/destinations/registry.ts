@@ -25,6 +25,15 @@ export function listDestinations(): Destination[] {
   return ALL;
 }
 
+/**
+ * The distinct states and union territories the registry reaches, in registry
+ * order. Every destination is in India, so "how many countries" is no longer a
+ * figure worth stating; the spread across states is.
+ */
+export function listRegionNames(): string[] {
+  return [...new Set(ALL.map((d) => d.region?.name).filter((n): n is string => Boolean(n)))];
+}
+
 /** Destinations with content today. Currently Sikkim alone. */
 export function listAvailableDestinations(): Destination[] {
   return ALL.filter((d) => d.depth !== "planned");
@@ -87,7 +96,7 @@ export function getTaxonomy(destinationId: string, taxonomyId: string) {
  *
  * Deliberately not a `Destination`. A full record carries divisions and
  * taxonomies, and the map needs none of it — this is what crosses to the
- * browser for all fifteen destinations, so it holds identity, a coordinate,
+ * browser for every destination, so it holds identity, a coordinate,
  * a status and a count. Roughly 150 bytes each.
  *
  * There is exactly one source for these values: the registry below. No

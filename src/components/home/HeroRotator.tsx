@@ -7,6 +7,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 import { buttonClasses } from "@/components/ui/Button";
 import { cn } from "@/lib/cn";
+import { SITE } from "@/lib/constants";
 import { objectPositionFor } from "@/lib/media/focal";
 
 export interface HeroSlide {
@@ -61,12 +62,12 @@ const FADE_MS = 1000;
 export function HeroRotator({
   slides,
   destinationCount,
-  countryCount,
+  stateCount,
   placeCount,
 }: {
   slides: HeroSlide[];
   destinationCount: number;
-  countryCount: number;
+  stateCount: number;
   placeCount: number;
 }) {
   const [index, setIndex] = useState(0);
@@ -190,22 +191,32 @@ export function HeroRotator({
       {/* ------------------------------------------------------------ copy */}
       <div className="relative mx-auto flex min-h-[38rem] max-w-[84rem] flex-col justify-center px-6 py-20 sm:px-10 lg:min-h-[46rem] lg:ps-16">
         <div className="max-w-[38rem]">
-          <p className="font-mono text-eyebrow tracking-[0.24em] text-accent uppercase">
-            TerraStory · Tourism intelligence
+          {/*
+            WHAT THIS IS, BEFORE ANYTHING ELSE.
+            The line above the headline read "TerraStory · Tourism
+            intelligence" — a category name, tracked out in capitals — and a
+            first-time-user audit found that nobody could answer "what is
+            this?" or "where?" from the first viewport. Plain words, and the
+            country named, replace it. The tagline is the same string the
+            footer and the page title carry.
+          */}
+          <p className="text-small font-medium text-accent">
+            {SITE.name} — {SITE.tagline}
           </p>
           <h1 className="text-glow mt-5 max-w-[16ch] font-display text-display text-balance-heading">
-            Discover the stories behind the places
+            Discover the stories behind India&apos;s places
           </h1>
           <p className="mt-5 max-w-prose text-body-lg leading-relaxed text-muted-inverse">
-            Explore history, culture, food, heritage and living stories across{" "}
-            {destinationCount} destinations — with every factual claim connected to
-            the evidence behind it.
+            {destinationCount} destinations, each opening into its places, stories,
+            food and history — every claim traced to a source, and a guide you can
+            ask at any point.
           </p>
 
-          {/* Two actions. §11 — the product does not need seven. */}
-          <div className="mt-8 flex flex-wrap gap-3">
+          {/* Two actions, and they stack on a phone. §11 — the product does
+              not need seven. */}
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <Link href="/destinations" className={cn(buttonClasses({ size: "lg" }))}>
-              Explore destinations
+              Explore India
               <ArrowRight className="size-4" aria-hidden />
             </Link>
             <Link
@@ -218,14 +229,14 @@ export function HeroRotator({
                  only as a shape. This variant exists for exactly this case. */
               className={cn(buttonClasses({ variant: "ghost-inverse", size: "lg" }))}
             >
-              Discover by interest
+              Find my destination
             </Link>
           </div>
 
           <dl className="mt-10 grid max-w-lg grid-cols-2 gap-x-8 gap-y-5 border-t border-foreground-inverse/20 pt-6 sm:grid-cols-4">
             {[
-              [String(destinationCount), "destinations"],
-              [String(countryCount), "countries"],
+              [String(destinationCount), "Indian destinations"],
+              [String(stateCount), "states and territories"],
               [String(placeCount), "catalogued places"],
               ["Sourced", "every claim"],
             ].map(([value, label]) => (

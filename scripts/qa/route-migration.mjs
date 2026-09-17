@@ -212,7 +212,22 @@ check("The resolver 404s rather than falling back to a default destination",
   /notFound\(\)/.test(resolveSrc) && !/DEFAULT_DESTINATION_ID/.test(codeOf(resolveSrc)));
 
 const routePages = SRC_FILES.filter((f) => f.startsWith(APP) && /page\.tsx$/.test(f));
-const undeclared = routePages.filter((f) => !/dynamicParams\s*=\s*false/.test(readFileSync(f, "utf8")));
+/*
+ * One named exception, and only while it keeps its own guard. The partner
+ * stay page's second segment is a database row a reviewer publishes after
+ * the build (docs/business-model.md), so generated params cannot list it and
+ * dynamicParams = false would 404 every published partner. It stays exempt
+ * only if it still resolves the destination through the canonical resolver,
+ * 404s, and renders dynamically; qa:partners asserts the 404s at runtime for
+ * an unknown destination, a removed one, and an unpublished property.
+ */
+const RUNTIME_PUBLISHED = new Set([`${APP}/partner-stays/[propertyId]/page.tsx`]);
+const runtimeGuarded = (f) => {
+  const s = codeOf(readFileSync(f, "utf8"));
+  return /resolveDestinationOrNull|resolveDestination\(/.test(s) && /notFound\(\)/.test(s) && /dynamic\s*=\s*"force-dynamic"/.test(s);
+};
+const undeclared = routePages.filter((f) =>
+  !/dynamicParams\s*=\s*false/.test(readFileSync(f, "utf8")) && !(RUNTIME_PUBLISHED.has(f) && runtimeGuarded(f)));
 check("Every destination route refuses params it did not generate",
   routePages.length > 0 && undeclared.length === 0,
   undeclared.length ? undeclared.join(", ") : `dynamicParams = false on ${routePages.length} pages`);
@@ -491,17 +506,17 @@ check("Sikkim still prerenders its full pre-migration content set",
 /* ========================================================================
    17-18. OTHER DESTINATIONS WORK
    ======================================================================== */
-section("17-18. Jaipur and Kyoto");
+section("17-18. Jaipur and Kochi");
 
 /* Read the document title and the destination's own metadata rather than
    scanning the whole file. Every page embeds the GLOBAL search index, which
-   indexes all 15 destinations by design — matching raw HTML for "Rumtek"
+   indexes all 18 destinations by design — matching raw HTML for "Rumtek"
    therefore flags the search payload, not leaked Sikkim content.
 
    Read these from a CLEAN build: a running server can re-render and overwrite
    a prerendered .html, and the re-rendered shell carries the layout's default
    title rather than the page's own. */
-const NAMES = { jaipur: "Jaipur", kyoto: "Kyoto" };
+const NAMES = { jaipur: "Jaipur", kochi: "Kochi" };
 for (const [id, name] of Object.entries(NAMES)) {
   const path = join(OUT, "destinations", `${id}.html`);
   check(`${id} prerenders its destination page`, existsSync(path));
@@ -515,10 +530,10 @@ for (const [id, name] of Object.entries(NAMES)) {
   check(`${id} declares a canonical URL for its own destination`,
     !new RegExp(`rel="canonical"[^>]*/destinations/(?!${id})`).test(html));
   /*
-   * `stories` is no longer a Sikkim-only sub-tree — fourteen destinations
+   * `stories` is no longer a Sikkim-only sub-tree — the other destinations
    * have their own articles, and ownership is asserted by slug further up.
    * `monasteries` still is, and always should be: it is Sikkim's word for a
-   * kind of site, and its appearance under Kyoto would mean the old defect
+   * kind of site, and its appearance under Kochi would mean the old defect
    * had come back.
    */
   check(`${id} prerenders no Sikkim content sub-tree`,
@@ -614,7 +629,7 @@ const ogAlt = (html) => html.match(/<meta property="og:image:alt" content="([^"]
 const destHtml = existsSync(join(OUT, "destinations"))
   ? readdirSync(join(OUT, "destinations")).filter((f) => f.endsWith(".html"))
   : [];
-check("Every registered destination prerenders a page", destHtml.length === 15,
+check("Every registered destination prerenders a page", destHtml.length === 18,
   `${destHtml.length} pages`);
 
 /*
@@ -691,7 +706,7 @@ if (existsSync(sitemapXml)) {
   const locs = [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) => m[1]);
   const hubs = locs.filter((u) => /\/destinations\/[a-z-]+$/.test(u));
   check("The sitemap lists every destination's hub page",
-    hubs.length === 15, `${hubs.length} hub pages`);
+    hubs.length === 18, `${hubs.length} hub pages`);
 
   /* The check that matters: a destination without a capability must not be
      advertised as having one. Before this phase the sitemap could not have

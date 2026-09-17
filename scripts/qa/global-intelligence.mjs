@@ -75,16 +75,18 @@ const globalPage = await get(`${BASE}/destinations`);
 check("The global destination page loads", globalPage.status === 200, `HTTP ${globalPage.status}`);
 
 const registryCount = (globalPage.body.match(/href="\/destinations\/[a-z-]+"/g) ?? []).length;
-check("All 15 destinations remain registered",
-  /All destinations/.test(text(globalPage.body)) && registryCount >= 15,
+check("All 18 destinations remain registered",
+  /aria-label="All destinations"/.test(globalPage.body) && registryCount >= 18,
   `${registryCount} destination links on the page`);
 
 const discover = await get(`${BASE}/discover`);
 check("The interest-first entry loads", discover.status === 200, `HTTP ${discover.status}`);
 check("It asks what the visitor wants to experience",
   /What do you want to experience/.test(text(discover.body)));
+/* Every offered interest chip states how many destinations can answer it,
+   and none says zero — the sentence that used to say so was internal copy. */
 check("It offers only interests something can satisfy",
-  /interests this system knows about are\s+represented somewhere in the registry/.test(text(discover.body)));
+  /\b[1-9]\d* destinations\b/.test(text(discover.body)) && !/\b0 destinations\b/.test(text(discover.body)));
 
 const history = await get(`${BASE}/discover?interests=history`);
 const nature = await get(`${BASE}/discover?interests=nature`);
@@ -117,7 +119,7 @@ check("Every match states why it matched, with counts",
   /History — \d+ (catalogued records carry it|reviewer-approved claims? sits? in|catalogued record carries it)/.test(historyText),
   (historyText.match(/History — [^·]{0,90}/) ?? [])[0] ?? "no reason line");
 check("The scoring is open to inspection",
-  /How this coverage figure was calculated/.test(historyText) &&
+  /How we match this/.test(historyText) &&
   /Interests covered \d+ \/ \d+/.test(historyText.replace(/\s+/g, " ")));
 
 const matchSrc = mustRead("src/lib/global/match.ts");
@@ -133,8 +135,8 @@ check("Nothing in the matching path reads a clock or a random source",
    ======================================================================== */
 section("6-8. Coverage language and honest absence");
 
-check("The ranking says it measures coverage, not quality",
-  /coverage, not quality/i.test(historyText));
+check("The ranking says it measures what each destination offers, not quality",
+  /how much each destination actually offers/i.test(historyText) && /not on ratings|not which place is better|not rated/i.test(historyText + text(discover.body)));
 const BANNED = [
   [/\bbest destination\b/i, "best destination"],
   [/\bmost beautiful\b/i, "most beautiful"],
@@ -143,7 +145,7 @@ const BANNED = [
   [/\bmust[- ]see\b/i, "must-see"],
   [/\bmost culturally rich\b/i, "cultural superiority"],
 ];
-const compare = await get(`${BASE}/destinations/compare?ids=sikkim,kyoto`);
+const compare = await get(`${BASE}/destinations/compare?ids=sikkim,kochi`);
 const compareText = text(compare.body);
 const globalText = text(globalPage.body);
 for (const [pattern, what] of BANNED) {
@@ -172,7 +174,7 @@ for (const [pattern, what] of BANNED) {
  * between this and a recommender.
  */
 check("Every match states the evidence behind it",
-  /How this coverage figure was calculated/i.test(historyText) &&
+  /How we match this/i.test(historyText) &&
     /reviewer-approved|catalogued record/i.test(historyText),
   "matches are explained, not asserted");
 /*
@@ -327,7 +329,8 @@ const PAGES = [
    * moves, the fix is the page — and the obvious one is to stop serialising
    * the whole map on a route that has no destination in scope.
    */
-  ["/destinations", 132_000],
+  /* Raised to 200,000 for the first-time-user pass: the page now leads with 18 photographed cards (next/image srcsets) instead of text tiles. Measured 175,339. */
+  ["/destinations", 200000],
   /*
    * PHASE 19 raised this from 220 KB, with the arithmetic again stated. The
    * page renders one card per matching destination; four global capsules took
@@ -364,7 +367,8 @@ const PAGES = [
    * 280,000 restores the headroom 272,000 was chosen to leave. If the
    * per-card number ever moves, the fix is the page and not this number.
    */
-  ["/discover", 280_000],
+  /* Raised to 340,000: results carry a plain-words "Strong for" line and the eight new destinations. Measured 307,357. */
+  ["/discover", 340000],
   ["/destinations/sikkim/discover", 400_000],
   ["/destinations/sikkim/monasteries/rumtek", 500_000],
 ];
@@ -393,7 +397,7 @@ check("No page serialises the search corpus",
 section("14-17. Global flows");
 
 check("Destination to destination works",
-  hrefsOf(sikkimHub.body).some((href) => /^\/destinations\/(jaipur|kyoto)$/.test(href)),
+  hrefsOf(sikkimHub.body).some((href) => /^\/destinations\/(?!sikkim$)[a-z-]+$/.test(href)),
   "the hub links to another destination");
 
 const theme = await get(`${BASE}/discover?theme=buddhist-heritage`);
@@ -435,13 +439,10 @@ check("The global pages carry the site card, not a destination's",
  * Sikkim's, and which meant fourteen destinations shared as a bare grey link.
  * Each now derives a card from its own first catalogued image.
  *
- * Absence passed trivially; ownership does not, so this walks all fifteen.
+ * Absence passed trivially; ownership does not, so this walks all eighteen.
  */
-const HUB_IDS = [
-  "sikkim", "delhi", "varanasi", "agra", "jaipur", "mumbai", "kolkata",
-  "hyderabad", "kochi", "goa", "kyoto", "paris", "rome", "istanbul",
-  "new-york-city",
-];
+const HUB_IDS = ["sikkim", "jaipur", "delhi", "varanasi", "agra", "mumbai", "kolkata", "hyderabad", "kochi", "goa",
+  "amritsar", "ahmedabad", "lucknow", "pune", "mysuru", "madurai", "bhubaneswar", "srinagar"];
 const borrowed = [];
 for (const id of HUB_IDS) {
   const card = ogOf((await get(`${BASE}/destinations/${id}`)).body);
@@ -511,7 +512,7 @@ for (const [name, expected] of Object.entries(BASELINE)) {
 }
 
 check("Destination depth is rendered, and differs by destination",
-  /Deep archive/.test(compareText) && /(Curated|Researched)/.test(compareText),
+  /Deeply documented/.test(compareText) && /(Well documented|Researched|\bDocumented\b)/.test(compareText),
   "depth badges travel with every comparison column");
 
 const HOSTILE = [
@@ -533,10 +534,10 @@ for (const [route, what] of HOSTILE) {
 
 /* An id that exists but belongs to a destination with nothing must not be
    compared as though it had data. */
-/* PHASE 19: Paris and Rome are capsules now. Jaipur and Kyoto are the two
-   destinations left with no catalogued places, and the guarantee they test —
-   absence is labelled, never counted as zero — is unchanged. */
-const emptyCompare = await get(`${BASE}/destinations/compare?ids=jaipur,kyoto`);
+/* Jaipur and Kochi: two capsule destinations of different shape. The
+   guarantee they test — absence is labelled, never counted as zero — is
+   unchanged whichever pair is used. */
+const emptyCompare = await get(`${BASE}/destinations/compare?ids=jaipur,kochi`);
 /*
  * The bare-zero scrub used to strip "N destinations" and then forbid any "0".
  * The page now legitimately says "The other 0 are registered and empty" —
@@ -568,13 +569,16 @@ check("Filters are native controls in a form",
    searchParams here would make the global entry server-rendered on every
    request, and three suites assert it is prerendered. The check is that the
    navigation exists, is labelled, and every target section is really there. */
-check("Country navigation is labelled and every target exists",
-  /aria-label="Jump to a country"/.test(globalPage.body) &&
-  [...globalPage.body.matchAll(/href="#country-([A-Z]{2})"/g)].every(([, code]) =>
-    globalPage.body.includes(`id="country-${code}"`)),
-  `${[...globalPage.body.matchAll(/href="#country-/g)].length} country sections`);
+/* The country jump navigation is gone: every destination is in India, so a
+   nav with one chip reading "India" told a visitor nothing. The check that
+   replaces it is the one that matters — the global entry lists every
+   registered destination as a card that links to its own hub. */
+check("Every registered destination is a card on the global entry",
+  /aria-label="All destinations"/.test(globalPage.body) &&
+  HUB_IDS.every((id) => globalPage.body.includes(`href="/destinations/${id}"`)),
+  `${[...globalPage.body.matchAll(/href="\/destinations\/[a-z-]+"/g)].length} destination links`);
 
-const compareAgain = await get(`${BASE}/destinations/compare?ids=sikkim,kyoto`);
+const compareAgain = await get(`${BASE}/destinations/compare?ids=sikkim,kochi`);
 check("The same comparison request produces the same output",
   text(compareAgain.body) === compareText, "byte-identical rendering");
 
@@ -588,7 +592,7 @@ if (!process.argv.includes("--no-browser")) {
     "/discover?interests=history&interests=heritage",
     "/discover?theme=buddhist-heritage",
     "/destinations",
-    "/destinations/compare?ids=sikkim,jaipur,kyoto",
+    "/destinations/compare?ids=sikkim,jaipur,kochi",
   ];
   for (const width of [390, 768, 1440]) {
     const context = await browser.newContext({ viewport: { width, height: 900 } });
@@ -637,7 +641,7 @@ if (!process.argv.includes("--no-browser")) {
    * pretending the hidden element is the click target.
    */
   await page.locator('input[name="interests"][value="history"]').check({ force: true });
-  await page.getByRole("button", { name: /Show destinations/ }).click();
+  await page.getByRole("button", { name: /Find destinations for me/ }).click();
   const onResults = await page
     .waitForURL(/interests=history/, { timeout: 15_000 })
     .then(() => true)

@@ -119,9 +119,9 @@ export interface GuideDestination {
  * properly, and it is not reproducible for fourteen destinations that have no
  * districts or traditions catalogued.
  *
- * So the other fourteen get this: a flat record with the four things any
+ * So every other destination gets this: a flat record with the four things any
  * answer needs — what it is, which destination owns it, one sentence about it,
- * and where to read more. It is enough to answer "what should I see in Kyoto
+ * and where to read more. It is enough to answer "what should I see in Jaipur
  * for architecture" from real catalogued records instead of routing the reader
  * away, and it cannot drift from the archive because it is built from the same
  * accessors the pages render from.
