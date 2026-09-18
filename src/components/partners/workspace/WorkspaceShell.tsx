@@ -13,13 +13,16 @@ const SECTIONS = [
   { href: "/partner/verification", key: "nav.verification" },
   { href: "/partner/listings", key: "nav.listings" },
   { href: "/partner/calendar", key: "nav.calendar" },
+  { href: "/partner/analytics", key: "nav.analytics" },
+  { href: "/partner/team", key: "nav.team" },
+  { href: "/partner/plan", key: "nav.plan" },
 ] as const;
 
 export type WorkspaceSection = (typeof SECTIONS)[number]["href"];
 
 /**
  * The frame every partner-workspace page shares: who is signed in, the
- * organisation's verification status, and four sections. Light and quiet —
+ * organisation's verification status, and its sections. Light and quiet —
  * this is a surface people work in, not one they browse.
  */
 export function WorkspaceShell({

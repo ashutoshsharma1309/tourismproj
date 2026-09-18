@@ -20,7 +20,7 @@ export type PartnerAccess =
   | { kind: "no-database" }
   | { kind: "needs-code"; session: SessionUser }
   | { kind: "no-partner"; session: SessionUser }
-  | { kind: "ok"; session: SessionUser; partner: PartnerRow };
+  | { kind: "ok"; session: SessionUser; partner: PartnerRow; role: "OWNER" | "STAFF" };
 
 /** For a PAGE: signed-out visitors are sent to sign in and brought back. */
 export async function partnerAccess(next: string): Promise<PartnerAccess> {
@@ -34,18 +34,18 @@ export async function partnerAccess(next: string): Promise<PartnerAccess> {
   if (!partnerSession) return { kind: "no-partner", session };
   const partner = await partnerById(partnerSession.partnerId);
   if (!partner) return { kind: "no-partner", session };
-  return { kind: "ok", session, partner };
+  return { kind: "ok", session, partner, role: partnerSession.role };
 }
 
 /** For an ACTION: the same resolution, or null (the action refuses). */
-export async function partnerForAction(): Promise<{ session: SessionUser; partner: PartnerRow } | null> {
+export async function partnerForAction(): Promise<{ session: SessionUser; partner: PartnerRow; role: "OWNER" | "STAFF" } | null> {
   if (!hasDatabase) return null;
   const session = await currentUser();
   if (!session || !provesInbox(session)) return null;
   const partnerSession = await partnerFor(session);
   if (!partnerSession) return null;
   const partner = await partnerById(partnerSession.partnerId);
-  return partner ? { session, partner } : null;
+  return partner ? { session, partner, role: partnerSession.role } : null;
 }
 
 /** The workspace language: the browser's preference (lib/i18n/request.ts). */

@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 
 import { Footer } from "@/components/layout/Footer";
 import { EditControls, ReviewControls } from "@/components/partners/ReviewControls";
+import { SubscriptionControls } from "@/components/partners/SubscriptionControls";
 import { VendorDecisionControls } from "@/components/partners/VendorDecisionControls";
 import { Badge } from "@/components/ui/Badge";
 import { documentsForPartner, unitsForPartnerListing, vendorTrailForReviewer } from "@/db/queries/partner-inventory";
@@ -15,6 +16,7 @@ import { getDestination } from "@/lib/destinations/registry";
 import { PROPERTY_STATUS_LABEL, PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
 import { VENDOR_STATUS_TONE, type VendorStatus } from "@/lib/partners/vendor";
+import { allPlans, entitlementsFor, subscriptionFor } from "@/lib/subscriptions/access";
 
 export const metadata: Metadata = { title: "Review property", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -75,6 +77,7 @@ export default async function AdminPropertyPage({ params }: { params: Promise<{ 
   /* Signed links expire in minutes; they are minted per page view, never stored. */
   const documentLinks = await Promise.all(documents.map(async (doc) => ({ doc, url: await signedVendorDocumentUrl(doc.fileUrl) })));
   const vendorStatus = partner.status as VendorStatus;
+  const [planRows, subscription, entitlements] = await Promise.all([allPlans(), subscriptionFor(partner.id), entitlementsFor(partner.id)]);
   const destination = getDestination(property.destinationId);
   const checks = property.provenance?.checks ?? [];
 
@@ -201,6 +204,24 @@ export default async function AdminPropertyPage({ params }: { params: Promise<{ 
                   ))}
                 </ol>
               ) : null}
+            </section>
+            <section className="mt-6 rounded-xl border border-border p-5" aria-labelledby="subscription" data-subscription>
+              <h2 id="subscription" className="font-display text-h4">Subscription</h2>
+              <p className="mt-2 text-small">
+                Applies now: <strong data-effective-plan>{entitlements.planName}</strong> ({entitlements.state.toLowerCase().replace(/_/g, " ")})
+              </p>
+              <p className="mt-1 text-caption text-subtle">
+                {subscription
+                  ? `Subscribed: ${subscription.planCode.toLowerCase()}, ${subscription.status.toLowerCase()}${subscription.trialEndsAt ? `, trial ends ${subscription.trialEndsAt.toISOString().slice(0, 10)}` : ""}${subscription.currentPeriodEnd ? `, period ends ${subscription.currentPeriodEnd.toISOString().slice(0, 10)}` : ""}${subscription.cancelAtPeriodEnd ? ", not renewing" : ""}.`
+                  : "No subscription: the default plan applies."}{" "}
+                Billing is not enabled; nothing is charged.
+              </p>
+              <SubscriptionControls
+                partnerId={partner.id}
+                propertyId={property.id}
+                plans={planRows.filter((p) => p.isActive).map((p) => ({ code: p.code, name: p.name, trialDays: p.trialDays }))}
+                hasSubscription={Boolean(subscription)}
+              />
             </section>
             <div className="mt-6">
               <VendorDecisionControls partnerId={partner.id} propertyId={property.id} status={vendorStatus} />

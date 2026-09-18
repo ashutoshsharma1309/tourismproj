@@ -97,6 +97,8 @@ const SUITES = [
   /* Booking: stay and money rules, the hold engine under real parallel
      transactions, expiry, and search → listing → hold → checkout in a browser. */
   { name: "qa:booking", script: "scripts/qa/booking.mts", reads: "server", runner: "tsx" },
+  /* Plans, entitlements and the gates they drive, enforced server-side. */
+  { name: "qa:subscriptions", script: "scripts/qa/subscriptions.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

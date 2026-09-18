@@ -769,6 +769,9 @@ async function runFlow({ adminEmail, supabaseUrl, serviceKey, databaseUrl }: { a
       await sql`delete from referral_events where stay_ref = 'jaipur/qa-suite-stay'`;
       for (const id of authIds) {
         await sql`update partner_properties set reviewer_id = null where reviewer_id = ${id}`;
+        await sql`update partners set verified_by = null where verified_by = ${id}`;
+        await sql`update partner_subscriptions set assigned_by = null where assigned_by = ${id}`;
+        await sql`update vendor_documents set uploaded_by = null where uploaded_by = ${id}`;
         await sql`update audit_logs set actor_id = null where actor_id = ${id}`;
         await sql`delete from users where id = ${id}`;
         await admin.auth.admin.deleteUser(id);
@@ -840,6 +843,8 @@ async function runInventoryFlow({ adminEmail, supabaseUrl, serviceKey, databaseU
     /* ---- Synthetic fixtures: vendor A unverified with an APPROVED listing; vendor B verified with one room type. */
     const [a] = await sql`insert into partners (organization_name, contact_name, email, status)
       values ('QA Inventory Trust A (QA synthetic)', 'QA Owner A', ${emailA}, 'PENDING') returning id`;
+    /* Vendor A creates a second listing below; the Free plan allows one (qa:subscriptions tests that gate). */
+    await sql`insert into partner_subscriptions (partner_id, plan_code, status, note) values (${a.id}, 'GROWTH', 'ACTIVE', 'QA synthetic')`;
     const [aSeed] = await sql`insert into partner_properties (partner_id, destination_id, name, type, address, status, reviewed_at, source)
       values (${a.id}, 'jaipur', ${`QA Seed Haveli ${stamp} (QA synthetic)`}, 'HERITAGE', '1 QA Street, Jaipur 302001', 'APPROVED', now(), 'qa-synthetic') returning id`;
     const [b] = await sql`insert into partners (organization_name, contact_name, email, status)

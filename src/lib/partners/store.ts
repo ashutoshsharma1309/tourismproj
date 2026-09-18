@@ -12,7 +12,10 @@ import {
   vendorStatusAfterPropertyReview,
   type VendorStatus,
 } from "@/lib/partners/vendor";
+import { listingCount } from "@/lib/partners/inventory";
 import type { PartnershipRequest, ReferralEventInput } from "@/lib/partners/schema";
+import { entitlementsFor } from "@/lib/subscriptions/access";
+import { withinLimit } from "@/lib/subscriptions/entitlements";
 
 /**
  * Every write to the partner programme, audited (CLAUDE.md §2 R7).
@@ -73,6 +76,14 @@ export async function createPartnershipRequest(
       .limit(1);
     if (existing) {
       return { ok: false, error: "This property has already been submitted. It is in the review queue." };
+    }
+
+    /* The plan's listing limit applies to requests from an existing partner
+       too, or the apply form would be a way around it. A brand-new partner
+       has nothing yet and is always within its first listing. */
+    const plan = await entitlementsFor(partner.id, tx);
+    if (!withinLimit(plan, "listings", await listingCount(tx, partner.id))) {
+      return { ok: false, error: `Your ${plan.planName} plan allows ${plan.limits.listings} listing${plan.limits.listings === 1 ? "" : "s"}. A reviewer can change your plan.` };
     }
 
     const [property] = await tx

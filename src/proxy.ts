@@ -57,6 +57,10 @@ export const config = {
     "/partner/verification",
     "/partner/listings/:path*",
     "/partner/calendar",
+    "/partner/analytics",
+    "/partner/team",
+    "/partner/plan",
+    "/partner/reports/:path*",
     "/checkout/:path*",
     "/admin/:path*",
     /* Not /api/account: those route handlers validate the session themselves

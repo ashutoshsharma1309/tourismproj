@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { PlanLocked } from "@/components/partners/workspace/PlanLocked";
 import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
 import { WorkspaceShell } from "@/components/partners/workspace/WorkspaceShell";
 import { Badge } from "@/components/ui/Badge";
@@ -13,6 +14,8 @@ import { todayInKolkata } from "@/lib/partners/calendar";
 import { PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
 import { isVerifiedVendor, type VendorStatus } from "@/lib/partners/vendor";
+import { entitlementsFor } from "@/lib/subscriptions/access";
+import { can, withinLimit } from "@/lib/subscriptions/entitlements";
 
 export const metadata: Metadata = { title: "Listings", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -24,7 +27,9 @@ export default async function PartnerListingsPage() {
   const { partner } = access;
   const status = partner.status as VendorStatus;
   const verified = isVerifiedVendor(status);
-  const summaries = await listingSummariesForPartner(partner.id, todayInKolkata(new Date()));
+  const [summaries, entitlements] = await Promise.all([listingSummariesForPartner(partner.id, todayInKolkata(new Date())), entitlementsFor(partner.id)]);
+  const counted = summaries.filter((s) => s.listing.status !== "REJECTED").length;
+  const planAllows = can(entitlements, "createListing") && withinLimit(entitlements, "listings", counted);
 
   return (
     <WorkspaceShell
@@ -34,7 +39,7 @@ export default async function PartnerListingsPage() {
       title={t("listings.title")}
       lede={t("listings.lede")}
       actions={
-        verified ? (
+        verified && planAllows ? (
           <Link href="/partner/listings/new" className={buttonClasses({ variant: "primary", size: "md" })}>
             {t("listings.new")}
           </Link>
@@ -45,6 +50,11 @@ export default async function PartnerListingsPage() {
         <div className="mb-6 rounded-xl border border-border bg-surface-muted/40 p-5" role="note">
           <p className="font-medium">{t("listings.lockedTitle")}</p>
           <p className="mt-1 text-small leading-relaxed text-muted">{t("listings.lockedBody", { status: t(`vendor.${status}`).toLowerCase() })}</p>
+        </div>
+      ) : null}
+      {verified && !planAllows ? (
+        <div className="mb-6">
+          <PlanLocked message={t("plan.limitReached", { plan: entitlements.planName })} cta={t("plan.lockedCta")} />
         </div>
       ) : null}
       {summaries.length === 0 ? (

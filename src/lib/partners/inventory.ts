@@ -1,6 +1,6 @@
 import "server-only";
 
-import { and, eq, gt, or, sql } from "drizzle-orm";
+import { and, count, eq, gt, ne, or, sql } from "drizzle-orm";
 
 import { db, hasDatabase } from "@/db";
 import { availability, bookingItems, listingUnits, partnerProperties, partners, vendorDocuments } from "@/db/schema";
@@ -9,6 +9,8 @@ import type { PartnerMessageKey } from "@/lib/i18n/partner-messages";
 import { rangeProblem, spanDays } from "@/lib/partners/calendar";
 import type { AvailabilityInput, ListingDetails, NewListing, UnitInput } from "@/lib/partners/inventory-schema";
 import { canVendorTransition, isVerifiedVendor, type VendorStatus } from "@/lib/partners/vendor";
+import { entitlementsFor } from "@/lib/subscriptions/access";
+import { can, withinLimit } from "@/lib/subscriptions/entitlements";
 
 /**
  * Every write the partner workspace makes: listings, room types, the
@@ -58,6 +60,15 @@ async function vendorStatus(tx: Tx, partnerId: string): Promise<VendorStatus | n
   return (row?.status as VendorStatus | undefined) ?? null;
 }
 
+/** Listings that count against a plan: everything but a rejected request. */
+export async function listingCount(tx: Tx, partnerId: string): Promise<number> {
+  const [row] = await tx
+    .select({ n: count() })
+    .from(partnerProperties)
+    .where(and(eq(partnerProperties.partnerId, partnerId), ne(partnerProperties.status, "REJECTED")));
+  return Number(row?.n ?? 0);
+}
+
 /** A listing this partner owns, locked; null for anyone else's. */
 async function ownedListing(tx: Tx, scope: Scope, listingId: string) {
   const [row] = await tx
@@ -89,6 +100,9 @@ export async function createListing(scope: Scope, input: NewListing): Promise<In
   return db.transaction(async (tx) => {
     const status = await vendorStatus(tx, scope.partnerId);
     if (!status || !isVerifiedVendor(status)) return { ok: false, error: "error.notVerified" };
+    const plan = await entitlementsFor(scope.partnerId, tx);
+    if (!can(plan, "createListing")) return { ok: false, error: "error.planFeature" };
+    if (!withinLimit(plan, "listings", await listingCount(tx, scope.partnerId))) return { ok: false, error: "error.planLimit" };
 
     const [existing] = await tx
       .select({ id: partnerProperties.id })
@@ -175,6 +189,10 @@ export async function createUnit(scope: Scope, listingId: string, input: UnitInp
     return await db.transaction(async (tx) => {
       const listing = await ownedListing(tx, scope, listingId);
       if (!listing) return { ok: false, error: "error.notFound" };
+      const plan = await entitlementsFor(scope.partnerId, tx);
+      if (!can(plan, "manageInventory")) return { ok: false, error: "error.planFeature" };
+      const [existingUnits] = await tx.select({ n: count() }).from(listingUnits).where(eq(listingUnits.listingId, listingId));
+      if (!withinLimit(plan, "roomTypesPerListing", Number(existingUnits?.n ?? 0))) return { ok: false, error: "error.planLimit" };
       const [unit] = await tx
         .insert(listingUnits)
         .values({ listingId, name: input.name, capacity: input.capacity, totalQuantity: input.totalQuantity, basePricePaise: input.basePrice })
@@ -195,6 +213,7 @@ export async function updateUnit(scope: Scope, unitId: string, input: UnitInput)
     return await db.transaction(async (tx) => {
       const unit = await ownedUnit(tx, scope, unitId);
       if (!unit) return { ok: false, error: "error.notFound" };
+      if (!can(await entitlementsFor(scope.partnerId, tx), "manageInventory")) return { ok: false, error: "error.planFeature" };
       const before = unitAudit({ name: unit.name, capacity: unit.capacity, totalQuantity: unit.totalQuantity, basePrice: unit.basePricePaise });
       const after = unitAudit(input);
       if (JSON.stringify(before) === JSON.stringify(after)) return { ok: true, data: null };
@@ -218,6 +237,7 @@ export async function deleteUnit(scope: Scope, unitId: string): Promise<Inventor
   return db.transaction(async (tx) => {
     const unit = await ownedUnit(tx, scope, unitId);
     if (!unit) return { ok: false, error: "error.notFound" };
+    if (!can(await entitlementsFor(scope.partnerId, tx), "manageInventory")) return { ok: false, error: "error.planFeature" };
     const [committed] = await tx
       .select({ id: availability.id })
       .from(availability)
@@ -253,6 +273,7 @@ export async function setAvailability(scope: Scope, input: AvailabilityInput, to
     return await db.transaction(async (tx) => {
       const unit = await ownedUnit(tx, scope, input.unitId);
       if (!unit) return { ok: false, error: "error.notFound" };
+      if (!can(await entitlementsFor(scope.partnerId, tx), "manageInventory")) return { ok: false, error: "error.planFeature" };
       if (rooms > unit.totalQuantity) return { ok: false, error: "error.exceedsQuantity" };
 
       const closed = input.mode === "close";

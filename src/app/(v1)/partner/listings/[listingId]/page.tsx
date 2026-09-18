@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { copyFor } from "@/components/partners/workspace/copy";
 import { paiseToRupeeInput } from "@/lib/booking/stay";
 import { ListingDetailsForm, MoveListingForm } from "@/components/partners/workspace/ListingForms";
+import { PlanLocked } from "@/components/partners/workspace/PlanLocked";
 import { AddUnitForm, EditUnitForm } from "@/components/partners/workspace/UnitForms";
 import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
 import { WorkspaceShell } from "@/components/partners/workspace/WorkspaceShell";
@@ -17,6 +18,8 @@ import { partnerAccess, partnerLanguage } from "@/lib/partners/access";
 import { PROPERTY_STATUS_TONE, type PropertyStatus } from "@/lib/partners/lifecycle";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
 import { isVerifiedVendor, partnerMayMove, type VendorStatus } from "@/lib/partners/vendor";
+import { entitlementsFor } from "@/lib/subscriptions/access";
+import { can, withinLimit } from "@/lib/subscriptions/entitlements";
 
 export const metadata: Metadata = { title: "Manage listing", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -57,6 +60,8 @@ export default async function PartnerListingPage({ params }: { params: Promise<{
   if (!UUID.test(listingId)) notFound();
   const [listing, units] = await Promise.all([listingForPartner(partner.id, listingId), unitsForPartnerListing(partner.id, listingId)]);
   if (!listing) notFound();
+  const entitlements = await entitlementsFor(partner.id);
+  const mayAddUnit = can(entitlements, "manageInventory") && withinLimit(entitlements, "roomTypesPerListing", units.length);
 
   const status = listing.status as PropertyStatus;
   const verified = isVerifiedVendor(partner.status as VendorStatus);
@@ -141,7 +146,11 @@ export default async function PartnerListingPage({ params }: { params: Promise<{
           ))}
         </ul>
         <div className="mt-4">
-          <AddUnitForm copy={copyFor(t, UNIT_KEYS)} listingId={listing.id} />
+          {mayAddUnit ? (
+            <AddUnitForm copy={copyFor(t, UNIT_KEYS)} listingId={listing.id} />
+          ) : (
+            <PlanLocked message={t("plan.limitReached", { plan: entitlements.planName })} cta={t("plan.lockedCta")} />
+          )}
         </div>
       </section>
     </WorkspaceShell>

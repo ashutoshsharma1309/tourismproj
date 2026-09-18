@@ -2,7 +2,7 @@ import { eq } from "drizzle-orm";
 import { redirect } from "next/navigation";
 
 import { db, hasDatabase } from "@/db";
-import { partners, users } from "@/db/schema";
+import { partnerMembers, partners, users } from "@/db/schema";
 import { createSupabaseServerClient } from "@/lib/auth/server";
 
 /**
@@ -142,6 +142,8 @@ export async function ensureUserRow(session: SessionUser): Promise<void> {
 
 export interface PartnerSession extends SessionUser {
   partnerId: string;
+  /** OWNER: the person the partnership request was made by. STAFF: a team member they added. */
+  role: "OWNER" | "STAFF";
 }
 
 /**
@@ -159,7 +161,20 @@ export async function partnerFor(session: SessionUser): Promise<PartnerSession |
     .from(partners)
     .where(eq(partners.ownerUserId, session.id))
     .limit(1);
-  if (owned) return { ...session, partnerId: owned.id };
+  if (owned) return { ...session, partnerId: owned.id, role: "OWNER" };
+
+  /* A team member, matched on the proven address, linked on first sign-in. */
+  const [member] = await db
+    .select({ id: partnerMembers.id, partnerId: partnerMembers.partnerId, userId: partnerMembers.userId })
+    .from(partnerMembers)
+    .where(eq(partnerMembers.email, session.email.toLowerCase()))
+    .limit(1);
+  if (member) {
+    if (member.userId !== session.id) {
+      await db.update(partnerMembers).set({ userId: session.id }).where(eq(partnerMembers.id, member.id));
+    }
+    return { ...session, partnerId: member.partnerId, role: "STAFF" };
+  }
 
   const [byEmail] = await db
     .select({ id: partners.id, ownerUserId: partners.ownerUserId })
@@ -168,7 +183,7 @@ export async function partnerFor(session: SessionUser): Promise<PartnerSession |
     .limit(1);
   if (!byEmail || byEmail.ownerUserId) return null;
   await db.update(partners).set({ ownerUserId: session.id }).where(eq(partners.id, byEmail.id));
-  return { ...session, partnerId: byEmail.id };
+  return { ...session, partnerId: byEmail.id, role: "OWNER" };
 }
 
 export async function requireAdmin(): Promise<SessionUser | null> {

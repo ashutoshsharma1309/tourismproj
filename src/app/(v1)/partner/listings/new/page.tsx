@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { copyFor } from "@/components/partners/workspace/copy";
 import { NewListingForm } from "@/components/partners/workspace/ListingForms";
+import { PlanLocked } from "@/components/partners/workspace/PlanLocked";
 import { WorkspaceGate } from "@/components/partners/workspace/WorkspaceGate";
 import { WorkspaceShell } from "@/components/partners/workspace/WorkspaceShell";
 import { listDestinations } from "@/lib/destinations/registry";
@@ -10,6 +11,9 @@ import { partnerTranslator } from "@/lib/i18n/partner-messages";
 import { partnerAccess, partnerLanguage } from "@/lib/partners/access";
 import { ACCOMMODATION_LABEL, ACCOMMODATION_TYPES } from "@/lib/partners/schema";
 import { isVerifiedVendor, type VendorStatus } from "@/lib/partners/vendor";
+import { usageForPartner } from "@/db/queries/partner-analytics";
+import { entitlementsFor } from "@/lib/subscriptions/access";
+import { can, withinLimit } from "@/lib/subscriptions/entitlements";
 
 export const metadata: Metadata = { title: "New listing", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -28,10 +32,14 @@ export default async function NewListingPage() {
   if (access.kind !== "ok") return <WorkspaceGate access={access} t={t} next="/partner/listings/new" />;
   const { partner } = access;
   const status = partner.status as VendorStatus;
+  const [entitlements, usage] = await Promise.all([entitlementsFor(partner.id), usageForPartner(partner.id)]);
+  const planAllows = can(entitlements, "createListing") && withinLimit(entitlements, "listings", usage.listings);
 
   return (
     <WorkspaceShell partner={partner} current="/partner/listings" t={t} title={t("listings.newTitle")} lede={t("listings.newLede")}>
-      {isVerifiedVendor(status) ? (
+      {isVerifiedVendor(status) && !planAllows ? (
+        <PlanLocked message={t("plan.limitReached", { plan: entitlements.planName })} cta={t("plan.lockedCta")} />
+      ) : isVerifiedVendor(status) ? (
         <NewListingForm
           copy={copyFor(t, FORM_KEYS)}
           destinations={listDestinations().map((d) => ({ value: d.id, label: `${d.name}, ${d.region?.name ?? d.country.name}` }))}
