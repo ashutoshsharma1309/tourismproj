@@ -8,6 +8,7 @@ import { JourneyProgress } from "@/components/journey-select/JourneyProgress";
 import { listDestinations } from "@/lib/destinations/registry";
 import { coverageDimensions } from "@/lib/destinations/earned-depth";
 import { DestinationHero } from "@/components/destinations/DestinationHero";
+import { govTranslator } from "@/lib/i18n/government-messages";
 import { translator, type LanguageCode } from "@/lib/i18n";
 import { DestinationAudio } from "@/components/destinations/DestinationAudio";
 import { DestinationCoverage } from "@/components/destinations/DestinationCoverage";
@@ -17,6 +18,8 @@ import { DestinationGallery } from "@/components/destinations/DestinationGallery
 import { DestinationMapSection } from "@/components/destinations/DestinationMapSection";
 import { DestinationHighlights } from "@/components/destinations/DestinationHighlights";
 import { DestinationStays } from "@/components/destinations/DestinationStays";
+import { DestinationAdvisories } from "@/components/destinations/DestinationAdvisories";
+
 import { PartnerStays } from "@/components/partners/PartnerStays";
 import { PersonalPlaces } from "@/components/account/PersonalPlaces";
 import { DestinationTimeline } from "@/components/destinations/DestinationTimeline";
@@ -60,6 +63,21 @@ export async function DestinationHubPage({
 }) {
 
   const t = translator(language);
+  /* Advisory copy comes from the console's own catalogue: the same words the
+     department that publishes them reads. */
+  const g = govTranslator(language);
+  const govLabels = {
+    title: g("public.title"),
+    issuedBy: g("public.issuedBy"),
+    until: g("public.until"),
+    kinds: {
+      PERMIT: g("kind.PERMIT"),
+      WEATHER: g("kind.WEATHER"),
+      CLOSURE: g("kind.CLOSURE"),
+      RESTRICTION: g("kind.RESTRICTION"),
+      OTHER: g("kind.OTHER"),
+    },
+  };
   /* Resolved here so the client components never import the registry. */
   const destinationNames = Object.fromEntries(
     listDestinations().map((entry) => [entry.id, entry.name]),
@@ -258,6 +276,15 @@ export async function DestinationHubPage({
           language={language}
         />
         {/* Verified partner properties, kept apart from the curated records. */}
+        <DestinationAdvisories
+          destinationId={destinationId}
+          labels={{
+            title: govLabels.title,
+            issuedBy: govLabels.issuedBy,
+            until: govLabels.until,
+            kinds: govLabels.kinds,
+          }}
+        />
         <PartnerStays destinationId={destinationId} destinationName={destination.name} />
 
         {/* The archive shown the other way round: photographs first. */}

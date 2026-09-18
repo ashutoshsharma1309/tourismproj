@@ -132,7 +132,11 @@ export interface TransitionInput {
    * partner may only publish or unpublish their OWN listing (`partnerId` must
    * match), and only while their organisation is verified.
    */
-  by?: { role: "reviewer" } | { role: "partner"; partnerId: string };
+  by?:
+    | { role: "reviewer" }
+    /** A government officer, limited to the destinations their authority covers. */
+    | { role: "government"; orgId: string; destinations: readonly string[] }
+    | { role: "partner"; partnerId: string };
 }
 
 /** Postgres raised one of the partner invariants from drizzle/sql/0002. */
@@ -164,6 +168,10 @@ export async function transitionProperty(input: TransitionInput): Promise<StoreR
         .for("update");
       if (!row || (by.role === "partner" && row.partnerId !== by.partnerId)) {
         return { ok: false, error: "No such property." };
+      }
+      /* A government reviewer decides only within its own jurisdiction. */
+      if (by.role === "government" && !by.destinations.includes(row.destinationId)) {
+        return { ok: false, error: "This property is outside your jurisdiction." };
       }
       const from = row.status as PropertyStatus;
       if (from === input.to) {
@@ -199,7 +207,8 @@ export async function transitionProperty(input: TransitionInput): Promise<StoreR
          publish is not a review and moves nothing. The promotion is written
          BEFORE the property, so the database's verified-vendor trigger sees
          the vendor a reviewer has just approved. */
-      const promoted = by.role === "reviewer" ? vendorStatusAfterPropertyReview(vendorStatus, input.to) : null;
+      const reviewing = by.role === "reviewer" || by.role === "government";
+      const promoted = reviewing ? vendorStatusAfterPropertyReview(vendorStatus, input.to) : null;
       if (promoted) {
         await tx
           .update(partners)
@@ -211,7 +220,7 @@ export async function transitionProperty(input: TransitionInput): Promise<StoreR
           entityType: "partner",
           entityId: row.partnerId,
           before: { status: vendorStatus },
-          after: { status: promoted, via: "property_review", propertyId: input.propertyId },
+          after: { status: promoted, via: "property_review", by: by.role, propertyId: input.propertyId },
         });
       }
 
@@ -219,7 +228,7 @@ export async function transitionProperty(input: TransitionInput): Promise<StoreR
         .update(partnerProperties)
         .set({
           status: input.to,
-          ...(by.role === "reviewer"
+          ...(reviewing
             ? { reviewerId: input.actorId, reviewNote: input.note ?? row.reviewNote, reviewedAt: now }
             : {}),
           publishedAt: input.to === "PUBLISHED" ? now : row.publishedAt,
@@ -234,7 +243,13 @@ export async function transitionProperty(input: TransitionInput): Promise<StoreR
         entityType: "partner_property",
         entityId: input.propertyId,
         before: { status: from },
-        after: { status: input.to, by: by.role, note: input.note ?? null, checks: input.checks ?? [] },
+        after: {
+          status: input.to,
+          by: by.role,
+          ...(by.role === "government" ? { orgId: by.orgId } : {}),
+          note: input.note ?? null,
+          checks: input.checks ?? [],
+        },
       });
 
       return { ok: true, data: { status: input.to, destinationId: row.destinationId, changed: true } };

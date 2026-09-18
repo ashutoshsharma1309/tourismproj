@@ -99,6 +99,8 @@ const SUITES = [
   { name: "qa:booking", script: "scripts/qa/booking.mts", reads: "server", runner: "tsx" },
   /* Plans, entitlements and the gates they drive, enforced server-side. */
   { name: "qa:subscriptions", script: "scripts/qa/subscriptions.mts", reads: "server", runner: "tsx" },
+  /* The government console: jurisdiction, verification decisions, advisories. */
+  { name: "qa:government", script: "scripts/qa/government.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

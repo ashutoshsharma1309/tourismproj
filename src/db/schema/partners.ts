@@ -173,6 +173,9 @@ export const partnerProperties = pgTable(
     reviewerId: uuid("reviewer_id").references(() => users.id),
     reviewNote: text("review_note"),
     reviewedAt: timestamp("reviewed_at", { withTimezone: true }),
+    /* When a reviewer last asked the partner for more information. A fact
+       about the record, not a lifecycle state. */
+    clarificationRequestedAt: timestamp("clarification_requested_at", { withTimezone: true }),
     publishedAt: timestamp("published_at", { withTimezone: true }),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
