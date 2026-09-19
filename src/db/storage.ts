@@ -60,3 +60,36 @@ export async function signedVendorDocumentUrl(path: string): Promise<string | nu
   }
   return signed.signedUrl;
 }
+
+/* ------------------------------------------------------ spoken answers */
+
+/**
+ * The Guide's generated speech, cached in the PRIVATE `assistant-audio`
+ * bucket by content hash (src/lib/assistant/speech-server.ts). Served only
+ * through short-lived signed links.
+ */
+const SPEECH_BUCKET = "assistant-audio";
+const SPEECH_SIGNED_SECONDS = 600;
+
+export const hasSpeechStorage = hasDocumentStorage;
+
+/** A signed link to a cached spoken answer, or null when it is not cached (or storage is off). */
+export async function cachedSpeechUrl(path: string): Promise<string | null> {
+  const client = adminClient();
+  if (!client) return null;
+  const { data: signed, error } = await client.storage.from(SPEECH_BUCKET).createSignedUrl(path, SPEECH_SIGNED_SECONDS);
+  return error ? null : signed.signedUrl;
+}
+
+/** Store a spoken answer once; a concurrent writer of the same hash is not an error. */
+export async function storeSpeech(path: string, audio: Uint8Array, contentType: string): Promise<string | null> {
+  const client = adminClient();
+  if (!client) return null;
+  await client.storage.createBucket(SPEECH_BUCKET, { public: false }).catch(() => undefined);
+  const { error } = await client.storage.from(SPEECH_BUCKET).upload(path, audio, { contentType, upsert: false, cacheControl: "31536000" });
+  if (error && !/exists/i.test(error.message)) {
+    console.error("storage: spoken answer upload failed", error.message);
+    return null;
+  }
+  return cachedSpeechUrl(path);
+}

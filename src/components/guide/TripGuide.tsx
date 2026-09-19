@@ -3,14 +3,23 @@
 import {
   ArrowUpRight,
   Compass,
+  Footprints,
+  LocateFixed,
+  Maximize2,
   MessageCircle,
+  Minimize2,
   Send,
   Sparkles,
   X,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { destinationIdFromPath } from "@/lib/destinations/nav-path";
+import { destinationIdFromPath, languageFromPathname } from "@/lib/destinations/nav-path";
+import { GUIDE_LANGUAGES, capabilityFor, type LanguageCapability } from "@/lib/assistant/languages";
+import { assistantReplySchema, type AssistantReply } from "@/lib/assistant/types";
+import { useJourney } from "@/lib/journey/JourneyProvider";
+import { GuideReply } from "@/components/guide/GuideReply";
+import { GuideVoice } from "@/components/guide/GuideVoice";
 import { ALL_INTERESTS, INTEREST_LABEL } from "@/lib/planner/types";
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 
@@ -48,6 +57,41 @@ interface Turn {
   role: "visitor" | "guide";
   text?: string;
   blocks?: GuideBlock[];
+  /** A validated answer from the TerraStory Guide endpoint. */
+  reply?: AssistantReply;
+}
+
+interface Capabilities {
+  model: { configured: boolean };
+  voiceInput: boolean;
+  routing: boolean;
+  weather: boolean;
+  serverSpeech: { configured: boolean; languages?: string[] };
+  languages: LanguageCapability[];
+}
+
+/** A monastery or place page's slug, when the traveller is on one. */
+function placeSlugFromPath(pathname: string): string | null {
+  return /\/destinations\/[^/]+\/(?:monasteries|places)\/([^/?#]+)/.exec(pathname)?.[1] ?? null;
+}
+
+/* Quick actions that fit where the traveller is — a few, never thirty. */
+function quickActions(placeSlug: string | null, destinationId: string | null, located: boolean): GuideChip[] {
+  if (placeSlug) {
+    return [
+      { label: "Why is this place important?", send: "Why is this place important?" },
+      { label: "What's nearby?", send: "What's near this place?" },
+      { label: "How do I get there?", send: "How do I get there?" },
+      ...(destinationId === "sikkim" ? [{ label: "Play the audio guide", send: "Play the audio guide" }] : []),
+    ];
+  }
+  if (!destinationId) return [];
+  return [
+    ...(located ? [{ label: "Where am I?", send: "Where am I?" }, { label: "What's near me?", send: "What's near me?" }] : []),
+    { label: "Plan my day", send: "Plan my day" },
+    { label: "Find stays", send: "Where can I stay?" },
+    ...(destinationId === "sikkim" ? [{ label: "Do I need a permit?", send: "Do I need a permit?" }] : []),
+  ];
 }
 
 type PlanStep = "duration" | "interests" | "style";
@@ -74,14 +118,25 @@ function opening(
   destinationName: string | null,
   destinationId: string | null,
   destinationCount: number,
+  placeSlug: string | null = null,
 ): GuideBlock[] {
   const sikkim = destinationId === "sikkim";
+  /* On a place page the greeting offers what fits that place, and nothing else. */
+  if (placeSlug) {
+    return [
+      {
+        kind: "text",
+        text: `Ask me about this place — why it matters, what's near it, how to get there. I answer from TerraStory's verified records and say so when they don't cover something.`,
+      },
+      { kind: "chips", chips: quickActions(placeSlug, destinationId, false) },
+    ];
+  }
   return [
     {
       kind: "text",
       text: destinationName
-        ? `Ask me anything about ${destinationName} — its places, history, food, festivals and where to stay. I answer only from verified records, so I have no prices, opening hours or forecasts, and I'll say so rather than guess.`
-        : `Ask me about any of ${destinationCount} Indian destinations — their places, history, food, festivals and where to stay. I answer only from verified records, so I have no prices, opening hours or forecasts, and I'll say so rather than guess.`,
+        ? `Ask me anything about ${destinationName} — its places, history, food, festivals, distances and where to stay. I answer from verified records and, where they're connected, live routes and weather. I hold no prices or verified opening hours, and I'll say so rather than guess.`
+        : `Ask me about any of ${destinationCount} Indian destinations — their places, history, food, festivals and where to stay. I answer from verified records and say so rather than guess.`,
     },
     {
       kind: "chips",
@@ -159,9 +214,22 @@ export function TripGuide({
   const [index, setIndex] = useState<GuideIndex | null>(null);
   const [loadFailed, setLoadFailed] = useState(false);
   const [turns, setTurns] = useState<Turn[]>(() => [
-    { id: 0, role: "guide", blocks: opening(destinationName, destinationId, Object.keys(destinationNames).length) },
+    { id: 0, role: "guide", blocks: opening(destinationName, destinationId, Object.keys(destinationNames).length, placeSlugFromPath(pathname ?? "")) },
   ]);
   const [draft, setDraft] = useState("");
+  const journeyContext = useJourney();
+  const placeSlug = placeSlugFromPath(pathname ?? "");
+  const [caps, setCaps] = useState<Capabilities | null>(null);
+  const [language, setLanguage] = useState<string>(() => {
+    const fromPath = languageFromPathname(pathname ?? "");
+    return GUIDE_LANGUAGES.some((l) => l.code === fromPath) ? fromPath : "en";
+  });
+  const [location, setLocation] = useState<{ lat: number; lng: number; accuracyM?: number } | null>(null);
+  const [locating, setLocating] = useState(false);
+  const [guideMode, setGuideMode] = useState(false);
+  const [pending, setPending] = useState(false);
+  const [expanded, setExpanded] = useState(false);
+  const focus = useRef<{ placeId: string | null; routeFromId: string | null; routeToId: string | null } | null>(null);
   const [plan, setPlan] = useState<{
     step: PlanStep;
     duration?: number;
@@ -172,6 +240,15 @@ export function TripGuide({
      the panel through a DOM event (lib/guide-events.ts), so nothing outside
      this component has to hold its state. */
   useEffect(() => onGuideOpen(() => setOpen(true)), []);
+
+  /* What the Guide can do here: fetched once, the first time it is opened. */
+  useEffect(() => {
+    if (!open || caps) return;
+    fetch("/api/assistant/capabilities")
+      .then((r) => (r.ok ? r.json() : null))
+      .then((body: Capabilities | null) => body && setCaps(body))
+      .catch(() => undefined);
+  }, [open, caps]);
 
   /* Fetch the knowledge base once, the first time the guide is opened. */
   useEffect(() => {
@@ -191,6 +268,10 @@ export function TripGuide({
   }, [open, index, loadFailed]);
 
   const nextId = useRef(1);
+  const turnsRef = useRef<Turn[]>([]);
+  useEffect(() => {
+    turnsRef.current = turns;
+  }, [turns]);
   /* One AI_GUIDE_USED per page load; the server also de-duplicates. */
   const guideUseRecorded = useRef(false);
   const scroller = useRef<HTMLDivElement>(null);
@@ -216,6 +297,35 @@ export function TripGuide({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
+
+  /* Location is asked for only when the traveller presses the control, used
+     for their questions in this session, and never stored. */
+  const locate = useCallback(() => {
+    if (location) {
+      setLocation(null);
+      return;
+    }
+    if (!("geolocation" in navigator)) {
+      push({ role: "guide", blocks: [{ kind: "note", text: "This browser can't share a location. Tell me where you are instead — for example, \"I'm at Rumtek Monastery\"." }] });
+      return;
+    }
+    setLocating(true);
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setLocating(false);
+        setLocation({ lat: position.coords.latitude, lng: position.coords.longitude, accuracyM: Math.min(100_000, Math.round(position.coords.accuracy)) });
+      },
+      () => {
+        setLocating(false);
+        push({ role: "guide", blocks: [{ kind: "note", text: "I can still help without your location. Tell me where you are and I'll give more precise directions." }] });
+      },
+      { enableHighAccuracy: false, timeout: 10_000, maximumAge: 60_000 },
+    );
+  }, [location, push]);
+
+  const toggleGuideMode = useCallback(() => {
+    setGuideMode((on) => !on);
+  }, []);
 
   const startPlan = useCallback(() => {
     setPlan({ step: "duration", interests: [] });
@@ -255,7 +365,7 @@ export function TripGuide({
       /* "What should I explore next?" — answered from the traveller's own
          signals when signed in. Facts and reasons come from the account
          recommendations endpoint, which builds them from TerraStory records. */
-      if (isNextIntent(clean)) {
+      if (isNextIntent(clean) && !destinationId) {
         if (hasSignedInHint()) {
           push({ role: "guide", blocks: [{ kind: "note", text: "Checking your interests and what you've explored…" }] });
           void (async () => {
@@ -292,6 +402,62 @@ export function TripGuide({
         return;
       }
 
+      /* The Guide endpoint: tools, retrieval and (where it helps) the
+         language model, all validated server-side. If it cannot answer — offline,
+         busy, rate-limited — the in-browser engine below still does. */
+      if (destinationId || clean.length > 0) {
+        setPending(true);
+        const history = turnsRef.current.slice(-6).map((t) => ({
+          role: t.role === "visitor" ? ("user" as const) : ("assistant" as const),
+          text: (t.reply?.message ?? t.text ?? (t.blocks ?? []).map((b) => (b.kind === "text" || b.kind === "note" ? b.text : "")).join(" ")).slice(0, 1200),
+        })).filter((t) => t.text.trim().length > 0);
+        void (async () => {
+          try {
+            const response = await fetch("/api/assistant", {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify({
+                question: clean,
+                destinationId,
+                placeSlug,
+                location,
+                language,
+                mode: guideMode ? "guide" : "chat",
+                history,
+                journey: { destinations: journeyContext.journey.destinations, places: journeyContext.journey.places },
+                focus: focus.current,
+              }),
+            });
+            if (response.status === 429) {
+              const body = (await response.json().catch(() => ({}))) as { error?: string };
+              push({ role: "guide", blocks: [{ kind: "note", text: body.error ?? "You've asked a lot in a short time. Please wait a few minutes." }] });
+              return;
+            }
+            const parsed = assistantReplySchema.safeParse(response.ok ? await response.json() : null);
+            if (parsed.success) {
+              const { data: reply } = parsed;
+              focus.current = {
+                placeId: reply.places[0]?.recordId ?? reply.citations[0]?.recordId ?? null,
+                routeFromId: reply.route?.from.recordId ?? null,
+                routeToId: reply.route?.to.recordId ?? null,
+              };
+              push({ role: "guide", reply });
+              return;
+            }
+            throw new Error("unusable reply");
+          } catch {
+            if (index) {
+              push({ role: "guide", blocks: [{ kind: "note", text: "The live guide didn't answer, so this is from the records in your browser." }, ...respond(clean, index, { destinationId }).blocks] });
+            } else {
+              push({ role: "guide", blocks: [{ kind: "note", text: "I couldn't reach the guide just now. Check your connection and try again." }] });
+            }
+          } finally {
+            setPending(false);
+          }
+        })();
+        return;
+      }
+
       if (!index) {
         push({
           role: "guide",
@@ -320,7 +486,7 @@ export function TripGuide({
         startPlan();
       }
     },
-    [index, loadFailed, push, startPlan, destinationId, destinationName],
+    [index, loadFailed, push, startPlan, destinationId, destinationName, placeSlug, location, language, guideMode, journeyContext.journey],
   );
 
   const submit = (e: React.FormEvent) => {
@@ -450,7 +616,12 @@ export function TripGuide({
           role="dialog"
           aria-modal="false"
           aria-label="Trip guide"
-          className="fixed inset-x-3 bottom-3 z-50 flex max-h-[min(34rem,calc(100dvh-5rem))] flex-col overflow-hidden rounded-xl border border-border-inverse bg-surface-inverse/97 shadow-overlay backdrop-blur sm:inset-x-auto sm:right-4 sm:bottom-4 sm:w-[24rem]"
+          className={cn(
+            "fixed z-50 flex flex-col overflow-hidden border border-border-inverse bg-surface-inverse/97 shadow-overlay backdrop-blur",
+            expanded
+              ? "inset-0 rounded-none sm:inset-4 sm:rounded-xl"
+              : "inset-x-3 bottom-3 max-h-[min(40rem,calc(100dvh-5rem))] rounded-xl sm:inset-x-auto sm:right-4 sm:bottom-4 sm:w-[26rem]",
+          )}
         >
           {/* ---------------------------------------------------- header */}
           <div className="flex items-start justify-between gap-3 border-b border-border-inverse px-4 py-3">
@@ -469,14 +640,78 @@ export function TripGuide({
                 {scopeLine(index, destinationId, destinationName)}
               </p>
             </div>
+            <div className="-mr-2 -mt-2 flex shrink-0 items-center">
+              <button
+                type="button"
+                onClick={() => setExpanded((v) => !v)}
+                aria-label={expanded ? "Shrink the guide" : "Expand the guide to full screen"}
+                aria-pressed={expanded}
+                className="flex size-11 items-center justify-center rounded-full text-foreground-inverse/60 transition-colors hover:bg-white/5 hover:text-foreground-inverse"
+              >
+                {expanded ? <Minimize2 className="size-4" aria-hidden /> : <Maximize2 className="size-4" aria-hidden />}
+              </button>
+              <button
+                type="button"
+                onClick={() => setOpen(false)}
+                aria-label="Close the trip guide"
+                className="flex size-11 items-center justify-center rounded-full text-foreground-inverse/60 transition-colors hover:bg-white/5 hover:text-foreground-inverse"
+              >
+                <X className="size-4" aria-hidden />
+              </button>
+            </div>
+          </div>
+
+          {/* ------------------------------------------------ controls */}
+          <div className="flex flex-wrap items-center gap-2 border-b border-border-inverse px-4 py-2" data-guide-controls>
+            <label className="flex items-center gap-1.5 text-caption text-foreground-inverse/70">
+              <span className="sr-only sm:not-sr-only">Language</span>
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
+                aria-label="Answer language"
+                className="rounded-md border border-border-inverse bg-transparent px-2 py-1 text-caption text-foreground-inverse focus:border-accent focus:outline-none"
+              >
+                {(caps?.languages ?? GUIDE_LANGUAGES).map((l) => (
+                  <option key={l.code} value={l.code} className="bg-surface-inverse">
+                    {l.nativeLabel}
+                  </option>
+                ))}
+              </select>
+            </label>
             <button
               type="button"
-              onClick={() => setOpen(false)}
-              aria-label="Close the trip guide"
-              className="-mr-2 -mt-2 flex size-11 shrink-0 items-center justify-center rounded-full text-foreground-inverse/60 transition-colors hover:bg-white/5 hover:text-foreground-inverse"
+              onClick={locate}
+              aria-pressed={Boolean(location)}
+              disabled={locating}
+              data-location={location ? "on" : "off"}
+              className={cn(
+                "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-caption transition-colors",
+                location ? "border-accent bg-accent/20 text-accent" : "border-border-inverse text-foreground-inverse/70 hover:text-foreground-inverse",
+              )}
             >
-              <X className="size-4" aria-hidden />
+              <LocateFixed className="size-3.5" aria-hidden />
+              {locating ? "Locating…" : location ? "Location on" : "Use my location"}
             </button>
+            {destinationId ? (
+              <button
+                type="button"
+                onClick={toggleGuideMode}
+                aria-pressed={guideMode}
+                data-guide-mode={guideMode ? "on" : "off"}
+                className={cn(
+                  "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-caption transition-colors",
+                  guideMode ? "border-accent bg-accent/20 text-accent" : "border-border-inverse text-foreground-inverse/70 hover:text-foreground-inverse",
+                )}
+              >
+                <Footprints className="size-3.5" aria-hidden />
+                Guide me
+              </button>
+            ) : null}
+            {language !== "en" && capabilityFor(language).answers === "model-translation" ? (
+              <p className="w-full text-[0.6875rem] leading-snug text-foreground-inverse/45">
+                Answers in {capabilityFor(language).label} are translated by AI from TerraStory&rsquo;s English records.
+              </p>
+            ) : null}
           </div>
 
           {/* ------------------------------------------------ transcript */}
@@ -493,6 +728,17 @@ export function TripGuide({
                 >
                   {turn.text}
                 </p>
+              ) : turn.reply ? (
+                <GuideReply
+                  key={turn.id}
+                  reply={turn.reply}
+                  onAsk={ask}
+                  speech={{
+                    languageLabel: capabilityFor(turn.reply.language).label,
+                    speechTag: capabilityFor(turn.reply.language).speechTag,
+                    serverSpeech: Boolean(caps?.serverSpeech.configured && caps.serverSpeech.languages?.includes(turn.reply.language)),
+                  }}
+                />
               ) : (
                 <div key={turn.id} className="space-y-2">
                   {turn.blocks?.map((block, i) => (
@@ -501,6 +747,22 @@ export function TripGuide({
                 </div>
               ),
             )}
+
+            {/* Quick actions for where the traveller is, under the greeting. */}
+            {turns.length === 1 && !placeSlug && location && destinationId ? (
+              <GuideBlockView block={{ kind: "chips", chips: quickActions(null, destinationId, true).slice(0, 3) }} onChip={ask} />
+            ) : null}
+
+            {pending ? (
+              <p className="flex items-center gap-2 text-caption text-foreground-inverse/55" role="status" data-guide-pending>
+                <span className="inline-flex gap-1" aria-hidden>
+                  <span className="size-1.5 animate-bounce rounded-full bg-accent [animation-delay:-0.2s]" />
+                  <span className="size-1.5 animate-bounce rounded-full bg-accent [animation-delay:-0.1s]" />
+                  <span className="size-1.5 animate-bounce rounded-full bg-accent" />
+                </span>
+                Checking TerraStory&rsquo;s records…
+              </p>
+            ) : null}
 
             {/* ------------------------------------------- guided flow */}
             {plan?.step === "duration" ? (
@@ -576,9 +838,20 @@ export function TripGuide({
               aria-label="Ask the trip guide"
               className="min-w-0 flex-1 bg-transparent text-small text-foreground-inverse placeholder:text-foreground-inverse/35 focus:outline-none"
             />
+            {caps?.voiceInput && capabilityFor(language).voiceInput ? (
+              <GuideVoice
+                language={language}
+                destinationId={destinationId}
+                onTranscript={(text) => {
+                  setDraft(text);
+                  input.current?.focus();
+                }}
+                onMessage={(text) => push({ role: "guide", blocks: [{ kind: "note", text }] })}
+              />
+            ) : null}
             <button
               type="submit"
-              disabled={!draft.trim()}
+              disabled={!draft.trim() || pending}
               aria-label="Send"
               className="flex size-8 shrink-0 items-center justify-center rounded-full bg-accent text-surface-inverse transition-opacity disabled:opacity-30"
             >

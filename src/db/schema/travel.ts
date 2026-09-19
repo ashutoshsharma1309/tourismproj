@@ -137,6 +137,9 @@ export const userJourneys = pgTable(
     title: text("title"),
     destinationIds: text("destination_ids").array().notNull(),
     completedIds: text("completed_ids").array().notNull().default(sql`'{}'::text[]`),
+    /* Places inside the journey's destinations the traveller chose to
+       remember ("sikkim/monastery:rumtek"). Added only by explicit action. */
+    placeIds: text("place_ids").array().notNull().default(sql`'{}'::text[]`),
     status: journeyStatus("status").notNull().default("IN_PROGRESS"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
     updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),

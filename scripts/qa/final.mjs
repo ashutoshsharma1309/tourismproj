@@ -101,6 +101,8 @@ const SUITES = [
   { name: "qa:subscriptions", script: "scripts/qa/subscriptions.mts", reads: "server", runner: "tsx" },
   /* The government console: jurisdiction, verification decisions, advisories. */
   { name: "qa:government", script: "scripts/qa/government.mts", reads: "server", runner: "tsx" },
+  /* The TerraStory Guide: tools, grounding, refusals, voice, and the panel. */
+  { name: "qa:guide-assistant", script: "scripts/qa/guide-assistant.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

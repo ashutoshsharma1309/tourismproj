@@ -193,8 +193,11 @@ check("partner surfaces never read traveller history",
   walk("src/app/(v1)/partner").concat(walk("src/app/(v1)/admin")).every((f) => !/travelEvents|destinationAffinity|userJourneys|userComparisons|queries\/account/.test(read(f))));
 check("demonstrated interests are never written to user_interests",
   !/demonstrated/.test(strip(read("src/lib/account/store.ts"))));
+/* The guide's question goes to /api/assistant, which stores nothing
+   (qa:guide-assistant B); its only account calls are body-less reads. */
+const guideAccountCalls = [...read("src/components/guide/TripGuide.tsx").matchAll(/fetch\([^)]*\/api\/account[^)]*\)/g)].map((m) => m[0]);
 check("the guide sends no question text to the account API",
-  !/body:\s*JSON\.stringify\(\{[^}]*clean/.test(read("src/components/guide/TripGuide.tsx")) && !/text: clean[^}]*api\/account/.test(read("src/components/guide/TripGuide.tsx")));
+  guideAccountCalls.length > 0 && guideAccountCalls.every((call) => !/clean|question|body:|method:/.test(call)));
 for (const [value, expected] of [
   ["/account/history", "/account/history"],
   ["/destinations/jaipur?x=1#y", "/destinations/jaipur?x=1#y"],

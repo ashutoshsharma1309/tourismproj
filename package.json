@@ -99,7 +99,8 @@
     "qa:accounts": "tsx scripts/qa/accounts.mts",
     "qa:booking": "tsx scripts/qa/booking.mts",
     "qa:subscriptions": "tsx scripts/qa/subscriptions.mts",
-    "qa:government": "tsx scripts/qa/government.mts"
+    "qa:government": "tsx scripts/qa/government.mts",
+    "qa:guide-assistant": "tsx scripts/qa/guide-assistant.mts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.7",

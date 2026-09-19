@@ -46,9 +46,24 @@ export interface JourneyState {
   interests: JourneyInterest[];
   /** Ids the visitor has marked finished. A subset of `destinations`. */
   completed: string[];
+  /**
+   * Places inside those destinations the traveller chose to remember — record
+   * ids such as "sikkim/monastery:rumtek". Added only by an explicit action
+   * (the Guide suggests; the traveller clicks). Each belongs to a destination
+   * in `destinations`.
+   */
+  places: string[];
 }
 
-export const EMPTY_JOURNEY: JourneyState = { destinations: [], interests: [], completed: [] };
+export const EMPTY_JOURNEY: JourneyState = { destinations: [], interests: [], completed: [], places: [] };
+
+/** A saved place id: "<destination>/<monastery|place|stay>:<slug>". */
+export const JOURNEY_PLACE_ID = /^([a-z-]{2,40})\/(monastery|place|stay):([a-z0-9-]{1,100})$/;
+export const MAX_JOURNEY_PLACES = 60;
+
+export function placeDestination(placeId: string): string | null {
+  return JOURNEY_PLACE_ID.exec(placeId)?.[1] ?? null;
+}
 
 /**
  * How many destinations a single journey may hold: every registered one.
@@ -101,7 +116,33 @@ export function sanitise(
       )
     : [];
 
-  return { destinations, interests, completed };
+  const places = Array.isArray(value.places)
+    ? [...new Set(value.places.filter((id): id is string => typeof id === "string"))]
+        .filter((id) => JOURNEY_PLACE_ID.test(id) && destinations.includes(placeDestination(id) ?? ""))
+        .slice(0, MAX_JOURNEY_PLACES)
+    : [];
+
+  return { destinations, interests, completed, places };
+}
+
+/**
+ * Remember a place. Its destination joins the journey too, because a place
+ * in a destination the traveller is not going to is not part of their trip.
+ */
+export function addPlace(state: JourneyState, placeId: string): JourneyState {
+  const destination = placeDestination(placeId);
+  if (!destination || state.places.includes(placeId) || state.places.length >= MAX_JOURNEY_PLACES) return state;
+  const destinations = state.destinations.includes(destination)
+    ? state.destinations
+    : state.destinations.length >= MAX_JOURNEY_DESTINATIONS
+      ? null
+      : [...state.destinations, destination];
+  if (!destinations) return state;
+  return { ...state, destinations, places: [...state.places, placeId] };
+}
+
+export function removePlace(state: JourneyState, placeId: string): JourneyState {
+  return { ...state, places: state.places.filter((id) => id !== placeId) };
 }
 
 /** Toggle a destination, preserving the order the visitor chose. */
@@ -114,6 +155,7 @@ export function toggleDestination(state: JourneyState, id: string): JourneyState
       ...state,
       destinations: state.destinations.filter((entry) => entry !== id),
       completed: state.completed.filter((entry) => entry !== id),
+      places: state.places.filter((placeId) => placeDestination(placeId) !== id),
     };
   }
   if (state.destinations.length >= MAX_JOURNEY_DESTINATIONS) return state;

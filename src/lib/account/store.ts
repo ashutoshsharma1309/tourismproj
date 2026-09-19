@@ -21,6 +21,7 @@ import {
 } from "@/db/schema";
 import type { ValidEvent } from "@/lib/account/events";
 import { isKnownDestination } from "@/lib/destinations/registry";
+import { JOURNEY_PLACE_ID, MAX_JOURNEY_PLACES, placeDestination } from "@/lib/journey/state";
 import { isLanguageCode } from "@/lib/i18n/languages";
 import { ALL_INTERESTS, type JourneyInterest } from "@/lib/planner/types";
 
@@ -220,12 +221,16 @@ async function serverEvent(
 export interface JourneyInput {
   destinationIds: string[];
   completedIds: string[];
+  placeIds?: string[];
 }
 
-export function sanitiseJourney(input: JourneyInput): JourneyInput {
+export function sanitiseJourney(input: JourneyInput): Required<JourneyInput> {
   const destinationIds = [...new Set(input.destinationIds)].filter(isKnownDestination).slice(0, 18);
   const completedIds = [...new Set(input.completedIds)].filter((id) => destinationIds.includes(id));
-  return { destinationIds, completedIds };
+  const placeIds = [...new Set(input.placeIds ?? [])]
+    .filter((id) => JOURNEY_PLACE_ID.test(id) && destinationIds.includes(placeDestination(id) ?? ""))
+    .slice(0, MAX_JOURNEY_PLACES);
+  return { destinationIds, completedIds, placeIds };
 }
 
 const sameSet = (a: readonly string[], b: readonly string[]) =>
@@ -243,7 +248,7 @@ const sameSet = (a: readonly string[], b: readonly string[]) =>
  */
 export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
   if (!hasDatabase) return null;
-  const { destinationIds, completedIds } = sanitiseJourney(raw);
+  const { destinationIds, completedIds, placeIds } = sanitiseJourney(raw);
   const allDone = destinationIds.length > 0 && completedIds.length === destinationIds.length;
 
   return db.transaction(async (tx) => {
@@ -279,6 +284,7 @@ export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
           userId,
           destinationIds,
           completedIds,
+          placeIds,
           status: allDone ? "COMPLETED" : "IN_PROGRESS",
           completedAt: allDone ? now : null,
         })
@@ -293,6 +299,7 @@ export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
       .set({
         destinationIds,
         completedIds,
+        placeIds,
         updatedAt: now,
         ...(allDone ? { status: "COMPLETED" as const, completedAt: now } : {}),
       })
