@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { AuthShell } from "@/components/account/AuthShell";
 import { SignInForm } from "@/components/account/AuthForms";
 import { safeNextPath } from "@/lib/account/next";
-import { authConfigured } from "@/lib/auth/server";
+import { accountsAvailable } from "@/lib/auth/server";
 import { currentUser } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
@@ -46,7 +46,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         </div>
       }
     >
-      {authConfigured() ? (
+      {accountsAvailable() ? (
         <SignInForm next={target} />
       ) : (
         <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">

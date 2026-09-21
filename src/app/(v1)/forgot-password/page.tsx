@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { AuthShell } from "@/components/account/AuthShell";
 import { ForgotPasswordForm } from "@/components/account/AuthForms";
+import { accountsAvailable } from "@/lib/auth/server";
 
 export const metadata: Metadata = { title: "Forgot password", robots: { index: false, follow: false } };
 export const dynamic = "force-dynamic";
@@ -18,7 +19,13 @@ export default function ForgotPasswordPage() {
         </Link>
       }
     >
-      <ForgotPasswordForm />
+      {accountsAvailable() ? (
+        <ForgotPasswordForm />
+      ) : (
+        <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
+          Accounts are not available on this deployment. Everything on TerraStory can still be explored without one.
+        </p>
+      )}
     </AuthShell>
   );
 }

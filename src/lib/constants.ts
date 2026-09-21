@@ -76,12 +76,15 @@ export const SITE = {
  */
 const LOCAL_ORIGIN = "http://localhost:3000";
 
-function resolveSiteUrl(): string {
+export function resolveSiteUrl(): string {
   const configured = process.env.NEXT_PUBLIC_SITE_URL?.trim();
   const vercel =
     process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim() || process.env.VERCEL_URL?.trim();
 
-  const candidate = configured
+  /* A copied .env.local says localhost; on Vercel that would send every
+     confirmation and password-reset e-mail to the traveller's own machine. */
+  const loopback = configured ? /^https?:\/\/(localhost|127\.0\.0\.1|\[::1\])(:\d+)?(\/|$)/i.test(configured) : false;
+  const candidate = configured && !(loopback && vercel)
     ? configured.replace(/\/+$/, "")
     : vercel
       ? `https://${vercel.replace(/^https?:\/\//, "").replace(/\/+$/, "")}`

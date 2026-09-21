@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
+import { hasDatabase } from "@/db";
 import { SESSION_COOKIE_OPTIONS } from "@/lib/auth/cookies";
 
 export { SESSION_COOKIE_OPTIONS };
@@ -59,3 +60,14 @@ export function authConfigured(): boolean {
       (process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
   );
 }
+
+/**
+ * Whether accounts work end to end here: sign-in needs Supabase Auth, and
+ * everything after it (profile, history, journeys) needs the database. With
+ * only one of the two, a traveller could sign in to an account that can't
+ * be saved, so the account pages treat that as "not available".
+ */
+export function accountsAvailable(): boolean {
+  return authConfigured() && hasDatabase;
+}
+

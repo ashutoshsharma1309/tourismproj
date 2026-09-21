@@ -18,6 +18,7 @@ import { join } from "node:path";
 
 import { comparisonIds, eventForLocation } from "@/lib/account/activity";
 import { safeNextPath } from "@/lib/account/next";
+import { resolveSiteUrl } from "@/lib/constants";
 import { allCoverage, themeIndex } from "@/lib/global";
 import { listDestinations } from "@/lib/destinations/registry";
 import {
@@ -193,6 +194,31 @@ check("partner surfaces never read traveller history",
   walk("src/app/(v1)/partner").concat(walk("src/app/(v1)/admin")).every((f) => !/travelEvents|destinationAffinity|userJourneys|userComparisons|queries\/account/.test(read(f))));
 check("demonstrated interests are never written to user_interests",
   !/demonstrated/.test(strip(read("src/lib/account/store.ts"))));
+/* E-mail links (confirmation, password reset, one-time code) are built from
+   the site URL. A .env.local copied into Vercel says localhost. */
+const withEnv = (env: Record<string, string | undefined>) => {
+  const saved = Object.fromEntries(Object.keys(env).map((k) => [k, process.env[k]]));
+  Object.assign(process.env, env);
+  for (const [k, v] of Object.entries(env)) if (v === undefined) delete process.env[k];
+  try {
+    return resolveSiteUrl();
+  } finally {
+    for (const [k, v] of Object.entries(saved)) {
+      if (v === undefined) delete process.env[k];
+      else process.env[k] = v;
+    }
+  }
+};
+check("on Vercel, a copied localhost site URL gives way to the deployment's own",
+  withEnv({ NEXT_PUBLIC_SITE_URL: "http://localhost:3000", VERCEL_PROJECT_PRODUCTION_URL: "terrastorybyallin.vercel.app", VERCEL_URL: undefined }) === "https://terrastorybyallin.vercel.app");
+check("a real configured site URL still wins on Vercel",
+  withEnv({ NEXT_PUBLIC_SITE_URL: "https://terrastory.in/", VERCEL_PROJECT_PRODUCTION_URL: "terrastorybyallin.vercel.app" }) === "https://terrastory.in");
+check("locally, localhost stays localhost",
+  withEnv({ NEXT_PUBLIC_SITE_URL: "http://localhost:3000", VERCEL_PROJECT_PRODUCTION_URL: undefined, VERCEL_URL: undefined }) === "http://localhost:3000");
+check("every account entry page shows its form only when auth and the database are both configured",
+  ["login/page.tsx", "login/code/page.tsx", "signup/page.tsx", "forgot-password/page.tsx"].every((f) => /accountsAvailable\(\) \?/.test(read(`src/app/(v1)/${f}`))) &&
+  /authConfigured\(\) && hasDatabase/.test(read("src/lib/auth/server.ts")));
+
 /* The guide's question goes to /api/assistant, which stores nothing
    (qa:guide-assistant B); its only account calls are body-less reads. */
 const guideAccountCalls = [...read("src/components/guide/TripGuide.tsx").matchAll(/fetch\([^)]*\/api\/account[^)]*\)/g)].map((m) => m[0]);

@@ -4,7 +4,7 @@ import { redirect } from "next/navigation";
 
 import { AuthShell } from "@/components/account/AuthShell";
 import { SignUpForm } from "@/components/account/AuthForms";
-import { authConfigured } from "@/lib/auth/server";
+import { accountsAvailable } from "@/lib/auth/server";
 import { currentUser } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default async function SignUpPage() {
         </p>
       }
     >
-      {authConfigured() ? (
+      {accountsAvailable() ? (
         <SignUpForm />
       ) : (
         <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
