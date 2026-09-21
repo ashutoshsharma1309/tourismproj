@@ -19,6 +19,7 @@ import { join } from "node:path";
 import { comparisonIds, eventForLocation } from "@/lib/account/activity";
 import { safeNextPath } from "@/lib/account/next";
 import { resolveSiteUrl } from "@/lib/constants";
+import { cleanEnv, supabasePublicKey, supabaseUrl } from "@/lib/supabase-env";
 import { allCoverage, themeIndex } from "@/lib/global";
 import { listDestinations } from "@/lib/destinations/registry";
 import {
@@ -218,6 +219,32 @@ check("locally, localhost stays localhost",
 check("every account entry page shows its form only when auth and the database are both configured",
   ["login/page.tsx", "login/code/page.tsx", "signup/page.tsx", "forgot-password/page.tsx"].every((f) => /accountsAvailable\(\) \?/.test(read(`src/app/(v1)/${f}`))) &&
   /authConfigured\(\) && hasDatabase/.test(read("src/lib/auth/server.ts")));
+
+/* Dashboard-delivered values: Vercel passes a declared-but-empty variable
+   as "", and pasted values carry spaces or quotes. */
+const withSupabaseEnv = (env: Record<string, string | undefined>) => {
+  const keys = ["NEXT_PUBLIC_SUPABASE_URL", "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY", "NEXT_PUBLIC_SUPABASE_ANON_KEY"];
+  const saved = Object.fromEntries(keys.map((k) => [k, process.env[k]]));
+  for (const k of keys) {
+    if (env[k] === undefined) delete process.env[k];
+    else process.env[k] = env[k];
+  }
+  try {
+    return { url: supabaseUrl(), key: supabasePublicKey() };
+  } finally {
+    for (const [k, v] of Object.entries(saved)) {
+      if (v === undefined) delete process.env[k];
+      else process.env[k] = v;
+    }
+  }
+};
+check("an empty publishable key falls back to the anon key",
+  withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: "https://x.supabase.co", NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "", NEXT_PUBLIC_SUPABASE_ANON_KEY: "anon" }).key === "anon");
+check("pasted quotes, spaces and a trailing slash are tolerated",
+  JSON.stringify(withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: ' "https://x.supabase.co/" ', NEXT_PUBLIC_SUPABASE_ANON_KEY: " 'anon' \n" })) === JSON.stringify({ url: "https://x.supabase.co", key: "anon" }));
+check("a blank value counts as not configured", cleanEnv("   ") === null && cleanEnv('""') === null && withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: " " }).url === null);
+check("no Supabase setting is read with `??` fallbacks outside the shared reader",
+  walk("src").filter((f) => f !== "src/lib/supabase-env.ts").every((f) => !/NEXT_PUBLIC_SUPABASE_(URL|ANON_KEY|PUBLISHABLE_KEY)/.test(strip(read(f)))));
 
 /* The guide's question goes to /api/assistant, which stores nothing
    (qa:guide-assistant B); its only account calls are body-less reads. */

@@ -1,6 +1,7 @@
 import "server-only";
 
 import { createClient } from "@supabase/supabase-js";
+import { cleanEnv, supabaseUrl } from "@/lib/supabase-env";
 
 /**
  * The one use of the Supabase service-role key in the account layer:
@@ -8,8 +9,8 @@ import { createClient } from "@supabase/supabase-js";
  * under src/db as CLAUDE.md §8 requires, never imported by a client module.
  */
 export async function deleteAuthUser(userId: string): Promise<{ ok: boolean; error?: string }> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = supabaseUrl();
+  const serviceKey = cleanEnv(process.env.SUPABASE_SERVICE_ROLE_KEY);
   if (!url || !serviceKey) return { ok: false, error: "Account deletion is not configured on this deployment." };
   const admin = createClient(url, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
   const { error } = await admin.auth.admin.deleteUser(userId);

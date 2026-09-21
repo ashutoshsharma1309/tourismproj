@@ -3,6 +3,7 @@ import { cookies } from "next/headers";
 
 import { hasDatabase } from "@/db";
 import { SESSION_COOKIE_OPTIONS } from "@/lib/auth/cookies";
+import { supabasePublicKey, supabaseUrl } from "@/lib/supabase-env";
 
 export { SESSION_COOKIE_OPTIONS };
 
@@ -27,9 +28,8 @@ export { SESSION_COOKIE_OPTIONS };
  * src/db and src/lib/payments (CLAUDE.md §8).
  */
 export async function createSupabaseServerClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key =
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = supabaseUrl();
+  const key = supabasePublicKey();
   if (!url || !key) return null;
 
   const cookieStore = await cookies();
@@ -56,8 +56,7 @@ export async function createSupabaseServerClient() {
 
 export function authConfigured(): boolean {
   return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      (process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY),
+    supabaseUrl() && supabasePublicKey(),
   );
 }
 

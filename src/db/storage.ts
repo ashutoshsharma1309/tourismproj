@@ -3,6 +3,7 @@ import "server-only";
 import { randomUUID } from "node:crypto";
 
 import { createClient } from "@supabase/supabase-js";
+import { cleanEnv, supabaseUrl } from "@/lib/supabase-env";
 
 /**
  * Private storage for vendor verification documents.
@@ -16,13 +17,13 @@ const BUCKET = "vendor-docs";
 const SIGNED_URL_SECONDS = 300;
 
 function adminClient() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const url = supabaseUrl();
+  const serviceKey = cleanEnv(process.env.SUPABASE_SERVICE_ROLE_KEY);
   if (!url || !serviceKey) return null;
   return createClient(url, serviceKey, { auth: { autoRefreshToken: false, persistSession: false } });
 }
 
-export const hasDocumentStorage = Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+export const hasDocumentStorage = Boolean(supabaseUrl() && cleanEnv(process.env.SUPABASE_SERVICE_ROLE_KEY));
 
 export async function storeVendorDocument(
   vendorId: string,
