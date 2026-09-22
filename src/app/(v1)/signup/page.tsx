@@ -20,7 +20,7 @@ export default async function SignUpPage() {
   return (
     <AuthShell
       title="Create your account"
-      intro="Name, e-mail and a password. Interests come next, and you can skip them."
+      intro="Name, email and a password. Interests come next, and you can skip them."
       footer={
         <p>
           Already have an account?{" "}
@@ -34,7 +34,7 @@ export default async function SignUpPage() {
         <SignUpForm />
       ) : (
         <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
-          Accounts are not available on this deployment. Everything on TerraStory can still be explored without one.
+          Sign-in is temporarily unavailable. Everything on TerraStory can still be explored without an account.
         </p>
       )}
     </AuthShell>

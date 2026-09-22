@@ -38,9 +38,14 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
             </Link>
           </p>
           <p>
+            <Link href="/" className="text-muted hover:text-primary hover:underline">
+              Continue exploring without an account
+            </Link>
+          </p>
+          <p className="mt-3 border-t border-border pt-3 text-caption text-subtle">
             Hotel partner or reviewer?{" "}
             <Link href={`/login/code?next=${encodeURIComponent(next ? target : "/partner/dashboard")}`} className="font-medium text-primary hover:underline">
-              Sign in with a one-time code
+              Partner sign-in
             </Link>
           </p>
         </div>
@@ -50,7 +55,7 @@ export default async function LoginPage({ searchParams }: { searchParams: Promis
         <SignInForm next={target} />
       ) : (
         <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">
-          Accounts are not available on this deployment. Everything on TerraStory can still be explored without one.
+          Sign-in is temporarily unavailable. Everything on TerraStory can still be explored without an account.
         </p>
       )}
     </AuthShell>

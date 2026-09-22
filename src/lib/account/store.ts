@@ -403,3 +403,21 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
   });
   return { ok: true, data: null };
 }
+
+/** Audit a new traveller account (CLAUDE.md R7). Never blocks the sign-up. */
+export async function recordSignUp(userId: string): Promise<void> {
+  if (!hasDatabase) return;
+  try {
+    await db.insert(auditLogs).values({ actorId: userId, action: "user.signed_up", entityType: "user", entityId: userId, after: { method: "password" } });
+  } catch (error) {
+    console.error("account: sign-up audit failed", (error as Error).message);
+  }
+}
+
+/** Whether this account owns a hotel partner organisation. */
+export async function ownsPartner(userId: string): Promise<boolean> {
+  if (!hasDatabase) return false;
+  const [row] = await db.select({ id: partners.id }).from(partners).where(eq(partners.ownerUserId, userId)).limit(1);
+  return Boolean(row);
+}
+

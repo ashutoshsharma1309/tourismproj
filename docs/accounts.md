@@ -14,8 +14,8 @@ used it for one-time codes. Travellers use e-mail and password.
 
 | Route | Purpose |
 |---|---|
-| `/signup` | Name, e-mail, password (min 8). Supabase sends a confirmation link. |
-| `/login` | "Welcome back." E-mail and password. Links to Forgot password and Create account. |
+| `/signup` | Name, e-mail, password (min 8) and its confirmation. The traveller is signed in at once — no confirmation e-mail (see below). |
+| `/login` | "Welcome back." E-mail and password, with show/hide. Links to Forgot password, Create account, and "Continue exploring without an account". Partner sign-in is a separate, smaller link. |
 | `/login/code` | One-time e-mail code, for hotel partners and reviewers. |
 | `/forgot-password` → e-mail → `/auth/callback` → `/auth/continue` → `/reset-password` | Choose a new password. |
 | Log out | Profile page, and the partner dashboard. |
@@ -32,8 +32,23 @@ used it for one-time codes. Travellers use e-mail and password.
   separate `ts_signed_in=1` cookie tells their small client islands whether
   to call `/api/account/*`. It holds no identity and grants nothing; every
   endpoint checks the real session, and a stale hint is dropped on 401.
-- **No account enumeration.** A failed sign-in has one message for every
-  cause. Password reset answers "if … has an account" for any address, even
+- **Sign-up without a confirmation e-mail.** `createTraveller`
+  (`src/db/auth-admin.ts`) creates the account confirmed and signs in, so the
+  project's shared mailer (a few messages an hour) never decides whether a
+  traveller can join. The password is marked unproven. A password session
+  never reaches reviewer rights or partner records (`provesInbox`), and the
+  first time anyone proves the inbox — a one-time code, an e-mail link, a
+  reset link — the unproven password is replaced and every other session
+  ends (`secureInboxProof`), so an address registered by someone else is
+  taken back by its owner automatically. An account holding a partner
+  organisation can only be deleted by an inbox-proven session. Sign-up says
+  plainly when an address is already in use.
+- **Row-level security** is on for every public table
+  (`drizzle/sql/0007_row_level_security.sql`), so Supabase's REST API gives
+  the publishable key nothing. The app is unaffected: it reads through
+  Drizzle as the table owner, which bypasses RLS.
+- **No account enumeration at sign-in.** A failed sign-in has one message
+  ("Email or password is incorrect.") for every cause. Password reset answers "if … has an account" for any address, even
   when sending fails (logged instead). Sign-up says so plainly when Supabase
   refuses an address or the project's e-mail sending limit is reached,
   because the traveller must know no account was created. That limit is

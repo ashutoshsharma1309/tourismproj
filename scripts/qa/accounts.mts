@@ -184,7 +184,11 @@ check("every account read filters on the session's user id", exported.every((bod
 check("session cookies are HttpOnly and SameSite=Lax", /httpOnly: true/.test(read("src/lib/auth/cookies.ts")) && /sameSite: "lax"/.test(read("src/lib/auth/cookies.ts")));
 check("the proxy runs only on account, auth, partner and admin routes",
   /matcher/.test(read("src/proxy.ts")) && !/"\/destinations|"\/\(\.\*\)|"\/:path\*"/.test(read("src/proxy.ts")));
-check("sign-in failure has one message for every cause", /const SIGN_IN_FAILED =/.test(read("src/app/(v1)/login/account-actions.ts")) && (read("src/app/(v1)/login/account-actions.ts").match(/SIGN_IN_FAILED/g) ?? []).length === 2);
+/* A wrong password and an unknown address must be indistinguishable. */
+check("sign-in failure has one message for every cause",
+  /const SIGN_IN_FAILED = "Email or password is incorrect\."/.test(read("src/app/(v1)/login/account-actions.ts")) &&
+    /return \{ status: "error", message: SIGN_IN_FAILED, email: emailValue \};\n    \}\n  \} catch/.test(read("src/app/(v1)/login/account-actions.ts")) &&
+    !/no account|not found|doesn.t exist|unknown user/i.test(strip(read("src/app/(v1)/login/account-actions.ts")).split("export async function signIn")[1]?.split("export async function signUp")[0] ?? "x"));
 check("sign-in, sign-up and reset are rate limited",
   ["sign-in", "sign-up", "password-reset"].every((scope) => read("src/app/(v1)/login/account-actions.ts").includes(`consumeQuota("${scope}"`)));
 check("the service-role key is read only under src/db or src/lib/payments",
@@ -270,7 +274,9 @@ check("every next-path check in the app uses the one validator",
 check("reviewer rights and partner records require a confirmed, code-proven session",
   /isAdmin = adminEmails\(\)\.has\(email\) && provesInbox\(session\)/.test(read("src/lib/auth/session.ts")) && /!provesInbox\(session\)\) return null/.test(read("src/lib/auth/session.ts")));
 check("an e-mail token link is exchanged only by a same-origin POST",
-  /export async function POST/.test(read("src/app/auth/callback/route.ts")) && /isSameOrigin\(request\)/.test(read("src/app/auth/callback/route.ts")) && !/verifyOtp[\s\S]*export async function POST/.test(read("src/app/auth/callback/route.ts")));
+  /export async function POST/.test(read("src/app/auth/callback/route.ts")) && /isSameOrigin\(request\)/.test(read("src/app/auth/callback/route.ts")) &&
+    !/verifyOtp/.test(read("src/app/auth/callback/route.ts").split("export async function GET")[1]?.split("export async function POST")[0] ?? "verifyOtp") &&
+    /token_hash: tokenHash/.test(read("src/app/auth/callback/route.ts").split("export async function POST")[1] ?? ""));
 check("a password can be set without the old one only after recent inbox proof", /recentInboxProof\(session\)/.test(read("src/app/(v1)/login/account-actions.ts")) && /recentInboxProof/.test(read("src/app/(v1)/reset-password/page.tsx")));
 check("account deletion handles every table that references users",
   ["partners", "partnerProperties", "vendorDocuments", "auditLogs", "reviews", "permitApplications", "trips", "bookings"].every((table) => new RegExp(`\\b${table}\\b`).test(strip(read("src/lib/account/store.ts")).split("export async function deleteAccountData")[1] ?? "")));
@@ -322,10 +328,13 @@ if (!serverUp) {
   check("/login offers Forgot password and Create account", /Forgot password\?/.test(lb) && /Create account/.test(lb));
   check("/login labels every field (no placeholder-only inputs)", (lb.match(/<label/g) ?? []).length >= 2 && !/placeholder=/.test(lb));
   check("/login is noindex", /noindex/.test(lb));
+  check("/login lets a visitor carry on without an account", /Continue exploring without an account/.test(lb));
+  check("/login keeps partner sign-in separate from the traveller form", /Partner sign-in/.test(lb) && /href="\/login\/code/.test(lb));
+  check("/login never says accounts are unavailable when they are configured", !/not available on this deployment|temporarily unavailable/.test(lb));
   const signup = await get("/signup");
   const sb = signup?.body ?? "";
-  check("/signup asks only for name, e-mail and password",
-    /name="name"/.test(sb) && /name="email"/.test(sb) && /name="password"/.test(sb) && (sb.match(/<input(?![^>]*type="hidden")/g) ?? []).length === 3,
+  check("/signup asks only for name, e-mail, password and its confirmation",
+    /name="name"/.test(sb) && /name="email"/.test(sb) && /name="password"/.test(sb) && /name="confirm"/.test(sb) && (sb.match(/<input(?![^>]*type="hidden")/g) ?? []).length === 4,
     String((sb.match(/<input(?![^>]*type="hidden")/g) ?? []).length));
   check("/signup explains what is stored", /stores your name, e-mail, the interests you choose/.test(sb));
   const backslash = await get("/auth/callback?next=%2F%5Cevil.example");
@@ -435,6 +444,10 @@ async function flows(supabaseUrl: string, serviceKey: string, databaseUrl: strin
   const overflow = (page: Page) => page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
 
   try {
+    /* The publishable key is public; row-level security is what makes it harmless. */
+    const openTables = await sql`select c.relname from pg_class c join pg_namespace n on n.oid = c.relnamespace where n.nspname = 'public' and c.relkind = 'r' and not c.relrowsecurity`;
+    check("every public table has row-level security (the REST API can't read it with the public key)", openTables.length === 0, openTables.map((r) => r.relname).join(","));
+
     /* ---------------------------------------------------------- 1. sign up */
     const signupEmail = emailFor("new");
     const signupContext = await newContext(390);
@@ -443,38 +456,56 @@ async function flows(supabaseUrl: string, serviceKey: string, databaseUrl: strin
     await signupPage.waitForTimeout(700);
     await signupPage.getByLabel("Name").fill("Asha Traveller");
     await signupPage.getByLabel("Email").fill(signupEmail);
-    await signupPage.getByLabel("Password").fill("short");
+    await signupPage.getByLabel("Password", { exact: true }).fill("short");
+    await signupPage.getByLabel("Confirm password", { exact: true }).fill("short");
     await signupPage.getByRole("button", { name: "Create account" }).click();
     await signupPage.waitForSelector('p[role="alert"]', { timeout: 45_000 });
     check("E1 sign-up refuses a password under 8 characters", /at least 8/i.test((await signupPage.locator('p[role="alert"]').textContent()) ?? ""));
     check("E1 sign-up keeps what was typed after an error", (await signupPage.getByLabel("Email").inputValue()) === signupEmail);
-    await signupPage.getByLabel("Password").fill(PASSWORD);
+    await signupPage.getByLabel("Password", { exact: true }).fill(PASSWORD);
+    await signupPage.getByLabel("Confirm password", { exact: true }).fill(`${PASSWORD}x`);
     await signupPage.getByRole("button", { name: "Create account" }).click();
-    /* Supabase refuses reserved test domains, which is what this suite uses so
-       no real inbox is ever written to: the form must say the address cannot
-       be used, not that a link is on its way. */
-    await signupPage.waitForFunction(
-      () => /can.t be used|couldn.t send|Check your inbox/.test(document.querySelector('main p[role="alert"], main div[role="status"]')?.textContent ?? ""),
-      undefined,
-      { timeout: 45_000 },
-    );
-    const answerText = (await signupPage.locator('main p[role="alert"], main div[role="status"]').first().textContent()) ?? "";
-    check("E1 sign-up never claims a link was sent when Supabase refused to send one", /can.t be used|couldn.t send/.test(answerText), answerText);
+    await signupPage.waitForFunction(() => /do not match/.test(document.querySelector('main p[role="alert"]')?.textContent ?? ""), undefined, { timeout: 45_000 });
+    check("E1 sign-up refuses a confirmation that doesn't match", true);
+    await signupPage.getByLabel("Confirm password", { exact: true }).fill(PASSWORD);
+    await signupPage.getByLabel("Show password", { exact: true }).click();
+    check("E1 the password can be shown to check it", (await signupPage.getByLabel("Password", { exact: true }).getAttribute("type")) === "text");
+    await signupPage.getByRole("button", { name: "Create account" }).click();
+    /* A new traveller is signed in straight away — no confirmation e-mail. */
+    await signupPage.waitForURL(/\/account\/interests/, { timeout: 60_000 });
+    check("E1 sign-up signs the new traveller straight in", signupPage.url().includes("/account/interests"));
+    const { data: listed } = await admin.auth.admin.listUsers({ perPage: 1000 });
+    const newAuth = listed.users.filter((u) => u.email === signupEmail);
+    for (const u of newAuth) created.push(u.id);
+    await poll(() => userId(signupEmail), (id) => Boolean(id));
+    const rows = await sql`select count(*)::int n from users where email = ${signupEmail}`;
+    check("E1 the new account is one sign-in and exactly one TerraStory user row", newAuth.length === 1 && rows[0]?.n === 1, `${newAuth.length} / ${rows[0]?.n}`);
     check("E1 the sign-up form fits a 390px screen", (await overflow(signupPage)) <= 1);
+    await logOut(signupPage);
+    /* The same address cannot be taken twice. */
+    await signupPage.goto(`${BASE}/signup`, { waitUntil: "load" });
+    await signupPage.waitForTimeout(700);
+    await signupPage.getByLabel("Name").fill("Someone Else");
+    await signupPage.getByLabel("Email").fill(signupEmail.toUpperCase());
+    await signupPage.getByLabel("Password", { exact: true }).fill("another-password-9");
+    await signupPage.getByLabel("Confirm password", { exact: true }).fill("another-password-9");
+    await signupPage.getByRole("button", { name: "Create account" }).click();
+    await signupPage.waitForSelector('p[role="alert"]', { timeout: 45_000 });
+    check("E1 an address already in use is reported, not duplicated", /already exists/.test((await signupPage.locator('p[role="alert"]').textContent()) ?? ""));
 
     /* Confirmation: an account whose e-mail is not confirmed cannot log in. */
+    const pendingEmail = emailFor("pending");
     const { data: unconfirmed, error: unconfirmedError } = await admin.auth.admin.createUser({
-      email: signupEmail, password: PASSWORD, email_confirm: false, user_metadata: { full_name: "Asha Traveller" },
+      email: pendingEmail, password: PASSWORD, email_confirm: false, user_metadata: { full_name: "Pending Traveller" },
     });
     if (unconfirmedError || !unconfirmed.user) throw new Error(`createUser unconfirmed: ${unconfirmedError?.message}`);
     created.push(unconfirmed.user.id);
     const early = await newContext();
     const earlyPage = await early.newPage();
-    await logIn(earlyPage, signupEmail);
+    await logIn(earlyPage, pendingEmail);
     const refused = await earlyPage.waitForSelector('p[role="alert"]', { timeout: 45_000 }).catch(() => null);
-    check("E1 an unconfirmed account cannot log in", Boolean(refused) && /confirm your e-mail/.test((await refused?.textContent()) ?? ""));
+    check("E1 an unconfirmed account cannot log in", Boolean(refused) && /Confirm your email/.test((await refused?.textContent()) ?? ""));
     await early.close();
-    await admin.auth.admin.updateUserById(unconfirmed.user.id, { email_confirm: true });
     await signupContext.close();
 
     /* --------------------------------------- 2. anonymous → log in → merge */
@@ -822,12 +853,12 @@ async function flows(supabaseUrl: string, serviceKey: string, databaseUrl: strin
     await pc.waitForTimeout(800);
     const NEW_PASSWORD = `${PASSWORD}-new`;
     await pc.getByLabel("New password", { exact: true }).fill(NEW_PASSWORD);
-    await pc.getByLabel("Confirm new password").fill(`${NEW_PASSWORD}x`);
+    await pc.getByLabel("Confirm new password", { exact: true }).fill(`${NEW_PASSWORD}x`);
     await pc.getByRole("button", { name: "Save new password" }).click();
     await pc.waitForSelector('p[role="alert"]', { timeout: 45_000 });
     check("E15 mismatched new passwords are refused", /do not match/.test((await pc.locator('p[role="alert"]').textContent()) ?? ""));
     await pc.getByLabel("New password", { exact: true }).fill(NEW_PASSWORD);
-    await pc.getByLabel("Confirm new password").fill(NEW_PASSWORD);
+    await pc.getByLabel("Confirm new password", { exact: true }).fill(NEW_PASSWORD);
     await pc.getByRole("button", { name: "Save new password" }).click();
     await pc.waitForSelector('div[role="status"]', { timeout: 45_000 });
     check("E15 the reset link lets the traveller choose a new password", /password has been changed/.test((await pc.locator('div[role="status"]').textContent()) ?? ""));
@@ -835,7 +866,7 @@ async function flows(supabaseUrl: string, serviceKey: string, databaseUrl: strin
     await logOut(pc);
     await logIn(pc, cEmail, PASSWORD);
     await pc.waitForSelector('p[role="alert"]', { timeout: 45_000 });
-    check("E15 the old password no longer works", /did not work/.test((await pc.locator('p[role="alert"]').textContent()) ?? ""));
+    check("E15 the old password no longer works", /Email or password is incorrect/.test((await pc.locator('p[role="alert"]').textContent()) ?? ""));
     await logIn(pc, cEmail, NEW_PASSWORD);
     await pc.waitForURL(/\/account/, { timeout: 45_000 });
     check("E15 the new password logs in", pc.url().includes("/account"));
@@ -877,7 +908,7 @@ async function flows(supabaseUrl: string, serviceKey: string, databaseUrl: strin
     if (cRow.length === 0) created.splice(created.indexOf(cId), 1);
     await logIn(pc, cEmail, NEW_PASSWORD);
     await pc.waitForSelector('p[role="alert"]', { timeout: 45_000 });
-    check("E17 a deleted account cannot log in", /did not work/.test((await pc.locator('p[role="alert"]').textContent()) ?? ""));
+    check("E17 a deleted account cannot log in", /Email or password is incorrect/.test((await pc.locator('p[role="alert"]').textContent()) ?? ""));
 
     /* ---------------------------------------------------- 18. signed-out guide */
     const g = await newContext();
