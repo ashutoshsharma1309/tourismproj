@@ -7,9 +7,9 @@ import { z } from "zod";
 
 import { deleteAuthUser } from "@/db/auth-admin";
 import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
-import { clearHistory, deleteAccountData, saveProfile, setHistoryEnabled, setInterests } from "@/lib/account/store";
+import { clearHistory, deleteAccountData, ownsPartner, saveProfile, setHistoryEnabled, setInterests } from "@/lib/account/store";
 import { createSupabaseServerClient } from "@/lib/auth/server";
-import { currentUser, ensureUserRow, forgetEnsuredUser } from "@/lib/auth/session";
+import { currentUser, ensureUserRow, forgetEnsuredUser, provesInbox } from "@/lib/auth/session";
 import { consumeQuota } from "@/lib/rate-limit";
 
 /**
@@ -88,6 +88,11 @@ export async function deleteAccountAction(_prev: SettingsState, form: FormData):
     return { status: "error", message: "Type DELETE to confirm." };
   }
   if (await limited(session.id)) return { status: "error", message: "Too many attempts. Please wait a few minutes." };
+  /* A password never proved the inbox; an account holding a partner
+     organisation is deleted only by a session that did. */
+  if (!provesInbox(session) && (await ownsPartner(session.id))) {
+    return { status: "error", message: "This account is linked to a hotel partner. Sign in with a one-time code from Partner sign-in, then delete it." };
+  }
   try {
     const outcome = await deleteAccountData(session.id);
     if (!outcome.ok) return { status: "error", message: outcome.error };

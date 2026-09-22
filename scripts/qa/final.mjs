@@ -94,6 +94,15 @@ const SUITES = [
      knowledge, event mapping, code guarantees, signed-out boundaries, and
      with a database the full traveller flow including user-to-user isolation. */
   { name: "qa:accounts", script: "scripts/qa/accounts.mts", reads: "server", runner: "tsx" },
+  /* Booking: stay and money rules, the hold engine under real parallel
+     transactions, expiry, and search → listing → hold → checkout in a browser. */
+  { name: "qa:booking", script: "scripts/qa/booking.mts", reads: "server", runner: "tsx" },
+  /* Plans, entitlements and the gates they drive, enforced server-side. */
+  { name: "qa:subscriptions", script: "scripts/qa/subscriptions.mts", reads: "server", runner: "tsx" },
+  /* The government console: jurisdiction, verification decisions, advisories. */
+  { name: "qa:government", script: "scripts/qa/government.mts", reads: "server", runner: "tsx" },
+  /* The TerraStory Guide: tools, grounding, refusals, voice, and the panel. */
+  { name: "qa:guide-assistant", script: "scripts/qa/guide-assistant.mts", reads: "server", runner: "tsx" },
 ];
 
 /** Suites report in three formats; all three are parsed, none is assumed. */

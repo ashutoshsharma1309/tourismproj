@@ -3,12 +3,17 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { BookingPanel, stayFromParams } from "@/components/booking/BookingPanel";
 import { DestinationBreadcrumb } from "@/components/destinations/DestinationBreadcrumb";
 import { Footer } from "@/components/layout/Footer";
 import { ReferralLink } from "@/components/partners/ReferralLink";
 import { Badge } from "@/components/ui/Badge";
 import { buttonClasses } from "@/components/ui/Button";
+import { listingsWithRates } from "@/db/queries/booking";
 import { publishedProperty } from "@/db/queries/partners";
+import { bookingTranslator } from "@/lib/i18n/booking-messages";
+import { requestLanguage } from "@/lib/i18n/request";
+import { todayInKolkata } from "@/lib/partners/calendar";
 import { resolveDestinationOrNull } from "@/lib/destinations/resolve";
 import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
 
@@ -18,8 +23,9 @@ import { ACCOMMODATION_LABEL } from "@/lib/partners/schema";
  * Renders only a PUBLISHED row of the destination in the URL; any other
  * status, any other destination, or an unknown id is a 404 — the same
  * answer for "not published yet" and "does not exist", so the URL leaks
- * nothing about the review queue. Every action leads to the property's own
- * channel through a ReferralLink. There is no rate, availability or booking.
+ * nothing about the review queue. The property's own channels are
+ * ReferralLinks; rooms and rates appear only when the partner has configured
+ * them, and reserving holds rooms through the booking engine.
  *
  * WHY THIS ROUTE DOES NOT SET dynamicParams = false
  * Every other page under /destinations/[destinationId] refuses params it did
@@ -33,6 +39,7 @@ export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ destinationId: string; propertyId: string }>;
+  searchParams?: Promise<Record<string, string | string[] | undefined>>;
 }
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -56,10 +63,19 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
-export default async function PartnerStayPage({ params }: PageProps) {
+export default async function PartnerStayPage({ params, searchParams }: PageProps) {
   const data = await load(await params);
   if (!data) notFound();
   const { destination, property } = data;
+  const t = bookingTranslator(await requestLanguage());
+  const stay = stayFromParams((await searchParams) ?? {});
+  const today = todayInKolkata(new Date());
+  const directBooking = (await listingsWithRates([property.id])).has(property.id);
+  const pagePath = `/destinations/${destination.id}/partner-stays/${property.id}`;
+  const houseInfo = [
+    property.checkInFrom ? { label: t("book.checkInFrom"), value: property.checkInFrom } : null,
+    property.checkOutBy ? { label: t("book.checkOutBy"), value: property.checkOutBy } : null,
+  ].filter((row): row is { label: string; value: string } => row !== null);
   const ref = { destinationId: destination.id, propertyId: property.id };
   const tel = property.contactPhone ? property.contactPhone.replace(/[^\d+]/g, "") : null;
 
@@ -126,10 +142,14 @@ export default async function PartnerStayPage({ params }: PageProps) {
             </ReferralLink>
           ) : null}
         </div>
-        <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
-          You book with the property directly. TerraStory does not hold rates or availability, takes
-          no payment and is not party to the booking.
-        </p>
+        {directBooking ? null : (
+          <p className="mt-3 max-w-2xl text-small leading-relaxed text-muted">
+            You book with the property directly. TerraStory does not hold rates or availability, takes
+            no payment and is not party to the booking.
+          </p>
+        )}
+
+        <BookingPanel listingId={property.id} pagePath={pagePath} stay={stay} today={today} t={t} />
 
         {/* --------------------------------------------------------- content */}
         {property.description ? (
@@ -152,6 +172,35 @@ export default async function PartnerStayPage({ params }: PageProps) {
                 <li key={a} className="rounded-full border border-border px-3 py-1 text-small text-muted">{a}</li>
               ))}
             </ul>
+          </section>
+        ) : null}
+
+        {houseInfo.length > 0 || property.houseRules || property.cancellationTerms ? (
+          <section className="mt-8" aria-labelledby="house">
+            <h2 id="house" className="font-display text-h3">{t("book.houseInfo")}</h2>
+            {houseInfo.length > 0 ? (
+              <dl className="mt-3 flex flex-wrap gap-x-8 gap-y-2">
+                {houseInfo.map((row) => (
+                  <div key={row.label}>
+                    <dt className="text-caption text-subtle">{row.label}</dt>
+                    <dd className="font-mono text-body" data-numeric>{row.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            ) : null}
+            {property.houseRules ? (
+              <div className="mt-3">
+                <p className="text-caption text-subtle">{t("book.houseRules")}</p>
+                <p className="mt-0.5 max-w-prose text-body leading-relaxed text-muted whitespace-pre-line">{property.houseRules}</p>
+              </div>
+            ) : null}
+            {property.cancellationTerms ? (
+              <div className="mt-3">
+                <p className="text-caption text-subtle">{t("book.cancellation")}</p>
+                <p className="mt-0.5 max-w-prose text-body leading-relaxed text-muted whitespace-pre-line">{property.cancellationTerms}</p>
+                <p className="mt-1 text-caption text-subtle">{t("book.cancellationNote")}</p>
+              </div>
+            ) : null}
           </section>
         ) : null}
 

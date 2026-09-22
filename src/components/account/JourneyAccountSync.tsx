@@ -39,12 +39,12 @@ export function setLinked(on: boolean) {
   }
 }
 
-export async function saveJourney(destinationIds: string[], completedIds: string[]): Promise<boolean> {
+export async function saveJourney(destinationIds: string[], completedIds: string[], placeIds: string[] = []): Promise<boolean> {
   try {
     const response = await fetch("/api/account/journey", {
       method: "PUT",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ destinationIds, completedIds }),
+      body: JSON.stringify({ destinationIds, completedIds, placeIds }),
       credentials: "same-origin",
     });
     if (response.status === 401) clearSignedInHint();
@@ -69,20 +69,20 @@ export function JourneyAccountSync() {
         if (response.status === 401) clearSignedInHint();
         return response.ok ? response.json() : null;
       })
-      .then((body: { journey: { destinationIds: string[]; completedIds: string[] } | null } | null) => {
+      .then((body: { journey: { destinationIds: string[]; completedIds: string[]; placeIds?: string[] } | null } | null) => {
         if (cancelled) return;
         const saved = body?.journey ?? null;
         if (saved && journey.destinations.length === 0) {
-          replace({ destinations: saved.destinationIds, completed: saved.completedIds });
-          lastSaved.current = JSON.stringify([saved.destinationIds, saved.completedIds]);
+          replace({ destinations: saved.destinationIds, completed: saved.completedIds, places: saved.placeIds ?? [] });
+          lastSaved.current = JSON.stringify([saved.destinationIds, saved.completedIds, saved.placeIds ?? []]);
           setLinked(true);
         } else if (saved && linked()) {
-          lastSaved.current = JSON.stringify([saved.destinationIds, saved.completedIds]);
+          lastSaved.current = JSON.stringify([saved.destinationIds, saved.completedIds, saved.placeIds ?? []]);
         } else if (!saved && journey.destinations.length === 0) {
           /* Signed in, nothing saved, nothing on the device: a journey started
              from here on is this traveller's own, so it is saved as it grows. */
           setLinked(true);
-          lastSaved.current = JSON.stringify([[], []]);
+          lastSaved.current = JSON.stringify([[], [], []]);
         }
         setReady(true);
       })
@@ -96,10 +96,10 @@ export function JourneyAccountSync() {
   /* Afterwards: save changes to a linked journey, debounced. */
   useEffect(() => {
     if (!ready || !hasSignedInHint() || !linked()) return;
-    const key = JSON.stringify([journey.destinations, journey.completed]);
+    const key = JSON.stringify([journey.destinations, journey.completed, journey.places]);
     if (key === lastSaved.current) return;
     const timer = window.setTimeout(() => {
-      void saveJourney(journey.destinations, journey.completed).then((ok) => {
+      void saveJourney(journey.destinations, journey.completed, journey.places).then((ok) => {
         if (ok) lastSaved.current = key;
       });
     }, 600);

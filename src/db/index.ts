@@ -2,6 +2,7 @@ import { drizzle } from "drizzle-orm/postgres-js";
 import postgres from "postgres";
 
 import * as schema from "@/db/schema";
+import { cleanEnv } from "@/lib/supabase-env";
 
 /**
  * The database handle.
@@ -16,7 +17,7 @@ import * as schema from "@/db/schema";
  * nothing to pool. Locally a small pool is useful because the dev server is
  * one long-lived process.
  */
-const connectionString = process.env.DATABASE_URL;
+const connectionString = cleanEnv(process.env.DATABASE_URL) ?? undefined;
 
 /**
  * Whether a Postgres connection is configured at all.

@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { SESSION_COOKIE_OPTIONS } from "@/lib/auth/cookies";
 import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
+import { supabasePublicKey, supabaseUrl } from "@/lib/supabase-env";
 
 /**
  * Keeps the Supabase session fresh on the routes that read it.
@@ -19,9 +20,8 @@ import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
 
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key =
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ?? process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = supabaseUrl();
+  const key = supabasePublicKey();
   if (!url || !key) return response;
 
   const supabase = createServerClient(url, key, {
@@ -54,6 +54,16 @@ export const config = {
     "/forgot-password",
     "/reset-password",
     "/partner/dashboard",
+    "/partner/verification",
+    "/partner/listings/:path*",
+    "/partner/calendar",
+    "/partner/analytics",
+    "/partner/team",
+    "/partner/plan",
+    "/partner/reports/:path*",
+    "/checkout/:path*",
+    "/government",
+    "/government/:path*",
     "/admin/:path*",
     /* Not /api/account: those route handlers validate the session themselves
        and can write refreshed cookies, so a proxy pass would only repeat the

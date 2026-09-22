@@ -1,6 +1,6 @@
-import { jsonb, pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
+import { index, jsonb, pgEnum, pgTable, text, timestamp, uuid } from "drizzle-orm/pg-core";
 
-import { destinations } from "@/db/schema/content";
+import { govOrganisations } from "@/db/schema/government";
 import { users } from "@/db/schema/identity";
 
 /**
@@ -21,19 +21,35 @@ export const advisorySeverity = pgEnum("advisory_severity", [
  * to switch off is worse than none, because it teaches readers to ignore the
  * banner. `startsAt`/`endsAt` make expiry automatic.
  */
-export const advisories = pgTable("advisories", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  destinationId: uuid("destination_id")
-    .notNull()
-    .references(() => destinations.id, { onDelete: "cascade" }),
-  severity: advisorySeverity("severity").notNull().default("INFO"),
-  title: text("title").notNull(),
-  body: text("body"),
-  startsAt: timestamp("starts_at", { withTimezone: true }),
-  endsAt: timestamp("ends_at", { withTimezone: true }),
-  /* Who said so. An advisory without an attributable source is a rumour. */
-  source: text("source"),
-});
+export const advisoryKind = pgEnum("advisory_kind", ["PERMIT", "WEATHER", "CLOSURE", "RESTRICTION", "OTHER"]);
+
+export const advisoryStatus = pgEnum("advisory_status", ["DRAFT", "PUBLISHED", "WITHDRAWN"]);
+
+export const advisories = pgTable(
+  "advisories",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    /* A registry destination id ("jaipur"), the vocabulary travellers and
+       partners use — not the district uuid this column once held. */
+    destinationId: text("destination_id").notNull(),
+    kind: advisoryKind("kind").notNull().default("OTHER"),
+    severity: advisorySeverity("severity").notNull().default("INFO"),
+    title: text("title").notNull(),
+    body: text("body"),
+    startsAt: timestamp("starts_at", { withTimezone: true }),
+    endsAt: timestamp("ends_at", { withTimezone: true }),
+    /* Who said so. An advisory without an attributable source is a rumour:
+       the issuing authority is a row, and its name is shown with the text. */
+    source: text("source"),
+    orgId: uuid("org_id").references(() => govOrganisations.id, { onDelete: "set null" }),
+    status: advisoryStatus("status").notNull().default("DRAFT"),
+    createdBy: uuid("created_by").references(() => users.id),
+    publishedAt: timestamp("published_at", { withTimezone: true }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [index("advisories_destination_status_idx").on(table.destinationId, table.status)],
+);
 
 /**
  * Every verification decision, refund and role change.

@@ -55,6 +55,14 @@ const MIGRATED_ROUTES = [
 const GLOBAL_INDEX_ROUTES = new Set(["stories", "history"]);
 
 const nextConfig: NextConfig = {
+  experimental: {
+    serverActions: {
+      /* Partner verification documents are capped at 4 MB in the action
+         (lib/partners/inventory-schema.ts); the default 1 MB would refuse a
+         scanned certificate before the action could explain why. */
+      bodySizeLimit: "5mb",
+    },
+  },
   async redirects() {
     return MIGRATED_ROUTES.flatMap((route) => [
       /*

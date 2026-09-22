@@ -4,11 +4,13 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
 
+import { createTraveller } from "@/db/auth-admin";
 import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
 import { safeNextPath } from "@/lib/account/next";
 import { createSupabaseServerClient } from "@/lib/auth/server";
 import { ensureUserRow, currentUser, recentInboxProof } from "@/lib/auth/session";
 import { SITE_URL } from "@/lib/constants";
+import { recordSignUp } from "@/lib/account/store";
 import { consumeQuota } from "@/lib/rate-limit";
 
 /**
@@ -18,12 +20,13 @@ import { consumeQuota } from "@/lib/rate-limit";
  * tokens with rotating refresh tokens; this file never sees a hash. The
  * session lives in HttpOnly cookies (lib/auth/cookies.ts).
  *
- * NO ACCOUNT ENUMERATION
- * ----------------------
- * Sign-in failure, sign-up and password reset each answer with ONE message
- * whether or not the address has an account, and sign-up for an address that
- * already exists looks exactly like a fresh one (Supabase confirms by e-mail
- * either way). Every action is rate limited per client.
+ * WHAT EACH ANSWER REVEALS
+ * ------------------------
+ * Sign-in failure and password reset answer with ONE message whether or not
+ * the address has an account. Sign-up signs a new traveller straight in
+ * (db/auth-admin.ts explains why that is safe), so it must say when an
+ * address is already taken — the same as any conventional sign-up. Every
+ * action is rate limited per client and per address.
  */
 
 export interface AuthState {
@@ -33,7 +36,7 @@ export interface AuthState {
   name?: string;
 }
 
-const email = z.string().trim().toLowerCase().email("Enter a valid e-mail address.").max(254);
+const email = z.string().trim().toLowerCase().email("Enter a valid email address.").max(254, "Enter a valid email address.");
 const password = z
   .string()
   .min(8, "Use at least 8 characters.")
@@ -51,17 +54,24 @@ async function setHint(on: boolean) {
   else store.set(SIGNED_IN_HINT, "", { ...HINT_COOKIE_OPTIONS, maxAge: 0 });
 }
 
-const SIGN_IN_FAILED =
-  "That e-mail and password did not work. Check both, or confirm your e-mail address from the message we sent when you signed up.";
+const SIGN_IN_FAILED = "Email or password is incorrect.";
+const UNREACHABLE = "We couldn't connect right now. Please try again.";
+const UNAVAILABLE = "Sign-in is temporarily unavailable. Please try again later.";
+
+/** Supabase's own network and outage failures, told apart from a wrong password. */
+const isOutage = (error: { status?: number; name?: string }) =>
+  error.name === "AuthRetryableFetchError" || error.status === 0 || (error.status ?? 0) >= 500;
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
-  const address = email.safeParse(text(form, "email"));
-  const secret = z.string().min(1).max(72).safeParse(text(form, "password"));
-  if (!address.success || !secret.success) {
-    return { status: "error", message: "Enter your e-mail address and password.", email: text(form, "email") };
-  }
+  const typed = text(form, "email");
+  if (!typed.trim()) return { status: "error", message: "Enter your email address.", email: typed };
+  const address = email.safeParse(typed);
+  if (!address.success) return { status: "error", message: "Enter a valid email address.", email: typed };
+  const passwordValue = text(form, "password");
+  if (!passwordValue) return { status: "error", message: "Enter your password.", email: typed };
+  /* No TerraStory password is longer than 72 characters (bcrypt's limit). */
+  if (passwordValue.length > 72) return { status: "error", message: SIGN_IN_FAILED, email: typed };
   const { data: emailValue } = address;
-  const { data: passwordValue } = secret;
 
   /* Per client AND per address: many clients cannot grind one account, and one
      client cannot spray many. */
@@ -70,10 +80,27 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
   if (!quota.ok || !perAddress.ok) return { status: "error", message: "Too many attempts. Please wait a few minutes and try again.", email: emailValue };
 
   const supabase = await createSupabaseServerClient();
-  if (!supabase) return { status: "error", message: "Accounts are not available on this deployment." };
+  if (!supabase) return { status: "error", message: UNAVAILABLE, email: emailValue };
 
-  const { error } = await supabase.auth.signInWithPassword({ email: emailValue, password: passwordValue });
-  if (error) return { status: "error", message: SIGN_IN_FAILED, email: emailValue };
+  try {
+    const { error } = await supabase.auth.signInWithPassword({ email: emailValue, password: passwordValue });
+    if (error) {
+      if (error.code === "email_not_confirmed") {
+        return { status: "error", message: "Confirm your email address using the link we sent you, then log in.", email: emailValue };
+      }
+      if (error.status === 429 || error.code === "over_request_rate_limit") {
+        return { status: "error", message: "Too many attempts. Please wait a few minutes and try again.", email: emailValue };
+      }
+      if (isOutage(error)) {
+        console.error("account: sign-in unavailable", error.status ?? "", error.code ?? "");
+        return { status: "error", message: error.status === 0 || error.name === "AuthRetryableFetchError" ? UNREACHABLE : UNAVAILABLE, email: emailValue };
+      }
+      return { status: "error", message: SIGN_IN_FAILED, email: emailValue };
+    }
+  } catch (error) {
+    console.error("account: sign-in request failed", (error as Error).message);
+    return { status: "error", message: UNREACHABLE, email: emailValue };
+  }
 
   const session = await currentUser();
   if (session) await ensureUserRow(session);
@@ -90,8 +117,11 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     return { status: "error", message: parsed.error.issues[0]?.message ?? "Check the form.", ...values };
   }
   const { data: input } = parsed;
+  if (form.has("confirm") && text(form, "confirm") !== input.password) {
+    return { status: "error", message: "The two passwords do not match.", ...values };
+  }
   if (input.password.toLowerCase() === input.email) {
-    return { status: "error", message: "Choose a password that is not your e-mail address.", ...values };
+    return { status: "error", message: "Choose a password that is not your email address.", ...values };
   }
 
   const quota = await consumeQuota("sign-up", 5, 60 * 60 * 1000);
@@ -99,8 +129,33 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
   if (!quota.ok || !perAddress.ok) return { status: "error", message: "Too many sign-ups from here. Please try again later.", ...values };
 
   const supabase = await createSupabaseServerClient();
-  if (!supabase) return { status: "error", message: "Accounts are not available on this deployment.", ...values };
+  if (!supabase) return { status: "error", message: UNAVAILABLE, ...values };
 
+  /* The conventional path: create the account and sign in, no e-mail round trip. */
+  const created = await createTraveller({ email: input.email, password: input.password, name: input.name });
+  if (created.ok) {
+    const { error } = await supabase.auth.signInWithPassword({ email: input.email, password: input.password });
+    if (error) {
+      console.error("account: sign-in after sign-up failed", error.code ?? "", error.message);
+      return { status: "error", message: "Your account was created. Log in to continue.", ...values };
+    }
+    const session = await currentUser();
+    if (session) {
+      await ensureUserRow(session);
+      await recordSignUp(session.id);
+    }
+    await setHint(true);
+    redirect("/account/interests?welcome=1");
+  }
+  if (created.reason === "exists") {
+    return { status: "error", message: "An account with this email already exists. Log in, or use Forgot password if you don't remember it.", ...values };
+  }
+  if (created.reason === "invalid-email") return { status: "error", message: "That email address can't be used. Check it and try again.", ...values };
+  if (created.reason === "weak-password") {
+    return { status: "error", message: "Choose a stronger password: at least 8 characters that aren't easy to guess.", ...values };
+  }
+
+  /* Without the service key: Supabase's own sign-up, confirmed by e-mail. */
   const { data: result, error } = await supabase.auth.signUp({
     email: input.email,
     password: input.password,
@@ -110,20 +165,15 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     },
   });
   if (error) {
-    /* Weak-password and similar policy errors are safe to show; anything else
-       gets the same answer a new address would. */
     if (/password/i.test(error.message)) return { status: "error", message: error.message, ...values };
-    /* An address Supabase will never accept says nothing about who has an
-       account, and "a link is on its way" would be untrue. */
     if (error.code === "email_address_invalid" || /email address .* is invalid/i.test(error.message)) {
-      return { status: "error", message: "That e-mail address can't be used. Check it and try again.", ...values };
+      return { status: "error", message: "That email address can't be used. Check it and try again.", ...values };
     }
-    /* The project's e-mail sending limit is shared by every address, so saying
-       so reveals nothing about any one of them. */
     if (error.code === "over_email_send_rate_limit" || error.status === 429) {
-      return { status: "error", message: "We couldn't send the confirmation e-mail just now. Please try again in a little while.", ...values };
+      return { status: "error", message: "We couldn't send the confirmation email just now. Please try again in a little while.", ...values };
     }
     console.error("account: sign-up failed", error.message);
+    return { status: "error", message: isOutage(error) ? UNAVAILABLE : "The account could not be created. Please try again.", ...values };
   }
 
   if (result?.session) {
@@ -142,7 +192,7 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
 
 export async function requestPasswordReset(_prev: AuthState, form: FormData): Promise<AuthState> {
   const address = email.safeParse(text(form, "email"));
-  if (!address.success) return { status: "error", message: "Enter a valid e-mail address.", email: text(form, "email") };
+  if (!address.success) return { status: "error", message: "Enter a valid email address.", email: text(form, "email") };
   const { data: emailValue } = address;
 
   const quota = await consumeQuota("password-reset", 5, 60 * 60 * 1000);
@@ -155,7 +205,7 @@ export async function requestPasswordReset(_prev: AuthState, form: FormData): Pr
   if (!quota.ok) return { status: "error", message: "Too many requests. Please try again later.", email: emailValue };
 
   const supabase = await createSupabaseServerClient();
-  if (!supabase) return { status: "error", message: "Accounts are not available on this deployment." };
+  if (!supabase) return { status: "error", message: UNAVAILABLE };
 
   const { error } = await supabase.auth.resetPasswordForEmail(emailValue, {
     redirectTo: `${SITE_URL}/auth/callback?next=${encodeURIComponent("/reset-password")}`,
@@ -189,7 +239,7 @@ export async function updatePassword(_prev: AuthState, form: FormData): Promise<
   if (!quota.ok) return { status: "error", message: "Too many attempts. Please wait a few minutes." };
 
   const supabase = await createSupabaseServerClient();
-  if (!supabase) return { status: "error", message: "Accounts are not available on this deployment." };
+  if (!supabase) return { status: "error", message: UNAVAILABLE };
   const { error } = await supabase.auth.updateUser({ password: next });
   if (error) return { status: "error", message: /password/i.test(error.message) ? error.message : "The password could not be changed." };
   /* Whoever else held a session — the reason for a reset, often — is signed out. */

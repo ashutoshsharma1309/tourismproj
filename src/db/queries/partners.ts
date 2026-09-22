@@ -1,4 +1,4 @@
-import { and, count, desc, eq, sql } from "drizzle-orm";
+import { and, count, desc, eq, inArray, sql } from "drizzle-orm";
 
 import { db, hasDatabase } from "@/db";
 import { partnerAgreements, partnerProperties, partners, referralEvents } from "@/db/schema";
@@ -37,6 +37,14 @@ const toPublic = (row: { property: PropertyRow; contactPhone: string | null }): 
   contactPhone: row.contactPhone,
 });
 
+/**
+ * A listing is valid for travellers only while it is PUBLISHED and its vendor
+ * is still verified. The database unpublishes a de-verified vendor's listings
+ * (drizzle/sql/0002); this second condition keeps a page honest in the moment
+ * between the two.
+ */
+const vendorIsVerified = inArray(partners.status, ["VERIFIED", "APPROVED"]);
+
 /** Travellers: the verified, published partner stays of one destination. */
 export async function publishedPropertiesFor(destinationId: string): Promise<PublicProperty[]> {
   if (!hasDatabase) return [];
@@ -44,7 +52,7 @@ export async function publishedPropertiesFor(destinationId: string): Promise<Pub
     .select(publicShape)
     .from(partnerProperties)
     .innerJoin(partners, eq(partnerProperties.partnerId, partners.id))
-    .where(and(eq(partnerProperties.destinationId, destinationId), eq(partnerProperties.status, "PUBLISHED")))
+    .where(and(eq(partnerProperties.destinationId, destinationId), eq(partnerProperties.status, "PUBLISHED"), vendorIsVerified))
     .orderBy(desc(partnerProperties.publishedAt));
   return rows.map(toPublic);
 }
@@ -61,6 +69,7 @@ export async function publishedProperty(destinationId: string, propertyId: strin
         eq(partnerProperties.id, propertyId),
         eq(partnerProperties.destinationId, destinationId),
         eq(partnerProperties.status, "PUBLISHED"),
+        vendorIsVerified,
       ),
     )
     .limit(1);

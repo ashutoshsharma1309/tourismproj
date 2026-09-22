@@ -13,6 +13,9 @@ import { createJourneyStore } from "@/lib/journey/store";
 import {
   EMPTY_JOURNEY,
   MAX_JOURNEY_DESTINATIONS,
+  addPlace,
+  placeDestination,
+  removePlace,
   completeDestination,
   currentDestination,
   journeyComplete,
@@ -71,7 +74,11 @@ interface JourneyContextValue {
    * Put a journey saved to the traveller's account onto this device.
    * Unknown ids are dropped by the store's sanitise-on-read.
    */
-  replace: (next: { destinations: string[]; completed: string[] }) => void;
+  replace: (next: { destinations: string[]; completed: string[]; places?: string[] }) => void;
+  /** Remember a place. Only ever called from an explicit traveller action. */
+  addPlace: (placeId: string) => void;
+  removePlace: (placeId: string) => void;
+  hasPlace: (placeId: string) => boolean;
 }
 
 const JourneyContext = createContext<JourneyContextValue | null>(null);
@@ -115,6 +122,7 @@ export function JourneyProvider({
         store.set({
           ...journey,
           destinations: journey.destinations.filter((entry) => entry !== id),
+          places: journey.places.filter((placeId) => placeDestination(placeId) !== id),
         }),
       toggleInterestId: (interest) => store.set(toggleInterest(journey, interest)),
       clear: () => store.set(EMPTY_JOURNEY),
@@ -124,7 +132,16 @@ export function JourneyProvider({
       current: currentDestination(journey),
       nextAfter: (id) => nextDestination(journey, id),
       finished: journeyComplete(journey),
-      replace: (next) => store.set({ ...journey, destinations: next.destinations, completed: next.completed }),
+      replace: (next) =>
+        store.set({
+          ...journey,
+          destinations: next.destinations,
+          completed: next.completed,
+          places: (next.places ?? journey.places).filter((placeId) => next.destinations.includes(placeDestination(placeId) ?? "")),
+        }),
+      addPlace: (placeId) => store.set(addPlace(journey, placeId)),
+      removePlace: (placeId) => store.set(removePlace(journey, placeId)),
+      hasPlace: (placeId) => journey.places.includes(placeId),
     }),
     [journey, hydrated, store],
   );

@@ -12,9 +12,10 @@ import {
 } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
 
-import { bookingItems, listings } from "@/db/schema/commerce";
+import { bookingItems } from "@/db/schema/commerce";
 import { destinations, sites } from "@/db/schema/content";
 import { users } from "@/db/schema/identity";
+import { partnerProperties } from "@/db/schema/partners";
 
 /**
  * Trips — the planner's output, and the thing that makes it more than prose.
@@ -79,7 +80,7 @@ export const tripStops = pgTable(
     orderIndex: integer("order_index").notNull(),
     kind: tripStopKind("kind").notNull(),
     siteId: uuid("site_id").references(() => sites.id, { onDelete: "set null" }),
-    listingId: uuid("listing_id").references(() => listings.id, { onDelete: "set null" }),
+    listingId: uuid("listing_id").references(() => partnerProperties.id, { onDelete: "set null" }),
     /* Set when the trip is booked. This is what makes an itinerary a cart. */
     bookingItemId: uuid("booking_item_id").references(() => bookingItems.id, {
       onDelete: "set null",

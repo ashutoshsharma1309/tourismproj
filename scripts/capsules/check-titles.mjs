@@ -39,7 +39,7 @@ async function resolveBatch(titles) {
   for (let attempt = 0; attempt < 6; attempt += 1) {
     try {
       response = await fetch(url, { headers: { "user-agent": UA } });
-    } catch (error) {
+    } catch {
       await sleep(10_000 * (attempt + 1));
       continue;
     }

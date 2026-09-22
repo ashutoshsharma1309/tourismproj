@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import type { SupabaseClient } from "@supabase/supabase-js";
+import { supabasePublicKey, supabaseUrl } from "@/lib/supabase-env";
 
 /**
  * Browser-safe Supabase client, or null when the project is not configured.
@@ -13,10 +14,8 @@ let cached: SupabaseClient | null | undefined;
 
 export function getSupabase(): SupabaseClient | null {
   if (cached !== undefined) return cached;
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key =
-    process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY ??
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = supabaseUrl();
+  const key = supabasePublicKey();
   cached = url && key ? createClient(url, key) : null;
   return cached;
 }

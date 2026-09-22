@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 
+import { secureInboxProof } from "@/db/auth-admin";
 import { HINT_COOKIE_OPTIONS, SIGNED_IN_HINT } from "@/lib/account/hint";
 import { safeNextPath } from "@/lib/account/next";
 import { isSameOrigin } from "@/lib/account/origin";
@@ -41,8 +42,11 @@ export async function GET(request: Request) {
   if (code) {
     const supabase = await createSupabaseServerClient();
     if (supabase) {
-      const { error } = await supabase.auth.exchangeCodeForSession(code);
-      if (!error) return signedIn(new URL(next, url.origin));
+      const { data: exchanged, error } = await supabase.auth.exchangeCodeForSession(code);
+      if (!error) {
+        await retireUnprovenPassword(supabase, exchanged.user.id);
+        return signedIn(new URL(next, url.origin));
+      }
     }
     return backToLogin(url.origin, next);
   }
@@ -71,8 +75,21 @@ export async function POST(request: Request) {
   }
   const supabase = await createSupabaseServerClient();
   if (supabase) {
-    const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as OtpType });
-    if (!error) return signedIn(new URL(next, url.origin));
+    const { data: verified, error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: type as OtpType });
+    if (!error) {
+      if (verified.user) await retireUnprovenPassword(supabase, verified.user.id);
+      return signedIn(new URL(next, url.origin));
+    }
   }
   return backToLogin(url.origin, next);
+}
+
+/**
+ * The inbox was just proved: retire a password nobody proved (db/auth-admin.ts)
+ * and, since that ends every session, sign the owner straight back in with the
+ * one-use token the server itself just issued — never one taken from the URL.
+ */
+async function retireUnprovenPassword(supabase: NonNullable<Awaited<ReturnType<typeof createSupabaseServerClient>>>, userId: string) {
+  const fresh = await secureInboxProof(userId);
+  if (fresh) await supabase.auth.verifyOtp({ token_hash: fresh, type: "magiclink" });
 }

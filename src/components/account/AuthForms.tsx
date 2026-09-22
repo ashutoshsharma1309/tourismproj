@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { startTransition, useActionState, useId, type FormEvent, type ReactNode } from "react";
+import { startTransition, useActionState, useId, useState, type FormEvent, type ReactNode } from "react";
 
 import {
   requestPasswordReset,
@@ -56,21 +56,37 @@ function Field({
 }) {
   const id = useId();
   const hintId = hint ? `${id}-hint` : undefined;
+  const [shown, setShown] = useState(false);
+  const isPassword = type === "password";
   return (
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-small font-medium">
         {label}
       </label>
-      <input
-        id={id}
-        name={name}
-        type={type}
-        autoComplete={autoComplete}
-        defaultValue={defaultValue}
-        required={required}
-        aria-describedby={hintId}
-        className={INPUT}
-      />
+      <div className="relative">
+        <input
+          id={id}
+          name={name}
+          type={isPassword && shown ? "text" : type}
+          autoComplete={autoComplete}
+          defaultValue={defaultValue}
+          required={required}
+          aria-describedby={hintId}
+          spellCheck={isPassword ? false : undefined}
+          className={cn(INPUT, isPassword && "pr-20")}
+        />
+        {isPassword ? (
+          <button
+            type="button"
+            onClick={() => setShown((v) => !v)}
+            aria-pressed={shown}
+            aria-label={`Show ${label.toLowerCase()}`}
+            className="absolute inset-y-1 right-1 min-w-11 rounded-md px-3 text-small font-medium text-muted hover:text-foreground focus-visible:ring-2 focus-visible:ring-primary/40 focus-visible:outline-none"
+          >
+            {shown ? "Hide" : "Show"}
+          </button>
+        ) : null}
+      </div>
       {hint ? (
         <span id={hintId} className="text-caption text-subtle">
           {hint}
@@ -143,6 +159,7 @@ export function SignUpForm() {
       <Field label="Name" name="name" autoComplete="name" defaultValue={state.name} />
       <Field label="Email" name="email" type="email" autoComplete="email" defaultValue={state.email} />
       <Field label="Password" name="password" type="password" autoComplete="new-password" hint="At least 8 characters." />
+      <Field label="Confirm password" name="confirm" type="password" autoComplete="new-password" />
       <Submit pending={pending} busy="Creating account…">Create account</Submit>
       <p className="text-caption leading-relaxed text-subtle">
         TerraStory stores your name, e-mail, the interests you choose and what you explore here, to

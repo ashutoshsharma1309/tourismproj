@@ -1,5 +1,6 @@
 import {
   bigint,
+  boolean,
   check,
   date,
   index,
@@ -17,6 +18,7 @@ import { sql } from "drizzle-orm";
 
 import { destinations } from "@/db/schema/content";
 import { users, vendorType, vendors } from "@/db/schema/identity";
+import { partnerProperties, partners } from "@/db/schema/partners";
 
 /**
  * Commerce — inventory, money, and the one table the whole product turns on.
@@ -41,6 +43,13 @@ export const cancellationPolicy = pgEnum("cancellation_policy", [
   "STRICT",
 ]);
 
+/**
+ * @deprecated RETIRED — no inventory is written here. Listings are partner
+ * properties (partners.ts); units, availability, booking items, payouts and
+ * reviews reference those. The table stays only because the build already
+ * deployed on this database still counts it; drop it once that build is
+ * replaced (docs/partner-inventory.md).
+ */
 export const listings = pgTable(
   "listings",
   {
@@ -81,17 +90,38 @@ export const listings = pgTable(
   ],
 );
 
-export const listingUnits = pgTable("listing_units", {
-  id: uuid("id").primaryKey().defaultRandom(),
-  listingId: uuid("listing_id")
-    .notNull()
-    .references(() => listings.id, { onDelete: "cascade" }),
-  /* "Deluxe double", "Innova 6-seater", "Morning batch" — the thing that is
-     actually countable. A listing is a shopfront; a unit is inventory. */
-  name: text("name").notNull(),
-  capacity: integer("capacity").notNull().default(2),
-  totalQuantity: integer("total_quantity").notNull().default(1),
-});
+/**
+ * The countable thing a listing sells: "Deluxe double", "Innova 6-seater",
+ * "Morning batch". A listing is a shopfront; a unit is inventory.
+ *
+ * `listing_id` names a partner property — the verified listing a partner
+ * owns (partners.ts). It once pointed at `listings`, which no code wrote;
+ * both models described the same supply, so inventory now hangs off the one
+ * that has verification, ownership and review behind it.
+ */
+export const listingUnits = pgTable(
+  "listing_units",
+  {
+    id: uuid("id").primaryKey().defaultRandom(),
+    listingId: uuid("listing_id")
+      .notNull()
+      .references(() => partnerProperties.id, { onDelete: "cascade" }),
+    name: text("name").notNull(),
+    capacity: integer("capacity").notNull().default(2),
+    totalQuantity: integer("total_quantity").notNull().default(1),
+    /* The partner's nightly rate per room, in paise. Null means the partner has
+       not set one, and the room type cannot be booked — never a guessed price. */
+    basePricePaise: bigint("base_price_paise", { mode: "bigint" }),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (table) => [
+    unique("listing_units_listing_name_unique").on(table.listingId, table.name),
+    check("listing_units_capacity_range", sql`${table.capacity} BETWEEN 1 AND 50`),
+    check("listing_units_quantity_range", sql`${table.totalQuantity} BETWEEN 1 AND 500`),
+    check("listing_units_price_positive", sql`${table.basePricePaise} IS NULL OR ${table.basePricePaise} > 0`),
+  ],
+);
 
 /**
  * ★ THE BOOKING ENGINE.
@@ -129,6 +159,10 @@ export const availability = pgTable(
     unitsHeld: integer("units_held").notNull().default(0),
     unitsBooked: integer("units_booked").notNull().default(0),
     pricePaiseOverride: bigint("price_paise_override", { mode: "bigint" }),
+    /* The partner closed this date. A released hold never reopens a closed
+       date: rooms return to `units_open` only while this is false. */
+    closed: boolean("closed").notNull().default(false),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (table) => [
     unique("availability_unit_date_unique").on(table.listingUnitId, table.date),
@@ -136,6 +170,7 @@ export const availability = pgTable(
     check("availability_open_non_negative", sql`${table.unitsOpen} >= 0`),
     check("availability_held_non_negative", sql`${table.unitsHeld} >= 0`),
     check("availability_booked_non_negative", sql`${table.unitsBooked} >= 0`),
+    check("availability_price_positive", sql`${table.pricePaiseOverride} IS NULL OR ${table.pricePaiseOverride} > 0`),
   ],
 );
 
@@ -163,9 +198,17 @@ export const bookings = pgTable(
     guestCount: integer("guest_count").notNull().default(1),
     contactPhone: text("contact_phone"),
     holdExpiresAt: timestamp("hold_expires_at", { withTimezone: true }),
+    /* One per reservation attempt, generated when the page is rendered. A
+       double-click or a retried request carries the same key and gets the
+       same booking back instead of a second hold. */
+    idempotencyKey: text("idempotency_key"),
     createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
   },
   (table) => [
+    unique("bookings_user_idempotency_unique").on(table.userId, table.idempotencyKey),
+    check("bookings_total_non_negative", sql`${table.totalPaise} >= 0`),
+    check("bookings_guests_positive", sql`${table.guestCount} >= 1`),
     /* The release cron's only query. Partial, because the vast majority of
        bookings are not pending and should not be in this index. */
     index("bookings_pending_hold_idx").on(table.status, table.holdExpiresAt),
@@ -188,13 +231,13 @@ export const bookingItems = pgTable(
       .references(() => bookings.id, { onDelete: "cascade" }),
     listingId: uuid("listing_id")
       .notNull()
-      .references(() => listings.id),
+      .references(() => partnerProperties.id),
     listingUnitId: uuid("listing_unit_id")
       .notNull()
       .references(() => listingUnits.id),
     vendorId: uuid("vendor_id")
       .notNull()
-      .references(() => vendors.id),
+      .references(() => partners.id),
     startDate: date("start_date").notNull(),
     endDate: date("end_date").notNull(),
     qty: integer("qty").notNull().default(1),
@@ -205,9 +248,18 @@ export const bookingItems = pgTable(
        not a display one. */
     platformFeePaise: bigint("platform_fee_paise", { mode: "bigint" }).notNull(),
     vendorPayoutPaise: bigint("vendor_payout_paise", { mode: "bigint" }).notNull(),
+    /* Each night's price per room as it was when the hold was taken, as
+       strings of paise ({ date, pricePaise }). `unit_price_paise` is the first
+       night's; this is the whole truth when rates vary by date. */
+    nightlyPrices: jsonb("nightly_prices").$type<{ date: string; pricePaise: string }[]>(),
     status: bookingItemStatus("status").notNull().default("HELD"),
   },
-  (table) => [index("booking_items_vendor_start_idx").on(table.vendorId, table.startDate)],
+  (table) => [
+    index("booking_items_vendor_start_idx").on(table.vendorId, table.startDate),
+    index("booking_items_unit_dates_idx").on(table.listingUnitId, table.startDate, table.endDate),
+    check("booking_items_dates_ordered", sql`${table.endDate} > ${table.startDate}`),
+    check("booking_items_qty_positive", sql`${table.qty} >= 1`),
+  ],
 );
 
 export const paymentStatus = pgEnum("payment_status", [
@@ -246,7 +298,7 @@ export const payouts = pgTable("payouts", {
   id: uuid("id").primaryKey().defaultRandom(),
   vendorId: uuid("vendor_id")
     .notNull()
-    .references(() => vendors.id),
+    .references(() => partners.id),
   bookingItemId: uuid("booking_item_id")
     .notNull()
     .references(() => bookingItems.id, { onDelete: "cascade" }),
@@ -270,7 +322,7 @@ export const reviews = pgTable(
       .references(() => bookingItems.id, { onDelete: "cascade" }),
     listingId: uuid("listing_id")
       .notNull()
-      .references(() => listings.id, { onDelete: "cascade" }),
+      .references(() => partnerProperties.id, { onDelete: "cascade" }),
     userId: uuid("user_id")
       .notNull()
       .references(() => users.id),

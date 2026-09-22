@@ -9,6 +9,7 @@ import { safeNextPath } from "@/lib/account/next";
 import { createSupabaseServerClient } from "@/lib/auth/server";
 import { SITE_URL } from "@/lib/constants";
 import { consumeSubmissionQuota } from "@/lib/rate-limit";
+import { secureInboxProof } from "@/db/auth-admin";
 
 export interface LoginState {
   step: "email" | "code" | "error";
@@ -65,10 +66,12 @@ export async function verifyCode(_prev: LoginState, formData: FormData): Promise
   const supabase = await createSupabaseServerClient();
   if (!supabase) return { step: "error", message: "Sign-in is not configured on this deployment." };
 
-  const { error } = await supabase.auth.verifyOtp({ email: address, token, type: "email" });
+  const { data: verified, error } = await supabase.auth.verifyOtp({ email: address, token, type: "email" });
   if (error) {
     return { step: "code", email: address, message: "That code was not accepted. Codes expire after a few minutes — request a new one." };
   }
+  const fresh = verified.user ? await secureInboxProof(verified.user.id) : null;
+  if (fresh) await supabase.auth.verifyOtp({ token_hash: fresh, type: "magiclink" });
   (await cookies()).set(SIGNED_IN_HINT, "1", HINT_COOKIE_OPTIONS);
   redirect(safeNext(formData.get("next")));
 }

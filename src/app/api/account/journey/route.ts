@@ -10,11 +10,13 @@ export const dynamic = "force-dynamic";
 const journeySchema = z.object({
   destinationIds: z.array(z.string().max(40)).max(18),
   completedIds: z.array(z.string().max(40)).max(18),
+  /* Places the traveller chose to remember; validated again in the store. */
+  placeIds: z.array(z.string().max(160)).max(60).default([]),
 });
 
 const shape = (row: Awaited<ReturnType<typeof currentJourney>>) =>
   row
-    ? { id: row.id, destinationIds: row.destinationIds, completedIds: row.completedIds, status: row.status, createdAt: row.createdAt, completedAt: row.completedAt }
+    ? { id: row.id, destinationIds: row.destinationIds, completedIds: row.completedIds, placeIds: row.placeIds, status: row.status, createdAt: row.createdAt, completedAt: row.completedAt }
     : null;
 
 /** The signed-in traveller's journey in progress. */

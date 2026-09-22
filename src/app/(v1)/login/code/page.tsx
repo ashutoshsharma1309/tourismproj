@@ -5,7 +5,7 @@ import { safeNextPath } from "@/lib/account/next";
 
 import { Footer } from "@/components/layout/Footer";
 import { LoginForm } from "@/components/partners/LoginForm";
-import { authConfigured } from "@/lib/auth/server";
+import { accountsAvailable } from "@/lib/auth/server";
 import { currentUser } from "@/lib/auth/session";
 
 export const metadata: Metadata = {
@@ -41,7 +41,7 @@ export default async function LoginPage({
           A one-time code by e-mail, no password. Exploring TerraStory never needs an account.
         </p>
         <div className="mt-8">
-          {authConfigured() ? (
+          {accountsAvailable() ? (
             <LoginForm next={safeNext} />
           ) : (
             <p className="rounded-xl border border-border bg-surface-muted/40 p-5 text-body text-muted">

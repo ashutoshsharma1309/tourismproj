@@ -1,6 +1,6 @@
 import "server-only";
 
-import { and, desc, eq, gt, lt, ne, notInArray, or, sql } from "drizzle-orm";
+import { and, desc, eq, gt, inArray, lt, ne, notInArray, or, sql } from "drizzle-orm";
 
 import { db, hasDatabase } from "@/db";
 import {
@@ -11,7 +11,6 @@ import {
   reviews,
   trips,
   vendorDocuments,
-  vendors,
   partnerProperties,
   partners,
   travelEvents,
@@ -22,6 +21,7 @@ import {
 } from "@/db/schema";
 import type { ValidEvent } from "@/lib/account/events";
 import { isKnownDestination } from "@/lib/destinations/registry";
+import { JOURNEY_PLACE_ID, MAX_JOURNEY_PLACES, placeDestination } from "@/lib/journey/state";
 import { isLanguageCode } from "@/lib/i18n/languages";
 import { ALL_INTERESTS, type JourneyInterest } from "@/lib/planner/types";
 
@@ -221,12 +221,16 @@ async function serverEvent(
 export interface JourneyInput {
   destinationIds: string[];
   completedIds: string[];
+  placeIds?: string[];
 }
 
-export function sanitiseJourney(input: JourneyInput): JourneyInput {
+export function sanitiseJourney(input: JourneyInput): Required<JourneyInput> {
   const destinationIds = [...new Set(input.destinationIds)].filter(isKnownDestination).slice(0, 18);
   const completedIds = [...new Set(input.completedIds)].filter((id) => destinationIds.includes(id));
-  return { destinationIds, completedIds };
+  const placeIds = [...new Set(input.placeIds ?? [])]
+    .filter((id) => JOURNEY_PLACE_ID.test(id) && destinationIds.includes(placeDestination(id) ?? ""))
+    .slice(0, MAX_JOURNEY_PLACES);
+  return { destinationIds, completedIds, placeIds };
 }
 
 const sameSet = (a: readonly string[], b: readonly string[]) =>
@@ -244,7 +248,7 @@ const sameSet = (a: readonly string[], b: readonly string[]) =>
  */
 export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
   if (!hasDatabase) return null;
-  const { destinationIds, completedIds } = sanitiseJourney(raw);
+  const { destinationIds, completedIds, placeIds } = sanitiseJourney(raw);
   const allDone = destinationIds.length > 0 && completedIds.length === destinationIds.length;
 
   return db.transaction(async (tx) => {
@@ -280,6 +284,7 @@ export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
           userId,
           destinationIds,
           completedIds,
+          placeIds,
           status: allDone ? "COMPLETED" : "IN_PROGRESS",
           completedAt: allDone ? now : null,
         })
@@ -294,6 +299,7 @@ export async function saveCurrentJourney(userId: string, raw: JourneyInput) {
       .set({
         destinationIds,
         completedIds,
+        placeIds,
         updatedAt: now,
         ...(allDone ? { status: "COMPLETED" as const, completedAt: now } : {}),
       })
@@ -371,7 +377,12 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
   /* Financial and business records are not erased by a self-service click:
      a booking (with its payment) or an operator business needs a person. */
   const [booking] = await db.select({ id: bookings.id }).from(bookings).where(eq(bookings.userId, userId)).limit(1);
-  const [vendor] = await db.select({ id: vendors.id }).from(vendors).where(eq(vendors.ownerUserId, userId)).limit(1);
+  const [vendor] = await db
+    .select({ id: partners.id })
+    .from(partners)
+    .innerJoin(partnerProperties, eq(partnerProperties.partnerId, partners.id))
+    .where(and(eq(partners.ownerUserId, userId), inArray(partnerProperties.status, ["APPROVED", "PUBLISHED", "UNPUBLISHED"])))
+    .limit(1);
   if (booking || vendor) {
     return { ok: false, error: "This account holds bookings or an operator business, which we must close with you. Please contact TerraStory from the About page." };
   }
@@ -380,6 +391,8 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
     await tx.update(partners).set({ ownerUserId: null }).where(eq(partners.ownerUserId, userId));
     await tx.update(partnerProperties).set({ reviewerId: null }).where(eq(partnerProperties.reviewerId, userId));
     await tx.update(vendorDocuments).set({ reviewerId: null }).where(eq(vendorDocuments.reviewerId, userId));
+    await tx.update(vendorDocuments).set({ uploadedBy: null }).where(eq(vendorDocuments.uploadedBy, userId));
+    await tx.update(partners).set({ verifiedBy: null }).where(eq(partners.verifiedBy, userId));
     await tx.update(auditLogs).set({ actorId: null }).where(eq(auditLogs.actorId, userId));
     /* Personal records: delete (trip days and stops cascade from trips). */
     await tx.delete(reviews).where(eq(reviews.userId, userId));
@@ -390,3 +403,21 @@ export async function deleteAccountData(userId: string): Promise<StoreResult<nul
   });
   return { ok: true, data: null };
 }
+
+/** Audit a new traveller account (CLAUDE.md R7). Never blocks the sign-up. */
+export async function recordSignUp(userId: string): Promise<void> {
+  if (!hasDatabase) return;
+  try {
+    await db.insert(auditLogs).values({ actorId: userId, action: "user.signed_up", entityType: "user", entityId: userId, after: { method: "password" } });
+  } catch (error) {
+    console.error("account: sign-up audit failed", (error as Error).message);
+  }
+}
+
+/** Whether this account owns a hotel partner organisation. */
+export async function ownsPartner(userId: string): Promise<boolean> {
+  if (!hasDatabase) return false;
+  const [row] = await db.select({ id: partners.id }).from(partners).where(eq(partners.ownerUserId, userId)).limit(1);
+  return Boolean(row);
+}
+
