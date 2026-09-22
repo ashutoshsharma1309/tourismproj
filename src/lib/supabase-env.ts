@@ -19,8 +19,33 @@ export function cleanEnv(value: string | undefined): string | null {
   return v.length > 0 ? v : null;
 }
 
+/**
+ * The Supabase project's id, read from the database connection string: the
+ * pooler signs in as `postgres.<id>`, a direct connection reaches
+ * `db.<id>.supabase.co`. Only the id is used — never the password.
+ */
+function projectRefFromDatabase(): string | null {
+  const connection = cleanEnv(process.env.DATABASE_URL);
+  if (!connection) return null;
+  try {
+    const parsed = new URL(connection);
+    const ref = decodeURIComponent(parsed.username).match(/^postgres\.([a-z0-9]{20})$/)?.[1] ?? parsed.hostname.match(/^db\.([a-z0-9]{20})\.supabase\.co$/)?.[1];
+    return ref ?? null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * The project URL. A deployment that set the key and the database but not
+ * NEXT_PUBLIC_SUPABASE_URL (production did exactly that) still gets it: it is
+ * the public address of the project the database already belongs to.
+ */
 export function supabaseUrl(): string | null {
-  return cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL)?.replace(/\/+$/, "") ?? null;
+  const configured = cleanEnv(process.env.NEXT_PUBLIC_SUPABASE_URL) ?? cleanEnv(process.env.SUPABASE_URL);
+  if (configured) return configured.replace(/\/+$/, "");
+  const ref = projectRefFromDatabase();
+  return ref ? `https://${ref}.supabase.co` : null;
 }
 
 /** The publishable (anon) key: public by design, safe in the browser. */
