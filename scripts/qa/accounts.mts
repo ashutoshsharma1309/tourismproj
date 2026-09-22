@@ -246,6 +246,26 @@ check("an empty publishable key falls back to the anon key",
   withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: "https://x.supabase.co", NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: "", NEXT_PUBLIC_SUPABASE_ANON_KEY: "anon" }).key === "anon");
 check("pasted quotes, spaces and a trailing slash are tolerated",
   JSON.stringify(withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: ' "https://x.supabase.co/" ', NEXT_PUBLIC_SUPABASE_ANON_KEY: " 'anon' \n" })) === JSON.stringify({ url: "https://x.supabase.co", key: "anon" }));
+{
+  const saved = { db: process.env.DATABASE_URL, url: process.env.NEXT_PUBLIC_SUPABASE_URL, alt: process.env.SUPABASE_URL };
+  delete process.env.NEXT_PUBLIC_SUPABASE_URL;
+  delete process.env.SUPABASE_URL;
+  process.env.DATABASE_URL = "postgresql://postgres.abcdefghijklmnopqrst:secret@aws-0-ap-south-1.pooler.supabase.com:6543/postgres";
+  const fromPooler = supabaseUrl();
+  process.env.DATABASE_URL = "postgresql://postgres:secret@db.abcdefghijklmnopqrst.supabase.co:5432/postgres";
+  const fromDirect = supabaseUrl();
+  process.env.DATABASE_URL = "postgresql://me@localhost:5432/darshan";
+  const fromLocal = supabaseUrl();
+  process.env.SUPABASE_URL = " https://abcdefghijklmnopqrst.supabase.co/ ";
+  const fromAlias = supabaseUrl();
+  for (const [k, v] of [["DATABASE_URL", saved.db], ["NEXT_PUBLIC_SUPABASE_URL", saved.url], ["SUPABASE_URL", saved.alt]] as const) {
+    if (v === undefined) delete process.env[k];
+    else process.env[k] = v;
+  }
+  check("a missing project URL is derived from the Supabase database connection (never its password)",
+    fromPooler === "https://abcdefghijklmnopqrst.supabase.co" && fromDirect === "https://abcdefghijklmnopqrst.supabase.co" && fromLocal === null && fromAlias === "https://abcdefghijklmnopqrst.supabase.co",
+    `${fromPooler} | ${fromDirect} | ${fromLocal} | ${fromAlias}`);
+}
 check("a blank value counts as not configured", cleanEnv("   ") === null && cleanEnv('""') === null && withSupabaseEnv({ NEXT_PUBLIC_SUPABASE_URL: " " }).url === null);
 check("no Supabase setting is read with `??` fallbacks outside the shared reader",
   walk("src").filter((f) => f !== "src/lib/supabase-env.ts").every((f) => !/NEXT_PUBLIC_SUPABASE_(URL|ANON_KEY|PUBLISHABLE_KEY)/.test(strip(read(f)))));
