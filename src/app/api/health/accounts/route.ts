@@ -13,15 +13,38 @@ export const dynamic = "force-dynamic";
  * value, a prefix or a length. It lets someone without dashboard access see
  * which setting a deployment is missing.
  */
-export function GET() {
+export async function GET() {
+  const url = supabaseUrl();
+  const key = supabasePublicKey();
+  /* Set-but-wrong is the failure a presence check cannot see: a typo in the
+     project URL passes it and then every sign-in fails to connect. Ask
+     Supabase whether it answers, and report the host (public) and the
+     status — never the key. */
+  let auth: { host: string | null; status: number | string } = { host: null, status: "not-configured" };
+  if (url && key) {
+    const host = (() => {
+      try {
+        return new URL(url).host;
+      } catch {
+        return "unparseable";
+      }
+    })();
+    try {
+      const response = await fetch(`${url}/auth/v1/settings`, { headers: { apikey: key }, signal: AbortSignal.timeout(5_000), cache: "no-store" });
+      auth = { host, status: response.status };
+    } catch (error) {
+      auth = { host, status: `unreachable: ${(error as Error).name}` };
+    }
+  }
   return NextResponse.json(
     {
       accounts: accountsAvailable(),
-      supabaseUrl: Boolean(supabaseUrl()),
-      supabasePublicKey: Boolean(supabasePublicKey()),
+      supabaseUrl: Boolean(url),
+      supabasePublicKey: Boolean(key),
       database: hasDatabase,
       serviceKey: hasDocumentStorage,
       emailLinksGoTo: new URL(SITE_URL).host,
+      auth,
     },
     { headers: { "cache-control": "no-store" } },
   );

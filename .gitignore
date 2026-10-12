@@ -44,3 +44,8 @@ reports/audio-*.log
 reports/visual/
 reports/qa/
 package-lock.json
+
+# Private recovery kit (lives in ~/ProjectBackups/<project>/, never here).
+project-recovery.env
+project-recovery*.env
+*.env.backup
